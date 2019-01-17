@@ -14,7 +14,7 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 {% for category in post.categories %}
 
 {%if category == "Visual-Basic"%}
-<li><a href="{{ post.url | reverse }}">{{post.title}}</a></li>
+<li><a href="{{ post.url | post.date | reverse }}">{{post.title}}</a><br></li>
 {%endif%}
 
 {% endfor %}
