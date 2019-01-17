@@ -22,6 +22,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 -->
 
+<li><a href="{{ {{site.categories.Visual-Basic}} }}">{{post.title}}</a></li>
+
 * [VBA Introduction](/visual-basic/vba-introduction)
 
 * [Visual Basic Editor (VBE)](/visual-basic/vbe-editor)
