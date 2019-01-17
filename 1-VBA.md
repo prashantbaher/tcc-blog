@@ -8,6 +8,7 @@ This page contains the list of all `VBA tutorial` posts.
 
 If you are a total beginner, then follow the list accordingly otherwise you can directly jump to selected topics.
 
+<!--
 
 {% for post in site.posts %}
 
@@ -20,10 +21,10 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 {% endfor %}
 {% endfor %}
 
+-->
 
-<!--
 
-* [VBA Introduction](_posts\VBA-tutorials\2019-01-1-vba-introduction.md)
+* [VBA Introduction](/visual-basic/vba-introduction)
 
 * [Visual Basic Editor (VBE)](/visual-basic/vbe-editor)
 
@@ -33,6 +34,6 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures)
 
--->
+
 
 
