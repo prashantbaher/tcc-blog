@@ -131,7 +131,7 @@ For example, some languages are strictly typed, which means the programmer must 
 
 <table class="w3-table-all w3-mobile">
     <tr>
-        <th class="w3-center" colspan="3">VBA’s Built-In Data Types</th>
+        <th class="w3-center w3-white" colspan="3">VBA’s Built-In Data Types</th>
     </tr>
     <tr>
         <th>Data Type</th>
