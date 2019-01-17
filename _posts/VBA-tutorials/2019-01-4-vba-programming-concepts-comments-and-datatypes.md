@@ -128,6 +128,7 @@ For example, some languages are strictly typed, which means the programmer must 
 
 `VBA` has a variety of built-in *data types*. Below table lists the most common types of data that VBA can handle. 
 
+<div>
 <!-- Table for VBA’s Built-In Data Types -->
 <table class="w3-table-all w3-mobile w3-card-4">
     <!-- This is caption for table, for this i have not used standard caption instead used table heading -->
@@ -200,3 +201,4 @@ For example, some languages are strictly typed, which means the programmer must 
         <td>Varies</td>                    
     </tr>
 </table>
+</div>
