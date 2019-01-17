@@ -1,0 +1,80 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+
+---
+
+<h1 id="hello-and-welcome-to-my-blog">Hello and welcome to my blog!!!</h1>
+
+<p>In this blog, I give tutorials on macro for CAD software such as <code class="highlighter-rouge">Solidworks</code>.</p>
+
+<p>These tutorials help to automate repetitive tasks such as <em>saving documents</em> or other things.</p>
+
+<p>If you want to automate your tasks and find it difficult in where to start then this blog will help you.</p>
+
+<p><strong>Below</strong> is the list of latest articles I posted.</p>
+
+<p>You can browse through articles according to your need.</p>
+
+<p>For example, you want to learn <code class="highlighter-rouge">VBA programming language</code> then go to <em>VBA</em> page and start with listed articles.</p>
+
+<p>Since I write posts for specific page hence I listed them in their respective pages.</p>
+
+<p>For more about me go to About Me page of this blog.</p>
+
+<!-- post list -->
+<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+<ul class="post-list">
+  {% for post in paginator.posts %}
+  <li>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+  {% endfor %}
+</ul>
+
+<!--
+{% for post in paginator.posts %}
+  <div>
+    <ul class="post-list"><a href="{{post.url | prepend: site.baseurl}}"><h3>{{post.title}}</h3></a></ul>
+    {{ post.excerpt }}
+  </div>
+{% endfor %}
+-->
+
+<!-- pagination -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination"> 
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
+  {% else %}
+    <span>Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span class="webjeda">{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="/">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+  {% else %}
+    <span>Next</span>
+  {% endif %}
+</div>
+{% endif %}
