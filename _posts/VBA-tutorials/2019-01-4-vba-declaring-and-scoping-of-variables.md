@@ -3,7 +3,7 @@ categories: Visual-Basic
 title: Declaring and Scoping of Variables
 ---
 
-If you read the previous topics, you now know a bit about `[Variables](/visual-basic/vba-variables)` and `[Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes)`. 
+If you read the previous topics, you now know a bit about [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes). 
 
 In this topic, you discover how to **declare** a `variable` as a certain *data type*.
 
@@ -94,6 +94,7 @@ A variable’s scope determines which modules and procedures can use the variabl
 
 Below Table describes the scopes:
 
+<div>
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center"colspan="2">VBA’s Variable’s Scope</th>
@@ -120,6 +121,7 @@ Below Table describes the scopes:
         </td>
     </tr>
 </table>
+</div>
 
 If you don't get confused keep reading next post on these topics.
 
