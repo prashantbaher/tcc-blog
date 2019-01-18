@@ -38,4 +38,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Variables](/visual-basic/vba-variables)
 
+* [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables)
+
+
+
 
