@@ -94,10 +94,10 @@ A variable’s scope determines which modules and procedures can use the variabl
 
 Below Table describes the scopes:
 
-<div>
+
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
-        <th class="w3-center"colspan="2">VBA’s Variable’s Scope</th>
+        <th class="w3-center" colspan="2">VBA’s Variable’s Scope</th>
     </tr>
     <tr>
         <th>Scope</th>
@@ -121,7 +121,7 @@ Below Table describes the scopes:
         </td>
     </tr>
 </table>
-</div>
+
 
 If you don't get confused keep reading next post on these topics.
 
