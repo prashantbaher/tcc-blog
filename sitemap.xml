@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://thecadcoder.com/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/VBA-tutorials/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/Solidworks-macros/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/Disclaimer/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/about/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-variables</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-programming-concepts-comments-and-datatypes</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-declaring-and-scoping-of-variables</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-executing-procedures</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-sub-and-function-procedure</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/page2/</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-introduction</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vbe-editor</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vbe-windows</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/solidworks-macros/vba-in-solidworks</loc>
+  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
