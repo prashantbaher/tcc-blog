@@ -81,3 +81,6 @@ defaults:
     values:
       layout: "post"
       permalink: /:categories/:title
+
+# Google Analytics
+google_analytics : UA-117501871-2
