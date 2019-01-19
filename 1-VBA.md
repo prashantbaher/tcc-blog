@@ -40,6 +40,7 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables)
 
+* [Variable Scope](/visual-basic/vba-variable-scope)
 
 
 

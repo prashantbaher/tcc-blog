@@ -123,7 +123,7 @@ Below Table describes the scopes:
 </table>
 
 
-If you don't get confused keep reading next post on these topics.
+If you get confused keep reading next post on these topics.
 
 
 
