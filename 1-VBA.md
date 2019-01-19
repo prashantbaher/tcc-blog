@@ -44,4 +44,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Public, Static and Variable's Life](/visual-basic/vba-publc-stattic-variable-life)
 
+* [VBA Constants](/visual-basic/vba-constant)
+
+
+
 
