@@ -42,5 +42,6 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Variable Scope](/visual-basic/vba-variable-scope)
 
+* [Public, Static and Variable's Life](/visual-basic/vba-publc-stattic-variable-life)
 
 
