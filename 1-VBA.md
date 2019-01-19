@@ -48,5 +48,13 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Strings Basics](/visual-basic/vba-string-basic)
 
+* [VBA Assignment Statements And Operators](/visual-basic/vba-assignment-statement-and-operator)
+
+* [VBA Arrays](/visual-basic/vba-arrays)
+
+
+
+
+
 
 
