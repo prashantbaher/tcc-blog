@@ -46,6 +46,7 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Constants](/visual-basic/vba-constant)
 
+* [VBA Strings Basics](/visual-basic/vba-string-basic)
 
 
 
