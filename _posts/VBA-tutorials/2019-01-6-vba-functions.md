@@ -1,6 +1,6 @@
 ---
 categories: Visual-Basic
-title: VBA Arrays
+title: VBA Functions
 ---
 
 A `function` essentially performs a calculation and returns a single value. 

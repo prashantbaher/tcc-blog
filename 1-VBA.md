@@ -52,6 +52,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Arrays](/visual-basic/vba-arrays)
 
+* [VBA Functions](/visual-basic/vba-functions)
+
 * [VBA Functions that do more](/visual-basic/vba-more-function)
 
 * [Controlling Program Flow and Making Decisions](/visual-basic/vba-controlling-flow-making-desicions)
