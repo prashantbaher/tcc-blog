@@ -41,9 +41,9 @@ In some cases, however, they’re just what you need.
 
 In the following sections you read about
 
-* The `MsgBox` function
-* The `InputBox` function
-* The `GetOpenFilename` method
-* The `GetSaveAsFilename` method
-* The `FileDialog` method
+* VBA `MsgBox` function
+* VBA `InputBox` function
+* VBA `GetOpenFilename` method
+* VBA `GetSaveAsFilename` method
+* VBA `FileDialog` method
 

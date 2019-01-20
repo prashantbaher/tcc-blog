@@ -70,7 +70,9 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Dialog Boxes](/visual-basic/vba-dialog-boxes)
 
+* [VBA MsgBox Function](/visual-basic/vba-msgBox-function)
 
+* [VBA InputBox Function](/visual-basic/vba-inputbox-function)
 
 
 
