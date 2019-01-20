@@ -60,6 +60,15 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [If-Then and Select Case structure](/visual-basic/vba-if-then-structure-select-case)
 
+* [VBA Looping](/visual-basic/vba-looping)
+
+* [Bug Finding](/visual-basic/vba-bug-finding)
+
+* [VBA Debugger](/visual-basic/vba-debugger)
+
+* [VBA Bug Reduction Tips](/visual-basic/vba-bug-reduction-tips)
+
+* [VBA Dialog Boxes](/visual-basic/vba-dialog-boxes)
 
 
 

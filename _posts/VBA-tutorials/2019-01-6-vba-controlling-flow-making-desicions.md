@@ -24,12 +24,6 @@ Following table provides a quick summary of these constructs.
         <th>How it works</th>
     </tr>
     <tr>
-        <td>GoTo statement</td>
-        <td>
-            Jumps to a particular statement.
-        </td>
-    </tr>
-    <tr>
         <td>If-Then structure</td>
         <td>
             Does something if something else is true.
