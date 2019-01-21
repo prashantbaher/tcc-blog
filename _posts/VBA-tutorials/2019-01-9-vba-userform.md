@@ -149,6 +149,8 @@ To determine which tool is which, hover your mouse pointer over the control and 
     </tr>
 </table>
 
+---
+
 ## Changing properties for a UserForm control
 
 Every control you add to a UserForm has a number of properties that determine how the control looks or behaves. 
@@ -247,5 +249,3 @@ CheckBox1.Value = True
 This will sum-up our tutorials on Visual Basic for Application. From now on I will give tutorials on how to use Solidworks commands with the help of VBA Macro.
 
 If you want to know any explaination on any topic related to VBA, please drop a comment and I will try to give it to you. Thank you!!!!
-
-

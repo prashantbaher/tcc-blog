@@ -69,6 +69,8 @@ The GetOpenFilename method takes the optional arguments shown in below Table.
     </tr>
 </table>
 
+---
+
 ## A GetOpenFilename example
 
 The `fileFilter` argument determines what appears in the dialog box’s Files of Type drop-down list. 
@@ -193,6 +195,8 @@ The *GetSaveAsFilename* method takes below arguments, all of which are optional.
         </td>
     </tr>
 </table>
+
+---
 
 # Getting a Folder Name
 
