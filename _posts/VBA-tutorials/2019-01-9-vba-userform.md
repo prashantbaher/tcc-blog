@@ -149,7 +149,7 @@ To determine which tool is which, hover your mouse pointer over the control and 
     </tr>
 </table>
 
----
+In next section we see how to change userform control properties
 
 ## Changing properties for a UserForm control
 
