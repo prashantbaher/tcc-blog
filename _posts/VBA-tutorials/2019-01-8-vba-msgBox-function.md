@@ -295,12 +295,3 @@ Besides these two constants, below table lists a few others.
         <td>User clicked No.</td>
     </tr>
 </table>
-
-
-
-
-
-
-
-
-
