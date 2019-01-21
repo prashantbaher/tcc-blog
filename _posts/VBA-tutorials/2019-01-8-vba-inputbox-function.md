@@ -18,7 +18,7 @@ Here’s a simplified version of the syntax for the *InputBox* function:
 InputBox(prompt[, title][, default])
 ```
 
-The InputBox function accepts the arguments listed in below table.
+The InputBox function accepts the arguments listed in below.
 
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
