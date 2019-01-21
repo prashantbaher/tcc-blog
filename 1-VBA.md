@@ -74,6 +74,7 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA InputBox Function](/visual-basic/vba-inputbox-function)
 
+* [VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name](/visual-basic/vba-other-dialog)
 
 
 
