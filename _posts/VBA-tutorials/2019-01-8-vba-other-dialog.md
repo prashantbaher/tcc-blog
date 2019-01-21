@@ -30,7 +30,7 @@ object.GetOpenFilename ([fileFilter], [filterIndex], [title],[buttonText], [mult
 
 The GetOpenFilename method takes the optional arguments shown in below Table.
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetOpenFilename method Arguments</th>
     </tr>
@@ -68,8 +68,6 @@ The GetOpenFilename method takes the optional arguments shown in below Table.
         <td>If True, the user can select multiple files.</td>
     </tr>
 </table>
-
----
 
 ## A GetOpenFilename example
 
@@ -163,7 +161,7 @@ object.GetSaveAsFilename ([InitialFilename], [FileFilter], [FilterIndex], [Title
 
 The *GetSaveAsFilename* method takes below arguments, all of which are optional.
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetSaveAsFilename method Arguments</th>
     </tr>
@@ -195,8 +193,6 @@ The *GetSaveAsFilename* method takes below arguments, all of which are optional.
         </td>
     </tr>
 </table>
-
----
 
 # Getting a Folder Name
 

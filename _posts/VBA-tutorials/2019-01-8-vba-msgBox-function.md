@@ -22,7 +22,7 @@ Here’s a simplified version of the syntax for the MsgBox function:
 MsgBox(prompt[, buttons][, title])
 ```
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">MsgBox Function Arguments</th>
     </tr>
@@ -127,7 +127,7 @@ Below table lists some of the built-in constants you can use for the buttons arg
 
 If you prefer, you can use the value rather than a constant (but I think using the built-in constants is a lot easier).
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used in the MsgBox Function</th>
     </tr>
@@ -250,7 +250,7 @@ Previous examples have used constants (such as `vbYes` and `vbNo`) for the retur
 
 Besides these two constants, below table lists a few others.
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used as Return Values for the MsgBox Function</th>
     </tr>

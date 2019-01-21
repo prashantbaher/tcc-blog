@@ -75,7 +75,7 @@ Below table indicates the various tools, as well as their capabilities.
 
 To determine which tool is which, hover your mouse pointer over the control and read the small pop-up description.
 
-<table class="w3-table-all w3-mobile">
+<table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">ToolBox Control</th>
     </tr>
@@ -148,8 +148,6 @@ To determine which tool is which, hover your mouse pointer over the control and 
         <td>Allows the user to select a range.</td>
     </tr>
 </table>
-
-In next section we see how to change userform control properties
 
 ## Changing properties for a UserForm control
 
