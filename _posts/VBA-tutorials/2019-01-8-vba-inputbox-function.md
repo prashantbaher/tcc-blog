@@ -52,7 +52,7 @@ The InputBox function accepts the arguments listed in below.
 
 |InputBox Function Arguments|
 |Arguments|What it means|
-|--- |--- |--- |
+|--- |--- |
 |prompt|The text displayed in the input box.|
 |Title|The text displayed in the input box’s title bar (optional).|
 |Default|The default value for the user’s input (optional)|
