@@ -20,7 +20,7 @@ InputBox(prompt[, title][, default])
 
 The InputBox function accepts the arguments listed in below.
 
-
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">InputBox Function Arguments</th>
@@ -48,8 +48,7 @@ The InputBox function accepts the arguments listed in below.
         </td>
     </tr>
 </table>
-
-<!--
+-->
 
 |InputBox Function Arguments|
 |Arguments|What it means|
@@ -57,8 +56,6 @@ The InputBox function accepts the arguments listed in below.
 |prompt|The text displayed in the input box.|
 |Title|The text displayed in the input box’s title bar (optional).|
 |Default|The default value for the user’s input (optional)|
-
--->
 
 ## An InputBox example
 
