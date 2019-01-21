@@ -50,7 +50,8 @@ The InputBox function accepts the arguments listed in below.
 </table>
 -->
 
-|InputBox Function Arguments|Arguments|What it means|
+|InputBox Function Arguments|
+|Arguments|What it means|
 |--- |--- |--- |
 |prompt|The text displayed in the input box.|
 |Title|The text displayed in the input box’s title bar (optional).|
