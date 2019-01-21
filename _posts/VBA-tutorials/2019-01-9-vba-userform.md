@@ -244,8 +244,8 @@ CheckBox1.Value = True
 
 > I recommend that you change the default name the VBE has given to your controls to something more meaningful.
 
-##### This will sum-up our tutorials on Visual Basic for Application. From now on I will give tutorials on how to use Solidworks commands with the help of VBA Macro.
+This will sum-up our tutorials on Visual Basic for Application. From now on I will give tutorials on how to use Solidworks commands with the help of VBA Macro.
 
-##### If you want to know any explaination on any topic related to VBA, please drop a comment and I will try to give it to you. Thank you!!!!
+If you want to know any explaination on any topic related to VBA, please drop a comment and I will try to give it to you. Thank you!!!!
 
 
