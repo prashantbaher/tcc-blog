@@ -250,3 +250,48 @@ Previous examples have used constants (such as `vbYes` and `vbNo`) for the retur
 
 Besides these two constants, below table lists a few others.
 
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="3">Constants Used as Return Values for the MsgBox Function</th>
+    </tr>
+    <tr>
+        <th>Constant</th>
+        <th>Value</th>
+        <th>What it does</th>
+    </tr>
+    <tr>
+        <td>vbOK</td>
+        <td>1</td>
+        <td>User clicked OK.</td>
+    </tr>
+    <tr>
+        <td>vbCancel</td>
+        <td>2</td>
+        <td>User clicked Cancel.</td>
+    </tr>
+    <tr>
+        <td>vbAbort</td>
+        <td>3</td>
+        <td>User clicked Abort.</td>
+    </tr>
+    <tr>
+        <td>vbRetry</td>
+        <td>4</td>
+        <td>User clicked Retry.</td>
+    </tr>
+    <tr>
+        <td>vbIgnore</td>
+        <td>5</td>
+        <td>User clicked Ignore.</td>
+    </tr>
+    <tr>
+        <td>vbYes</td>
+        <td>6</td>
+        <td>User clicked Yes.</td>
+    </tr>
+    <tr>
+        <td>vbNo</td>
+        <td>7</td>
+        <td>User clicked No.</td>
+    </tr>
+</table>
