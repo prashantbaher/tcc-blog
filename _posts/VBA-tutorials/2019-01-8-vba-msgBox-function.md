@@ -21,7 +21,7 @@ Here’s a simplified version of the syntax for the MsgBox function:
 ' MsgBox Structure
 MsgBox(prompt[, buttons][, title])
 ```
-
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">MsgBox Function Arguments</th>
@@ -49,6 +49,14 @@ MsgBox(prompt[, buttons][, title])
         </td>
     </tr>
 </table>
+-->
+
+|Arguments|What it does|
+|--- |--- |
+|prompt|The text your application displays in the message box|
+|buttons|A number that specifies which buttons (along with what icon) appear in the message box (optional)|
+|title|The text that appears in the message box’s title bar (optional) displaying a simple message box|
+
 
 You can use the *MsgBox* function in two ways:
 
@@ -127,6 +135,7 @@ Below table lists some of the built-in constants you can use for the buttons arg
 
 If you prefer, you can use the value rather than a constant (but I think using the built-in constants is a lot easier).
 
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used in the MsgBox Function</th>
@@ -207,6 +216,25 @@ If you prefer, you can use the value rather than a constant (but I think using t
         <td>Fourth button is default.</td>
     </tr>
 </table>
+-->
+
+|Constant|Value|What it does|
+|--- |--- |--- |
+|vbOKOnly|0|Display OK button only.|
+|vbOKCancel|1|Display OK and Cancel buttons|
+|vbAbortRetryIgnore|2|Displays Abort, Retry, and Ignore buttons.|
+|vbYesNoCancel|3|Displays Yes, No, and Cancel buttons.|
+|vbYesNo|4|Displays Yes and No buttons.|
+|vbRetryCancel|5|Displays Retry and Cancel buttons.|
+|vbCritical|16|Displays Critical Message icon.|
+|vbQuestion|32|Displays Warning Query icon.|
+|vbExclamation|48|Displays Warning Message icon.|
+|vbInformation|64|Displays Information Message icon.|
+|vbDefaultButton1|0|First button is default.|
+|vbDefaultButton2|256|Second button is default.|
+|vbDefaultButton3|512|Third button is default.|
+|vbDefaultButton4|768|Fourth button is default.|
+
 
 For using more than one of these constants as an argument, just connect them with a `+` operator. 
 
@@ -250,6 +278,7 @@ Previous examples have used constants (such as `vbYes` and `vbNo`) for the retur
 
 Besides these two constants, below table lists a few others.
 
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used as Return Values for the MsgBox Function</th>
@@ -295,3 +324,14 @@ Besides these two constants, below table lists a few others.
         <td>User clicked No.</td>
     </tr>
 </table>
+-->
+
+|Constant|Value|What it does|
+|--- |--- |--- |
+|vbOK|1|User clicked OK.|
+|vbCancel|2|User clicked Cancel.|
+|vbAbort|3|User clicked Abort.|
+|vbRetry|4|User clicked Retry.|
+|vbIgnore|5|User clicked Ignore.|
+|vbYes|6|User clicked Yes.|
+|vbNo|7|User clicked No.|
