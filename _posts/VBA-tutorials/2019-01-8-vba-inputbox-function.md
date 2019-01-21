@@ -20,33 +20,6 @@ InputBox(prompt[, title][, default])
 
 The InputBox function accepts the arguments listed in below.
 
-<table class="w3-table-all w3-mobile w3-card-4">
-    <tr>
-        <th class="w3-center" colspan="2">InputBox Function Arguments</th>
-    </tr>
-    <tr>
-        <th>Arguments</th>
-        <th>What it means</tr>
-    </tr>
-    <tr>
-        <td>prompt</td>
-        <td>
-            The text displayed in the input box.
-        </td>
-    </tr>
-    <tr>
-        <td>Title</td>
-        <td>
-            The text displayed in the input box’s title bar (optional).
-        </td>
-    </tr>
-    <tr>
-        <td>Default</td>
-        <td>
-            The default value for the user’s input (optional)
-        </td>
-    </tr>
-</table>
 
 ## An InputBox example
 
