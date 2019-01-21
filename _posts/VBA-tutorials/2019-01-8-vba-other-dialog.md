@@ -30,6 +30,7 @@ object.GetOpenFilename ([fileFilter], [filterIndex], [title],[buttonText], [mult
 
 The GetOpenFilename method takes the optional arguments shown in below Table.
 
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetOpenFilename method Arguments</th>
@@ -68,6 +69,17 @@ The GetOpenFilename method takes the optional arguments shown in below Table.
         <td>If True, the user can select multiple files.</td>
     </tr>
 </table>
+-->
+
+|Arguments|What it does|
+|--- |--- |
+|FileFilter|Determines the types of files that appear in the dialog box (for example, *.TXT). 
+            You can specify several different filters from which the user can choose.|
+|FilterIndex|Determines which of the file filters the dialog box displays by default.|
+|Title|Specifies the caption for the dialog box’s title bar.|
+|ButtonText|Ignored|
+|MultiSelect|If True, the user can select multiple files.|
+
 
 ## A GetOpenFilename example
 
@@ -161,6 +173,7 @@ object.GetSaveAsFilename ([InitialFilename], [FileFilter], [FilterIndex], [Title
 
 The *GetSaveAsFilename* method takes below arguments, all of which are optional.
 
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetSaveAsFilename method Arguments</th>
@@ -193,6 +206,16 @@ The *GetSaveAsFilename* method takes below arguments, all of which are optional.
         </td>
     </tr>
 </table>
+-->
+
+|Arguments|What it does|
+|--- |--- |
+|InitialFileName|Specifies a default filename that appears in the File Name box.|
+|FileFilter|Determines the types of files that appear in the dialog box (for example, *.TXT). 
+            You can specify several different filters from which the user can choose.|
+|FilterIndex|Determines which of the file filters the dialog box displays by default.|
+|Title|Specifies the caption for the dialog box’s title bar.|
+
 
 # Getting a Folder Name
 

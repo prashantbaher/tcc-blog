@@ -75,6 +75,7 @@ Below table indicates the various tools, as well as their capabilities.
 
 To determine which tool is which, hover your mouse pointer over the control and read the small pop-up description.
 
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">ToolBox Control</th>
@@ -148,6 +149,25 @@ To determine which tool is which, hover your mouse pointer over the control and 
         <td>Allows the user to select a range.</td>
     </tr>
 </table>
+-->
+
+|Controls|What it does|
+|--- |--- |
+|Label|Shows text|
+|TextBox|Determines which of the file filters the dialog box displays by default.|
+|ComboBox|Display a drop-down list.|
+|ListBox|Display a list of items.|
+|CheckBox|Useful for On/off or Yes/No options.|
+|OptionButton|Used in groups; allows the user to select one of several options.|
+|ToggleButoon|A button that is either on or off.|
+|Frame|A container for other control.|
+|CommandButton|A clickable button.|
+|TabStrip|Display Tabs|
+|MultiPage|A tabbed container for other objects.|
+|ScrollBar|A draggable bar.|
+|SpinButton|A clickable button often used for changing a value.|
+|Image|Contains an image|
+|RefEdit|Allows the user to select a range.|
 
 ## Changing properties for a UserForm control
 
