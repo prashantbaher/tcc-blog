@@ -49,6 +49,18 @@ We use:
 
 * *Google Analytics* – [Privacy Policy](https://www.google.com/policies/technologies/) owned by **Google**.
 
+# Advertisements
+
+We fund our website by showing advertisements as you browse our website. 
+
+These advertisements are usually managed by a partner specializing in providing advertisements for multiple websites. 
+
+Invariably these partners place cookies to collect anonymous data about the website you visit so they can personalize the advertisements to you, ensure that you don’t see the same advertisement too frequently and ultimately report to advertisers on which advertisements are working.
+
+We use:
+
+* [PropellerAds](https://publishers.propellerads.com/#/pub/auth/signUp?refId=Zm6e)
+
 # Turning Cookies Off
 
 You can usually `switch cookies off` by adjusting your browser settings to stop it from accepting cookies. Your browser `help` function will tell you how. 
