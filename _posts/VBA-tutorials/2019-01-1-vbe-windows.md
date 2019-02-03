@@ -122,7 +122,9 @@ To open it again, just double-click the appropriate object in the Project window
 In general, a `VBA module` can hold **three** types of code:
 
 1. **Declaration**: One or more information statement that you provide to `VBA`. For example, you can declare the data type for variables you plan to use, or set some other module-wide options.
+
 2. **Sub procedures:** A set of programming instructions that performs some actions.
+
 3. **Function procedures:** A set of programming instructions that returns a single value.
 
 A single `VBA module` can store any number of `Sub procedures`, `Function procedure` and `declaration`. 
@@ -138,7 +140,9 @@ An empty `VBA module` is like a **fake** food you see in the advertisements. It 
 Before you can do anything meaningful, you must have some `VBA code` in the `VBA module`. You can insert VBA code into VBA module in three ways:
 
 1. Insert code directly into code window.
+
 2. Use the macro recorder to record your actions and convert them into VBA code.
+
 3. Copy the code from one module and paste it into another module.
 
 ### Entering code directly into a module
