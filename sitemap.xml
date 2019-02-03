@@ -9,77 +9,197 @@
 
 <url>
   <loc>https://thecadcoder.com/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/VBA-tutorials/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/Solidworks-macros/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/Disclaimer/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/about/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://thecadcoder.com/visual-basic/vba-variables</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <loc>https://thecadcoder.com/solidworks-macros/open-new-document</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://thecadcoder.com/visual-basic/vba-programming-concepts-comments-and-datatypes</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <loc>https://thecadcoder.com/visual-basic/vba-userform</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://thecadcoder.com/visual-basic/vba-declaring-and-scoping-of-variables</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <loc>https://thecadcoder.com/visual-basic/vba-other-dialog</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://thecadcoder.com/visual-basic/vba-executing-procedures</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <loc>https://thecadcoder.com/visual-basic/vba-msgBox-function</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://thecadcoder.com/visual-basic/vba-sub-and-function-procedure</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <loc>https://thecadcoder.com/visual-basic/vba-inputbox-function</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/page2/</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/page3/</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/page4/</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/page5/</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/page6/</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/visual-basic/vba-introduction</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/visual-basic/vbe-editor</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/visual-basic/vbe-windows</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-sub-and-function-procedure</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-executing-procedures</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-programming-concepts-comments-and-datatypes</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-variables</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-declaring-and-scoping-of-variables</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-variable-scope</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-publc-stattic-variable-life</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-constant</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-string-basic</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-assignment-statement-and-operator</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-arrays</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-functions</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-more-function</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-controlling-flow-making-desicions</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-if-then-structure-select-case</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-looping</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-bug-finding</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-debugger</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-bug-reduction-tips</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thecadcoder.com/visual-basic/vba-dialog-boxes</loc>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://thecadcoder.com/solidworks-macros/vba-in-solidworks</loc>
-  <lastmod>2019-01-18T16:32:44+00:00</lastmod>
+  <lastmod>2019-02-03T06:39:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
