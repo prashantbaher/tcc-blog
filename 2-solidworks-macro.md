@@ -29,3 +29,6 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 
 * [VBA in Solidworks](/solidworks-macros/vba-in-solidworks)
 
+* [Open new Part document](/solidworks-macros/open-new-document)
+
+
