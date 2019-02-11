@@ -16,19 +16,9 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <script type="text/javascript" language="javascript">
-      var aax_size='728x90';
-      var aax_pubname = 'thecadcoder-21';
-      var aax_src='302';
-    </script>
-    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+    {%- include amazon-us-native-ad.html -%}
     {{ content }}
-    <script type="text/javascript" language="javascript">
-      var aax_size='728x90';
-      var aax_pubname = 'thecadcoder-21';
-      var aax_src='302';
-    </script>
-    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+    {%- include amazon-us-native-ad.html -%}
   </div>
 
   {%- if site.disqus.shortname -%}
