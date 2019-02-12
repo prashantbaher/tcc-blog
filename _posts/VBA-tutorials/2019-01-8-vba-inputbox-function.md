@@ -56,7 +56,6 @@ The InputBox function accepts the arguments listed in below.
 |Title|The text displayed in the input box’s title bar (optional).|
 |Default|The default value for the user’s input (optional)|
 
-{%- include amazon-audible-promotion.html -%}
 
 ## An InputBox example
 
@@ -76,6 +75,8 @@ When the user enters a value and clicks `OK`, the routine assigns the value to t
 ![A-Simple-Message-Box](/assets/vba-images/Dialog Boxes/InputBox dialog box.PNG)
 
 Please note that VBA’s *InputBox function* always returns a `string`, so if you need to get a value, your code will need to do some additional checking. 
+
+{%- include amazon-audible-promotion.html -%}
 
 The following example uses the *InputBox function* to get a number. 
 

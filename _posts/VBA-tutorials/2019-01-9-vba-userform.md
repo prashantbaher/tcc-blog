@@ -59,6 +59,8 @@ Below figure shows a UserForm — an empty dialog box with some controls in Tool
 
 ![Empty-userform-object](/assets/vba-images/Userforms/1. A new userform object.PNG)
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Adding controls to a UserForm
 
 When you activate a UserForm, the VBE displays the Toolbox in a floating window, as shown in above figure. 
@@ -168,8 +170,6 @@ To determine which tool is which, hover your mouse pointer over the control and 
 |SpinButton|A clickable button often used for changing a value.|
 |Image|Contains an image|
 |RefEdit|Allows the user to select a range.|
-
-{%- include amazon-audible-promotion.html -%}
 
 ## Changing properties for a UserForm control
 

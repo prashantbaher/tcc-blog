@@ -19,6 +19,8 @@ This method simply returns the user-selected filename as a `string`.
 
 Then you can write code to do whatever you want with the filename.
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Syntax for the GetOpenFilename method
 
 The official syntax for the **GetOpenFilename** method is as follows:
@@ -79,8 +81,6 @@ The GetOpenFilename method takes the optional arguments shown in below Table.
 |Title|Specifies the caption for the dialog box’s title bar.|
 |ButtonText|Ignored|
 |MultiSelect|If True, the user can select multiple files.|
-
-{%- include amazon-audible-promotion.html -%}
 
 ## A GetOpenFilename example
 
@@ -217,8 +217,6 @@ The *GetSaveAsFilename* method takes below arguments, all of which are optional.
 |FilterIndex|Determines which of the file filters the dialog box displays by default.|
 |Title|Specifies the caption for the dialog box’s title bar.|
 
-{%- include amazon-audible-promotion.html -%}
-
 # Getting a Folder Name
 
 Sometimes, you don’t need to get a filename; you just need to get a folder name. 
@@ -228,6 +226,8 @@ If that’s the case, the *FileDialog* object is just what the doctor ordered.
 The following procedure displays a dialog box that allows the user to select a directory. 
 
 The selected directory name (or “Canceled”) is then displayed by using the `MsgBox` function.
+
+{%- include amazon-audible-promotion.html -%}
 
 ```vb
 ' FileDialog example
