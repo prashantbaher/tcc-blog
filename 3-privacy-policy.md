@@ -53,18 +53,16 @@ We use:
 
 We fund our website by showing advertisements as you browse our website. 
 
-These advertisements are usually managed by a partner specializing in providing advertisements for multiple websites. 
+These advertisements are usually managed by a partner specializing in providing advertisements. 
 
-Invariably these partners place cookies to collect anonymous data about the website you visit so they can personalize the advertisements to you, ensure that you don’t see the same advertisement too frequently and ultimately report to advertisers on which advertisements are working.
+Invariably this partners place cookies to collect anonymous data about the website you visit so they can personalize the advertisements to you, ensure that you don’t see the same advertisement too frequently and ultimately report to advertisers on which advertisements are working.
 
 We use:
 
-* [PropellerAds](https://publishers.propellerads.com/#/pub/auth/signUp?refId=Zm6e)
+* [Amazon](https://www.amazon.com/)
 
 # Turning Cookies Off
 
 You can usually `switch cookies off` by adjusting your browser settings to stop it from accepting cookies. Your browser `help` function will tell you how. 
 
 Doing so however will `limit the functionality` of most of the world's websites as cookies are a standard part of websites.
-
-
