@@ -56,6 +56,8 @@ The InputBox function accepts the arguments listed in below.
 |Title|The text displayed in the input box’s title bar (optional).|
 |Default|The default value for the user’s input (optional)|
 
+{%- include amazon-audible-promotion.html -%}
+
 ## An InputBox example
 
 Here’s an example showing how you can use the *InputBox* function:

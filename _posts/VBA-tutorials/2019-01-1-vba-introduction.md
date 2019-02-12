@@ -19,6 +19,8 @@ When you want the robot to do something in *SOLIDWORKS*, you write up a set of r
 
 Tell the robot to follow your instruction, while you sit back and take some rest. That’s kind of what `VBA` is all about.
 
+{%- include amazon-audible-promotion.html -%}
+
 ## What can you do with VBA?
 
 You know that people use different *CAD softwares*, not just *SOLIDWORKS*, for different tasks. 

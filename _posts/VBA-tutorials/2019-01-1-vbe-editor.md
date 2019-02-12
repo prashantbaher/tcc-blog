@@ -33,6 +33,8 @@ You also find that many of the menu commands have shortcut keys associated with 
 
 The `VBE` also features shortcut menus. You can *right-click* virtually anything in the `VBE` and get a shortcut menu of common commands.
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Tool Bar
 
 The `Standard toolbar`, which is directly under the menu bar by default (refer to above figure), is one of four `VBE` toolbars available. You can customize the toolbars. 

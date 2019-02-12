@@ -68,6 +68,8 @@ Sub StringLength()
 End Sub
 ```
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Displaying the integer part of a number
 
 The following procedure uses the `Fix` function, which returns the integer portion of a value — *the value without any decimal digits*: 

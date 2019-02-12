@@ -65,6 +65,8 @@ You can execute a `Function procedure` from another procedure (a `Sub` or anothe
 
 > Please note that no matter how hard you try, you can’t use the macro recorder to record a Function procedure. You must manually enter every Function procedure that you create.
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Naming Subs and Functions
 
 Like humans & pets, every `Sub` and `Function` procedure must have a name. 

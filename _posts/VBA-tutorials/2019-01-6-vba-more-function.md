@@ -46,6 +46,8 @@ Below table lists them.
     </tr>
 </table>
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Discovering VBA functions
 
 How do we find out which function does VBA provides? 

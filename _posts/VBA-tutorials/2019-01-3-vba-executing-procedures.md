@@ -67,6 +67,8 @@ You can’t use the `Run -> Run Sub/UserForm` command to execute a `Sub procedur
 
 If the procedure contains *one* or *more arguments*, the only way to execute it is to call it from `another procedure` — which must supply the argument(s).
 
+{%- include amazon-audible-promotion.html -%}
+
 ### Executing the Sub procedure from another procedure
 
 You can also execute a `Sub procedure` from another procedure. 

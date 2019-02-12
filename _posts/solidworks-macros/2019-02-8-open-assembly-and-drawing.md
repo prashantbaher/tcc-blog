@@ -91,6 +91,8 @@ Sub main()
 End Sub
 ```
 
+{%- include amazon-audible-promotion.html -%}
+
 ---
 
 ## Open Solidworks Drawing Document with Default Paper size
@@ -160,6 +162,8 @@ Sub main()
 
 End Sub
 ```
+
+{%- include amazon-audible-promotion.html -%}
 
 For *custom paper size*, we need to use `swDwgPaperSizes_e.swDwgPapersUserDefined` value of paper size.
 

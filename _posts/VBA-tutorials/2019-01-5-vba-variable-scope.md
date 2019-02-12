@@ -60,6 +60,8 @@ If you declare a variable with *procedure-only* scope, other procedures in the s
 
 > In general, variables declared at the *procedure level* are the most efficient because **VBA** frees up the memory they use when the procedure ends.
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Module-only Variables
 
 Sometimes, you want a *variable* to be available to *all procedures* in a module. 

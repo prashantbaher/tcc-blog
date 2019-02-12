@@ -80,6 +80,7 @@ The GetOpenFilename method takes the optional arguments shown in below Table.
 |ButtonText|Ignored|
 |MultiSelect|If True, the user can select multiple files.|
 
+{%- include amazon-audible-promotion.html -%}
 
 ## A GetOpenFilename example
 
@@ -216,6 +217,7 @@ The *GetSaveAsFilename* method takes below arguments, all of which are optional.
 |FilterIndex|Determines which of the file filters the dialog box displays by default.|
 |Title|Specifies the caption for the dialog box’s title bar.|
 
+{%- include amazon-audible-promotion.html -%}
 
 # Getting a Folder Name
 

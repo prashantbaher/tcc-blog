@@ -45,6 +45,8 @@ At some point in your routine, you insert the following statement:
 myDimnsion = 11
 ```
 
+{%- include amazon-audible-promotion.html -%}
+
 This misspelled *variable*, which is difficult to spot, will probably cause your routine to give incorrect results. 
 
 If you use `Option Explicit` at the beginning of your module (forcing you to declare the `myDimension` variable), `VBE` generates an error if it encounters a misspelled variation of that variable.

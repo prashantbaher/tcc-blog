@@ -56,6 +56,8 @@ myString = "He said, ""Look at this example!"" "
 
 In the preceding example, the *two quotation marks* before and after the word `Look` become *one quotation mark* in the string. 
 
+{%- include amazon-audible-promotion.html -%}
+
 ## The Immutability of Strings
 
 A string is *immutable*, which means its value cannot be changed once it has been created. 

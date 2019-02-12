@@ -120,6 +120,8 @@ Sub GoodMorning6()
 End Sub
 ```
 
+{%- include amazon-audible-promotion.html -%}
+
 ## If-ElseIf-Else examples
 
 In the previous examples, every statement in the routine is executed — even in the morning. 

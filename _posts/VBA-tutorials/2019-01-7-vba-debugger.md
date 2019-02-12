@@ -76,6 +76,8 @@ For example, you can change the value of a variable, try for a new condition.
 
 Just make sure that the command you enter is a valid VBA statement.
 
+{%- include amazon-audible-promotion.html -%}
+
 ### Stepping through your code
 
 While in *Break mode*, you can also step through your code line by line. 

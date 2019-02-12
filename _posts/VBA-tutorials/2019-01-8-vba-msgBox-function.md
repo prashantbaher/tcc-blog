@@ -125,6 +125,8 @@ Sub GetAnswer2()
 End Sub
 ```
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Customizing message boxes
 
 The flexibility of the buttons argument makes it easy to customize your message boxes. 

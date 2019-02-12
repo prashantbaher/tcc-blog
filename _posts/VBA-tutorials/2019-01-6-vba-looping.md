@@ -63,6 +63,8 @@ Count starts out as 1 and then takes on a value of 3, 5, 7, and 9. The final Cou
 
 The Step value determines how the counter is *incremented*. Notice that the upper loop value (9) is not used because the highest value of Count after 9 would be 11, and 11 is larger than 10. 
 
+{%- include amazon-audible-promotion.html -%}
+
 ### For-Next example with an Exit For statement 
 
 A `For-Next` loop can also include one or more `Exit For` statements within the loop. 
@@ -202,6 +204,8 @@ Therefore, at a minimum, the `Do-Loop` Until loop always results in the body of 
 Another way to think about it is like this: The `Do-While` loop keeps looping as long as the condition is true. 
 
 The `Do-Until` loop keeps looping as long as the condition is False. 
+
+{%- include amazon-audible-promotion.html -%}
 
 # Looping through a Collection
 

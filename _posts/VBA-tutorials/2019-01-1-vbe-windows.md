@@ -57,6 +57,8 @@ Or
 
 And in most cases, you don’t want to export. If you do want to export the code, please see next section.
 
+{%- include amazon-audible-promotion.html -%}
+
 ### Exporting and Importing of objects
 
 Every object in a `VBA project` can be saved to a separate file. Saving an individual object in a project is known as `Exporting`. 
@@ -144,6 +146,8 @@ Before you can do anything meaningful, you must have some `VBA code` in the `VBA
 2. Use the macro recorder to record your actions and convert them into VBA code.
 
 3. Copy the code from one module and paste it into another module.
+
+{%- include amazon-audible-promotion.html -%}
 
 ### Entering code directly into a module
 

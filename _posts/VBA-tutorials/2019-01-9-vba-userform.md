@@ -169,6 +169,8 @@ To determine which tool is which, hover your mouse pointer over the control and 
 |Image|Contains an image|
 |RefEdit|Allows the user to select a range.|
 
+{%- include amazon-audible-promotion.html -%}
+
 ## Changing properties for a UserForm control
 
 Every control you add to a UserForm has a number of properties that determine how the control looks or behaves. 
@@ -237,6 +239,8 @@ When Solidworks displays the dialog box, the `ShowDialogBox` macro halts until t
 Then VBA executes any remaining statements in the procedure. 
 
 Most of the time, you won’t have any more code in the procedure.
+
+{%- include amazon-audible-promotion.html -%}
 
 ## Using information from a UserForm
 

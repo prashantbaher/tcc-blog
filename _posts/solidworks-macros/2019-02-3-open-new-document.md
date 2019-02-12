@@ -76,6 +76,9 @@ In this line, we are creating a variable which we named as `swApp` and the type 
 
 If we **omit** 1 `SldWorks`, then our *VBE* show error if we try to run this macro.
 
+<!-- Amazon ad for audible -->
+{%- include amazon-audible-promotion.html -%}
+
 ```vb
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
@@ -138,6 +141,8 @@ So our function `GetUserPreferenceStringValue()` needs some constant value from 
 Since we want *Default part template*, we use `swDefaultTemplatePart` constant value from the `swUserPreferenceStringValue_e` enum list.
 
 > Please note that there are lots of values inside this enum list. You can see these values from this [link](http://help.solidworks.com/2019/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html)].
+
+{%- include amazon-audible-promotion.html -%}
 
 Now we just need to set the value of our `swDoc` variable to new document. We set the value as shown in below code snippet.
 

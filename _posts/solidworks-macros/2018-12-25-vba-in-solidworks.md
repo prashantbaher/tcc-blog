@@ -52,6 +52,8 @@ This option includes same buttons as described in `Menu based method`.
 
 Description and Functions of each button is given below.
 
+{%- include amazon-audible-promotion.html -%}
+
 ### New Macro Button ![new_macro_button-3](/assets/Solidworks_Images/VBA in solidworks/Icon images/new_macro_button_image.PNG)
 
 You can create a `new macro` by this button and then program the macro in VBA.
@@ -87,6 +89,8 @@ To record a macro:
 3. When you are done, click **Stop Macro** Button ![stop_macro_button-3](/assets/Solidworks_Images/VBA in solidworks/Icon images/stop_macro_button.PNG) (Macro toolbar), or click **Tools -> Macro -> Stop**.
 
 In the dialog box, type a name for File name and click Save. (The `.swp` extension is automatically added to the filename.)
+
+{%- include amazon-audible-promotion.html -%}
 
 ### Run Macro Button ![run_macro_button](/assets/Solidworks_Images/VBA in solidworks/Icon images/run_macro_button.PNG)
 
