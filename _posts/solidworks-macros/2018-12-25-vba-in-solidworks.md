@@ -52,7 +52,6 @@ This option includes same buttons as described in `Menu based method`.
 
 Description and Functions of each button is given below.
 
-
 {%- include amazon-audible-promotion.html -%}
 
 ### New Macro Button ![new_macro_button-3](/assets/Solidworks_Images/VBA in solidworks/Icon images/new_macro_button_image.PNG)
