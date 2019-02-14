@@ -25,9 +25,9 @@ I am a `CAD engineer` and working on `Solidworks` software.
 
 A few years ago, I want to *automate* my repetitive tasks. So I was looking for resources for creating `VBA` macros.
 
-I started with *recording macros* but soon I realized its limitation. Then was again looking for tutorials on creating macros from scratch.
+I started with *recording macros* but soon I realized its limitation. Then I started looking for tutorials on creating macros from scratch.
 
-I found some tutorials on websites but they are not much help.
+I found some tutorials on websites but they are not much helpful.
 
 After browsing these websites and tutorials I found that I need to learn 2 things for creating macros from scratch.
 
@@ -71,7 +71,9 @@ I also watched `WPF tutorials` from his [YouTube](http://www.angelsix.com/youtub
 
 As you can see, it is a **very long journey** for me to learn macros and add-in for Solidworks.
 
-Because of this, I thought why not started a blog about `VBA macro` tutorial learning for other to learn.
+Because of this, I thought why not share my knowledge and help those who want to learn Macro programming. 
+
+Hence I started a blog about `VBA macro` tutorial learning.
 
 Before this blog, I had a similar blog named [Solidworkmacrotutorials](https://solidworkmacrotutorial.blogspot.com/). 
 
@@ -82,3 +84,5 @@ I posted tutorials on `VBA programming` but I did not post more tutorials on `So
 I gave my time in finding a suitable replacement for that blog and then I started this blog.
 
 I hope you enjoy learning from these tutorials and create macros from your own.
+
+If you have any question you can e-mail at below given e-mail id.
