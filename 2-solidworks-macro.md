@@ -32,3 +32,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Open new Part document](/solidworks-macros/open-new-document)
 
 * [Open Assembly and Drawing document](/solidworks-macros/open-assembly-and-drawing)
+
+* [Selection Methods](/solidworks-macros/select-plane-from-tree)
