@@ -34,3 +34,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Open Assembly and Drawing document](/solidworks-macros/open-assembly-and-drawing)
 
 * [Selection Methods](/solidworks-macros/select-plane-from-tree)
+
+* [Open Saved Documents](/solidworks-macros/open-saved-document)
