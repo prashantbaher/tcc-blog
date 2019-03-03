@@ -229,7 +229,7 @@ If we want to select **Right Plane** then we just need to replace `"Front Plane"
 
 Similar for selecting **Top Plane**, we need to replace `"Front Plane"` -> `"Top Plane"` in previous code sample.
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ### Using SelectByID2 method in an Open document
 
