@@ -94,6 +94,8 @@ For most of the part, `OpenDoc` method works well.
 
 If you want more option while opening a document, then next method is for you.
 
+{%- include amazon-audible-promotion.html -%}
+
 ---
 
 ## By OpenDoc6 method
@@ -200,3 +202,5 @@ Hope this post helps you to understand opening methods with Solidworks VB Macros
 For more such tutorials on Solidworks VBA Macros, do come to this blog after sometime.
 
 Till then, Happy learning!!!
+
+{%- include amazon-audible-promotion.html -%}
