@@ -36,3 +36,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Selection Methods](/solidworks-macros/select-plane-from-tree)
 
 * [Open Saved Documents](/solidworks-macros/open-saved-document)
+
+* [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
