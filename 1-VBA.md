@@ -1,7 +1,7 @@
 ---
 layout: page
-title: VBA Tutorial Guide 
-permalink: /VBA-tutorials-guide/
+title: VBA Tutorial 
+permalink: /VBA-guide/
 ---
 
 This page contains the list of all ***Visual Basic for Application tutorial guides***.

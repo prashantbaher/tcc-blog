@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Solidworks Macros Guide
-permalink: /Solidworks-macros/
+title: Solidworks Macros
+permalink: /Solidworks-macros-guide/
 ---
 
 `Visual Basic for Application` or `VBA` macros is easiest way to start with programming in *Solidworks*. 
