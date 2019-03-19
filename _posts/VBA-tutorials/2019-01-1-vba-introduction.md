@@ -1,6 +1,6 @@
 ---
 categories: Visual-Basic
-title: VBA Introduction
+title: Visual Basic for Application Introduction
 ---
 
 To understand `Visual Basic for Application`, lets look at the following *questions*.

@@ -1,10 +1,10 @@
 ---
 layout: page
-title: VBA tutorials
-permalink: /VBA-tutorials/
+title: VBA Tutorial Guide 
+permalink: /VBA-tutorials-guide/
 ---
 
-This page contains the list of all `VBA tutorial` posts.
+This page contains the list of all ***Visual Basic for Application tutorial guides***.
 
 If you are a total beginner, then follow the list accordingly otherwise you can directly jump to selected topics.
 
@@ -24,13 +24,13 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 -->
 
 
-* [VBA Introduction](/visual-basic/vba-introduction)
+* [Visual Basic for Application Introduction](/visual-basic/vba-introduction)
 
 * [Visual Basic Editor (VBE)](/visual-basic/vbe-editor)
 
-* [VBE Windows](/visual-basic/vbe-windows)
+* [Visual Basic Editor Windows](/visual-basic/vbe-windows)
 
-* [Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure)
+* [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure)
 
 * [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures)
 
