@@ -76,7 +76,7 @@ For example, you can change the value of a variable, try for a new condition.
 
 Just make sure that the command you enter is a valid VBA statement.
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ### Stepping through your code
 
@@ -113,7 +113,9 @@ To create a watch expression, choose **Debug -> Add Watch** to display the Add W
 The Add Watch dialog has three parts:
 
 * *Expression*: Enter a valid VBA expression or a variable here. For example, `AnyNumber=900` or just `AnyNumber`.
+
 * *Context*: Select the procedure and the module you want to watch. Note that you can select All Procedures and All Modules.
+
 * *Watch Type*: Select the type of watch by clicking an option button. Your choice here depends on the expression you enter. The first choice, Watch Expression, does not cause a break; it simply displays the expression’s value when a break occurs.
 
 Execute your procedure after setting up your watch expression(s). 

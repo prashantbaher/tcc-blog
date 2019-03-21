@@ -21,9 +21,12 @@ When you write non-trivial VBA programs, your code probably will have bugs.
 
 This is a fact of life and not necessarily a reflection of your programming ability. The bugs may fall into any of the following categories: 
 
-* *Logical flaws in your code*: You can often avoid these bugs by carefully thinking through the problem your program addresses. 
+* *Logical flaws in your code*: You can often avoid these bugs by carefully thinking through the problem your program addresses.
+
 * *Incorrect context bugs*: This type of bug surfaces when you attempt to do something at the wrong time. For example, you may try to update the sketch dimension and there are no sketch is activated. 
+
 * *Extreme-case bugs*: These bugs rear their heads when you encounter data you didn’t anticipate, such as very large or very small numbers. 
+
 * *Wrong data types bugs*: This type of bug occurs when you try to process data of the wrong type, such as attempting to take the square root of a text string. 
 
 **Debugging** is the process of identifying and correcting bugs in your program. 
@@ -78,7 +81,7 @@ At times like that, you are lucky if you can even see your code.
 
 Thus, don’t be surprised if simply examining your code isn’t enough to make you find and expunge all the bugs it contains. 
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## Using the MsgBox function
 

@@ -106,7 +106,7 @@ The following tips can help you make effective use of comments:
 * Write *comments* as you develop code, instead of saving the task for a final step.
 * Depending on your work environment, consider adding a joke or two as a comment. The person who takes over your job when you get promoted might appreciate the humour.
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## Data types in VBA
 

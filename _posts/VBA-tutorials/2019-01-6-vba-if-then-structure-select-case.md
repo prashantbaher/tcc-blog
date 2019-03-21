@@ -120,7 +120,7 @@ Sub GoodMorning6()
 End Sub
 ```
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## If-ElseIf-Else examples
 

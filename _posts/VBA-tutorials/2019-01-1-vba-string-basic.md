@@ -56,7 +56,7 @@ myString = "He said, ""Look at this example!"" "
 
 In the preceding example, the *two quotation marks* before and after the word `Look` become *one quotation mark* in the string. 
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## The Immutability of Strings
 

@@ -45,7 +45,7 @@ At some point in your routine, you insert the following statement:
 myDimnsion = 11
 ```
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 This misspelled *variable*, which is difficult to spot, will probably cause your routine to give incorrect results. 
 

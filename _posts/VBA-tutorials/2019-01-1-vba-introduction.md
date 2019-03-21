@@ -19,7 +19,7 @@ When you want the robot to do something in *SOLIDWORKS*, you write up a set of r
 
 Tell the robot to follow your instruction, while you sit back and take some rest. That’s kind of what `VBA` is all about.
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## What can you do with VBA?
 

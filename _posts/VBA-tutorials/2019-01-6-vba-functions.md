@@ -68,7 +68,7 @@ Sub StringLength()
 End Sub
 ```
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## Displaying the integer part of a number
 

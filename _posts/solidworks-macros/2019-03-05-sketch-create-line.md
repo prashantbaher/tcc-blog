@@ -80,7 +80,7 @@ Dim swApp As SldWorks.SldWorks
 In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
 <!-- Amazon ad for audible -->
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ```vb
 ' Creating variable for Solidworks document
@@ -114,7 +114,7 @@ In 2nd line of above example. we assign value to our newly define `defaultTempla
 We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. This method is a part of our main Solidworks variable `swApp`.
 
 <!-- Amazon ad for audible -->
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ```vb
 ' Setting Solidworks document to new part document
@@ -167,7 +167,7 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 This method allows us to insert a sketch in selected plane.
 
 <!-- Amazon ad for audible -->
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ```vb
 ' Creating Variable for Solidworks Sketch segment
@@ -240,4 +240,4 @@ For more such tutorials on **Solidworks VBA Macros**, do come to this blog after
 
 Till then, Happy learning!!!
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}

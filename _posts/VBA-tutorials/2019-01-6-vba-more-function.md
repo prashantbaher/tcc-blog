@@ -46,7 +46,7 @@ Below table lists them.
     </tr>
 </table>
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 ## Discovering VBA functions
 

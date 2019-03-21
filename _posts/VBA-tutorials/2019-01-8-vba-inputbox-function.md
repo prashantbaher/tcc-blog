@@ -76,7 +76,7 @@ When the user enters a value and clicks `OK`, the routine assigns the value to t
 
 Please note that VBA’s *InputBox function* always returns a `string`, so if you need to get a value, your code will need to do some additional checking. 
 
-{%- include amazon-audible-promotion.html -%}
+{%- include amazon-us-native-ad.html -%}
 
 The following example uses the *InputBox function* to get a number. 
 
