@@ -6,7 +6,9 @@ title: Public, Static and Variable's Life
 In the following sections we will discussed about following topics: 
 
 1. Public Variables
+
 2. Static Variables
+
 3. Life of Variables
 
 Let's look at them one by one.
@@ -42,7 +44,9 @@ The scope of a variable not only determines where that variable may be used, it 
 You can *purge* (remove) all variables from memory by using three methods:
 
 * Click the *Reset* toolbar button (the *little blue* square button on the *Standard* toolbar in previous figure).
+
 * Click `End` when a *runtime error* message dialog box shows up.
+
 * Include an `End` statement anywhere in your code. This is not the same as an `End Sub` or `End Function` statement. Generally it is an Exit statement. 
 
 Otherwise, only procedure-level variables will be removed from memory when the *macro code* has completed running.

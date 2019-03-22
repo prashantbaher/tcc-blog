@@ -106,7 +106,7 @@ Thus, if you concatenate strings, you are combining strings to make a new and im
 
 VBA also provides a full set of logical operators. Below table, shows some of logical operators. 
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>

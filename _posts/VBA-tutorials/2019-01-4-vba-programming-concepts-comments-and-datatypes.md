@@ -99,14 +99,20 @@ Otherwise, `comments` just chew up bytes and make files larger than necessary.
 The following tips can help you make effective use of comments:
 
 * Briefly describe the purpose of each `Sub` or `Function` procedure you write.
+
 * Use *comments* to keep track of changes you make to a procedure.
+
 * Use a *comment* to indicate that you’re using a function or a construct in an unusual or nonstandard manner.
+
 * Use *comments* to describe the variables you use, especially if you don’t use meaningful variable names.
+
 * Use a *comment* to describe any workarounds you develop to overcome bugs in your code.
+
 * Write *comments* as you develop code, instead of saving the task for a final step.
+
 * Depending on your work environment, consider adding a joke or two as a comment. The person who takes over your job when you get promoted might appreciate the humour.
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Data types in VBA
 

@@ -19,7 +19,7 @@ This method simply returns the user-selected filename as a `string`.
 
 Then you can write code to do whatever you want with the filename.
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Syntax for the GetOpenFilename method
 
@@ -227,7 +227,7 @@ The following procedure displays a dialog box that allows the user to select a d
 
 The selected directory name (or “Canceled”) is then displayed by using the `MsgBox` function.
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' FileDialog example

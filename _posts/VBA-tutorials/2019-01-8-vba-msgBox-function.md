@@ -57,7 +57,6 @@ MsgBox(prompt[, buttons][, title])
 |buttons|A number that specifies which buttons (along with what icon) appear in the message box (optional)|
 |title|The text that appears in the message box’s title bar (optional) displaying a simple message box|
 
-
 You can use the *MsgBox* function in two ways:
 
 * To simply show a message to the user. In this case, you don’t care about the result returned by the function.
@@ -125,7 +124,7 @@ Sub GetAnswer2()
 End Sub
 ```
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Customizing message boxes
 

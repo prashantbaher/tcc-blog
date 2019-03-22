@@ -77,7 +77,7 @@ In this line, we are creating a variable which we named as `swApp` and the type 
 If we **omit** 1 `SldWorks`, then our *VBE* show error if we try to run this macro.
 
 <!-- Amazon ad for audible -->
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Creating variable for Solidworks document
@@ -142,7 +142,7 @@ Since we want *Default part template*, we use `swDefaultTemplatePart` constant v
 
 > Please note that there are lots of values inside this enum list. You can see these values from this [link](http://help.solidworks.com/2019/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html)].
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 Now we just need to set the value of our `swDoc` variable to new document. We set the value as shown in below code snippet.
 

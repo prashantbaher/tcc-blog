@@ -81,7 +81,7 @@ At times like that, you are lucky if you can even see your code.
 
 Thus, don’t be surprised if simply examining your code isn’t enough to make you find and expunge all the bugs it contains. 
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Using the MsgBox function
 

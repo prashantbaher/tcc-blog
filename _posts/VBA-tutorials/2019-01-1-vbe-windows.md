@@ -57,7 +57,7 @@ Or
 
 And in most cases, you don’t want to export. If you do want to export the code, please see next section.
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Exporting and Importing of objects
 

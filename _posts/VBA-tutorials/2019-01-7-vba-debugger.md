@@ -76,7 +76,7 @@ For example, you can change the value of a variable, try for a new condition.
 
 Just make sure that the command you enter is a valid VBA statement.
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Stepping through your code
 
@@ -131,7 +131,6 @@ When you create a watch, VBE displays the Watches window shown in below figure.
 This window displays the value of all watches that you’ve defined. 
 
 In this figure, when the value hit `800`, which caused VBE to enter Break mode.
-
 
 ![Watch-window-dialog-box-with-all-watches](/assets/vba-images/Bug Finding & Debugging techniques/4. Watch window dialog box with all watches.PNG)
 

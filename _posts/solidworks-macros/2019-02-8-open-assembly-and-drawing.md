@@ -91,7 +91,7 @@ Sub main()
 End Sub
 ```
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 ---
 
@@ -163,7 +163,7 @@ Sub main()
 End Sub
 ```
 
-{%- include amazon-us-native-ad.html -%}
+<!--{%- include amazon-us-native-ad.html -%}-->
 
 For *custom paper size*, we need to use `swDwgPaperSizes_e.swDwgPapersUserDefined` value of paper size.
 
