@@ -240,4 +240,6 @@ For more such tutorials on **Solidworks VBA Macros**, do come to this blog after
 
 Till then, Happy learning!!!
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_55_hUzYsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <!--{%- include amazon-us-native-ad.html -%}-->
