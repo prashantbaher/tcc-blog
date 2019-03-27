@@ -10,7 +10,7 @@ title: VBA in Solidworks
 
 Please see below video for visual details.
 
-<div>
+<div class="w3-mobile">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/7RAl7sTv3bA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  </div>
 
