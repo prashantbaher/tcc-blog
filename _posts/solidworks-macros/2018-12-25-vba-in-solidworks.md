@@ -8,6 +8,12 @@ title: VBA in Solidworks
 1. Menu based method
 2. Toolbar method
 
+Please see below video for visual details.
+
+<div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7RAl7sTv3bA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+
 ## Menu Base Method
 
 To open `VBA window`, go `Tools` in menu bar. Then go to `Macro`. When you click `Macro` you found 5 options or button. (Menu bar -> Tool -> Macro)
