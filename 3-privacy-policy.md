@@ -49,6 +49,7 @@ We use:
 
 * *Google Analytics* – [Privacy Policy](https://www.google.com/policies/technologies/) owned by **Google**.
 
+<!--
 # Advertisements
 
 We fund our website by showing advertisements as you browse our website. 
@@ -60,6 +61,7 @@ Invariably this partners place cookies to collect anonymous data about the websi
 We use:
 
 * [Amazon](https://www.amazon.com/)
+-->
 
 # Turning Cookies Off
 
