@@ -38,3 +38,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Open Saved Documents](/solidworks-macros/open-saved-document)
 
 * [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
+
+* [Sketch - Create CenterLines](/solidworks-macros/sketch-create-centerline)
