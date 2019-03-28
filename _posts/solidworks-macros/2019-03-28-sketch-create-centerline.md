@@ -1,17 +1,17 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Sketch Macros - Create Line 
+title:  Solidworks Sketch Macros - Create CenterLine 
 ---
 
-In this post, I tell you about *how to create 2D Line through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create 2D CenterLine through Solidworks VBA Macros* in a sketch.
 
-For this, I take the example from previous [Solidworks Macros - Open Assembly and Drawing document](/solidworks-macros/select-plane-from-tree) post.
+The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
 
-In this post, I tell you about `CreateLine` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCenterLine` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new line.
+So ***use this method*** if you want to create a new **Centerline**.
 
 Below is the `code` sample for creating lines.
 
@@ -54,10 +54,13 @@ Sub main()
     swSketchManager.InsertSketch True
     
     ' Creating an horizontal line
-    Set mySketchSegment = swSketchManager.CreateLine(0, 0, 0, 2, 0, 0)
+    Set mySketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 2, 0)
     
     ' De-select the line after creation
     swDoc.ClearSelection2 True
+
+    ' Zoom to fit screen in Solidworks Window
+    swDoc.ViewZoomtofit
 
 End Sub
 ```
@@ -174,7 +177,7 @@ This method allows us to insert a sketch in selected plane.
 Dim mySketchSegment As SketchSegment
 
 ' Creating an horizontal line
-Set mySketchSegment = swSketchManager.CreateLine(0, 0, 0, 2, 0, 0)
+Set mySketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 2, 0)
 ```
 
 In above sample code, we 1st create a variable named `mySketchSegment` of type `SketchSegment`.
@@ -193,9 +196,9 @@ In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
 
 We get this value from `CreateLine` method which is inside the `swSketchManager` variable.
 
-`swSketchManager` variable is a type of SketchManager, hence we used `CreateLine` method from SketchManager.
+`swSketchManager` variable is a type of SketchManager, hence we used `CreateCenterLine` method from SketchManager.
 
-This `CreateLine` method takes following parameters as explained:
+This `CreateCenterLine` method takes following parameters as explained:
 
 *X1* : X coordinate of the line start point
 
@@ -213,26 +216,37 @@ In the above code sample I have used (0, 0, 0) for start point.
 
 This is origin of sketch hence I start line from origin.
 
-For End point I used (2, 0, 0) which is 2 point distance in X-direction or horizontal direction.
+For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.
 
 ### NOTE
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
 
-Solidworks API does not care about your application's Unit systems.
+*Solidworks API* does not care about your application's Unit systems.
 
-For example, I works in ANSI system means inches for distance. But when I used Solidworks API through VBA macros or C#, I need to use converted numeric values.
+For example, I works in ANSI system means "inches" for distance. 
 
-Because Solidworks API output the distance in **Meter** which is not my requirement.
+But when I used Solidworks API through *VBA macros* or *C#*, I have to use **converted** numeric values.
+
+Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
 ' De-select the line after creation
 swDoc.ClearSelection2 True
 ```
 
-In the last line of code, we de-select the created line.
+In the this line of code, we de-select the created line.
 
-For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
+
+```vb
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit
+```
+
+In this last line we use *zoom to fit* command.
+
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
 Hope this post helps you to *create lines* in Sketches with Solidworks VB Macros.
 
