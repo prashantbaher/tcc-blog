@@ -16,12 +16,9 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    
-    {%- include amazon-native-ad.html -%}
 
     {{ content }}
-
-    {%- include amazon-automatic-solidworks.html -%}
+    
   </div>
 
   {%- if site.disqus.shortname -%}
@@ -30,3 +27,8 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<!--
+{%- include amazon-native-ad.html -%}
+{%- include amazon-automatic-solidworks.html -%}
+-->
