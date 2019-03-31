@@ -120,7 +120,7 @@ To run a macro:
 
 * Edit the macro.
 
-Next post will be about 
+Next post will be about ***Open new Part document using Solidworks macros***.
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
