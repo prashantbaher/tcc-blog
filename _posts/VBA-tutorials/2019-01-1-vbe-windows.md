@@ -147,8 +147,6 @@ Before you can do anything meaningful, you must have some `VBA code` in the `VBA
 
 3. Copy the code from one module and paste it into another module.
 
-{%- include amazon-us-native-ad.html -%}
-
 ### Entering code directly into a module
 
 Sometimes the best route is the most `direct one`. Entering the `code directly` involves, typing the code via your keyboard. 
