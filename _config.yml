@@ -68,7 +68,7 @@ plugins:
  - jekyll-seo-tag
  - jekyll-paginate
 
-paginate: 10
+paginate: 5
 paginate_path: /page:num/
 
 # Defaults for post
