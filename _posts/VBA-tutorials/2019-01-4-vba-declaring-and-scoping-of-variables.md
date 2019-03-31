@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Declaring and Scoping of Variables
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-variables" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 If you read the previous topics, you now know a bit about [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes). 
 
 In this topic, you discover how to **declare** a `variable` as a certain *data type*.

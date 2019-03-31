@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA MsgBox Function
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-dialog-boxes" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-inputbox-function" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 You’re probably already familiar with the VBA `MsgBox` function — I use it quite a bit in the examples. 
 
 The `MsgBox` function, which accepts the arguments shown in below table, is handy for displaying information and getting simple user input. 

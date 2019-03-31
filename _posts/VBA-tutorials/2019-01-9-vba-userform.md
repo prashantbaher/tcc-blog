@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA UserForms
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/VBA-guide" class="w3-button w3-rose w3-right">Home &#10095;</a>
-</div>
-
 A *UserForm* is useful if your VBA macro needs to get information from a user. 
 
 For example, your macro may have some options that can be specified in a UserForm. 

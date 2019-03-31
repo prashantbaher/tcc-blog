@@ -3,12 +3,6 @@ categories: Solidworks-macros
 title:  Solidworks Sketch Macros - Create CenterLine 
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/sketch-create-line" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 In this post, I tell you about *how to create 2D CenterLine through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.

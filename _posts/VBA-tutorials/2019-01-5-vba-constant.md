@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Constants
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-publc-stattic-variable-life" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 A variable’s value may (and usually does) change while your procedure is executing. 
 
 That’s why they call it a **variable**. 

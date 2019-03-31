@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: If-Then-Else and Select Case structure
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-controlling-flow-making-desicions" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-looping" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 `If-Then` is VBA’s most important control structure. You’ll probably use this command on a daily basis. 
 
 As in many other aspects of life, effective *decision-making* is the key to success in writing CAD or any other macros.

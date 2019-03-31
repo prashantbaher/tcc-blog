@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Visual Basic for Application Introduction
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/VBA-guide" class="w3-button w3-rose">&#10094; Home</a>
-    <a href="/visual-basic/vbe-editor" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 To understand `Visual Basic for Application`, lets look at the following *questions*.
 
 ## What is Visual Basic for Application?

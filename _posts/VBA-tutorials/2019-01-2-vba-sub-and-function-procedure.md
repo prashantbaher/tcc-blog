@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Sub and Function Procedures
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vbe-windows" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-executing-procedures" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 The `VBA` code that you write in the `Visual Basic Editor` is known as a `procedure`. 
 
 The two most common types of procedures are `Sub` and `Function`.

@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA String Basics
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-constant" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 The `String` data type represents a series of characters. This topic introduces the basic concepts of strings in Visual Basic.
 
 ## String Variables

@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA InputBox Function
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-msgBox-function" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 The VBA's `InputBox` function is useful for obtaining a single piece of information from the user. 
 
 That information could be *a value*, *a text string*, or even *a range address*. 

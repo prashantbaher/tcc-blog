@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Visual Basic Editor (VBE)
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-introduction" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vbe-windows" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 `Visual Basic Editor` or `VBE` is a *separate* application in your *CAD application*. 
 
 In this *application* you `write` and `edit` your *Macro code*. 

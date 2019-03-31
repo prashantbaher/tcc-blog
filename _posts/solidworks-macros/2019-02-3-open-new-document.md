@@ -3,12 +3,6 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Open new Part document
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/vba-in-solidworks" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/open-assembly-and-drawing" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 As the title suggested, in this post, we open new document **from** *Solidworks VBA macros*.
 
 Also we *understand* each and every line of written code. So that you can understand why we written those lines and get some knowledge about how to write macro properly.

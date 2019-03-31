@@ -3,12 +3,6 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Selection Methods
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/open-assembly-and-drawing" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/open-saved-document" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 In this post, we select **Default planes** with following methods:
 
 1. By `SelectByID` method From `ModelDoc2` Interface

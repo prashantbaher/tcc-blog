@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Public, Static and Variable's Life
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-constant" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 In the following sections we will discussed about following topics: 
 
 1. Public Variables

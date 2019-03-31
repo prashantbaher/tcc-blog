@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Bug Finding
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-looping" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-debugger" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 A **bug** is an error in your programming. Here I cover the topic of programming bugs — how to identify them and how to remove them from your module. 
 
 ## Types of Bugs

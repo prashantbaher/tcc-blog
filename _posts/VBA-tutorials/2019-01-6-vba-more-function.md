@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Functions that do more
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-functions" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-controlling-flow-making-desicions" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 A few VBA `functions` go above and beyond the call of duty. Rather than simply return a value, these functions have some useful side effects. 
 
 Below table lists them.

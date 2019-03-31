@@ -3,12 +3,6 @@ categories: Solidworks-macros
 title: VBA in Solidworks
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/Solidworks-macros-guide" class="w3-button w3-rose">&#10094; Home</a>
-  <a href="/solidworks-macros/open-new-document" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 *Solidworks* provides us two methods for open Visual Basic for Application.
 
 1. Menu based method

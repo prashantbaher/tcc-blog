@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Arrays
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-functions" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 Most programming languages support `arrays`. An *array* is a group of variables that share a common name. 
 
 You refer to a *specific variable* in the `array` by using the *array name* and an *index number* in *parentheses*. 

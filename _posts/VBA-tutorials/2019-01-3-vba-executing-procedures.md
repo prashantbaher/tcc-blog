@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: Executing Sub and Function Procedures
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-programming-concepts-comments-and-datatypes" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures. 
 
 This is important because these procedures are worthless unless you know how to execute it.

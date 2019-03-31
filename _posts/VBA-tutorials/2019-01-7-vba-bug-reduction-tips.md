@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Bug Reduction Tips
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-debugger" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-dialog-boxes" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 I can’t tell you how to completely eliminate bugs in your programs. 
 
 Finding bugs in software can be a profession by itself, but I can provide a few tips to help you keep those bugs to a minimum:

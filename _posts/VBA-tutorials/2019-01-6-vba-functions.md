@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Functions
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-arrays" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-more-function" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 A `function` essentially performs a calculation and returns a single value. 
 
 The `SUM` function in **MS Excel** returns the sum of a range of values. 

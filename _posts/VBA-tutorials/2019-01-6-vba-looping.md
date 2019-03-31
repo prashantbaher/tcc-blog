@@ -3,12 +3,6 @@ categories: Visual-Basic
 title: VBA Looping
 ---
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-if-then-structure-select-case" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
-
 The term *looping* refers to repeating a block of VBA statements numerous times. 
 
 VBA provides various looping command for repeating code to make correct decision making. 
