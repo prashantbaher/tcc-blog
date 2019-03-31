@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: Public, Static and Variable's Life
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-constant" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In the following sections we will discussed about following topics: 
 
 1. Public Variables
@@ -54,3 +60,11 @@ Otherwise, only procedure-level variables will be removed from memory when the *
 Static variables, module level variables, and global (`public`) variables all retain their values in between runs of your code. 
 
 > If you use *module-level* or *global-level* variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content! 
+
+Next post will be about ***VBA Constants***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-constant" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

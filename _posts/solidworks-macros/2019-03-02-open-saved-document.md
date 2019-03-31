@@ -3,6 +3,12 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Open Saved Documents 
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/select-plane-from-tree" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/sketch-create-line" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In this post, I tell you how to *open a saved document* in Solidworks using *VBA Macro*.
 
 We open document with 2 different methods.
@@ -202,5 +208,11 @@ Hope this post helps you to understand opening methods with Solidworks VB Macros
 For more such tutorials on Solidworks VBA Macros, do come to this blog after sometime.
 
 Till then, Happy learning!!!
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/select-plane-from-tree" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/sketch-create-line" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
 
 <!--{%- include amazon-us-native-ad.html -%}-->

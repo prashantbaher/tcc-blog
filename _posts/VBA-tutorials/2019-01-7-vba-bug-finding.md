@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: Bug Finding
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-looping" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-debugger" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 A **bug** is an error in your programming. Here I cover the topic of programming bugs — how to identify them and how to remove them from your module. 
 
 ## Types of Bugs
@@ -119,3 +125,11 @@ Unlike `MsgBox`, `Debug.Print` statements do not halt your code.
 So you’ll need to keep an eye on the **Immediate** window to see what’s going on. 
 
 After you’ve debugged your code, be sure to remove all the `Debug.Print` statements.
+
+Next post will be about ***VBA Debugger***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-looping" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-debugger" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA Debugger
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-bug-reduction-tips" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In this section, I discuss the details of using the VBA debugging tools. 
 
 These tools are much more powerful than the techniques I discuss in the previous section. 
@@ -152,3 +158,10 @@ The VBE has done all the hard workfor you.
 
 ![Local-window](/assets/vba-images/Bug Finding & Debugging techniques/5. Local window.PNG)
 
+Next post will be about ***VBA Bug Reduction Tips***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-bug-reduction-tips" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA String Basics
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-constant" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 The `String` data type represents a series of characters. This topic introduces the basic concepts of strings in Visual Basic.
 
 ## String Variables
@@ -80,3 +86,11 @@ Unlike other intrinsic data types, `String` is a reference type.
 When a variable of reference type is passed as an argument to a function or subroutine, a reference to the memory address where the data is stored is passed instead of the actual value of the string. 
 
 So in the previous example, the name of the variable remains the same, but it points to a new and different instance of the String class, which holds the new value.
+
+Next post will be about ***VBA Assignment Statements And Operators***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-constant" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

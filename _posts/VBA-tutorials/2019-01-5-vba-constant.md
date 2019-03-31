@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA Constants
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-publc-stattic-variable-life" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 A variable’s value may (and usually does) change while your procedure is executing. 
 
 That’s why they call it a **variable**. 
@@ -72,3 +78,11 @@ To find the actual value of a built-in constant, use the "Immediate window" in t
 ```
 
 > If the Immediate window isn’t visible, press `Ctrl+G`. The question mark is a shortcut for typing `Print`. 
+
+Next post will be about ***VBA Strings Basics***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-publc-stattic-variable-life" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

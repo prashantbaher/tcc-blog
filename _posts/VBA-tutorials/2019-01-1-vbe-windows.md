@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBE Windows
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vbe-editor" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In this post we look following windows in `Visual Basic Editor`:
 
 1. Project Window
@@ -253,3 +259,9 @@ You’ll also find lots of VBA code examples on the Web.
 If you’d like to try them, select the code in your browser and press `Ctrl+C` to *copy* it. Then, activate a module and press `Ctrl+V` to *paste* it.
 
 Next post will be about `Sub and Function Procedures`.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vbe-editor" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

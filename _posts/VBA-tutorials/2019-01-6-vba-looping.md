@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA Looping
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-if-then-structure-select-case" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 The term *looping* refers to repeating a block of VBA statements numerous times. 
 
 VBA provides various looping command for repeating code to make correct decision making. 
@@ -254,3 +260,10 @@ In this example, first we get the list of all sheet names in opened drawing, the
 
 For this example please notes that we did not need to load all sheet, this code can work on non-activate and non-loaded sheets also. 
 
+Next post will be about ***Bug Finding***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-if-then-structure-select-case" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

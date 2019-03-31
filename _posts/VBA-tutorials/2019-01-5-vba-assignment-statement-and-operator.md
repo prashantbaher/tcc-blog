@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA Assignment Statements And Operators
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-arrays" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 An *assignment statement* is a *VBA statement* that assigns the result of an expression to a variable or an object. 
 
 In a book I read Excel’s Help system defines the term expression as: 
@@ -172,3 +178,10 @@ z = x + (5 * y)
 
 > Don’t be shy about using *parentheses* even if they aren’t required — especially if doing so makes your code easier to understand. VBA doesn’t care if you use *extra parentheses*. 
 
+Next post will be about ***VBA Arrays***.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-arrays" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

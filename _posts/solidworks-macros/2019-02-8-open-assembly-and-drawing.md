@@ -3,6 +3,12 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Open Assembly and Drawing document
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/open-new-document" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/select-plane-from-tree" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In this post, we see how to open following documents with *Solidworks VBA macro*:
 
 1. *Solidworks Assembly document*
@@ -172,3 +178,9 @@ Since we are using custom value, we need to define **paper width** and **paper h
 > It important to remember that API use **Metric system** only. So you need to use the converted value in defining paper width and paper height.
 
 This is all for now. In the next post I will tell you how select a plane in a part document and if possible how to create a skecth segment.
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/open-new-document" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/select-plane-from-tree" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

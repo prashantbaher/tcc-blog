@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA Variables
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-programming-concepts-comments-and-datatypes" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-declaring-and-scoping-of-variables" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 `VBA’s` main purpose is to manipulate data. `VBA` stores the *data* in your computer’s *memory*; it may or may not end up on disk. 
 
 Some *data*, such as *sketch*, resides in `objects`. 
@@ -54,4 +60,8 @@ But, obviously, using `names` like that just increases the possibility of gettin
 
 So resist the urge to use a variable named *sketch*, and use something like *swSketch*, *mySketch* or any meaning full name instead.
 
-
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-programming-concepts-comments-and-datatypes" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/visual-basic/vba-declaring-and-scoping-of-variables" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>

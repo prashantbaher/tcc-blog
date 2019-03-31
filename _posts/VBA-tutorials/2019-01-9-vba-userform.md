@@ -3,6 +3,12 @@ categories: Visual-Basic
 title: VBA UserForms
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/VBA-guide" class="w3-button w3-rose w3-right">Home &#10095;</a>
+</div>
+
 A *UserForm* is useful if your VBA macro needs to get information from a user. 
 
 For example, your macro may have some options that can be specified in a UserForm. 
@@ -270,4 +276,12 @@ CheckBox1.Value = True
 
 This will sum-up our tutorials on Visual Basic for Application. From now on I will give tutorials on how to use Solidworks commands with the help of VBA Macro.
 
-If you want to know any explaination on any topic related to VBA, please drop a comment and I will try to give it to you. Thank you!!!!
+If you want to know any explaination on any topic related to VBA, please drop a comment and I will try to give it to you. 
+
+### Thank you!!!!
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+    <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose">&#10094; Previous</a>
+    <a href="/VBA-guide" class="w3-button w3-rose w3-right">Home &#10095;</a>
+</div>

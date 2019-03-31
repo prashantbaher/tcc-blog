@@ -3,6 +3,12 @@ categories: Solidworks-macros
 title:  Solidworks Sketch Macros - Create Line 
 ---
 
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/open-saved-document" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
+
 In this post, I tell you about *how to create 2D Line through Solidworks VBA Macros* in a sketch.
 
 For this, I take the example from previous [Solidworks Macros - Open Assembly and Drawing document](/solidworks-macros/select-plane-from-tree) post.
@@ -241,3 +247,9 @@ For more such tutorials on **Solidworks VBA Macros**, do come to this blog after
 Till then, Happy learning!!!
 
 <!--{%- include amazon-us-native-ad.html -%}-->
+
+<!-- This is post navigation bar -->
+<div class="w3-bar w3-margin-top w3-margin-bottom">
+  <a href="/solidworks-macros/open-saved-document" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose w3-right">Next &#10095;</a>
+</div>
