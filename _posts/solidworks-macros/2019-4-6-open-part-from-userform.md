@@ -15,7 +15,7 @@ If you don't know how to create a new macro in Solidworks, please go to [VBA in 
 
 This will open a new macro in Visual Basic Editor with some code as shown in below image.
 
-![new_macro_window](/assets/Solidworks_Images/Open new part from userform/1.new_macro_window.png)
+![new_macro_window](/assets/Solidworks_Images/Open new part from userform/1.new_macro_window.png) 
 
 ## Insert userform in the macro
 
