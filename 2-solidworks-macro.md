@@ -40,3 +40,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
 
 * [Sketch - Create CenterLines](/solidworks-macros/sketch-create-centerline)
+
+* [Open new Part document from VBA Userforms](/solidworks-macros/open-part-from-userform)

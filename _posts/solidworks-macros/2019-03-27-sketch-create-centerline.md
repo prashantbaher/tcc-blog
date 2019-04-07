@@ -259,5 +259,5 @@ Till then, Happy learning!!!
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/solidworks-macros/sketch-create-line" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/open-part-from-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
