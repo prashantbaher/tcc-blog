@@ -15,15 +15,14 @@ If you don't know how to create a new macro in Solidworks, please go to [VBA in 
 
 This will open a new macro in Visual Basic Editor with some code as shown in below image.
 
-![new_macro_window](/assets/Solidworks_Images/Open new part from userform/1.new_macro_window.png) 
-
+![new_macro_window](/assets/Solidworks_Images/Open new part from userform/1.new_macro_window.PNG) 
 ## Insert userform in the macro
 
 After this we need to insert a userform in our macro.
 
 For this, select the button shown in below image.
 
-![insert-userform-button](/assets/Solidworks_Images/Open new part from userform/2.insert-userform-buttonw.png)
+![insert-userform-button](/assets/Solidworks_Images/Open new part from userform/2.insert-userform-button.png)
 
 This button is called ***insert userform***. 
 
@@ -33,7 +32,7 @@ As the name suggest, function of this button is *inserting a userform*.
 
 After clicking the ***insert userform*** button we get the userform window as shown in below image.
 
-![userform-window](/assets/Solidworks_Images/Open new part from userform/3.userform-window.png)
+![userform-window](/assets/Solidworks_Images/Open new part from userform/3.userform-window.PNG)
 
 ## Adding a Button
 
@@ -45,7 +44,7 @@ You can find `Command Button` highlighted in red in below image.
 
 You can place command button at your desire. I placed it at center of the userform window as shown in below image.
 
-![userform-window-after-adding-command-button](/assets/Solidworks_Images/Open new part from userform/5.userform-window-after-adding-command-button.png)
+![userform-window-after-adding-command-button](/assets/Solidworks_Images/Open new part from userform/5.userform-window-after-adding-command-button.PNG)
 
 ## Updating Properties of Command Button and Userform Windows
 
