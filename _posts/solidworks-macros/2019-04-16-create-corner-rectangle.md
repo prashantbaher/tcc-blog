@@ -11,7 +11,7 @@ In this post, I tell you about `CreateCenterLine` method from **Solidworks** `Sk
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new line.
+So ***use this method*** if you want to create a new Corner Rectangle.
 
 Below is the `code` sample for creating lines.
 
@@ -176,7 +176,7 @@ This method allows us to insert a sketch in selected plane.
 ' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
 Dim vSketchLines As Variant
     
-' Creating an horizontal line
+' Creating a Corner Rectangle
 vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
 ```
 

@@ -19,11 +19,9 @@ You can find the source code for Jekyll at GitHub:
 [jekyll-organization]: https://github.com/jekyll
 -->
 
-This page give insights about me and my journey for starting this blog.
+I am a **CAD engineer** and working on **Solidworks** 3D Software.
 
-I am a `CAD engineer` and working on `Solidworks` software.
-
-A few years ago, I want to *automate* my repetitive tasks. So I was looking for resources for creating `VBA` macros.
+In 2017, I want to *automate* my current project. So I was looking for resources for creating `VBA` macros.
 
 I started with *recording macros* but soon I realized its limitation. Then I started looking for tutorials on creating macros from scratch.
 
@@ -41,9 +39,9 @@ In starting I did not understand what a `loop` is and why we use it for!!!
 
 But *slowly-slowly*, I am getting it and started creating some basic macros from my own.
 
-Honestly for learning `VBA programming language`, I take help from books on VBA macros books on `MS Excel`. 
+Honestly, for learning `VBA programming language` I take help from books on VBA macros books on `MS Excel`. 
 
-It is because `VBA` is used for `Excel` mostly, that's what in internet show!!!
+It is because `VBA` is used in *Excel Automation* mostly, that's what in internet show!!!
 
 After learning *some fundamentals*, I started looking on resource for Solidworks macro creation.
 
