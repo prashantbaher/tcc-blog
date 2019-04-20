@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Corner Rectangle From VBA Macro
+title:  Solidworks Macros - Create Center Rectangle From VBA Macro
 ---
 
-In this post, I tell you about *how to create Corner Rectangle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create Center Rectangle through Solidworks VBA Macros* in a sketch.
 
-For this, I take the example from previous [Sketch - Create Lines](/solidworks-macros/sketch-create-line) post.
+The process is almost identical with previou [Solidworks Macros - Create Corner Rectangle From VBA Macro](/solidworks-macros/create-corner-rectangle) post.
 
-In this post, I tell you about `CreateCenterLine` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCenterRectangle` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new Corner Rectangle.
+So ***use this method*** if you want to create a *Center Rectangle*.
 
-Below is the `code` sample for creating Corner Rectangle.
+Below is the `code` sample for creating a *Center Rectangle*.
 
 ```vb
 Option Explicit
@@ -47,16 +47,16 @@ Sub main()
   ' Setting Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
   
-  ' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
+  ' Creating a "Variant" Variable which holds the values return by "CreateCenterRectangle" method
   Dim vSketchLines As Variant
   
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating a Corner Rectangle
-  vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
+  ' Creating a Center Rectangle
+  vSketchLines = swSketchManager.CreateCenterRectangle(0, 0, 0, 1, 0, 0)
   
-  ' De-select the lines after creation
+  ' De-select the corner rectangle after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -64,6 +64,10 @@ Sub main()
 
 End Sub
 ```
+
+---
+
+## Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -173,11 +177,11 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
+' Creating a "Variant" Variable which holds the values return by "CreateCenterRectangle" method
 Dim vSketchLines As Variant
     
-' Creating a Corner Rectangle
-vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
+' Creating a Center rectangle
+vSketchLines = swSketchManager.CreateCenterRectangle (0, 0, 0, 1, 0, 0)
 ```
 
 In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
@@ -186,33 +190,37 @@ A `Variant` type variable can hold **any** type of value depends upon the use of
 
 In 2nd line, we set the value of variable `vSketchLines`.
 
-Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `CreateCornerRectangle` method.
+Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `CreateCenterRectangle` method.
 
-This `CreateCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a corner rectangle.
+This `CreateCenterRectangle` method is part of `swSketchManager` and it is the latest method to create a Center rectangle.
 
-This `CreateCornerRectangle` method takes following parameters as explained:
+This `CreateCenterRectangle` method takes following parameters as explained:
 
-*X1* : X coordinate of the Upper-left point
+*X1* : X coordinate of the center point of rectangle
 
-*Y1* : Y coordinate of the Upper-left point
+*Y1* : Y coordinate of the center point of rectangle
 
-*Z1* : Z coordinate of the Upper-left point
+*Z1* : Z coordinate of the center point of rectangle
 
-*X2* : X coordinate of the Lower-right point
+*X2* : X coordinate of the point 2
 
-*Y2* : Y coordinate of the Lower-right point
+*Y2* : Y coordinate of the point 2
 
-*Z2* : Z coordinate of the Lower-right point
+*Z2* : Z coordinate of the point 2
+
+### NOTE
+
+Point 2 is one of the corners of rectangle we want to create.
 
 Below image shows more clearly about these parameters.
 
-![corner-rectangle-parameter](/assets/Solidworks_Images/rectangles/corner-rectangle-parameter.png)
+![center-rectangle-parameter](/assets/Solidworks_Images/rectangles/center-rectangle-parameter.png)
 
-In the above code sample I have used (0, 1, 0) Upper-left point in *Y-direction*.
+In the above code sample I have used (0, 0, 0) point which is *origin* of sketch.
 
-For Lower-right point I used (1, 0, 0) which is 1 point distance in *X-direction*.
+For point 2, I used (1, 0, 0) which is 1 point distance in *X-direction*.
 
-This `CreateCornerRectangle` method returns **an array** of *sketch segments* that represent the edges created for this corner rectangle.
+This `CreateCenterRectangle` method returns **an array** of *sketch segments* that represent the edges created for this Center rectangle.
 
 A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
 
@@ -221,7 +229,6 @@ Sketch Segment has `ISketchSegment` Interface, which provides functions that are
 For example, every sketch segment has an ID and can be programmatically selected.
 
 Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
-
 
 ### NOTE
 
@@ -238,7 +245,7 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we deselect the Corner rectangle we have created.
+In the this line of code, we deselect the Center rectangle we have created.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
@@ -251,7 +258,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
-Hope this post helps you to *create Corner rectangle* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create Center rectangle* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -261,6 +268,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/open-part-from-userform" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-corner-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-corner-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-center-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
