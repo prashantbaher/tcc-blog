@@ -5,7 +5,7 @@ title:  Solidworks Macros - Create Center Rectangle From VBA Macro
 
 In this post, I tell you about *how to create Center Rectangle through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previou [Solidworks Macros - Create Corner Rectangle From VBA Macro](/solidworks-macros/create-corner-rectangle) post.
+The process is almost identical with previous [Solidworks Macros - Create Corner Rectangle From VBA Macro](/solidworks-macros/create-corner-rectangle) post.
 
 In this post, I tell you about `CreateCenterRectangle` method from **Solidworks** `SketchManager` object.
 
