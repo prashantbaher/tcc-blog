@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Center Rectangle From VBA Macro
+title:  Solidworks Macros - Create 3-Point Corner Rectangle From VBA Macro
 ---
 
-In this post, I tell you about *how to create Center Rectangle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create 3-Point Corner Rectangle through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previou [Solidworks Macros - Create Corner Rectangle From VBA Macro](/solidworks-macros/create-corner-rectangle) post.
 
-In this post, I tell you about `CreateCenterRectangle` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `Create3PointCornerRectangle` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a *Center Rectangle*.
+So ***use this method*** if you want to create a *3 Point Corner Rectangle*.
 
-Below is the `code` sample for creating a *Center Rectangle*.
+Below is the `code` sample for creating a *3 Point Corner Rectangle*.
 
 ```vb
 Option Explicit
@@ -47,16 +47,16 @@ Sub main()
   ' Setting Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
   
-  ' Creating a "Variant" Variable which holds the values return by "CreateCenterRectangle" method
+  ' Creating a "Variant" Variable which holds the values return by "Create3PointCornerRectangle" method
   Dim vSketchLines As Variant
   
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating a Center Rectangle
-  vSketchLines = swSketchManager.CreateCenterRectangle(0, 0, 0, 1, 0, 0)
+  ' Creating a 3 Point Corner Rectangle
+  vSketchLines = swSketchManager.Create3PointCornerRectangle (0, 0, 0, 1, 0, 0, 0, 1, 0)
   
-  ' De-select the corner rectangle after creation
+  ' De-select the line after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -177,11 +177,11 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating a "Variant" Variable which holds the values return by "CreateCenterRectangle" method
+' Creating a "Variant" Variable which holds the values return by "Create3PointCornerRectangle" method
 Dim vSketchLines As Variant
     
-' Creating a Center rectangle
-vSketchLines = swSketchManager.CreateCenterRectangle (0, 0, 0, 1, 0, 0)
+' Creating an 3 Point Corner Rectangle
+vSketchLines = swSketchManager.Create3PointCornerRectangle(0, 0, 0, 1, 0, 0, 0, 1, 0)
 ```
 
 In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
@@ -190,17 +190,17 @@ A `Variant` type variable can hold **any** type of value depends upon the use of
 
 In 2nd line, we set the value of variable `vSketchLines`.
 
-Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `CreateCenterRectangle` method.
+Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `Create3PointCornerRectangle` method.
 
-This `CreateCenterRectangle` method is part of `swSketchManager` and it is the latest method to create a Center rectangle.
+This `Create3PointCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a 3 Point Corner Rectangle.
 
-This `CreateCenterRectangle` method takes following parameters as explained:
+This `Create3PointCornerRectangle` method takes following parameters as explained:
 
-*X1* : X coordinate of the center point of rectangle
+*X1* : X coordinate of the point 1
 
-*Y1* : Y coordinate of the center point of rectangle
+*Y1* : Y coordinate of the point 1
 
-*Z1* : Z coordinate of the center point of rectangle
+*Z1* : Z coordinate of the point 1
 
 *X2* : X coordinate of the point 2
 
@@ -208,19 +208,25 @@ This `CreateCenterRectangle` method takes following parameters as explained:
 
 *Z2* : Z coordinate of the point 2
 
-### NOTE
+*X3* : X coordinate of the point 3
 
-Point 2 is one of the corners of rectangle we want to create.
+*Y3* : Y coordinate of the point 3
+
+*Z3* : Z coordinate of the point 3
+
+### NOTE
 
 Below image shows more clearly about these parameters.
 
-![center-rectangle-parameter](/assets/Solidworks_Images/rectangles/center-rectangle-parameter.png)
+![3point-corner-ractangle-paramerter-details](/assets/Solidworks_Images/rectangles/3point-corner-ractangle-paramerter-details.png)
 
 In the above code sample I have used (0, 0, 0) point which is *origin* of sketch.
 
 For point 2, I used (1, 0, 0) which is 1 point distance in *X-direction*.
 
-This `CreateCenterRectangle` method returns **an array** of *sketch segments* that represent the edges created for this Center rectangle.
+For point 3, I used (0, 1, 0) which is 1 point distance in *Y-direction*.
+
+This `Create3PointCornerRectangle` method returns **an array** of *sketch segments* that represent the edges created for this 3 Point Corner Rectangle.
 
 A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
 
@@ -245,7 +251,7 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we deselect the Center rectangle we have created.
+In the this line of code, we deselect the 3 Point Corner Rectangle we have created.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
@@ -258,7 +264,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
-Hope this post helps you to *create Center rectangle* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create 3 Point Corner Rectangle* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -268,6 +274,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-corner-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-center-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-center-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-3point-corner-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

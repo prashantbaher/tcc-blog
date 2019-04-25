@@ -47,3 +47,5 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 
 * [Sketch - Create Center Rectangle](/solidworks-macros/create-center-rectangle)
 
+* [Sketch - Create 3-Point Corner Rectangle](/solidworks-macros/create-3point-corner-rectangle)
+
