@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Circle From VBA Macro
+title:  Solidworks Macros - Create Circle By Radius From VBA Macro
 ---
 
-In this post, I tell you about *how to create Circle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create Circle By Radius through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
+The process is identical with previous [Solidworks Sketch Macros - Create Circle](/solidworks-macros/create-circle) post.
 
-In this post, I tell you about `CreateCircle` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCircleByRadius` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Circle**.
+So ***use this method*** if you want to create a new **Circle by Radius**.
 
-Below is the `code` sample for creating *a Circle*.
+Below is the `code` sample for creating *a Circle by Radius*.
 
 ```vb
 Option Explicit
@@ -54,7 +54,7 @@ Sub main()
   swSketchManager.InsertSketch True
   
   ' Creating a circle
-  Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
+  Set mySketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, 1)
   
   ' De-select the line after creation
   swDoc.ClearSelection2 True
@@ -176,8 +176,8 @@ This method allows us to insert a sketch in selected plane.
 ' Creating Variable for Solidworks Sketch segment
 Dim mySketchSegment As SketchSegment
 
-' Creating a Circle
-Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
+' Creating a Circle by Radius
+Set mySketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, 1)
 ```
 
 In above sample code, we 1st create a variable named `mySketchSegment` of type `SketchSegment`.
@@ -194,11 +194,11 @@ For detailed information about the `SketchSegment` please visit [this page of So
 
 In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
 
-We get this value from `CreateCircle` method which is inside the `swSketchManager` variable.
+We get this value from `CreateCircleByRadius` method which is inside the `swSketchManager` variable.
 
-`swSketchManager` variable is a type of SketchManager, hence we used `CreateCircle` method from SketchManager.
+`swSketchManager` variable is a type of SketchManager, hence we used `CreateCircleByRadius` method from SketchManager.
 
-This `CreateCircle` method takes following parameters as explained:
+This `CreateCircleByRadius` method takes following parameters as explained:
 
 *XC* : X coordinate of the circle center point
 
@@ -206,17 +206,13 @@ This `CreateCircle` method takes following parameters as explained:
 
 *ZC* : Z coordinate of the circle center point
 
-*XP* : X coordinate of the point on the circle perimeter
+*Radius* : Radius of the circle
 
-*YP* : Y coordinate of the point on the circle perimeter
+In the above code sample I have used origin point (0, 0, 0) for circle center point.
 
-*ZP* : Z coordinate of the point on the circle perimeter
+This is origin of sketch hence I use center point at origin.
 
-In the above code sample I have used (0, 0, 0) for start point.
-
-This is origin of sketch hence I start line from origin.
-
-For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.
+For Radius of Center, I used 1 meter as value.
 
 ### NOTE
 
@@ -248,7 +244,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create Circle* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create Circle by radius* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -258,6 +254,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-parallelogram" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-circle" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-circle" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-circle-by-radius" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

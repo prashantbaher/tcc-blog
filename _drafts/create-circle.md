@@ -212,9 +212,9 @@ This `CreateCircle` method takes following parameters as explained:
 
 *ZP* : Z coordinate of the point on the circle perimeter
 
-In the above code sample I have used (0, 0, 0) for start point.
+In the above code sample I have used origin point (0, 0, 0) for circle center point.
 
-This is origin of sketch hence I start line from origin.
+This is origin of sketch hence I use center point at origin.
 
 For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.
 
