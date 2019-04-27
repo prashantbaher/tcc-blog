@@ -30,37 +30,37 @@ Dim swSketchManager As SldWorks.SketchManager
 ' Main function of our VBA program
 Sub main()
 
-    ' Setting Solidworks variable to Solidworks application
-    Set swApp = Application.SldWorks
-    
-    ' Creating string type variable for storing default part location
-    Dim defaultTemplate As String
-    ' Setting value of this string type variable to "Default part template"
-    defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
+  ' Setting Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Creating string type variable for storing default part location
+  Dim defaultTemplate As String
+  ' Setting value of this string type variable to "Default part template"
+  defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-    ' Setting Solidworks document to new part document
-    Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+  ' Setting Solidworks document to new part document
+  Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
-    ' Selecting Front Plane
-    BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-    
-    ' Setting Sketch manager for our sketch
-    Set swSketchManager = swDoc.SketchManager
-    
-    ' Creating Variable for Solidworks Sketch segment
-    Dim mySketchSegment As SketchSegment
-    
-    ' Inserting a sketch into selected plane
-    swSketchManager.InsertSketch True
-    
-    ' Creating an horizontal line
-    Set mySketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 2, 0)
-    
-    ' De-select the line after creation
-    swDoc.ClearSelection2 True
+  ' Selecting Front Plane
+  BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Setting Sketch manager for our sketch
+  Set swSketchManager = swDoc.SketchManager
+  
+  ' Creating Variable for Solidworks Sketch segment
+  Dim mySketchSegment As SketchSegment
+  
+  ' Inserting a sketch into selected plane
+  swSketchManager.InsertSketch True
+  
+  ' Creating an horizontal line
+  Set mySketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 2, 0)
+  
+  ' De-select the line after creation
+  swDoc.ClearSelection2 True
 
-    ' Zoom to fit screen in Solidworks Window
-    swDoc.ViewZoomtofit
+  ' Zoom to fit screen in Solidworks Window
+  swDoc.ViewZoomtofit
 
 End Sub
 ```
@@ -194,7 +194,7 @@ For detailed information about the `SketchSegment` please visit [this page of So
 
 In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
 
-We get this value from `CreateLine` method which is inside the `swSketchManager` variable.
+We get this value from `CreateCenterLine` method which is inside the `swSketchManager` variable.
 
 `swSketchManager` variable is a type of SketchManager, hence we used `CreateCenterLine` method from SketchManager.
 

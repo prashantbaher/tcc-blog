@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create 3-Point Center Rectangle From VBA Macro
+title:  Solidworks Macros - Create Circle From VBA Macro
 ---
 
-In this post, I tell you about *how to create 3-Point Center Rectangle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create Circle through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Solidworks Macros - Create 3-Point Corner Rectangle From VBA Macro](/solidworks-macros/create-3point-corner-rectangle) post.
+The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
 
-In this post, I tell you about `Create3PointCenterRectangle` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCircle` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a *3 Point Center Rectangle*.
+So ***use this method*** if you want to create a new **Circle**.
 
-Below is the `code` sample for creating a *3 Point Center Rectangle*.
+Below is the `code` sample for creating *a Circle*.
 
 ```vb
 Option Explicit
@@ -32,7 +32,7 @@ Sub main()
 
   ' Setting Solidworks variable to Solidworks application
   Set swApp = Application.SldWorks
-    
+  
   ' Creating string type variable for storing default part location
   Dim defaultTemplate As String
   ' Setting value of this string type variable to "Default part template"
@@ -43,31 +43,27 @@ Sub main()
 
   ' Selecting Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-    
+  
   ' Setting Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
-    
-  ' Creating a "Variant" Variable which holds the values return by "Create3PointCenterRectangle" method
-  Dim vSketchLines As Variant
-    
+  
+  ' Creating Variable for Solidworks Sketch segment
+  Dim mySketchSegment As SketchSegment
+  
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
-    
-  ' Creating a 3 Point Center Rectangle
-  vSketchLines = swSketchManager.Create3PointCenterRectangle(0, 0, 0, 1, 0, 0, 0, 1, 0)
-    
+  
+  ' Creating a circle
+  Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
+  
   ' De-select the line after creation
   swDoc.ClearSelection2 True
-    
+
   ' Zoom to fit screen in Solidworks Window
   swDoc.ViewZoomtofit
 
 End Sub
 ```
-
----
-
-## Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -177,81 +173,71 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating a "Variant" Variable which holds the values return by "Create3PointCenterRectangle" method
-Dim vSketchLines As Variant
-    
-' Creating 3 Point Center Rectangle
-vSketchLines = swSketchManager.Create3PointCenterRectangle(0, 0, 0, 1, 0, 0, 0, 1, 0)
+' Creating Variable for Solidworks Sketch segment
+Dim mySketchSegment As SketchSegment
+
+' Creating a Circle
+Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
 ```
 
-In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
+In above sample code, we 1st create a variable named `mySketchSegment` of type `SketchSegment`.
 
-A `Variant` type variable can hold **any** type of value depends upon the use of variable.
+A `SketchSegment` represent *a line, ellipse, parabola or spline.*
 
-In 2nd line, we set the value of variable `vSketchLines`.
+A `SketchSegment` provides functions that are **generic** to every type of sketch segment.
 
-Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `Create3PointCenterRectangle` method.
+For example, every sketch segment has **an ID** and can be selected programmatically.
 
-This `Create3PointCenterRectangle` method is part of `swSketchManager` and it is the latest method to create a 3 Point Corner Rectangle.
+Therefore, the `SketchSegment` interface provides functions to obtain the ID and to select the item.
 
-This `Create3PointCenterRectangle` method takes following parameters as explained:
+For detailed information about the `SketchSegment` please visit [this page of Solidworks API Help](http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchSegment.html)
 
-*X1* : X coordinate of the origin
+In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
 
-*Y1* : Y coordinate of the origin
+We get this value from `CreateCircle` method which is inside the `swSketchManager` variable.
 
-*Z1* : Z coordinate of the origin
+`swSketchManager` variable is a type of SketchManager, hence we used `CreateCircle` method from SketchManager.
 
-*X2* : X coordinate of the point 2 of one side
+This `CreateCircle` method takes following parameters as explained:
 
-*Y2* : Y coordinate of the point 2 of one side
+*XC* : X coordinate of the circle center point
 
-*Z2* : Z coordinate of the point 2 of one side
+*YC* : Y coordinate of the circle center point
 
-*X3* : X coordinate of the point 3 of one side
+*ZC* : Z coordinate of the circle center point
 
-*Y3* : Y coordinate of the point 3 of one side
+*XP* : X coordinate of the point on the circle perimeter
 
-*Z3* : Z coordinate of the point 3 of one side
+*YP* : Y coordinate of the point on the circle perimeter
 
-Below image shows more clearly about these parameters.
+*ZP* : Z coordinate of the point on the circle perimeter
 
-![3point-center-ractangle-paramerter-details](/assets/Solidworks_Images/rectangles/3point-center-ractangle-paramerter-details.png)
+In the above code sample I have used (0, 0, 0) for start point.
 
-In the above code sample I have used (0, 0, 0) point at *origin* of sketch.
+This is origin of sketch hence I start line from origin.
 
-For point 2, which is midpoint of one side; I used (1, 0, 0) which is 1 point distance in *X-direction*.
-
-For point 3, which is end point of one side; I used (0, 1, 0) which is 1 point distance in *Y-direction*.
-
-This `Create3PointCenterRectangle` method returns **an array** of *sketch segments* that represent the edges created for this 3 Point Center Rectangle.
-
-A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
-
-Sketch Segment has `ISketchSegment` Interface, which provides functions that are generic to every type of sketch segment.
-
-For example, every sketch segment has an ID and can be programmatically selected.
-
-Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
+For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.
 
 ### NOTE
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
 
-Solidworks API does not care about your application's Unit systems.
+*Solidworks API* does not care about your application's Unit systems.
 
-For example, I works in ANSI system means inches for distance. But when I used Solidworks API through VBA macros or C#, I need to use converted numeric values.
+For example, I works in ANSI system means "inches" for distance. 
 
-Because Solidworks API output the distance in **Meter** which is not my requirement.
+But when I used Solidworks API through *VBA macros* or *C#*, I have to use **converted** numeric values.
+
+Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the lines after creation
+' De-select the line after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we deselect the 3 Point Corner Rectangle we have created.
+In the this line of code, we de-select the created line.
 
-For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
 ```vb
 ' Zoom to fit screen in Solidworks Window
@@ -260,9 +246,9 @@ swDoc.ViewZoomtofit
 
 In this last line we use *zoom to fit* command.
 
-For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create 3 Point Center Rectangle* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create Circle* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -272,6 +258,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-corner-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-parallelogram" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-parallelogram" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-circle" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

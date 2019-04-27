@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create 3-Point Center Rectangle From VBA Macro
+title:  Solidworks Macros - Create A Parallelogram From VBA Macro
 ---
 
-In this post, I tell you about *how to create 3-Point Center Rectangle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Parallelogram through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previous [Solidworks Macros - Create 3-Point Corner Rectangle From VBA Macro](/solidworks-macros/create-3point-corner-rectangle) post.
 
-In this post, I tell you about `Create3PointCenterRectangle` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateParallelogram` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a *3 Point Center Rectangle*.
+So ***use this method*** if you want to create a *Parallelogram*.
 
-Below is the `code` sample for creating a *3 Point Center Rectangle*.
+Below is the `code` sample for creating a *Parallelogram*.
 
 ```vb
 Option Explicit
@@ -30,37 +30,37 @@ Dim swSketchManager As SldWorks.SketchManager
 ' Main function of our VBA program
 Sub main()
 
-  ' Setting Solidworks variable to Solidworks application
-  Set swApp = Application.SldWorks
+	' Setting Solidworks variable to Solidworks application
+	Set swApp = Application.SldWorks
     
-  ' Creating string type variable for storing default part location
-  Dim defaultTemplate As String
-  ' Setting value of this string type variable to "Default part template"
-  defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
+	' Creating string type variable for storing default part location
+	Dim defaultTemplate As String
+	' Setting value of this string type variable to "Default part template"
+	defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-  ' Setting Solidworks document to new part document
-  Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+	' Setting Solidworks document to new part document
+	Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
-  ' Selecting Front Plane
-  BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+	' Selecting Front Plane
+	BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
     
-  ' Setting Sketch manager for our sketch
-  Set swSketchManager = swDoc.SketchManager
+	' Setting Sketch manager for our sketch
+	Set swSketchManager = swDoc.SketchManager
     
-  ' Creating a "Variant" Variable which holds the values return by "Create3PointCenterRectangle" method
-  Dim vSketchLines As Variant
+	' Creating a "Variant" Variable which holds the values return by "CreateParallelogram" method
+	Dim vSketchLines As Variant
     
-  ' Inserting a sketch into selected plane
-  swSketchManager.InsertSketch True
+	' Inserting a sketch into selected plane
+	swSketchManager.InsertSketch True
     
-  ' Creating a 3 Point Center Rectangle
-  vSketchLines = swSketchManager.Create3PointCenterRectangle(0, 0, 0, 1, 0, 0, 0, 1, 0)
+	' Creating a Parallelogram
+	vSketchLines = swSketchManager.CreateParallelogram (0, 0, 0, 1, 0, 0, 0, 1, 0)
     
-  ' De-select the line after creation
-  swDoc.ClearSelection2 True
+	' De-select the line after creation
+	swDoc.ClearSelection2 True
     
-  ' Zoom to fit screen in Solidworks Window
-  swDoc.ViewZoomtofit
+	' Zoom to fit screen in Solidworks Window
+	swDoc.ViewZoomtofit
 
 End Sub
 ```
@@ -177,11 +177,11 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating a "Variant" Variable which holds the values return by "Create3PointCenterRectangle" method
+' Creating a "Variant" Variable which holds the values return by "CreateParallelogram" method
 Dim vSketchLines As Variant
     
-' Creating 3 Point Center Rectangle
-vSketchLines = swSketchManager.Create3PointCenterRectangle(0, 0, 0, 1, 0, 0, 0, 1, 0)
+' Creating a Parallelogram
+vSketchLines = swSketchManager.CreateParallelogram(0, 0, 0, 1, 0, 0, 0, 1, 0)
 ```
 
 In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
@@ -190,41 +190,41 @@ A `Variant` type variable can hold **any** type of value depends upon the use of
 
 In 2nd line, we set the value of variable `vSketchLines`.
 
-Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `Create3PointCenterRectangle` method.
+Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `CreateParallelogram` method.
 
-This `Create3PointCenterRectangle` method is part of `swSketchManager` and it is the latest method to create a 3 Point Corner Rectangle.
+This `CreateParallelogram` method is part of `swSketchManager` and it is the latest method to create a Parallelogram.
 
-This `Create3PointCenterRectangle` method takes following parameters as explained:
+This `CreateParallelogram` method takes following parameters as explained:
 
-*X1* : X coordinate of the origin
+*X1* : X coordinate of point 1
 
-*Y1* : Y coordinate of the origin
+*Y1* : Y coordinate of point 1
 
-*Z1* : Z coordinate of the origin
+*Z1* : Z coordinate of point 1
 
-*X2* : X coordinate of the point 2 of one side
+*X2* : X coordinate of point 2
 
-*Y2* : Y coordinate of the point 2 of one side
+*Y2* : Y coordinate of point 2
 
-*Z2* : Z coordinate of the point 2 of one side
+*Z2* : Z coordinate of point 2
 
-*X3* : X coordinate of the point 3 of one side
+*X3* : X coordinate of point 3
 
-*Y3* : Y coordinate of the point 3 of one side
+*Y3* : Y coordinate of point 3
 
-*Z3* : Z coordinate of the point 3 of one side
+*Z3* : Z coordinate of point 3
 
 Below image shows more clearly about these parameters.
 
-![3point-center-ractangle-paramerter-details](/assets/Solidworks_Images/rectangles/3point-center-ractangle-paramerter-details.png)
+![parralellogra-parameters-details](/assets/Solidworks_Images/rectangles/parralellogra-parameters.png)
 
-In the above code sample I have used (0, 0, 0) point at *origin* of sketch.
+In the above code sample for 1st point I have used (0, 0, 0) point at *origin*.
 
-For point 2, which is midpoint of one side; I used (1, 0, 0) which is 1 point distance in *X-direction*.
+For point 2, I used (1, 0, 0) which is 1 point distance in *X-direction*.
 
-For point 3, which is end point of one side; I used (0, 1, 0) which is 1 point distance in *Y-direction*.
+For point 3, I used (0, 1, 0) which is 1 point distance in *Y-direction*.
 
-This `Create3PointCenterRectangle` method returns **an array** of *sketch segments* that represent the edges created for this 3 Point Center Rectangle.
+This `CreateParallelogram` method returns **an array** of *sketch segments* that represent the edges created for this **Parallelogram**.
 
 A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
 
@@ -238,7 +238,7 @@ Therefore, the `ISketchSegment` interface provides functions to obtain the ID an
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
 
-Solidworks API does not care about your application's Unit systems.
+*Solidworks API* does not care about your application's Unit systems.
 
 For example, I works in ANSI system means inches for distance. But when I used Solidworks API through VBA macros or C#, I need to use converted numeric values.
 
@@ -262,7 +262,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
-Hope this post helps you to *create 3 Point Center Rectangle* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Parallelogram* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -272,6 +272,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-corner-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-3point-center-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-3point-center-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-parallelogram" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
