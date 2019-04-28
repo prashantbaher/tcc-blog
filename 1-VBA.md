@@ -23,6 +23,7 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 -->
 
+## Visual Basic for Application and Visual Basic Editor
 
 * [Visual Basic for Application Introduction](/visual-basic/vba-introduction)
 
@@ -30,9 +31,13 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Visual Basic Editor Windows](/visual-basic/vbe-windows)
 
+## Procedures in Visual Basic for Application
+
 * [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure)
 
 * [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures)
+
+## Programming Concepts in Visual Basic for Application
 
 * [Programming Concepts, Comments and Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes)
 
@@ -68,6 +73,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA Bug Reduction Tips](/visual-basic/vba-bug-reduction-tips)
 
+## Dialog Boxes
+
 * [VBA Dialog Boxes](/visual-basic/vba-dialog-boxes)
 
 * [VBA MsgBox Function](/visual-basic/vba-msgBox-function)
@@ -78,6 +85,6 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [VBA UserForms](/visual-basic/vba-userform)
 
+## Visual Basic for Application UserForms Examples
 
-
-
+* [VBA Userforms - Open new Part document](/solidworks-macros/open-part-from-userform)

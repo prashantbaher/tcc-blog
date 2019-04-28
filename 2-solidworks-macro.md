@@ -45,8 +45,6 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 
 * [Sketch - Create CenterLines](/solidworks-macros/sketch-create-centerline)
 
-* [Open new Part document from VBA Userforms](/solidworks-macros/open-part-from-userform)
-
 * [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle)
 
 * [Sketch - Create Center Rectangle](/solidworks-macros/create-center-rectangle)
