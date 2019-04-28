@@ -27,6 +27,8 @@ If you are a *total begineer* and want to learn how to create `VBA macros` in *S
 
 If you have done `VBA programming` in *Solidworks* before and you are somethings specific then go to that topic.
 
+## General Solidworks Functions
+
 * [VBA in Solidworks](/solidworks-macros/vba-in-solidworks)
 
 * [Open new Part document](/solidworks-macros/open-new-document)
@@ -36,6 +38,8 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 * [Selection Methods](/solidworks-macros/select-plane-from-tree)
 
 * [Open Saved Documents](/solidworks-macros/open-saved-document)
+
+## Solidworks Sketch VBA Macro Tutorial Posts list
 
 * [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
 
@@ -51,3 +55,4 @@ If you have done `VBA programming` in *Solidworks* before and you are somethings
 
 * [Sketch - Create 3-Point Center Rectangle](/solidworks-macros/create-3point-center-rectangle)
 
+* [Sketch - Create A Parallelogram](/solidworks-macros/create-parallelogram)

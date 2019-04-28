@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Circle From VBA Macro
+title:  Solidworks Macros - Create Perimeter Circle From VBA Macro
 ---
 
-In this post, I tell you about *how to create Circle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create Perimeter Circle through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
+The process is identical with previous [Solidworks Sketch Macros - Create Circle](/solidworks-macros/create-circle) post.
 
-In this post, I tell you about `CreateCircle` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `PerimeterCircle` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Circle**.
+So ***use this method*** if you want to create a new **Perimeter Circle**.
 
-Below is the `code` sample for creating *a Circle*.
+Below is the `code` sample for creating *a Perimeter Circle*.
 
 ```vb
 Option Explicit
@@ -30,37 +30,37 @@ Dim swSketchManager As SldWorks.SketchManager
 ' Main function of our VBA program
 Sub main()
 
-  ' Setting Solidworks variable to Solidworks application
-  Set swApp = Application.SldWorks
-  
-  ' Creating string type variable for storing default part location
-  Dim defaultTemplate As String
-  ' Setting value of this string type variable to "Default part template"
-  defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
+	' Setting Solidworks variable to Solidworks application
+	Set swApp = Application.SldWorks
+    
+	' Creating string type variable for storing default part location
+	Dim defaultTemplate As String
+	' Setting value of this string type variable to "Default part template"
+	defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-  ' Setting Solidworks document to new part document
-  Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+	' Setting Solidworks document to new part document
+	Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
-  ' Selecting Front Plane
-  BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-  
-  ' Setting Sketch manager for our sketch
-  Set swSketchManager = swDoc.SketchManager
-  
-  ' Creating Variable for Solidworks Sketch segment
-  Dim mySketchSegment As SketchSegment
-  
-  ' Inserting a sketch into selected plane
-  swSketchManager.InsertSketch True
-  
-  ' Creating a circle
-  Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
-  
-  ' De-select the line after creation
-  swDoc.ClearSelection2 True
+	' Selecting Front Plane
+	BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+    
+	' Setting Sketch manager for our sketch
+	Set swSketchManager = swDoc.SketchManager
 
-  ' Zoom to fit screen in Solidworks Window
-  swDoc.ViewZoomtofit
+	' Inserting a sketch into selected plane
+	swSketchManager.InsertSketch True
+    
+	' Creating object type Variable
+  Dim myPerimeterCircle As Object
+    
+	' Creating a Perimeter circle
+  Set myPerimeterCircle = swSketchManager.PerimeterCircle(0, 0, 1, 0, 0, 1)
+    
+	' De-select the circle after creation
+	swDoc.ClearSelection2 True
+    
+	' Zoom to fit screen in Solidworks Window
+	swDoc.ViewZoomtofit
 
 End Sub
 ```
@@ -177,50 +177,44 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating Variable for Solidworks Sketch segment
-Dim mySketchSegment As SketchSegment
-
-' Creating a Circle
-Set mySketchSegment = swSketchManager.CreateCircle(0, 0, 0, 1, 0, 0)
+' Creating object type Variable
+Dim myPerimeterCircle As Object
+    
+' Creating a Perimeter circle
+Set myPerimeterCircle = swSketchManager.PerimeterCircle(0, 0, 1, 0, 0, 1)
 ```
 
-In above sample code, we 1st create a variable named `mySketchSegment` of type `SketchSegment`.
+In above sample code, we 1st create a variable named `myPerimeterCircle` of type `Object`.
 
-A `SketchSegment` represent *a line, ellipse, parabola or spline.*
+An `object` can hold **any** type of *return value*. In our example, it holds a *3 point Perimeter Arc* as return value.
 
-A `SketchSegment` provides functions that are **generic** to every type of sketch segment.
+In 2nd line, we set the value of object variable `myPerimeterCircle`.
 
-For example, every sketch segment has **an ID** and can be selected programmatically.
+We get this value from `PerimeterCircle` method which is inside the `swSketchManager` variable.
 
-Therefore, the `SketchSegment` interface provides functions to obtain the ID and to select the item.
+`swSketchManager` variable is a type of SketchManager, hence we used `PerimeterCircle` method from SketchManager.
 
-For detailed information about the `SketchSegment` please visit [this page of Solidworks API Help](http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchSegment.html)
+This `PerimeterCircle` method takes following parameters as explained:
 
-In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
+*X1* : X coordinate of the first point
 
-We get this value from `CreateCircle` method which is inside the `swSketchManager` variable.
+*Y1* : Y coordinate of the first point
 
-`swSketchManager` variable is a type of SketchManager, hence we used `CreateCircle` method from SketchManager.
+*X2* : X coordinate of the second point
 
-This `CreateCircle` method takes following parameters as explained:
+*Y2* : Y coordinate of the second point
 
-*XC* : X coordinate of the circle center point
+*X3* : X coordinate of the third point
 
-*YC* : Y coordinate of the circle center point
+*Y3* : Y coordinate of the third point
 
-*ZC* : Z coordinate of the circle center point
+In the above code sample I have used (0, 0) for first point which is at origin.
 
-*XP* : X coordinate of the point on the circle perimeter
+For 2nd point on the circle I used (1, 0) which is 1 point distance in X-direction.
 
-*YP* : Y coordinate of the point on the circle perimeter
+For 3rd point on the circle I used (0, 1) which is 1 point distance in Y-direction.
 
-*ZP* : Z coordinate of the point on the circle perimeter
-
-In the above code sample I have used origin point (0, 0, 0) for circle center point.
-
-This is origin of sketch hence I use center point at origin.
-
-For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.
+This `PerimeterCircle` method returns *3 point Perimeter Arc* object.
 
 ### NOTE
 
@@ -235,11 +229,11 @@ But when I used Solidworks API through *VBA macros* or *C#*, I have to use **con
 Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the line after creation
+' De-select the circle after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created line.
+In the this line of code, we de-select the created circle.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
