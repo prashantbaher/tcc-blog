@@ -87,4 +87,4 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 ## Visual Basic for Application UserForms Examples
 
-* [VBA Userforms - Open new Part document](/solidworks-macros/open-part-from-userform)
+* [VBA Userforms - Open new Part document](/visual-basic/open-part-from-userform)
