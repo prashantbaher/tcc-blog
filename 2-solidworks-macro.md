@@ -25,7 +25,7 @@ Likewise after completing some simple macros you can combine more than one macro
 
 If you are a *total begineer* and want to learn how to create `VBA macros` in *Solidworks* than follow these tutorials in order they are given.
 
-If you have done `VBA programming` in *Solidworks* before and you are somethings specific then go to that topic.
+If you have done `VBA programming` in *Solidworks* before and you are looking for somethings specific then go to that topic.
 
 ## General Solidworks Functions
 
