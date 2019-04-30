@@ -69,6 +69,8 @@ End Sub
 
 ## Understanding the Code
 
+{%- include adsense-between-post-ads.html -%}
+
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
 ```vb
@@ -174,7 +176,7 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 This method allows us to insert a sketch in selected plane.
 
 <!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
+{%- include adsense-between-post-ads.html -%}
 
 ```vb
 ' Creating a "Variant" Variable which holds the values return by "CreateParallelogram" method

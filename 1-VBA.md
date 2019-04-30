@@ -37,6 +37,8 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 * [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures)
 
+{%- include adsense-top-and-bottom-placed-ads.html -%}
+
 ## Programming Concepts in Visual Basic for Application
 
 * [Programming Concepts, Comments and Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes)
