@@ -54,3 +54,5 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 * [Sketch - Create 3-Point Center Rectangle](/solidworks-macros/create-3point-center-rectangle)
 
 * [Sketch - Create A Parallelogram](/solidworks-macros/create-parallelogram)
+
+* [Sketch - Create A Circle](/solidworks-macros/create-circle)
