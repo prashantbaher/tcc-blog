@@ -69,6 +69,7 @@ End Sub
 
 ## Understanding the Code
 
+<!-- Google Ad -->
 {%- include adsense-between-post-ads.html -%}
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
@@ -173,10 +174,10 @@ swSketchManager.InsertSketch True
 
 In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
 
-This method allows us to insert a sketch in selected plane.
-
-<!-- Amazon ad for audible -->
+<!-- Google Ad -->
 {%- include adsense-between-post-ads.html -%}
+
+This method allows us to insert a sketch in selected plane.
 
 ```vb
 ' Creating a "Variant" Variable which holds the values return by "CreateParallelogram" method
