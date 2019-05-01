@@ -8,21 +8,6 @@ This page contains the list of all ***Visual Basic for Application tutorial guid
 
 If you are a total beginner, then follow the list accordingly otherwise you can directly jump to selected topics.
 
-<!--
-
-{% for post in site.posts %}
-
-{% for category in post.categories %}
-
-{%if category == "Visual-Basic"%}
-<li><a href="{{ post.url | post.date | reverse }}">{{post.title}}</a><br></li>
-{%endif%}
-
-{% endfor %}
-{% endfor %}
-
--->
-
 ## Visual Basic for Application and Visual Basic Editor
 
 * [Visual Basic for Application Introduction](/visual-basic/vba-introduction)
