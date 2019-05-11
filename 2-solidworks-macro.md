@@ -56,3 +56,5 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 * [Sketch - Create A Parallelogram](/solidworks-macros/create-parallelogram)
 
 * [Sketch - Create A Circle](/solidworks-macros/create-circle)
+
+* [Sketch - Create Circle By Radius](/solidworks-macros/create-circle-by-radius)
