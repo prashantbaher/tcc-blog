@@ -29,6 +29,8 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 
 ## General Solidworks Functions
 
+Below list contains posts on *general Solidworks functions*. These posts will guide you on how to do write macros on these *common general Solidworks functions*.
+
 * [VBA in Solidworks](/solidworks-macros/vba-in-solidworks)
 
 * [Open new Part document](/solidworks-macros/open-new-document)
@@ -40,6 +42,8 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 * [Open Saved Documents](/solidworks-macros/open-saved-document)
 
 ## Solidworks Sketch VBA Macro Tutorial Posts list
+
+Below list contains posts on *Solidworks Sketch functions*. These posts will guide you on how to do write macros on these *general Solidworks Sketch functions*.
 
 * [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
 
@@ -58,3 +62,5 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 * [Sketch - Create A Circle](/solidworks-macros/create-circle)
 
 * [Sketch - Create Circle By Radius](/solidworks-macros/create-circle-by-radius)
+
+* [Sketch - Create Perimeter Circle](/solidworks-macros/create-perimeter-circle)
