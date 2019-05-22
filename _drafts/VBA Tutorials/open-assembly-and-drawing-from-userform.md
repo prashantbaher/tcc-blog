@@ -16,6 +16,7 @@ If you don't know how to create a new macro in Solidworks, please go to [VBA in 
 This will open a new macro in Visual Basic Editor with some code as shown in below image.
 
 ![new_macro_window](/assets/Solidworks_Images/Open new part from userform/1.new_macro_window.PNG) 
+
 ## Insert userform in the macro
 
 After this we need to insert a userform in our macro.
@@ -36,7 +37,7 @@ After clicking the ***insert userform*** button we get the userform window as sh
 
 ## Adding a Button
 
-Now in our userform window, we add a `Command Button` at center of window.
+Now in our userform window, we add a `Command Button` in the window.
 
 You can find `Command Button` highlighted in red in below image.
 
@@ -113,16 +114,16 @@ Dim swDoc As SldWorks.ModelDoc2
 ' Private function of Open New Part Button 
 Private Sub OpenNewPartButton_Click()
 
-    ' Setting Solidworks variable to Solidworks application
-    Set swApp = Application.SldWorks
-    
-    ' Creating string type variable for storing default part location
-    Dim defaultTemplate As String
-    ' Setting value of this string type variable to "Default part template"
-    defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
+  ' Setting Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Creating string type variable for storing default part location
+  Dim defaultTemplate As String
+  ' Setting value of this string type variable to "Default part template"
+  defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-    ' Setting Solidworks document to new part document
-    Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+  ' Setting Solidworks document to new part document
+  Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 End Sub
 ```
@@ -148,8 +149,8 @@ To call our Userform, replace above code with below code:
 ```vb
 ' Main function of our VBA program
 Sub main()
-    ' Calling our window to show
-    OurWindow.Show
+  ' Calling our window to show
+  OurWindow.Show
 End Sub
 ```
 
