@@ -72,4 +72,12 @@ If you are a total beginner, then follow the list accordingly otherwise you can 
 
 ## Visual Basic for Application UserForms Examples
 
+Below Lists of post, shows **practical examples** of above **Programming concenpts** used in actual **Solidworks VBA Macro**.
+
+I will use sample codes from [Soldiworks Macros posts](/Solidworks-macros-guide) and show you how to use them with **UserForms**.
+
+By doing this, we understand **UserForms** and **Macro sample code** at the same time.
+
 * [VBA Userforms - Open new Part document](/visual-basic/open-part-from-userform)
+
+* [VBA Userforms - Open new Assembly and Drawing document](/visual-basic/open-assembly-and-drawing-from-userform)
