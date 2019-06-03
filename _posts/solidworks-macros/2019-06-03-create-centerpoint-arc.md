@@ -274,6 +274,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-parallelogram" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-circle" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-perimeter-circle" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-centerpoint-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

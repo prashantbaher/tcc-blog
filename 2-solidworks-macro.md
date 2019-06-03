@@ -64,3 +64,5 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 * [Sketch - Create Circle By Radius](/solidworks-macros/create-circle-by-radius)
 
 * [Sketch - Create Perimeter Circle](/solidworks-macros/create-perimeter-circle)
+
+* [Sketch - Create Centerpoint Arc](/solidworks-macros/create-centerpoint-arc)
