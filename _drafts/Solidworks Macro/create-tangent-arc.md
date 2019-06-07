@@ -3,7 +3,7 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Create Tangent Arc From VBA Macro
 ---
 
-In this post, I tell you about *how to create Tangent Arc through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Tangent Arc through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
 
@@ -263,6 +263,16 @@ Basically, I want to end the *Tangent arc* at the same height of the *Sketch lin
 For Arc type, I have used `swForward` as value.
 
 This creates a **forward clockwise** *Tangent arc*.
+
+This `CreateTangentArc` method returns *sketch segments* which represent the sides created for this *Tangent arc*.
+
+A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
+
+Sketch Segment has `ISketchSegment` Interface, which provides functions that are generic to every type of sketch segment.
+
+For example, every sketch segment has an ID and can be programmatically selected.
+
+Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
 
 ### NOTE
 

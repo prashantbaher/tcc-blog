@@ -51,10 +51,10 @@ Sub main()
 	swSketchManager.InsertSketch True
     
 	' Creating object type Variable
-  Dim myPerimeterCircle As Object
+	Dim myPerimeterCircle As Object
     
 	' Creating a Perimeter circle
-  Set myPerimeterCircle = swSketchManager.PerimeterCircle(0, 0, 1, 0, 0, 1)
+	Set myPerimeterCircle = swSketchManager.PerimeterCircle(0, 0, 1, 0, 0, 1)
     
 	' De-select the circle after creation
 	swDoc.ClearSelection2 True

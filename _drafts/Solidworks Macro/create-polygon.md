@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create 3-Point Arc From VBA Macro
+title:  Solidworks Macros - Create Polygon From VBA Macro
 ---
 
-In this post, I tell you about *how to create a 3-Point Arc through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Polygon through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previous [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc) post.
 
-In this post, I tell you about `Create3PointArc` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreatePolygon` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **3-Point Arc**.
+So ***use this method*** if you want to create a new **Polygon**.
 
-Below is the `code` sample for creating *a 3-Point Arc*.
+Below is the `code` sample for creating *a Polygon*.
 
 ```vb
 Option Explicit
@@ -50,11 +50,11 @@ Sub main()
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating Variable for Solidworks Sketch segment
-  Dim mySketchSegment As SketchSegment
+  ' Creating Varient for Polygon
+  Dim myPolygon As Variant
   
-  ' Creating a 3-Point Arc
-  Set mySketchSegment = swSketchManager.Create3PointArc(-1, 0, 0, 1, 0, 0, 0, 1, 0)
+  ' Creating a Polygon
+  myPolygon = swSketchManager.CreatePolygon(0, 0, 0, 1, 0, 0, 6, True)
   
   ' De-select the line after creation
   swDoc.ClearSelection2 True
@@ -183,62 +183,54 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating Variable for Solidworks Sketch segment
-Dim mySketchSegment As SketchSegment
+' Creating Varient for Polygon
+Dim myPolygon As Variant
 
-' Creating a 3-Point Arc
-Set mySketchSegment = swSketchManager.Create3PointArc(-1, 0, 0, 1, 0, 0, 0, 1, 0)
+' Creating a Polygon
+myPolygon = swSketchManager.CreatePolygon(0, 0, 0, 1, 0, 0, 6, True)
 ```
 
-In above sample code, we 1st create a variable named `mySketchSegment` of type `SketchSegment`.
+In above sample code, we 1st create a variable named `myPolygon` of type `Variant`.
 
-A `SketchSegment` represent *a line, ellipse, parabola or spline.*
+In 2nd line, we **get** the value of *Variant* variable `myPolygon`.
 
-A `SketchSegment` provides functions that are **generic** to every type of sketch segment.
+We get this value from `CreatePolygon` method which is inside the `swSketchManager` variable.
 
-For example, every sketch segment has **an ID** and can be selected programmatically.
+`swSketchManager` variable is a type of **SketchManager**, hence we used `CreatePolygon` method from **SketchManager**.
 
-Therefore, the `SketchSegment` interface provides functions to obtain the ID and to select the item.
+This `CreatePolygon` method takes following parameters as explained:
 
-For detailed information about the `SketchSegment` please visit [this page of Solidworks API Help](http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchSegment.html)
+*XC* : X coordinate of the center point, of the polygon
 
-In 2nd line, we set the value of sketch segment variable `mySketchSegment`.
+*YC* : Y coordinate of the center point, of the polygon
 
-We get this value from `Create3PointArc` method which is inside the `swSketchManager` variable.
+*ZC* : Z coordinate of the center point, of the polygon
 
-`swSketchManager` variable is a type of **SketchManager**, hence we used `Create3PointArc` method from **SketchManager**.
+*Xp* : X coordinate of the vertex point, of the polygon
 
-This `Create3PointArc` method takes following parameters as explained:
+*Yp* : Y coordinate of the vertex point, of the polygon
 
-*X1* : X coordinate of the start point, of the arc
+*Zp* : Z coordinate of the vertex point, of the polygon
 
-*Y1* : Y coordinate of the start point, of the arc
+*Sides* : Number of sides in the polygon
 
-*Z1* : Z coordinate of the start point, of the arc
+*Inscribed* : `True` to show an inscribed construction circle, `False` to show a circumscribed construction circle
 
-*X2* : X coordinate of the end point, of the arc
+For creating a *Polygon*, I used (0, 0, 0) as the *Center point*, which is *origin point* of our Sketch.
 
-*Y2* : Y coordinate of the end point, of the arc
+For *Vertex point* of *Polygon*, I used (1, 0, 0) which is 1 point distance in X-direction.
 
-*Z2* : Z coordinate of the end point, of the arc
+For *Number of sides* in the *Polygon*, I used *6* which represent **a Hexagon**.
 
-*X3* : X coordinate of the middle point, of the arc
+Below Image show when *Inscribed* option is `True` and show an *inscribed construction circle*.
 
-*Y3* : Y coordinate of the middle point, of the arc
+![polygon-inscribed-circle-true](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-true.png)
 
-*Z3* : Z coordinate of the middle point, of the arc
+Below Image show when *Inscribed* option is `False`and show a *circumscribed construction circle*.
 
-For creating a *3-Point arc*, I used (-1, 0, 0) as the *Start point* for **3-Point Arc**, which is -1 point distance in X-direction.
+![polygon-inscribed-circle-false](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-false.png)
 
-For *End point* of *3-Point arc*, I used (1, 0, 0) which is 1 point distance in X-direction.
-
-For *Middle point* of *3-Point arc*, I used (0, 1, 0) which is 1 point distance in Y-direction.
-
-Below Image show above parameters in Details.
-
-![3point-arc-parameter-details](/assets/Solidworks_Images/arcs/3point-arc-parameter.png)
-
-This `Create3PointArc` method returns *sketch segments* which represent the sides created for this *3-Point arc*.
+This `CreatePolygon` method returns **an array** of *sketch segments* that represent the sides created for this *Polygon*.
 
 A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
 
@@ -278,7 +270,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create 3-Point Arc* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Polygon* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -286,6 +278,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-tangent-arc" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-3point-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-3point-arc" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-polygon" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
