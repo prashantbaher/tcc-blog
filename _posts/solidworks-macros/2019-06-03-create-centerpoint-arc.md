@@ -3,7 +3,7 @@ categories: Solidworks-macros
 title:  Solidworks Macros - Create Centerpoint Arc From VBA Macro
 ---
 
-In this post, I tell you about *how to create Centerpoint Arc through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Centerpoint Arc through Solidworks VBA Macros* in a sketch.
 
 The process is almost identical with previous [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
 
@@ -275,5 +275,5 @@ Till then, Happy learning!!!
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/solidworks-macros/create-perimeter-circle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-centerpoint-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-tangent-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

@@ -66,3 +66,5 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 * [Sketch - Create Perimeter Circle](/solidworks-macros/create-perimeter-circle)
 
 * [Sketch - Create Centerpoint Arc](/solidworks-macros/create-centerpoint-arc)
+
+* [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc)
