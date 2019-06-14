@@ -315,5 +315,5 @@ Till then, Happy learning!!!
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/solidworks-macros/create-centerpoint-arc" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-tangent-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-3point-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
