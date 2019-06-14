@@ -248,7 +248,7 @@ This `CreateSketchSlot` method takes following parameters as explained:
 
 *AddDimension* : `True` to automatically add dimensions, `False` to not.
 
-For more details about Slot Parameter you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html)
+For **more details** about *Slot Parameter* you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html)
 
 For creating a *Straight Slot*, I used following parameter Values:
 
@@ -280,27 +280,15 @@ For creating a *Straight Slot*, I used following parameter Values:
 
   * *AddDimension* : `False`
 
-For *Vertex point* of *Polygon*, I used (1, 0, 0) which is 1 point distance in X-direction.
+Below Image described **the Parameters for Straight Slot** in more detail.
 
-For *Number of sides* in the *Polygon*, I used *6* which represent **a Hexagon**.
+![straight-slot-parameters](/assets/Solidworks_Images/slots/straight-slot-parameters.png)
 
-Below Image show when *Inscribed* option is `True` and show an *inscribed construction circle*.
+This `CreateSketchSlot` method returns *Sketch Slot* interface i.e. `ISketchSlot` interface. 
 
-![polygon-inscribed-circle-true](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-true.png)
+This `ISketchSlot` interface has various **methods and properties** for *a Slot*.
 
-Below Image show when *Inscribed* option is `False`and show a *circumscribed construction circle*.
-
-![polygon-inscribed-circle-false](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-false.png)
-
-This `CreatePolygon` method returns **an array** of *sketch segments* that represent the sides created for this *Polygon*.
-
-A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
-
-Sketch Segment has `ISketchSegment` Interface, which provides functions that are generic to every type of sketch segment.
-
-For example, every sketch segment has an ID and can be programmatically selected.
-
-Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
+For more detail about **methods and properties** of `ISketchSlot` interface you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html)
 
 ### NOTE
 
@@ -332,7 +320,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create a Polygon* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Straight Slot* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -340,6 +328,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-arc" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-polygon" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-polygon" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-straight-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
