@@ -70,3 +70,5 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 * [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc)
 
 * [Sketch - Create 3-Point Arc](/solidworks-macros/create-3point-arc)
+
+* [Sketch - Create Polygon](/solidworks-macros/create-polygon)
