@@ -56,7 +56,7 @@ Sub main()
   ' Creating a 3-Point Arc
   Set mySketchSegment = swSketchManager.Create3PointArc(-1, 0, 0, 1, 0, 0, 0, 1, 0)
   
-  ' De-select the line after creation
+  ' De-select the Arc after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -265,7 +265,7 @@ Because Solidworks API output the distance in **Meter** only; which is not my re
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Centerpoint Arc.
+In the this line of code, we de-select the created 3-Point Arc.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 

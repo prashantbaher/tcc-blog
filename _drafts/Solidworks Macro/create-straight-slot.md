@@ -50,13 +50,13 @@ Sub main()
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating Variable for Solidworks Sketch segment
+  ' Creating Variable for Solidworks Slot
   Dim mySketchSlot As SketchSlot
       
   ' Creating a Straight slot
   Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
   
-  ' De-select the line after creation
+  ' De-select the Slot after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -183,7 +183,7 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating Variable for Solidworks Sketch segment
+' Creating Variable for Solidworks Slot
 Dim mySketchSlot As SketchSlot
       
 ' Creating a Straight slot
@@ -303,11 +303,11 @@ But when I used Solidworks API through *VBA macros* or *C#*, I have to use **con
 Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the Arc after creation
+' De-select the Slot after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Centerpoint Arc.
+In the this line of code, we de-select the created Straight Slot.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 

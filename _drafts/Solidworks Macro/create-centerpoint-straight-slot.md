@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Polygon From VBA Macro
+title:  Solidworks Macros - Create a Centerpoint Straight Slot From VBA Macro
 ---
 
-In this post, I tell you about *how to create a Polygon through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Centerpoint Straight Slot through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc) post.
+The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
 
-In this post, I tell you about `CreatePolygon` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Polygon**.
+So ***use this method*** if you want to create a new **Centerpoint Straight Slot**.
 
-Below is the `code` sample for creating *a Polygon*.
+Below is the `code` sample for creating *a Centerpoint Straight Slot*.
 
 ```vb
 Option Explicit
@@ -50,13 +50,13 @@ Sub main()
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating Varient for Polygon
-  Dim myPolygon As Variant
+  ' Creating Variable for Solidworks Slot
+  Dim mySketchSlot As SketchSlot
+      
+  ' Creating a Centerpoint Straight slot
+  Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
   
-  ' Creating a Polygon
-  myPolygon = swSketchManager.CreatePolygon(0, 0, 0, 1, 0, 0, 6, True)
-  
-  ' De-select the Polygon after creation
+  ' De-select the Slot after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -183,62 +183,112 @@ This method allows us to insert a sketch in selected plane.
 <!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
-' Creating Varient for Polygon
-Dim myPolygon As Variant
-
-' Creating a Polygon
-myPolygon = swSketchManager.CreatePolygon(0, 0, 0, 1, 0, 0, 6, True)
+' Creating Variable for Solidworks Slot
+Dim mySketchSlot As SketchSlot
+      
+' Creating a Centerpoint Straight slot
+Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
 ```
 
-In above sample code, we 1st create a variable named `myPolygon` of type `Variant`.
+In above sample code, we 1st create a variable named `mySketchSlot` of type `SketchSlot`.
 
-In 2nd line, we **get** the value of *Variant* variable `myPolygon`.
+In 2nd line, we **set** the value of *SketchSlot* variable `mySketchSlot`.
 
-We get this value from `CreatePolygon` method which is inside the `swSketchManager` variable.
+We get this value from `CreateSketchSlot` method which is inside the `swSketchManager` variable.
 
-`swSketchManager` variable is a type of **SketchManager**, hence we used `CreatePolygon` method from **SketchManager**.
+`swSketchManager` variable is a type of **SketchManager**, hence we used `CreateSketchSlot` method from **SketchManager**.
 
-This `CreatePolygon` method takes following parameters as explained:
+This `CreateSketchSlot` method takes following parameters as explained:
 
-*XC* : X coordinate of the center point, of the polygon
+*SlotCreationType* : *Type of sketch slot* as defined in `swSketchSlotCreationType_e`.
 
-*YC* : Y coordinate of the center point, of the polygon
+  There are 4 Different types of Slots we can create.
 
-*ZC* : Z coordinate of the center point, of the polygon
+  * ***Straight Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_line` or **0**
 
-*Xp* : X coordinate of the vertex point, of the polygon
+  * ***Centerpoint straight Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_center_line` or **1**
 
-*Yp* : Y coordinate of the vertex point, of the polygon
+  * ***Centerpoint arc Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_arc` or **2**
 
-*Zp* : Z coordinate of the vertex point, of the polygon
+  * ***3-point arc Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_3pointarc` or **4**
 
-*Sides* : Number of sides in the polygon
+*SlotLengthType* : *Type of length of sketch slot* as defined in `swSketchSlotLengthType_e`.
 
-*Inscribed* : `True` to show an inscribed construction circle, `False` to show a circumscribed construction circle
+  There are 2 different types of Sketch slot length we can create.
 
-For creating a *Polygon*, I used (0, 0, 0) as the *Center point*, which is *origin point* of our Sketch.
+  * ***Center to Center*** : `swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter` or **0**
 
-For *Vertex point* of *Polygon*, I used (1, 0, 0) which is 1 point distance in X-direction.
+  * ***Full Length*** : `swSketchSlotLengthType_e.swSketchSlotLengthType_FullLength` or **1**
 
-For *Number of sides* in the *Polygon*, I used *6* which represent **a Hexagon**.
+*Width* : Width of Slot
 
-Below Image show when *Inscribed* option is `True` and show an *inscribed construction circle*.
+*X1* : X coordinate of the point 1, of the Slot
 
-![polygon-inscribed-circle-true](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-true.png)
+*Y1* : Y coordinate of the point 1, of the Slot
 
-Below Image show when *Inscribed* option is `False`and show a *circumscribed construction circle*.
+*Z1* : Z coordinate of the point 1, of the Slot
 
-![polygon-inscribed-circle-false](/assets/Solidworks_Images/arcs/polygon-inscribed-circle-false.png)
+*X2* : X coordinate of the point 2, of the Slot
 
-This `CreatePolygon` method returns **an array** of *sketch segments* that represent the sides created for this *Polygon*.
+*Y2* : Y coordinate of the point 2, of the Slot
 
-A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
+*Z2* : Z coordinate of the point 2, of the Slot
 
-Sketch Segment has `ISketchSegment` Interface, which provides functions that are generic to every type of sketch segment.
+*X3* : X coordinate of the point 3, of the Slot
 
-For example, every sketch segment has an ID and can be programmatically selected.
+*Y3* : Y coordinate of the point 3, of the Slot
 
-Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
+*Z3* : Z coordinate of the point 3, of the Slot
+
+*CenterArcDirection* : We need to set the direction eiter Clockwise or Anti-Clockwise/Counterclockwise as follows:
+
+  * ***Clockwise (CW)*** : -1
+
+  * ***Anti-Clockwise/Counterclockwise (CCW)*** : 1
+
+*AddDimension* : `True` to automatically add dimensions, `False` to not.
+
+For **more details** about *Slot Parameter* you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html)
+
+For creating a *Centerpoint Straight Slot*, I used following parameter Values:
+
+  * *SlotCreationType* : `swSketchSlotCreationType_e.swSketchSlotCreationType_center_line`
+
+  Since we want to create a *Centerpoint Straight Slot* hence I select above value.
+
+  * *SlotLengthType* : `swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter`
+
+  I want length of this Slot from *Center to Center* hence I select above value.
+
+  * *Width* : **1**
+
+  * *X1, Y1, Z1* : `0, 0, 0`
+
+  For Point 1, I use (0, 0, 0) values, which is *origin* of Sketch.
+
+  * *X2, Y2, Z2* : `1, 0, 0`
+
+  For Point 2, I use (1, 0, 0) values, which is which is 1 point distance in X-direction.
+
+  * *X3, Y3, Z3* : `1, 1, 0`
+
+  For Point 2, I use (1, 1, 0) values, which is which is 1 point distance in X-direction and 1 point distance in Y-direction.
+
+  * *CenterArcDirection* : **1**
+
+  I want to create Anti-Clockwise/Counterclockwise Slot.
+
+  * *AddDimension* : `False`
+
+Below Image described **the Parameters for Centerpoint Straight Slot** in more detail.
+
+![centerpoint-straight-slot-parameters](/assets/Solidworks_Images/slots/centerpoint-straight-slot-parameters.png)
+
+This `CreateSketchSlot` method returns *Sketch Slot* interface i.e. `ISketchSlot` interface. 
+
+This `ISketchSlot` interface has various **methods and properties** for *a Slot*.
+
+For more detail about **methods and properties** of `ISketchSlot` interface you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html)
 
 ### NOTE
 
@@ -253,11 +303,11 @@ But when I used Solidworks API through *VBA macros* or *C#*, I have to use **con
 Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the Polygon after creation
+' De-select the Slot after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Polygon.
+In the this line of code, we de-select the created Centerpoint Straight Slot.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
@@ -270,7 +320,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create a Polygon* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Centerpoint Straight Slot* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -278,6 +328,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-arc" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-polygon" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-straight-slot" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-centerpoint-straight-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

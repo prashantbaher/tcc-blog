@@ -59,7 +59,7 @@ Sub main()
   ' Creating a Tangent Arc
   Set mySketchSegment = swSketchManager.CreateTangentArc(0, 1, 0, 2, 1, 0, swTangentArcTypes_e.swForward)
   
-  ' De-select the line after creation
+  ' De-select the Arc after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -291,7 +291,7 @@ Because Solidworks API output the distance in **Meter** only; which is not my re
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Centerpoint Arc.
+In the this line of code, we de-select the created Tangent Arc.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
