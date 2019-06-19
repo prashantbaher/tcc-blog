@@ -45,9 +45,17 @@ Below list contains posts on *general Solidworks functions*. These posts will gu
 
 Below list contains posts on *Solidworks Sketch functions*. These posts will guide you on how to do write macros on these *general Solidworks Sketch functions*.
 
+### Create Different Lines From VBA Macro
+
+Below posts teach you how to create different types of `Line` in *Solidworks* using **VBA macros**.
+
 * [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
 
 * [Sketch - Create CenterLines](/solidworks-macros/sketch-create-centerline)
+
+### Create Different Rectangle From VBA Macro
+
+Below posts teach you how to create different types of `Rectangle` in *Solidworks* using **VBA macros**.
 
 * [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle)
 
@@ -59,11 +67,19 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 
 * [Sketch - Create A Parallelogram](/solidworks-macros/create-parallelogram)
 
+### Create Different Circle From VBA Macro
+
+Below posts teach you how to create different types of `Circle` in *Solidworks* using **VBA macros**.
+
 * [Sketch - Create A Circle](/solidworks-macros/create-circle)
 
 * [Sketch - Create Circle By Radius](/solidworks-macros/create-circle-by-radius)
 
 * [Sketch - Create Perimeter Circle](/solidworks-macros/create-perimeter-circle)
+
+### Create Different Arc From VBA Macro
+
+Below posts teach you how to create different types of `Arc` in *Solidworks* using **VBA macros**.
 
 * [Sketch - Create Centerpoint Arc](/solidworks-macros/create-centerpoint-arc)
 
@@ -72,3 +88,9 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 * [Sketch - Create 3-Point Arc](/solidworks-macros/create-3point-arc)
 
 * [Sketch - Create Polygon](/solidworks-macros/create-polygon)
+
+### Create Different Slot From VBA Macro
+
+Below posts teach you how to create different types of `Slot` in *Solidworks* using **VBA macros**.
+
+* [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot)
