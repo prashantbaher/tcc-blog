@@ -94,3 +94,5 @@ Below posts teach you how to create different types of `Arc` in *Solidworks* usi
 Below posts teach you how to create different types of `Slot` in *Solidworks* using **VBA macros**.
 
 * [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot)
+
+* [Sketch - Create Centerpoint Straight Slot](/solidworks-macros/create-centerpoint-straight-slot)
