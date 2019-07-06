@@ -245,8 +245,9 @@ Basically I read a lot, work a lot and practice a lot. Because of these I learn 
 
 Purpose of this blog is simple. 
 
-> **Share my knowledge of Solidworks VBA Macro development and provide Solidworks C# API help in a tutorial format.**
- 
+<div class="w3-border w3-panel w3-leftbar w3-border-green w3-pale-green">
+Share my knowledge of Solidworks VBA Macro development and provide Solidworks C# API help in a tutorial format.
+</div>
 Since I was sharing my knowledge with *my co-workers*, I thought why don't share this knowledge with other people who wants to learn these skills.
  
 Also, I believe that everybody should have access to the knowledge they are looking for and this blog gives me the opportunity to share my knowledge around the world.
