@@ -1,19 +1,21 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create a Centerpoint Straight Slot From VBA Macro
+title:  Solidworks Macros - Create a Point From VBA Macro
 ---
 
-In this post, I tell you about *how to create a Centerpoint Straight Slot through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Point through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
+The process is almost identical with previous [Sketch - Create Lines](/solidworks-macros/sketch-create-line) post.
 
-In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreatePoint` method from **Solidworks** `SketchManager` object.
+
+By this method 1st we create *a simple point*, after that we create *a sequence of points*.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Centerpoint Straight Slot**.
+So ***use this method*** if you want to create a new **Point**.
 
-Below is the `code` sample for creating *a Centerpoint Straight Slot*.
+Below is the `code` sample for creating *a Point*.
 
 ```vb
 Option Explicit
@@ -50,13 +52,34 @@ Sub main()
   ' Inserting a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating Variable for Solidworks Slot
-  Dim mySketchSlot As SketchSlot
-      
-  ' Creating a Centerpoint Straight slot
-  Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
+  ' Creating Varient for Polygon
+  Dim myPoint As SketchPoint
   
-  ' De-select the Slot after creation
+  ' Creating a Point
+  Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
+  
+  ' #########Creating a number of points##############
+  
+  ' Declaring integer type variable for loop
+  Dim i As Integer
+  
+  ' Looping through 1 to 5
+  For i = 0 To 5
+  
+    ' Declaring integer type variables for X, Y and Z cordinates of point
+    Dim x, y, z As Integer
+    
+    ' Setting values of x, y and z
+    x = i
+    y = x + i
+    z = 0
+    
+    ' Create points till loop continues
+    Set myPoint = swSketchManager.CreatePoint(x, y, z)
+    
+  Next
+  
+  ' De-select the Polygon after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
@@ -122,9 +145,6 @@ We assign the value by using a *Method* named `GetUserPreferenceStringValue()`.
 
 This method is a part of our main Solidworks variable `swApp`.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Setting Solidworks document to new part document
 Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
@@ -179,110 +199,66 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 
 This method allows us to insert a sketch in selected plane.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
-' Creating Variable for Solidworks Slot
-Dim mySketchSlot As SketchSlot
+' Creating Variable for Sketch Point
+Dim myPoint As SketchPoint
       
-' Creating a Centerpoint Straight slot
-Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
+' Creating a Point
+Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
 ```
 
-In above sample code, we 1st create a variable named `mySketchSlot` of type `SketchSlot`.
+In above sample code, we 1st create a variable named `myPoint` of type `SketchPoint`.
 
-In 2nd line, we **set** the value of *SketchSlot* variable `mySketchSlot`.
+In 2nd line, we **set** the value of *SketchPoint* variable `myPoint`.
 
-We get this value from `CreateSketchSlot` method which is inside the `swSketchManager` variable.
+We get this value from `CreatePoint` method which is inside the `swSketchManager` variable.
 
 `swSketchManager` variable is a type of **SketchManager**, hence we used `CreateSketchSlot` method from **SketchManager**.
 
-This `CreateSketchSlot` method takes following parameters as explained:
+This `CreatePoint` method takes following parameters as explained:
 
-*SlotCreationType* : *Type of sketch slot* as defined in `swSketchSlotCreationType_e`.
+**X** : *X Location of Point*
 
-  There are 4 Different types of Slots we can create.
+**Y** : *Y Location of Point*
 
-  * ***Straight Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_line` or **0**
+**Z** : *Z Location of Point*
 
-  * ***Centerpoint straight Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_center_line` or **1**
+For creating a *Sketch Point*, I used following parameter Values:
 
-  * ***Centerpoint arc Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_arc` or **2**
+  * **X** : 0
 
-  * ***3-point arc Slot*** : `swSketchSlotCreationType_e.swSketchSlotCreationType_3pointarc` or **4**
+  * **Y** : 1
 
-*SlotLengthType* : *Type of length of sketch slot* as defined in `swSketchSlotLengthType_e`.
+  * **Z** : 0
 
-  There are 2 different types of Sketch slot length we can create.
+This create a point in *Y - Direction* at the distance of 1.
 
-  * ***Center to Center*** : `swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter` or **0**
+```vb
+' Declaring integer type variable for loop
+Dim i As Integer
 
-  * ***Full Length*** : `swSketchSlotLengthType_e.swSketchSlotLengthType_FullLength` or **1**
+' Looping through 1 to 5
+For i = 0 To 5
 
-*Width* : Width of Slot
+  ' Declaring integer type variables for X, Y and Z cordinates of point
+  Dim x, y, z As Integer
+  
+  ' Setting values of x, y and z
+  x = i
+  y = x + i
+  z = 0
+  
+  ' Create points till loop continues
+  Set myPoint = swSketchManager.CreatePoint(x, y, z)
+  
+Next
+```
 
-*X1* : X coordinate of the point 1, of the Slot
+Above Lines of code creates a number of points.
 
-*Y1* : Y coordinate of the point 1, of the Slot
+Below Image described **the Parameters for Centerpoint Arc Slot** in more detail.
 
-*Z1* : Z coordinate of the point 1, of the Slot
-
-*X2* : X coordinate of the point 2, of the Slot
-
-*Y2* : Y coordinate of the point 2, of the Slot
-
-*Z2* : Z coordinate of the point 2, of the Slot
-
-*X3* : X coordinate of the point 3, of the Slot
-
-*Y3* : Y coordinate of the point 3, of the Slot
-
-*Z3* : Z coordinate of the point 3, of the Slot
-
-*CenterArcDirection* : We need to set the direction eiter Clockwise or Anti-Clockwise/Counterclockwise as follows:
-
-  * ***Clockwise (CW)*** : -1
-
-  * ***Anti-Clockwise/Counterclockwise (CCW)*** : 1
-
-*AddDimension* : `True` to automatically add dimensions, `False` to not.
-
-For **more details** about *Slot Parameter* you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html)
-
-For creating a *Centerpoint Straight Slot*, I used following parameter Values:
-
-  * *SlotCreationType* : `swSketchSlotCreationType_e.swSketchSlotCreationType_center_line`
-
-  Since we want to create a *Centerpoint Straight Slot* hence I select above value.
-
-  * *SlotLengthType* : `swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter`
-
-  I want length of this Slot from *Center to Center* hence I select above value.
-
-  * *Width* : **1**
-
-  * *X1, Y1, Z1* : `0, 0, 0`
-
-  For Point 1, I use (0, 0, 0) values, which is *origin* of Sketch.
-
-  * *X2, Y2, Z2* : `1, 0, 0`
-
-  For Point 2, I use (1, 0, 0) values, which is which is 1 point distance in X-direction.
-
-  * *X3, Y3, Z3* : `1, 1, 0`
-
-  For Point 2, I use (1, 1, 0) values, which is which is 1 point distance in X-direction and 1 point distance in Y-direction.
-
-  * *CenterArcDirection* : **1**
-
-  I want to create Anti-Clockwise/Counterclockwise Slot.
-
-  * *AddDimension* : `False`
-
-Below Image described **the Parameters for Centerpoint Straight Slot** in more detail.
-
-![centerpoint-straight-slot-parameters](/assets/Solidworks_Images/slots/centerpoint-straight-slot-parameters.png)
+![centerpoint-arc-slot-parameters](/assets/Solidworks_Images/slots/centerpoint-arc-slot-parameters.png)
 
 This `CreateSketchSlot` method returns *Sketch Slot* interface i.e. `ISketchSlot` interface. 
 
@@ -307,7 +283,7 @@ Because Solidworks API output the distance in **Meter** only; which is not my re
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Centerpoint Straight Slot.
+In the this line of code, we de-select the created Centerpointrc Slot.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
@@ -320,14 +296,14 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create a Centerpoint Straight Slot* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Centerpoint Arc Slot* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
-Till then, Happy learning!!!
+Till then, Happy learning!!! 
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-straight-slot" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-centerpoint-straight-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-3point-arc-slot" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-centerpoint-arc-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>

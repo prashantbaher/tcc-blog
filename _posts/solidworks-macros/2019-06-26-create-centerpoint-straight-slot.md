@@ -1,19 +1,19 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create a Straight Slot From VBA Macro
+title:  Solidworks Macros - Create a Centerpoint Straight Slot From VBA Macro
 ---
 
-In this post, I tell you about *how to create a Straight Slot through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Centerpoint Straight Slot through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc) post.
+The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
 
 In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Straight Slot**.
+So ***use this method*** if you want to create a new **Centerpoint Straight Slot**.
 
-Below is the `code` sample for creating *a Straight Slot*.
+Below is the `code` sample for creating *a Centerpoint Straight Slot*.
 
 ```vb
 Option Explicit
@@ -53,8 +53,8 @@ Sub main()
   ' Creating Variable for Solidworks Slot
   Dim mySketchSlot As SketchSlot
       
-  ' Creating a Straight slot
-  Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
+  ' Creating a Centerpoint Straight slot
+  Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
   
   ' De-select the Slot after creation
   swDoc.ClearSelection2 True
@@ -186,8 +186,8 @@ This method allows us to insert a sketch in selected plane.
 ' Creating Variable for Solidworks Slot
 Dim mySketchSlot As SketchSlot
       
-' Creating a Straight slot
-Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
+' Creating a Centerpoint Straight slot
+Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_center_line, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, False)
 ```
 
 In above sample code, we 1st create a variable named `mySketchSlot` of type `SketchSlot`.
@@ -250,11 +250,11 @@ This `CreateSketchSlot` method takes following parameters as explained:
 
 For **more details** about *Slot Parameter* you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html)
 
-For creating a *Straight Slot*, I used following parameter Values:
+For creating a *Centerpoint Straight Slot*, I used following parameter Values:
 
-  * *SlotCreationType* : `swSketchSlotCreationType_e.swSketchSlotCreationType_line`
+  * *SlotCreationType* : `swSketchSlotCreationType_e.swSketchSlotCreationType_center_line`
 
-  Since we want to create a *Straight Slot* hence I select above value.
+  Since we want to create a *Centerpoint Straight Slot* hence I select above value.
 
   * *SlotLengthType* : `swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter`
 
@@ -280,9 +280,9 @@ For creating a *Straight Slot*, I used following parameter Values:
 
   * *AddDimension* : `False`
 
-Below Image described **the Parameters for Straight Slot** in more detail.
+Below Image described **the Parameters for Centerpoint Straight Slot** in more detail.
 
-![straight-slot-parameters](/assets/Solidworks_Images/slots/straight-slot-parameters.png)
+![centerpoint-straight-slot-parameters](/assets/Solidworks_Images/slots/centerpoint-straight-slot-parameters.png)
 
 This `CreateSketchSlot` method returns *Sketch Slot* interface i.e. `ISketchSlot` interface. 
 
@@ -307,7 +307,7 @@ Because Solidworks API output the distance in **Meter** only; which is not my re
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Straight Slot.
+In the this line of code, we de-select the created Centerpoint Straight Slot.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
@@ -320,7 +320,7 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create a Straight Slot* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Centerpoint Straight Slot* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
@@ -328,6 +328,6 @@ Till then, Happy learning!!!
 
 <!-- This is post navigation bar -->
 <div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-polygon" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-centerpoint-straight-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
+  <a href="/solidworks-macros/create-straight-slot" class="w3-button w3-rose">&#10094; Previous</a>
+  <a href="/solidworks-macros/create-3point-arc-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
