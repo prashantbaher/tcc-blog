@@ -20,6 +20,8 @@ For organization purpose I have divided this page into the following parts
 
 Feel free to jump to the topic you want to read from above topics.
 
+---
+
 ## Introduction
 
 I am a **CAD engineer** and using **Solidworks 3D CAD Software** from ***past 8 years***.
@@ -38,11 +40,11 @@ It is because in our job we use most of the **Microsoft** products like:
 
 Now I have knowledge of following programming languages:
 
-1. Visual Basic for Application, also known as VBA
+1. **Visual Basic for Application, also known as VBA**
 
-2. C#
+2. **C#**
 
-3. C++
+3. **C++**
 
 I am very comfortable in **VBA** and **C#** but I am still learning **C++** programming language.
 
@@ -55,6 +57,8 @@ I am good at **Solidworks API** and its application in the following languages:
 2. *C#* for *Add-in* or *Standalone application* in Solidworks
 
 3. *Visual C++* just for **fun** in Solidworks
+
+---
 
 ## Why did I learn to programme?
 
@@ -69,6 +73,8 @@ I talk with my team and ask them for the suggestions but they are not much inter
 Then I watch some **YouTube Videos** and get my hands dirty with macros.
 
 After some time I got the **confidence** and now I am able to write **macros** with accurate use *Google*.
+
+---
 
 ## How did I learn to programme?
 
@@ -105,7 +111,7 @@ In office, it is very difficult for me to watch all the videos and do works at t
 I thought I should look for **a Book** for this and luckily I found **a book** on Amazon which is shown below.
 
 <!-- Excel programming Amazon Ads -->
-<div>
+<div class="w3-border w3-panel w3-leftbar w3-border-blue w3-pale-blue">
     <script type="text/javascript">
     amzn_assoc_tracking_id = "thecadcoder-20";
     amzn_assoc_ad_mode = "manual";
@@ -177,12 +183,8 @@ After that, I started learning **C++ programming language** by reading books fro
 
 Those books are shown below.
 
-1st is very good for learning programming itself!!! 
-
-A **must recommendation** to all those who want to learn **how to think for programming** !!
-
 <!-- Programming: Principles and Practice -->
-<div>
+<div class="w3-border w3-panel w3-leftbar w3-border-blue w3-pale-blue">
     <script type="text/javascript">
     amzn_assoc_tracking_id = "thecadcoder-20";
     amzn_assoc_ad_mode = "manual";
@@ -197,10 +199,14 @@ A **must recommendation** to all those who want to learn **how to think for prog
     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
 
+1st is very good for learning programming itself!!! 
+
+A **must recommendation** to all those who want to learn **how to think for programming** !!
+
 ---
 
 <!-- The C++ Programming Language -->
-<div>
+<div class="w3-border w3-panel w3-leftbar w3-border-blue w3-pale-blue">
     <script type="text/javascript">
     amzn_assoc_tracking_id = "thecadcoder-20";
     amzn_assoc_ad_mode = "manual";
@@ -215,7 +221,7 @@ A **must recommendation** to all those who want to learn **how to think for prog
     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
 
-This is an advance book, mainly use for ***reference*** in **C++ programming language**. 
+2nd book is an advance book, mainly use for ***reference*** in **C++ programming language**. 
  
 After reading the 1st book I thought I should start implementing my new knowledge in creating some application.
 
@@ -232,6 +238,8 @@ Because of this, I am not able to give much time to **C++ programming language**
 But I am sure if anybody wants to start a **C++ project** for Solidworks I can really help in this.
 
 Basically I read a lot, work a lot and practice a lot. Because of these I learn all these things.
+
+---
 
 ## Purpose of this blog
 
@@ -256,6 +264,8 @@ Also, in recent time when I search for the job openings, I found that there is a
 Which really surprise me!!
 
 This encouraged me to write more on this blog. So that more people can get help from my blog.
+
+---
  
 ## Future Plans
 
