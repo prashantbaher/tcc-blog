@@ -29,11 +29,11 @@ minima:
 
   # generate social links in footer
   social_links:
-    # twitter: jekyllrb
+    twitter: thecadcoder
     # github:  jekyll
     # rss: rss
     # dribbble: jekyll
-    facebook: The-CAD-Coder-2302385700020635
+    facebook: thecadcoder
     # flickr:   jekyll
     # instagram: jekyll
     # linkedin: jekyll
@@ -59,6 +59,7 @@ header_pages:
   - 2-solidworks-macro.md
   - 3-privacy-policy.md
   - 4-about.md
+  - 5-resource.md
 
 # Build settings
 theme: minima
