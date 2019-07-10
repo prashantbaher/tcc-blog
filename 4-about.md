@@ -126,7 +126,9 @@ I thought I should look for **a Book** for this and luckily I found **a book** o
     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
 
-This is updated copy of the same book.
+This is updated copy of the same book. 
+
+If you want to buy this book you can but it from Amazon by clicking above image ad.
 
 *Reading a book* and *working* in an office at the same time is an easy task for me.
 
@@ -222,6 +224,8 @@ A **must recommendation** to all those who want to learn **how to think for prog
 </div>
 
 2nd book is an advance book, mainly use for ***reference*** in **C++ programming language**. 
+
+If you want to buy these books you can but them from Amazon by clicking above image ads.
  
 After reading the 1st book I thought I should start implementing my new knowledge in creating some application.
 
