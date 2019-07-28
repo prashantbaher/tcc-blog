@@ -31,7 +31,7 @@ minima:
   social_links:
     twitter: CadCoder
     # github:  jekyll
-    # rss: rss
+    rss: rss
     # dribbble: jekyll
     facebook: thecadcoder
     # flickr:   jekyll
