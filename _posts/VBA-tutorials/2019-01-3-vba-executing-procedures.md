@@ -149,8 +149,9 @@ Here’s what’s going on:
 
 Next post will be about ***Programming Concepts, Comments and Data-types***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-programming-concepts-comments-and-datatypes" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

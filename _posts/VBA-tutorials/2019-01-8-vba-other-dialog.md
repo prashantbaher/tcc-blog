@@ -251,8 +251,9 @@ In this case, the code uses default file path as the starting directory.
 
 Next post will be about ***VBA UserForms***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-inputbox-function" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

@@ -242,8 +242,9 @@ Till then, Happy learning!!!
 
 <!--{%- include amazon-us-native-ad.html -%}-->
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/solidworks-macros/open-saved-document" class="w3-button w3-rose">&#10094; Previous</a>
   <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

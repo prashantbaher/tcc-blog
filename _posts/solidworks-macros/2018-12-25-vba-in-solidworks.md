@@ -122,8 +122,9 @@ To run a macro:
 
 Next post will be about ***Open new Part document using Solidworks macros***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/Solidworks-macros-guide" class="w3-button w3-rose">&#10094; Home</a>
   <a href="/solidworks-macros/open-new-document" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

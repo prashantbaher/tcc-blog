@@ -129,8 +129,9 @@ If you get confused keep reading next post on these topics.
 
 Next post will be about ***Variable Scope***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-variables" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

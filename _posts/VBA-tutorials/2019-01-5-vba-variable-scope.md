@@ -82,8 +82,9 @@ Hence I declare this variable in **Declaration** section of **VBE**.
 
 Next post wil be about ***Public, Static and Variable's Life***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-declaring-and-scoping-of-variables" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-publc-stattic-variable-life" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

@@ -57,8 +57,9 @@ Following table provides a quick summary of these constructs.
 
 Next post will be about ***If-Then-Else and Select Case structure***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-more-function" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-if-then-structure-select-case" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

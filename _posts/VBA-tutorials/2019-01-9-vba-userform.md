@@ -280,8 +280,9 @@ I have started VBA UserForm Example in this tutorials lists.
 
 So if you want to learn how I use these Forms, you can watch them in UserForm Example List Post.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/open-part-from-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

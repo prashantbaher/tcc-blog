@@ -173,8 +173,9 @@ Since we are using custom value, we need to define **paper width** and **paper h
 
 This is all for now. In the next post I will tell you how select a plane in a part document and if possible how to create a skecth segment.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/solidworks-macros/open-new-document" class="w3-button w3-rose">&#10094; Previous</a>
   <a href="/solidworks-macros/select-plane-from-tree" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

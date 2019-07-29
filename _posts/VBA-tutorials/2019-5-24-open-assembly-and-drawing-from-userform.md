@@ -338,8 +338,9 @@ I will provide more tutorials on using of Userform time to time.
 
 ***Till then do come to visit this blog and Happy learning!!!***
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
   <a href="/visual-basic/open-part-from-userform" class="w3-button w3-rose">&#10094; Previous</a>
   <a href="/visual-basic/open-assembly-and-drawing-from-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

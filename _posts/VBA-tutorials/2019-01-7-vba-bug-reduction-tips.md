@@ -23,8 +23,9 @@ As you gain more experience with VBA, you spend less time debugging and, when yo
 
 Next post will be about ***VBA Dialog Boxes***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-debugger" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-dialog-boxes" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->

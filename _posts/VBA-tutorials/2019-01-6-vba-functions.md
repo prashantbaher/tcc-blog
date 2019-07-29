@@ -142,8 +142,9 @@ The `TypeName` function is very versatile. You can also use this function to det
 
 Next post will be about ***VBA Functions that do more***.
 
-<!-- This is post navigation bar -->
+<!-- This is post navigation bar 
 <div class="w3-bar w3-margin-top w3-margin-bottom">
     <a href="/visual-basic/vba-arrays" class="w3-button w3-rose">&#10094; Previous</a>
     <a href="/visual-basic/vba-more-function" class="w3-button w3-rose w3-right">Next &#10095;</a>
 </div>
+-->
