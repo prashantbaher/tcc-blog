@@ -35,7 +35,7 @@ layout: home
 <div class="w3-row">
   <ul class="post-list">
     {% for post in paginator.posts %}
-    <li class="w3-container w3-third">
+    <li class="w3-card w3-container w3-third ">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
