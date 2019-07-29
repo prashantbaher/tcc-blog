@@ -1,6 +1,6 @@
 {%- assign social = site.minima.social_links -%}
 
-<ul>
+<ul class="social-media-list">
   {% if social.facebook %}
     <li>
       <a href="https://www.facebook.com/{{ social.facebook }}">
@@ -12,15 +12,15 @@
   {% if social.twitter %}
   <li>
     <a href="https://twitter.com/{{ social.twitter }}">
-      <i class="fa fa-facebook"></i> twitter
+      <i class="fa fa-facebook"></i> Twitter
     </a>
   </li>
   {% endif %}
 
   {% if social.rss %}
   <li>
-    <a href="https://twitter.com/{{ 'feed.xml' }}">
-      <i class="fa fa-twitter"></i> rss
+    <a href="{{ 'feed.xml' | relative_url}}">
+      <i class="fa fa-rss"></i> RSS
     </a>
   </li>
   {% endif %}
