@@ -21,14 +21,14 @@ layout: default
     {{ content }}
   </div>
 
-  <ul class="w3-bar w3-margin-top w3-margin-bottom">
+  <ul>
     {% if page.previous.url %}
-    <li class="previous">
+    <li class="w3-bar w3-margin-top w3-margin-bottom">
       <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
     </li>
     {% endif %}
     {% if page.next.url %}
-    <li class="next">
+    <li class="w3-bar w3-margin-top w3-margin-bottom">
       <a href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
     </li>
     {% endif %}
