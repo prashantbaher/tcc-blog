@@ -21,7 +21,7 @@ layout: default
     {{ content }}
   </div>
 
-  <ul>
+  <ul class="w3-bar w3-margin-top w3-margin-bottom">
     {% if page.previous.url %}
     <li class="w3-bar w3-margin-top w3-margin-bottom">
       <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
