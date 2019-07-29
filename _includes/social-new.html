@@ -17,6 +17,14 @@
   </li>
   {% endif %}
 
+  {% if social.youtube_channel %}
+  <li>
+    <a href="https://youtube.com/{{ social.youtube_channel }}">
+      <i class="fa fa-youtube"></i>
+    </a>
+  </li>
+  {% endif %}
+
   {% if social.rss %}
   <li>
     <a href="{{ 'feed.xml' | relative_url}}">
