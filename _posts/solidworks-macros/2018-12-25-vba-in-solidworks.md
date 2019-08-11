@@ -10,7 +10,7 @@ title: VBA in Solidworks
 
 Please see below video for visual details.
 
-<div class="w3-card">
+<div class="w3-card w3-panel">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/7RAl7sTv3bA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  </div>
 
