@@ -7,6 +7,92 @@ In this post, I tell you about *how to create a Centerpoint Arc Slot through Sol
 
 The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
 
+---
+
+## Content
+
+- [Code Demo Video on YouTube](Code-Demo-Video-On-YouTube)
+
+- [For Experience Macro Developers](for-experience-macro-developers)
+
+- [For Beginner Macro Developers](for-beginner-macro-developers)
+
+  - [Understanding the Code](understanding_the_code)
+
+  - [NOTE](important_note)
+
+- [VBA Language feature used in this post](vba-language-feature-used)
+
+- [Solidworks API Objects](solidworks-api-objects)
+
+---
+
+## [Demo Video of Code on YouTube](Code-Demo-Video-On-YouTube)
+
+I have not created the video for this post now. 
+
+I will upload the video soon for this post and update the post after that.
+
+---
+
+## [For Experience Macro Developer - Create a Centerpoint Arc Slot From VBA Macro](for-experience-macro-developers)
+
+If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
+
+Below is the code for creating **A Centerpoint Arc Slot** from **Solidworks VBA Macro**.
+
+```vb
+' Creating Variable for Solidworks Slot
+Dim mySketchSlot As SketchSlot
+    
+' Setting the value of a Centerpoint Arc slot
+Set mySketchSlot = swSketchManager.CreateSketchSlot(swSketchSlotCreationType_e.swSketchSlotCreationType_arc, swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter, 0.5, 0, 0, 0, -1, 0, 0, 1, 0, 0, -1, False)
+```
+
+First you need to **Create** a variable of `SketchSlot` type.
+
+After creating variable, you need to set the value of this variable.
+
+For this you used `CreateSketchSlot` method from **Solidworks Sketch Manager**.
+
+This `CreateSketchSlot` method set the value of `SketchSlot` type variable.
+
+The `CreateSketchSlot` method takes following parameters:
+
+*SlotCreationType* : *Type of sketch slot*.
+
+*SlotLengthType* : *Type of length of sketch slot*.
+
+*Width* : Width of Slot
+
+*X1* : X coordinate of the point 1, of the Slot
+
+*Y1* : Y coordinate of the point 1, of the Slot
+
+*Z1* : Z coordinate of the point 1, of the Slot
+
+*X2* : X coordinate of the point 2, of the Slot
+
+*Y2* : Y coordinate of the point 2, of the Slot
+
+*Z2* : Z coordinate of the point 2, of the Slot
+
+*X3* : X coordinate of the point 3, of the Slot
+
+*Y3* : Y coordinate of the point 3, of the Slot
+
+*Z3* : Z coordinate of the point 3, of the Slot
+
+*CenterArcDirection* : We need to set the direction eiter Clockwise or Anti-Clockwise/Counterclockwise 
+
+*AddDimension* : `True` to automatically add dimensions, `False` to not.
+
+If you want a more detail explaination then please read further otherwise this will help you to **Create a Centerpoint Arc Slot From VBA Macro**.
+
+---
+
+## [For Beginners Macro Developers - Create a Centerpoint Arc Slot From VBA Macro](for-beginner-macro-developers)
+
 In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
@@ -67,7 +153,7 @@ End Sub
 
 ---
 
-## Understanding the Code
+### [Understanding the Code](understanding_the_code)
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -290,7 +376,9 @@ This `ISketchSlot` interface has various **methods and properties** for *a Slot*
 
 For more detail about **methods and properties** of `ISketchSlot` interface you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html)
 
-### NOTE
+---
+
+### [NOTE](important_note)
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
 
@@ -320,14 +408,78 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
 
-Hope this post helps you to *create a Centerpoint Arc Slot* in Sketches with Solidworks VB Macros.
+After this our Solidworks VBA Macro ends the **Sub procedure** and we create **a Centerpoint Arc Slot**.
 
-For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
+---
 
-Till then, Happy learning!!! 
+## [VBA Language feature used in this post](vba-language-feature-used)
 
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-arc-slot" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-centerpoint-arc-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
+In this post used some features of **VBA programming language**.
+
+This section of post, has some brief information about the VBA programming language specific features.
+
+1. We use **Option Explicit** for capturing un-declared variables.
+
+If you want to read more about **Option Explicit** then please visit [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables).
+
+2. Then we create **variable** for different data types.
+
+If you don't know about them, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
+
+These posts will help you to understand what **Variables** are and how to use them.
+
+3. Then we create **main Sub procedure** for our macro.
+
+If you don't know about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
+
+These posts will help you to understand what **Procedures** are and how to use them.
+
+4. In most part we create some variables and set their values. We set those values by using some **functions** provided from objects.
+
+If you don't know about the **functions**, then you should visit [VBA Functions](/visual-basic/vba-functions) and [VBA Functions that do more](/visual-basic/vba-more-function) posts of this blog.
+
+These posts will help you to understand what **functions** are and how to use them.
+
+5. For creating **Centerpoint Arc Slot**, we use `CreateSketchSlot` function. This function take some input values in form of **VBA Constants**.
+
+If you don't know about the **VBA Constants**, then you should visit [VBA Constants](/visual-basic/vba-constant) post of this blog.
+
+This posts will help you to understand what **VBA Constants** are and how to use them.
+
+---
+
+## [Solidworks API Objects](solidworks-api-objects)
+
+In this post, for creating **Centerpoint Arc Slot**, we use *Solidworks API objects and their methods*.
+
+This section contains the list of all **Solidworks Objects** used in this post.
+
+I have also attached links of these **Solidworks API Objects** in **API Help website**.
+
+If you want to explore those objects, you can use these links.
+
+These Solidworks API Objects are listed below:
+
+- **Solidworks Application Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
+
+- **Solidworks Document Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
+
+- **Solidworks Sketch Manager Object**
+
+If you want explore ***Properties and Methods/Functions*** of this **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
+
+- **Solidworks Sketch Slot Object**
+
+If you want explore ***Properties and Methods/Functions*** of this **Solidworks Sketch Slot Object** you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html).
+
+---
+
+Hope this post helps you to *create a Centerpoint Arc Slot* in Sketches with **Solidworks VBA Macros**.
+
+For more such tutorials on **Solidworks VBA Macros**, do come to this blog.
+
+Till then, Happy learning!!!
