@@ -11,19 +11,19 @@ The process is almost identical with previous [Sketch - Create Straight Slot](/s
 
 ## Content
 
-- [Code Demo Video on YouTube](/solidworks-macros/create-centerpoint-arc-slot/#Code-Demo-Video-On-YouTube)
+- [Code Demo Video on YouTube](#demo-video-of-code-on-youtube)
 
-- [For Experience Macro Developers](/solidworks-macros/create-centerpoint-arc-slot/#for-experience-macro-developers)
+- [For Experience Macro Developers](#for-experience-macro-developer---create-a-centerpoint-arc-slot-from-vba-macro)
 
-- [For Beginner Macro Developers](/solidworks-macros/create-centerpoint-arc-slot/#for-beginner-macro-developers)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-centerpoint-arc-slot-from-vba-macro)
 
-  - [Understanding the Code](/solidworks-macros/create-centerpoint-arc-slot/#understanding_the_code)
+  - [Understanding the Code](#understanding-the-code)
 
-  - [NOTE](/solidworks-macros/create-centerpoint-arc-slot/#important_note)
+  - [NOTE](#note)
 
-- [VBA Language feature used in this post](/solidworks-macros/create-centerpoint-arc-slot/#vba-language-feature-used)
+- [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
 
-- [Solidworks API Objects](/solidworks-macros/create-centerpoint-arc-slot/#solidworks-api-objects)
+- [Solidworks API Objects](#solidworks-api-objects)
 
 ---
 
