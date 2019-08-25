@@ -27,7 +27,7 @@ The process is almost identical with previous [Sketch - Create Straight Slot](/s
 
 ---
 
-## [Demo Video of Code on YouTube](##Code-Demo-Video-On-YouTube)
+## Demo Video of Code on YouTube
 
 I have not created the video for this post now. 
 
@@ -35,7 +35,7 @@ I will upload the video soon for this post and update the post after that.
 
 ---
 
-## [For Experience Macro Developer - Create a Centerpoint Arc Slot From VBA Macro](##for-experience-macro-developers)
+## For Experience Macro Developer - Create a Centerpoint Arc Slot From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
@@ -91,7 +91,7 @@ If you want a more detail explaination then please read further otherwise this w
 
 ---
 
-## [For Beginners Macro Developers - Create a Centerpoint Arc Slot From VBA Macro](##for-beginner-macro-developers)
+## For Beginners Macro Developers - Create a Centerpoint Arc Slot From VBA Macro
 
 In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
 
@@ -153,7 +153,7 @@ End Sub
 
 ---
 
-### [Understanding the Code](##understanding_the_code)
+### Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -378,7 +378,7 @@ For more detail about **methods and properties** of `ISketchSlot` interface you 
 
 ---
 
-### [NOTE](##important_note)
+### NOTE
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
 
@@ -412,7 +412,7 @@ After this our Solidworks VBA Macro ends the **Sub procedure** and we create **a
 
 ---
 
-## [VBA Language feature used in this post](##vba-language-feature-used)
+## VBA Language feature used in this post
 
 In this post used some features of **VBA programming language**.
 
@@ -448,7 +448,7 @@ This posts will help you to understand what **VBA Constants** are and how to use
 
 ---
 
-## [Solidworks API Objects](##solidworks-api-objects)
+## Solidworks API Objects
 
 In this post, for creating **Centerpoint Arc Slot**, we use *Solidworks API objects and their methods*.
 
