@@ -7,13 +7,77 @@ In this post, I tell you about *how to create a Point through Solidworks VBA Mac
 
 The process is almost identical with previous [Sketch - Create Lines](/solidworks-macros/sketch-create-line) post.
 
+---
+
+## Content
+
+- [Code Demo Video on YouTube](#demo-video-of-code-on-youtube)
+
+- [For Experience Macro Developers](#for-experience-macro-developer---create-a-point-from-vba-macro)
+
+- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-point-from-vba-macro)
+
+  - [Understanding the Code](#understanding-the-code)
+
+  - [NOTE](#note)
+
+- [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
+
+- [Solidworks API Objects](#solidworks-api-objects)
+
+---
+
+## Demo Video of Code on YouTube
+
+I have not created the video for this post now. 
+
+I will upload the video soon for this post and update the post after that.
+
+---
+
+## For Experience Macro Developer - Create a Point From VBA Macro
+
+If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
+
+Below is the code for creating **A Point** from **Solidworks VBA Macro**.
+
+```vb
+' Creating Variable for Sketch Point
+Dim myPoint As SketchPoint
+      
+' Creating a Point
+Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
+```
+
+For creating a **Point** first you need to **Create** a variable of `SketchPoint` type.
+
+After creating variable, you need to set the value of this variable.
+
+For this you used `CreatePoint` method from **Solidworks Sketch Manager**.
+
+This `CreatePoint` method set the value of `SketchPoint` type variable.
+
+This `CreatePoint` method takes following parameters as explained:
+
+**X** : *X Location of Point*
+
+**Y** : *Y Location of Point*
+
+**Z** : *Z Location of Point*
+
+If you want a more detail explaination then please read further otherwise this will help you to **Create a Point From VBA Macro**.
+
+---
+
+## For Beginners Macro Developers - Create a Point From VBA Macro
+
 In this post, I tell you about `CreatePoint` method from **Solidworks** `SketchManager` object.
 
 By this method 1st we create *a simple point*, after that we create *a sequence of points*.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new **Point**.
+So ***use this method*** if you want to create **a new Point** or **sequence of points**.
 
 Below is the `code` sample for creating *a Point*.
 
@@ -90,7 +154,7 @@ End Sub
 
 ---
 
-## Understanding the Code
+### Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -108,9 +172,6 @@ Dim swApp As SldWorks.SldWorks
 ```
 
 In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Creating variable for Solidworks document
@@ -131,6 +192,7 @@ In this line, we are setting the value of our Solidworks variable `swApp` which 
 ```vb
 ' Creating string type variable for storing default part location
 Dim defaultTemplate As String
+
 ' Setting value of this string type variable to "Default part template"
 defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 ```
@@ -213,7 +275,7 @@ In 2nd line, we **set** the value of *SketchPoint* variable `myPoint`.
 
 We get this value from `CreatePoint` method which is inside the `swSketchManager` variable.
 
-`swSketchManager` variable is a type of **SketchManager**, hence we used `CreateSketchSlot` method from **SketchManager**.
+`swSketchManager` variable is a type of **SketchManager**, hence we used `CreatePoint` method from **SketchManager**.
 
 This `CreatePoint` method takes following parameters as explained:
 
@@ -232,6 +294,22 @@ For creating a *Sketch Point*, I used following parameter Values:
   * **Z** : 0
 
 This create a point in *Y - Direction* at the distance of 1.
+
+Below Image described **the Parameters for a Point** in more detail.
+
+![point_parameters](/assets/Solidworks_Images/slots/point_parameters.png)
+
+This `CreatePoint` method returns *Point* interface i.e. `ISketchPoint` interface. 
+
+This `ISketchPoint` interface has various **methods and properties** for *a Point*.
+
+For more detail about **methods and properties** of `ISketchPoint` interface you can visit [this page](http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchPoint.html)
+
+---
+
+### Creating sequence of Points
+
+*Below code describe how to create Sequence of Points.*
 
 ```vb
 ' Declaring integer type variable for loop
@@ -254,17 +332,66 @@ For i = 0 To 5
 Next
 ```
 
+Let us understand each line of code.
+
 Above Lines of code creates a number of points.
 
-Below Image described **the Parameters for Centerpoint Arc Slot** in more detail.
+```vb
+' Declaring integer type variable for loop
+Dim i As Integer
+```
 
-![centerpoint-arc-slot-parameters](/assets/Solidworks_Images/slots/centerpoint-arc-slot-parameters.png)
+In above line, we create a variable named `i` of **integer** type.
 
-This `CreateSketchSlot` method returns *Sketch Slot* interface i.e. `ISketchSlot` interface. 
+```vb
+' Looping through 1 to 5
+For i = 0 To 5
+  
+Next
+```
 
-This `ISketchSlot` interface has various **methods and properties** for *a Slot*.
+In above lines, we create a `For` loop.
 
-For more detail about **methods and properties** of `ISketchSlot` interface you can visit [this page](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html)
+This loop iterate the value of `i` variable from **0 -> 5**.
+
+```vb
+' Declaring integer type variables for X, Y and Z cordinates of point
+Dim x, y, z As Integer
+
+' Setting values of x, y and z
+x = i
+y = x + i
+z = 0
+```
+
+In above lines, we 1st declare 3 variable *x, y and z* of **integer** type.
+
+*x, y and z* are co-ordinates of a single point in *X, Y* and *Z* direction.
+
+In next 3 lines, we set the values of *x, y and z*.
+
+For all points, we set the value of *z* to **0** because we want to place our points in **XY plane**.
+
+If the value of *i = 0*, then we set the value of *x* equal to *i*.
+
+This makes *x = 0* also.
+
+Now, we set the value of *y* which is equal to **SUM** of *x* and *i*.
+
+Hence for *i = 0*, *x = 0* and *y = 0*.
+
+For *i = 1*, *x = 1* and *y = 2*.
+
+```vb
+' Create points till loop continues
+Set myPoint = swSketchManager.CreatePoint(x, y, z)
+```
+
+In above line, we create a Point using `CreatePoint` function of `swSketchManager` variable with the values of *x, y and z*.
+
+Code sample in this section, create a sequence of points.
+
+---
 
 ### NOTE
 
@@ -279,11 +406,11 @@ But when I used Solidworks API through *VBA macros* or *C#*, I have to use **con
 Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the Slot after creation
+' De-select the Point after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created Centerpointrc Slot.
+In the this line of code, we de-select the created *Point*.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
@@ -294,16 +421,78 @@ swDoc.ViewZoomtofit
 
 In this last line we use *zoom to fit* command.
 
-For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`. 
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
-Hope this post helps you to *create a Centerpoint Arc Slot* in Sketches with Solidworks VB Macros.
+---
+
+## VBA Language feature used in this post
+
+In this post used some features of **VBA programming language**.
+
+This section of post, has some brief information about the VBA programming language specific features.
+
+1. We use **Option Explicit** for capturing un-declared variables.
+
+If you want to read more about **Option Explicit** then please visit [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables).
+
+2. Then we create **variable** for different data types.
+
+If you don't know about them, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
+
+These posts will help you to understand what **Variables** are and how to use them.
+
+3. Then we create **main Sub procedure** for our macro.
+
+If you don't know about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
+
+These posts will help you to understand what **Procedures** are and how to use them.
+
+4. In most part we create some variables and set their values. We set those values by using some **functions** provided from objects.
+
+If you don't know about the **functions**, then you should visit [VBA Functions](/visual-basic/vba-functions) and [VBA Functions that do more](/visual-basic/vba-more-function) posts of this blog.
+
+These posts will help you to understand what **functions** are and how to use them.
+
+5. For creating a sequence of points, we use a **For-Next loop**. We use a loop to set values of x, y and z co-ordinates of each points.
+
+If you don't know about the **For-Next loop**, then you should visit [VBA Looping](/visual-basic/vba-looping) post of this blog.
+
+This posts will help you to understand what **For-Next loop** are and how to use them.
+
+---
+
+## Solidworks API Objects
+
+In this post, for creating a **Point**, we use *Solidworks API objects and their methods*.
+
+This section contains the list of all **Solidworks Objects** used in this post.
+
+I have also attached links of these **Solidworks API Objects** in **API Help website**.
+
+If you want to explore those objects, you can use these links.
+
+These Solidworks API Objects are listed below:
+
+- **Solidworks Application Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
+
+- **Solidworks Document Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
+
+- **Solidworks Sketch Manager Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
+
+- **Solidworks Sketch Slot Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Point Object** you can visit [this link](http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html).
+
+---
+
+Hope this post helps you to *create a Point* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
 Till then, Happy learning!!! 
-
-<!-- This is post navigation bar -->
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-3point-arc-slot" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-centerpoint-arc-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
