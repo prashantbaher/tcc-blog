@@ -399,7 +399,7 @@ It is ***very important*** to remember that, when you give distance or any other
 
 *Solidworks API* does not care about your application's Unit systems.
 
-For example, I works in ANSI system means "inches" for distance. 
+For example, I works in **ANSI** system means "inches" for distance. 
 
 But when I used Solidworks API through *VBA macros* or *C#*, I have to use **converted** numeric values.
 
@@ -485,7 +485,7 @@ If you want explore ***Properties and Methods/Functions*** of **Solidworks Docum
 
 If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
 
-- **Solidworks Sketch Slot Object**
+- **Solidworks Sketch Point Object**
 
 If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Point Object** you can visit [this link](http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html).
 

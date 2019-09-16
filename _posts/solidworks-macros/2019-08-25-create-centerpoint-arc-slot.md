@@ -5,7 +5,7 @@ title:  Solidworks Macros - Create a Centerpoint Arc Slot From VBA Macro
 
 In this post, I tell you about *how to create a Centerpoint Arc Slot through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
+The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post. 
 
 ---
 
