@@ -101,4 +101,8 @@ Below posts teach you how to create different types of `Slot` in *Solidworks* us
 
 * [Sketch - Create Centerpoint Arc Slot](/solidworks-macros/create-centerpoint-arc-slot)
 
+### Create Points and Spline From VBA Macro
+
+Below posts teach you how to create Points and Spline in *Solidworks* using **VBA macros**.
+
 * [Sketch - Create Create a Point](/solidworks-macros/create-point)
