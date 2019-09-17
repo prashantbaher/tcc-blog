@@ -100,3 +100,5 @@ Below posts teach you how to create different types of `Slot` in *Solidworks* us
 * [Sketch - Create 3-Point Arc Slot](/solidworks-macros/create-3point-arc-slot)
 
 * [Sketch - Create Centerpoint Arc Slot](/solidworks-macros/create-centerpoint-arc-slot)
+
+* [Sketch - Create Create a Point](/solidworks-macros/create-point)
