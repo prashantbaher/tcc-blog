@@ -86,68 +86,148 @@ Option Explicit
 
 ' Creating variable for Solidworks application
 Dim swApp As SldWorks.SldWorks
+
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
+
 ' Boolean Variable
 Dim BoolStatus As Boolean
+
 ' Creating variable for Solidworks Sketch Manager
 Dim swSketchManager As SldWorks.SketchManager
+
+' Creating variable for Solidworks Sketch
+Dim swSketch As SldWorks.Sketch
+
+' Creating variable for Solidworks Sketch Point
+Dim swSketchPoint As SldWorks.SketchPoint
+
+' Creating variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
 
 ' Main function of our VBA program
 Sub main()
 
-  ' Setting Solidworks variable to Solidworks application
+  ' Set Solidworks application variable to Solidworks application
   Set swApp = Application.SldWorks
   
   ' Creating string type variable for storing default part location
   Dim defaultTemplate As String
-  ' Setting value of this string type variable to "Default part template"
+  
+  ' Set value of this string type variable to "Default part template"
   defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-  ' Setting Solidworks document to new part document
+  ' Set Solidworks document to new part document
   Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
-  ' Selecting Front Plane
+  ' Select Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Setting Sketch manager for our sketch
+  ' Set Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
   
-  ' Inserting a sketch into selected plane
+  ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating Varient for Polygon
-  Dim myPoint As SketchPoint
-  
-  ' Creating a Point
-  Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
-  
-  ' #########Creating a number of points##############
-  
-  ' Declaring integer type variable for loop
+  ' Create integer type local variable
   Dim i As Integer
   
-  ' Looping through 1 to 5
-  For i = 0 To 5
-  
-    ' Declaring integer type variables for X, Y and Z cordinates of point
-    Dim x, y, z As Integer
+  ' Loop through 0 to 10
+  For i = 0 To 10
     
-    ' Setting values of x, y and z
+    ' Create integer type variables
+    Dim x, y, z, incrementFactor As Integer
+    
+    ' Set value of incrementFactor
+    incrementFactor = i * 0.5
+    
+    ' Set value of x co-ordinate
     x = i
-    y = x + i
+    ' Set value of y co-ordinate
+    y = x + incrementFactor
+    ' Set value of z co-ordinate
     z = 0
-    
-    ' Create points till loop continues
-    Set myPoint = swSketchManager.CreatePoint(x, y, z)
-    
-  Next
+
+    ' Create a Sketch Point using x, y & z variables
+    Set swSketchPoint = swSketchManager.CreatePoint(x, y, z)
+
+  Next i
   
-  ' De-select the Polygon after creation
+  ' De-select the points after creation
+  swDoc.ClearSelection2 True
+  
+  ' Set Solidworks Sketch variable to active sketch
+  Set swSketch = swSketchManager.ActiveSketch
+  
+  ' Create variant type variable named "sketchPointArray"
+  Dim sketchPointArray As Variant
+  
+  ' Get all the points in this active sketch and store them into our variant type variable
+  sketchPointArray = swSketch.GetSketchPoints2()
+  
+  ' Creating a new Collection,
+  ' we use this collecction to store x,y,z co-ordinates of all sketch points
+  Dim pointCollection As New Collection
+  
+  ' Loop through all points in "sketchPointArray"
+  For i = 0 To UBound(sketchPointArray)
+    ' Set Solidworks sketch point variable to current point
+    Set swSketchPoint = sketchPointArray(i)
+    
+    ' Add X co-ordinate of current point into collection
+    pointCollection.Add (swSketchPoint.x)
+    
+    ' Add Y co-ordinate of current point into collection
+    pointCollection.Add (swSketchPoint.y)
+    
+    ' Add Z co-ordinate of current point into collection
+    pointCollection.Add (swSketchPoint.z)
+  Next i
+  
+  ' Create an array variable, this is Double type variable
+  Dim point() As Double
+  
+  ' Define the size of array Dynamically
+  ReDim point(0 To pointCollection.Count) As Double
+  
+  ' Loop through the collection we have
+  For i = 0 To (pointCollection.Count - 1)
+    ' Add each item of collection into our array variable
+    point(i) = pointCollection(i + 1)
+  Next i
+  
+  ' Create a local variable name "pointArray" of variant type
+  Dim pointArray As Variant
+  
+  ' Set the new created variable equal to point array variable
+  pointArray = point
+  
+  ' Exit the sketch
+  swSketchManager.InsertSketch True
+  
+  ' De-select the sketch
+  swDoc.ClearSelection2 True
+  
+  ' Select Front Plane
+  BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Insert a sketch into "Front Plane"
+  swSketchManager.InsertSketch True
+  
+  ' Set the value of Solidworks Sketch segment by "CreateSpline2" method from Solidworks sketch manager
+  Set swSketchSegment = swSketchManager.CreateSpline2((pointArray), True)
+
+  ' De-select the Spline after creation
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
-  swDoc.ViewZoomtofit
+  swDoc.ViewZoomtofit2
+
+  ' Exit the sketch
+  swSketchManager.InsertSketch True
+
+  ' Force Re-build the model
+  swDoc.Rebuild (swRebuildOptions_e.swForceRebuildAll)
 
 End Sub
 ```
