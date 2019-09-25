@@ -11,7 +11,7 @@ Please see below video for visual details.
 
 <div class="w3-card w3-panel">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/SXrdQ0vrTyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- </div>
+</div>
 
 To do this, we first need to create a new empty macro. If you don't know how to create an empty macro; then please go to this [post](/solidworks-macros/vba-in-solidworks).
 
