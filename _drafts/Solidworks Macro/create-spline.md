@@ -15,9 +15,9 @@ Hence if you have not read [Sketch - Create Create a Point](/solidworks-macros/c
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---create-a-point-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---create-a-spline-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-point-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-spline-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -43,51 +43,51 @@ Explaination of each line and why we write code this way is explained here.
 
 ---
 
-## For Experience Macro Developer - Create a Point From VBA Macro
+## For Experience Macro Developer - Create a Spline From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for creating **A Point** from **Solidworks VBA Macro**.
+Below is the code for creating **A Spline** from **Solidworks VBA Macro**.
 
 ```vb
-' Creating Variable for Sketch Point
-Dim myPoint As SketchPoint
+' Creating variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
       
-' Creating a Point
-Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
+' Set the value of Solidworks Sketch segment by "CreateSpline2" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateSpline2((pointArray), True)
 ```
 
-For creating a **Point** first you need to **Create** a variable of `SketchPoint` type.
+For creating a **Spline** first you need to **Create** a variable of `SketchSegment` type.
 
 After creating variable, you need to set the value of this variable.
 
-For this you used `CreatePoint` method from **Solidworks Sketch Manager**.
+For this you used `CreateSpline2` method from **Solidworks Sketch Manager**.
 
-This `CreatePoint` method set the value of `SketchPoint` type variable.
+This `CreateSpline2` method set the value of `SketchSegment` type variable.
 
-This `CreatePoint` method takes following parameters as explained:
+This `CreateSpline2` method takes following parameters as explained:
 
-**X** : *X Location of Point*
+**PointData** : *Array of X,Y,Z point coordinates to use in creating the spline*
 
-**Y** : *Y Location of Point*
+**SimulateNaturalEnds** : *True to simulate natural ends, false to not simulate natural ends*
 
-**Z** : *Z Location of Point*
-
-If you want a more detail explaination then please read further otherwise this will help you to **Create a Point From VBA Macro**.
+If you want a more detail explaination then please read further otherwise this will help you to **Create a Spline From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Create a Point From VBA Macro
+## For Beginners Macro Developers - Create a Spline From VBA Macro
 
-In this post, I tell you about `CreatePoint` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateSpline2` method from **Solidworks** `SketchManager` object.
 
-By this method 1st we create *a simple point*, after that we create *a sequence of points*.
+By this method we create *a simple Spline from a sequence of points*.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create **a new Point** or **sequence of points**.
+So ***use this method*** if you want to create **a new Spline**.
 
-Below is the `code` sample for creating *a Point*.
+Below is the `code` sample for creating *a Spline*.
+
+> Please don't get distracted by length of code, I  just want to do everything programatically. So that you have some sort of experience in developing logic.
 
 ```vb
 Option Explicit
@@ -268,6 +268,68 @@ Dim swDoc As SldWorks.ModelDoc2
 
 In this line, we are creating a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
 
+```vb
+' Boolean Variable
+Dim BoolStatus As Boolean
+```
+
+In this line, we create a variable named `BoolStatus` as `Boolean` object type.
+
+```vb
+' Creating variable for Solidworks Sketch Manager
+Dim swSketchManager As SldWorks.SketchManager
+```
+
+In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
+
+As the name suggested, a **Sketch Manager** holds variours methods and properties to manage *Sketches*.
+
+To see methods and properties related to `SketchManager` object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
+
+
+```vb
+' Creating variable for Solidworks Sketch
+Dim swSketch As SldWorks.Sketch
+```
+
+In this line, we are creating a variable which we named as `swSketch` and the type of this `swSketch` variable is `SldWorks.Sketch`.
+
+We create variable `swSketch` for **Solidworks Sketches**.
+
+To see methods and properties related to `Sketch` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketch_members.html?verRedirect=1)
+
+```vb
+' Creating variable for Solidworks Sketch Point
+Dim swSketchPoint As SldWorks.SketchPoint
+```
+
+In this line, we are creating a variable which we named as `swSketchPoint` and the type of this `swSketchPoint` variable is `SldWorks.SketchPoint`.
+
+We create variable `swSketchPoint` for **Solidworks Sketch Points**.
+
+To see methods and properties related to `SketchPoint` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html)
+
+```vb
+' Creating variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
+```
+
+In this line, we are creating a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
+
+We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
+
+To see methods and properties related to `swSketchSegment` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html)
+
+These all are our global variables.
+
+As you can see in code sample, they are **Solidworks API Objects**.
+
+So basically I group all the **Solidworks API Objects** in one place.
+
+I have also place `boolean` type object at top also, because after certain point we will *need* this variable frequently.
+
+Thus, I have started placing it here.
+
 Next is our `Sub` procedure named as `main`. This procedure hold all the *statements (instructions)* we give to computer.
 
 ```vb
@@ -307,38 +369,22 @@ For **more detailed information** about above lines please visit [Solidworks Mac
 I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
-' Boolean Variable
-Dim BoolStatus As Boolean
-
 ' Selecting Front Plane
 BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In 1st line, we create a variable named `BoolStatus` as `Boolean` object.
-
-In next line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
+In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
 For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
 
 I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
 
 ```vb
-' Creating variable for Solidworks Sketch Manager
-Dim swSketchManager As SldWorks.SketchManager
-```
-
-In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
-
-As the name suggested, a **Sketch Manager** holds variours methods and properties to manage *Sketches*.
-
-To see methods and properties related to SketchManager object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
-
-```vb
 ' Setting Sketch manager for our sketch
 Set swSketchManager = swDoc.SketchManager
 ```
 
-In above line, we set the **Sketch manager** variable to current document's sketch manager.
+In above line, we set the **Solidworks Sketch manager** variable to current document's sketch manager.
 
 ```vb
 ' Inserting a sketch into selected plane
@@ -347,137 +393,270 @@ swSketchManager.InsertSketch True
 
 In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
 
-This method allows us to insert a sketch in selected plane.
+This method allows us to insert/exit **a sketch** in selected plane.
 
-```vb
-' Creating Variable for Sketch Point
-Dim myPoint As SketchPoint
-      
-' Creating a Point
-Set myPoint = swSketchManager.CreatePoint(0, 1, 0)
-```
+**Now I have created a sequence of Points for our Spline.**
 
-In above sample code, we 1st create a variable named `myPoint` of type `SketchPoint`.
+Because if you already have co-ordinates of points in your machine somewhere you can use the approach I shown here to create a Spline.
 
-In 2nd line, we **set** the value of *SketchPoint* variable `myPoint`.
-
-We get this value from `CreatePoint` method which is inside the `swSketchManager` variable.
-
-`swSketchManager` variable is a type of **SketchManager**, hence we used `CreatePoint` method from **SketchManager**.
-
-This `CreatePoint` method takes following parameters as explained:
-
-**X** : *X Location of Point*
-
-**Y** : *Y Location of Point*
-
-**Z** : *Z Location of Point*
-
-For creating a *Sketch Point*, I used following parameter Values:
-
-  * **X** : 0
-
-  * **Y** : 1
-
-  * **Z** : 0
-
-This create a point in *Y - Direction* at the distance of 1.
-
-Below Image described **the Parameters for a Point** in more detail.
-
-![point_parameters](/assets/Solidworks_Images/slots/point_parameters.png)
-
-This `CreatePoint` method returns *Point* interface i.e. `ISketchPoint` interface. 
-
-This `ISketchPoint` interface has various **methods and properties** for *a Point*.
-
-For more detail about **methods and properties** of `ISketchPoint` interface you can visit [this page](http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchPoint.html)
+> TIP: I like to save co-ordinates in MS Excel file and then use it.
 
 ---
 
-### Creating sequence of Points
+#### Creating sequence of Points
 
-*Below code describe how to create Sequence of Points.*
+*Below code shows how to create Sequence of Points.*
 
 ```vb
-' Declaring integer type variable for loop
+' Create integer type local variable
 Dim i As Integer
 
-' Looping through 1 to 5
-For i = 0 To 5
-
-  ' Declaring integer type variables for X, Y and Z cordinates of point
-  Dim x, y, z As Integer
+' Loop through 0 to 10
+For i = 0 To 10
   
-  ' Setting values of x, y and z
+  ' Create integer type variables
+  Dim x, y, z, incrementFactor As Integer
+  
+  ' Set value of incrementFactor
+  incrementFactor = i * 0.5
+  
+  ' Set value of x co-ordinate
   x = i
-  y = x + i
+  ' Set value of y co-ordinate
+  y = x + incrementFactor
+  ' Set value of z co-ordinate
   z = 0
-  
-  ' Create points till loop continues
-  Set myPoint = swSketchManager.CreatePoint(x, y, z)
-  
-Next
+
+  ' Create a Sketch Point using x, y & z variables
+  Set swSketchPoint = swSketchManager.CreatePoint(x, y, z)
+
+Next i
+
+' De-select the points after creation
+swDoc.ClearSelection2 True
 ```
 
-Let us understand each line of code.
-
-Above Lines of code creates a number of points.
+*Let us understand each line of code and how above Lines of code creates a number of points.*
 
 ```vb
-' Declaring integer type variable for loop
+' Create integer type local variable
 Dim i As Integer
 ```
 
-In above line, we create a variable named `i` of **integer** type.
+In above line, we create a local variable named `i` of **integer** type.
 
 ```vb
-' Looping through 1 to 5
-For i = 0 To 5
+' Looping through 1 to 10
+For i = 0 To 10
   
 Next
 ```
 
 In above lines, we create a `For` loop.
 
-This loop iterate the value of `i` variable from **0 -> 5**.
+This loop iterate the value of `i` variable from **0 -> 10**.
+
+I use max value of **10**, because I want to create 10 points.
 
 ```vb
-' Declaring integer type variables for X, Y and Z cordinates of point
-Dim x, y, z As Integer
+' Create integer type variables
+Dim x, y, z, incrementFactor As Integer
+
+' Set value of incrementFactor
+incrementFactor = i * 0.5
 
 ' Setting values of x, y and z
 x = i
-y = x + i
+y = x + incrementFactor
 z = 0
 ```
 
-In above lines, we 1st declare 3 variable *x, y and z* of **integer** type.
+In above lines, we 1st declare 4 variable *x, y, z and incrementFactor* of **integer** type.
 
 *x, y and z* are co-ordinates of a single point in *X, Y* and *Z* direction.
 
-In next 3 lines, we set the values of *x, y and z*.
-
-For all points, we set the value of *z* to **0** because we want to place our points in **XY plane**.
-
-If the value of *i = 0*, then we set the value of *x* equal to *i*.
-
-This makes *x = 0* also.
-
-Now, we set the value of *y* which is equal to **SUM** of *x* and *i*.
-
-Hence for *i = 0*, *x = 0* and *y = 0*.
-
-For *i = 1*, *x = 1* and *y = 2*.
+*incrementFactor* is the factor by which I want to increase the value of *Y co-ordinate* of a single point.
 
 ```vb
-' Create points till loop continues
-Set myPoint = swSketchManager.CreatePoint(x, y, z)
+' Set value of incrementFactor
+incrementFactor = i * 0.5
+```
+
+In above line, I set the value of *incrementFactor*.
+
+This value is **0.5** times of value of `i` variable.
+
+Example: `i = 3` then *incrementFactor = 3 * 0.5 => incrementFactor = 1.5*
+
+In next 3 lines, we set the values of *x, y and z*.
+
+For all points, we set the value of *z* to **0** because we want to place our points in **X-Y plane**.
+
+If the value of `i = 0`, then we set the value of *x* equal to *i*.
+
+This makes `x = 0` also.
+
+Now, we set the value of *y* which is equal to **SUM** of *x* and *incrementFactor*.
+
+Hence for *i = 0*, *x = 0*, *y = 0* and *incrementFactor = 0*.
+
+For *i = 1*, *x = 1*, *y = 1.5* and *incrementFactor = 0.5*.
+
+```vb
+' Create a Sketch Point using x, y & z variables
+Set swSketchPoint = swSketchManager.CreatePoint(x, y, z)
 ```
 
 In above line, we create a Point using `CreatePoint` function of `swSketchManager` variable with the values of *x, y and z*.
 
-Code sample in this section, create a sequence of points.
+```vb
+' De-select the Points after creation
+swDoc.ClearSelection2 True
+```
+
+In the this line of code, we de-select the created *Points*.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
+
+---
+
+#### Create a Collection of Points Co-ordinates
+
+After creating points, I want to do following things:
+
+1. Get all points in this sketch
+
+2. Add co-ordinates of each point into a collection
+
+***Why I want to do this when I already know co-ordinates of all points in previous section?***
+
+It is because I create points from this macro hence I know their co-ordinates.
+
+I can add them to collection there BUT I want to take this opportunity to show following things:
+
+- How you get points of an Sketch.
+
+- How to create a Collection and Add values in it.
+
+*Below code shows how to do all those things.*
+
+```vb
+' Set Solidworks Sketch variable to active sketch
+Set swSketch = swSketchManager.ActiveSketch
+
+' Create variant type variable named "sketchPointArray"
+Dim sketchPointArray As Variant
+
+' Get all the points in this active sketch and store them into our variant type variable
+sketchPointArray = swSketch.GetSketchPoints2()
+
+' Creating a new Collection,
+' we use this collecction to store x,y,z co-ordinates of all sketch points
+Dim pointCollection As New Collection
+
+' Loop through all points in "sketchPointArray"
+For i = 0 To UBound(sketchPointArray)
+  ' Set Solidworks sketch point variable to current point
+  Set swSketchPoint = sketchPointArray(i)
+  
+  ' Add X co-ordinate of current point into collection
+  pointCollection.Add (swSketchPoint.x)
+  
+  ' Add Y co-ordinate of current point into collection
+  pointCollection.Add (swSketchPoint.y)
+  
+  ' Add Z co-ordinate of current point into collection
+  pointCollection.Add (swSketchPoint.z)
+Next i
+```
+
+*Let us understand each line of code.*
+
+```vb
+' Set Solidworks Sketch variable to active sketch
+Set swSketch = swSketchManager.ActiveSketch
+```
+
+In the above line, I set the value of *Solidworks Sketch* variable `swSketch` to active sketch.
+
+For this we use `ActiveSketch` method of *Solidworks Sketch Manager* variable `swSketchManager`.
+
+This method give us a `SldWorks.Sketch` type return value which we store into `swSketch` variable.
+
+```vb
+' Create variant type variable named "sketchPointArray"
+Dim sketchPointArray As Variant
+
+' Get all the points in this active sketch and store them into our variant type variable
+sketchPointArray = swSketch.GetSketchPoints2()
+```
+
+In 1st line of above code, I create a variable `sketchPointArray`.
+
+This variable is `Variant` type variable.
+
+In 2nd line of above code, I set the value of variable `sketchPointArray` using `GetSketchPoints2()` method.
+
+We use `GetSketchPoints2()` method from our *Solidworks Sketch* type variable `swSketch`.
+
+`GetSketchPoints2()` method gives us all points in this sketch and we store those points into `sketchPointArray` variable.
+
+```vb
+' Creating a new Collection,
+' we use this collecction to store x,y,z co-ordinates of all sketch points
+Dim pointCollection As New Collection
+```
+
+In the above line, I create variable `pointCollection` of **Collection** type.
+
+```vb
+' Loop through all points in "sketchPointArray"
+For i = 0 To UBound(sketchPointArray)
+
+Next i
+```
+
+In above lines, we create a `For` loop.
+
+This loop iterate the value of `i` variable from **0 -> UBound(sketchPointArray)**.
+
+I use max value of **UBound(sketchPointArray)**, because I want to iterate through Maximum number of points we get from the `GetSketchPoints2()` method.
+
+If number of points are other than *10*, then `UBound(sketchPointArray)` method return only that number of points.
+
+Hence it is **useful** to know for future use.
+
+```vb
+' Set Solidworks sketch point variable to current point
+Set swSketchPoint = sketchPointArray(i)
+```
+
+Now inside, this loop in 1st line we set *Solidworks sketch point* variable to **current** point of `sketchPointArray`.
+
+```vb
+' Add X co-ordinate of current point into collection
+pointCollection.Add (swSketchPoint.x)
+
+' Add Y co-ordinate of current point into collection
+pointCollection.Add (swSketchPoint.y)
+
+' Add Z co-ordinate of current point into collection
+pointCollection.Add (swSketchPoint.z)
+```
+
+In above 3 lines, we add *X, Y and Z* co-ordinates of current point into our collection.
+
+#### Preparing Co-ordinates of Points
+
+You know from [For Experience Macro Developers](#for-experience-macro-developer---create-a-spline-from-vba-macro) section, we need an *Array* of **PointData**.
+
+This array contains *X, Y and Z* co-ordinates for Spline Points.
+
+Now I tried to add *X, Y and Z* co-ordinates directly into an Array and then use this array to create Spline.
+
+But it did not work, hence I had to store all *X, Y and Z* co-ordinates 1st into **Collection**.
+
+Now I have all co-ordinates in my **Collection** and I have to create an `Array` for Spline from this **Collection**.
 
 ---
 
