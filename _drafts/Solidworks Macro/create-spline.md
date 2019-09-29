@@ -20,12 +20,22 @@ Hence if you have not read [Sketch - Create Create a Point](/solidworks-macros/c
 - [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-spline-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
+    
+    - [Creating sequence of Points](#creating-sequence-of-points)
+
+    - [Create a Collection of Points Co-ordinates](#create-a-collection-of-points-co-ordinates)
+
+    - [Preparing Co-ordinates of Points](#preparing-co-ordinates-of-points)
+
+    - [Create Spline](#create-spline)
 
   - [NOTE](#note)
 
 - [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
 
 - [Solidworks API Objects](#solidworks-api-objects)
+
+Feel free to select the topic you want to.
 
 ---
 
@@ -67,9 +77,9 @@ This `CreateSpline2` method set the value of `SketchSegment` type variable.
 
 This `CreateSpline2` method takes following parameters as explained:
 
-**PointData** : *Array of X,Y,Z point coordinates to use in creating the spline*
+**PointData** : *Array of X,Y,Z point coordinates to use in creating the spline*.
 
-**SimulateNaturalEnds** : *True to simulate natural ends, false to not simulate natural ends*
+**SimulateNaturalEnds** : *True to simulate natural ends, false to not simulate natural ends*.
 
 If you want a more detail explaination then please read further otherwise this will help you to **Create a Spline From VBA Macro**.
 
@@ -658,6 +668,168 @@ But it did not work, hence I had to store all *X, Y and Z* co-ordinates 1st into
 
 Now I have all co-ordinates in my **Collection** and I have to create an `Array` for Spline from this **Collection**.
 
+*Below code sample show how to prepare Co-ordinate points for Spline*.
+
+```vb
+' Create an array variable, this is Double type variable
+Dim point() As Double
+
+' Define the size of array Dynamically
+ReDim point(0 To pointCollection.Count) As Double
+
+' Loop through the collection we have
+For i = 0 To (pointCollection.Count - 1)
+  ' Add each item of collection into our array variable
+  point(i) = pointCollection(i + 1)
+Next i
+
+' Create a local variable name "pointArray" of variant type
+Dim pointArray As Variant
+
+' Set the new created variable equal to point array variable
+pointArray = point
+
+' Exit the sketch
+swSketchManager.InsertSketch True
+
+' De-select the sketch
+swDoc.ClearSelection2 True
+```
+
+*Let us understand each line of above code sample.*
+
+```vb
+' Create an array variable, this is Double type variable
+Dim point() As Double
+
+' Define the size of array Dynamically
+ReDim point(0 To pointCollection.Count) As Double
+```
+
+In above code, 1st line creates an `Array` variable. This is `double` type variable.
+
+If you don't know what an array is, then please visit [VBA Arrays](/visual-basic/vba-arrays) post.
+
+In 2nd line, we define the size of array. This size is *dynamic* means it **automatic** in nature.
+
+We don't have to give exact value every time, this code adjust the values if there is any change in our *Collection*.
+
+This size of this array is *from* 0 to Number of Co-ordinates in the collection.
+
+In our case size of array is **0 -> 30**.
+
+```vb
+' Loop through the collection we have
+For i = 0 To (pointCollection.Count - 1)
+  ' Add each item of collection into our array variable
+  point(i) = pointCollection(i + 1)
+Next i
+```
+
+In above code we 1st create a *Loop*.
+
+This *Loop* iterate *from 0* to *pointCollection.Count - 1*.
+
+Why *pointCollection.Count - 1* ? It is because *pointCollection.Count* starts from *1* and our loop start with *0*.
+
+Because of additional 1 count in *pointCollection*, we need to remove 1 from the count.
+
+Inside this loop, we add every item of *pointCollection* into our **point() array**.
+
+```vb
+' Create a local variable name "pointArray" of variant type
+Dim pointArray As Variant
+
+' Set the new created variable equal to point array variable
+pointArray = point
+```
+
+In 1st line of above code, we create local variable "pointArray". This variable is `Variant` type.
+
+In 2nd line of above code, we set the value of variable "pointArray" to value of variable "point".
+
+```vb
+' Exit the sketch
+swSketchManager.InsertSketch True
+
+' De-select the sketch
+swDoc.ClearSelection2 True
+```
+
+In 1st line of above code, we Exit the sketch.
+
+In 2nd line of above code, we De-select the sketch.
+
+#### Create Spline
+
+Now we have all information available for creating **a Spline**.
+
+*Below code sample shows how to create a Spline.*
+
+```vb
+' Select Front Plane
+BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+' Insert a sketch into "Front Plane"
+swSketchManager.InsertSketch True
+
+' Set the value of Solidworks Sketch segment by "CreateSpline2" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateSpline2((pointArray), True)
+
+' De-select the Spline after creation
+swDoc.ClearSelection2 True
+
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit2
+
+' Exit the sketch
+swSketchManager.InsertSketch True
+
+' Force Re-build the model
+swDoc.Rebuild (swRebuildOptions_e.swForceRebuildAll)
+```
+
+*Let us understand each line of above code sample.*
+
+```vb
+' Selecting Front Plane
+BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+```
+
+In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
+
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+
+I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
+
+```vb
+' Inserting a sketch into selected plane
+swSketchManager.InsertSketch True
+```
+
+In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
+
+This method allows us to insert/exit **a sketch** in selected plane.
+
+```vb
+' Set the value of Solidworks Sketch segment by "CreateSpline2" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateSpline2((pointArray), True)
+```
+
+In above line we set the value of *Solidworks Sketch segment variable* `swSketchSegment`.
+
+For this we use, `CreateSpline2` method from *Solidworks sketch manager variable* `swSketchManager`.
+
+This `CreateSpline2` method takes following parameters as explained:
+
+**PointData** : *Array of X,Y,Z point coordinates to use in creating the spline*.
+
+**SimulateNaturalEnds** : *True to simulate natural ends, false to not simulate natural ends*.
+
+In this `CreateSpline2` method, we pass our `pointArray` variable as **PointData**.
+
+We want our spline to simulate natural ends. Hence we `True` as second parameter.
+
 ---
 
 ### NOTE
@@ -673,11 +845,11 @@ But when I used Solidworks API through *VBA macros* or *C#*, I have to use **con
 Because Solidworks API output the distance in **Meter** only; which is not my requirement.
 
 ```vb
-' De-select the Point after creation
+' De-select the Spline after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we de-select the created *Point*.
+In above line, we de-select the created *Spline*.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document variable `swDoc`.
 
@@ -686,9 +858,33 @@ For de-selecting, we use `ClearSelection2` method from our Solidworks document v
 swDoc.ViewZoomtofit
 ```
 
-In this last line we use *zoom to fit* command.
+In above line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
+
+```vb
+' Exit the sketch
+swSketchManager.InsertSketch True
+```
+
+In above line, we exit the sketch.
+
+```vb
+' Force Re-build the model
+swDoc.Rebuild (swRebuildOptions_e.swForceRebuildAll)
+```
+
+In above line, we Force Re-build the model the model.
+
+For "Force Re-build" we use **Rebuild** method from *Solidworks Document variable* `swDoc`.
+
+In this **Rebuild** method, we use `swRebuildOptions_e.swForceRebuildAll` option for re-build all.
+
+This is it !!!
+
+It is a BIG post but I tried to explain all.
+
+If you found anything to add or update, please let me know on my e-mail.
 
 ---
 
@@ -720,11 +916,29 @@ If you don't know about the **functions**, then you should visit [VBA Functions]
 
 These posts will help you to understand what **functions** are and how to use them.
 
-5. For creating a sequence of points, we use a **For-Next loop**. We use a loop to set values of x, y and z co-ordinates of each points.
+5. For creating a sequence of points and data for Spline, we use a **For-Next loop**. We use a loop to set values of x, y and z co-ordinates of each points.
 
 If you don't know about the **For-Next loop**, then you should visit [VBA Looping](/visual-basic/vba-looping) post of this blog.
 
 This posts will help you to understand what **For-Next loop** are and how to use them.
+
+6. For storing co-ordinates of points we use **Collection**. In an **Collection**, we store objects or data.
+
+This is very helpful and important language feature.
+
+If you don't know about the **Collection**, then you should visit [Collections (Visual Basic)](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/concepts/collections) from **Microsoft Official Document Website**.
+
+This will help you to understand what **Collection** are and how to use them.
+
+7. For creating Spline we use an **Array**. An **Array** is similar to **Collection**, in which we store objects or data.
+
+But Array is more basic version actually Array is a basic programming feature and used frequently *C and C++ programming languages*.
+
+This is also very helpful and important language feature.
+
+If you don't know about the **Array**, then you should visit [Arrays in Visual Basichttps://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/arrays/index) from **Microsoft Official Document Website**.
+
+This will help you to understand what **Array** are and how to use them.
 
 ---
 
@@ -752,13 +966,21 @@ If you want explore ***Properties and Methods/Functions*** of **Solidworks Docum
 
 If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
 
+- **Solidworks Sketches Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketches Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketch_members.html?verRedirect=1).
+
 - **Solidworks Sketch Point Object**
 
 If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Point Object** you can visit [this link](http://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchPoint_members.html).
 
+- **Solidworks Sketch Segment Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Segment Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html).
+
 ---
 
-Hope this post helps you to *create a Point* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Spline* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
