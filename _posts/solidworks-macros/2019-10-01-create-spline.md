@@ -44,7 +44,7 @@ Feel free to select the topic you want to.
 Please see below video how visually we can create *a Spline* from **Solidworks VBA macro**.
 
 <div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/SXrdQ0vrTyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/B_W-f3cqUPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Please note that there are no explaination given in the video. 
@@ -825,6 +825,10 @@ This `CreateSpline2` method takes following parameters as explained:
 **PointData** : *Array of X,Y,Z point coordinates to use in creating the spline*.
 
 **SimulateNaturalEnds** : *True to simulate natural ends, false to not simulate natural ends*.
+
+Below Image described **the Parameters for a Spline**.
+
+![spline_parameters](/assets/Solidworks_Images/slots/spline_parameters.png)
 
 In this `CreateSpline2` method, we pass our `pointArray` variable as **PointData**.
 
