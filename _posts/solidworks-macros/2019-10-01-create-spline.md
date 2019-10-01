@@ -828,7 +828,7 @@ This `CreateSpline2` method takes following parameters as explained:
 
 Below Image described **the Parameters for a Spline**.
 
-![spline_parameters](/assets/Solidworks_Images/slots/spline_parameters.png)
+![spline_parameters](/assets/Solidworks_Images/splines/spline_parameters.png)
 
 In this `CreateSpline2` method, we pass our `pointArray` variable as **PointData**.
 
