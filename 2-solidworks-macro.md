@@ -105,4 +105,6 @@ Below posts teach you how to create different types of `Slot` in *Solidworks* us
 
 Below posts teach you how to create Points and Spline in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create Create a Point](/solidworks-macros/create-point)
+* [Sketch - Create a Point](/solidworks-macros/create-point)
+
+* [Sketch - Create a Spline](/solidworks-macros/create-spline)
