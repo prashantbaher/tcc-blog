@@ -1,13 +1,83 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create Corner Rectangle From VBA Macro
+title:  Solidworks Macros - Create a Fillet From VBA Macro
 ---
 
-In this post, I tell you about *how to create Corner Rectangle through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Fillet through Solidworks VBA Macros* in a sketch.
 
-For this, I take the example from previous [Sketch - Create Lines](/solidworks-macros/sketch-create-line) post.
+This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
 
-In this post, I tell you about `CreateCenterLine` method from **Solidworks** `SketchManager` object.
+---
+
+## Content
+
+- [Code Demo Video on YouTube](#video-of-code-on-youtube)
+
+- [For Experience Macro Developers](#for-experience-macro-developer---create-a-fillet-from-vba-macro)
+
+- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-fillet-from-vba-macro)
+
+  - [Understanding the Code](#understanding-the-code)
+
+  - [NOTE](#note)
+
+- [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
+
+- [Solidworks API Objects](#solidworks-api-objects)
+
+Feel free to select the topic you want to.
+
+---
+
+## Video of Code on YouTube
+
+Please see below video how visually we can create *a Fillet* from **Solidworks VBA macro**.
+
+<div class="w3-card w3-panel">
+  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/B_W-f3cqUPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Please note that there are **no explaination** given in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
+---
+
+## For Experience Macro Developer - Create a Fillet From VBA Macro
+
+If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
+
+Below is the code for creating **A Fillet** from **Solidworks VBA Macro**.
+
+```vb
+' Creating variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
+      
+' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+```
+
+For creating a **Fillet** first you need to **Create** a variable of `SketchSegment` type.
+
+After creating variable, you need to set the value of this variable.
+
+For this you used `CreateFillet` method from **Solidworks Sketch Manager**.
+
+This `CreateFillet` method set the value of `SketchSegment` type variable.
+
+This `CreateFillet` method takes following parameters as explained:
+
+**Radius** : *Radius of the fillet in meters.*
+
+**ConstrainedCorners** : *Action to take if the corner to be filleted is constrained or has a dimension.*
+
+If you want a more detail explaination then please read further otherwise this will help you to **Create a Fillet From VBA Macro**.
+
+---
+
+## For Beginners Macro Developers - Create a Fillet From VBA Macro
+
+In this post, I tell you about `CreateFillet` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
@@ -20,12 +90,19 @@ Option Explicit
 
 ' Creating variable for Solidworks application
 Dim swApp As SldWorks.SldWorks
+
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
+
 ' Boolean Variable
 Dim BoolStatus As Boolean
+
 ' Creating variable for Solidworks Sketch Manager
 Dim swSketchManager As SldWorks.SketchManager
+
+' Creating Variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
+
 
 ' Main function of our VBA program
 Sub main()
@@ -43,15 +120,15 @@ Sub main()
 
   ' Selecting Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-  
+
   ' Setting Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
+
+  ' Inserting a sketch into selected plane
+  swSketchManager.InsertSketch True
   
   ' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
   Dim vSketchLines As Variant
-  
-  ' Inserting a sketch into selected plane
-  swSketchManager.InsertSketch True
   
   ' Creating a Corner Rectangle
   vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
@@ -59,8 +136,20 @@ Sub main()
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
+  ' Selecting Front Plane
+  BoolStatus = swDoc.Extension.SelectByID2("Point1", "SKETCHPOINT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+  ' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
+  Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+
+  ' De-select the Fillet after creation
+  swDoc.ClearSelection2 True
+  
+  ' Show Front View after creating Fillet
+  swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+  
   ' Zoom to fit screen in Solidworks Window
-  swDoc.ViewZoomtofit
+  swDoc.ViewZoomtofit2
 
 End Sub
 ```
@@ -82,15 +171,51 @@ Dim swApp As SldWorks.SldWorks
 
 In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
 ```
 
 In this line, we are creating a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
+
+```vb
+' Boolean Variable
+Dim BoolStatus As Boolean
+```
+
+In this line, we create a variable named `BoolStatus` as `Boolean` object type.
+
+```vb
+' Creating variable for Solidworks Sketch Manager
+Dim swSketchManager As SldWorks.SketchManager
+```
+
+In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
+
+As the name suggested, a **Sketch Manager** holds variours methods and properties to manage *Sketches*.
+
+To see methods and properties related to `SketchManager` object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
+
+```vb
+' Creating variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
+```
+
+In this line, we are creating a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
+
+We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
+
+To see methods and properties related to `swSketchSegment` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html)
+
+These all are our global variables.
+
+As you can see in code sample, they are **Solidworks API Objects**.
+
+So basically I group all the **Solidworks API Objects** in one place.
+
+I have also place `boolean` type object at top also, because after certain point we will *need* this variable frequently.
+
+Thus, I have started placing it here.
 
 Next is our `Sub` procedure named `main`. This procedure hold all the *statements (instructions)* we give to computer.
 
@@ -116,9 +241,6 @@ In 2nd line of above example. we assign value to our newly define `defaultTempla
 
 We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. This method is a part of our main Solidworks variable `swApp`.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Setting Solidworks document to new part document
 Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
@@ -128,30 +250,16 @@ In this line, we set the value of our `swDoc` variable to new document.
 
 For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
 
-```vb
-' Boolean Variable
-Dim BoolStatus As Boolean
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
 
+```vb
 ' Selecting Front Plane
 BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In 1st line, we create a variable named `BoolStatus` as `Boolean` object.
-
-In next line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
+In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
 For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
-
-```vb
-' Creating variable for Solidworks Sketch Manager
-Dim swSketchManager As SldWorks.SketchManager
-```
-
-In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
-
-As the name suggested, a Sketch Manager holds variours methods and properties to manage Sketches.
-
-To see methods and properties related to SketchManager object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
 
 ```vb
 ' Setting Sketch manager for our sketch
@@ -168,9 +276,6 @@ swSketchManager.InsertSketch True
 In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
 
 This method allows us to insert a sketch in selected plane.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
@@ -190,38 +295,62 @@ Value of `vSketchLinesis` an array of lines. This array is send as return value 
 
 This `CreateCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a corner rectangle.
 
-This `CreateCornerRectangle` method takes following parameters as explained:
-
-*X1* : X coordinate of the Upper-left point
-
-*Y1* : Y coordinate of the Upper-left point
-
-*Z1* : Z coordinate of the Upper-left point
-
-*X2* : X coordinate of the Lower-right point
-
-*Y2* : Y coordinate of the Lower-right point
-
-*Z2* : Z coordinate of the Lower-right point
-
-Below image shows more clearly about these parameters.
-
-![corner-rectangle-parameter](/assets/Solidworks_Images/rectangles/corner-rectangle-parameter.png)
+For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
 
 In the above code sample I have used (0, 1, 0) Upper-left point in *Y-direction*.
 
 For Lower-right point I used (1, 0, 0) which is 1 point distance in *X-direction*.
 
-This `CreateCornerRectangle` method returns **an array** of *sketch segments* that represent the edges created for this corner rectangle.
+```vb
+' De-select the Rectangle after creation
+swDoc.ClearSelection2 True
+```
 
-A *Sketch Segment* can represent a sketch arc, line, ellipse, parabola or spline.
+In above line, we de-select the ractangle we just create.
 
-Sketch Segment has `ISketchSegment` Interface, which provides functions that are generic to every type of sketch segment.
+```vb
+' Selecting Front Plane
+BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+```
 
-For example, every sketch segment has an ID and can be programmatically selected.
+In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
 
+```vb
+' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+```
+
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateFillet` method from *Solidworks Sketch Manager*.
+
+This `CreateFillet` method takes following parameters:
+
+**Radius** : *Radius of the fillet in meters.*
+
+**ConstrainedCorners** : *Action to take if the corner to be filleted is constrained or has a dimension.*
+
+Below Image described **the Parameters for a Fillet**.
+
+![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
+
+In our code, I have used following values:
+
+**Radius** : I have used 0.1 (This value is in meter) as the radius of fillet.
+
+**ConstrainedCorners** : I have used `swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry` enumerator as value for constraining corners.
+
+In **swConstrainedCornerAction_e** we have 4 constant values.
+
+These values are as follows:
+
+* **swConstrainedCornerDeleteGeometry** : 2 = Delete the constraint or dimension and add the fillet
+
+* **swConstrainedCornerInteract** : 0 = Ask the user whether to delete the geometry or stop processing
+
+* **swConstrainedCornerKeepGeometry** : 1 = Keep the constraint or dimension by creating a virtual intersection point before adding the fillet
+
+* **swConstrainedCornerStopProcessing** : 3 = Do not delete the constrain or dimension and do not create the fillet
 
 ### NOTE
 
@@ -234,13 +363,58 @@ For example, I works in ANSI system means inches for distance. But when I used S
 Because Solidworks API output the distance in **Meter** which is not my requirement.
 
 ```vb
-' De-select the lines after creation
+' De-select the Fillet after creation
 swDoc.ClearSelection2 True
 ```
 
-In the this line of code, we deselect the Corner rectangle we have created.
+In the above line of code, we deselect the **Fillet** we have created.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Show Front View after creating Fillet
+swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+```
+
+In the above line of code, we update the *view orientation* to **Front View**.
+
+In my machine, after inserting a sketch view orientation does not changed.
+
+Because of this I have to update the view to **Front view**.
+
+For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
+
+This method takes 2 parameter described as follows:
+
+**VName** : Name of the view to display or an empty string to use ViewId instead
+
+**ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+
+*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
+
+`swStandardViews_e` has following Standard View Types:
+
+- *swBackView*
+
+- *swBottomView*
+
+- *swDimetricView*
+
+- *swFrontView*
+
+- *swIsometricView*
+
+- *swLeftView*
+
+- *swRightView*
+
+- *swTopView*
+
+- *swTrimetricView*
+
+In our code, we did not use **VName** instead I used empty string in form of ***""*** symbol.
+
+I used ViewId value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
 
 ```vb
 ' Zoom to fit screen in Solidworks Window
@@ -251,17 +425,74 @@ In this last line we use *zoom to fit* command.
 
 For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
-Hope this post helps you to *create Corner rectangle* in Sketches with Solidworks VB Macros.
+This is it !!!
+
+If you found anything to add or update, please let me know on my e-mail.
+
+---
+
+## VBA Language feature used in this post
+
+In this post used some features of **VBA programming language**.
+
+This section of post, has some brief information about the VBA programming language specific features.
+
+1. We use **Option Explicit** for capturing un-declared variables.
+
+If you want to read more about **Option Explicit** then please visit [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables).
+
+2. Then we create **variable** for different data types.
+
+If you don't know about them, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
+
+These posts will help you to understand what **Variables** are and how to use them.
+
+3. Then we create **main Sub procedure** for our macro.
+
+If you don't know about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
+
+These posts will help you to understand what **Procedures** are and how to use them.
+
+4. In most part we create some variables and set their values. We set those values by using some **functions** provided from objects.
+
+If you don't know about the **functions**, then you should visit [VBA Functions](/visual-basic/vba-functions) and [VBA Functions that do more](/visual-basic/vba-more-function) posts of this blog.
+
+These posts will help you to understand what **functions** are and how to use them.
+
+---
+
+## Solidworks API Objects
+
+In this post, for creating a **Fillet**, we use *Solidworks API objects and their methods*.
+
+This section contains the list of all **Solidworks Objects** used in this post.
+
+I have also attached links of these **Solidworks API Objects** in **API Help website**.
+
+If you want to explore those objects, you can use these links.
+
+These Solidworks API Objects are listed below:
+
+- **Solidworks Application Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
+
+- **Solidworks Document Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
+
+- **Solidworks Sketch Manager Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
+
+- **Solidworks Sketch Segment Object**
+
+If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Segment Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html).
+
+---
+
+Hope this post helps you to *create a Fillet* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
 Till then, Happy learning!!!
-
-<!--{%- include amazon-us-native-ad.html -%}-->
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/sketch-create-centerline" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-center-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

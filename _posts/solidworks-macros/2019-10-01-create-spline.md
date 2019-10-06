@@ -940,7 +940,7 @@ But Array is more basic version actually Array is a basic programming feature an
 
 This is also very helpful and important language feature.
 
-If you don't know about the **Array**, then you should visit [Arrays in Visual Basichttps://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/arrays/index) from **Microsoft Official Document Website**.
+If you don't know about the **Array**, then you should visit [Arrays in Visual Basic](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/arrays/index) from **Microsoft Official Document Website**.
 
 This will help you to understand what **Array** are and how to use them.
 
