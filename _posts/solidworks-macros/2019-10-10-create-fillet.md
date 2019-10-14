@@ -81,9 +81,9 @@ In this post, I tell you about `CreateFillet` method from **Solidworks** `Sketch
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new Corner Rectangle.
+So ***use this method*** if you want to create a Fillet.
 
-Below is the `code` sample for creating Corner Rectangle.
+Below is the `code` sample for creating a Fillet.
 
 ```vb
 Option Explicit

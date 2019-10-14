@@ -1,9 +1,9 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Create a Fillet From VBA Macro
+title:  Solidworks Macros - Create a Chamfer From VBA Macro
 ---
 
-In this post, I tell you about *how to create a Fillet through Solidworks VBA Macros* in a sketch.
+In this post, I tell you about *how to create a Chamfer through Solidworks VBA Macros* in a sketch.
 
 This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
 
@@ -13,9 +13,9 @@ This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macr
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---create-a-fillet-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---create-a-chamfer-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-fillet-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-chamfer-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -31,7 +31,7 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we can create *a Fillet* from **Solidworks VBA macro**.
+Please see below video how visually we can create *a Chamfer* from **Solidworks VBA macro**.
 
 <div class="w3-card w3-panel">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/IMHM0_QF7HQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -43,47 +43,56 @@ Please note that there are **no explaination** given in the video.
 
 ---
 
-## For Experience Macro Developer - Create a Fillet From VBA Macro
+## For Experience Macro Developer - Create a Chamfer From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for creating **A Fillet** from **Solidworks VBA Macro**.
+Below is the code for creating **A Chamfer** from **Solidworks VBA Macro**.
 
 ```vb
 ' Creating variable for Solidworks Sketch Segment
 Dim swSketchSegment As SldWorks.SketchSegment
       
-' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
-Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
 ```
 
-For creating a **Fillet** first you need to **Create** a variable of `SketchSegment` type.
+For creating a **Chamfer** first you need to **Create** a variable of `SketchSegment` type.
 
 After creating variable, you need to set the value of this variable.
 
-For this you used `CreateFillet` method from **Solidworks Sketch Manager**.
+For this you used `CreateChamfer` method from **Solidworks Sketch Manager**.
 
-This `CreateFillet` method set the value of `SketchSegment` type variable.
+This `CreateChamfer` method set the value of `SketchSegment` type variable.
 
-This `CreateFillet` method takes following parameters as explained:
+This `CreateChamfer` method takes following parameters as explained:
 
-**Radius** : *Radius of the fillet in meters.*
+**Type** : *Type of chamfer as defined in `swSketchChamferType_e`*
 
-**ConstrainedCorners** : *Action to take if the corner to be filleted is constrained or has a dimension.*
+**Distance** : *Distance of the chamfer*
 
-If you want a more detail explaination then please read further otherwise this will help you to **Create a Fillet From VBA Macro**.
+**AngleORdist** : *These are as follows*
+
+* If Type = `swSketchChamfer_DistanceDistance`, then the second chamfer distance 
+
+* If Type = `swSketchChamfer_DistanceAngle`, then the second chamfer angle 
+
+* If Type = `swSketchChamfer_DistanceEqual`, then this argument is ignored because Distance
+is used for both edges
+
+If you want a more detail explaination then please read further otherwise this will help you to **Create a Chamfer From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Create a Fillet From VBA Macro
+## For Beginners Macro Developers - Create a Chamfer From VBA Macro
 
-In this post, I tell you about `CreateFillet` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateChamfer` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new Corner Rectangle.
+So ***use this method*** if you want to create a Chamfer.
 
-Below is the `code` sample for creating Corner Rectangle.
+Below is the `code` sample for creating a Chamfer.
 
 ```vb
 Option Explicit
@@ -139,13 +148,13 @@ Sub main()
   ' Selecting Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Point1", "SKETCHPOINT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
-  Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+  ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
+  Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
 
-  ' De-select the Fillet after creation
+  ' De-select the Chamfer after creation
   swDoc.ClearSelection2 True
   
-  ' Show Front View after creating Fillet
+  ' Show Front View after creating Chamfer
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -318,39 +327,47 @@ In above line, we select the *front plane* by using `SelectByID2` method from `E
 For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
 
 ```vb
-' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
-Set swSketchSegment = swSketchManager.CreateFillet(0.1, swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry)
+' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
+Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
 ```
 
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateFillet` method from *Solidworks Sketch Manager*.
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateChamfer` method from *Solidworks Sketch Manager*.
 
-This `CreateFillet` method takes following parameters:
+This `CreateChamfer` method takes following parameters:
 
-**Radius** : *Radius of the fillet in meters.*
+**Type** : *Type of chamfer as defined in `swSketchChamferType_e`*.
 
-**ConstrainedCorners** : *Action to take if the corner to be filleted is constrained or has a dimension.*
+The `swSketchChamferType_e` has 3 values for type of chamfers:
 
-Below Image described **the Parameters for a Fillet**.
+* `swSketchChamfer_DistanceAngle`
+
+* `swSketchChamfer_DistanceDistance`
+
+* `swSketchChamfer_DistanceEqual`
+
+**Distance** : *Distance of the chamfer*
+
+**AngleORdist** : *Angle or Distance for chamfer. These are as follows*
+
+* If Type = `swSketchChamfer_DistanceDistance`, then the second chamfer distance 
+
+* If Type = `swSketchChamfer_DistanceAngle`, then the second chamfer angle 
+
+* If Type = `swSketchChamfer_DistanceEqual`, then this argument is ignored because Distance
+is used for both edges.
+
+Below Image described **the Parameters for a Chamfer**.
 
 ![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
 
 In our code, I have used following values:
 
-**Radius** : I have used 0.1 (This value is in meter) as the radius of fillet.
+**Type** : I have used `swSketchChamferType_e.swSketchChamfer_DistanceEqual` enumerator as value for type of Chamfer.
 
-**ConstrainedCorners** : I have used `swConstrainedCornerAction_e.swConstrainedCornerDeleteGeometry` enumerator as value for constraining corners.
+**Distance** : I have used 0.1 (This value is in meter) as the distance of Chamfer.
 
-In **swConstrainedCornerAction_e** we have 4 constant values.
-
-These values are as follows:
-
-* **swConstrainedCornerDeleteGeometry** : 2 = Delete the constraint or dimension and add the fillet
-
-* **swConstrainedCornerInteract** : 0 = Ask the user whether to delete the geometry or stop processing
-
-* **swConstrainedCornerKeepGeometry** : 1 = Keep the constraint or dimension by creating a virtual intersection point before adding the fillet
-
-* **swConstrainedCornerStopProcessing** : 3 = Do not delete the constrain or dimension and do not create the fillet
+**AngleORdist** : I have used 0.2 (This value is in meter). But in our code **Type = `swSketchChamfer_DistanceEqual`**, then this argument is ignored because Distance
+is used for both edges.
 
 ### NOTE
 
@@ -358,7 +375,7 @@ It is ***very important*** to remember that, when you give distance or any other
 
 Solidworks API does not care about your application's Unit systems.
 
-For example, I works in ANSI system means inches for distance. But when I used Solidworks API through VBA macros or C#, I need to use converted numeric values.
+For example, I works in **ANSI** system means inches for distance. But when I used **Solidworks API** through *VBA macros or C#*, I need to use converted numeric values.
 
 Because Solidworks API output the distance in **Meter** which is not my requirement.
 
@@ -367,12 +384,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Fillet** we have created.
+In the above line of code, we deselect the **Chamfer** we have created.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after creating Fillet
+' Show Front View after creating Chamfer
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -412,9 +429,9 @@ This method takes 2 parameter described as follows:
 
 - *swTrimetricView*
 
-In our code, we did not use **VName** instead I used empty string in form of ***""*** symbol.
+In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
 
-I used ViewId value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
+I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
 
 ```vb
 ' Zoom to fit screen in Solidworks Window
@@ -491,7 +508,7 @@ If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketc
 
 ---
 
-Hope this post helps you to *create a Fillet* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *create a Chamfer* in Sketches with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
