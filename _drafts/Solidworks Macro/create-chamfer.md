@@ -145,7 +145,7 @@ Sub main()
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Selecting Front Plane
+  ' Selecting Point 1
   BoolStatus = swDoc.Extension.SelectByID2("Point1", "SKETCHPOINT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
   ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
