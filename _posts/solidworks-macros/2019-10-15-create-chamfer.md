@@ -34,7 +34,7 @@ Feel free to select the topic you want to.
 Please see below video how visually we can create *a Chamfer* from **Solidworks VBA macro**.
 
 <div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/IMHM0_QF7HQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Please note that there are **no explaination** given in the video. 
@@ -145,7 +145,7 @@ Sub main()
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Selecting Front Plane
+  ' Selecting Point 1
   BoolStatus = swDoc.Extension.SelectByID2("Point1", "SKETCHPOINT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
   ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
@@ -162,6 +162,10 @@ Sub main()
 
 End Sub
 ```
+
+---
+
+### Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 

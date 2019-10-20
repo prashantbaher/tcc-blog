@@ -114,3 +114,5 @@ Below posts teach you how to create Points and Spline in *Solidworks* using **VB
 Below posts teach you how to create Sketch Fillet and Sketch Chamfer in *Solidworks* using **VBA macros**.
 
 * [Sketch - Create a Fillet](/solidworks-macros/create-fillet)
+
+* [Sketch - Create a Chamfer](/solidworks-macros/create-chamfer)

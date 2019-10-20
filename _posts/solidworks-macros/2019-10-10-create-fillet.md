@@ -154,6 +154,10 @@ Sub main()
 End Sub
 ```
 
+---
+
+### Understanding the Code
+
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
 ```vb
