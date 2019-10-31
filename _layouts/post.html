@@ -15,9 +15,6 @@ layout: default
       {%- endif -%}</p>
   </header>
 
-  <!--Top Adsense Ad-->
-  {%- include adsense-top-and-bottom-placed-ads.html -%}
-
   <div class="post-content w3-row" itemprop="articleBody">
     <div class="w3-threequarter w3-border-right">{{ content }}</div>
     <div class="w3-hide-small w3-padding w3-quarter"></div>
@@ -32,9 +29,6 @@ layout: default
       <a class="w3-button w3-right" style="color: #990000ff" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
     {% endif %}
   </div>
-
-  <!--Bottom Adsense Ad-->
-  {%- include adsense-top-and-bottom-placed-ads.html -%}
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
