@@ -14,10 +14,13 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
       {%- endif -%}</p>
   </header>
-
+  
+  {%- include adsense-top-and-bottom-placed-ads.html -%}
   <div class="post-content w3-row" itemprop="articleBody">
     <div class="w3-threequarter w3-border-right">{{ content }}</div>
-    <div class="w3-hide-small w3-padding w3-quarter"></div>
+    <div class="w3-hide-small w3-padding w3-quarter">
+      {%- include adsense-top-and-bottom-placed-ads.html -%}
+    </div>
   </div>
  
   <!--Post Navigation-->
@@ -30,7 +33,7 @@ layout: default
     {% endif %}
   </div>
 
-  <div>{%- include adsense-top-and-bottom-placed-ads.html -%}</div>
+  {%- include adsense-top-and-bottom-placed-ads.html -%}
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
