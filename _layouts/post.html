@@ -23,10 +23,10 @@ layout: default
   <!--Post Navigation-->
   <div class="w3-bar w3-margin-top w3-margin-bottom">
     {% if page.previous.url %}
-      <a class="w3-button" style="color: #990000ff" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+      <a class="w3-button w3-rose" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
     {% endif %}
     {% if page.next.url %}
-      <a class="w3-button w3-right" style="color: #990000ff" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+      <a class="w3-button w3-rose w3-right" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
     {% endif %}
   </div>
 
