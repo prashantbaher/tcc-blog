@@ -1,11 +1,9 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Trim Entities From VBA Macro
+title:  Solidworks Macros - Trim Sketch Entities From VBA Macro
 ---
 
-In this post, I tell you about *how to create a Chamfer through Solidworks VBA Macros* in a sketch.
-
-This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
+In this post, I tell you about *how to Trim Sketch Entities using Solidworks VBA Macros* in a Sketch.
 
 ---
 
@@ -13,9 +11,9 @@ This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macr
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---create-a-chamfer-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---trim-sketch-entities-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---create-a-chamfer-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---trim-sketch-entities-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -31,9 +29,9 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we can create *a Chamfer* from **Solidworks VBA macro**.
+Please see below video how visually we *Trim Sketch Entities* in **Solidworks VBA macro**.
 
-<div class="w3-card w3-panel">
+<div class="w3-card">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
@@ -43,48 +41,65 @@ Please note that there are **no explaination** given in the video.
 
 ---
 
-## For Experience Macro Developer - Create a Chamfer From VBA Macro
+## For Experience Macro Developer - Trim Sketch Entities From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for creating **A Chamfer** from **Solidworks VBA Macro**.
+Below is the code for **Trim Sketch Entities** from **Solidworks VBA Macro**.
 
 ```vb
-' Creating variable for Solidworks Sketch Segment
-Dim swSketchSegment As SldWorks.SketchSegment
-      
-' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
-Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+' Select Line 1
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+' Select Line 2
+BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+' Trim Solidworks Sketch segment by "SketchTrim" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
 ```
 
-For creating a **Chamfer** first you need to **Create** a variable of `SketchSegment` type.
+For **Trim** Solidworks Sketch segment, first you need to **Create** a variable of `Boolean` type.
 
-After creating variable, you need to set the value of this variable.
+After creating variable, you need to set the value of this `Boolean` variable.
 
-For this you used `CreateChamfer` method from **Solidworks Sketch Manager**.
+For this you used `SketchTrim` method from **Solidworks Sketch Manager**.
 
-This `CreateChamfer` method set the value of `SketchSegment` type variable.
+This `SketchTrim` method set the value of `Boolean` type variable.
 
-This `CreateChamfer` method takes following parameters as explained:
+If Trim is **successful** then `SketchTrim` method return **True** otherwise `SketchTrim` returns **False**.
 
-**Type** : *Type of chamfer as defined in `swSketchChamferType_e`*
+This `SketchTrim` method takes following parameters as explained:
 
-**Distance** : *Distance of the chamfer*
+**Option** : *Sketch trim options as defined in `swSketchTrimChoice_e`*
 
-**AngleORdist** : *These are as follows*
+**X** : *X pick location*
 
-* If Type = `swSketchChamfer_DistanceDistance`, then the second chamfer distance 
+**Y** : *Y pick location*
 
-* If Type = `swSketchChamfer_DistanceAngle`, then the second chamfer angle 
+In `swSketchTrimChoice_e` we have following options:
 
-* If Type = `swSketchChamfer_DistanceEqual`, then this argument is ignored because Distance
-is used for both edges
+* `swSketchTrimClosest` : This option Trim Closest selected Sketch Entity.
 
-If you want a more detail explaination then please read further otherwise this will help you to **Create a Chamfer From VBA Macro**.
+* `swSketchTrimCorner` : This option Trim/Extend Corners of selected Sketch Entity.
+
+* `swSketchTrimEntities` : This option Trim/Delete selected Sketch Entity.
+
+* `swSketchTrimEntityPoint` : This option migth be Trim selected Sketch Point or Entity. (I did not know what it do!!!)
+
+* `swSketchTrimInside` : This option Trim Closest selected Sketch Entity.
+
+* `swSketchTrimOutside` : This option Trim Closest selected Sketch Entity.
+
+* `swSketchTrimTwoEntities` : This option Trim Closest selected Sketch Entity.
+
+If you want a more detail explaination then please read further otherwise this will help you to **Trim Sketch Entities From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Create a Chamfer From VBA Macro
+## For Beginners Macro Developers - Trim Sketch Entities From VBA Macro
 
 In this post, I tell you about `CreateChamfer` method from **Solidworks** `SketchManager` object.
 
@@ -140,16 +155,22 @@ Sub main()
   Dim vSketchLines As Variant
   
   ' Creating a Corner Rectangle
-  vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
+  Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 1, 0, 0)
+  
+  ' Creating a Corner Rectangle
+  Set swSketchSegment = swSketchManager.CreateLine(1.5, 0, 0, 1.5, 1, 0)
   
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Selecting Point 1
-  BoolStatus = swDoc.Extension.SelectByID2("Point1", "SKETCHPOINT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  ' Selecting Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+  ' Selecting Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
   ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
-  Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
+  BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
 
   ' De-select the Chamfer after creation
   swDoc.ClearSelection2 True
