@@ -89,11 +89,11 @@ In `swSketchTrimChoice_e` we have following options:
 
 * `swSketchTrimEntityPoint` : This option migth be Trim selected Sketch Point or Entity. (I did not know what it do!!!)
 
-* `swSketchTrimInside` : This option Trim Closest selected Sketch Entity.
+* `swSketchTrimInside` : This option Trim selected Sketch Entity between **two boundaries**.
 
-* `swSketchTrimOutside` : This option Trim Closest selected Sketch Entity.
+* `swSketchTrimOutside` : This option Keep selected Sketch Entity between **two boundaries** and Trim outside of the boundaries.
 
-* `swSketchTrimTwoEntities` : This option Trim Closest selected Sketch Entity.
+* `swSketchTrimTwoEntities` : This option Trim/Delete selected *two Sketch Entities*.
 
 If you want a more detail explaination then please read further otherwise this will help you to **Trim Sketch Entities From VBA Macro**.
 
@@ -101,7 +101,7 @@ If you want a more detail explaination then please read further otherwise this w
 
 ## For Beginners Macro Developers - Trim Sketch Entities From VBA Macro
 
-In this post, I tell you about `CreateChamfer` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `SketchTrim` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
