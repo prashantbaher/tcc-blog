@@ -19,7 +19,6 @@ I will explain the use of this method in 2 different scenerio as follows:
 
 2. Using this method in an open document.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Using SelectByID method in previous example
 
@@ -93,8 +92,6 @@ If we want to select **Right Plane** then we just need to replace `"Front Plane"
 
 Similar for selecting **Top Plane**, we need to replace `"Front Plane"` -> `"Top Plane"` in previous code sample.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ### Using SelectByID method in an Open document
 
 For using `SelectByID` method in an open document we use differnet code sample.
@@ -134,13 +131,11 @@ And then we use similar method to select **"Front Plane"**.
 
 As explained in previous section we can select **Right Plane** and **Top Plane**.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ## By **SelectByID2** method From **IModelDocExtension** Interface
 
 This method is similar to `SelectByID` from previous section infact it is the *updated version* of previous method.
 
-Since it is *updated* and has *additional functionality*, I will explain it otherwise from my experience I ***never*** use this method. Previous method is easiest method, by far, for selecting objects.
+Since it is *updated* and has *additional functionality*, I will explain it I ***frequently*** use this method. Previous method is easiest method, by far, for selecting objects.
 
 Since `SelectByID2` is updated version of `SelectByID` it has similar syntax and usage.
 
