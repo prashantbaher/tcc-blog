@@ -105,77 +105,73 @@ In this post, I tell you about `SketchTrim` method from **Solidworks** `SketchMa
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a Chamfer.
+So ***use this method*** if you want to *Trim Sketces*..
 
-Below is the `code` sample for creating a Chamfer.
+Below is the `code` sample for *Trim Sketces*.
 
 ```vb
 Option Explicit
 
-' Creating variable for Solidworks application
+' Create variable for Solidworks application
 Dim swApp As SldWorks.SldWorks
 
-' Creating variable for Solidworks document
+' Create variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
 
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Creating variable for Solidworks Sketch Manager
+' Create variable for Solidworks Sketch Manager
 Dim swSketchManager As SldWorks.SketchManager
 
-' Creating Variable for Solidworks Sketch Segment
+' Create Variable for Solidworks Sketch Segment
 Dim swSketchSegment As SldWorks.SketchSegment
-
 
 ' Main function of our VBA program
 Sub main()
 
-  ' Setting Solidworks variable to Solidworks application
+  ' Set Solidworks variable to Solidworks application
   Set swApp = Application.SldWorks
   
-  ' Creating string type variable for storing default part location
+  ' Create string type variable for storing default part location
   Dim defaultTemplate As String
-  ' Setting value of this string type variable to "Default part template"
+  ' Set value of this string type variable to "Default part template"
   defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
-  ' Setting Solidworks document to new part document
+  ' Set Solidworks document to new part document
   Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
-  ' Selecting Front Plane
+  ' Select Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Setting Sketch manager for our sketch
+  ' Set Sketch manager for our sketch
   Set swSketchManager = swDoc.SketchManager
 
-  ' Inserting a sketch into selected plane
+  ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
-  Dim vSketchLines As Variant
-  
-  ' Creating a Corner Rectangle
+  ' Set Sketch Segment value and Create Line 1
   Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 1, 0, 0)
   
-  ' Creating a Corner Rectangle
+  ' Set Sketch Segment value and Create Line 2
   Set swSketchSegment = swSketchManager.CreateLine(1.5, 0, 0, 1.5, 1, 0)
   
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Selecting Line 1
+  ' Select Line 1
   BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Selecting Line 2
+  ' Select Line 2
   BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
+  ' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
   BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
 
-  ' De-select the Chamfer after creation
+  ' De-select the Sketch Segment after Trim
   swDoc.ClearSelection2 True
   
-  ' Show Front View after creating Chamfer
+  ' Show Front View after Trim Sketch Segments
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -199,18 +195,18 @@ This line forces us to define every variable we are going to use.
 For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
 
 ```vb
-' Creating variable for Solidworks application
+' Create variable for Solidworks application
 Dim swApp As SldWorks.SldWorks
 ```
 
-In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
+In this line, we create a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
 ```vb
-' Creating variable for Solidworks document
+' Create variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
 ```
 
-In this line, we are creating a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
+In this line, we create a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
 
 ```vb
 ' Boolean Variable
@@ -220,7 +216,7 @@ Dim BoolStatus As Boolean
 In this line, we create a variable named `BoolStatus` as `Boolean` object type.
 
 ```vb
-' Creating variable for Solidworks Sketch Manager
+' Create variable for Solidworks Sketch Manager
 Dim swSketchManager As SldWorks.SketchManager
 ```
 
@@ -231,11 +227,11 @@ As the name suggested, a **Sketch Manager** holds variours methods and propertie
 To see methods and properties related to `SketchManager` object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
 
 ```vb
-' Creating variable for Solidworks Sketch Segment
+' Create variable for Solidworks Sketch Segment
 Dim swSketchSegment As SldWorks.SketchSegment
 ```
 
-In this line, we are creating a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
+In this line, we Create a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
 
 We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
 
@@ -251,19 +247,21 @@ I have also place `boolean` type object at top also, because after certain point
 
 Thus, I have started placing it here.
 
-Next is our `Sub` procedure named `main`. This procedure hold all the *statements (instructions)* we give to computer.
+Next is our `Sub` procedure which has name of `main`. 
+
+This procedure hold all the *statements (instructions)* we give to computer.
 
 ```vb
-' Setting Solidworks variable to Solidworks application
+' Set Solidworks variable to Solidworks application
 Set swApp = Application.SldWorks
 ```
 
 In this line, we are setting the value of our Solidworks variable which we define earlier to Solidworks application.
 
 ```vb
-' Creating string type variable for storing default part location
+' Create string type variable for storing default part location
 Dim defaultTemplate As String
-' Setting value of this string type variable to "Default part template"
+' Set value of this string type variable to "Default part template"
 defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 ```
 
@@ -273,10 +271,12 @@ This variable `defaultTemplate`, hold the location the location of **Default Par
 
 In 2nd line of above example. we assign value to our newly define `defaultTemplate` variable.
 
-We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. This method is a part of our main Solidworks variable `swApp`.
+We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. 
+
+This `GetUserPreferenceStringValue()` method is a part of our main Solidworks variable `swApp`.
 
 ```vb
-' Setting Solidworks document to new part document
+' Set Solidworks document to new part document
 Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 ```
 
@@ -287,7 +287,7 @@ For **detailed information** about these lines please visit [Solidworks Macros -
 I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
-' Selecting Front Plane
+' Select Front Plane
 BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
@@ -296,14 +296,14 @@ In above line, we select the *front plane* by using `SelectByID2` method from `E
 For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
 
 ```vb
-' Setting Sketch manager for our sketch
+' Set Sketch manager for our sketch
 Set swSketchManager = swDoc.SketchManager
 ```
 
 In above line, we set the sketch manager variable to current document's sketch manager.
 
 ```vb
-' Inserting a sketch into selected plane
+' Insert a sketch into selected plane
 swSketchManager.InsertSketch True
 ```
 
@@ -312,74 +312,97 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 This method allows us to insert a sketch in selected plane.
 
 ```vb
-' Creating a "Variant" Variable which holds the values return by "CreateCornerRectangle" method
-Dim vSketchLines As Variant
-    
-' Creating a Corner Rectangle
-vSketchLines = swSketchManager.CreateCornerRectangle(0, 1, 0, 1, 0, 0)
+' Set Sketch Segment value and Create Line 1
+Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 1, 0, 0)
 ```
 
-In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateLine` method from *Solidworks Sketch Manager*.
 
-A `Variant` type variable can hold **any** type of value depends upon the use of variable.
+This `CreateLine` method creates Lines between 2 given points.
 
-In 2nd line, we set the value of variable `vSketchLines`.
+For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post..
 
-Value of `vSketchLinesis` an array of lines. This array is send as return value when we use `CreateCornerRectangle` method.
+This post describe all the parameters we need for this `CreateLine` method.
 
-This `CreateCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a corner rectangle.
-
-For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
-
-In the above code sample I have used (0, 1, 0) Upper-left point in *Y-direction*.
-
-For Lower-right point I used (1, 0, 0) which is 1 point distance in *X-direction*.
+In above line, we create a Line between origin of Sketch (0, 0, 0) and 1 distance in X-axis direction.
 
 ```vb
-' De-select the Rectangle after creation
+' Set Sketch Segment value and Create Line 2
+Set swSketchSegment = swSketchManager.CreateLine(1.5, 0, 0, 1.5, 1, 0)
+```
+
+In above line we create Line 2 by using same `CreateLine` method from *Solidworks Sketch Manager*.
+
+In above code, we create our 2nd line between **point (1.5, 0, 0)** and **point (1.5, 1, 0)**.
+
+This line start at 1.5 distance in X-axis and ends at a distance of 1 in Y-axis.
+
+```vb
+' De-select the lines after creation
 swDoc.ClearSelection2 True
 ```
 
-In above line, we de-select the ractangle we just create.
+After creating both lines we de-select those lines.
+
+> We **don't need** to de-select the lines for **Trim operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
 
 ```vb
-' Selecting Front Plane
-BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Select Line 1
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+' Select Line 2
+BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
 ```
 
-In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
+In above line, we select **Line 1 and 2**.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+The thing to notice here is that *Append* value I set to `False` for **Line 1** and `True` for **Line 2**.
+
+**Line 1** is 1st entity in items of selection hence we can use `False` here.
+
+For **Line 2**, we want to add this line into Selection List, hence *Append* value I set to `True`.
+
 
 ```vb
-' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager
-Set swSketchSegment = swSketchManager.CreateChamfer(swSketchChamferType_e.swSketchChamfer_DistanceEqual, 0.1, 0.2)
+' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
 ```
 
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateChamfer` method from *Solidworks Sketch Manager*.
+In above line, we **Trim** selected *Sketch Segments* by `SketchTrim` method from *Solidworks sketch manager*.
 
-This `CreateChamfer` method takes following parameters:
+This `SketchTrim` method takes following parameters:
 
-**Type** : *Type of chamfer as defined in `swSketchChamferType_e`*.
+**Option** : *Sketch trim options as defined in `swSketchTrimChoice_e`*
 
-The `swSketchChamferType_e` has 3 values for type of chamfers:
+The `swSketchTrimChoice_e` we have following options:
 
-* `swSketchChamfer_DistanceAngle`
+  * `swSketchTrimClosest` : This option Trim Closest selected Sketch Entity.
 
-* `swSketchChamfer_DistanceDistance`
+  * `swSketchTrimCorner` : This option Trim/Extend Corners of selected Sketch Entity.
 
-* `swSketchChamfer_DistanceEqual`
+  * `swSketchTrimEntities` : This option Trim/Delete selected Sketch Entity.
 
-**Distance** : *Distance of the chamfer*
+  * `swSketchTrimEntityPoint` : This option migth be Trim selected Sketch Point or Entity. (I did not know what it do!!!)
 
-**AngleORdist** : *Angle or Distance for chamfer. These are as follows*
+  * `swSketchTrimInside` : This option Trim selected Sketch Entity between **two boundaries**.
 
-* If Type = `swSketchChamfer_DistanceDistance`, then the second chamfer distance 
+  NOTES:
 
-* If Type = `swSketchChamfer_DistanceAngle`, then the second chamfer angle 
+    - **Lines needed**: For this we need at-least 3 lines.
 
-* If Type = `swSketchChamfer_DistanceEqual`, then this argument is ignored because Distance
-is used for both edges.
+      
+
+  * `swSketchTrimOutside` : This option Keep selected Sketch Entity between **two boundaries** and Trim outside of the boundaries.
+
+  * `swSketchTrimTwoEntities` : This option Trim/Delete selected *two Sketch Entities*.
+
+
+
+
+**X** : *X pick location*
+
+**Y** : *Y pick location*
 
 Below Image described **the Parameters for a Chamfer**.
 
