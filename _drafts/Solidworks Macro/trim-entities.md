@@ -166,7 +166,7 @@ Sub main()
   BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
   ' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
-  BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
+  BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0.0, 0.0, 0.0)
 
   ' De-select the Sketch Segment after Trim
   swDoc.ClearSelection2 True
@@ -366,7 +366,7 @@ For **Line 2**, we want to add this line into Selection List, hence *Append* val
 
 ```vb
 ' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
+BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0.0, 0.0, 0.0)
 ```
 
 In above line, we **Trim** selected *Sketch Segments* by `SketchTrim` method from *Solidworks sketch manager*.
@@ -387,35 +387,59 @@ The `swSketchTrimChoice_e` we have following options:
 
   * `swSketchTrimInside` : This option Trim selected Sketch Entity between **two boundaries**.
 
-  NOTES:
+    ***NOTES***: Please note following point for this Trim option:
 
-    - **Lines needed**: For this we need at-least 3 lines.
+      - **Lines needed**: For this we need at-least 3 lines.
 
-      
+      - **Boudaries**: **1st and 2nd seletced sketch** act as **the Boundaries** for this option.
+
+      - **Trim Entity**: **3rd sketch** is **the Trimed entity**. In this option, 3rd sketch between the boundary is trimed.
 
   * `swSketchTrimOutside` : This option Keep selected Sketch Entity between **two boundaries** and Trim outside of the boundaries.
 
+    ***NOTES***: Please note following point for this Trim option::
+
+      - **Lines needed**: For this we need at-least 3 lines.
+
+      - **Boudaries**: **1st and 2nd seletced sketch** act as **the Boundaries** for this option.
+
+      - **Trim Entity**: **3rd sketch** is **the Trimed entity**. In this option, 3rd sketch outside of the boundary is trimed.
+
   * `swSketchTrimTwoEntities` : This option Trim/Delete selected *two Sketch Entities*.
-
-
-
 
 **X** : *X pick location*
 
 **Y** : *Y pick location*
 
-Below Image described **the Parameters for a Chamfer**.
+**Z** : *Z pick location*
+
+**NOTE:**
+
+  * *X, Y and Z arguments* are passed in the `swSketchTrimClosest` and `swSketchTrimEntityPoint` options.
+
+  * *Z arguments* is needed only for *3D Sketch*.
+
+**Return Value**:
+
+  - **True**: If Trim operation is *Success*.
+
+  * **False**: If Trim operation is *Fail*.
+
+Below Image described **the Parameters for the SketchTrim**.
 
 ![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
 
 In our code, I have used following values:
 
-**Type** : I have used `swSketchChamferType_e.swSketchChamfer_DistanceEqual` enumerator as value for type of Chamfer.
+**Option** : I have used `swSketchTrimChoice_e.swSketchTrimCorner` enumerator as the type of Sketch Trim option.
 
-**Distance** : I have used 0.1 (This value is in meter) as the distance of Chamfer.
+**X** : I have used 0.0 value for *X pick location*.
 
-**AngleORdist** : I have used 0.2 (This value is in meter). But in our code **Type = `swSketchChamfer_DistanceEqual`**, then this argument is ignored because Distance
-is used for both edges.
+**Y** : I have used 0.0 value for *Y pick location*.
+
+**Z** : I have used 0.0 value for *Z pick location*.
+
+---
 
 ### NOTE
 
@@ -427,17 +451,19 @@ For example, I works in **ANSI** system means inches for distance. But when I us
 
 Because Solidworks API output the distance in **Meter** which is not my requirement.
 
+---
+
 ```vb
-' De-select the Fillet after creation
+' De-select the Sketch after creation
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Chamfer** we have created.
+In the above line of code, we deselect the **Sketch** after the *Trim* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after creating Chamfer
+' Show Front View after Sketch Trim
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -451,9 +477,9 @@ For showing **Front View** we used `ShowNamedView2` method from our Solidworks d
 
 This method takes 2 parameter described as follows:
 
-**VName** : Name of the view to display or an empty string to use ViewId instead
+  - **VName** : Name of the view to display or an empty string to use ViewId instead
 
-**ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
 
 *NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
 
@@ -528,7 +554,7 @@ These posts will help you to understand what **functions** are and how to use th
 
 ## Solidworks API Objects
 
-In this post, for creating a **Fillet**, we use *Solidworks API objects and their methods*.
+In this post of **Sketch Trim**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
@@ -540,23 +566,23 @@ These Solidworks API Objects are listed below:
 
 - **Solidworks Application Object**
 
-If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
+  If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
 
 - **Solidworks Document Object**
 
-If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
+  If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
 
 - **Solidworks Sketch Manager Object**
 
-If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
+  If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
 
 - **Solidworks Sketch Segment Object**
 
-If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Segment Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html).
+  If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Segment Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html).
 
 ---
 
-Hope this post helps you to *create a Chamfer* in Sketches with Solidworks VB Macros.
+Hope this post helps you to *Trim* Sketch Entities with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
