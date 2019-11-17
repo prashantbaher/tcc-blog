@@ -1,9 +1,9 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Trim Sketch Entities From VBA Macro
+title:  Solidworks Macros - Extend Sketch Entities From VBA Macro
 ---
 
-In this post, I tell you about *how to Trim Sketch Entities using Solidworks VBA Macros* in a Sketch.
+In this post, I tell you about *how to Extend Sketch Entities using Solidworks VBA Macros* in a Sketch.
 
 ---
 
@@ -11,9 +11,9 @@ In this post, I tell you about *how to Trim Sketch Entities using Solidworks VBA
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---trim-sketch-entities-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---extend-sketch-entities-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---trim-sketch-entities-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---extend-sketch-entities-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -29,7 +29,7 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we *Trim Sketch Entities* in **Solidworks VBA macro**.
+Please see below video how visually we *Extend Sketch Entities* in **Solidworks VBA macro**.
 
 <div class="w3-card">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -41,11 +41,11 @@ Please note that there are **no explaination** given in the video.
 
 ---
 
-## For Experience Macro Developer - Trim Sketch Entities From VBA Macro
+## For Experience Macro Developer - Extend Sketch Entities From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for **Trim Sketch Entities** from **Solidworks VBA Macro**.
+Below is the code for **Extend Sketch Entities** from **Solidworks VBA Macro**.
 
 ```vb
 ' Boolean Variable
@@ -54,60 +54,45 @@ Dim BoolStatus As Boolean
 ' Select Line 1
 BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-' Select Line 2
-BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-
-' Trim Solidworks Sketch segment by "SketchTrim" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0, 0, 0)
+' Extend Solidworks Sketch segment by "SketchExtend" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchExtend(0, 0, 0)
 ```
 
-For **Trim** Solidworks Sketch segment, first you need to **Create** a variable of `Boolean` type.
+**Method Name**: `SketchExtend`
+
+**Description**: Add lengths to the selected Sketch Entity till next sketch entity.
+
+For **Extend** Solidworks Sketch segment, first you need to **Create** a variable of `Boolean` type.
 
 After creating variable, you need to set the value of this `Boolean` variable.
 
-For this you used `SketchTrim` method from **Solidworks Sketch Manager**.
+For this you used `SketchExtend` method from **Solidworks Sketch Manager**.
 
-This `SketchTrim` method set the value of `Boolean` type variable.
+This `SketchExtend` method set the value of `Boolean` type variable.
 
-If Trim is **successful** then `SketchTrim` method return **True** otherwise `SketchTrim` returns **False**.
+If Extend is **successful** then `SketchExtend` method return **True** otherwise `SketchExtend` returns **False**.
 
-This `SketchTrim` method takes following parameters as explained:
+This `SketchExtend` method takes following parameters as explained:
 
-**Option** : *Sketch trim options as defined in `swSketchTrimChoice_e`*
+**X** : *Not used*
 
-**X** : *X pick location*
+**Y** : *Not used*
 
-**Y** : *Y pick location*
+**Z** : *Not used*
 
-In `swSketchTrimChoice_e` we have following options:
-
-* `swSketchTrimClosest` : This option Trim Closest selected Sketch Entity.
-
-* `swSketchTrimCorner` : This option Trim/Extend Corners of selected Sketch Entity.
-
-* `swSketchTrimEntities` : This option Trim/Delete selected Sketch Entity.
-
-* `swSketchTrimEntityPoint` : This option migth be Trim selected Sketch Point or Entity. (I did not know what it do!!!)
-
-* `swSketchTrimInside` : This option Trim selected Sketch Entity between **two boundaries**.
-
-* `swSketchTrimOutside` : This option Keep selected Sketch Entity between **two boundaries** and Trim outside of the boundaries.
-
-* `swSketchTrimTwoEntities` : This option Trim/Delete selected *two Sketch Entities*.
-
-If you want a more detail explaination then please read further otherwise this will help you to **Trim Sketch Entities From VBA Macro**.
+If you want a more detail explaination then please read further otherwise this will help you to **Extend Sketch Entities From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Trim Sketch Entities From VBA Macro
+## For Beginners Macro Developers - Extend Sketch Entities From VBA Macro
 
-In this post, I tell you about `SketchTrim` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `SketchExtend` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Trim Sketces*..
+So ***use this method*** if you want to *Extend Sketces*..
 
-Below is the `code` sample for *Trim Sketces*.
+Below is the `code` sample for *Extend Sketces*.
 
 ```vb
 Option Explicit
@@ -151,10 +136,10 @@ Sub main()
   swSketchManager.InsertSketch True
   
   ' Set Sketch Segment value and Create Line 1
-  Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 1, 0, 0)
+  Set swSketchSegment = swSketchManager.CreateLine(-0.5, 0.75, 0, -0.25, -0.5, 0)
   
   ' Set Sketch Segment value and Create Line 2
-  Set swSketchSegment = swSketchManager.CreateLine(1.5, 0, 0, 1.5, 1, 0)
+  Set swSketchSegment = swSketchManager.CreateLine(-0.75, -1.25, 0, 0.5, -1.25, 0)
   
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
@@ -162,16 +147,13 @@ Sub main()
   ' Select Line 1
   BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Select Line 2
-  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  ' Extend selected Sketch Segments by "SketchExtend" method from Solidworks sketch manager
+  BoolStatus = swSketchManager.SketchExtend(0.0, 0.0, 0.0)
 
-  ' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
-  BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0.0, 0.0, 0.0)
-
-  ' De-select the Sketch Segment after Trim
+  ' De-select the Sketch Segment after Extend
   swDoc.ClearSelection2 True
   
-  ' Show Front View after Trim Sketch Segments
+  ' Show Front View after Extend Sketch Segments
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -313,7 +295,7 @@ This method allows us to insert a sketch in selected plane.
 
 ```vb
 ' Set Sketch Segment value and Create Line 1
-Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 1, 0, 0)
+Set swSketchSegment = swSketchManager.CreateLine(-0.5, 0.75, 0, -0.25, -0.5, 0)
 ```
 
 In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateLine` method from *Solidworks Sketch Manager*.
@@ -324,18 +306,22 @@ For more information about `CreateLine` method, you can read my [Solidworks Sket
 
 This post describe all the parameters we need for this `CreateLine` method.
 
-In above line, we create a Line between origin of Sketch (0, 0, 0) and 1 distance in X-axis direction.
+In above line, we create a Line between **point (-0.5, 0.75, 0)** and **point (-0.25, -0.5, 0)**.
+
+This line is **not parallel** to any axis.
+
+This line is at an angle to *Vertical* axis.
 
 ```vb
 ' Set Sketch Segment value and Create Line 2
-Set swSketchSegment = swSketchManager.CreateLine(1.5, 0, 0, 1.5, 1, 0)
+Set swSketchSegment = swSketchManager.CreateLine(-0.75, -1.25, 0, 0.5, -1.25, 0)
 ```
 
 In above line we create Line 2 by using same `CreateLine` method from *Solidworks Sketch Manager*.
 
-In above code, we create our 2nd line between **point (1.5, 0, 0)** and **point (1.5, 1, 0)**.
+In above code, we create our 2nd line between **point (-0.75, -1.25, 0)** and **point (0.5, -1.25, 0)**.
 
-This line start at 1.5 distance in X-axis and ends at a distance of 1 in Y-axis.
+This line is **parallel** to X-axis.
 
 ```vb
 ' De-select the lines after creation
@@ -344,100 +330,47 @@ swDoc.ClearSelection2 True
 
 After creating both lines we de-select those lines.
 
-> We **don't need** to de-select the lines for **Trim operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
+> We **don't need** to de-select the lines for **Extend operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
 
 ```vb
 ' Select Line 1
 BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-
-' Select Line 2
-BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-
 ```
 
-In above line, we select **Line 1 and 2**.
-
-The thing to notice here is that *Append* value I set to `False` for **Line 1** and `True` for **Line 2**.
-
-**Line 1** is 1st entity in items of selection hence we can use `False` here.
-
-For **Line 2**, we want to add this line into Selection List, hence *Append* value I set to `True`.
-
+In above line of code, we select **Line 1**.
 
 ```vb
-' Trim selected Sketch Segments by "SketchTrim" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchTrim(swSketchTrimChoice_e.swSketchTrimCorner, 0.0, 0.0, 0.0)
+' Extend selected Sketch Segments by "SketchExtend" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchExtend(0.0, 0.0, 0.0)
 ```
 
-In above line, we **Trim** selected *Sketch Segments* by `SketchTrim` method from *Solidworks sketch manager*.
+In above line, we **Extend** selected *Sketch Segments* by `SketchExtend` method from *Solidworks sketch manager*.
 
-This `SketchTrim` method takes following parameters:
+This `SketchExtend` method takes following parameters:
 
-**Option** : *Sketch trim options as defined in `swSketchTrimChoice_e`*
+**X** : *Not used*
 
-The `swSketchTrimChoice_e` we have following options:
+**Y** : *Not used*
 
-  * `swSketchTrimClosest` : This option Trim Closest selected Sketch Entity.
-
-  * `swSketchTrimCorner` : This option Trim/Extend Corners of selected Sketch Entity.
-
-  * `swSketchTrimEntities` : This option Trim/Delete selected Sketch Entity.
-
-  * `swSketchTrimEntityPoint` : This option migth be Trim selected Sketch Point or Entity. (I did not know what it do!!!)
-
-  * `swSketchTrimInside` : This option Trim selected Sketch Entity between **two boundaries**.
-
-    ***NOTES***: Please note following point for this Trim option:
-
-      - **Lines needed**: For this we need at-least 3 lines.
-
-      - **Boudaries**: **1st and 2nd seletced sketch** act as **the Boundaries** for this option.
-
-      - **Trim Entity**: **3rd sketch** is **the Trimed entity**. In this option, 3rd sketch between the boundary is trimed.
-
-  * `swSketchTrimOutside` : This option Keep selected Sketch Entity between **two boundaries** and Trim outside of the boundaries.
-
-    ***NOTES***: Please note following point for this Trim option::
-
-      - **Lines needed**: For this we need at-least 3 lines.
-
-      - **Boudaries**: **1st and 2nd seletced sketch** act as **the Boundaries** for this option.
-
-      - **Trim Entity**: **3rd sketch** is **the Trimed entity**. In this option, 3rd sketch outside of the boundary is trimed.
-
-  * `swSketchTrimTwoEntities` : This option Trim/Delete selected *two Sketch Entities*.
-
-**X** : *X pick location*
-
-**Y** : *Y pick location*
-
-**Z** : *Z pick location*
-
-**NOTE:**
-
-  * *X, Y and Z arguments* are passed in the `swSketchTrimClosest` and `swSketchTrimEntityPoint` options.
-
-  * *Z arguments* is needed only for *3D Sketch*.
+**Z** : *Not used*
 
 **Return Value**:
 
-  - **True**: If Trim operation is *Success*.
+  - **True**: If Extend operation is *Success*.
 
-  * **False**: If Trim operation is *Fail*.
+  * **False**: If Extend operation is *Fail*.
 
-Below Image described **the Parameters for the SketchTrim**.
+Below Image described **the Parameters for the SketchExtend**.
 
 ![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
 
 In our code, I have used following values:
 
-**Option** : I have used `swSketchTrimChoice_e.swSketchTrimCorner` enumerator as the type of Sketch Trim option.
+**X** : I have used 0.0 value for *X*.
 
-**X** : I have used 0.0 value for *X pick location*.
+**Y** : I have used 0.0 value for *Y*.
 
-**Y** : I have used 0.0 value for *Y pick location*.
-
-**Z** : I have used 0.0 value for *Z pick location*.
+**Z** : I have used 0.0 value for *Z*.
 
 ---
 
@@ -458,12 +391,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Trim* operation.
+In the above line of code, we deselect the **Sketch** after the *Extend* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after Sketch Trim
+' Show Front View after Sketch Extend
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -501,7 +434,7 @@ This method takes 2 parameter described as follows:
 
 - *swTopView*
 
-- *swTrimetricView*
+- *swExtendetricView*
 
 In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
 
@@ -554,7 +487,7 @@ These posts will help you to understand what **functions** are and how to use th
 
 ## Solidworks API Objects
 
-In this post of **Sketch Trim**, we use *Solidworks API objects and their methods*.
+In this post of **Sketch Extend**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
@@ -582,7 +515,7 @@ These Solidworks API Objects are listed below:
 
 ---
 
-Hope this post helps you to *Trim* Sketch Entities with Solidworks VB Macros.
+Hope this post helps you to *Extend* Sketch Entities with Solidworks VB Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
