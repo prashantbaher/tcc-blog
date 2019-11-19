@@ -425,10 +425,6 @@ The `swSketchTrimChoice_e` we have following options:
 
   * **False**: If Trim operation is *Fail*.
 
-Below Image described **the Parameters for the SketchTrim**.
-
-![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
-
 In our code, I have used following values:
 
 **Option** : I have used `swSketchTrimChoice_e.swSketchTrimCorner` enumerator as the type of Sketch Trim option.
@@ -438,6 +434,16 @@ In our code, I have used following values:
 **Y** : I have used 0.0 value for *Y pick location*.
 
 **Z** : I have used 0.0 value for *Z pick location*.
+
+Below image shows before and after Trim operation on the sketch.
+
+**Before Trim Operation**
+
+![before_trim](/assets/Solidworks_Images/trim and extend/before_trim.png)
+
+**After Trim Operation**
+
+![after_trim](/assets/Solidworks_Images/trim and extend/after_trim.png)
 
 ---
 
