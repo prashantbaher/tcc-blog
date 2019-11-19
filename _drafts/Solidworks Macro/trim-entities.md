@@ -32,7 +32,7 @@ Feel free to select the topic you want to.
 Please see below video how visually we *Trim Sketch Entities* in **Solidworks VBA macro**.
 
 <div class="w3-card">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/m1tPTzjK1Pc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Please note that there are **no explaination** given in the video. 
