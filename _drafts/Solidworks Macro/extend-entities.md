@@ -360,10 +360,6 @@ This `SketchExtend` method takes following parameters:
 
   * **False**: If Extend operation is *Fail*.
 
-Below Image described **the Parameters for the SketchExtend**.
-
-![fillet_parameters](/assets/Solidworks_Images/fillet and chamfer/fillet_parameters.png)
-
 In our code, I have used following values:
 
 **X** : I have used 0.0 value for *X*.
@@ -371,6 +367,16 @@ In our code, I have used following values:
 **Y** : I have used 0.0 value for *Y*.
 
 **Z** : I have used 0.0 value for *Z*.
+
+Below image shows before and after Extend operation on the sketch.
+
+**Before Extend Operation**
+
+![before_extend](/assets/Solidworks_Images/trim and extend/before_extend.png)
+
+**After Extend Operation**
+
+![after_extend](/assets/Solidworks_Images/trim and extend/after_extend.png)
 
 ---
 
