@@ -122,3 +122,5 @@ Below posts teach you how to create Sketch Fillet and Sketch Chamfer in *Solidwo
 Below posts teach you how to create Sketch Trim and Sketch Extend in *Solidworks* using **VBA macros**.
 
 * [Sketch - Trim Entities](/solidworks-macros/trim-entities)
+
+* [Sketch - Extend Entities](/solidworks-macros/extend-entities)
