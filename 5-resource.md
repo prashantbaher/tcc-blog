@@ -43,7 +43,7 @@ This book is beginner friendly and teaches in an easy manner!!
 If you can want buy this book from Amazon, you can buy it by clicking below image ad.
 
 <!-- Excel programming Amazon Ads -->
-<div>
+<div w3-center>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=thecadcoder91-20&marketplace=amazon&region=US&placement=1119518172&asins=1119518172&linkId=682ad89d2263473707d6b397f8b0f086&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
     </iframe>
 </div>
