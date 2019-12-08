@@ -12,6 +12,12 @@ You can support me by buy me a coffee at below link.
 
 I really appreciate your support.
 
-If I got monthly support on regular basis I will consider making some course specially for  monthly supporters.
+If I got monthly support on regular basis I will consider making some course specially for  monthly supporters or some content specially for them.
 
-I want to help those who want to learn Solidworks VBA Macros and Solidworks API automation, whether they support me or not.
+I have to manage my job and this blog along with my studies for CAD projects.
+
+I will try for more balance between my work and my blog and try to upload post at least 3-4 times a week.
+
+I hope I will achieve this frequency and continue it more longer time.
+
+Again thank you for all those who visit this website and those who support me!!
