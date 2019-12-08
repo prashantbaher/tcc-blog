@@ -6,7 +6,7 @@ permalink: /buymeacoffee/
 
 If you found content of this website helpful and you want to support this website.
 
-You can support me by buy me a coffee at just **$5** from below link.
+You can support me by **Buying me a coffee** at just **$5** from below link.
 
 [Buy Me a Coffee](https://www.buymeacoffee.com/thecadcoder)
 
@@ -33,6 +33,7 @@ I will be transperent with all my visitor.
 There are not much product I can promote and I don't want to promote unnecessary product.
 
 ---
+
 
 Since I have to manage my job and this blog along with my studies for CAD projects.
 
