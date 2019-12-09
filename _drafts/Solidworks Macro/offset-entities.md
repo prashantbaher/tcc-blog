@@ -11,9 +11,9 @@ In this post, I tell you about *how to Offset Sketch Entities using Solidworks V
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---extend-sketch-entities-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---offset-sketch-entities-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---extend-sketch-entities-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---offset-sketch-entities-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -29,7 +29,7 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we *Extend Sketch Entities* in **Solidworks VBA macro**.
+Please see below video how visually we *Offset Sketch Entities* in **Solidworks VBA macro**.
 
 <div class="w3-card">
   <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -41,58 +41,67 @@ Please note that there are **no explaination** given in the video.
 
 ---
 
-## For Experience Macro Developer - Extend Sketch Entities From VBA Macro
+## For Experience Macro Developer - Offset Sketch Entities From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for **Extend Sketch Entities** from **Solidworks VBA Macro**.
+Below is the code for **Offset Sketch Entities** from **Solidworks VBA Macro**.
 
 ```vb
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
 ' Select Line 1
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-' Extend Solidworks Sketch segment by "SketchExtend" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchExtend(0, 0, 0)
+' Select Line 2
+BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+
+' Offset Solidworks Sketch segment by "SketchOffset2" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
 ```
 
-**Method Name**: `SketchExtend`
+**Method Name**: `SketchOffset2`
 
-**Description**: Add lengths to the selected Sketch Entity till next sketch entity.
+**Description**: *Offsets* the selected sketch entities.
 
-For **Extend** Solidworks Sketch segment, first you need to **Create** a variable of `Boolean` type.
+For **Offset** Solidworks Sketch entities, first you need to **Create** a variable of `Boolean` type.
 
 After creating variable, you need to set the value of this `Boolean` variable.
 
-For this you used `SketchExtend` method from **Solidworks Sketch Manager**.
+For this you used `SketchOffset2` method from **Solidworks Sketch Manager**.
 
-This `SketchExtend` method set the value of `Boolean` type variable.
+This `SketchOffset2` method set the value of `Boolean` type variable.
 
-If Extend is **successful** then `SketchExtend` method return **True** otherwise `SketchExtend` returns **False**.
+If *Offset* is **successful** then `SketchOffset2` method return **True** value otherwise `SketchOffset2` returns **False** value.
 
-This `SketchExtend` method takes following parameters as explained:
+This `SketchOffset2` method takes following parameters as explained:
 
-**X** : *Not used*
+**Offset** : *Offset value; negative value offsets the sketch entities in the opposite direction*
 
-**Y** : *Not used*
+**BothDirections** : *True to offset the sketch entities in both directions, false to offset the sketch entities in one direction*
 
-**Z** : *Not used*
+**Chain** : *True to offset the chain of sketch entities, false to offset only the selected sketch entities*
 
-If you want a more detail explaination then please read further otherwise this will help you to **Extend Sketch Entities From VBA Macro**.
+**CapEnds** : *Cap the ends as defined by `swSkOffsetCapEndType_e`*
+
+  `swSkOffsetCapEndType_e` enum define follow **End cap types**:
+
+
+
+If you want a more detail explaination then please read further otherwise this will help you to **Offset Sketch Entities From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Extend Sketch Entities From VBA Macro
+## For Beginners Macro Developers - Offset Sketch Entities From VBA Macro
 
-In this post, I tell you about `SketchExtend` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `SketchOffset2` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Extend Sketces*..
+So ***use this method*** if you want to *Offset Sketces*..
 
-Below is the `code` sample for *Extend Sketces*.
+Below is the `code` sample for *Offset Sketces*.
 
 ```vb
 Option Explicit
@@ -150,13 +159,13 @@ Sub main()
   ' Select Line 2
   BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Extend selected Sketch Segments by "SketchExtend" method from Solidworks sketch manager
+  ' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
   BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
 
-  ' De-select the Sketch Segment after Extend
+  ' De-select the Sketch Segment after Offset
   swDoc.ClearSelection2 True
   
-  ' Show Front View after Extend Sketch Segments
+  ' Show Front View after Offset Sketch Segments
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -333,7 +342,7 @@ swDoc.ClearSelection2 True
 
 After creating both lines we de-select those lines.
 
-> We **don't need** to de-select the lines for **Extend operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
+> We **don't need** to de-select the lines for **Offset operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
 
 ```vb
 ' Select Line 1
@@ -343,11 +352,11 @@ BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, Fals
 In above line of code, we select **Line 1**.
 
 ```vb
-' Extend selected Sketch Segments by "SketchExtend" method from Solidworks sketch manager
+' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
 BoolStatus = swSketchManager.SketchExtend(0.0, 0.0, 0.0)
 ```
 
-In above line, we **Extend** selected *Sketch Segments* by `SketchExtend` method from *Solidworks sketch manager*.
+In above line, we **Offset** selected *Sketch Segments* by `SketchExtend` method from *Solidworks sketch manager*.
 
 This `SketchExtend` method takes following parameters:
 
@@ -359,9 +368,9 @@ This `SketchExtend` method takes following parameters:
 
 **Return Value**:
 
-  - **True**: If Extend operation is *Success*.
+  - **True**: If Offset operation is *Success*.
 
-  * **False**: If Extend operation is *Fail*.
+  * **False**: If Offset operation is *Fail*.
 
 In our code, I have used following values:
 
@@ -371,9 +380,9 @@ In our code, I have used following values:
 
 **Z** : I have used 0.0 value for *Z*.
 
-Below image shows before and after Extend operation on the sketch.
+Below image shows before and after Offset operation on the sketch.
 
-**Before Extend Operation**
+**Before Offset Operation**
 
 ![before_extend](/assets/Solidworks_Images/trim and extend/before_extend.png)
 
@@ -400,12 +409,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Extend* operation.
+In the above line of code, we deselect the **Sketch** after the *Offset* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after Sketch Extend
+' Show Front View after Sketch Offset
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -496,7 +505,7 @@ These posts will help you to understand what **functions** are and how to use th
 
 ## Solidworks API Objects
 
-In this post of **Sketch Extend**, we use *Solidworks API objects and their methods*.
+In this post of **Sketch Offset**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
