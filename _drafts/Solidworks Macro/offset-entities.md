@@ -196,7 +196,7 @@ End Sub
 
 Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
-I also give some link so that you can go through them if there are any thing I explain in previous post.
+I also give some link so that you can go through them if there are anything I explained in previous posts.
 
 ```vb
 Option Explicit
@@ -268,7 +268,7 @@ This procedure hold all the *statements (instructions)* we give to computer.
 Set swApp = Application.SldWorks
 ```
 
-In this line, we are setting the value of our Solidworks variable which we define earlier to Solidworks application.
+In this line, we set the value of our Solidworks variable `swApp`; which we define earlier; to Solidworks application.
 
 ```vb
 ' Create string type variable for storing default part location
@@ -296,7 +296,7 @@ In this line, we set the value of our `swDoc` variable to new document.
 
 For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
 
 ```vb
 ' Select Front Plane
@@ -312,7 +312,7 @@ For more information about selection method please visit [Solidworks Macros - Se
 Set swSketchManager = swDoc.SketchManager
 ```
 
-In above line, we set the sketch manager variable to current document's sketch manager.
+In above line, we set the *Sketch manager* variable to *current document's sketch manager*.
 
 ```vb
 ' Insert a sketch into selected plane
@@ -332,9 +332,9 @@ In above line, we set the value of Solidworks Sketch Segment variable `swSketchS
 
 This `CreateLine` method creates Lines between 2 given points.
 
-For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post..
+For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
 
-This post describe all the parameters we need for this `CreateLine` method.
+That post describe all the parameters we need for this `CreateLine` method in details.
 
 In above line, we create a Line between **point (-0.5, 0.75, 0)** and **point (-0.25, -0.5, 0)**.
 
@@ -360,7 +360,7 @@ swDoc.ClearSelection2 True
 
 After creating both lines we de-select those lines.
 
-> We **don't need** to de-select the lines for **Offset operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod.
+> We **don't need** to de-select the lines for **Offset operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
 
 ```vb
 ' Select Line 1
@@ -383,37 +383,105 @@ BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndTy
 
 In above line, we **Offset** selected *Lines* by `SketchOffset2` method from *Solidworks sketch manager*.
 
-This `SketchOffset2` method takes following parameters:
+This `SketchOffset2` method takes following parameters as explained:
 
-**X** : *Not used*
+**Offset** : *Offset value; negative value offsets the sketch entities in the opposite direction*
 
-**Y** : *Not used*
+**BothDirections** : *True to offset the sketch entities in both directions, false to offset the sketch entities in one direction*
 
-**Z** : *Not used*
+**Chain** : *True to offset the chain of sketch entities, false to offset only the selected sketch entities*
+
+**CapEnds** : *Cap the ends as defined by `swSkOffsetCapEndType_e`*
+
+  `swSkOffsetCapEndType_e` enum defines following different **End cap types** [constants](/visual-basic/vba-constant):
+
+   * `swSkOffsetArcCaps`
+
+   * `swSkOffsetLineCaps`
+
+   * `swSkOffsetNoCaps`
+
+**MakeConstruction** : *Convert original and offset sketch entities to construction sketch entities as defined by `swSkOffsetMakeConstructionType_e`*
+
+  `swSkOffsetMakeConstructionType_e` enum defines following different **Construction Types** [constants](/visual-basic/vba-constant):
+
+   * `swSkOffsetDontMakeConstruction`
+    
+   * `swSkOffsetMakeBothConstruction`
+
+   * `swSkOffsetMakeOffsConstruction`
+
+   * `swSkOffsetMakeOrigConstruction`
+
+**AddDimensions** : **True** to add the dimension to the offset, false if not want to add the dimension to the offset.
 
 **Return Value**:
 
-  - **True**: If Offset operation is *Success*.
+  - **True**: If Extend operation is *Success*.
 
-  * **False**: If Offset operation is *Fail*.
+  - **False**: If Extend operation is *Fail*.
 
 In our code, I have used following values:
 
-**X** : I have used 0.0 value for *X*.
+  **Offset** : I have used 0.5 value for *Offset*.
 
-**Y** : I have used 0.0 value for *Y*.
+  **BothDirections** : I have used `False` value for *BothDirections*.
 
-**Z** : I have used 0.0 value for *Z*.
+  **Chain** : I have used `False` value for *Chain*.
+
+  **CapEnds** : I have used `swSkOffsetCapEndType_e.swSkOffsetNoCaps` value for *CapEnds*.
+
+  **MakeConstruction** : I have used `swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction` value for *MakeConstruction*.
+
+  **AddDimensions** : I have used `True` value for *AddDimensions*.
 
 Below image shows before and after Offset operation on the sketch.
 
 **Before Offset Operation**
 
-![before_extend](/assets/Solidworks_Images/trim and extend/before_extend.png)
+![before-offset](/assets/Solidworks_Images/offset-sketch-entities/before-offset.png)
 
-**After Extend Operation**
+**After Offset Operation**
 
-![after_extend](/assets/Solidworks_Images/trim and extend/after_extend.png)
+![after-offset](/assets/Solidworks_Images/offset-sketch-entities/after-offset.png)
+
+Now let us modify some values and look for the changes:
+
+**BothDirections** : Let us change the value to `True` value for *BothDirections* and see the result:
+
+![offset-both-side](/assets/Solidworks_Images/offset-sketch-entities/offset-both-side.png)
+
+**CapEnds** : Now we change the value of *End cap*. 
+
+Please see below for both **Line** and **Arc** option for *End cap*:
+
+ - If we change **CapEnds** value to `swSkOffsetLineCaps` and then the result would be:
+
+ ![end-cap-is-line-type](/assets/Solidworks_Images/offset-sketch-entities/end-cap-is-line-type.png)
+
+  - If we change **CapEnds** value to `swSkOffsetArcCaps` and then the result would be:
+
+ ![end-cap-is-arc-type](/assets/Solidworks_Images/offset-sketch-entities/end-cap-is-arc-type.png)
+
+These 2 covers all option available in **Cap End**.
+
+**MakeConstruction** : Now we change the value of MakeConstruction. 
+
+Please see below for **all** *MakeConstruction* options:
+
+ - If we change **MakeConstruction** value to `swSkOffsetMakeOrigConstruction` and then the result would be:
+
+ ![make-original-entities-construction](/assets/Solidworks_Images/offset-sketch-entities/make-original-entities-construction.png)
+
+  - If we change **MakeConstruction** value to `swSkOffsetMakeOffsConstruction` and then the result would be:
+
+ ![make-offset-entities-construction](/assets/Solidworks_Images/offset-sketch-entities/make-offset-entities-construction.png)
+
+   - If we change **MakeConstruction** value to `swSkOffsetMakeBothConstruction` and then the result would be:
+
+ ![original-and-offset-entities-are-construction](/assets/Solidworks_Images/offset-sketch-entities/original-and-offset-entities-are-construction.png)
+
+This covers all options in `SketchOffset2` method.
 
 ---
 
@@ -510,21 +578,21 @@ If you want to read more about **Option Explicit** then please visit [Declaring 
 
 2. Then we create **variable** for different data types.
 
-If you don't know about them, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
+If you know in detail about the **Variables**, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
 
-These posts will help you to understand what **Variables** are and how to use them.
+It will help you to understand what **Variables** are and how to use them.
 
 3. Then we create **main Sub procedure** for our macro.
 
-If you don't know about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
+If you know in detail about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
 
-These posts will help you to understand what **Procedures** are and how to use them.
+It will help you to understand what **Procedures** are and how to use them.
 
 4. In most part we create some variables and set their values. We set those values by using some **functions** provided from objects.
 
 If you don't know about the **functions**, then you should visit [VBA Functions](/visual-basic/vba-functions) and [VBA Functions that do more](/visual-basic/vba-more-function) posts of this blog.
 
-These posts will help you to understand what **functions** are and how to use them.
+It will help you to understand what **functions** are and how to use them.
 
 ---
 
@@ -558,7 +626,7 @@ These Solidworks API Objects are listed below:
 
 ---
 
-Hope this post helps you to *Extend* Sketch Entities with Solidworks VB Macros.
+Hope this post helps you to *Offset* Sketch Entities with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
