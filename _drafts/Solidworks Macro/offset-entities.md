@@ -85,9 +85,27 @@ This `SketchOffset2` method takes following parameters as explained:
 
 **CapEnds** : *Cap the ends as defined by `swSkOffsetCapEndType_e`*
 
-  `swSkOffsetCapEndType_e` enum define follow **End cap types**:
+  `swSkOffsetCapEndType_e` enum defines following different **End cap types** [constants](/visual-basic/vba-constant):
 
+    * swSkOffsetArcCaps
 
+    * swSkOffsetLineCaps
+
+    * swSkOffsetNoCaps
+
+**MakeConstruction** : *Convert original and offset sketch entities to construction sketch entities as defined by `swSkOffsetMakeConstructionType_e`*
+
+  `swSkOffsetMakeConstructionType_e` enum defines following different **Construction Types** [constants](/visual-basic/vba-constant):
+
+    * swSkOffsetDontMakeConstruction
+    
+    * swSkOffsetMakeBothConstruction
+
+    * swSkOffsetMakeOffsConstruction
+
+    * swSkOffsetMakeOrigConstruction
+
+**AddDimensions** : **True** to add the dimension to the offset, false if not want to add the dimension to the offset.
 
 If you want a more detail explaination then please read further otherwise this will help you to **Offset Sketch Entities From VBA Macro**.
 
@@ -99,7 +117,7 @@ In this post, I tell you about `SketchOffset2` method from **Solidworks** `Sketc
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Offset Sketces*..
+So ***use this method*** if you want to *Offset Sketces*.
 
 Below is the `code` sample for *Offset Sketces*.
 
@@ -178,7 +196,9 @@ End Sub
 
 ### Understanding the Code
 
-Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
+Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
+
+I also give some link so that you can go through them if there are any thing I explain in previous post.
 
 ```vb
 Option Explicit
