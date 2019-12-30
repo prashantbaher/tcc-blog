@@ -59,7 +59,7 @@ header_pages:
   - 2-solidworks-macro.md
   - 4-about.md
   - 5-resource.md
-  - 6-buymecoffee.md
+#  - 6-buymecoffee.md
 
 # Build settings
 theme: minima
