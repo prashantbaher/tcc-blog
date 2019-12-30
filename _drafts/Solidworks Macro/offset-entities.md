@@ -117,9 +117,9 @@ In this post, I tell you about `SketchOffset2` method from **Solidworks** `Sketc
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Offset Sketces*.
+So ***use this method*** if you want to *Offset Sketches*.
 
-Below is the `code` sample for *Offset Sketces*.
+Below is the `code` sample for *Offset Sketches*.
 
 ```vb
 Option Explicit
@@ -372,13 +372,20 @@ BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, Fals
 In above line of code, we select **Line 1**.
 
 ```vb
-' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchExtend(0.0, 0.0, 0.0)
+' Select Line 2
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In above line, we **Offset** selected *Sketch Segments* by `SketchExtend` method from *Solidworks sketch manager*.
+In above line of code, we select **Line 2** and add Line 2 to selection list.
 
-This `SketchExtend` method takes following parameters:
+```vb
+' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
+BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
+```
+
+In above line, we **Offset** selected *Lines* by `SketchOffset2` method from *Solidworks sketch manager*.
+
+This `SketchOffset2` method takes following parameters:
 
 **X** : *Not used*
 
