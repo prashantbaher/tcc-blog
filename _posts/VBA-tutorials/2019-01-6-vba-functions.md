@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA Functions
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 A `function` essentially performs a calculation and returns a single value. 
@@ -67,8 +70,6 @@ Sub StringLength()
   MsgBox StringLength
 End Sub
 ```
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Displaying the integer part of a number
 
@@ -141,10 +142,3 @@ This could be *a Sketch, a Part, a Assembly* or any *other type* of object that 
 The `TypeName` function is very versatile. You can also use this function to determine the data type of a variable. 
 
 Next post will be about ***VBA Functions that do more***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-arrays" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-more-function" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Offset Sketch Entities From VBA Macro
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to Offset Sketch Entities using Solidworks VBA Macros* in a Sketch.
@@ -31,9 +33,8 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we *Offset Sketch Entities* in **Solidworks VBA macro**.
 
-<div class="w3-container">
-<iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/jkVph-Rfgs0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/jkVph-Rfgs0" frameborder="0" allowfullscreen></iframe>
+<br>
 
 Please note that there are **no explaination** given in the video. 
 

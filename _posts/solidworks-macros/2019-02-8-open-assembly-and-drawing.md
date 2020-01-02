@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Open Assembly and Drawing document
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, we see how to open following documents with *Solidworks VBA macro*:
@@ -91,8 +93,6 @@ Sub main()
 End Sub
 ```
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ---
 
 ## Open Solidworks Drawing Document with Default Paper size
@@ -162,8 +162,6 @@ Sub main()
 
 End Sub
 ```
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 For *custom paper size*, we need to use `swDwgPaperSizes_e.swDwgPapersUserDefined` value of paper size.
 

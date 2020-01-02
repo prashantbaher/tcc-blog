@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Visual Basic for Application Introduction
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 To understand `Visual Basic for Application`, lets look at the following *questions*.
@@ -18,8 +21,6 @@ Think about `a robot` that knows everything about *SOLIDWORKS*. This robot can `
 When you want the robot to do something in *SOLIDWORKS*, you write up a set of robotic instruction by using special codes. 
 
 Tell the robot to follow your instruction, while you sit back and take some rest. That’s kind of what `VBA` is all about.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## What can you do with VBA?
 
@@ -91,10 +92,3 @@ End Sub
 ```
 
 Next post will be about `Visual Basic Editor` or `VBE`. 
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/VBA-guide" class="w3-button w3-rose">&#10094; Home</a>
-    <a href="/visual-basic/vbe-editor" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

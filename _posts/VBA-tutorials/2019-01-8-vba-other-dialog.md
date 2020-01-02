@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 If your VBA procedure needs to ask the user for a filename, you could use the *InputBox* function. 
@@ -18,8 +21,6 @@ The *GetOpenFilename* method doesn’t actually open the specified file.
 This method simply returns the user-selected filename as a `string`. 
 
 Then you can write code to do whatever you want with the filename.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Syntax for the GetOpenFilename method
 
@@ -227,8 +228,6 @@ The following procedure displays a dialog box that allows the user to select a d
 
 The selected directory name (or “Canceled”) is then displayed by using the `MsgBox` function.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' FileDialog example
 Sub GetAFolder()
@@ -250,10 +249,3 @@ The *FileDialog* object lets you specify the starting directory by specifying a 
 In this case, the code uses default file path as the starting directory.
 
 Next post will be about ***VBA UserForms***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-inputbox-function" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

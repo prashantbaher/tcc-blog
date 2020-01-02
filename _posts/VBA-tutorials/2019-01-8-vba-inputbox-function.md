@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA InputBox Function
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 The VBA's `InputBox` function is useful for obtaining a single piece of information from the user. 
@@ -76,8 +79,6 @@ When the user enters a value and clicks `OK`, the routine assigns the value to t
 
 Please note that VBA’s *InputBox function* always returns a `string`, so if you need to get a value, your code will need to do some additional checking. 
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 The following example uses the *InputBox function* to get a number. 
 
 It uses the `IsNumeric` function to check whether the *string* is a *number*. 
@@ -102,11 +103,3 @@ Sub GetDrawingSheetNumber()
 End Sub
 ```
 
-Next post will be about ***VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-msgBox-function" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-other-dialog" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

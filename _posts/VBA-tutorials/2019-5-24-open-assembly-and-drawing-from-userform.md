@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title:  VBA Userforms - Open new Assembly and Drawing document
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 In this post, we learn how can we *Open new Assembly and Drawing document* from a Visual Basic for Application's *Userform*.
@@ -135,23 +138,23 @@ For this goto main `Sub procedure` inside the **main Module**.
 
 Code inside the main Module is as given below.
 
-```vb
+{% highlight vb %}
 Dim swApp As Object
 Sub main()
 
 Set swApp = Application.SldWorks
 End Sub
-```
+{% endhighlight %}
 
 To call our `Userform`, replace above code with below code:
 
-```vb
+{% highlight vb %}
 ' Main function of our VBA program
 Sub main()
   ' Calling our window to show
   OpenDocumentWindow.Show
 End Sub
-```
+{% endhighlight %}
 
 Above function call our window to appears on screen.
 
@@ -338,9 +341,3 @@ I will provide more tutorials on using of Userform time to time.
 
 ***Till then do come to visit this blog and Happy learning!!!***
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/visual-basic/open-part-from-userform" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/visual-basic/open-assembly-and-drawing-from-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

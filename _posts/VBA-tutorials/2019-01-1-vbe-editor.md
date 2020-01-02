@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Visual Basic Editor (VBE)
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 `Visual Basic Editor` or `VBE` is a *separate* application in your *CAD application*. 
@@ -32,8 +35,6 @@ It contains commands that you use to do things with the various components in th
 You also find that many of the menu commands have shortcut keys associated with them.
 
 The `VBE` also features shortcut menus. You can *right-click* virtually anything in the `VBE` and get a shortcut menu of common commands.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Tool Bar
 
@@ -70,10 +71,3 @@ The `Immediate window` is **most useful** for executing `VBA statement` directly
 If you are just starting VBA, this window won’t be all that useful, so feel free to hide it and free up some screen space.
 
 Next post will be about `VBE Windows`. 
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-introduction" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vbe-windows" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

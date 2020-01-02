@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Create a Fillet From VBA Macro
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to create a Fillet through Solidworks VBA Macros* in a sketch.
@@ -33,9 +35,7 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we can create *a Fillet* from **Solidworks VBA macro**.
 
-<div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/IMHM0_QF7HQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/IMHM0_QF7HQ" frameborder="0" allowfullscreen></iframe>
 
 Please note that there are **no explaination** given in the video. 
 

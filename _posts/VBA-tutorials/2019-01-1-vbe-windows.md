@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBE Windows
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 In this post we look following windows in `Visual Basic Editor`:
@@ -56,8 +59,6 @@ Or
 `VBE` always trying to keep you from doing something that you will regret, hence it will ask if you want to export the code in the module before deleting the code. 
 
 And in most cases, you don’t want to export. If you do want to export the code, please see next section.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Exporting and Importing of objects
 
@@ -253,10 +254,3 @@ You’ll also find lots of VBA code examples on the Web.
 If you’d like to try them, select the code in your browser and press `Ctrl+C` to *copy* it. Then, activate a module and press `Ctrl+V` to *paste* it.
 
 Next post will be about `Sub and Function Procedures`.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vbe-editor" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

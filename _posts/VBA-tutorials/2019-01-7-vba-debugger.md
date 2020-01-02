@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA Debugger
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 In this section, I discuss the details of using the VBA debugging tools. 
@@ -75,8 +78,6 @@ The Immediate window lets you do other things besides check variable values.
 For example, you can change the value of a variable, try for a new condition. 
 
 Just make sure that the command you enter is a valid VBA statement.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Stepping through your code
 
@@ -153,10 +154,3 @@ The VBE has done all the hard workfor you.
 ![Local-window](/assets/vba-images/Bug Finding & Debugging techniques/5. Local window.PNG)
 
 Next post will be about ***VBA Bug Reduction Tips***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-bug-reduction-tips" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

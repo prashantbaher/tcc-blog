@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Selection Methods
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, we select **Default planes** with following methods:
@@ -223,8 +225,6 @@ Since this method returns `True` or `False`, here also we use a `boolean` variab
 If we want to select **Right Plane** then we just need to replace `"Front Plane"` -> `"Right Plane"` in previous code sample.
 
 Similar for selecting **Top Plane**, we need to replace `"Front Plane"` -> `"Top Plane"` in previous code sample.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Using SelectByID2 method in an Open document
 

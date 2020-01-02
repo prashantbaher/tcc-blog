@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title: VBA in Solidworks
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 *Solidworks* provides us two methods for open Visual Basic for Application.
@@ -10,9 +12,7 @@ title: VBA in Solidworks
 
 Please see below video for visual details.
 
-<div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/7RAl7sTv3bA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe class="w3-panel w3-mobile" src="https://www.youtube.com/embed/7RAl7sTv3bA" frameborder="0" allowfullscreen></iframe>
 
 ## Menu Base Method
 
@@ -58,8 +58,6 @@ This option includes same buttons as described in `Menu based method`.
 
 Description and Functions of each button is given below.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ### New Macro Button ![new_macro_button-3](/assets/Solidworks_Images/VBA in solidworks/Icon images/new_macro_button_image.PNG)
 
 You can create a `new macro` by this button and then program the macro in VBA.
@@ -95,8 +93,6 @@ To record a macro:
 3. When you are done, click **Stop Macro** Button ![stop_macro_button-3](/assets/Solidworks_Images/VBA in solidworks/Icon images/stop_macro_button.PNG) (Macro toolbar), or click **Tools -> Macro -> Stop**.
 
 In the dialog box, type a name for File name and click Save. (The `.swp` extension is automatically added to the filename.)
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Run Macro Button ![run_macro_button](/assets/Solidworks_Images/VBA in solidworks/Icon images/run_macro_button.PNG)
 

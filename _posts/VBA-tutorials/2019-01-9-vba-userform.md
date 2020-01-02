@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA UserForms
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 A *UserForm* is useful if your VBA macro needs to get information from a user. 
@@ -59,7 +62,6 @@ Below figure shows a UserForm — an empty dialog box with some controls in Tool
 
 ![Empty-userform-object](/assets/vba-images/Userforms/1. A new userform object.PNG)
 
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Adding controls to a UserForm
 
@@ -239,8 +241,6 @@ When Solidworks displays the dialog box, the `ShowDialogBox` macro halts until t
 Then VBA executes any remaining statements in the procedure. 
 
 Most of the time, you won’t have any more code in the procedure.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ## Using information from a UserForm
 

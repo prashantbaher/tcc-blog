@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA Assignment Statements And Operators
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 An *assignment statement* is a *VBA statement* that assigns the result of an expression to a variable or an object. 
@@ -106,8 +109,6 @@ Thus, if you concatenate strings, you are combining strings to make a new and im
 
 VBA also provides a full set of logical operators. Below table, shows some of logical operators. 
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">VBA’s Logical Operators</th>
@@ -174,9 +175,3 @@ z = x + (5 * y)
 
 Next post will be about ***VBA Arrays***.
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-string-basic" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-arrays" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

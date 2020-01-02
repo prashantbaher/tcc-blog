@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Open Saved Documents 
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you how to *open a saved document* in Solidworks using *VBA Macro*.
@@ -37,14 +39,14 @@ Dim BoolStatus As Boolean
 ' Main function of our VBA program
 Sub main()
 
-    ' Setting Solidworks variable to Solidworks application
-    Set swApp = Application.SldWorks
-        
-    ' Open a saved document
-    Set swDoc = swApp.OpenDoc("H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT", swDocumentTypes_e.swDocPART)
-        
-    ' Selecting Front Plane
-    BoolStatus = swDoc.SelectByID("Front Plane", "PLANE", 0, 0, 0)
+  ' Setting Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+      
+  ' Open a saved document
+  Set swDoc = swApp.OpenDoc("H:\Solidworks studies\API Studies\Chapter 1 - The Basics\1st example part.SLDPRT", swDocumentTypes_e.swDocPART)
+      
+  ' Selecting Front Plane
+  BoolStatus = swDoc.SelectByID("Front Plane", "PLANE", 0, 0, 0)
 
 End Sub
 ```
@@ -93,8 +95,6 @@ If you just want to open a saved document then this method is what you are looki
 For most of the part, `OpenDoc` method works well.
 
 If you want more option while opening a document, then next method is for you.
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ---
 

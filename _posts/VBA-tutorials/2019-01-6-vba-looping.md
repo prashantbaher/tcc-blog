@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA Looping
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 The term *looping* refers to repeating a block of VBA statements numerous times. 
@@ -62,8 +65,6 @@ End Sub
 Count starts out as 1 and then takes on a value of 3, 5, 7, and 9. The final Count value is 9. 
 
 The Step value determines how the counter is *incremented*. Notice that the upper loop value (9) is not used because the highest value of Count after 9 would be 11, and 11 is larger than 10. 
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### For-Next example with an Exit For statement 
 
@@ -205,8 +206,6 @@ Another way to think about it is like this: The `Do-While` loop keeps looping as
 
 The `Do-Until` loop keeps looping as long as the condition is False. 
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 # Looping through a Collection
 
 VBA supports yet another type of looping — looping through each object in a **collection** of objects. 
@@ -256,9 +255,3 @@ For this example please notes that we did not need to load all sheet, this code 
 
 Next post will be about ***Bug Finding***.
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-if-then-structure-select-case" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-bug-finding" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

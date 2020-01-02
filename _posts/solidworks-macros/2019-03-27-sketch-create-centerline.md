@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Sketch Macros - Create CenterLine 
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to create 2D CenterLine through Solidworks VBA Macros* in a sketch.
@@ -82,9 +84,6 @@ Dim swApp As SldWorks.SldWorks
 
 In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
@@ -115,9 +114,6 @@ This variable `defaultTemplate`, hold the location the location of **Default Par
 In 2nd line of above example. we assign value to our newly define `defaultTemplate` variable.
 
 We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. This method is a part of our main Solidworks variable `swApp`.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Setting Solidworks document to new part document
@@ -168,9 +164,6 @@ swSketchManager.InsertSketch True
 In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
 
 This method allows us to insert a sketch in selected plane.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Creating Variable for Solidworks Sketch segment

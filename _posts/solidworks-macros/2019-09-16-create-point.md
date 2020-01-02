@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Create a Point From VBA Macro
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to create a Point through Solidworks VBA Macros* in a sketch.

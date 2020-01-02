@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Open new Part document
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 As the title suggested, in this post, we open new document **from** *Solidworks VBA macros*.
@@ -9,9 +11,7 @@ Also we *understand* each and every line of written code. So that you can unders
 
 Please see below video for visual details.
 
-<div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/SXrdQ0vrTyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/SXrdQ0vrTyI" frameborder="0" allowfullscreen></iframe>
 
 To do this, we first need to create a new empty macro. If you don't know how to create an empty macro; then please go to this [post](/solidworks-macros/vba-in-solidworks).
 
@@ -82,9 +82,6 @@ In this line, we are creating a variable which we named as `swApp` and the type 
 
 If we **omit** 1 `SldWorks`, then our *VBE* show error if we try to run this macro.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
@@ -147,8 +144,6 @@ So our function `GetUserPreferenceStringValue()` needs some constant value from 
 Since we want *Default part template*, we use `swDefaultTemplatePart` constant value from the `swUserPreferenceStringValue_e` enum list.
 
 > Please note that there are lots of values inside this enum list. You can see these values from this [link](http://help.solidworks.com/2019/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html)].
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 Now we just need to set the value of our `swDoc` variable to new document. We set the value as shown in below code snippet.
 

@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Create a Spline From VBA Macro
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to create a Spline through Solidworks VBA Macros* in a sketch.
@@ -43,9 +45,7 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we can create *a Spline* from **Solidworks VBA macro**.
 
-<div class="w3-card w3-panel">
-  <iframe class="w3-panel w3-mobile" height="500px" width="100%" src="https://www.youtube.com/embed/B_W-f3cqUPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/B_W-f3cqUPM" frameborder="0" allowfullscreen></iframe>
 
 Please note that there are no explaination given in the video. 
 

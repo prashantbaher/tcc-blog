@@ -1,6 +1,8 @@
 ---
 categories: Solidworks-macros
 title:  Solidworks Macros - Create Centerpoint Arc From VBA Macro
+image:  post-image.jpg
+tags:   [Solidworks Macro]
 ---
 
 In this post, I tell you about *how to create a Centerpoint Arc through Solidworks VBA Macros* in a sketch.
@@ -86,9 +88,6 @@ Dim swApp As SldWorks.SldWorks
 
 In this line, we are creating a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ```vb
 ' Creating variable for Solidworks document
 Dim swDoc As SldWorks.ModelDoc2
@@ -119,9 +118,6 @@ This variable `defaultTemplate`, hold the location the location of **Default Par
 In 2nd line of above example. we assign value to our newly define `defaultTemplate` variable.
 
 We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. This method is a part of our main Solidworks variable `swApp`.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Setting Solidworks document to new part document
@@ -172,9 +168,6 @@ swSketchManager.InsertSketch True
 In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
 
 This method allows us to insert a sketch in selected plane.
-
-<!-- Amazon ad for audible -->
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ```vb
 ' Creating variable name "myCenterpointArc" of "SketchArc" type
@@ -269,12 +262,3 @@ Hope this post helps you to *create Centerpoint Arc* in Sketches with Solidworks
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
 Till then, Happy learning!!!
-
-<!--{%- include amazon-us-native-ad.html -%}-->
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-perimeter-circle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-tangent-arc" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

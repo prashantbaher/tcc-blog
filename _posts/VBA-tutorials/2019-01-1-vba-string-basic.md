@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA String Basics
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 The `String` data type represents a series of characters. This topic introduces the basic concepts of strings in Visual Basic.
@@ -56,8 +59,6 @@ myString = "He said, ""Look at this example!"" "
 
 In the preceding example, the *two quotation marks* before and after the word `Look` become *one quotation mark* in the string. 
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ## The Immutability of Strings
 
 A string is *immutable*, which means its value cannot be changed once it has been created. 
@@ -83,9 +84,3 @@ So in the previous example, the name of the variable remains the same, but it po
 
 Next post will be about ***VBA Assignment Statements And Operators***.
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-constant" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title:  VBA Userforms - Open new Part document
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 In this post, we learn how can we *open a part document* from a Visual Basic for Application's *Userform*.
@@ -171,9 +174,3 @@ Till then do come to visit this blog.
 
 Till then, Happy learning!!!
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/visual-basic/vba-userform" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/visual-basic/open-part-from-userform" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

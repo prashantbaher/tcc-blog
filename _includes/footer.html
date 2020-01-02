@@ -1,40 +1,46 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="footer-top">
+          <h2 class="logo-title">
+            <a href="{{site.baseurl}}/" class="logo-text">{{ site.title }}</a>
+          </h2>
+          <div class="top"><i class="ion ion-ios-arrow-up"></i></div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>&copy; {{site.time | date: '%Y'}} | <strong><a href="{{site.baseurl}}/Disclaimer" class="">Privacy Policy</a></strong> | Crafted & Designed by <a href="https://github.com/artemsheludko">Artem Sheludko</a></p>
+          </div>
+          <div class="footer-social">
+            <ul class="list-reset">
+              {% if site.facebook %}
+              <li><a href="{{ site.facebook }}">Facebook</a></li>
+              {% else %} {% endif %}
 
-  <div class="wrapper">
+              {% if site.twitter %}
+              <li><a href="{{ site.twitter }}">Twitter</a></li>
+              {% else %} {% endif %}
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col one-half">
-      <h2 class="footer-heading">{{ site.title | escape }}</h2>
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
+              {% if site.youtube %}
+              <li><a href="{{ site.youtube }}">YouTube</a></li>
+              {% else %} {% endif %}
+
+              {% if site.instagram %}
+              <li><a href="{{ site.instagram }}">Instagram</a></li>
+              {% else %} {% endif %}
+
+              {% if site.pinterest %}
+              <li><a href="{{ site.pinterest }}">Pinterest</a></li>
+              {% else %} {% endif %}
+
+              {% if site.email %}
+              <li><a href="{{ site.email }}">E-Mail</a></li>
+              {% else %} {% endif %}
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="footer-col one-half">
-        <p>{{- site.description | escape -}}</p>
-      </div>
     </div>
-
-    <div class="w3-margin w3-center">
-      <strong>Copyright @ 2019 | </strong><span><a href="/Disclaimer">Privacy Policy</a></span>
-    </div>
-
-    <div class="social-links w3-center">
-      {%- include social-new.html -%}
-    </div>
-
   </div>
-
-  {%- include amazon-one-tag-code.html -%}
-
-</footer>
+</footer> <!-- /.footer -->

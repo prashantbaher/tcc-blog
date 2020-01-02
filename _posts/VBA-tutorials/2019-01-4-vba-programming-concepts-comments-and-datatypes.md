@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Programming Concepts, Comments and Data-types
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 `Visual Basic for application` (VBA) is a real, live programming language, it uses many elements common to all programming languages. 
@@ -112,8 +115,6 @@ The following tips can help you make effective use of comments:
 
 * Depending on your work environment, consider adding a joke or two as a comment. The person who takes over your job when you get promoted might appreciate the humour.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ## Data types in VBA
 
 When I talk about `data type`, I’m referring to the manner in which a program stores data in memory - for example, as `integers`, `real numbers`, or `strings`. 
@@ -209,10 +210,3 @@ For example, some languages are strictly typed, which means the programmer must 
 </table>
 
 Next post will be about ***VBA Variables***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-executing-procedures" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-variables" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

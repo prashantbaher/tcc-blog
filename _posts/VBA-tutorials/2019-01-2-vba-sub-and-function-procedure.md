@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Sub and Function Procedures
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 The `VBA` code that you write in the `Visual Basic Editor` is known as a `procedure`. 
@@ -65,8 +68,6 @@ You can execute a `Function procedure` from another procedure (a `Sub` or anothe
 
 > Please note that no matter how hard you try, you can’t use the macro recorder to record a Function procedure. You must manually enter every Function procedure that you create.
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ## Naming Subs and Functions
 
 Like humans & pets, every `Sub` and `Function` procedure must have a name. 
@@ -99,10 +100,3 @@ On the other hand, they take longer to type.
 Everyone develops a naming style, but the main objectives are to make the names descriptive and to avoid meaningless names such as **Update, Fix, and Macro1**.
 
 Next post will be about `Executing Sub & Function procedures`.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vbe-windows" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-executing-procedures" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

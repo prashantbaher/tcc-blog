@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Executing Sub and Function Procedures
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures. 
@@ -66,8 +69,6 @@ Follow these steps:
 You can’t use the `Run -> Run Sub/UserForm` command to execute a `Sub procedure` that uses arguments, because you have no way to pass the arguments to the procedure. 
 
 If the procedure contains *one* or *more arguments*, the only way to execute it is to call it from `another procedure` — which must supply the argument(s).
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 ### Executing the Sub procedure from another procedure
 
@@ -148,10 +149,3 @@ Here’s what’s going on:
 > Please read again if you don’t understand what is going on here.
 
 Next post will be about ***Programming Concepts, Comments and Data-types***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-sub-and-function-procedure" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-programming-concepts-comments-and-datatypes" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

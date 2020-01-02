@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: If-Then-Else and Select Case structure
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 `If-Then` is VBA’s most important control structure. You’ll probably use this command on a daily basis. 
@@ -120,8 +123,6 @@ Sub GoodMorning6()
 End Sub
 ```
 
-<!--{%- include amazon-us-native-ad.html -%}-->
-
 ## If-ElseIf-Else examples
 
 In the previous examples, every statement in the routine is executed — even in the morning. 
@@ -212,10 +213,3 @@ In this example, the `PartNumber` variable is being evaluated.
 The routine is checking for three different cases. 
 
 Next post will be about ***VBA Looping***.
-
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-controlling-flow-making-desicions" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-looping" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

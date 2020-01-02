@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: VBA Arrays
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 Most programming languages support `arrays`. An *array* is a group of variables that share a common name. 
@@ -68,9 +71,3 @@ But I don’t think these two are that much useful for use to learn hence we **w
 
 Next post will be about ***VBA Functions***.
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-assignment-statement-and-operator" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-functions" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

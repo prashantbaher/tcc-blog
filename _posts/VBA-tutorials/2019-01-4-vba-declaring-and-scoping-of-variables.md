@@ -1,6 +1,9 @@
 ---
+layout: post
 categories: Visual-Basic
 title: Declaring and Scoping of Variables
+image:  post-image.jpg
+tags:   [VBA]
 ---
 
 If you read the previous topics, you now know a bit about [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes). 
@@ -44,8 +47,6 @@ At some point in your routine, you insert the following statement:
 ```vb
 myDimnsion = 11
 ```
-
-<!--{%- include amazon-us-native-ad.html -%}-->
 
 This misspelled *variable*, which is difficult to spot, will probably cause your routine to give incorrect results. 
 
@@ -129,9 +130,3 @@ If you get confused keep reading next post on these topics.
 
 Next post will be about ***Variable Scope***.
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-    <a href="/visual-basic/vba-variables" class="w3-button w3-rose">&#10094; Previous</a>
-    <a href="/visual-basic/vba-variable-scope" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->
