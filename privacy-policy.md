@@ -2,6 +2,7 @@
 layout: page
 title: Privacy Policy
 permalink: /Disclaimer
+image:  post-image.jpg
 ---
 
 The following statements describes the `privacy practices` for:
