@@ -31,7 +31,7 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we *Offset Sketch Entities* in **Solidworks VBA macro**.
 
-<iframe class="w3-panel w3-mobile" src="https://www.youtube.com/embed/HobbXAv9zMI" frameborder="0" allowfullscreen></iframe>
+<iframe class="w3-panel w3-mobile" src="https://youtu.be/jkVph-Rfgs0" frameborder="0" allowfullscreen></iframe>
 
 Please note that there are **no explaination** given in the video. 
 
