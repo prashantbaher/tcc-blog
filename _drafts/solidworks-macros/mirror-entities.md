@@ -1,11 +1,11 @@
 ---
 categories: Solidworks-macros
-title:  Solidworks Macros - Offset Sketch Entities From VBA Macro
+title:  Solidworks Macros - Mirror Sketch Entities From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about *how to Offset Sketch Entities using Solidworks VBA Macros* in a Sketch.
+In this post, I tell you about *how to Mirror Sketch Entities using Solidworks VBA Macros* in a Sketch.
 
 ---
 
@@ -13,9 +13,9 @@ In this post, I tell you about *how to Offset Sketch Entities using Solidworks V
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---offset-sketch-entities-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---mirror-sketch-entities-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---offset-sketch-entities-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---mirror-sketch-entities-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -31,7 +31,7 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we *Offset Sketch Entities* in **Solidworks VBA macro**.
+Please see below video how visually we *Mirror Sketch Entities* in **Solidworks VBA macro**.
 
 <iframe src="https://www.youtube.com/embed/jkVph-Rfgs0" frameborder="0" allowfullscreen></iframe>
 <br>
@@ -42,85 +42,49 @@ Please note that there are **no explaination** given in the video.
 
 ---
 
-## For Experience Macro Developer - Offset Sketch Entities From VBA Macro
+## For Experience Macro Developer - Mirror Sketch Entities From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for **Offset Sketch Entities** from **Solidworks VBA Macro**.
+Below is the code for **Mirror Sketch Entities** from **Solidworks VBA Macro**.
 
 ```vb
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Select Line 1
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Select Center Line for Mirror
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 2, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-' Select Line 2
-BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Select Circle we want to Mirror
+BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-' Offset Solidworks Sketch segment by "SketchOffset2" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
+' Mirror Selected Sketch entities
+swDoc.SketchMirror
 ```
 
-**Method Name**: `SketchOffset2`
+**Method Name**: `SketchMirror`
 
-**Description**: *Offsets* the selected sketch entities.
+**Description**: *Mirrors* the selected sketch entities with reference from a Centerline.
 
-For **Offset** Solidworks Sketch entities, first you need to **Create** a variable of `Boolean` type.
+For **Mirror** Solidworks Sketch entities, first we need following things:
 
-After creating variable, you need to set the value of this `Boolean` variable.
+  1. Sketch Entity/Entities to *Mirror*
 
-For this you used `SketchOffset2` method from **Solidworks Sketch Manager**.
+  2. *A Centerline*, from which we *Mirror* the sketch entities
 
-This `SketchOffset2` method set the value of `Boolean` type variable.
-
-If *Offset* is **successful** then `SketchOffset2` method return **True** value otherwise `SketchOffset2` returns **False** value.
-
-This `SketchOffset2` method takes following parameters as explained:
-
-**Offset** : *Offset value; negative value offsets the sketch entities in the opposite direction*
-
-**BothDirections** : *True to offset the sketch entities in both directions, false to offset the sketch entities in one direction*
-
-**Chain** : *True to offset the chain of sketch entities, false to offset only the selected sketch entities*
-
-**CapEnds** : *Cap the ends as defined by `swSkOffsetCapEndType_e`*
-
-  `swSkOffsetCapEndType_e` enum defines following different **End cap types** [constants](/visual-basic/vba-constant):
-
-    * swSkOffsetArcCaps
-
-    * swSkOffsetLineCaps
-
-    * swSkOffsetNoCaps
-
-**MakeConstruction** : *Convert original and offset sketch entities to construction sketch entities as defined by `swSkOffsetMakeConstructionType_e`*
-
-  `swSkOffsetMakeConstructionType_e` enum defines following different **Construction Types** [constants](/visual-basic/vba-constant):
-
-    * swSkOffsetDontMakeConstruction
-    
-    * swSkOffsetMakeBothConstruction
-
-    * swSkOffsetMakeOffsConstruction
-
-    * swSkOffsetMakeOrigConstruction
-
-**AddDimensions** : **True** to add the dimension to the offset, false if not want to add the dimension to the offset.
-
-If you want more detailed explaination then please read further otherwise this will help you to **Offset Sketch Entities From VBA Macro**.
+If you want more detailed explaination then please read further otherwise this will help you to **Mirror Sketch Entities From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Offset Sketch Entities From VBA Macro
+## For Beginners Macro Developers - Mirror Sketch Entities From VBA Macro
 
-In this post, I tell you about `SketchOffset2` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `SketchMirror` method from **Solidworks** `ModelDoc2` object.
 
-This method is ***most updated*** method, I found in *Solidworks API Help*. 
+This method is ***easiest*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Offset Sketches*.
+So ***use this method*** if you want to *Mirror Sketches*.
 
-Below is the `code` sample for *Offset Sketches*.
+Below is the `code` sample for *Mirror Sketches*.
 
 ```vb
 Option Explicit
@@ -148,6 +112,7 @@ Sub main()
   
   ' Create string type variable for storing default part location
   Dim defaultTemplate As String
+
   ' Set value of this string type variable to "Default part template"
   defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
 
@@ -163,28 +128,28 @@ Sub main()
   ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Set Sketch Segment value and Create Line 1
-  Set swSketchSegment = swSketchManager.CreateLine(-0.5, 0.75, 0, -0.25, -0.5, 0)
+  ' Set Sketch Segment value and Create a Center Line
+  Set swSketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 1, 0)
   
-  ' Set Sketch Segment value and Create Line 2
-  Set swSketchSegment = swSketchManager.CreateLine(-0.75, -1.25, 0, 0.5, -1.25, 0)
+  ' Set Sketch Segment value and Create a Circle
+  Set swSketchSegment = swSketchManager.CreateCircleByRadius(-0.75, 0, 0, 0.2)
   
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Select Line 1
-  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  ' Select Center Line for Mirror
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 2, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Select Line 2
-  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  ' Select Circle we want to Mirror
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-  ' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
-  BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
+  ' Mirror Selected Sketch entities
+  swDoc.SketchMirror
 
-  ' De-select the Sketch Segment after Offset
+  ' De-select the Sketch Segment after Mirror
   swDoc.ClearSelection2 True
   
-  ' Show Front View after Offset Sketch Segments
+  ' Show Front View after Mirror Sketch Segments
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -327,164 +292,74 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 This method allows us to insert a sketch in selected plane.
 
 ```vb
-' Set Sketch Segment value and Create Line 1
-Set swSketchSegment = swSketchManager.CreateLine(-0.5, 0.75, 0, -0.25, -0.5, 0)
+' Set Sketch Segment value and Create a Center Line
+Set swSketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 1, 0)
 ```
 
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateLine` method from *Solidworks Sketch Manager*.
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCenterLine` method from *Solidworks Sketch Manager*.
 
-This `CreateLine` method creates Lines between 2 given points.
+This `CreateCenterLine` method creates a Center Line between 2 given points.
 
-For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
+For more information about `CreateCenterLine` method, you can read my [Solidworks Sketch Macros - Create CenterLines](/solidworks-macros/sketch-create-centerline) post.
 
-That post describe all the parameters we need for this `CreateLine` method in details.
+That post describe all the parameters we need for this `CreateCenterLine` method in details.
 
-In above line, we create a Line between **point (-0.5, 0.75, 0)** and **point (-0.25, -0.5, 0)**.
-
-This line is **not parallel** to any axis.
-
-This line is at an angle to *Vertical* axis.
+In above line, we create a Line between **point (0, 0, 0)** and **point (0, 1, 0)**.
 
 ```vb
-' Set Sketch Segment value and Create Line 2
-Set swSketchSegment = swSketchManager.CreateLine(-0.75, -1.25, 0, 0.5, -1.25, 0)
+' Set Sketch Segment value and Create a Circle
+Set swSketchSegment = swSketchManager.CreateCircleByRadius(-0.75, 0, 0, 0.2)
 ```
 
-In above line we create Line 2 by using same `CreateLine` method from *Solidworks Sketch Manager*.
+In above line we create *a Circle* by using same `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
 
-In above code, we create our 2nd line between **point (-0.75, -1.25, 0)** and **point (0.5, -1.25, 0)**.
-
-This line is **parallel** to X-axis.
+In above code, we create *a Circle* at **point (0, 0, 0)** with a radius of **0.2**.
 
 ```vb
 ' De-select the lines after creation
 swDoc.ClearSelection2 True
 ```
 
-After creating both lines we de-select those lines.
+After creating both entities we *de-select* them.
 
-> We **don't need** to de-select the lines for **Offset operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
-
-```vb
-' Select Line 1
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-```
-
-In above line of code, we select **Line 1**.
+> We need to **de-select** both the entities because we have to **mark** them with options when we select them individually.
 
 ```vb
-' Select Line 2
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Select Center Line for Mirror
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 2, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In above line of code, we select **Line 2** and add Line 2 to selection list.
+In above line of code, we select the *Center Line* i.e. **Line 1** for our Mirror option.
+
+**NOTE**: To differentiate a *Center Line* between selected entities, we use **Mark** option of `2` while selecting the Center Line. This is IMPORTANT for defining the Centerline in **Mirror** operation.
 
 ```vb
-' Offset selected Sketch Segments by "SketchOffset2" method from Solidworks sketch manager
-BoolStatus = swSketchManager.SketchOffset2(0.5, False, False, swSkOffsetCapEndType_e.swSkOffsetNoCaps, swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction, True)
+' Select Circle we want to Mirror
+BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In above line, we **Offset** selected *Lines* by `SketchOffset2` method from *Solidworks sketch manager*.
+In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
 
-This `SketchOffset2` method takes following parameters as explained:
+**NOTE**: While selecting entities to Mirror, we use **Mark** option of `1` while selecting the Center Line. This is IMPORTANT for while selecting sketch entities in **Mirror** operation. If any selected entity is **NOT** marked with `1` then it will not mirror.
 
-**Offset** : *Offset value; negative value offsets the sketch entities in the opposite direction*
+```vb
+' Mirror Selected Sketch entities
+swDoc.SketchMirror
+```
 
-**BothDirections** : *True to offset the sketch entities in both directions, false to offset the sketch entities in one direction*
+In above line, we **Mirror** selected *Circle* by `SketchMirror` method from *Solidworks Document* variable.
 
-**Chain** : *True to offset the chain of sketch entities, false to offset only the selected sketch entities*
+This `SketchMirror` method does not take any parameters.
 
-**CapEnds** : *Cap the ends as defined by `swSkOffsetCapEndType_e`*
+Below image shows before and after Mirror operation on the sketch.
 
-  `swSkOffsetCapEndType_e` enum defines following different **End cap types** [constants](/visual-basic/vba-constant):
+**Before Mirror Operation**
 
-   * `swSkOffsetArcCaps`
+![before-Mirror](/assets/Solidworks_Images/Mirror-sketch-entities/before-Mirror.png)
 
-   * `swSkOffsetLineCaps`
+**After Mirror Operation**
 
-   * `swSkOffsetNoCaps`
-
-**MakeConstruction** : *Convert original and offset sketch entities to construction sketch entities as defined by `swSkOffsetMakeConstructionType_e`*
-
-  `swSkOffsetMakeConstructionType_e` enum defines following different **Construction Types** [constants](/visual-basic/vba-constant):
-
-   * `swSkOffsetDontMakeConstruction`
-    
-   * `swSkOffsetMakeBothConstruction`
-
-   * `swSkOffsetMakeOffsConstruction`
-
-   * `swSkOffsetMakeOrigConstruction`
-
-**AddDimensions** : **True** to add the dimension to the offset, false if not want to add the dimension to the offset.
-
-**Return Value**:
-
-  - **True**: If Extend operation is *Success*.
-
-  - **False**: If Extend operation is *Fail*.
-
-In our code, I have used following values:
-
-  **Offset** : I have used 0.5 value for *Offset*.
-
-  **BothDirections** : I have used `False` value for *BothDirections*.
-
-  **Chain** : I have used `False` value for *Chain*.
-
-  **CapEnds** : I have used `swSkOffsetCapEndType_e.swSkOffsetNoCaps` value for *CapEnds*.
-
-  **MakeConstruction** : I have used `swSkOffsetMakeConstructionType_e.swSkOffsetDontMakeConstruction` value for *MakeConstruction*.
-
-  **AddDimensions** : I have used `True` value for *AddDimensions*.
-
-Below image shows before and after Offset operation on the sketch.
-
-**Before Offset Operation**
-
-![before-offset](/assets/Solidworks_Images/offset-sketch-entities/before-offset.png)
-
-**After Offset Operation**
-
-![after-offset](/assets/Solidworks_Images/offset-sketch-entities/after-offset.png)
-
-Now let us modify some values and look for the changes:
-
-**BothDirections** : Let us change the value to `True` value for *BothDirections* and see the result:
-
-![offset-both-side](/assets/Solidworks_Images/offset-sketch-entities/offset-both-side.png)
-
-**CapEnds** : Now we change the value of *End cap*. 
-
-Please see below for both **Line** and **Arc** option for *End cap*:
-
- - If we change **CapEnds** value to `swSkOffsetLineCaps` and then the result would be:
-
- ![end-cap-is-line-type](/assets/Solidworks_Images/offset-sketch-entities/end-cap-is-line-type.png)
-
-  - If we change **CapEnds** value to `swSkOffsetArcCaps` and then the result would be:
-
- ![end-cap-is-arc-type](/assets/Solidworks_Images/offset-sketch-entities/end-cap-is-arc-type.png)
-
-These 2 covers all option available in **Cap End**.
-
-**MakeConstruction** : Now we change the value of MakeConstruction. 
-
-Please see below for **all** *MakeConstruction* options:
-
- - If we change **MakeConstruction** value to `swSkOffsetMakeOrigConstruction` and then the result would be:
-
- ![make-original-entities-construction](/assets/Solidworks_Images/offset-sketch-entities/make-original-entities-construction.png)
-
-  - If we change **MakeConstruction** value to `swSkOffsetMakeOffsConstruction` and then the result would be:
-
- ![make-offset-entities-construction](/assets/Solidworks_Images/offset-sketch-entities/make-offset-entities-construction.png)
-
-   - If we change **MakeConstruction** value to `swSkOffsetMakeBothConstruction` and then the result would be:
-
- ![original-and-offset-entities-are-construction](/assets/Solidworks_Images/offset-sketch-entities/original-and-offset-entities-are-construction.png)
-
-This covers all options in `SketchOffset2` method.
+![after-Mirror](/assets/Solidworks_Images/Mirror-sketch-entities/after-Mirror.png)
 
 ---
 
@@ -494,7 +369,7 @@ It is ***very important*** to remember that, when you give distance or any other
 
 Solidworks API does not care about your application's Unit systems.
 
-For example, I works in **ANSI** system means inches for distance. But when I used **Solidworks API** through *VBA macros or C#*, I need to use converted numeric values.
+For example, I works in **ANSI** system means *inches* for distance. But when I used **Solidworks API** through *VBA macros or C#*, I need to converted numeric values.
 
 Because Solidworks API output the distance in **Meter** which is not my requirement.
 
@@ -505,12 +380,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Offset* operation.
+In the above line of code, we deselect the **Sketch** after the *Mirror* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after Sketch Offset
+' Show Front View after Sketch Mirror
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -532,23 +407,23 @@ This method takes 2 parameter described as follows:
 
 `swStandardViews_e` has following Standard View Types:
 
-- *swBackView*
+  - *swBackView*
 
-- *swBottomView*
+  - *swBottomView*
 
-- *swDimetricView*
+  - *swDimetricView*
 
-- *swFrontView*
+  - *swFrontView*
 
-- *swIsometricView*
+  - *swIsometricView*
 
-- *swLeftView*
+  - *swLeftView*
 
-- *swRightView*
+  - *swRightView*
 
-- *swTopView*
+  - *swTopView*
 
-- *swExtendetricView*
+  - *swExtendetricView*
 
 In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
 
@@ -601,7 +476,7 @@ It will help you to understand what **functions** are and how to use them.
 
 ## Solidworks API Objects
 
-In this post of **Sketch Offset**, we use *Solidworks API objects and their methods*.
+In this post of **Sketch Mirror**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
@@ -629,7 +504,7 @@ These Solidworks API Objects are listed below:
 
 ---
 
-Hope this post helps you to *Offset* Sketch Entities with Solidworks VBA Macros.
+Hope this post helps you to *Mirror* Sketch Entities with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
 
