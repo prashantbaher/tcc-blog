@@ -131,3 +131,5 @@ Below posts teach you how to create Sketch Trim and Sketch Extend in *Solidworks
 Below posts teach you how to create Sketch Offset and Mirror Sketch in *Solidworks* using **VBA macros**.
 
 * [Sketch - Offset Entities](/solidworks-macros/offset-entities)
+
+* [Sketch - Mirror Entities](/solidworks-macros/mirror-entities)
