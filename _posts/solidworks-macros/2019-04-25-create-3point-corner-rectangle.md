@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Create 3-Point Corner Rectangle From VBA Macro
+categories: Solidworks-macro
+title:  Solidworks Macro - Create 3-Point Corner Rectangle From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

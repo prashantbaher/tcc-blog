@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Create a 3-Point Arc Slot From VBA Macro
+categories: Solidworks-macro
+title:  Solidworks Macro - Create a 3-Point Arc Slot From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

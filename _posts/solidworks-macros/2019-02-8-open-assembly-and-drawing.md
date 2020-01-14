@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Open Assembly and Drawing document
+categories: Solidworks-macro
+title:  Solidworks Macro - Open Assembly and Drawing document
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

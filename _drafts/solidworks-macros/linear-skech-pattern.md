@@ -1,11 +1,11 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Linear Sketch Pattern From VBA Macro
+categories: Solidworks-macro
+title:  Solidworks Macro - Linear Sketch Pattern From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about *how to Mirror Sketch Entities using Solidworks VBA Macros* in a Sketch.
+In this post, I tell you about *how to Linear Sketch Pattern using Solidworks VBA Macros* in a Sketch.
 
 ---
 

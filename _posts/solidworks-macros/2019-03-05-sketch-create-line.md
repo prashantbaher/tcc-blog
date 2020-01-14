@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Sketch Macros - Create Line 
+categories: Solidworks-macro
+title:  Solidworks Sketch Macro - Create Line 
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

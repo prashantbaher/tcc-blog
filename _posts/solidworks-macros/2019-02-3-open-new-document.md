@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Open new Part document
+categories: Solidworks-macro
+title:  Solidworks Macro - Open new Part document
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

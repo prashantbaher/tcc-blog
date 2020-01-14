@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Offset Sketch Entities From VBA Macro
+categories: Solidworks-macro
+title:  Solidworks Macro - Offset Sketch Entities From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

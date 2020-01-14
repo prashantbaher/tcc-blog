@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Mirror Sketch Entities From VBA Macro
+categories: Solidworks-macro
+title:  Solidworks Macro - Mirror Sketch Entities From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

@@ -1,5 +1,5 @@
 ---
-categories: Solidworks-macros
+categories: Solidworks-macro
 title: VBA in Solidworks
 image:  post-image.jpg
 tags:   [Solidworks Macro]

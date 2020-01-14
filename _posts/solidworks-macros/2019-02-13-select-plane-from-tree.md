@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Selection Methods
+categories: Solidworks-macro
+title:  Solidworks Macro - Selection Methods
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---

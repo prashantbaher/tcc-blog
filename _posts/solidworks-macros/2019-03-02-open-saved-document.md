@@ -1,6 +1,6 @@
 ---
-categories: Solidworks-macros
-title:  Solidworks Macros - Open Saved Documents 
+categories: Solidworks-macro
+title:  Solidworks Macro - Open Saved Documents 
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
