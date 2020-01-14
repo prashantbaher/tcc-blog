@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Solidworks Macros
+title: Solidworks Macro
 image:  post-image.jpg
 permalink: /Solidworks-macro-guide/
 ---
@@ -32,15 +32,15 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 
 Below list contains posts on *general Solidworks functions*. These posts will guide you on how to do write macros on these *common general Solidworks functions*.
 
-* [VBA in Solidworks](/solidworks-macros/vba-in-solidworks)
+* [VBA in Solidworks](/solidworks-macro/vba-in-solidworks)
 
-* [Open new Part document](/solidworks-macros/open-new-document)
+* [Open new Part document](/solidworks-macro/open-new-document)
 
-* [Open Assembly and Drawing document](/solidworks-macros/open-assembly-and-drawing)
+* [Open Assembly and Drawing document](/solidworks-macro/open-assembly-and-drawing)
 
-* [Selection Methods](/solidworks-macros/select-plane-from-tree)
+* [Selection Methods](/solidworks-macro/select-plane-from-tree)
 
-* [Open Saved Documents](/solidworks-macros/open-saved-document)
+* [Open Saved Documents](/solidworks-macro/open-saved-document)
 
 ## Solidworks Sketch VBA Macro Tutorial Posts list
 
@@ -50,86 +50,86 @@ Below list contains posts on *Solidworks Sketch functions*. These posts will gui
 
 Below posts teach you how to create different types of `Line` in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create Lines](/solidworks-macros/sketch-create-line)
+* [Sketch - Create Lines](/solidworks-macro/sketch-create-line)
 
-* [Sketch - Create CenterLines](/solidworks-macros/sketch-create-centerline)
+* [Sketch - Create CenterLines](/solidworks-macro/sketch-create-centerline)
 
 ### Create Different Rectangle From VBA Macro
 
 Below posts teach you how to create different types of `Rectangle` in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle)
+* [Sketch - Create Corner Rectangle](/solidworks-macro/create-corner-rectangle)
 
-* [Sketch - Create Center Rectangle](/solidworks-macros/create-center-rectangle)
+* [Sketch - Create Center Rectangle](/solidworks-macro/create-center-rectangle)
 
-* [Sketch - Create 3-Point Corner Rectangle](/solidworks-macros/create-3point-corner-rectangle)
+* [Sketch - Create 3-Point Corner Rectangle](/solidworks-macro/create-3point-corner-rectangle)
 
-* [Sketch - Create 3-Point Center Rectangle](/solidworks-macros/create-3point-center-rectangle)
+* [Sketch - Create 3-Point Center Rectangle](/solidworks-macro/create-3point-center-rectangle)
 
-* [Sketch - Create A Parallelogram](/solidworks-macros/create-parallelogram)
+* [Sketch - Create A Parallelogram](/solidworks-macro/create-parallelogram)
 
 ### Create Different Circle From VBA Macro
 
 Below posts teach you how to create different types of `Circle` in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create A Circle](/solidworks-macros/create-circle)
+* [Sketch - Create A Circle](/solidworks-macro/create-circle)
 
-* [Sketch - Create Circle By Radius](/solidworks-macros/create-circle-by-radius)
+* [Sketch - Create Circle By Radius](/solidworks-macro/create-circle-by-radius)
 
-* [Sketch - Create Perimeter Circle](/solidworks-macros/create-perimeter-circle)
+* [Sketch - Create Perimeter Circle](/solidworks-macro/create-perimeter-circle)
 
 ### Create Different Arc From VBA Macro
 
 Below posts teach you how to create different types of `Arc` in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create Centerpoint Arc](/solidworks-macros/create-centerpoint-arc)
+* [Sketch - Create Centerpoint Arc](/solidworks-macro/create-centerpoint-arc)
 
-* [Sketch - Create Tangent Arc](/solidworks-macros/create-tangent-arc)
+* [Sketch - Create Tangent Arc](/solidworks-macro/create-tangent-arc)
 
-* [Sketch - Create 3-Point Arc](/solidworks-macros/create-3point-arc)
+* [Sketch - Create 3-Point Arc](/solidworks-macro/create-3point-arc)
 
-* [Sketch - Create Polygon](/solidworks-macros/create-polygon)
+* [Sketch - Create Polygon](/solidworks-macro/create-polygon)
 
 ### Create Different Slot From VBA Macro
 
 Below posts teach you how to create different types of `Slot` in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot)
+* [Sketch - Create Straight Slot](/solidworks-macro/create-straight-slot)
 
-* [Sketch - Create Centerpoint Straight Slot](/solidworks-macros/create-centerpoint-straight-slot)
+* [Sketch - Create Centerpoint Straight Slot](/solidworks-macro/create-centerpoint-straight-slot)
 
-* [Sketch - Create 3-Point Arc Slot](/solidworks-macros/create-3point-arc-slot)
+* [Sketch - Create 3-Point Arc Slot](/solidworks-macro/create-3point-arc-slot)
 
-* [Sketch - Create Centerpoint Arc Slot](/solidworks-macros/create-centerpoint-arc-slot)
+* [Sketch - Create Centerpoint Arc Slot](/solidworks-macro/create-centerpoint-arc-slot)
 
 ### Create Points and Spline From VBA Macro
 
 Below posts teach you how to create Points and Spline in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create a Point](/solidworks-macros/create-point)
+* [Sketch - Create a Point](/solidworks-macro/create-point)
 
-* [Sketch - Create a Spline](/solidworks-macros/create-spline)
+* [Sketch - Create a Spline](/solidworks-macro/create-spline)
 
 ### Create Sketch Fillet and Chamfer From VBA Macro
 
 Below posts teach you how to create Sketch Fillet and Sketch Chamfer in *Solidworks* using **VBA macros**.
 
-* [Sketch - Create a Fillet](/solidworks-macros/create-fillet)
+* [Sketch - Create a Fillet](/solidworks-macro/create-fillet)
 
-* [Sketch - Create a Chamfer](/solidworks-macros/create-chamfer)
+* [Sketch - Create a Chamfer](/solidworks-macro/create-chamfer)
 
 ### Create Sketch Trim and Extend From VBA Macro
 
 Below posts teach you how to create Sketch Trim and Sketch Extend in *Solidworks* using **VBA macros**.
 
-* [Sketch - Trim Entities](/solidworks-macros/trim-entities)
+* [Sketch - Trim Entities](/solidworks-macro/trim-entities)
 
-* [Sketch - Extend Entities](/solidworks-macros/extend-entities)
+* [Sketch - Extend Entities](/solidworks-macro/extend-entities)
 
 ### Create Sketch Offset and Mirror Sketch From VBA Macro
 
 Below posts teach you how to create Sketch Offset and Mirror Sketch in *Solidworks* using **VBA macros**.
 
-* [Sketch - Offset Entities](/solidworks-macros/offset-entities)
+* [Sketch - Offset Entities](/solidworks-macro/offset-entities)
 
-* [Sketch - Mirror Entities](/solidworks-macros/mirror-entities)
+* [Sketch - Mirror Entities](/solidworks-macro/mirror-entities)
