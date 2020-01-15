@@ -48,9 +48,9 @@ Sub main()
 End Sub
 ```
 
-As you can see in the above code and the code is given in the [previous post](/solidworks-macros/open-new-document) is almost identically.
+As you can see in the above code and the code is given in the [previous post](/solidworks-macro/open-new-document) is almost identically.
 
-In case you have not read my previous post ([Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document)), I recommend you to read that post first. 
+In case you have not read my previous post ([Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)), I recommend you to read that post first. 
 
 I have already explained each and every line in this code there. So I will not explain them in this post.
 

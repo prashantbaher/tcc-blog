@@ -13,7 +13,7 @@ Please see below video for visual details.
 
 <iframe src="https://www.youtube.com/embed/SXrdQ0vrTyI" frameborder="0" allowfullscreen></iframe>
 
-To do this, we first need to create a new empty macro. If you don't know how to create an empty macro; then please go to this [post](/solidworks-macros/vba-in-solidworks).
+To do this, we first need to create a new empty macro. If you don't know how to create an empty macro; then please go to this [post](/solidworks-macro/vba-in-solidworks).
 
 After creating an empty macro, you need to copy paste below code into this empty macro.
 

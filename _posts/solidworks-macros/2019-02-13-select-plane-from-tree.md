@@ -125,7 +125,7 @@ Sub main()
 End Sub
 ```
 
-Most of the things in this code sample is already explained [this post](/solidworks-macros/open-new-document) and in previous section of this very post.
+Most of the things in this code sample is already explained [this post](/solidworks-macro/open-new-document) and in previous section of this very post.
 
 In this code I have set the *Solidworks document variable* `swDoc` to active open document.
 
@@ -257,7 +257,7 @@ Sub main()
 End Sub
 ```
 
-Most of the things in this code sample is already explained [this post](/solidworks-macros/open-new-document) and in previous section of this very post.
+Most of the things in this code sample is already explained [this post](/solidworks-macro/open-new-document) and in previous section of this very post.
 
 In this code I have set the *Solidworks document variable* `swDoc` to active open document.
 

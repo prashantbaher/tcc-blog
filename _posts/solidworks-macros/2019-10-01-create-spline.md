@@ -7,9 +7,9 @@ tags:   [Solidworks Macro]
 
 In this post, I tell you about *how to create a Spline through Solidworks VBA Macros* in a sketch.
 
-This post take some functionality from previous [Sketch - Create Create a Point](/solidworks-macros/create-point) post.
+This post take some functionality from previous [Sketch - Create Create a Point](/solidworks-macro/create-point) post.
 
-Hence if you have not read [Sketch - Create Create a Point](/solidworks-macros/create-point) post, then it is **recommended** that please read it 1st.
+Hence if you have not read [Sketch - Create Create a Point](/solidworks-macro/create-point) post, then it is **recommended** that please read it 1st.
 
 ---
 
@@ -262,7 +262,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Creating variable for Solidworks application
@@ -374,9 +374,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **more detailed information** about above lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post. 
+For **more detailed information** about above lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post. 
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
 ' Selecting Front Plane
@@ -385,9 +385,9 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
-I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
+I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
 
 ```vb
 ' Setting Sketch manager for our sketch
@@ -798,9 +798,9 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
-I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
+I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
 
 ```vb
 ' Inserting a sketch into selected plane

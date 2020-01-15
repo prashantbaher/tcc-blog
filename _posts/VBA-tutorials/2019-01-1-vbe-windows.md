@@ -237,7 +237,7 @@ You can record only things that you can do directly in *Solidworks*.
 
 Displaying a message box is not in application's normal repertoire. The macro recorder is useful, but in many cases, you’ll probably need to enter at least some code manually.
 
-We have already seen how macros are recorded. So there is no need for us to go twice for same thing. If you want to see how it is done go to Open [VBA in Solidworks topic](/solidworks-macros/vba-in-solidworks)
+We have already seen how macros are recorded. So there is no need for us to go twice for same thing. If you want to see how it is done go to Open [VBA in Solidworks topic](/solidworks-macro/vba-in-solidworks)
 
 ### Copying VBA code
 

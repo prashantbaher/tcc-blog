@@ -298,7 +298,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Creating variable for Solidworks application
@@ -384,9 +384,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
 ' Selecting Front Plane
@@ -395,7 +395,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Setting Sketch manager for our sketch
@@ -431,7 +431,7 @@ Value of `vSketchLinesis` an array of lines. This array is send as return value 
 
 This `CreateCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a corner rectangle.
 
-For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
+For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macro/create-corner-rectangle) post.
 
 In the above code sample I have used (0, 1, 0) Upper-left point in *Y-direction*.
 
@@ -451,7 +451,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Set the value of Solidworks Sketch segment by "CreateChamfer" method from Solidworks sketch manager

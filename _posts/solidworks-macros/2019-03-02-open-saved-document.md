@@ -51,7 +51,7 @@ Sub main()
 End Sub
 ```
 
-I have already explained every line except *middle line* in above code sample in previous [posts](/Solidworks-macros/).
+I have already explained every line except *middle line* in above code sample in previous [posts](/Solidworks-macro/).
 
 To open a saved document we used following lline.
 

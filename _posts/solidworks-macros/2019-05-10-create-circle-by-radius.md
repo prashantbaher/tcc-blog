@@ -7,7 +7,7 @@ tags:   [Solidworks Macro]
 
 In this post, I tell you about *how to create Circle By Radius through Solidworks VBA Macros* in a sketch.
 
-The process is identical with previous [Solidworks Sketch Macros - Create Circle](/solidworks-macros/create-circle) post.
+The process is identical with previous [Solidworks Sketch Macros - Create Circle](/solidworks-macro/create-circle) post.
 
 In this post, I tell you about `CreateCircleByRadius` method from **Solidworks** `SketchManager` object.
 
@@ -79,7 +79,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Creating variable for Solidworks application
@@ -126,7 +126,7 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Boolean Variable
@@ -140,7 +140,7 @@ In 1st line, we create a variable named `BoolStatus` as `Boolean` object.
 
 In next line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Creating variable for Solidworks Sketch Manager

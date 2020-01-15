@@ -207,7 +207,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Create variable for Solidworks application
@@ -297,9 +297,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
 
 ```vb
 ' Select Front Plane
@@ -308,7 +308,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Set Sketch manager for our sketch
@@ -335,7 +335,7 @@ In above line, we set the value of Solidworks Sketch Segment variable `swSketchS
 
 This `CreateLine` method creates Lines between 2 given points.
 
-For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macros/sketch-create-line) post.
+For more information about `CreateLine` method, you can read my [Solidworks Sketch Macros - Create Line](/solidworks-macro/sketch-create-line) post.
 
 That post describe all the parameters we need for this `CreateLine` method in details.
 

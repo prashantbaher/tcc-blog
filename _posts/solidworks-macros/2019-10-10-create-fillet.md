@@ -7,7 +7,7 @@ tags:   [Solidworks Macro]
 
 In this post, I tell you about *how to create a Fillet through Solidworks VBA Macros* in a sketch.
 
-This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
+This post is an extension of [Sketch - Create Corner Rectangle](/solidworks-macro/create-corner-rectangle) post.
 
 ---
 
@@ -166,7 +166,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Creating variable for Solidworks application
@@ -252,9 +252,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
 ' Selecting Front Plane
@@ -263,7 +263,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Setting Sketch manager for our sketch
@@ -299,7 +299,7 @@ Value of `vSketchLinesis` an array of lines. This array is send as return value 
 
 This `CreateCornerRectangle` method is part of `swSketchManager` and it is the latest method to create a corner rectangle.
 
-For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macros/create-corner-rectangle) post.
+For detail explaination on `CreateCornerRectangle` method, please see [Sketch - Create Corner Rectangle](/solidworks-macro/create-corner-rectangle) post.
 
 In the above code sample I have used (0, 1, 0) Upper-left point in *Y-direction*.
 
@@ -319,7 +319,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Set the value of Solidworks Sketch segment by "CreateFillet" method from Solidworks sketch manager
@@ -348,13 +348,13 @@ In **swConstrainedCornerAction_e** we have 4 constant values.
 
 These values are as follows:
 
-* **swConstrainedCornerDeleteGeometry** : 2 = Delete the constraint or dimension and add the fillet
+  * **swConstrainedCornerDeleteGeometry** : 2 = Delete the constraint or dimension and add the fillet
 
-* **swConstrainedCornerInteract** : 0 = Ask the user whether to delete the geometry or stop processing
+  * **swConstrainedCornerInteract** : 0 = Ask the user whether to delete the geometry or stop processing
 
-* **swConstrainedCornerKeepGeometry** : 1 = Keep the constraint or dimension by creating a virtual intersection point before adding the fillet
+  * **swConstrainedCornerKeepGeometry** : 1 = Keep the constraint or dimension by creating a virtual intersection point before adding the fillet
 
-* **swConstrainedCornerStopProcessing** : 3 = Do not delete the constrain or dimension and do not create the fillet
+  * **swConstrainedCornerStopProcessing** : 3 = Do not delete the constrain or dimension and do not create the fillet
 
 ### NOTE
 
@@ -398,23 +398,23 @@ This method takes 2 parameter described as follows:
 
 `swStandardViews_e` has following Standard View Types:
 
-- *swBackView*
+  - *swBackView*
 
-- *swBottomView*
+  - *swBottomView*
 
-- *swDimetricView*
+  - *swDimetricView*
 
-- *swFrontView*
+  - *swFrontView*
 
-- *swIsometricView*
+  - *swIsometricView*
 
-- *swLeftView*
+  - *swLeftView*
 
-- *swRightView*
+  - *swRightView*
 
-- *swTopView*
+  - *swTopView*
 
-- *swTrimetricView*
+  - *swTrimetricView*
 
 In our code, we did not use **VName** instead I used empty string in form of ***""*** symbol.
 

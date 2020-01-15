@@ -7,7 +7,7 @@ tags:   [Solidworks Macro]
 
 In this post, I tell you about *how to create a Centerpoint Straight Slot through Solidworks VBA Macros* in a sketch.
 
-The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macros/create-straight-slot) post.
+The process is almost identical with previous [Sketch - Create Straight Slot](/solidworks-macro/create-straight-slot) post.
 
 In this post, I tell you about `CreateSketchSlot` method from **Solidworks** `SketchManager` object.
 
@@ -79,7 +79,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Creating variable for Solidworks application
@@ -128,9 +128,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **more detailed information** about above lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post. 
+For **more detailed information** about above lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post. 
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout this post if you don't understand above code.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout this post if you don't understand above code.
 
 ```vb
 ' Boolean Variable
@@ -144,9 +144,9 @@ In 1st line, we create a variable named `BoolStatus` as `Boolean` object.
 
 In next line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
-I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
+I have discussed about different *Selection methods* in details in [Soldworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post, so do visit this post for more *Selection methods*.
 
 ```vb
 ' Creating variable for Solidworks Sketch Manager
@@ -319,9 +319,3 @@ For more such tutorials on **Solidworks VBA Macros**, do come to this blog after
 
 Till then, Happy learning!!!
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-straight-slot" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-3point-arc-slot" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->

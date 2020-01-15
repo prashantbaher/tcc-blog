@@ -5,7 +5,7 @@ image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about *how to Linear Sketch Pattern using Solidworks VBA Macros* in a Sketch.
+In this post, I tell you about **how to Linear Sketch Pattern using Solidworks VBA Macros** in a Sketch.
 
 ---
 
@@ -13,9 +13,9 @@ In this post, I tell you about *how to Linear Sketch Pattern using Solidworks VB
 
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
 
-- [For Experience Macro Developers](#for-experience-macro-developer---mirror-sketch-entities-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---linear-sketch-pattern-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---mirror-sketch-entities-from-vba-macro)
+- [For Beginner Macro Developers](#for-beginners-macro-developers---linear-sketch-pattern-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -31,60 +31,95 @@ Feel free to select the topic you want to.
 
 ## Video of Code on YouTube
 
-Please see below video how visually we *Mirror Sketch Entities* in **Solidworks VBA macro**.
+Please see below video how visually we *Linear Sketch Pattern* in **Solidworks VBA macro**.
 
 <iframe src="https://www.youtube.com/embed/iVCCMKYgxcA" frameborder="0" allowfullscreen></iframe>
 <br>
 
-Please note that there are **no explaination** given in the video. 
+Please note that there are **no explaination** in the video. 
 
 **Explaination** of each line and why we write code this way is given in this post.
 
 ---
 
-## For Experience Macro Developer - Mirror Sketch Entities From VBA Macro
+## For Experience Macro Developer - Linear Sketch Pattern From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for **Mirror Sketch Entities** from **Solidworks VBA Macro**.
+Below is the code for **Linear Sketch Pattern** from **Solidworks VBA Macro**.
 
 ```vb
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Select Center Line for Mirror
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 2, Nothing, swSelectOption_e.swSelectOptionDefault)
-
 ' Select Circle we want to Mirror
 BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
 
-' Mirror Selected Sketch entities
-swDoc.SketchMirror
+' Create a Linear Sketch Pattern
+BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(1, 3, 1, 1, 0, 1.57, "", False, True, True, False, True)
 ```
 
-**Method Name**: `SketchMirror`
+**Method Name**: `CreateLinearSketchStepAndRepeat`
 
-**Description**: *Mirrors* the selected sketch entities with reference from a Centerline.
+**Description**: Create *Linear Sketch Pattern* of the selected sketch entity or entities.
 
-For **Mirror** Solidworks Sketch entities, first we need following things:
+**Prerequisites**: To create a **Linear Sketch Pattern** a Solidworks Sketch entity or entities, first we need following things:
 
-  1. Sketch Entity/Entities to *Mirror*
+  1. Sketch Entity/Entities to *Pattern*
 
-  2. *A Centerline*, from which we *Mirror* the sketch entities
+  2. That Entity/Entities is selected before pattern
 
-If you want more detailed explaination then please read further otherwise this will help you to **Mirror Sketch Entities From VBA Macro**.
+**How it works**:
+
+  - For **Linear Sketch Pattern**, first you need to **Create** a variable of `Boolean` type.
+
+  - After creating variable, you need to set the value of this `Boolean` variable.
+
+  - For this you used `CreateLinearSketchStepAndRepeat` method from **Solidworks Sketch Manager**.
+
+  - This `CreateLinearSketchStepAndRepeat` method set the value of `Boolean` type variable.
+
+  - If the *Linear Sketch Pattern* is **successful** then `CreateLinearSketchStepAndRepeat` method return **True** value otherwise `CreateLinearSketchStepAndRepeat` returns **False** value.
+
+This `CreateLinearSketchStepAndRepeat` method takes following parameters as explained:
+
+  - **NumX** : *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
+
+  - **NumY** : *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
+
+  - **SpacingX** : *Spacing between instances along the **x** axis.*
+
+  - **SpacingY** : *Spacing between instances along the **y** axis.*
+
+  - **AngleX** : *Angle for direction 1 relative to the **x** axis.*
+
+  - **AngleY** : *Angle for direction 1 relative to the **y** axis.*
+
+  - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
+
+  - **XSpacingDim** : *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
+
+  - **YSpacingDim** : *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  
+  - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
+
+  - **CreateNumOfInstancesDimInXDir** : *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
+
+  - **CreateNumOfInstancesDimInYDir** : *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
+
+If you want more detailed explaination then please read further otherwise this will help you to create a **Linear Sketch Pattern From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Mirror Sketch Entities From VBA Macro
+## For Beginners Macro Developers - Linear Sketch Pattern From VBA Macro
 
-In this post, I tell you about `SketchMirror` method from **Solidworks** `ModelDoc2` object.
+In this post, I tell you about `CreateLinearSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
 
-This method is ***easiest*** method, I found in *Solidworks API Help*. 
+This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *Mirror Sketches*.
+So ***use this method*** if you want to create *Linear Sketch Pattern*.
 
-Below is the `code` sample for *Mirror Sketches*.
+Below is the `code` sample to create *Linear Sketch Pattern*.
 
 ```vb
 Option Explicit
@@ -137,14 +172,11 @@ Sub main()
   ' Select Circle we want to Mirror
   BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(1, 3, 1, 1, 0, 1.57, "", False, True, True, False, True)
+  ' Create a Linear Sketch Pattern
+  BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
   
-  If BoolStatus = False Then
-    MsgBox ("Liner Pattern Failed!!")
-  End If
-
   ' De-select the Sketch Segment after Mirror
-'  swDoc.ClearSelection2 True
+  swDoc.ClearSelection2 True
   
   ' Show Front View after Mirror Sketch Segments
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
@@ -169,7 +201,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
 ```vb
 ' Create variable for Solidworks application
@@ -259,9 +291,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post.
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macros/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
 
 ```vb
 ' Select Front Plane
@@ -270,7 +302,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False,
 
 In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
 
-For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macros/select-plane-from-tree) post.
+For more information about selection method please visit [Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree) post.
 
 ```vb
 ' Set Sketch manager for our sketch
@@ -297,7 +329,7 @@ In above line, we set the value of Solidworks Sketch Segment variable `swSketchS
 
 This `CreateCenterLine` method creates a Center Line between 2 given points.
 
-For more information about `CreateCenterLine` method, you can read my [Solidworks Sketch Macros - Create CenterLines](/solidworks-macros/sketch-create-centerline) post.
+For more information about `CreateCenterLine` method, you can read my [Solidworks Sketch Macros - Create CenterLines](/solidworks-macro/sketch-create-centerline) post.
 
 That post describe all the parameters we need for this `CreateCenterLine` method in details.
 
