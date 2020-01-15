@@ -52,7 +52,7 @@ Below is the code for **Linear Sketch Pattern** from **Solidworks VBA Macro**.
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Select Circle we want to Mirror
+' Select Circle we want to Pattern
 BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
 
 ' Create a Linear Sketch Pattern
@@ -169,7 +169,7 @@ Sub main()
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
 
-  ' Select Circle we want to Mirror
+  ' Select Circle we want to Pattern
   BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
   
   ' Create a Linear Sketch Pattern
@@ -321,28 +321,23 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 This method allows us to insert a sketch in selected plane.
 
 ```vb
-' Set Sketch Segment value and Create a Center Line
-Set swSketchSegment = swSketchManager.CreateCenterLine(0, 0, 0, 0, 1, 0)
-```
-
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCenterLine` method from *Solidworks Sketch Manager*.
-
-This `CreateCenterLine` method creates a Center Line between 2 given points.
-
-For more information about `CreateCenterLine` method, you can read my [Solidworks Sketch Macros - Create CenterLines](/solidworks-macro/sketch-create-centerline) post.
-
-That post describe all the parameters we need for this `CreateCenterLine` method in details.
-
-In above line, we create a Line between **point (0, 0, 0)** and **point (0, 1, 0)**.
-
-```vb
 ' Set Sketch Segment value and Create a Circle
-Set swSketchSegment = swSketchManager.CreateCircleByRadius(-0.75, 0, 0, 0.2)
+Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, 0.2)
 ```
 
-In above line we create *a Circle* by using same `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
 
-In above code, we create *a Circle* at **point (0, 0, 0)** with a radius of **0.2**.
+This `CreateCircleByRadius` method creates *a Circle* at given point with radius.
+
+For more information about `CreateCircleByRadius` method, you can read my [Solidworks Macro - Create Circle By Radius From VBA Macro](/solidworks-macro/create-circle-by-radius) post.
+
+That post describe all the parameters we need for this `CreateCircleByRadius` method in details.
+
+In above line, we create a Circle with:
+
+  - **Circle Centerpoint** : At origin i.e. *(0, 0, 0)*
+
+  - **Circle Radius** : *0.2*
 
 ```vb
 ' De-select the lines after creation
