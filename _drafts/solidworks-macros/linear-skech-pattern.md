@@ -344,52 +344,107 @@ In above line, we create a Circle with:
 swDoc.ClearSelection2 True
 ```
 
-After creating both entities we *de-select* them.
+After creating the circle we *de-select* it.
 
-> We need to **de-select** both the entities because we have to **mark** them with options when we select them individually.
-
-```vb
-' Select Center Line for Mirror
-BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, False, 2, Nothing, swSelectOption_e.swSelectOptionDefault)
-```
-
-In above line of code, we select the *Center Line* i.e. **Line 1** for our Mirror option.
-
-**NOTE**: To differentiate a *Center Line* between selected entities, we use **Mark** option of `2` while selecting the Center Line. This is IMPORTANT for defining the Centerline in **Mirror** operation.
+> We **don't need** to de-select the circle for **Pattern** as we will select the circle agains in next line. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
 
 ```vb
-' Select Circle we want to Mirror
-BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Select Circle we want to Pattern
+BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
 In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
 
-**NOTE**: While selecting entities to Mirror, we use **Mark** option of `1` while selecting the Center Line. This is IMPORTANT for while selecting sketch entities in **Mirror** operation. If any selected entity is **NOT** marked with `1` then it will not mirror.
-
 ```vb
-' Mirror Selected Sketch entities
-swDoc.SketchMirror
+' Create a Linear Sketch Pattern
+BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
 ```
 
-In above line, we **Mirror** selected *Circle* by `SketchMirror` method from *Solidworks Document* variable.
+In above line, we **Pattern** selected *Circle* by `CreateLinearSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
 
-This `SketchMirror` method does not take any parameters.
+This `CreateLinearSketchStepAndRepeat` method takes following parameters as explained:
 
-Below image shows before and after Mirror operation on the sketch.
+  - **NumX** : *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
 
-**Before Mirror Operation**
+  - **NumY** : *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
 
-![before-Mirror](/assets/Solidworks_Images/Mirror-sketch-entities/before-Mirror.png)
+  - **SpacingX** : *Spacing between instances along the **x** axis.*
 
-**After Mirror Operation**
+  - **SpacingY** : *Spacing between instances along the **y** axis.*
 
-![after-Mirror](/assets/Solidworks_Images/Mirror-sketch-entities/after-Mirror.png)
+  - **AngleX** : *Angle for direction 1 relative to the **x** axis.*
+
+  - **AngleY** : *Angle for direction 1 relative to the **y** axis.*
+
+  - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
+
+  - **XSpacingDim** : *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
+
+  - **YSpacingDim** : *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  
+  - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
+
+  - **CreateNumOfInstancesDimInXDir** : *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
+
+  - **CreateNumOfInstancesDimInYDir** : *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
+
+After the function complete following are the results:
+
+**Return Value**:
+
+  - **True**: *If Linear Sketch Pattern is *Success*.*
+
+  - **False**: *If Linear Sketch Pattern is *Fail*.*
+
+In our code, I have used following values:
+
+  - **NumX** : *I have used **3** as Total number of instances along the **x** axis including original circle.*
+
+  - **NumY** : *I have used **1** as Total number of instances along the **y** axis which includes original circle only.*
+
+  > *Even uf you don't want to pattern in **Y** direction, you have to give atleast 1 as a value. Same goes for **X** direction.*
+
+  - **SpacingX** : *I use **1** as Spacing between instances along the **x** axis.*
+
+  - **SpacingY** : *I use **0** Spacing between instances along the **y** axis.*
+
+  - **AngleX** : *I use **0** Angle for direction 1 relative to the **x** axis.*
+
+  - **AngleY** : *I use **0** Angle for direction 1 relative to the **y** axis.*
+
+  - **DeleteInstances** : *I use **""** as Number of instances to delete, because I don't want to delete any instances.*
+
+  - **XSpacingDim** : *I use **True** to display the spacing between instances dimension along the **x** axis in the graphics area.*
+
+  - **YSpacingDim** : *I use **False** to display the spacing between instances dimension along the **y** axis in the graphics area.*
+  
+  - **AngleDim** : *I use **True** to display the angle dimension between axes in the graphics area.*
+
+  - **CreateNumOfInstancesDimInXDir** : *I use **True** to display the number of instances in the **x** direction dimension in the graphics area.*
+
+  - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
+
+Below image shows before and after Linear Sketch Pattern.
+
+**Before Linear Sketch Pattern**
+
+![before-linear-pattern](/assets/Solidworks_Images/sketch-patterns/before-linear-pattern.png)
+
+**After Linear Sketch Pattern**
+
+![after-linear-pattern](/assets/Solidworks_Images/sketch-patterns/after-linear-pattern.png)
 
 ---
 
 ### NOTE
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
+
+Please see below for detail:
+
+  - Length: **Meter**
+
+  - Angle: **Radian**
 
 Solidworks API does not care about your application's Unit systems.
 
@@ -528,8 +583,12 @@ These Solidworks API Objects are listed below:
 
 ---
 
-Hope this post helps you to *Mirror* Sketch Entities with Solidworks VBA Macros.
+Hope this post helps you to *Create Linear Sketch Pattern* with Solidworks VBA Macros.
 
-For more such tutorials on **Solidworks VBA Macros**, do come to this blog after sometime.
+For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 
-Till then, Happy learning!!!
+If you like the post then please share it with your friends also.
+
+Do let me know by you like this post or not!
+
+Till then, Happy learning!

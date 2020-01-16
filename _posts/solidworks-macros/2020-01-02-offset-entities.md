@@ -363,7 +363,7 @@ swDoc.ClearSelection2 True
 
 After creating both lines we de-select those lines.
 
-> We **don't need** to de-select the lines for **Offset operation** as I will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
+> We **don't need** to de-select the lines for **Offset operation** as we will select those lines agains in next 2 lines. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
 
 ```vb
 ' Select Line 1
