@@ -33,7 +33,7 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we *Linear Sketch Pattern* in **Solidworks VBA macro**.
 
-<iframe src="https://www.youtube.com/embed/iVCCMKYgxcA" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/kvkj2qWPoQM" frameborder="0" allowfullscreen></iframe>
 <br>
 
 Please note that there are **no explaination** in the video. 
