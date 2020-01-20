@@ -175,10 +175,10 @@ Sub main()
   ' Create a Linear Sketch Pattern
   BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
   
-  ' De-select the Sketch Segment after Mirror
+  ' De-select the Sketch Segment after Linear Sketch Pattern
   swDoc.ClearSelection2 True
   
-  ' Show Front View after Mirror Sketch Segments
+  ' Show Front View after Linear Sketch Pattern
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -459,12 +459,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Mirror* operation.
+In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after Sketch Mirror
+' Show Front View after Linear Sketch Pattern
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -555,7 +555,7 @@ It will help you to understand what **functions** are and how to use them.
 
 ## Solidworks API Objects
 
-In this post of **Sketch Mirror**, we use *Solidworks API objects and their methods*.
+In this post of **Linear Sketch Pattern**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
