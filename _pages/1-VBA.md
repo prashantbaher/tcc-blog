@@ -77,7 +77,7 @@ If you are **a total beginner** let us say *CAD engineer*, then follow the list 
 
 Below Lists of post, shows **practical examples** of above **Programming concenpts** used in actual **Solidworks VBA Macro**.
 
-I will use sample codes from [Soldiworks Macros posts](/Solidworks-macros-guide) and show you how to use them with **UserForms**.
+I will use sample codes from [Soldiworks Macro posts](/Solidworks-macro-guide) and show you how to use them with **UserForms**.
 
 By doing this, we understand **UserForms** and **Macro sample code** at the same time.
 
