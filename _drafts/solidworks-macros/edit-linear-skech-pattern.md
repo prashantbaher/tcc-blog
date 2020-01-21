@@ -11,12 +11,11 @@ In this post, I tell you about **how to Edit Linear Sketch Pattern using Solidwo
 
 ## Content
 
-<!--
 - [Code Demo Video on YouTube](#video-of-code-on-youtube)
--->
-- [For Experience Macro Developers](#for-experience-macro-developer---linear-sketch-pattern-from-vba-macro)
 
-- [For Beginner Macro Developers](#for-beginners-macro-developers---linear-sketch-pattern-from-vba-macro)
+- [For Experience Macro Developers](#for-experience-macro-developer---edit-linear-sketch-pattern-from-vba-macro)
+
+- [For Beginner Macro Developers](#for-beginners-macro-developers---edit-linear-sketch-pattern-from-vba-macro)
 
   - [Understanding the Code](#understanding-the-code)
 
@@ -43,7 +42,7 @@ Please note that there are **no explaination** in the video.
 
 ---
 
-## For Experience Macro Developer - Linear Sketch Pattern From VBA Macro
+## For Experience Macro Developer - Edit Linear Sketch Pattern From VBA Macro
 
 If you are an experience **Solidworks Macro developer**, then you are looking for a specific code sample.
 
@@ -53,16 +52,13 @@ Below is the code for **Linear Sketch Pattern** from **Solidworks VBA Macro**.
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Select Circle we want to Pattern
-BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
-
-' Create a Linear Sketch Pattern
-BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(1, 3, 1, 1, 0, 1.57, "", False, True, True, False, True)
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
 ```
 
-**Method Name**: `CreateLinearSketchStepAndRepeat`
+**Method Name**: `EditLinearSketchStepAndRepeat`
 
-**Description**: Create *Linear Sketch Pattern* of the selected sketch entity or entities.
+**Description**: Edit *Linear Sketch Pattern*.
 
 **Prerequisites**: To create a **Linear Sketch Pattern** a Solidworks Sketch entity or entities, first we need following things:
 
@@ -112,7 +108,7 @@ If you want more detailed explaination then please read further otherwise this w
 
 ---
 
-## For Beginners Macro Developers - Linear Sketch Pattern From VBA Macro
+## For Beginners Macro Developers - Edit Linear Sketch Pattern From VBA Macro
 
 In this post, I tell you about `CreateLinearSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
 
