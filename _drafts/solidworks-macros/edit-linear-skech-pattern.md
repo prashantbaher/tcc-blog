@@ -21,13 +21,9 @@ I recommend you to read **[Solidworks Macro - Linear Sketch Pattern From VBA Mac
 
 - *[For Beginner Macro Developers](#for-beginners-macro-developers---edit-linear-sketch-pattern-from-vba-macro)*
 
-  - *[Understanding the Code](#understanding-the-code)*
+  - *[Multiple Cases](#cases)*
 
   - *[NOTE](#note)*
-
-- *[VBA Language feature used in this post](#vba-language-feature-used-in-this-post)*
-
-- *[Solidworks API Objects](#solidworks-api-objects)*
 
 Feel free to select the topic you want to.
 
@@ -185,15 +181,15 @@ Sub main()
   ' Zoom to fit screen in Solidworks Window
   swDoc.ViewZoomtofit2
 
-  ' Edit a Linear Sketch Pattern
-  BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
+  ' Edit a Linear Sketch Pattern <--- FROM HERE IS THE LAST LINE I EXPLAIN
+  BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 
 End Sub
 ```
 
 ---
 
-### Understanding the Code
+### Cases
 
 Since this post is *an extension* of previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post, then I will start explaining from **Last line** only.
 
@@ -211,8 +207,14 @@ I also give some *links* so that you can go through them if there are anything I
 
 ```vb
 ' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 ```
+
+Editing a Linear Sketch pattern
+
+
+
+--------------- DON'T NEEDED ----------------------
 
 This line forces us to define every variable we are going to use. 
 
