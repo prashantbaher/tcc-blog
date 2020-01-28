@@ -66,7 +66,7 @@ BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785,
 
 **How it works**:
 
-  - For **Linear Sketch Pattern**, first, we need to **create** a variable of `Boolean` type.
+  - For **Edit a Linear Sketch Pattern**, first, we need to **create** a variable of `Boolean` type.
 
   - After creating variable, we need to set the value of this `Boolean` variable.
 
@@ -103,6 +103,12 @@ This `EditLinearSketchStepAndRepeat` method takes the following parameters as ex
   - **CreateNumOfInstancesDimInYDir**: *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
 
   - **Seed**: *List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Line1_Line2_Line3_Line4 for a rectangular-shaped seed pattern).*
+
+**Return Value**:
+
+  - **True**: *If Editing of Linear Sketch Pattern is "Success".*
+
+  - **False**: *If Editing of Linear Sketch Pattern is "Fail".*
 
 If you want more detailed explaination then please read further otherwise this will help you to *edit* a **Linear Sketch Pattern From VBA Macro**.
 
@@ -187,10 +193,6 @@ Sub main()
 End Sub
 ```
 
----
-
-### Cases
-
 Since this post is *an extension* of previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post, then I will start explaining from **Last line** only.
 
 If you want to understand every line of code, then please visit **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post "first", then read this post.
@@ -201,221 +203,56 @@ By doing this, *you learn 2 thing*:
 
   2. *How to edit/modify an existing Linear Sketch Pattern*
 
-Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
-
 I also give some *links* so that you can go through them if there are anything I *explained* in previous posts.
 
 ```vb
 ' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 ```
 
-Editing a Linear Sketch pattern
+For "**editing**" a Linear Sketch pattern, we need `EditLinearSketchStepAndRepeat` method from *Solidworks Sketch Manager* object/variable.
 
+This `EditLinearSketchStepAndRepeat` method takes the following parameters as explained:
 
+  - **NumX**: *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
 
---------------- DON'T NEEDED ----------------------
+  - **NumY**: *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
 
-This line forces us to define every variable we are going to use. 
+  - **SpacingX**: *Spacing between instances along the **x** axis.*
 
-For more information please visit *[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)* post.
+  - **SpacingY**: *Spacing between instances along the **y** axis.*
 
-```vb
-' Create variable for Solidworks application
-Dim swApp As SldWorks.SldWorks
-```
+  - **AngleX**: *Angle for direction 1 relative to the **x** axis.*
 
-In this line, we create a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
+  - **AngleY**: *Angle for direction 1 relative to the **y** axis.*
 
-```vb
-' Create variable for Solidworks document
-Dim swDoc As SldWorks.ModelDoc2
-```
+  - **DeleteInstances**: *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
 
-In this line, we create a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
+  - **XSpacingDim**: *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
 
-```vb
-' Boolean Variable
-Dim BoolStatus As Boolean
-```
-
-In this line, we create a variable named `BoolStatus` as `Boolean` object type.
-
-```vb
-' Create variable for Solidworks Sketch Manager
-Dim swSketchManager As SldWorks.SketchManager
-```
-
-In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
-
-As the name suggested, a **Sketch Manager** holds variours methods and properties to manage *Sketches*.
-
-To see methods and properties related to `SketchManager` object, please visit *[this page on Solidworks API Help](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)*
-
-```vb
-' Create variable for Solidworks Sketch Segment
-Dim swSketchSegment As SldWorks.SketchSegment
-```
-
-In this line, we Create a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
-
-We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
-
-To see methods and properties related to `swSketchSegment` object, please visit *[this page on Solidworks API Help](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html)*
-
-These all are our global variables.
-
-As you can see in code sample, they are **Solidworks API Objects**.
-
-So basically I group all the **Solidworks API Objects** in one place.
-
-I have also place `boolean` type object at top also, because after certain point we will *need* this variable frequently.
-
-Thus, I have started placing it here.
-
-Next is our `Sub` procedure which has name of `main`. 
-
-This procedure hold all the *statements (instructions)* we give to computer.
-
-```vb
-' Set Solidworks variable to Solidworks application
-Set swApp = Application.SldWorks
-```
-
-In this line, we set the value of our Solidworks variable `swApp`; which we define earlier; to Solidworks application.
-
-```vb
-' Create string type variable for storing default part location
-Dim defaultTemplate As String
-' Set value of this string type variable to "Default part template"
-defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
-```
-
-In 1st statement of above example, we are defining a variable of `string` type and named it as `defaultTemplate`.
-
-This variable `defaultTemplate`, hold the location the location of **Default Part Template**.
-
-In 2nd line of above example. we assign value to our newly define `defaultTemplate` variable.
-
-We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. 
-
-This `GetUserPreferenceStringValue()` method is a part of our main Solidworks variable `swApp`.
-
-```vb
-' Set Solidworks document to new part document
-Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
-```
-
-In this line, we set the value of our `swDoc` variable to new document.
-
-For **detailed information** about these lines please visit *[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)* post.
-
-I have discussed them **thoroghly** in *[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)* post, so do checkout that post if you want to understand above code in more detail.
-
-```vb
-' Select Front Plane
-BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-```
-
-In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
-
-For more information about selection method please visit *[Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree)* post.
-
-```vb
-' Set Sketch manager for our sketch
-Set swSketchManager = swDoc.SketchManager
-```
-
-In above line, we set the *Sketch manager* variable to *current document's sketch manager*.
-
-```vb
-' Insert a sketch into selected plane
-swSketchManager.InsertSketch True
-```
-
-In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
-
-This method allows us to insert a sketch in selected plane.
-
-```vb
-' Set Sketch Segment value and Create a Circle
-Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, 0.2)
-```
-
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
-
-This `CreateCircleByRadius` method creates *a Circle* at given point with radius.
-
-For more information about `CreateCircleByRadius` method, you can read my *[Solidworks Macro - Create Circle By Radius From VBA Macro](/solidworks-macro/create-circle-by-radius)* post.
-
-That post describe all the parameters we need for this `CreateCircleByRadius` method in details.
-
-In above line, we create a Circle with:
-
-  - **Circle Centerpoint** : At origin i.e. *(0, 0, 0)*
-
-  - **Circle Radius** : *0.2*
-
-```vb
-' De-select the lines after creation
-swDoc.ClearSelection2 True
-```
-
-After creating the circle we *de-select* it.
-
-> We **don't need** to de-select the circle for **Pattern** as we will select the circle agains in next line. I just want to show you how to select a **Sketch Segment** with `SelectById` Menthod in next line of code.
-
-```vb
-' Select Circle we want to Pattern
-BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
-```
-
-In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
-
-```vb
-' Create a Linear Sketch Pattern
-BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
-```
-
-In above line, we **Pattern** selected *Circle* by `CreateLinearSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
-
-This `CreateLinearSketchStepAndRepeat` method takes following parameters as explained:
-
-  - **NumX** : *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
-
-  - **NumY** : *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
-
-  - **SpacingX** : *Spacing between instances along the **x** axis.*
-
-  - **SpacingY** : *Spacing between instances along the **y** axis.*
-
-  - **AngleX** : *Angle for direction 1 relative to the **x** axis.*
-
-  - **AngleY** : *Angle for direction 1 relative to the **y** axis.*
-
-  - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
-
-  - **XSpacingDim** : *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
-
-  - **YSpacingDim** : *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  - **YSpacingDim**: *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
   
-  - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
+  - **AngleDim**: *True to display the angle dimension between axes in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInXDir** : *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
+  - **CreateNumOfInstancesDimInXDir**: *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInYDir** : *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
+  - **CreateNumOfInstancesDimInYDir**: *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
 
-After the function complete following are the results:
+  - **Seed**: *List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Line1_Line2_Line3_Line4 for a rectangular-shaped seed pattern).*
+
+**NOTE:** In *Seed*, adding underscore(_) after selected entity is important, otherwise code will note work.
+
+After the function complete, we get following results:
 
 **Return Value**:
 
-  - **True**: *If Linear Sketch Pattern is *Success*.*
+  - **True**: *If Editing of Linear Sketch Pattern is "Success".*
 
-  - **False**: *If Linear Sketch Pattern is *Fail*.*
+  - **False**: *If Editing of Linear Sketch Pattern is "Fail".*
 
 In our code, I have used following values:
 
-  - **NumX** : *I have used **3** as Total number of instances along the **x** axis including original circle.*
+  - **NumX** : *I have used **5** as Total number of instances along the **x** axis including original circle.*
 
   - **NumY** : *I have used **1** as Total number of instances along the **y** axis which includes original circle only.*
 
@@ -441,15 +278,346 @@ In our code, I have used following values:
 
   - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
 
-Below image shows before and after Linear Sketch Pattern.
+  - **Seed** : *I use **Arc1_** as the seed of this Edit Pattern Function. We can select multiple sketch entities into existing Linear Sketch Pattern.*
 
-**Before Linear Sketch Pattern**
+---
 
-![before-linear-pattern](/assets/Solidworks_Images/sketch-patterns/before-linear-pattern.png)
+### Cases
 
-**After Linear Sketch Pattern**
+In this section, we will go through different cases by 
+
+  - *Modifying different parameters*
+
+    1. *A basic 1 line description*
+
+    2. *Sample Code of parameter modification*
+
+  - *See images, before and after parameter modification*
+
+---
+  
+#### CASE 1 : Increase Total number of instances along the "X" axis
+
+To increase Total number of instances along the "X" axis, we need to update **NumX** parameter in `EditLinearSketchStepAndRepeat` method.
+
+In my previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post, we created a Linear pattern *3 instances* in *x-direction*.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+```
+
+In above code, we update the number of instances from *3 instances* to *5 instances*.
+
+***Example Images:***
+
+Below image shows before and after we update **number of instance in X-direction**.
+
+**Before Edit Linear Sketch Pattern**
 
 ![after-linear-pattern](/assets/Solidworks_Images/sketch-patterns/after-linear-pattern.png)
+
+**After Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numX.png)
+
+---
+
+#### CASE 2 : Increase Total number of instances along the "Y" axis
+
+To increase Total number of instances along the "Y" axis, we need to update **NumY** parameter in `EditLinearSketchStepAndRepeat` method.
+
+If we increase the number of instances in *Y-direction*, then we also need to give value for **SpacingY** parameter.
+
+*We need following parameters to update:*
+
+  - **NumY**
+
+  - **SpacingY**
+
+*We will use following values for these parameters:*
+
+  - **NumY**: *4*
+
+  - **SpacingY**: *0.75*
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0, 0, "", True, False, True, True, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows before and after we update **number of instance in Y-direction**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numX.png)
+
+**After Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numY.png)
+
+***NOTE:***
+
+As you notice in previous image, when you give values for **NumY** and **SpacingY**, number of instances increased in X-direction!
+
+*Why the instances are increased in X-direction not in Y-direction as I was expecting?*
+
+This question comes in my mind after seeing the result!
+
+Reason is that we did not give value of **AngleY** parameter.
+
+If you provide the value of **AngleY** parameter then we can have instances in Y-direction.
+
+More detail with example in **CASE 4**.
+
+---
+
+#### CASE 3 : Update Angle for direction 1 along the "X" axis
+
+To update Angle for *direction 1* along the "X" axis, we need to update **AngleX** parameter in `EditLinearSketchStepAndRepeat` method.
+
+*We will use following value for **AngleX** parameter:*
+
+  - **AngleX**: *0.785*.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 0, "", True, False, True, True, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows before and after we update **Angle for direction 1 along the "X" axis**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numY.png)
+
+**After Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleX.png)
+
+***NOTE:***
+
+In this case, we use **AngleX** = *0.785*.
+
+This value is in ***Radian***.
+
+Hence, *0.785* Radian = *44.999 Degree*
+
+So we have update Angle for direction 1 in **~45 degree**.
+
+---
+
+#### CASE 4 : Update Angle for direction 1 along the "Y" axis
+
+To update Angle for *direction 2* along the "Y" axis, we need to update **AngleY** parameter in `EditLinearSketchStepAndRepeat` method.
+
+*We will use following value for **AngleY** parameter:*
+
+  - **AngleX**: *1.5708*.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "", True, False, True, True, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows before and after we update **Angle for direction 2 along the "Y" axis**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleX.png)
+
+**After Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleY.png)
+
+***NOTE:***
+
+In this case, we use **AngleY** = *1.5708*.
+
+This value is in ***Radian***.
+
+Hence, *1.5708* Radian = *90 Degree*
+
+So we have update Angle for direction 1 in **90 degree**.
+
+---
+
+#### CASE 5 : Number of instances to delete
+
+Ok, this one is a little "**tricky**"!!! 
+
+We want to delete some instance now.
+
+For deleting instances, we need following:
+
+  - Deleting instance's position with respect to **X and Y directions**.
+
+  - Those position in a particular format.
+
+***Grid Position Image:***
+
+I tried my best to describe you this position system in Grid format using image.
+
+Please see below image for this Grid position.
+
+![edit-linear-pattern-deleteInstances](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-deleteInstances.png)
+
+We are going to delete 2 instances.
+
+**1st Instance**: First we will get the position of this instance.
+
+  - **In X-Direction**: As you can see in above image, position of this instance is 3 in Grid position system for X-Direction.
+
+  - **In Y-Direction**: As you can see in above image, position of this instance is 2 in Grid position system for Y-Direction.
+
+**2nd Instance**: First we will get the position of this instance.
+
+  - **In X-Direction**: As you can see in above image, position of this instance is 2 in Grid position system for X-Direction.
+
+  - **In Y-Direction**: As you can see in above image, position of this instance is 1 in Grid position system for Y-Direction.
+
+**Position in special format**: After we get the position, we need to put "Grid position" of each instance inside *a bracket (or paranthesis)*.
+
+One thing to note here is that, there should be no "**comma**" between **bracket (or paranthesis)**.
+
+Please see below code sample for detail.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, False, True, True, False, "Arc1_")
+```
+
+---
+
+#### CASE 6 : Display the spacing between instances dimension along the **Y** axis
+
+In our code sample, we display the spacing between instances dimension along the **X** axis.
+
+We do this by **`XSpacingDim = True`**.
+
+If we want to display the spacing between instances dimension along the **Y** axis.
+
+For that we need to set **`YSpacingDim = True`**.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, True, True, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows after we update value for **display dimension along the **Y** axis**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-YSpacingDim](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-YSpacingDim.png)
+
+---
+
+#### CASE 7 : Display the angle dimension between axes
+
+In our code sample, we display the angle dimension between axes.
+
+We do this by **`AngleDim = True`**.
+
+If we don't want to display the angle dimension between axes then we need to set **`AngleDim = False`**.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, True, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows after we update value to `False` for **the angle dimension between axes**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-AngleDim](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-AngleDim.png)
+
+---
+
+#### CASE 8 : Display the number of instances in the X direction
+
+In our code sample, we display the number of instances along the **X** axis.
+
+We do this by **`CreateNumOfInstancesDimInXDir = True`**.
+
+If we don't want to display the number of instances along the **X** axis then we need to set **`CreateNumOfInstancesDimInXDir = False`**.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, False, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows after we update value to `False` for **not display the number of instances in the X direction**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInXDir.png)
+
+---
+
+#### CASE 9 : Display the number of instances in the Y direction
+
+In our code sample, we don't display the number of instances along the **Y** axis.
+
+We do this by **`CreateNumOfInstancesDimInYDir = False`**.
+
+If we want to display the number of instances along the **Y** axis then we need to set **`CreateNumOfInstancesDimInYDir = True`**.
+
+***Code sample:***
+
+```vb
+' Edit a Linear Sketch Pattern
+BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
+```
+
+***Example Images:***
+
+Below image shows after we update value to `True` for **display the number of instances in the Y direction**.
+
+**Before Edit Linear Sketch Pattern**
+
+![edit-linear-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInYDir.png)
+
+---
+
+#### CASE 10 : Multiple enitites as Seed
+
+In our code sample, we use only **1 circle** for *Linear Sketch pattern*.
+
+But in many cases we need to select **many sketch entities**.
+
+In this condition, add the entities name with **an underscore (_)** one by one.
+
+For example, we want to pattern a Ractangle, in this case, value of seed should be following:
+
+  - **Seed** : **Line1_Line2_Line3_Line4_**
 
 ---
 
@@ -471,141 +639,17 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 
 ---
 
-```vb
-' De-select the Sketch after creation
-swDoc.ClearSelection2 True
-```
 
-In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
-
-For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
-
-```vb
-' Show Front View after Linear Sketch Pattern
-swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
-```
-
-In the above line of code, we update the *view orientation* to **Front View**.
-
-In my machine, after inserting a sketch view orientation does not changed.
-
-Because of this I have to update the view to **Front view**.
-
-For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
-
-This method takes 2 parameter described as follows:
-
-  - **VName** : Name of the view to display or an empty string to use ViewId instead
-
-  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
-
-*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
-
-`swStandardViews_e` has following Standard View Types:
-
-  - *swBackView*
-
-  - *swBottomView*
-
-  - *swDimetricView*
-
-  - *swFrontView*
-
-  - *swIsometricView*
-
-  - *swLeftView*
-
-  - *swRightView*
-
-  - *swTopView*
-
-  - *swExtendetricView*
-
-In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
-
-I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
-
-```vb
-' Zoom to fit screen in Solidworks Window
-swDoc.ViewZoomtofit
-```
-
-In this last line we use *zoom to fit* command.
-
-For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
-
-This is it !!!
+**This is it !!!**
 
 If you found anything to add or update, please let me know on my e-mail.
 
----
-
-## VBA Language feature used in this post
-
-In this post used some features of **VBA programming language**.
-
-This section of post, has some brief information about the VBA programming language specific features.
-
-1. We use **Option Explicit** for capturing un-declared variables.
-
-If you want to read more about **Option Explicit** then please visit [Declaring and Scoping of Variables](/visual-basic/vba-declaring-and-scoping-of-variables).
-
-2. Then we create **variable** for different data types.
-
-If you know in detail about the **Variables**, then please visit [Variables](/visual-basic/vba-variables) and [Data-types](/visual-basic/vba-programming-concepts-comments-and-datatypes) posts of this blog.
-
-It will help you to understand what **Variables** are and how to use them.
-
-3. Then we create **main Sub procedure** for our macro.
-
-If you know in detail about the **Sub procedure**, then I suggest you to visit [VBA Sub and Function Procedures](/visual-basic/vba-sub-and-function-procedure) and [Executing Sub and Function Procedures](/visual-basic/vba-executing-procedures) posts of this blog.
-
-It will help you to understand what **Procedures** are and how to use them.
-
-4. In most part we create some variables and set their values. We set those values by using some **functions** provided from objects.
-
-If you don't know about the **functions**, then you should visit [VBA Functions](/visual-basic/vba-functions) and [VBA Functions that do more](/visual-basic/vba-more-function) posts of this blog.
-
-It will help you to understand what **functions** are and how to use them.
-
----
-
-## Solidworks API Objects
-
-In this post of **Linear Sketch Pattern**, we use *Solidworks API objects and their methods*.
-
-This section contains the list of all **Solidworks Objects** used in this post.
-
-I have also attached links of these **Solidworks API Objects** in **API Help website**.
-
-If you want to explore those objects, you can use these links.
-
-These Solidworks API Objects are listed below:
-
-- **Solidworks Application Object**
-
-  If you want explore ***Properties and Methods/Functions*** of **Solidworks Application Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html).
-
-- **Solidworks Document Object**
-
-  If you want explore ***Properties and Methods/Functions*** of **Solidworks Document Object** object you can visit [this link](http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html).
-
-- **Solidworks Sketch Manager Object**
-
-  If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Manager Object** you can visit [this link](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html).
-
-- **Solidworks Sketch Segment Object**
-
-  If you want explore ***Properties and Methods/Functions*** of **Solidworks Sketch Segment Object** you can visit [this link](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html).
-
----
-
-Hope this post helps you to *Create Linear Sketch Pattern* with Solidworks VBA Macros.
+Hope this post helps you to *Edit a Linear Sketch Pattern* with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 
-If you like the post then please share it with your friends also.
+*If you like the post then please share it with your friends also.*
 
-Do let me know by you like this post or not!
+*Do let me know by you like this post or not!*
 
-Till then, Happy learning!
+*Till then, Happy learning!!!*
