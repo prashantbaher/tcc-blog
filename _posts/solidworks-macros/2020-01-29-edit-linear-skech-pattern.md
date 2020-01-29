@@ -33,7 +33,7 @@ Feel free to select the topic you want to.
 
 Please see below video how we can *Edit Linear Sketch Pattern* in **Solidworks VBA macro**.
 
-<iframe src="https://www.youtube.com/embed/kvkj2qWPoQM" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/4pLUprIxXHU" frameborder="0" allowfullscreen></iframe>
 <br>
 
 Please note that there is **no explanation** in the video. 
@@ -505,7 +505,7 @@ BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785,
 
 ---
 
-#### CASE 6 : Display the spacing between instances dimension along the **Y** axis
+#### CASE 6 : Display the spacing between instances dimension along the "Y" axis
 
 In our code sample, we display the spacing between instances dimension along the **X** axis.
 
@@ -557,7 +557,7 @@ Below image shows after we update value to `False` for **the angle dimension bet
 
 ---
 
-#### CASE 8 : Display the number of instances in the X direction
+#### CASE 8 : Display the number of instances in the "X" direction
 
 In our code sample, we display the number of instances along the **X** axis.
 
@@ -582,7 +582,7 @@ Below image shows after we update value to `False` for **not display the number 
 
 ---
 
-#### CASE 9 : Display the number of instances in the Y direction
+#### CASE 9 : Display the number of instances in the "Y" direction
 
 In our code sample, we don't display the number of instances along the **Y** axis.
 
@@ -607,7 +607,7 @@ Below image shows after we update value to `True` for **display the number of in
 
 ---
 
-#### CASE 10 : Multiple enitites as Seed
+#### CASE 10 : Multiple entities as Seed
 
 In our code sample, we use only **1 circle** for *Linear Sketch pattern*.
 
