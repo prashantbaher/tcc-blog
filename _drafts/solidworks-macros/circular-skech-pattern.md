@@ -59,7 +59,7 @@ BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True,
 BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(0.5, 0, 3, 1, True, "", True, True, True)
 ```
 
-**Method Name**: `CreateLinearSketchStepAndRepeat`
+**Method Name**: `CreateCircularSketchStepAndRepeat`
 
 **Description**: Create *Linear Sketch Pattern* of the selected sketch entity or entities.
 
@@ -75,51 +75,45 @@ BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(0.5, 0, 3, 1, Tru
 
   - After creating variable, you need to set the value of this `Boolean` variable.
 
-  - For this you used `CreateLinearSketchStepAndRepeat` method from **Solidworks Sketch Manager**.
+  - For this you used `CreateCircularSketchStepAndRepeat` method from **Solidworks Sketch Manager**.
 
-  - This `CreateLinearSketchStepAndRepeat` method set the value of `Boolean` type variable.
+  - This `CreateCircularSketchStepAndRepeat` method set the value of `Boolean` type variable.
 
-  - If the *Circular Sketch Pattern* is **successful** then `CreateLinearSketchStepAndRepeat` method return **True** value otherwise `CreateLinearSketchStepAndRepeat` returns **False** value.
+  - If the *Circular Sketch Pattern* is **successful** then `CreateCircularSketchStepAndRepeat` method return **True** value otherwise `CreateCircularSketchStepAndRepeat` returns **False** value.
 
-This `CreateLinearSketchStepAndRepeat` method takes following parameters as explained:
+This `CreateCircularSketchStepAndRepeat` method takes following parameters as explained:
 
-  - **NumX** : *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
+  - **ArcRadius** : *Radius for the circular sketch pattern.*
 
-  - **NumY** : *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
+  - **ArcAngle** : *Angle relative to the sketch entities being patterned.*
 
-  - **SpacingX** : *Spacing between instances along the **x** axis.*
+  - **PatternNum** : *Total number of instances, including the seed geometry.*
 
-  - **SpacingY** : *Spacing between instances along the **y** axis.*
+  - **PatternSpacing** : *Spacing between pattern instances.*
 
-  - **AngleX** : *Angle for direction 1 relative to the **x** axis.*
-
-  - **AngleY** : *Angle for direction 1 relative to the **y** axis.*
+  - **PatternRotate** : *True to rotate the pattern, false to not.*
 
   - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
 
-  - **XSpacingDim** : *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
-
-  - **YSpacingDim** : *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  - **RadiusDim** : *True to display the radius dimension in the graphics area, false to not.*
   
   - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInXDir** : *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
+  - **CreateNumOfInstancesDim** : *True to display the number of instances dimension in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInYDir** : *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
-
-If you want more detailed explaination then please read further otherwise this will help you to create a **Linear Sketch Pattern From VBA Macro**.
+If you want more detailed explaination then please read further otherwise this will help you to create a **Circular Sketch Pattern From VBA Macro**.
 
 ---
 
 ## For Beginners Macro Developers - Circular Sketch Pattern From VBA Macro
 
-In this post, I tell you about `CreateLinearSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCircularSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create *Linear Sketch Pattern*.
+So ***use this method*** if you want to create *Circular Sketch Pattern*.
 
-Below is the `code` sample to create *Linear Sketch Pattern*.
+Below is the `code` sample to create *Circular Sketch Pattern*.
 
 ```vb
 Option Explicit
@@ -172,13 +166,13 @@ Sub main()
   ' Select Circle we want to Pattern
   BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Create a Linear Sketch Pattern
+  ' Create a Circular Sketch Pattern
   BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(0.5, 0, 3, 1, True, "", True, True, True)
   
-  ' De-select the Sketch Segment after Linear Sketch Pattern
+  ' De-select the Sketch Segment after Circular Sketch Pattern
   swDoc.ClearSelection2 True
 
-  ' Show Front View after Linear Sketch Pattern
+  ' Show Front View after Circular Sketch Pattern
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
@@ -356,45 +350,39 @@ BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True,
 In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
 
 ```vb
-' Create a Linear Sketch Pattern
-BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
+' Create a Circular Sketch Pattern
+BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(0.5, 0, 3, 1, True, "", True, True, True)
 ```
 
-In above line, we **Pattern** selected *Circle* by `CreateLinearSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
+In above line, we **Pattern** selected *Circle* by `CreateCircularSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
 
-This `CreateLinearSketchStepAndRepeat` method takes following parameters as explained:
+This `CreateCircularSketchStepAndRepeat` method takes following parameters as explained:
 
-  - **NumX** : *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
+  - **ArcRadius** : *Radius for the circular sketch pattern.*
 
-  - **NumY** : *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
+  - **ArcAngle** : *Angle relative to the sketch entities being patterned.*
 
-  - **SpacingX** : *Spacing between instances along the **x** axis.*
+  - **PatternNum** : *Total number of instances, including the seed geometry.*
 
-  - **SpacingY** : *Spacing between instances along the **y** axis.*
+  - **PatternSpacing** : *Spacing between pattern instances.*
 
-  - **AngleX** : *Angle for direction 1 relative to the **x** axis.*
-
-  - **AngleY** : *Angle for direction 1 relative to the **y** axis.*
+  - **PatternRotate** : *True to rotate the pattern, false to not.*
 
   - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
 
-  - **XSpacingDim** : *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
-
-  - **YSpacingDim** : *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  - **RadiusDim** : *True to display the radius dimension in the graphics area, false to not.*
   
   - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInXDir** : *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
-
-  - **CreateNumOfInstancesDimInYDir** : *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
+  - **CreateNumOfInstancesDim** : *True to display the number of instances dimension in the graphics area, false to not.*
 
 After the function complete following are the results:
 
 **Return Value**:
 
-  - **True**: *If Linear Sketch Pattern is *Success*.*
+  - **True**: *If Circular Sketch Pattern is *Success*.*
 
-  - **False**: *If Linear Sketch Pattern is *Fail*.*
+  - **False**: *If Circular Sketch Pattern is *Fail*.*
 
 In our code, I have used following values:
 
@@ -424,13 +412,13 @@ In our code, I have used following values:
 
   - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
 
-Below image shows before and after Linear Sketch Pattern.
+Below image shows before and after Circular Sketch Pattern.
 
-**Before Linear Sketch Pattern**
+**Before Circular Sketch Pattern**
 
 ![before-linear-pattern](/assets/Solidworks_Images/sketch-patterns/before-linear-pattern.png)
 
-**After Linear Sketch Pattern**
+**After Circular Sketch Pattern**
 
 ![after-linear-pattern](/assets/Solidworks_Images/sketch-patterns/after-linear-pattern.png)
 
@@ -459,12 +447,12 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 swDoc.ClearSelection2 True
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
+In the above line of code, we deselect the **Sketch** after the *Circular Sketch Pattern* operation.
 
 For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
 
 ```vb
-' Show Front View after Linear Sketch Pattern
+' Show Front View after Circular Sketch Pattern
 swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
 ```
 
@@ -555,7 +543,7 @@ It will help you to understand what **functions** are and how to use them.
 
 ## Solidworks API Objects
 
-In this post of **Linear Sketch Pattern**, we use *Solidworks API objects and their methods*.
+In this post of **Circular Sketch Pattern**, we use *Solidworks API objects and their methods*.
 
 This section contains the list of all **Solidworks Objects** used in this post.
 
@@ -583,7 +571,7 @@ These Solidworks API Objects are listed below:
 
 ---
 
-Hope this post helps you to *Create Linear Sketch Pattern* with Solidworks VBA Macros.
+Hope this post helps you to *Create Circular Sketch Pattern* with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 
