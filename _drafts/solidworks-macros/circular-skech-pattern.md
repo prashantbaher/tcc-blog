@@ -358,13 +358,13 @@ In above line, we **Pattern** selected *Circle* by `CreateCircularSketchStepAndR
 
 This `CreateCircularSketchStepAndRepeat` method takes following parameters as explained:
 
-  - **ArcRadius** : *Radius for the circular sketch pattern.*
+  - **ArcRadius** : *Radius for the circular sketch pattern. This value is in radian.*
 
-  - **ArcAngle** : *Angle relative to the sketch entities being patterned.*
+  - **ArcAngle** : *Angle relative to the sketch entities being patterned. This value is in radian.*
 
   - **PatternNum** : *Total number of instances, including the seed geometry.*
 
-  - **PatternSpacing** : *Spacing between pattern instances.*
+  - **PatternSpacing** : *Spacing between pattern instances. This value is in radian.*
 
   - **PatternRotate** : *True to rotate the pattern, false to not.*
 
@@ -384,43 +384,41 @@ After the function complete following are the results:
 
   - **False**: *If Circular Sketch Pattern is *Fail*.*
 
+**Circular Sketch Pattern Parameter**
+
+Below image shows Circular Sketch Pattern Parameter.
+
+![circular-sketch-pattern-parameters](/assets/Solidworks_Images/sketch-patterns/circular-sketch-pattern-parameters.png)
+
 In our code, I have used following values:
 
-  - **NumX** : *I have used **3** as Total number of instances along the **x** axis including original circle.*
+  - **ArcRadius** : *I have used **0.5** value, Radius for the circular sketch pattern.*
 
-  - **NumY** : *I have used **1** as Total number of instances along the **y** axis which includes original circle only.*
+  - **ArcAngle** : *I have used **0** value, Angle relative to the sketch entities being patterned.*
 
-  > *Even uf you don't want to pattern in **Y** direction, you have to give atleast 1 as a value. Same goes for **X** direction.*
+  - **PatternNum** : *I have used **3** value, Total number of instances, including the seed geometry.*
 
-  - **SpacingX** : *I use **1** as Spacing between instances along the **x** axis.*
+  - **PatternSpacing** : *I have used **1** value, Spacing between pattern instances.*
 
-  - **SpacingY** : *I use **0** Spacing between instances along the **y** axis.*
+  - **PatternRotate** : *I have used **True** value, to rotate the pattern.*
 
-  - **AngleX** : *I use **0** Angle for direction 1 relative to the **x** axis.*
+  - **DeleteInstances** : *I have used **""** i.e. **empty string** value number of instances to delete.*
 
-  - **AngleY** : *I use **0** Angle for direction 1 relative to the **y** axis.*
-
-  - **DeleteInstances** : *I use **""** as Number of instances to delete, because I don't want to delete any instances.*
-
-  - **XSpacingDim** : *I use **True** to display the spacing between instances dimension along the **x** axis in the graphics area.*
-
-  - **YSpacingDim** : *I use **False** to display the spacing between instances dimension along the **y** axis in the graphics area.*
+  - **RadiusDim** : *I have used **True** value, to display the radius dimension.*
   
-  - **AngleDim** : *I use **True** to display the angle dimension between axes in the graphics area.*
+  - **AngleDim** : *I have used **True** value, to display the angle dimension between axes.*
 
-  - **CreateNumOfInstancesDimInXDir** : *I use **True** to display the number of instances in the **x** direction dimension in the graphics area.*
-
-  - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
+  - **CreateNumOfInstancesDim** : *I have used **True** value, display the number of instances dimension.*
 
 Below image shows before and after Circular Sketch Pattern.
 
 **Before Circular Sketch Pattern**
 
-![before-linear-pattern](/assets/Solidworks_Images/sketch-patterns/before-linear-pattern.png)
+![before-circular-pattern](/assets/Solidworks_Images/sketch-patterns/before-circular-pattern.png)
 
 **After Circular Sketch Pattern**
 
-![after-linear-pattern](/assets/Solidworks_Images/sketch-patterns/after-linear-pattern.png)
+![after-circular-pattern](/assets/Solidworks_Images/sketch-patterns/after-circular-pattern.png)
 
 ---
 
@@ -436,7 +434,9 @@ Please see below for detail:
 
 Solidworks API does not care about your application's Unit systems.
 
-For example, I works in **ANSI** system means *inches* for distance. But when I used **Solidworks API** through *VBA macros or C#*, I need to converted numeric values.
+For example, I works in **ANSI** system means *inches* for distance. 
+
+But when I used **Solidworks API** through *VBA macros or C#*, I need to converted numeric values.
 
 Because Solidworks API output the distance in **Meter** which is not my requirement.
 
