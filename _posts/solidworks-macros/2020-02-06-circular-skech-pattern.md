@@ -33,7 +33,7 @@ Feel free to select the topic you want to.
 
 Please see below video how visually we *Circular Sketch Pattern* in **Solidworks VBA macro**.
 
-<iframe src="https://www.youtube.com/embed/kvkj2qWPoQM" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/1l9PuSKA1Oo" frameborder="0" allowfullscreen></iframe>
 <br>
 
 Please note that there are **no explaination** in the video. 
@@ -164,7 +164,7 @@ Sub main()
   swDoc.ClearSelection2 True
 
   ' Select Circle we want to Pattern
-  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
   ' Create a Circular Sketch Pattern
   BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(0.5, 0, 3, 1, True, "", True, True, True)

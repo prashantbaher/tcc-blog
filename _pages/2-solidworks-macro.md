@@ -141,3 +141,5 @@ In Below posts, I show you how to create **Sketch Pattern** and **edit patterns*
 * [Sketch - Linear Sketch Pattern](/solidworks-macro/linear-skech-pattern)
 
 * [Sketch - Edit Linear Sketch Pattern](/solidworks-macro/edit-linear-skech-pattern)
+
+* [Sketch - Circular Sketch Pattern](/solidworks-macro/circular-skech-pattern)
