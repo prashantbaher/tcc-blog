@@ -32,15 +32,17 @@ If you have done `VBA programming` in *Solidworks* before and you are looking fo
 
 Below list contains posts on *general Solidworks functions*. These posts will guide you on how to do write macros on these *common general Solidworks functions*.
 
-* [VBA in Solidworks](/solidworks-macro/vba-in-solidworks)
+* [General - VBA in Solidworks](/solidworks-macro/vba-in-solidworks)
 
-* [Open new Part document](/solidworks-macro/open-new-document)
+* [General - Open new Part document](/solidworks-macro/open-new-document)
 
-* [Open Assembly and Drawing document](/solidworks-macro/open-assembly-and-drawing)
+* [General - Open Assembly and Drawing document](/solidworks-macro/open-assembly-and-drawing)
 
-* [Selection Methods](/solidworks-macro/select-plane-from-tree)
+* [General - Selection Methods](/solidworks-macro/select-plane-from-tree)
 
-* [Open Saved Documents](/solidworks-macro/open-saved-document)
+* [General - Open Saved Documents](/solidworks-macro/open-saved-document)
+
+* [General - Fix Unit Issue](/solidworks-macro/unit-correction)
 
 ## Solidworks Sketch VBA Macro Tutorial Posts list
 

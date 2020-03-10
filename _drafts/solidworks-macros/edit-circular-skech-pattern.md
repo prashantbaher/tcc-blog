@@ -9,7 +9,7 @@ In this post, I tell you about **how to Edit Linear Sketch Pattern using Solidwo
 
 This post is extension of previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post.
 
-I recommend you to read **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post because we are using same code sample.
+I recommend you to read **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-+-macro/linear-skech-pattern)** post because we are using same code sample.
 
 ---
 
