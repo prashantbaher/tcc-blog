@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Solidworks Macro
+title: Solidworks VBA Macro
 image:  post-image.jpg
 permalink: /Solidworks-macro-guide/
 ---

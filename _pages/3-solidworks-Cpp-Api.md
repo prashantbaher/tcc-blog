@@ -36,3 +36,5 @@ Please see below list of posts for ***Solidworks C++ API***.
 ## General Solidworks Functions
 
 * [Solidworks C++ API - Prerequisite](/solidworks-c++-api/cpp-prerequisite)
+
+* [Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)
