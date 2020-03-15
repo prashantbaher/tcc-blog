@@ -13,6 +13,24 @@ If not then please go to [Solidworks C++ API - Prerequisite](/solidworks-c++-api
 
 ---
 
+## Content
+
+This post is divided into following sections. 
+
+Feel free to select the topic you want to.
+
+  - [Create a New project](#create-a-new-project)
+
+  - [Add Source file](#add-source-file)
+
+  - [Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)
+
+  - [Add Code to Source.cpp file](#add-code-to-source.cpp-file)
+
+  - [Final Result](#final-result)
+
+---
+
 ## Create a New project
 
 Fist, we will create a new project in Visual Studio.

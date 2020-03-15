@@ -11,21 +11,23 @@ In this post, I tell you about **how to Circular Sketch Pattern using Solidworks
 
 ## Content
 
-- [Code Demo Video on YouTube](#video-of-code-on-youtube)
-
-- [For Experience Macro Developers](#for-experience-macro-developer---circular-sketch-pattern-from-vba-macro)
-
-- [For Beginner Macro Developers](#for-beginners-macro-developers---circular-sketch-pattern-from-vba-macro)
-
-  - [Understanding the Code](#understanding-the-code)
-
-  - [NOTE](#note)
-
-- [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
-
-- [Solidworks API Objects](#solidworks-api-objects)
+This post is divided into following sections. 
 
 Feel free to select the topic you want to.
+
+  - [Code Demo Video on YouTube](#video-of-code-on-youtube)
+
+  - [For Experience Macro Developers](#for-experience-macro-developer---circular-sketch-pattern-from-vba-macro)
+
+  - [For Beginner Macro Developers](#for-beginners-macro-developers---circular-sketch-pattern-from-vba-macro)
+
+    - [Understanding the Code](#understanding-the-code)
+
+    - [NOTE](#note)
+
+  - [VBA Language feature used in this post](#vba-language-feature-used-in-this-post)
+
+  - [Solidworks API Objects](#solidworks-api-objects)
 
 ---
 
