@@ -23,7 +23,7 @@ One thing is sure, I am not going to explain in very detail because I am more of
 
 I just want to explore **C++ in Visual studio** and best way to do is writing some program using my existing knowledge of ***Solidworks C# API***.
 
-So ***Solidworks C++ API*** posts are more "**how**" to type not much descriptive like Solidworks VBA posts, which tends to describe all in detailed manner.
+So ***Solidworks C++ API*** posts are more "**how**" to type not much descriptive like [Solidworks VBA posts](/Solidworks-macro-guide), which tends to describe all in detailed manner.
 
 That's it!!!
 
