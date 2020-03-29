@@ -1,25 +1,26 @@
 ---
 categories: Solidworks-macro
-title:  Solidworks Macro - Edit Linear Sketch Pattern From VBA Macro
+title:  Solidworks Macro - Edit Circular Sketch Pattern From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about **how to Edit Linear Sketch Pattern using Solidworks VBA Macros** in a Sketch.
+In this post, I tell you about **how to Edit Circular Sketch Pattern using Solidworks VBA Macros** in a Sketch.
 
-This post is extension of previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post.
+This post is extension of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post.
 
-I recommend you to read **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-+-macro/linear-skech-pattern)** post because we are using same code sample.
+I recommend you to read **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-+-macro/Circular-skech-pattern)** post because we are using same code sample.
 
 ---
 
 ## Content
 
-- *[Code Demo Video on YouTube](#video-of-code-on-youtube)*
+<!--
+- *[Code Demo Video on YouTube](#video-of-code-on-youtube)*-->
 
-- *[For Experience Macro Developers](#for-experience-macro-developer---edit-linear-sketch-pattern-from-vba-macro)*
+- *[For Experience Macro Developers](#for-experience-macro-developer---edit-Circular-sketch-pattern-from-vba-macro)*
 
-- *[For Beginner Macro Developers](#for-beginners-macro-developers---edit-linear-sketch-pattern-from-vba-macro)*
+- *[For Beginner Macro Developers](#for-beginners-macro-developers---edit-Circular-sketch-pattern-from-vba-macro)*
 
   - *[Multiple Cases](#cases)*
 
@@ -28,10 +29,10 @@ I recommend you to read **[Solidworks Macro - Linear Sketch Pattern From VBA Mac
 Feel free to select the topic you want to.
 
 ---
-
+<!--
 ## Video of Code on YouTube
 
-Please see below video how we can *Edit Linear Sketch Pattern* in **Solidworks VBA macro**.
+Please see below video how we can *Edit Circular Sketch Pattern* in **Solidworks VBA macro**.
 
 <iframe src="https://www.youtube.com/embed/4pLUprIxXHU" frameborder="0" allowfullscreen></iframe>
 <br>
@@ -40,43 +41,43 @@ Please note that there is **no explanation** in the video.
 
 Why we write our code this way is **explained** in this post.
 
----
+--- -->
 
-## For Experience Macro Developer - Edit Linear Sketch Pattern From VBA Macro
+## For Experience Macro Developer - Edit Circular Sketch Pattern From VBA Macro
 
 If you are an experienced **Solidworks Macro developer**, then you are looking for a specific code sample.
 
-Below is the code for **Edit Linear Sketch Pattern** from **Solidworks VBA Macro**.
+Below is the code for **Edit Circular Sketch Pattern** from **Solidworks VBA Macro**.
 
 ```vb
 ' Boolean Variable
 Dim BoolStatus As Boolean
 
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
 ```
 
-**Method Name**: `EditLinearSketchStepAndRepeat`
+**Method Name**: `EditCircularSketchStepAndRepeat`
 
-**Description**: Edit *Linear Sketch Pattern*.
+**Description**: Edit *Circular Sketch Pattern*.
 
-**Prerequisites**: To *edit* a **Linear Sketch Pattern** a Solidworks Sketch entity or entities, first, we need the following things:
+**Prerequisites**: To *edit* a **Circular Sketch Pattern** a Solidworks Sketch entity or entities, first, we need the following things:
 
-  1. Existing Linear Sketch Pattern
+  1. Existing Circular Sketch Pattern
 
 **How it works**:
 
-  - For **Edit a Linear Sketch Pattern**, first, we need to **create** a variable of `Boolean` type.
+  - For **Edit a Circular Sketch Pattern**, first, we need to **create** a variable of `Boolean` type.
 
   - After creating variable, we need to set the value of this `Boolean` variable.
 
-  - For this, we used `EditLinearSketchStepAndRepeat` method from **Solidworks Sketch Manager**.
+  - For this, we used `EditCircularSketchStepAndRepeat` method from **Solidworks Sketch Manager**.
 
-  - This `EditLinearSketchStepAndRepeat` method set the value of `Boolean` type variable.
+  - This `EditCircularSketchStepAndRepeat` method set the value of `Boolean` type variable.
 
-  - If the editing of *Linear Sketch Pattern* is **successful** then `EditLinearSketchStepAndRepeat` method return **True** value otherwise `EditLinearSketchStepAndRepeat` returns **False** value.
+  - If the editing of *Circular Sketch Pattern* is **successful** then `EditCircularSketchStepAndRepeat` method return **True** value otherwise `EditCircularSketchStepAndRepeat` returns **False** value.
 
-This `EditLinearSketchStepAndRepeat` method takes the following parameters as explained:
+This `EditCircularSketchStepAndRepeat` method takes the following parameters as explained:
 
   - **NumX**: *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
 
@@ -106,23 +107,23 @@ This `EditLinearSketchStepAndRepeat` method takes the following parameters as ex
 
 **Return Value**:
 
-  - **True**: *If Editing of Linear Sketch Pattern is "Success".*
+  - **True**: *If Editing of Circular Sketch Pattern is "Success".*
 
-  - **False**: *If Editing of Linear Sketch Pattern is "Fail".*
+  - **False**: *If Editing of Circular Sketch Pattern is "Fail".*
 
-If you want more detailed explaination then please read further otherwise this will help you to *edit* a **Linear Sketch Pattern From VBA Macro**.
+If you want more detailed explaination then please read further otherwise this will help you to *edit* a **Circular Sketch Pattern From VBA Macro**.
 
 ---
 
-## For Beginners Macro Developers - Edit Linear Sketch Pattern From VBA Macro
+## For Beginners Macro Developers - Edit Circular Sketch Pattern From VBA Macro
 
-In this post, I tell you about `EditLinearSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `EditCircularSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *edit Linear Sketch Pattern*.
+So ***use this method*** if you want to *edit Circular Sketch Pattern*.
 
-Below is the `code` sample to *edit Linear Sketch Pattern*.
+Below is the `code` sample to *edit Circular Sketch Pattern*.
 
 ```vb
 Option Explicit
@@ -175,44 +176,44 @@ Sub main()
   ' Select Circle we want to Pattern
   BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Create a Linear Sketch Pattern
-  BoolStatus = swSketchManager.CreateLinearSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
+  ' Create a Circular Sketch Pattern
+  BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
   
-  ' De-select the Sketch Segment after Linear Sketch Pattern
+  ' De-select the Sketch Segment after Circular Sketch Pattern
   swDoc.ClearSelection2 True
   
-  ' Show Front View after Linear Sketch Pattern
+  ' Show Front View after Circular Sketch Pattern
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
   swDoc.ViewZoomtofit2
 
-  ' Edit a Linear Sketch Pattern <--- FROM HERE IS THE LAST LINE I EXPLAIN
-  BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+  ' Edit a Circular Sketch Pattern <--- FROM HERE IS THE LAST LINE I EXPLAIN
+  BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 
 End Sub
 ```
 
-Since this post is *an extension* of previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post, then I will start explaining from **Last line** only.
+Since this post is *an extension* of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post, then I will start explaining from **Last line** only.
 
-If you want to understand every line of code, then please visit **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post "first", then read this post.
+If you want to understand every line of code, then please visit **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post "first", then read this post.
 
 By doing this, *you learn 2 thing*:
 
-  1. *How to create a Linear Sketch Pattern*
+  1. *How to create a Circular Sketch Pattern*
 
-  2. *How to edit/modify an existing Linear Sketch Pattern*
+  2. *How to edit/modify an existing Circular Sketch Pattern*
 
 I also give some *links* so that you can go through them if there are anything I *explained* in previous posts.
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 ```
 
-For "**editing**" a Linear Sketch pattern, we need `EditLinearSketchStepAndRepeat` method from *Solidworks Sketch Manager* object/variable.
+For "**editing**" a Circular Sketch pattern, we need `EditCircularSketchStepAndRepeat` method from *Solidworks Sketch Manager* object/variable.
 
-This `EditLinearSketchStepAndRepeat` method takes the following parameters as explained:
+This `EditCircularSketchStepAndRepeat` method takes the following parameters as explained:
 
   - **NumX**: *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
 
@@ -246,9 +247,9 @@ After the function complete, we get following results:
 
 **Return Value**:
 
-  - **True**: *If Editing of Linear Sketch Pattern is "Success".*
+  - **True**: *If Editing of Circular Sketch Pattern is "Success".*
 
-  - **False**: *If Editing of Linear Sketch Pattern is "Fail".*
+  - **False**: *If Editing of Circular Sketch Pattern is "Fail".*
 
 In our code, I have used following values:
 
@@ -278,7 +279,7 @@ In our code, I have used following values:
 
   - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
 
-  - **Seed** : *I use **Arc1_** as the seed of this Edit Pattern Function. We can select multiple sketch entities into existing Linear Sketch Pattern.*
+  - **Seed** : *I use **Arc1_** as the seed of this Edit Pattern Function. We can select multiple sketch entities into existing Circular Sketch Pattern.*
 
 ---
 
@@ -298,15 +299,15 @@ In this section, we will go through different cases by
   
 #### CASE 1 : Increase Total number of instances along the "X" axis
 
-To increase Total number of instances along the "X" axis, we need to update **NumX** parameter in `EditLinearSketchStepAndRepeat` method.
+To increase Total number of instances along the "X" axis, we need to update **NumX** parameter in `EditCircularSketchStepAndRepeat` method.
 
-In my previous **[Solidworks Macro - Linear Sketch Pattern From VBA Macro](/solidworks-macro/linear-skech-pattern)** post, we created a Linear pattern *3 instances* in *x-direction*.
+In my previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post, we created a Circular pattern *3 instances* in *x-direction*.
 
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
 ```
 
 In above code, we update the number of instances from *3 instances* to *5 instances*.
@@ -315,19 +316,19 @@ In above code, we update the number of instances from *3 instances* to *5 instan
 
 Below image shows before and after we update **number of instance in X-direction**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![after-linear-pattern](/assets/Solidworks_Images/sketch-patterns/after-linear-pattern.png)
+![after-Circular-pattern](/assets/Solidworks_Images/sketch-patterns/after-Circular-pattern.png)
 
-**After Edit Linear Sketch Pattern**
+**After Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numX.png)
+![edit-Circular-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numX.png)
 
 ---
 
 #### CASE 2 : Increase Total number of instances along the "Y" axis
 
-To increase Total number of instances along the "Y" axis, we need to update **NumY** parameter in `EditLinearSketchStepAndRepeat` method.
+To increase Total number of instances along the "Y" axis, we need to update **NumY** parameter in `EditCircularSketchStepAndRepeat` method.
 
 If we increase the number of instances in *Y-direction*, then we also need to give value for **SpacingY** parameter.
 
@@ -346,21 +347,21 @@ If we increase the number of instances in *Y-direction*, then we also need to gi
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0, 0, "", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0, 0, "", True, False, True, True, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows before and after we update **number of instance in Y-direction**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numX.png)
+![edit-Circular-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numX.png)
 
-**After Edit Linear Sketch Pattern**
+**After Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numY.png)
+![edit-Circular-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numY.png)
 
 ***NOTE:***
 
@@ -380,7 +381,7 @@ More detail with example in **CASE 4**.
 
 #### CASE 3 : Update Angle for direction 1 along the "X" axis
 
-To update Angle for *direction 1* along the "X" axis, we need to update **AngleX** parameter in `EditLinearSketchStepAndRepeat` method.
+To update Angle for *direction 1* along the "X" axis, we need to update **AngleX** parameter in `EditCircularSketchStepAndRepeat` method.
 
 *We will use following value for **AngleX** parameter:*
 
@@ -389,21 +390,21 @@ To update Angle for *direction 1* along the "X" axis, we need to update **AngleX
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 0, "", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 0, "", True, False, True, True, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows before and after we update **Angle for direction 1 along the "X" axis**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-numY.png)
+![edit-Circular-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numY.png)
 
-**After Edit Linear Sketch Pattern**
+**After Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleX.png)
+![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleX.png)
 
 ***NOTE:***
 
@@ -419,7 +420,7 @@ So we have update Angle for direction 1 in **~45 degree**.
 
 #### CASE 4 : Update Angle for direction 1 along the "Y" axis
 
-To update Angle for *direction 2* along the "Y" axis, we need to update **AngleY** parameter in `EditLinearSketchStepAndRepeat` method.
+To update Angle for *direction 2* along the "Y" axis, we need to update **AngleY** parameter in `EditCircularSketchStepAndRepeat` method.
 
 *We will use following value for **AngleY** parameter:*
 
@@ -428,21 +429,21 @@ To update Angle for *direction 2* along the "Y" axis, we need to update **AngleY
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "", True, False, True, True, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows before and after we update **Angle for direction 2 along the "Y" axis**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleX.png)
+![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleX.png)
 
-**After Edit Linear Sketch Pattern**
+**After Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-angleY.png)
+![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleY.png)
 
 ***NOTE:***
 
@@ -474,7 +475,7 @@ I tried my best to describe you this position system in Grid format using image.
 
 Please see below image for this Grid position.
 
-![edit-linear-pattern-deleteInstances](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-deleteInstances.png)
+![edit-Circular-pattern-deleteInstances](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-deleteInstances.png)
 
 We are going to delete 2 instances.
 
@@ -499,8 +500,8 @@ Please see below code sample for detail.
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, False, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, False, True, True, False, "Arc1_")
 ```
 
 ---
@@ -518,17 +519,17 @@ For that we need to set **`YSpacingDim = True`**.
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, True, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, True, True, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows after we update value for **display dimension along the **Y** axis**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-YSpacingDim](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-YSpacingDim.png)
+![edit-Circular-pattern-YSpacingDim](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-YSpacingDim.png)
 
 ---
 
@@ -543,17 +544,17 @@ If we don't want to display the angle dimension between axes then we need to set
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, True, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, True, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows after we update value to `False` for **the angle dimension between axes**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-AngleDim](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-AngleDim.png)
+![edit-Circular-pattern-AngleDim](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-AngleDim.png)
 
 ---
 
@@ -568,17 +569,17 @@ If we don't want to display the number of instances along the **X** axis then we
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, False, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, False, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows after we update value to `False` for **not display the number of instances in the X direction**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInXDir.png)
+![edit-Circular-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-CreateNumOfInstancesDimInXDir.png)
 
 ---
 
@@ -593,23 +594,23 @@ If we want to display the number of instances along the **Y** axis then we need 
 ***Code sample:***
 
 ```vb
-' Edit a Linear Sketch Pattern
-BoolStatus = swSketchManager.EditLinearSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
+' Edit a Circular Sketch Pattern
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
 ```
 
 ***Example Images:***
 
 Below image shows after we update value to `True` for **display the number of instances in the Y direction**.
 
-**Before Edit Linear Sketch Pattern**
+**Before Edit Circular Sketch Pattern**
 
-![edit-linear-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-linear-pattern-CreateNumOfInstancesDimInYDir.png)
+![edit-Circular-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-CreateNumOfInstancesDimInYDir.png)
 
 ---
 
 #### CASE 10 : Multiple entities as Seed
 
-In our code sample, we use only **1 circle** for *Linear Sketch pattern*.
+In our code sample, we use only **1 circle** for *Circular Sketch pattern*.
 
 But in many cases we need to select **many sketch entities**.
 
@@ -644,7 +645,7 @@ Because Solidworks API output the distance in **Meter** which is not my requirem
 
 If you found anything to add or update, please let me know on my e-mail.
 
-Hope this post helps you to *Edit a Linear Sketch Pattern* with Solidworks VBA Macros.
+Hope this post helps you to *Edit a Circular Sketch Pattern* with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 
