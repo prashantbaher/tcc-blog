@@ -157,6 +157,54 @@ Sub main()
 
   ' Set Solidworks document to new part document
   Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+  
+  '-----------------------UNIT CONVERSION----------------------------------------
+
+  ' Local variables used as Conversion Factors
+  Dim LengthConversionFactor As Double
+  Dim AngleConversionFactor As Double
+  
+  ' Use a Select Case, to get the length of active Unit and set the different factors
+  Select Case swDoc.GetUnits(0)       ' GetUnits function gives us, active unit
+    
+    Case swMETER    ' If length is in Meter
+      LengthConversionFactor = 1
+      AngleConversionFactor = 1
+    
+    Case swMM       ' If length is in MM
+      LengthConversionFactor = 1 / 1000
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swCM       ' If length is in CM
+      LengthConversionFactor = 1 / 100
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swINCHES   ' If length is in INCHES
+      LengthConversionFactor = 1 * 0.0254
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swFEET     ' If length is in FEET
+      LengthConversionFactor = 1 * (0.0254 * 12)
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swFEETINCHES     ' If length is in FEET & INCHES
+      LengthConversionFactor = 1 * 0.0254  ' For length we use sama as Inch
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swANGSTROM        ' If length is in ANGSTROM
+      LengthConversionFactor = 1 / 10000000000#
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swNANOMETER       ' If length is in NANOMETER
+      LengthConversionFactor = 1 / 1000000000
+      AngleConversionFactor = 1 * 0.01745329
+    
+    Case swMICRON       ' If length is in MICRON
+      LengthConversionFactor = 1 / 1000000
+      AngleConversionFactor = 1 * 0.01745329
+  End Select
+
+  '----------------------------------------------------------------
 
   ' Select Front Plane
   BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
@@ -167,30 +215,53 @@ Sub main()
   ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
+  ' Circle Radius
+  Dim circleRadius As Double
+  circleRadius = 5 * LengthConversionFactor
+  
   ' Set Sketch Segment value and Create a Circle
-  Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, 0.2)
+  Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, circleRadius)
   
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
 
   ' Select Circle we want to Pattern
-  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 1, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Arc Radius
+  Dim arcRadius As Double
+  arcRadius = 10 * LengthConversionFactor
+  
+  ' Arc Radius
+  Dim arcAngle As Double
+  arcAngle = 0 * AngleConversionFactor
+  
+  ' Number of Instances
+  Dim numberOfInstance As Double
+  numberOfInstance = 3
+  
+  ' Number of Instances
+  Dim patternSpacing As Double
+  patternSpacing = 5 * AngleConversionFactor
   
   ' Create a Circular Sketch Pattern
-  BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(3, 1, 1, 0, 0, 0, "", True, False, True, True, False)
+  BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True)
   
   ' De-select the Sketch Segment after Circular Sketch Pattern
   swDoc.ClearSelection2 True
   
+  ' Update Arc Radius
+  arcRadius = 20 * LengthConversionFactor
+
+  ' Edit a Circular Sketch Pattern
+  BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True, "Arc1_")
+
   ' Show Front View after Circular Sketch Pattern
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
   ' Zoom to fit screen in Solidworks Window
   swDoc.ViewZoomtofit2
-
-  ' Edit a Circular Sketch Pattern <--- FROM HERE IS THE LAST LINE I EXPLAIN
-  BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
-
+  
 End Sub
 ```
 
