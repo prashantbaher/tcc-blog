@@ -136,12 +136,14 @@ Below posts teach you how to create Sketch Offset and Mirror Sketch in *Solidwor
 
 * [Sketch - Mirror Entities](/solidworks-macro/mirror-entities)
 
-### Create Sketch Pattern and Edit existing Sketch Pattern From VBA Macro
+### Create Sketch Patterns and Edit existing Sketch Patterns From VBA Macro
 
-In Below posts, I show you how to create **Sketch Pattern** and **edit patterns** from Solidworks macro using VBA.
+In Below posts, I show you how to create **Sketch Patterns** and **edit patterns** from Solidworks macro using VBA.
 
 * [Sketch - Linear Sketch Pattern](/solidworks-macro/linear-skech-pattern)
 
 * [Sketch - Edit Linear Sketch Pattern](/solidworks-macro/edit-linear-skech-pattern)
 
 * [Sketch - Circular Sketch Pattern](/solidworks-macro/circular-skech-pattern)
+
+* [Sketch - Edit Circular Sketch Pattern](/solidworks-macro/edit-circular-skech-pattern)
