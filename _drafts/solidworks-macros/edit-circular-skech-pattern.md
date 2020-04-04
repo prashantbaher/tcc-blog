@@ -5,28 +5,61 @@ image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about **how to Edit Circular Sketch Pattern using Solidworks VBA Macros** in a Sketch.
-
-This post is extension of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post.
-
-I recommend you to read **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-+-macro/Circular-skech-pattern)** post because we are using same code sample.
-
----
-
 ## Content
 
-<!--
-- *[Code Demo Video on YouTube](#video-of-code-on-youtube)*-->
+This post is divided into below sections:
 
-- *[For Experience Macro Developers](#for-experience-macro-developer---edit-Circular-sketch-pattern-from-vba-macro)*
+  - *[Introduction](#introduction)*
 
-- *[For Beginner Macro Developers](#for-beginners-macro-developers---edit-Circular-sketch-pattern-from-vba-macro)*
+  - *[Code Sample](#code-sample)*
+
+  - *[Understanding the Code](#understanding-the-code)*
 
   - *[Multiple Cases](#cases)*
 
+    - *[Update Arc Radius](#update-arc-radius)*
+
+    - *[Update Arc Angle](#update-arc-angle)*
+
+    - *[Update Number of Instances](#update-number-of-instances)*
+
+    - *[Update Pattern Spacing](#update-pattern-spacing)*
+
+    - *[Update Display Rotation of Pattern](#update-rotation-of-pattern)*
+
+    - *[Update Number of Instances to Delete](#update-number-of-instance-to-delete)*
+
+    - *[Update Display Radius Dimension](#update-display-radius-dimension)*
+
+    - *[Update Display Angle Dimension](#update-display-angle-dimension)*
+
+    - *[Update Display Number of Instances](#update-display-number-of-instance)*
+
   - *[NOTE](#note)*
 
-Feel free to select the topic you want to.
+Feel free to select the section you want to go!
+
+---
+
+## Introduction
+
+In this post, I tell you about **how to Edit Circular Sketch Pattern using Solidworks VBA Macros** in a Sketch.
+
+In this post, I explain about `EditCircularSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
+
+This method is ***most updated*** method, I found in *Solidworks API Help*. 
+
+So ***use this method*** if you want to *edit existing Circular Sketch Pattern*.
+
+This post is a little different of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post.
+
+There are 2 changes I have made, which I am going to use on future posts also.
+
+These change are explain below:
+
+ - In this post I used `code sample` from **[General - Fix Unit Issue](/solidworks-macro/unit-correction)** post to fix unit conversion issue and show how to use it.
+
+ - In input parameter of `EditCircularSketchStepAndRepeat` method, I passed variables not direct values. This helps us to maintain the code and modification of existing code is simple.
 
 ---
 <!--
@@ -41,7 +74,7 @@ Please note that there is **no explanation** in the video.
 
 Why we write our code this way is **explained** in this post.
 
---- -->
+--- 
 
 ## For Experience Macro Developer - Edit Circular Sketch Pattern From VBA Macro
 
@@ -113,15 +146,9 @@ This `EditCircularSketchStepAndRepeat` method takes the following parameters as 
 
 If you want more detailed explaination then please read further otherwise this will help you to *edit* a **Circular Sketch Pattern From VBA Macro**.
 
----
+--- -->
 
-## For Beginners Macro Developers - Edit Circular Sketch Pattern From VBA Macro
-
-In this post, I tell you about `EditCircularSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
-
-This method is ***most updated*** method, I found in *Solidworks API Help*. 
-
-So ***use this method*** if you want to *edit Circular Sketch Pattern*.
+## Code Sample
 
 Below is the `code` sample to *edit Circular Sketch Pattern*.
 
@@ -232,7 +259,7 @@ Sub main()
   Dim arcRadius As Double
   arcRadius = 10 * LengthConversionFactor
   
-  ' Arc Radius
+  ' Arc Angle
   Dim arcAngle As Double
   arcAngle = 0 * AngleConversionFactor
   
@@ -240,7 +267,7 @@ Sub main()
   Dim numberOfInstance As Double
   numberOfInstance = 3
   
-  ' Number of Instances
+  ' Pattern Spacing
   Dim patternSpacing As Double
   patternSpacing = 5 * AngleConversionFactor
   
@@ -265,454 +292,629 @@ Sub main()
 End Sub
 ```
 
-Since this post is *an extension* of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post, then I will start explaining from **Last line** only.
+---
 
-If you want to understand every line of code, then please visit **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post "first", then read this post.
+### Understanding the Code
 
-By doing this, *you learn 2 thing*:
+Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
-  1. *How to create a Circular Sketch Pattern*
+I also give some link so that you can go through them if there are anything I explained in **previous posts**.
 
-  2. *How to edit/modify an existing Circular Sketch Pattern*
+```vb
+Option Explicit
+```
 
-I also give some *links* so that you can go through them if there are anything I *explained* in previous posts.
+This line forces us to define every variable we are going to use. 
+
+For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+
+```vb
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+```
+
+In this line, we create a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
+
+```vb
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+```
+
+In this line, we create a variable which we named as `swDoc` and the type of this `swDoc` variable is `SldWorks.ModelDoc2`.
+
+```vb
+' Boolean Variable
+Dim BoolStatus As Boolean
+```
+
+In this line, we create a variable named `BoolStatus` as `Boolean` object type.
+
+```vb
+' Create variable for Solidworks Sketch Manager
+Dim swSketchManager As SldWorks.SketchManager
+```
+
+In above line, we create variable `swSketchManager` for **Solidworks Sketch Manager**.
+
+As the name suggested, a **Sketch Manager** holds variours methods and properties to manage *Sketches*.
+
+To see methods and properties related to `SketchManager` object, please visit [this page](help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html)
+
+```vb
+' Create variable for Solidworks Sketch Segment
+Dim swSketchSegment As SldWorks.SketchSegment
+```
+
+In this line, we Create a variable which we named as `swSketchSegment` and the type of this `swSketchSegment` variable is `SldWorks.SketchSegment`.
+
+We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
+
+To see methods and properties related to `swSketchSegment` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html)
+
+These all are our global variables.
+
+As you can see in code sample, they are **Solidworks API Objects**.
+
+So basically I group all the **Solidworks API Objects** in one place.
+
+I have also place `boolean` type object at top also, because after certain point we will *need* this variable frequently.
+
+Thus, I have started placing it here.
+
+Next is our `Sub` procedure which has name of `main`. 
+
+This procedure hold all the *statements (instructions)* we give to computer.
+
+```vb
+' Set Solidworks variable to Solidworks application
+Set swApp = Application.SldWorks
+```
+
+In this line, we set the value of our Solidworks variable `swApp`; which we define earlier; to Solidworks application.
+
+```vb
+' Create string type variable for storing default part location
+Dim defaultTemplate As String
+' Set value of this string type variable to "Default part template"
+defaultTemplate = swApp.GetUserPreferenceStringValue(swUserPreferenceStringValue_e.swDefaultTemplatePart)
+```
+
+In 1st statement of above example, we are defining a variable of `string` type and named it as `defaultTemplate`.
+
+This variable `defaultTemplate`, hold the location the location of **Default Part Template**.
+
+In 2nd line of above example. we assign value to our newly define `defaultTemplate` variable.
+
+We assign the value by using a *Method* named `GetUserPreferenceStringValue()`. 
+
+This `GetUserPreferenceStringValue()` method is a part of our main Solidworks variable `swApp`.
+
+```vb
+' Set Solidworks document to new part document
+Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
+```
+
+In this line, we set the value of our `swDoc` variable to new document.
+
+For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+
+I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
+
+```vb
+'-----------------------UNIT CONVERSION----------------------------------------
+
+' Local variables used as Conversion Factors
+Dim LengthConversionFactor As Double
+Dim AngleConversionFactor As Double
+
+' Use a Select Case, to get the length of active Unit and set the different factors
+Select Case swDoc.GetUnits(0)       ' GetUnits function gives us, active unit
+  
+  Case swMETER    ' If length is in Meter
+    LengthConversionFactor = 1
+    AngleConversionFactor = 1
+  
+  Case swMM       ' If length is in MM
+    LengthConversionFactor = 1 / 1000
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swCM       ' If length is in CM
+    LengthConversionFactor = 1 / 100
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swINCHES   ' If length is in INCHES
+    LengthConversionFactor = 1 * 0.0254
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swFEET     ' If length is in FEET
+    LengthConversionFactor = 1 * (0.0254 * 12)
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swFEETINCHES     ' If length is in FEET & INCHES
+    LengthConversionFactor = 1 * 0.0254  ' For length we use sama as Inch
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swANGSTROM        ' If length is in ANGSTROM
+    LengthConversionFactor = 1 / 10000000000#
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swNANOMETER       ' If length is in NANOMETER
+    LengthConversionFactor = 1 / 1000000000
+    AngleConversionFactor = 1 * 0.01745329
+  
+  Case swMICRON       ' If length is in MICRON
+    LengthConversionFactor = 1 / 1000000
+    AngleConversionFactor = 1 * 0.01745329
+End Select
+
+'----------------------------------------------------------------
+```
+
+Above code sample shows how to **fix Solidworks API Unit issue**. 
+
+We *1st* get the *current unit* of the part and apply the *switch* statements to update our *Length and Angle Conversion factors*. 
+
+I have already explained in detail about **Fixing Solidworks API Unit Issue** in **[General - Fix Unit Issue](/solidworks-macro/unit-correction)** blog post. 
+
+Do checkout above post for Fixing Solidworks API Issue.
+
+```vb
+' Select Front Plane
+BoolStatus = swDoc.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+```
+
+In above line, we select the *front plane* by using `SelectByID2` method from `Extension` object.
+
+For more information about selection method please visit **[Solidworks Macros - Selection Methods](/solidworks-macro/select-plane-from-tree)** post.
+
+```vb
+' Set Sketch manager for our sketch
+Set swSketchManager = swDoc.SketchManager
+```
+
+In above line, we set the *Sketch manager* variable to *current document's sketch manager*.
+
+```vb
+' Insert a sketch into selected plane
+swSketchManager.InsertSketch True
+```
+
+In above line, we use `InsertSketch` method of *SketchManager* and give `True` value.
+
+This method allows us to insert a sketch in selected plane.
+
+
+```vb
+' Circle Radius
+Dim circleRadius As Double
+circleRadius = 5 * LengthConversionFactor
+```
+
+In above code sample, we do following:
+
+  1. Create a local variable named `circleRadius`, which is `Double` type.
+
+  2. In 2nd line, we assign a value of **5** to our `circleRadius` variable, also we multiple with our `LengthConversionFactor` variable.
+
+Since I am using *IPS unit system*, I want to create a circle of Radius *5 inch*.
+
+```vb
+' Set Sketch Segment value and Create a Circle
+Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, circleRadius)
+```
+
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
+
+This `CreateCircleByRadius` method creates *a Circle* at given point with radius.
+
+For more information about `CreateCircleByRadius` method, you can read my [Solidworks Macro - Create Circle By Radius From VBA Macro](/solidworks-macro/create-circle-by-radius) post.
+
+That post describe all the parameters we need for this `CreateCircleByRadius` method in details.
+
+In above line, we create a Circle with:
+
+  - **Circle Centerpoint** : At origin i.e. *(0, 0, 0)*
+
+  - **Circle Radius** : *`circleRadius`*
+
+```vb
+' De-select the Sketch after creation
+swDoc.ClearSelection2 True
+```
+
+In the above line of code, we deselect the **Sketch** after the *Circular Sketch Pattern* operation.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Select Circle we want to Pattern
+BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+```
+
+In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
+
+```vb
+' Arc Radius
+Dim arcRadius As Double
+arcRadius = 10 * LengthConversionFactor
+```
+
+Above code sample creates a variable for **Arc Radius** and assign value.
+
+While assigning the value we multiple with `LengthConversionFactor` to get correct length.
+
+Variable Name: `arcRadius`
+
+Variable type: `Double`
+
+Variable Value: 10 inch
+
+*We want Arc Radius to 10 inch.*
+
+> **By creating the variables we can handle the values more effciently.**
+
+```vb
+' Arc Angle
+Dim arcAngle As Double
+arcAngle = 0 * AngleConversionFactor
+```
+
+Above code sample creates a variable for **Arc Angle** and assign value.
+
+While assigning the value we multiple with `AngleConversionFactor` to get correct angle.
+
+Variable Name: `arcAngle`
+
+Variable type: `Double`
+
+Variable Value: 0
+
+*We want Arc Angle to 0 degree.*
+
+```vb
+' Number of Instances
+Dim numberOfInstance As Double
+numberOfInstance = 3
+```
+
+Above code sample creates a variable for **Number of Instances** and assign value.
+
+Variable Name: `numberOfInstance`
+
+Variable type: `Double`
+
+Variable Value: 3
+
+*We want 3 copies of the circle including the seed i.e. original circle.*
+
+```vb
+' Pattern Spacing
+Dim patternSpacing As Double
+patternSpacing = 5 * AngleConversionFactor
+```
+
+Above code sample creates a variable for **Pattern Spacing** and assign value.
+
+While assigning the value we multiple with `AngleConversionFactor` to get correct angle.
+
+Variable Name: `patternSpacing`
+
+Variable type: `Double`
+
+Variable Value: 5
+
+*We want 5 degree of spacing between each circle.*
+
+```vb
+' Create a Circular Sketch Pattern
+BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True)
+```
+
+In above code sample we *Create a Circular Sketch Pattern* of the selected circle by `CreateCircularSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
+
+As you can see we pass our *previously created variables* `arcRadius`, `arcAngle`, `numberOfInstance` and `patternSpacing` in `CreateCircularSketchStepAndRepeat` method as parameters.
+
+I have explained `CreateCircularSketchStepAndRepeat` method in detail in **[Sketch - Circular Sketch Pattern](/solidworks-macro/circular-skech-pattern)** post.
+
+Please see above post if you want to learn more about `CreateCircularSketchStepAndRepeat` method and its parameters.
+
+Below image shows Circular Sketch Pattern Parameter.
+
+![before-edit-circular-pattern](/assets/Solidworks_Images/sketch-patterns/before-edit-circular-pattern.png)
+
+```vb
+' De-select the Sketch Segment after Circular Sketch Pattern
+swDoc.ClearSelection2 True
+```
+
+In above line we *de-select* the *Sketch Segment* after creating *Circular Sketch Pattern*.
+
+```vb
+' Update Arc Radius
+arcRadius = 20 * LengthConversionFactor
+```
+
+In above line we **Update Arc Radius** to new value which we will use in *Editing previously created Circular Sketch pattern*.
+
+Variable Name: `arcRadius`
+
+Updated Value: 20 inch
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True, "Arc1_")
 ```
 
 For "**editing**" a Circular Sketch pattern, we need `EditCircularSketchStepAndRepeat` method from *Solidworks Sketch Manager* object/variable.
 
-This `EditCircularSketchStepAndRepeat` method takes the following parameters as explained:
+This `CreateCircularSketchStepAndRepeat` method takes following parameters as explained:
 
-  - **NumX**: *Total number of instances along the **x** axis, including the seed i.e. original entity/entities.*
+  - **ArcRadius** : *Radius for the circular sketch pattern. This value is in radian.*
 
-  - **NumY**: *Total number of instances along the **y** axis, including the seed i.e. original entity/entities.*
+  - **ArcAngle** : *Angle relative to the sketch entities being patterned. This value is in radian.*
 
-  - **SpacingX**: *Spacing between instances along the **x** axis.*
+  - **PatternNum** : *Total number of instances, including the seed geometry.*
 
-  - **SpacingY**: *Spacing between instances along the **y** axis.*
+  - **PatternSpacing** : *Spacing between pattern instances. This value is in radian.*
 
-  - **AngleX**: *Angle for direction 1 relative to the **x** axis.*
+  - **PatternRotate** : *True to rotate the pattern, false to not.*
 
-  - **AngleY**: *Angle for direction 1 relative to the **y** axis.*
+  - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
 
-  - **DeleteInstances**: *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
-
-  - **XSpacingDim**: *True to display the spacing between instances dimension along the **x** axis in the graphics area, false to not*
-
-  - **YSpacingDim**: *True to display the spacing between instances dimension along the **y** axis in the graphics area, false to not*
+  - **RadiusDim** : *True to display the radius dimension in the graphics area, false to not.*
   
-  - **AngleDim**: *True to display the angle dimension between axes in the graphics area, false to not.*
+  - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInXDir**: *True to display the number of instances in the **x** direction dimension in the graphics area, false to not.*
+  - **CreateNumOfInstancesDim** : *True to display the number of instances dimension in the graphics area, false to not.*
 
-  - **CreateNumOfInstancesDimInYDir**: *True to display the number of instances in the **y** direction dimension in the graphics area, false to not.*
-
-  - **Seed**: *List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Line1_Line2_Line3_Line4 for a rectangular-shaped seed pattern).*
+  - **Seed**: *List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Arc1_ as a seed pattern).*
 
 **NOTE:** In *Seed*, adding underscore(_) after selected entity is important, otherwise code will note work.
 
-After the function complete, we get following results:
+After the function complete following are the results:
 
 **Return Value**:
 
-  - **True**: *If Editing of Circular Sketch Pattern is "Success".*
+  - **True**: *If Edit Circular Sketch Pattern is *Success*.*
 
-  - **False**: *If Editing of Circular Sketch Pattern is "Fail".*
-
-In our code, I have used following values:
-
-  - **NumX** : *I have used **5** as Total number of instances along the **x** axis including original circle.*
-
-  - **NumY** : *I have used **1** as Total number of instances along the **y** axis which includes original circle only.*
-
-  > *Even uf you don't want to pattern in **Y** direction, you have to give atleast 1 as a value. Same goes for **X** direction.*
-
-  - **SpacingX** : *I use **1** as Spacing between instances along the **x** axis.*
-
-  - **SpacingY** : *I use **0** Spacing between instances along the **y** axis.*
-
-  - **AngleX** : *I use **0** Angle for direction 1 relative to the **x** axis.*
-
-  - **AngleY** : *I use **0** Angle for direction 1 relative to the **y** axis.*
-
-  - **DeleteInstances** : *I use **""** as Number of instances to delete, because I don't want to delete any instances.*
-
-  - **XSpacingDim** : *I use **True** to display the spacing between instances dimension along the **x** axis in the graphics area.*
-
-  - **YSpacingDim** : *I use **False** to display the spacing between instances dimension along the **y** axis in the graphics area.*
-  
-  - **AngleDim** : *I use **True** to display the angle dimension between axes in the graphics area.*
-
-  - **CreateNumOfInstancesDimInXDir** : *I use **True** to display the number of instances in the **x** direction dimension in the graphics area.*
-
-  - **CreateNumOfInstancesDimInYDir** : *I use **False** to display the number of instances in the **y** direction dimension in the graphics area.*
-
-  - **Seed** : *I use **Arc1_** as the seed of this Edit Pattern Function. We can select multiple sketch entities into existing Circular Sketch Pattern.*
+  - **False**: *If Edit Circular Sketch Pattern is *Fail*.*
 
 ---
 
-### Cases
+### **Cases**
 
 In this section, we will go through different cases by 
 
   - *Modifying different parameters*
 
-    1. *A basic 1 line description*
-
-    2. *Sample Code of parameter modification*
-
   - *See images, before and after parameter modification*
 
 ---
   
-#### CASE 1 : Increase Total number of instances along the "X" axis
+#### CASE 1 : Update Arc Radius
 
-To increase Total number of instances along the "X" axis, we need to update **NumX** parameter in `EditCircularSketchStepAndRepeat` method.
-
-In my previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post, we created a Circular pattern *3 instances* in *x-direction*.
-
-***Code sample:***
+In our code, if we want to update Arc Radius, then we need to update `arcRadius` variable only.
 
 ```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 1, 1, 0, 0, 0, "", True, False, True, True, False, "Arc1_")
+' Update Arc Radius
+arcRadius = 20 * LengthConversionFactor
 ```
 
-In above code, we update the number of instances from *3 instances* to *5 instances*.
+In above line we **Update Arc Radius** to new value. of 20 inch.
 
 ***Example Images:***
 
-Below image shows before and after we update **number of instance in X-direction**.
+Below image shows before and after we update **Arc Radius**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Arc Radius**
 
-![after-Circular-pattern](/assets/Solidworks_Images/sketch-patterns/after-Circular-pattern.png)
+![before-edit-circular-pattern](/assets/Solidworks_Images/sketch-patterns/before-edit-circular-pattern.png)
 
-**After Edit Circular Sketch Pattern**
+**After Update Arc Radius**
 
-![edit-Circular-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numX.png)
+![after-update-arc-radius](/assets/Solidworks_Images/sketch-patterns/after-update-arc-radius.png)
 
----
+#### CASE 2 : Update Arc Angle
 
-#### CASE 2 : Increase Total number of instances along the "Y" axis
-
-To increase Total number of instances along the "Y" axis, we need to update **NumY** parameter in `EditCircularSketchStepAndRepeat` method.
-
-If we increase the number of instances in *Y-direction*, then we also need to give value for **SpacingY** parameter.
-
-*We need following parameters to update:*
-
-  - **NumY**
-
-  - **SpacingY**
-
-*We will use following values for these parameters:*
-
-  - **NumY**: *4*
-
-  - **SpacingY**: *0.75*
-
-***Code sample:***
+In our code, if we want to update Arc Angle, then we need to update `arcAngle` variable only.
 
 ```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0, 0, "", True, False, True, True, False, "Arc1_")
+' Update Arc Angle
+arcAngle = 30 * AngleConversionFactor
 ```
+
+In above line we **Update Arc Angle** to new value of 30 inch.
 
 ***Example Images:***
 
-Below image shows before and after we update **number of instance in Y-direction**.
+Below image shows before and after we update **Arc Angle**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Arc Angle**
 
-![edit-Circular-pattern-numX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numX.png)
+![after-update-arc-radius](/assets/Solidworks_Images/sketch-patterns/after-update-arc-radius.png)
 
-**After Edit Circular Sketch Pattern**
+**After Update Arc Angle**
 
-![edit-Circular-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numY.png)
+![after-update-arc-angle](/assets/Solidworks_Images/sketch-patterns/after-update-arc-angle.png)
 
-***NOTE:***
+#### CASE 3 : Update Number of Instances
 
-As you notice in previous image, when you give values for **NumY** and **SpacingY**, number of instances increased in X-direction!
-
-*Why the instances are increased in X-direction not in Y-direction as I was expecting?*
-
-This question comes in my mind after seeing the result!
-
-Reason is that we did not give value of **AngleY** parameter.
-
-If you provide the value of **AngleY** parameter then we can have instances in Y-direction.
-
-More detail with example in **CASE 4**.
-
----
-
-#### CASE 3 : Update Angle for direction 1 along the "X" axis
-
-To update Angle for *direction 1* along the "X" axis, we need to update **AngleX** parameter in `EditCircularSketchStepAndRepeat` method.
-
-*We will use following value for **AngleX** parameter:*
-
-  - **AngleX**: *0.785*.
-
-***Code sample:***
+In our code, if we want to update Number of Instances, then we need to update `numberOfInstance` variable only.
 
 ```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 0, "", True, False, True, True, False, "Arc1_")
+' Update Number of Instances
+numberOfInstance = 5
 ```
+
+In above line we **Update Number of Instances** to new value of 5 number of instances.
 
 ***Example Images:***
 
-Below image shows before and after we update **Angle for direction 1 along the "X" axis**.
+Below image shows before and after we update **Number of Instances**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Number of Instances**
 
-![edit-Circular-pattern-numY](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-numY.png)
+![after-update-arc-angle](/assets/Solidworks_Images/sketch-patterns/after-update-arc-angle.png)
 
-**After Edit Circular Sketch Pattern**
+**After Update Number of Instances**
 
-![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleX.png)
+![after-update-number-of-instances](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instances.png)
 
-***NOTE:***
+#### CASE 4 : Update Pattern Spacing
 
-In this case, we use **AngleX** = *0.785*.
+In our code, if we want to update Number of Instances, then we need to update `patternSpacing` variable only.
 
-This value is in ***Radian***.
+```vb
+' Update Pattern Spacing
+patternSpacing = 10 * AngleConversionFactor
+```
 
-Hence, *0.785* Radian = *44.999 Degree*
+In above line we **Update Pattern Spacing** to new value of 10 degree.
 
-So we have update Angle for direction 1 in **~45 degree**.
+***Example Images:***
 
----
+Below image shows before and after we update **Pattern Spacing**.
 
-#### CASE 4 : Update Angle for direction 1 along the "Y" axis
+**Before Update Pattern Spacing**
 
-To update Angle for *direction 2* along the "Y" axis, we need to update **AngleY** parameter in `EditCircularSketchStepAndRepeat` method.
+![after-update-number-of-instances](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instances.png)
 
-*We will use following value for **AngleY** parameter:*
+**After Update Pattern Spacing**
 
-  - **AngleX**: *1.5708*.
+![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
 
-***Code sample:***
+#### CASE 5 : Update Display Rotation of Pattern
+
+If we want to update Display Rotation of Pattern, then we need to update value to either `True` or `False`.
+
+In our code, we set this value to `True` which means we are displaying the rotation of pattern.
+
+We update our code for not displaying the rotation of pattern as given in below code sample.
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "", True, False, True, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "", True, True, True, "Arc1_")
 ```
 
 ***Example Images:***
 
-Below image shows before and after we update **Angle for direction 2 along the "Y" axis**.
+Below image shows before and after we update **Display Rotation of Pattern**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Display Rotation of Pattern**
 
-![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleX.png)
+![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
 
-**After Edit Circular Sketch Pattern**
+**After Update Display Rotation of Pattern**
 
-![edit-Circular-pattern-angleX](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-angleY.png)
+![after-update-rotation-of-pattern](/assets/Solidworks_Images/sketch-patterns/after-update-rotation-of-pattern.png)
 
-***NOTE:***
+#### CASE 6 : Update Number of Instances to Delete
 
-In this case, we use **AngleY** = *1.5708*.
-
-This value is in ***Radian***.
-
-Hence, *1.5708* Radian = *90 Degree*
-
-So we have update Angle for direction 1 in **90 degree**.
-
----
-
-#### CASE 5 : Number of instances to delete
-
-Ok, this one is a little "**tricky**"!!! 
-
-We want to delete some instance now.
-
-For deleting instances, we need following:
-
-  - Deleting instance's position with respect to **X and Y directions**.
-
-  - Those position in a particular format.
-
-***Grid Position Image:***
-
-I tried my best to describe you this position system in Grid format using image.
-
-Please see below image for this Grid position.
-
-![edit-Circular-pattern-deleteInstances](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-deleteInstances.png)
-
-We are going to delete 2 instances.
-
-**1st Instance**: First we will get the position of this instance.
-
-  - **In X-Direction**: As you can see in above image, position of this instance is 3 in Grid position system for X-Direction.
-
-  - **In Y-Direction**: As you can see in above image, position of this instance is 2 in Grid position system for Y-Direction.
-
-**2nd Instance**: First we will get the position of this instance.
-
-  - **In X-Direction**: As you can see in above image, position of this instance is 2 in Grid position system for X-Direction.
-
-  - **In Y-Direction**: As you can see in above image, position of this instance is 1 in Grid position system for Y-Direction.
-
-**Position in special format**: After we get the position, we need to put "Grid position" of each instance inside *a bracket (or paranthesis)*.
-
-One thing to note here is that, there should be no "**comma**" between **bracket (or paranthesis)**.
-
-Please see below code sample for detail.
-
-***Code sample:***
+If we want to update Number of Instances to Delete, then we need to update value of `""` as given in below code sample.
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, False, True, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", True, True, True, "Arc1_")
 ```
 
----
+In above code sample, we want to delete 3rd instance hence we pass the number **`3`** inside **`()`**.
 
-#### CASE 6 : Display the spacing between instances dimension along the "Y" axis
+> **Note: For delete any instance we need to pass its position in paranthesis (). Otherwise it won't work.**
 
-In our code sample, we display the spacing between instances dimension along the **X** axis.
+***Example Images:***
 
-We do this by **`XSpacingDim = True`**.
+Below image shows before and after we update **Number of Instances to Delete**.
 
-If we want to display the spacing between instances dimension along the **Y** axis.
+**Before Update Number of Instances to Delete**
 
-For that we need to set **`YSpacingDim = True`**.
+![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
 
-***Code sample:***
+**After Update Number of Instances to Delete**
+
+![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
+
+#### CASE 7 : Update Display Radius Dimension
+
+If we want to update Display Radius Dimension, then we need to update value to either `True` or `False`.
+
+In our code, we set this value to `True` which means we are displaying the Display Radius Dimension.
+
+We update our code for not displaying the Display Radius Dimension as given in below code sample.
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, True, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, True, True, "Arc1_")
 ```
 
 ***Example Images:***
 
-Below image shows after we update value for **display dimension along the **Y** axis**.
+Below image shows before and after we update **Display Radius Dimension**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Display Radius Dimension**
 
-![edit-Circular-pattern-YSpacingDim](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-YSpacingDim.png)
+![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
 
----
+**After Update Display Radius Dimension**
 
-#### CASE 7 : Display the angle dimension between axes
+![after-update-display-radius-dimension](/assets/Solidworks_Images/sketch-patterns/after-update-display-radius-dimension.png)
 
-In our code sample, we display the angle dimension between axes.
+#### CASE 8 : Update Display Angle Dimension
 
-We do this by **`AngleDim = True`**.
+If we want to update Display Angle Dimension, then we need to update value to either `True` or `False`.
 
-If we don't want to display the angle dimension between axes then we need to set **`AngleDim = False`**.
+In our code, we set this value to `True` which means we are displaying the Display Angle Dimension.
 
-***Code sample:***
+We update our code for not displaying the Display Angle Dimension as given in below code sample.
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, True, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, False, True, "Arc1_")
 ```
 
 ***Example Images:***
 
-Below image shows after we update value to `False` for **the angle dimension between axes**.
+Below image shows before and after we update **Display Angle Dimension**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Display Angle Dimension**
 
-![edit-Circular-pattern-AngleDim](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-AngleDim.png)
+![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
 
----
+**After Update Display Angle Dimension**
 
-#### CASE 8 : Display the number of instances in the "X" direction
+![after-update-display-angle-dimension](/assets/Solidworks_Images/sketch-patterns/after-update-display-angle-dimension.png)
 
-In our code sample, we display the number of instances along the **X** axis.
+#### CASE 9 : Update Display Number of Instances
 
-We do this by **`CreateNumOfInstancesDimInXDir = True`**.
+If we want to update Display Number of Instances, then we need to update value to either `True` or `False`.
 
-If we don't want to display the number of instances along the **X** axis then we need to set **`CreateNumOfInstancesDimInXDir = False`**.
+In our code, we set this value to `True` which means we are displaying the Display Number of Instances.
 
-***Code sample:***
+We update our code for not displaying the Display Number of Instances as given in below code sample.
 
 ```vb
 ' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, False, "Arc1_")
+BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, False, False, "Arc1_")
 ```
 
 ***Example Images:***
 
-Below image shows after we update value to `False` for **not display the number of instances in the X direction**.
+Below image shows before and after we update **Display Number of Instances**.
 
-**Before Edit Circular Sketch Pattern**
+**Before Update Display Number of Instances**
 
-![edit-Circular-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-CreateNumOfInstancesDimInXDir.png)
+![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
 
----
+**After Update Display Number of Instances**
 
-#### CASE 9 : Display the number of instances in the "Y" direction
-
-In our code sample, we don't display the number of instances along the **Y** axis.
-
-We do this by **`CreateNumOfInstancesDimInYDir = False`**.
-
-If we want to display the number of instances along the **Y** axis then we need to set **`CreateNumOfInstancesDimInYDir = True`**.
-
-***Code sample:***
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(5, 4, 1, 0.75, 0.785, 1.5708, "(3,2)(2,1)", True, True, False, False, True, "Arc1_")
-```
-
-***Example Images:***
-
-Below image shows after we update value to `True` for **display the number of instances in the Y direction**.
-
-**Before Edit Circular Sketch Pattern**
-
-![edit-Circular-pattern-CreateNumOfInstancesDimInXDir](/assets/Solidworks_Images/sketch-patterns/edit-Circular-pattern-CreateNumOfInstancesDimInYDir.png)
+![after-update-display-number-of-instance](/assets/Solidworks_Images/sketch-patterns/after-update-display-number-of-instance.png)
 
 ---
-
-#### CASE 10 : Multiple entities as Seed
-
-In our code sample, we use only **1 circle** for *Circular Sketch pattern*.
-
-But in many cases we need to select **many sketch entities**.
-
-In this condition, add the entities name with **an underscore (_)** one by one.
-
-For example, we want to pattern a Ractangle, in this case, value of seed should be following:
-
-  - **Seed** : **Line1_Line2_Line3_Line4_**
-
----
-
-### NOTE
-
-It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
-
-Please see below for detail:
-
-  - Length: **Meter**
-
-  - Angle: **Radian**
-
-Solidworks API does not care about your application's Unit systems.
-
-For example, I works in **ANSI** system means *inches* for distance. But when I used **Solidworks API** through *VBA macros or C#*, I need to converted numeric values.
-
-Because Solidworks API output the distance in **Meter** which is not my requirement.
-
----
-
 
 **This is it !!!**
+
+*It is indeed a very LONG post. But I try to update the code and move into the direction where we were able to use these code samples in UserForms.*
+
+*I hope you like my effort!!!*
 
 If you found anything to add or update, please let me know on my e-mail.
 
