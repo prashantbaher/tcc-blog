@@ -35,8 +35,6 @@ This post is divided into below sections:
 
     - *[Update Display Number of Instances](#update-display-number-of-instance)*
 
-  - *[NOTE](#note)*
-
 Feel free to select the section you want to go!
 
 ---
