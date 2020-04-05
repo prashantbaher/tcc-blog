@@ -1,0 +1,253 @@
+---
+categories: Solidworks-C++-API
+title:  Solidworks C++ API - Open Solidworks Part Document
+image:  post-image.jpg
+tags:   [Solidworks C++ API]
+---
+
+## Content
+
+This post is divided into following sections. 
+
+Feel free to select the topic you want to.
+
+  - *[Introduction](#introduction)*
+
+  - *[Create a New project](#create-a-new-project)*
+
+  - *[Add Source file](#add-source-file)*
+
+  - *[Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)*
+
+  - *[Add Code to Source.cpp file](#add-code-to-source.cpp-file)*
+
+  - *[Final Result](#final-result)*
+
+---
+
+## Introduction
+
+In this post, I tell you about **how to Open Solidworks Part Document using Solidworks C++ API** from Visual Studio.
+
+I hope you have setup Visual Studio community version.
+
+If not then please go to **[Solidworks C++ API - Prerequisite](/solidworks-c++-api/cpp-prerequisite)** post and watch the suggested videos before proceeding further.
+
+---
+
+## Create a New project
+
+Fist, we will create a new project in Visual Studio.
+
+There are 3 different ways for creating a new project.
+
+  1. From **File** -> **New** -> **Project**
+
+  2. From **New Prject** icon.
+
+  3. Keyboard Short-cut i.e. `Ctrl+Shift+N`.
+
+Below image show how to create a *New Project* from **File** option:
+
+![new-project-file-option](/assets/solidworks-cpp-images/open-solidworks/new-project-1.png)
+
+In above image, see Red color box.
+
+Below image show how to create a *New Project* from **New Project Icon** option:
+
+![new-project-from-icon](/assets/solidworks-cpp-images/open-solidworks/new-project-2.png)
+
+In above image, see Red color box.
+
+When we select one of the above option we get a new window which is shown in below.
+
+![create-project](/assets/solidworks-cpp-images/open-solidworks/create-project.png)
+
+In above image I have numbered the Red colored box.
+
+These numbers are explained below:
+
+  1. *The programming language* you want to use for **New Project**. For our purpose, we use "*Visual C++*".
+
+  2. It is, **which type** of project you want to create. There are *3 different type* of projects we can create. In above image, we will create *an empty project*.
+
+  3. It is *the name of project* we want to create. We named our project as **OpenSolidworkTest**.
+
+  4. The location of project we want. We use default location provided in above image.
+
+  5. It is option *if we want to create a Solution file for this project or not*. In our case, we want to create a *Solution file*.
+
+  6. Hit **Ok** button after completing all fields.
+
+---
+
+## Add Source file
+
+After creating a new project, we get a screen as shown in below image.
+
+![after-new-project](/assets/solidworks-cpp-images/open-solidworks/after-new-project.png)
+
+This project has no file to write.
+
+Now we add a cpp file into *Source Files filter folder*.
+
+For this please follow given steps:
+
+  1. For this select *Source Files filter folder* and *Click Right Mouse Button (RMB)*.
+
+  2. By doing this *a context menu* is appear as shown in below image.
+
+  3. From this *context menu*, select **"Add"** --> **"New Item"**, as shown in below image.
+
+![add-new-cpp-file](/assets/solidworks-cpp-images/open-solidworks/add-new-cpp-file.png)
+
+This will open a new window as shown in below image.
+
+![add-new-cpp-file-window](/assets/solidworks-cpp-images/open-solidworks/add-new-cpp-file-window.png)
+
+Just select "**Add**" option as shown in above image.
+
+This will add "**Source.cpp**" file into our project.
+
+---
+
+## Add References to Solidworks Type Library files
+
+Now we need to *add References to Solidworks Type Library files.*
+
+For this please follow below steps.
+
+  1. Select the **OpenSolidworkTest** project and and *Click Right Mouse Button (RMB)*.
+
+  2. By doing this *a context menu* is appear as shown in below image.
+
+  3. From this *context menu*, select **"Properties"** option, which is the last one, as shown in below image.
+
+![open-property-window](/assets/solidworks-cpp-images/open-solidworks/open-property-window.png)
+
+This will open a new window as shown in below image.
+
+![project-property-window](/assets/solidworks-cpp-images/open-solidworks/project-property-window.png)
+
+Now following below steps:
+
+  1. Select C/C++ option
+
+  2. Add SOLIDWORKS folders path to 2nd Red colored box. Usually this path is "`C:\Program Files\ Solidworks Corp\SOLIDWORKS`" if installed in default location.
+
+After adding the folder path, select "**Apply**" button.
+
+This complete the process of *adding References to Solidworks Type Library files.*
+
+---
+
+## Add Code to Source.cpp file
+
+Now we need to add to *Source.cpp* file.
+
+Please copy the below code sample to your *Source.cpp* file.
+
+```c++
+#include <atlbase.h>
+
+#import "sldworks.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids  // SOLIDWORKS type library
+
+#import "swconst.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids   // SOLIDWORKS constants type library
+
+int main()
+{
+	// Initialize COM
+	// Do this before using ATL smart pointers so COM is available.
+	CoInitialize(NULL);
+
+	// Use a block, so the smart pointers are destructed when the scope of this block is left
+	{
+		// COM Pointer of Soldiworks object
+		CComPtr<ISldWorks> swApp;
+
+		// COM Pointer of Soldiworks Model Document
+		CComPtr<IModelDoc2> swDoc;
+
+		// Variable to check if function is 
+		HRESULT result = NOERROR;
+
+		// COM Style String for message to user
+		CComBSTR _messageToUser;
+
+		// long type variable to store the result value by user
+		long _lMessageResult;
+
+		// Create an instance of Solidworks application
+		// If it fails then return 0 and close program
+		if (swApp.CoCreateInstance(__uuidof(SldWorks), NULL, CLSCTX_LOCAL_SERVER) != S_OK) 
+		{
+			// Stop COM 
+			CoUninitialize();
+			return(0);
+		}
+
+		// COM Style String to store document type
+		CComBSTR _documentType;
+
+		// Get the Default Part document
+		swApp->GetUserPreferenceStringValue(swUserPreferenceStringValue_e::swDefaultTemplatePart, &_documentType);
+
+		// Create a new Part Document 
+		result = swApp->INewDocument2(_documentType, 0, 0, 0, &swDoc);
+
+		// If there are no Default Part document assign then show a message to user
+		// and Stop COM, Visible the Solidworks and return the function
+		if (result != S_OK)
+		{
+			// COM Style String for message to user
+			_messageToUser = (L"Failed to open document.\nPlease try again.");
+
+			// Send a message to user and store the return value in _lMessageResult by referencing it
+			swApp->SendMsgToUser2(_messageToUser, swMessageBoxIcon_e::swMbInformation, swMessageBoxBtn_e::swMbOk, &_lMessageResult);
+
+			// Visible the Solidworks
+			swApp->put_Visible(VARIANT_TRUE);
+
+			// Stop COM 
+			CoUninitialize();
+			return(0);
+		}
+
+		// If created successfully, then visible the Solidworks
+		swApp->put_Visible(VARIANT_TRUE);
+	}
+
+	// Stop COM 
+	CoUninitialize();
+}
+```
+
+Now Build the Solution as shown in below image.
+
+![build-solution](/assets/solidworks-cpp-images/open-solidworks/build-solution.png)
+
+After Building Solution run the program by pressing **F5**.
+
+---
+
+## Final Result
+
+After running the program wait for few minute.
+
+You will get result as shown in below image!!!
+
+![hello-world-message.png](/assets/solidworks-cpp-images/open-solidworks/hello-world-message.png)
+
+---
+
+**This is it !!!**
+
+We have completed our *Hello World* program in *Solidworks* using **Solidworks C++ APIs**.
+
+Hope this post helps you to start with *Solidworks C++ API*.
+
+*If you like the post then please share it with your friends also.*
+
+*Do let me know by you like this post or not! I will continue creating Solidworks C++ posts.*
+
+*Till then, Happy learning!!!*
