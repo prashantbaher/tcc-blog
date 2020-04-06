@@ -129,7 +129,9 @@ Now following below steps:
 
   1. Select C/C++ option
 
-  2. Add SOLIDWORKS folders path to 2nd Red colored box. Usually this path is "`C:\Program Files\ Solidworks Corp\SOLIDWORKS`" if installed in default location.
+  2. Add SOLIDWORKS folders path to 2nd Red colored box as shown in below image. Usually this path is "`C:\Program Files\ Solidworks Corp\SOLIDWORKS`" if installed in default location.
+
+![add-solidowrks-reference](/assets/solidworks-cpp-images/open-solidworks/add-solidowrks-reference.png)
 
 After adding the folder path, select "**Apply**" button.
 

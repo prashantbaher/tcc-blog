@@ -23,6 +23,8 @@ Feel free to select the topic you want to.
 
   - *[Final Result](#final-result)*
 
+  - *[Issues and Solutions](#issues-and-solutions)*
+
 ---
 
 ## Introduction
@@ -39,79 +41,27 @@ If not then please go to **[Solidworks C++ API - Prerequisite](/solidworks-c++-a
 
 Fist, we will create a new project in Visual Studio.
 
-There are 3 different ways for creating a new project.
+As shown in below image I have created a new project named `OpenPartDocument` in Visual Studio.
 
-  1. From **File** -> **New** -> **Project**
+![new-project-window](/assets/solidworks-cpp-images/open-part-document/new-project-window.png)
 
-  2. From **New Prject** icon.
-
-  3. Keyboard Short-cut i.e. `Ctrl+Shift+N`.
-
-Below image show how to create a *New Project* from **File** option:
-
-![new-project-file-option](/assets/solidworks-cpp-images/open-solidworks/new-project-1.png)
-
-In above image, see Red color box.
-
-Below image show how to create a *New Project* from **New Project Icon** option:
-
-![new-project-from-icon](/assets/solidworks-cpp-images/open-solidworks/new-project-2.png)
-
-In above image, see Red color box.
-
-When we select one of the above option we get a new window which is shown in below.
-
-![create-project](/assets/solidworks-cpp-images/open-solidworks/create-project.png)
-
-In above image I have numbered the Red colored box.
-
-These numbers are explained below:
-
-  1. *The programming language* you want to use for **New Project**. For our purpose, we use "*Visual C++*".
-
-  2. It is, **which type** of project you want to create. There are *3 different type* of projects we can create. In above image, we will create *an empty project*.
-
-  3. It is *the name of project* we want to create. We named our project as **OpenSolidworkTest**.
-
-  4. The location of project we want. We use default location provided in above image.
-
-  5. It is option *if we want to create a Solution file for this project or not*. In our case, we want to create a *Solution file*.
-
-  6. Hit **Ok** button after completing all fields.
+If you want to know more detail for Creating a New Project in Visual Studio, please visit **[Create a New project](/solidworks-c++-api/open-solidworks/#create-a-new-project)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
 
 ---
 
 ## Add Source file
 
-After creating a new project, we get a screen as shown in below image.
+After creating a new project, we need to Add Source file to our project.
 
-![after-new-project](/assets/solidworks-cpp-images/open-solidworks/after-new-project.png)
-
-This project has no file to write.
-
-Now we add a cpp file into *Source Files filter folder*.
-
-For this please follow given steps:
-
-  1. For this select *Source Files filter folder* and *Click Right Mouse Button (RMB)*.
-
-  2. By doing this *a context menu* is appear as shown in below image.
-
-  3. From this *context menu*, select **"Add"** --> **"New Item"**, as shown in below image.
-
-![add-new-cpp-file](/assets/solidworks-cpp-images/open-solidworks/add-new-cpp-file.png)
-
-This will open a new window as shown in below image.
-
-![add-new-cpp-file-window](/assets/solidworks-cpp-images/open-solidworks/add-new-cpp-file-window.png)
-
-Just select "**Add**" option as shown in above image.
+I have already explain each steps taken to create/add a "**Source.cpp**" into our project in **[Add Source file](/solidworks-c++-api/open-solidworks/#add-source-file)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
 
 This will add "**Source.cpp**" file into our project.
 
 ---
 
 ## Add References to Solidworks Type Library files
+
+> This section is copy/paste from **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
 
 Now we need to *add References to Solidworks Type Library files.*
 
@@ -133,7 +83,9 @@ Now following below steps:
 
   1. Select C/C++ option
 
-  2. Add SOLIDWORKS folders path to 2nd Red colored box. Usually this path is "`C:\Program Files\ Solidworks Corp\SOLIDWORKS`" if installed in default location.
+  2. Add SOLIDWORKS folders path to 2nd Red colored box as shown in below image. Usually this path is "`C:\Program Files\ Solidworks Corp\SOLIDWORKS`" if installed in default location.
+
+![add-solidowrks-reference](/assets/solidworks-cpp-images/open-solidworks/add-solidowrks-reference.png)
 
 After adding the folder path, select "**Apply**" button.
 
@@ -236,13 +188,47 @@ After running the program wait for few minute.
 
 You will get result as shown in below image!!!
 
-![hello-world-message.png](/assets/solidworks-cpp-images/open-solidworks/hello-world-message.png)
+![open-part-window](/assets/solidworks-cpp-images/open-part-document/open-part-window.png)
 
 ---
 
-**This is it !!!**
+## Issues and Solutions
 
-We have completed our *Hello World* program in *Solidworks* using **Solidworks C++ APIs**.
+There are some issues I can think of which might be come to some people.
+
+Those are as follows:
+
+**Issue 1:**
+
+	Program closed without open Solidworks!
+
+**Solution:**
+
+	I you face this issue, then open Solidworks Manually one time, close it and then run the program.
+
+	It will solve this issue.
+
+**Issue 2:**
+
+	Program unable to create Part Document
+
+**Solution:**
+
+	This is a tricky one!!!
+
+	If you face this issue, then you need to confirm in Solidworks that you have assigned the "default Part template".
+
+	Please refer to below image for proper setting to fix this issue.
+
+![default-template-locations](/assets/solidworks-cpp-images/open-part-document/default-template-locations.png)
+
+***I hope this will helpful!!!***
+
+---
+
+***This is it !!!***
+
+We have completed our *Open Part Document* program in *Solidworks* using **Solidworks C++ APIs**.
 
 Hope this post helps you to start with *Solidworks C++ API*.
 
