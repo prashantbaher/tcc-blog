@@ -19,7 +19,7 @@ Feel free to select the topic you want to.
 
   - *[Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)*
 
-  - *[Add Code to Source.cpp file](#add-code-to-source.cpp-file)*
+  - *[Add Code to Source.cpp file](#add-code-to-source-.cpp-file)*
 
   - *[Final Result](#final-result)*
 
@@ -45,7 +45,7 @@ As shown in below image I have created a new project named `OpenPartDocument` in
 
 ![new-project-window](/assets/solidworks-cpp-images/open-part-document/new-project-window.png)
 
-If you want to know more detail for Creating a New Project in Visual Studio, please visit **[Create a New project](/solidworks-c++-api/open-solidworks/#create-a-new-project)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
+If you want to know more detail for Creating a New Project in Visual Studio, please visit **[Create a New project](/solidworks-c++-api/open-solidworks#create-a-new-project)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
 
 ---
 
@@ -53,7 +53,7 @@ If you want to know more detail for Creating a New Project in Visual Studio, ple
 
 After creating a new project, we need to Add Source file to our project.
 
-I have already explain each steps taken to create/add a "**Source.cpp**" into our project in **[Add Source file](/solidworks-c++-api/open-solidworks/#add-source-file)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
+I have already explain each steps taken to create/add a "**Source.cpp**" into our project in **[Add Source file](/solidworks-c++-api/open-solidworks#add-source-file)** section of **[Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)** post.
 
 This will add "**Source.cpp**" file into our project.
 
