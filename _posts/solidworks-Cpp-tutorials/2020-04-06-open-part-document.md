@@ -19,7 +19,7 @@ Feel free to select the topic you want to.
 
   - *[Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)*
 
-  - *[Add Code to Source.cpp file](#add-code-to-source-.cpp-file)*
+  - *[Add Code to Source file](#add-code-to-source-file)*
 
   - *[Final Result](#final-result)*
 
@@ -93,7 +93,7 @@ This complete the process of *adding References to Solidworks Type Library files
 
 ---
 
-## Add Code to Source.cpp file
+## Add Code to Source file
 
 Now we need to add to *Source.cpp* file.
 
