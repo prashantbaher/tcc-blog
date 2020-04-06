@@ -38,3 +38,5 @@ Please see below list of posts for ***Solidworks C++ API***.
 * [Solidworks C++ API - Prerequisite](/solidworks-c++-api/cpp-prerequisite)
 
 * [Solidworks C++ API - Open Solidworks & Hello World](/solidworks-c++-api/open-solidworks)
+
+* [Solidworks C++ API - Open Solidworks Part Document](/solidworks-c++-api/open-part-document)
