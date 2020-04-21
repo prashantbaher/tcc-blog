@@ -1,6 +1,6 @@
 ---
 categories: Solidworks-macro
-title:  Solidworks Macro - Edit Circular Sketch Pattern From VBA Macro
+title:  Solidworks Macro - Move/Copy Sketch Entities From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
@@ -41,23 +41,17 @@ Feel free to select the section you want to go!
 
 ## Introduction
 
-In this post, I tell you about **how to Edit Circular Sketch Pattern using Solidworks VBA Macros** in a Sketch.
+In this post, I tell you about **how to Move/Copy Sketch Entities using Solidworks VBA Macros** in a Sketch.
 
-In this post, I explain about `EditCircularSketchStepAndRepeat` method from **Solidworks** `SketchManager` object.
+In this post, I explain about `MoveOrCopy` method from **Solidworks** `ModelDoc2`'s `Extension` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to *edit existing Circular Sketch Pattern*.
+So ***use this method*** if you want to *MoveOrCopy Sketch Entities*.
 
-This post is a little different of previous **[Solidworks Macro - Circular Sketch Pattern From VBA Macro](/solidworks-macro/Circular-skech-pattern)** post.
+This post is similar to previous **[Solidworks Macro - Edit Circular Sketch Pattern From VBA Macro](/solidworks-macro/edit-circular-skech-pattern)** post.
 
-There are 2 changes I have made, which I am going to use on future posts also.
-
-These change are explain below:
-
- - In this post I used `code sample` from **[General - Fix Unit Issue](/solidworks-macro/unit-correction)** post to fix unit conversion issue and show how to use it.
-
- - In input parameter of `EditCircularSketchStepAndRepeat` method, I passed variables not direct values. This helps us to maintain the code and modification of existing code is simple.
+If you have not visited my previous **[Solidworks Macro - Edit Circular Sketch Pattern From VBA Macro](/solidworks-macro/edit-circular-skech-pattern)** post, then please do check-it if you want to learn Editing Circular Sketch Pattern from VBA Macros.
 
 ---
 
@@ -162,40 +156,26 @@ Sub main()
   ' Set Sketch Segment value and Create a Circle
   Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, circleRadius)
   
+  ' Defining variables for Destination Co-ordinates
+  Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
+  
+  ' Setting the values of Destination Co-ordinates in X & Y directions for Move
+  destinationCoOrdinateInXDir = 10 * LengthConversionFactor
+  destinationCoOrdinateInYDir = 10 * LengthConversionFactor
+  
+  ' Move circle
+  swDoc.Extension.MoveOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
+  
+  ' Setting the values of Destination Co-ordinates in X & Y directions for Copy
+  destinationCoOrdinateInXDir = 15 * LengthConversionFactor
+  destinationCoOrdinateInYDir = 15 * LengthConversionFactor
+  
+  ' Copy circle
+  swDoc.Extension.MoveOrCopy True, 3, True, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
+  
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
-
-  ' Select Circle we want to Pattern
-  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Arc Radius
-  Dim arcRadius As Double
-  arcRadius = 10 * LengthConversionFactor
-  
-  ' Arc Angle
-  Dim arcAngle As Double
-  arcAngle = 0 * AngleConversionFactor
-  
-  ' Number of Instances
-  Dim numberOfInstance As Double
-  numberOfInstance = 3
-  
-  ' Pattern Spacing
-  Dim patternSpacing As Double
-  patternSpacing = 5 * AngleConversionFactor
-  
-  ' Create a Circular Sketch Pattern
-  BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True)
-  
-  ' De-select the Sketch Segment after Circular Sketch Pattern
-  swDoc.ClearSelection2 True
-  
-  ' Update Arc Radius
-  arcRadius = 20 * LengthConversionFactor
-
-  ' Edit a Circular Sketch Pattern
-  BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True, "Arc1_")
-
   ' Show Front View after Circular Sketch Pattern
   swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
   
