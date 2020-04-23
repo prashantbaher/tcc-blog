@@ -411,166 +411,66 @@ In above line, we create a Circle with:
   - **Circle Radius** : *`circleRadius`*
 
 ```vb
-' De-select the Sketch after creation
-swDoc.ClearSelection2 True
+' Defining variables for Destination Co-ordinates
+Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
 ```
 
-In the above line of code, we deselect the **Sketch** after the *Circular Sketch Pattern* operation.
+In above line of code, we create **two** variables of **`double`** type in *one single line*.
 
-For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+These variables we use for defining **Destination Co-ordinates**.
+
+Variables Name:
+
+  - `destinationCoOrdinateInXDir`
+
+  - `destinationCoOrdinateInYDir`
 
 ```vb
-' Select Circle we want to Pattern
-BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+' Setting the values of Destination Co-ordinates in X & Y directions for Move
+destinationCoOrdinateInXDir = 10 * LengthConversionFactor
+destinationCoOrdinateInYDir = 10 * LengthConversionFactor
 ```
 
-In above line of code, we select the Circle i.e. **Arc 1** and add it to selection list.
+In above line of code, we set the values of *Destination Co-ordinates* in **X & Y directions** for ***Move*** selected circle.
+
+Variables Values:
+
+  - `destinationCoOrdinateInXDir = 10 * LengthConversionFactor`
+
+    *10" in X direction.*
+
+  - `destinationCoOrdinateInYDir = 10 * LengthConversionFactor`
+
+    *10" in Y direction.*
 
 ```vb
-' Arc Radius
-Dim arcRadius As Double
-arcRadius = 10 * LengthConversionFactor
+' Move circle
+swDoc.Extension.MoveOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
 ```
 
-Above code sample creates a variable for **Arc Radius** and assign value.
+For "**Moving**" a sketch entity, we need `MoveOrCopy` method from **Solidworks** `ModelDoc2`'s `Extension` object.
 
-While assigning the value we multiple with `LengthConversionFactor` to get correct length.
+This `MoveOrCopy` method takes following parameters as explained:
 
-Variable Name: `arcRadius`
+  - **Copy** : *`True` to copy the sketch entities, `False` to not.*
 
-Variable type: `Double`
+  - **NumCopies** : *Number of copies you want to create.*
 
-Variable Value: 10 inch
+  - **KeepRelations** : *`True` to keep sketch relations after Move or Copy operation, `False` to not.*
 
-*We want Arc Radius to 10 inch.*
+  - **BaseX** : *X coordinate of the base point from which to move the sketch entities.*
 
-> **By creating the variables we can handle the values more effciently.**
+  - **BaseY** : *Y coordinate of the base point from which to move the sketch entities.*
 
-```vb
-' Arc Angle
-Dim arcAngle As Double
-arcAngle = 0 * AngleConversionFactor
-```
+  - **BaseZ** : *Z coordinate of the base point from which to move the sketch entities.*
 
-Above code sample creates a variable for **Arc Angle** and assign value.
-
-While assigning the value we multiple with `AngleConversionFactor` to get correct angle.
-
-Variable Name: `arcAngle`
-
-Variable type: `Double`
-
-Variable Value: 0
-
-*We want Arc Angle to 0 degree.*
-
-```vb
-' Number of Instances
-Dim numberOfInstance As Double
-numberOfInstance = 3
-```
-
-Above code sample creates a variable for **Number of Instances** and assign value.
-
-Variable Name: `numberOfInstance`
-
-Variable type: `Double`
-
-Variable Value: 3
-
-*We want 3 copies of the circle including the seed i.e. original circle.*
-
-```vb
-' Pattern Spacing
-Dim patternSpacing As Double
-patternSpacing = 5 * AngleConversionFactor
-```
-
-Above code sample creates a variable for **Pattern Spacing** and assign value.
-
-While assigning the value we multiple with `AngleConversionFactor` to get correct angle.
-
-Variable Name: `patternSpacing`
-
-Variable type: `Double`
-
-Variable Value: 5
-
-*We want 5 degree of spacing between each circle.*
-
-```vb
-' Create a Circular Sketch Pattern
-BoolStatus = swSketchManager.CreateCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True)
-```
-
-In above code sample we *Create a Circular Sketch Pattern* of the selected circle by `CreateCircularSketchStepAndRepeat` method from *Solidworks Sketch Manger* variable.
-
-As you can see we pass our *previously created variables* `arcRadius`, `arcAngle`, `numberOfInstance` and `patternSpacing` in `CreateCircularSketchStepAndRepeat` method as parameters.
-
-I have explained `CreateCircularSketchStepAndRepeat` method in detail in **[Sketch - Circular Sketch Pattern](/solidworks-macro/circular-skech-pattern)** post.
-
-Please see above post if you want to learn more about `CreateCircularSketchStepAndRepeat` method and its parameters.
-
-Below image shows Circular Sketch Pattern Parameter.
-
-![before-edit-circular-pattern](/assets/Solidworks_Images/sketch-patterns/before-edit-circular-pattern.png)
-
-```vb
-' De-select the Sketch Segment after Circular Sketch Pattern
-swDoc.ClearSelection2 True
-```
-
-In above line we *de-select* the *Sketch Segment* after creating *Circular Sketch Pattern*.
-
-```vb
-' Update Arc Radius
-arcRadius = 20 * LengthConversionFactor
-```
-
-In above line we **Update Arc Radius** to new value which we will use in *Editing previously created Circular Sketch pattern*.
-
-Variable Name: `arcRadius`
-
-Updated Value: 20 inch
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, True, "", True, True, True, "Arc1_")
-```
-
-For "**editing**" a Circular Sketch pattern, we need `EditCircularSketchStepAndRepeat` method from *Solidworks Sketch Manager* object/variable.
-
-This `CreateCircularSketchStepAndRepeat` method takes following parameters as explained:
-
-  - **ArcRadius** : *Radius for the circular sketch pattern. This value is in radian.*
-
-  - **ArcAngle** : *Angle relative to the sketch entities being patterned. This value is in radian.*
-
-  - **PatternNum** : *Total number of instances, including the seed geometry.*
-
-  - **PatternSpacing** : *Spacing between pattern instances. This value is in radian.*
-
-  - **PatternRotate** : *True to rotate the pattern, false to not.*
-
-  - **DeleteInstances** : *Number of instances to delete, passed as a string in the format: "(a) (b) (c)".*
-
-  - **RadiusDim** : *True to display the radius dimension in the graphics area, false to not.*
+  - **DestX** : *X coordinate of the destination point from which to move the sketch entities.*
   
-  - **AngleDim** : *True to display the angle dimension between axes in the graphics area, false to not.*
+  - **DestY** : *Y coordinate of the destination point from which to move the sketch entities.*
 
-  - **CreateNumOfInstancesDim** : *True to display the number of instances dimension in the graphics area, false to not.*
+  - **DestZ** : *Z coordinate of the destination point from which to move the sketch entities.*
 
-  - **Seed**: *List of the names of the entities, separated by the underscore character (_), that comprise the seed pattern (e.g., Arc1_ as a seed pattern).*
-
-**NOTE:** In *Seed*, adding underscore(_) after selected entity is important, otherwise code will note work.
-
-After the function complete following are the results:
-
-**Return Value**:
-
-  - **True**: *If Edit Circular Sketch Pattern is *Success*.*
-
-  - **False**: *If Edit Circular Sketch Pattern is *Fail*.*
+***NOTE: There are no return value after this function.***
 
 ---
 
