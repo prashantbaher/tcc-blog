@@ -484,16 +484,43 @@ In this section, we will go through different cases by
 
 ---
   
-#### CASE 1 : Update Arc Radius
+#### CASE 1 : Move Sketch Entities
 
-In our code, if we want to update Arc Radius, then we need to update `arcRadius` variable only.
+In our code, if we want to *Move Sketch Entities*, then we need to use code sample as given below:
 
 ```vb
-' Update Arc Radius
-arcRadius = 20 * LengthConversionFactor
+' Defining variables for Destination Co-ordinates
+Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
+
+' Setting the values of Destination Co-ordinates in X & Y directions for Move
+destinationCoOrdinateInXDir = 10 * LengthConversionFactor
+destinationCoOrdinateInYDir = 10 * LengthConversionFactor
+
+' Move circle
+swDoc.Extension.MoveOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
 ```
 
-In above line we **Update Arc Radius** to new value. of 20 inch.
+In above line we **Move Sketch Entities** to new position i.e. *10" in X-Direction* and *10" in Y-Direction*.
+
+In above code we need to set following parameters:
+
+  - **Copy** : `False` to not create a copy.
+
+  - **NumCopies** : *Number of copies you want to create to 1 which is itself.*
+
+  - **KeepRelations** : *`True` to keep sketch relations after Move or Copy operation, `False` to not.*
+
+  - **BaseX** : *X coordinate of the base point  = 0*
+
+  - **BaseY** : *Y coordinate of the base point  = 0*
+
+  - **BaseZ** : *Z coordinate of the base point  = 0*
+
+  - **DestX** : *X coordinate of the destination  = 10"*
+  
+  - **DestY** : *Y coordinate of the destination point  = 10"*
+
+  - **DestZ** : *Z coordinate of the destination point  = 10"*  
 
 ***Example Images:***
 
@@ -507,7 +534,7 @@ Below image shows before and after we update **Arc Radius**.
 
 ![after-update-arc-radius](/assets/Solidworks_Images/sketch-patterns/after-update-arc-radius.png)
 
-#### CASE 2 : Update Arc Angle
+#### CASE 2 : Copy Sketch Entities
 
 In our code, if we want to update Arc Angle, then we need to update `arcAngle` variable only.
 
@@ -529,177 +556,6 @@ Below image shows before and after we update **Arc Angle**.
 **After Update Arc Angle**
 
 ![after-update-arc-angle](/assets/Solidworks_Images/sketch-patterns/after-update-arc-angle.png)
-
-#### CASE 3 : Update Number of Instances
-
-In our code, if we want to update Number of Instances, then we need to update `numberOfInstance` variable only.
-
-```vb
-' Update Number of Instances
-numberOfInstance = 5
-```
-
-In above line we **Update Number of Instances** to new value of 5 number of instances.
-
-***Example Images:***
-
-Below image shows before and after we update **Number of Instances**.
-
-**Before Update Number of Instances**
-
-![after-update-arc-angle](/assets/Solidworks_Images/sketch-patterns/after-update-arc-angle.png)
-
-**After Update Number of Instances**
-
-![after-update-number-of-instances](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instances.png)
-
-#### CASE 4 : Update Pattern Spacing
-
-In our code, if we want to update Number of Instances, then we need to update `patternSpacing` variable only.
-
-```vb
-' Update Pattern Spacing
-patternSpacing = 10 * AngleConversionFactor
-```
-
-In above line we **Update Pattern Spacing** to new value of 10 degree.
-
-***Example Images:***
-
-Below image shows before and after we update **Pattern Spacing**.
-
-**Before Update Pattern Spacing**
-
-![after-update-number-of-instances](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instances.png)
-
-**After Update Pattern Spacing**
-
-![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
-
-#### CASE 5 : Update Display Rotation of Pattern
-
-If we want to update Display Rotation of Pattern, then we need to update value to either `True` or `False`.
-
-In our code, we set this value to `True` which means we are displaying the rotation of pattern.
-
-We update our code for not displaying the rotation of pattern as given in below code sample.
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "", True, True, True, "Arc1_")
-```
-
-***Example Images:***
-
-Below image shows before and after we update **Display Rotation of Pattern**.
-
-**Before Update Display Rotation of Pattern**
-
-![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
-
-**After Update Display Rotation of Pattern**
-
-![after-update-rotation-of-pattern](/assets/Solidworks_Images/sketch-patterns/after-update-rotation-of-pattern.png)
-
-#### CASE 6 : Update Number of Instances to Delete
-
-If we want to update Number of Instances to Delete, then we need to update value of `""` as given in below code sample.
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", True, True, True, "Arc1_")
-```
-
-In above code sample, we want to delete 3rd instance hence we pass the number **`3`** inside **`()`**.
-
-> **Note: For delete any instance we need to pass its position in paranthesis (). Otherwise it won't work.**
-
-***Example Images:***
-
-Below image shows before and after we update **Number of Instances to Delete**.
-
-**Before Update Number of Instances to Delete**
-
-![after-update-pattern-spacing](/assets/Solidworks_Images/sketch-patterns/after-update-pattern-spacing.png)
-
-**After Update Number of Instances to Delete**
-
-![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
-
-#### CASE 7 : Update Display Radius Dimension
-
-If we want to update Display Radius Dimension, then we need to update value to either `True` or `False`.
-
-In our code, we set this value to `True` which means we are displaying the Display Radius Dimension.
-
-We update our code for not displaying the Display Radius Dimension as given in below code sample.
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, True, True, "Arc1_")
-```
-
-***Example Images:***
-
-Below image shows before and after we update **Display Radius Dimension**.
-
-**Before Update Display Radius Dimension**
-
-![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
-
-**After Update Display Radius Dimension**
-
-![after-update-display-radius-dimension](/assets/Solidworks_Images/sketch-patterns/after-update-display-radius-dimension.png)
-
-#### CASE 8 : Update Display Angle Dimension
-
-If we want to update Display Angle Dimension, then we need to update value to either `True` or `False`.
-
-In our code, we set this value to `True` which means we are displaying the Display Angle Dimension.
-
-We update our code for not displaying the Display Angle Dimension as given in below code sample.
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, False, True, "Arc1_")
-```
-
-***Example Images:***
-
-Below image shows before and after we update **Display Angle Dimension**.
-
-**Before Update Display Angle Dimension**
-
-![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
-
-**After Update Display Angle Dimension**
-
-![after-update-display-angle-dimension](/assets/Solidworks_Images/sketch-patterns/after-update-display-angle-dimension.png)
-
-#### CASE 9 : Update Display Number of Instances
-
-If we want to update Display Number of Instances, then we need to update value to either `True` or `False`.
-
-In our code, we set this value to `True` which means we are displaying the Display Number of Instances.
-
-We update our code for not displaying the Display Number of Instances as given in below code sample.
-
-```vb
-' Edit a Circular Sketch Pattern
-BoolStatus = swSketchManager.EditCircularSketchStepAndRepeat(arcRadius, arcAngle, numberOfInstance, patternSpacing, False, "(3)", False, False, False, "Arc1_")
-```
-
-***Example Images:***
-
-Below image shows before and after we update **Display Number of Instances**.
-
-**Before Update Display Number of Instances**
-
-![after-update-number-of-instance-to-delete](/assets/Solidworks_Images/sketch-patterns/after-update-number-of-instance-to-delete.png)
-
-**After Update Display Number of Instances**
-
-![after-update-display-number-of-instance](/assets/Solidworks_Images/sketch-patterns/after-update-display-number-of-instance.png)
 
 ---
 
