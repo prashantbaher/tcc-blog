@@ -17,23 +17,23 @@ This post is divided into below sections:
 
   - *[Multiple Cases](#cases)*
 
-    - *[Update Arc Radius](#update-arc-radius)*
+    - *[Update Arc Radius](#case-1--update-arc-radius)*
 
-    - *[Update Arc Angle](#update-arc-angle)*
+    - *[Update Arc Angle](#case-2--update-arc-angle)*
 
-    - *[Update Number of Instances](#update-number-of-instances)*
+    - *[Update Number of Instances](#case-3--update-number-of-instances)*
 
-    - *[Update Pattern Spacing](#update-pattern-spacing)*
+    - *[Update Pattern Spacing](#case-4--update-pattern-spacing)*
 
-    - *[Update Display Rotation of Pattern](#update-rotation-of-pattern)*
+    - *[Update Display Rotation of Pattern](#case-5--update-display-rotation-of-pattern)*
 
-    - *[Update Number of Instances to Delete](#update-number-of-instance-to-delete)*
+    - *[Update Number of Instances to Delete](#case-6--update-number-of-instances-to-delete)*
 
-    - *[Update Display Radius Dimension](#update-display-radius-dimension)*
+    - *[Update Display Radius Dimension](#case-7--update-display-radius-dimension)*
 
-    - *[Update Display Angle Dimension](#update-display-angle-dimension)*
+    - *[Update Display Angle Dimension](#case-8--update-display-angle-dimension)*
 
-    - *[Update Display Number of Instances](#update-display-number-of-instance)*
+    - *[Update Display Number of Instances](#case-9--update-display-number-of-instances)*
 
 Feel free to select the section you want to go!
 

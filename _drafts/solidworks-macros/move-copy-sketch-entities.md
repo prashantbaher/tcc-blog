@@ -17,23 +17,9 @@ This post is divided into below sections:
 
   - *[Multiple Cases](#cases)*
 
-    - *[Update Arc Radius](#update-arc-radius)*
+    - *[Move Sketch Entities](#case-1--move-sketch-entities)*
 
-    - *[Update Arc Angle](#update-arc-angle)*
-
-    - *[Update Number of Instances](#update-number-of-instances)*
-
-    - *[Update Pattern Spacing](#update-pattern-spacing)*
-
-    - *[Update Display Rotation of Pattern](#update-rotation-of-pattern)*
-
-    - *[Update Number of Instances to Delete](#update-number-of-instance-to-delete)*
-
-    - *[Update Display Radius Dimension](#update-display-radius-dimension)*
-
-    - *[Update Display Angle Dimension](#update-display-angle-dimension)*
-
-    - *[Update Display Number of Instances](#update-display-number-of-instance)*
+    - *[Copy Sketch Entities](#case-2--copy-sketch-entities)*
 
 Feel free to select the section you want to go!
 
