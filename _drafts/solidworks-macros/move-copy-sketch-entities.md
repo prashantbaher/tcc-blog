@@ -508,7 +508,7 @@ In above code we need to set following parameters:
 
   - **NumCopies** : *Number of copies you want to create to 1 which is itself.*
 
-  - **KeepRelations** : *`True` to keep sketch relations after Move or Copy operation, `False` to not.*
+  - **KeepRelations** : *`True` to keep sketch relations after Move or Copy operation.*
 
   - **BaseX** : *X coordinate of the base point  = 0*
 
@@ -520,54 +520,81 @@ In above code we need to set following parameters:
   
   - **DestY** : *Y coordinate of the destination point  = 10"*
 
-  - **DestZ** : *Z coordinate of the destination point  = 10"*  
+  - **DestZ** : *Z coordinate of the destination point  = 0*  
 
 ***Example Images:***
 
-Below image shows before and after we update **Arc Radius**.
+Below image shows before and after we **Move Sketch Entitny**.
 
-**Before Update Arc Radius**
+**Before Move Sketch Entitny**
 
-![before-edit-circular-pattern](/assets/Solidworks_Images/sketch-patterns/before-edit-circular-pattern.png)
+![before-move-copy](/assets/Solidworks_Images/move-copy-sketch-entities/before-move-copy.png)
 
-**After Update Arc Radius**
+**After Move Sketch Entitny**
 
-![after-update-arc-radius](/assets/Solidworks_Images/sketch-patterns/after-update-arc-radius.png)
+![after-move](/assets/Solidworks_Images/move-copy-sketch-entities/after-move.png)
 
 #### CASE 2 : Copy Sketch Entities
 
-In our code, if we want to update Arc Angle, then we need to update `arcAngle` variable only.
+In our code, if we want to *Copy Sketch Entities*, then we need to use code sample as given below:
 
 ```vb
-' Update Arc Angle
-arcAngle = 30 * AngleConversionFactor
+' Defining variables for Destination Co-ordinates
+Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
+
+' Setting the values of Destination Co-ordinates in X & Y directions for Move
+destinationCoOrdinateInXDir = 15 * LengthConversionFactor
+destinationCoOrdinateInYDir = 15 * LengthConversionFactor
+
+' Copy circle
+swDoc.Extension.MoveOrCopy True, 3, True, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
 ```
 
-In above line we **Update Arc Angle** to new value of 30 inch.
+In above line we **Copy Sketch Entities** to new position i.e. *15" in X-Direction* and *15" in Y-Direction* for every copy of sketch.
+
+This will more clear in below images when you scroll down.
+
+In above code we need to set following parameters:
+
+  - **Copy** : `True` to create a copy.
+
+  - **NumCopies** : *Number of copies we want to create: 3*
+
+  - **KeepRelations** : *`True` to keep sketch relations after Move or Copy operation.*
+
+  - **BaseX** : *X coordinate of the base point  = 0*
+
+  - **BaseY** : *Y coordinate of the base point  = 0*
+
+  - **BaseZ** : *Z coordinate of the base point  = 0*
+
+  - **DestX** : *X coordinate of the destination  = 15"*
+  
+  - **DestY** : *Y coordinate of the destination point  = 15"*
+
+  - **DestZ** : *Z coordinate of the destination point  = 0*  
 
 ***Example Images:***
 
-Below image shows before and after we update **Arc Angle**.
+Below image shows before and after we **Copy Sketch Entitny**.
 
-**Before Update Arc Angle**
+**Before Copy Sketch Entitny**
 
-![after-update-arc-radius](/assets/Solidworks_Images/sketch-patterns/after-update-arc-radius.png)
+![before-move-copy](/assets/Solidworks_Images/move-copy-sketch-entities/before-move-copy.png)
 
-**After Update Arc Angle**
+**After Copy Sketch Entitny**
 
-![after-update-arc-angle](/assets/Solidworks_Images/sketch-patterns/after-update-arc-angle.png)
+![after-copy](/assets/Solidworks_Images/move-copy-sketch-entities/after-copy.png)
 
 ---
 
 **This is it !!!**
 
-*It is indeed a very LONG post. But I try to update the code and move into the direction where we were able to use these code samples in UserForms.*
+*I hope my efforts will helpful to someone!*
 
-*I hope you like my effort!!!*
+If you found anything to **add or update**, please let me know on my *e-mail*.
 
-If you found anything to add or update, please let me know on my e-mail.
-
-Hope this post helps you to *Edit a Circular Sketch Pattern* with Solidworks VBA Macros.
+Hope this post helps you to *Move/Copy Sketch Entities* with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 
