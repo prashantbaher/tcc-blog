@@ -147,3 +147,9 @@ In Below posts, I show you how to create **Sketch Patterns** and **edit patterns
 * [Sketch - Circular Sketch Pattern](/solidworks-macro/circular-skech-pattern)
 
 * [Sketch - Edit Circular Sketch Pattern](/solidworks-macro/edit-circular-skech-pattern)
+
+### Sketch Transformation From VBA Macro
+
+In Below posts, I show you how to **Move** and **Copy** Sketch entities from Solidworks macro using VBA programming language.
+
+* [Sketch Transformation - Move/Copy Sketch Entities](/solidworks-macro/move-copy-sketch-entities)
