@@ -135,31 +135,25 @@ Sub main()
   ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Circle Radius
-  Dim circleRadius As Double
-  circleRadius = 5 * LengthConversionFactor
+  ' Create a local variable for Center ractangle
+  Dim vSketch As Variant
   
-  ' Set Sketch Segment value and Create a Circle
-  Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, circleRadius)
-  
-  ' Defining variables for Destination Co-ordinates
-  Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
-  
-  ' Setting the values of Destination Co-ordinates in X & Y directions for Rotate
-  destinationCoOrdinateInXDir = 10 * LengthConversionFactor
-  destinationCoOrdinateInYDir = 10 * LengthConversionFactor
-  
-  ' Rotate circle
-  swDoc.Extension.RotateOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
-  
-  ' Setting the values of Destination Co-ordinates in X & Y directions for Copy
-  destinationCoOrdinateInXDir = 15 * LengthConversionFactor
-  destinationCoOrdinateInYDir = 15 * LengthConversionFactor
-  
-  ' Copy circle
-  swDoc.Extension.RotateOrCopy True, 3, True, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
-  
+  ' Create Center ractangle
+  vSketch = swSketchManager.CreateCenterRectangle(0, 0, 0, 1 * LengthConversionFactor, 1 * LengthConversionFactor, 0)
+    
   ' De-select the lines after creation
+  swDoc.ClearSelection2 True
+  
+  ' Select all lines of Center Ractangle
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Line3", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Line4", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Rotate Center Ractangle
+  swDoc.Extension.RotateOrCopy True, 2, True, 0, 0, 0, 0, 0, 1, 45 * AngleConversionFactor
+  
+  ' De-select all after creation
   swDoc.ClearSelection2 True
   
   ' Show Front View after Circular Sketch Pattern

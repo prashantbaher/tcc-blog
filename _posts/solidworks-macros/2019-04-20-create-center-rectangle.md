@@ -56,7 +56,7 @@ Sub main()
   swSketchManager.InsertSketch True
   
   ' Creating a Center Rectangle
-  vSketchLines = swSketchManager.CreateCenterRectangle(0, 0, 0, 1, 0, 0)
+  vSketchLines = swSketchManager.CreateCenterRectangle(0, 0, 0, 1, 1, 0)
   
   ' De-select the corner rectangle after creation
   swDoc.ClearSelection2 True
@@ -174,7 +174,7 @@ This method allows us to insert a sketch in selected plane.
 Dim vSketchLines As Variant
     
 ' Creating a Center rectangle
-vSketchLines = swSketchManager.CreateCenterRectangle (0, 0, 0, 1, 0, 0)
+vSketchLines = swSketchManager.CreateCenterRectangle (0, 0, 0, 1, 1, 0)
 ```
 
 In above sample code, we 1st create a variable named `vSketchLines` of type `Variant`.
@@ -211,7 +211,7 @@ Below image shows more clearly about these parameters.
 
 In the above code sample I have used (0, 0, 0) point which is *origin* of sketch.
 
-For point 2, I used (1, 0, 0) which is 1 point distance in *X-direction*.
+For point 2, I used (1, 1, 0) which is 1 point distance in *X-direction* and 1 point distance in *Y-direction*.
 
 This `CreateCenterRectangle` method returns **an array** of *sketch segments* that represent the edges created for this Center rectangle.
 
