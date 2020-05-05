@@ -135,23 +135,23 @@ Sub main()
   ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Create a local variable for Center ractangle
+  ' Create a local variable for CenterPoint ractangle
   Dim vSketch As Variant
   
-  ' Create Center ractangle
+  ' Create CenterPoint ractangle
   vSketch = swSketchManager.CreateCenterRectangle(0, 0, 0, 1 * LengthConversionFactor, 1 * LengthConversionFactor, 0)
     
   ' De-select the lines after creation
   swDoc.ClearSelection2 True
   
-  ' Select all lines of Center Ractangle
+  ' Select all lines of CenterPoint Ractangle
   BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   BoolStatus = swDoc.Extension.SelectByID2("Line3", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   BoolStatus = swDoc.Extension.SelectByID2("Line4", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Rotate Center Ractangle
-  swDoc.Extension.RotateOrCopy True, 2, True, 0, 0, 0, 0, 0, 1, 45 * AngleConversionFactor
+  ' Rotate CenterPoint Ractangle by 45 degree only
+  swDoc.Extension.RotateOrCopy False, 1, True, 0, 0, 0, 0, 0, 1, 45 * AngleConversionFactor
   
   ' De-select all after creation
   swDoc.ClearSelection2 True
@@ -358,74 +358,54 @@ This method allows us to insert a sketch in selected plane.
 
 
 ```vb
-' Circle Radius
-Dim circleRadius As Double
-circleRadius = 5 * LengthConversionFactor
+' Create a local variable for CenterPoint ractangle
+Dim vSketch As Variant
+
+' Create CenterPoint ractangle
+vSketch = swSketchManager.CreateCenterRectangle(0, 0, 0, 1 * LengthConversionFactor, 1 * LengthConversionFactor, 0)
 ```
 
 In above code sample, we do following:
 
-  1. Create a local variable named `circleRadius`, which is `Double` type.
+  1. Create a local variable named `vSketch`, which is `Variant` type.
 
-  2. In 2nd line, we assign a value of **5** to our `circleRadius` variable, also we multiple with our `LengthConversionFactor` variable.
+  2. In 2nd line, we Create CenterPoint ractangle by using `CreateCenterRectangle` method.
+  
+    This `CreateCenterRectangle` method is available in `swSketchManager` variable.
 
-Since I am using *IPS unit system*, I want to create a circle of Radius *5 inch*.
+  3. This `CreateCenterRectangle` method return a value. We store that value in previously defined variable  `vSketch`.
+
+**Side of CenterPoint ractangle:** *1" or 1 inch*
+
+If you want to know more about `CreateCenterRectangle` method, then please visit **[Sketch - Create Center Rectangle](/solidworks-macro/create-center-rectangle)** post.
+
+I have given a detail explaination about `CreateCenterRectangle` method there.
+
 
 ```vb
-' Set Sketch Segment value and Create a Circle
-Set swSketchSegment = swSketchManager.CreateCircleByRadius(0, 0, 0, circleRadius)
+' De-select the lines after creation
+swDoc.ClearSelection2 True
 ```
 
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCircleByRadius` method from *Solidworks Sketch Manager*.
-
-This `CreateCircleByRadius` method creates *a Circle* at given point with radius.
-
-For more information about `CreateCircleByRadius` method, you can read my [Solidworks Macro - Create Circle By Radius From VBA Macro](/solidworks-macro/create-circle-by-radius) post.
-
-That post describe all the parameters we need for this `CreateCircleByRadius` method in details.
-
-In above line, we create a Circle with:
-
-  - **Circle Centerpoint** : At origin i.e. *(0, 0, 0)*
-
-  - **Circle Radius** : *`circleRadius`*
+After creating a Square, we de-select all entities.
 
 ```vb
-' Defining variables for Destination Co-ordinates
-Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
+' Select all lines of Center Ractangle
+BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+BoolStatus = swDoc.Extension.SelectByID2("Line3", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+BoolStatus = swDoc.Extension.SelectByID2("Line4", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
 ```
 
-In above line of code, we create **two** variables of **`double`** type in *one single line*.
+In above line of code, we select all lines of Center Ractangle by using `SelectByID2` method from `swDoc.Extension` object.
 
-These variables we use for defining **Destination Co-ordinates**.
+> I have not create separate variable `Extension`, because I like to avoid creating extra objects.
 
-Variables Name:
-
-  - `destinationCoOrdinateInXDir`
-
-  - `destinationCoOrdinateInYDir`
+**Please not that we have selected only Sides, not the diagonals.**
 
 ```vb
-' Setting the values of Destination Co-ordinates in X & Y directions for Rotate
-destinationCoOrdinateInXDir = 10 * LengthConversionFactor
-destinationCoOrdinateInYDir = 10 * LengthConversionFactor
-```
-
-In above line of code, we set the values of *Destination Co-ordinates* in **X & Y directions** for ***Rotate*** selected circle.
-
-Variables Values:
-
-  - `destinationCoOrdinateInXDir = 10 * LengthConversionFactor`
-
-    *10" in X direction.*
-
-  - `destinationCoOrdinateInYDir = 10 * LengthConversionFactor`
-
-    *10" in Y direction.*
-
-```vb
-' Rotate circle
-swDoc.Extension.RotateOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
+' Rotate Center Ractangle
+swDoc.Extension.RotateOrCopy False, 1, True, 0, 0, 0, 0, 0, 1, 45 * AngleConversionFactor
 ```
 
 For "**Rotating**" a sketch entity, we need `RotateOrCopy` method from **Solidworks** `ModelDoc2`'s `Extension` object.
@@ -451,6 +431,20 @@ This `RotateOrCopy` method takes following parameters as explained:
   - **DestZ** : *Z coordinate of the destination point from which to Rotate the sketch entities.*
 
 ***NOTE: There are no return value after this function.***
+
+---
+
+### **Destination Point Values**
+
+Destination Point is defined by following parameters:
+
+  - **DestX**
+  
+  - **DestY**
+
+  - **DestZ**
+
+
 
 ---
 
