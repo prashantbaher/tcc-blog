@@ -15,11 +15,13 @@ This post is divided into below sections:
   
   - *[Understanding the Code](#understanding-the-code)*
 
+  - *[Destination Point Values](#Destination-Point-Values)*
+
   - *[Multiple Cases](#cases)*
 
     - *[Rotate Sketch Entities](#case-1--Rotate-sketch-entities)*
 
-    - *[Copy Sketch Entities](#case-2--copy-sketch-entities)*
+    - *[Copy and Rotate Sketch Entities](#case-2--copy-and-rotate-sketch-entities)*
 
 Feel free to select the section you want to go!
 
@@ -525,7 +527,7 @@ In above code we need to set following parameters:
 
   - **BaseZ** : *Z coordinate of the base point  = 0*
 
-Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)*
+Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)* section of this post.
 
   - **DestX** : *X coordinate of the destination  = 0*
   
@@ -580,7 +582,7 @@ In above code we need to set following parameters:
 
   - **BaseZ** : *Z coordinate of the base point  = 0*
 
-Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)*
+Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)* sections of this post.
 
   - **DestX** : *X coordinate of the destination  = 0*
   
