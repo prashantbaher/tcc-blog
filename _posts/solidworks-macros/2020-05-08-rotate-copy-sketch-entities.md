@@ -15,11 +15,11 @@ This post is divided into below sections:
   
   - *[Understanding the Code](#understanding-the-code)*
 
-  - *[Destination Point Values](#Destination-Point-Values)*
+  - *[Destination Point Values](#destination-point-values)*
 
   - *[Multiple Cases](#cases)*
 
-    - *[Rotate Sketch Entities](#case-1--Rotate-sketch-entities)*
+    - *[Rotate Sketch Entities](#case-1--rotate-sketch-entities)*
 
     - *[Copy and Rotate Sketch Entities](#case-2--copy-and-rotate-sketch-entities)*
 
