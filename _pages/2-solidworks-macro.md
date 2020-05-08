@@ -150,6 +150,12 @@ In Below posts, I show you how to create **Sketch Patterns** and **edit patterns
 
 ### Sketch Transformation From VBA Macro
 
-In Below posts, I show you how to **Move** and **Copy** Sketch entities from Solidworks macro using VBA programming language.
+In Below posts, I show you how to **Move/Copy** and **Rotate/Copy** Sketch entities from Solidworks macro using VBA programming language.
 
 * [Sketch Transformation - Move/Copy Sketch Entities](/solidworks-macro/move-copy-sketch-entities)
+
+* [Sketch Transformation - Rotate/Copy Sketch Entities](/solidworks-macro/rotate-copy-sketch-entities)
+
+Please select any of the above post.
+
+##### I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.
