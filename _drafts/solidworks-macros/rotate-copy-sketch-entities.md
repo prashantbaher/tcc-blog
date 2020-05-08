@@ -430,6 +430,8 @@ This `RotateOrCopy` method takes following parameters as explained:
 
   - **DestZ** : *Z coordinate of the destination point from which to Rotate the sketch entities.*
 
+  - **Angle** : *Angle of Rotation by which we rotate the selected sketch entities.*
+
 ***NOTE: There are no return value after this function.***
 
 ---
@@ -444,7 +446,41 @@ Destination Point is defined by following parameters:
 
   - **DestZ**
 
+*The values of these parameters are mainly dependent on the plane, you have selected.*
 
+There values as per **Default Planes** is given below.
+
+#### On X-Y Plane
+
+When **X-Y** plane is selected, then values are:
+
+  - **DestX** = 0
+  
+  - **DestY** = 0
+
+  - **DestZ** = 1
+
+#### On Y-Z Plane
+
+When **Y-Z** plane is selected, then values are:
+
+  - **DestX** = 1
+  
+  - **DestY** = 0
+
+  - **DestZ** = 0
+
+#### On X-Z Plane
+
+When **X-Z** plane is selected, then values are:
+
+  - **DestX** = 0
+  
+  - **DestY** = 1
+
+  - **DestZ** = 0
+
+Since we are creating our Sketch in **X-Y** plane, hence I used the values accordingly.
 
 ---
 
@@ -463,18 +499,17 @@ In this section, we will go through different cases by
 In our code, if we want to *Rotate Sketch Entities*, then we need to use code sample as given below:
 
 ```vb
-' Defining variables for Destination Co-ordinates
-Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
-
-' Setting the values of Destination Co-ordinates in X & Y directions for Rotate
-destinationCoOrdinateInXDir = 10 * LengthConversionFactor
-destinationCoOrdinateInYDir = 10 * LengthConversionFactor
-
 ' Rotate circle
-swDoc.Extension.RotateOrCopy False, 1, False, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
+swDoc.Extension.RotateOrCopy False, 1, True, 0, 0, 0, 0, 0, 1, 45 * AngleConversionFactor
 ```
 
-In above line we **Rotate Sketch Entities** to new position i.e. *10" in X-Direction* and *10" in Y-Direction*.
+In above code we **Rotate Sketch Entities** with:
+
+  - **Base Point** : `0, 0, 0`
+
+  - **Rotation Angle** : *`45 Degree` Anti-clock wise*.
+
+> *If you want to rotate Clock-wise, then then use **Negeative (-ve)** value.*
 
 In above code we need to set following parameters:
 
@@ -490,11 +525,15 @@ In above code we need to set following parameters:
 
   - **BaseZ** : *Z coordinate of the base point  = 0*
 
-  - **DestX** : *X coordinate of the destination  = 10"*
-  
-  - **DestY** : *Y coordinate of the destination point  = 10"*
+Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)*
 
-  - **DestZ** : *Z coordinate of the destination point  = 0*  
+  - **DestX** : *X coordinate of the destination  = 0*
+  
+  - **DestY** : *Y coordinate of the destination point  = 0*
+
+  - **DestZ** : *Z coordinate of the destination point  = 1*  
+
+  - **Rotation Angle** : *Angle of Rotation by which we rotate the selected sketch entities = `45 Degree` Anti-clock wise*.
 
 ***Example Images:***
 
@@ -502,37 +541,36 @@ Below image shows before and after we **Rotate Sketch Entitny**.
 
 **Before Rotate Sketch Entitny**
 
-![before-Rotate-copy](/assets/Solidworks_Images/Rotate-copy-sketch-entities/before-Rotate-copy.png)
+![before-rotate](/assets/Solidworks_Images/rotate-copy-sketch-entities/before-rotate.png)
 
 **After Rotate Sketch Entitny**
 
-![after-Rotate](/assets/Solidworks_Images/Rotate-copy-sketch-entities/after-Rotate.png)
+![after-Rotate](/assets/Solidworks_Images/rotate-copy-sketch-entities/after-Rotate.png)
 
-#### CASE 2 : Copy Sketch Entities
+#### CASE 2 : Copy and Rotate Sketch Entities
 
-In our code, if we want to *Copy Sketch Entities*, then we need to use code sample as given below:
+In our code, if we want to *Copy and Rotate Sketch Entities*, then we need to use code sample as given below:
 
 ```vb
-' Defining variables for Destination Co-ordinates
-Dim destinationCoOrdinateInXDir As Double, destinationCoOrdinateInYDir As Double
-
-' Setting the values of Destination Co-ordinates in X & Y directions for Rotate
-destinationCoOrdinateInXDir = 15 * LengthConversionFactor
-destinationCoOrdinateInYDir = 15 * LengthConversionFactor
-
 ' Copy circle
-swDoc.Extension.RotateOrCopy True, 3, True, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
+swDoc.Extension.RotateOrCopy True, 2, True, 0, 0, 0, destinationCoOrdinateInXDir, destinationCoOrdinateInYDir, 0
 ```
 
-In above line we **Copy Sketch Entities** to new position i.e. *15" in X-Direction* and *15" in Y-Direction* for every copy of sketch.
+In above code we **Rotate Sketch Entities** with:
 
-This will more clear in below images when you scroll down.
+  - **Create Copy** : `True`
+
+  - **Base Point** : `0, 0, 0`
+
+  - **Rotation Angle of Copied Entity** : *`45 Degree` Anti-clock wise*.
+
+> *If you want to rotate Clock-wise, then then use **Negeative (-ve)** value.*
 
 In above code we need to set following parameters:
 
-  - **Copy** : `True` to create a copy.
+  - **Copy** : `True` to not create a copy.
 
-  - **NumCopies** : *Number of copies we want to create: 3*
+  - **NumCopies** : *Number of copies you want to create to 2 which is itself.*
 
   - **KeepRelations** : *`True` to keep sketch relations after Rotate or Copy operation.*
 
@@ -542,23 +580,27 @@ In above code we need to set following parameters:
 
   - **BaseZ** : *Z coordinate of the base point  = 0*
 
-  - **DestX** : *X coordinate of the destination  = 15"*
-  
-  - **DestY** : *Y coordinate of the destination point  = 15"*
+Since we are creating sketch in **X-Y plane**, hence I used values mentioned in *[Destination Point Values](#Destination-Point-Values)*
 
-  - **DestZ** : *Z coordinate of the destination point  = 0*  
+  - **DestX** : *X coordinate of the destination  = 0*
+  
+  - **DestY** : *Y coordinate of the destination point  = 0*
+
+  - **DestZ** : *Z coordinate of the destination point  = 1*  
+
+  - **Rotation Angle** : *Angle of Rotation by which we rotate the selected sketch entities = `45 Degree` Anti-clock wise*.
 
 ***Example Images:***
 
-Below image shows before and after we **Copy Sketch Entitny**.
+Below image shows before and after we **Rotate Sketch Entitny**.
 
-**Before Copy Sketch Entitny**
+**Before Rotate Sketch Entitny**
 
-![before-Rotate-copy](/assets/Solidworks_Images/Rotate-copy-sketch-entities/before-Rotate-copy.png)
+![before-rotate](/assets/Solidworks_Images/rotate-copy-sketch-entities/before-rotate.png)
 
-**After Copy Sketch Entitny**
+**After Rotate Sketch Entitny**
 
-![after-copy](/assets/Solidworks_Images/Rotate-copy-sketch-entities/after-copy.png)
+![after-rotate-copy](/assets/Solidworks_Images/rotate-copy-sketch-entities/after-rotate-copy.png)
 
 ---
 
