@@ -19,7 +19,7 @@ This post is divided into following sections.
 
 Feel free to select the topic you want to.
 
-  *- [Code Demo Video on YouTube](#video-of-code-on-youtube)*
+  - *[Code Demo Video on YouTube](#video-of-code-on-youtube)*
 
   - *[Create a New project](#create-a-new-project)*
 
