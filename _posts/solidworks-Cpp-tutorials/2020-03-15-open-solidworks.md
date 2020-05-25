@@ -19,15 +19,30 @@ This post is divided into following sections.
 
 Feel free to select the topic you want to.
 
-  - [Create a New project](#create-a-new-project)
+  *- [Code Demo Video on YouTube](#video-of-code-on-youtube)*
 
-  - [Add Source file](#add-source-file)
+  - *[Create a New project](#create-a-new-project)*
 
-  - [Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)
+  - *[Add Source file](#add-source-file)*
 
-  - [Add Code to Source.cpp file](#add-code-to-source.cpp-file)
+  - *[Add References to Solidworks Type Library files](#add-references-to-solidworks-type-library-files)*
 
-  - [Final Result](#final-result)
+  - *[Add Code to Source.cpp file](#add-code-to-source.cpp-file)*
+
+  - *[Final Result](#final-result)*
+
+---
+
+## Video of Code on YouTube
+
+Please see below video on **how to Open Solidworks using Solidworks C++ API** from Visual Studio.
+
+<iframe src="https://www.youtube.com/embed/oL9kJoRoYcQ" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
 
 ---
 

@@ -6,9 +6,20 @@ image:  post-image.jpg
 tags:   [VBA]
 ---
 
-In this post, we learn how can we *Open new Assembly and Drawing document* from a Visual Basic for Application's *Userform*.
+In this post, we learn how can we **Open new Assembly and Drawing document** from a Visual Basic for Application's **Userform**.
 
 For this please we need to do following steps as described below.
+
+## Video of Code on YouTube
+
+Please see below video how visually we *Open new Assembly and Drawing document* in **Solidworks VBA macro Userform**.
+
+<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
 
 ## Create a new macro
 
