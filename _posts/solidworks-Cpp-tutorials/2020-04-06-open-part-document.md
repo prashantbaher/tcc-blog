@@ -5,13 +5,21 @@ image:  post-image.jpg
 tags:   [Solidworks C++ API]
 ---
 
+In this post, I tell you about **how to Open Solidworks Part Document using Solidworks C++ API** from Visual Studio.
+
+I hope you have setup Visual Studio community version.
+
+If not then please go to **[Solidworks C++ API - Prerequisite](/solidworks-c++-api/cpp-prerequisite)** post and watch the suggested videos before proceeding further.
+
+---
+
 ## Content
 
 This post is divided into following sections. 
 
 Feel free to select the topic you want to.
 
-  - *[Introduction](#introduction)*
+  - *[Code Demo Video on YouTube](#video-of-code-on-youtube)*
 
   - *[Create a New project](#create-a-new-project)*
 
@@ -27,13 +35,16 @@ Feel free to select the topic you want to.
 
 ---
 
-## Introduction
+## Video of Code on YouTube
 
-In this post, I tell you about **how to Open Solidworks Part Document using Solidworks C++ API** from Visual Studio.
+Please see below video on **how to Open Solidworks Part Document using Solidworks C++ API** from Visual Studio.
 
-I hope you have setup Visual Studio community version.
+<iframe src="https://www.youtube.com/embed/DBESb0ZGnGc" frameborder="0" allowfullscreen></iframe>
+<br>
 
-If not then please go to **[Solidworks C++ API - Prerequisite](/solidworks-c++-api/cpp-prerequisite)** post and watch the suggested videos before proceeding further.
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
 
 ---
 
