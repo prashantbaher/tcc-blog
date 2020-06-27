@@ -156,6 +156,13 @@ In Below posts, I show you how to **Move/Copy** and **Rotate/Copy** Sketch entit
 
 * [Sketch Transformation - Rotate/Copy Sketch Entities](/solidworks-macro/rotate-copy-sketch-entities)
 
+### Managing Sketch Relations From VBA Macro
+
+In Below posts, I show you how to **Managing** Sketch Relations from Solidworks macro using VBA programming language.
+
+* [Sketch Relations - Toggle (Hide/Show) Sketch Relations](/solidworks-macro/toggle-display-sketch-relation)
+
+
 Please select any of the above post.
 
 ##### I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.
