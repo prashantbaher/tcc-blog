@@ -189,23 +189,23 @@ This `Create3PointCenterRectangle` method is part of `swSketchManager` and it is
 
 This `Create3PointCenterRectangle` method takes following parameters as explained:
 
-*X1* : X coordinate of the origin
+  *X1* : X coordinate of the origin
 
-*Y1* : Y coordinate of the origin
+  *Y1* : Y coordinate of the origin
 
-*Z1* : Z coordinate of the origin
+  *Z1* : Z coordinate of the origin
 
-*X2* : X coordinate of the point 2 of one side
+  *X2* : X coordinate of the point 2 of one side
 
-*Y2* : Y coordinate of the point 2 of one side
+  *Y2* : Y coordinate of the point 2 of one side
 
-*Z2* : Z coordinate of the point 2 of one side
+  *Z2* : Z coordinate of the point 2 of one side
 
-*X3* : X coordinate of the point 3 of one side
+  *X3* : X coordinate of the point 3 of one side
 
-*Y3* : Y coordinate of the point 3 of one side
+  *Y3* : Y coordinate of the point 3 of one side
 
-*Z3* : Z coordinate of the point 3 of one side
+  *Z3* : Z coordinate of the point 3 of one side
 
 Below image shows more clearly about these parameters.
 
