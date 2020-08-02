@@ -10,6 +10,7 @@ In this post, we learn how can we *open a part document* from a Visual Basic for
 
 For this please we need to do following steps as described below.
 
+<!--
 ## Video of Code on YouTube
 
 Please see below video on **Solidworks VBA Macro - Open new Part document** in Solidwoks VBA Userforms.
@@ -20,6 +21,7 @@ Please see below video on **Solidworks VBA Macro - Open new Part document** in S
 Please note that there are **no explaination** in the video. 
 
 **Explaination** of each line and why we write code this way is given in this post.
+-->
 
 ## Create a new macro
 
