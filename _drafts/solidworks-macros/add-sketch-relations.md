@@ -261,3 +261,115 @@ End Sub
 I have added comments to each line `code sample`, hence it is easy to understand.
 
 ---
+
+## Add Midpoint Sketch Relation to a sketch segment
+
+Here we learn how to add `Midpoint` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use a `Line` as shown in below image:
+
+**Before Add *Midpoint* Sketch Relation to Line**
+
+![line-before-horizontal-or-vertical-relation](/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png)
+
+**Code to add `Midpoint` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Origin
+  BoolStatus = swDoc.Extension.SelectByID2("Point1@Origin", "EXTSKETCHPOINT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Midpoint sketch relation
+  swDoc.SketchAddConstraints ("sgATMIDDLE")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Midpoint* Sketch Relation to Line**
+
+![line-after-midpoint-relation](/assets/Solidworks_Images/sketch-relations/line-after-midpoint-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add Co-Linear Sketch Relation to a sketch segment
+
+Here we learn how to add `Co-Linear` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use two `Lines` as shown in below image:
+
+**Before Add *Co-Linear* Sketch Relation to Line**
+
+![lines-before-addng-colinear-relation](/assets/Solidworks_Images/sketch-relations/lines-before-addng-colinear-relation.png)
+
+**Code to add `Co-Linear` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Co-Linear sketch relation
+  swDoc.SketchAddConstraints ("sgCOLINEAR")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Co-Linear* Sketch Relation to Line**
+
+![lines-after-colinear-relation](/assets/Solidworks_Images/sketch-relations/lines-after-colinear-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
