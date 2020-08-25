@@ -151,3 +151,113 @@ End Sub
 ![circle-after-Coincident-relation](/assets/Solidworks_Images/sketch-relations/circle-after-Coincident-relation.png)
 
 I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add Horizontal Sketch Relation to a sketch segment
+
+Here we learn how to add `Horizontal` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use a `Line` as shown in below image:
+
+**Before Add *Horizontal* Sketch Relation to Line**
+
+![line-before-horizontal-or-vertical-relation](/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png)
+
+**Code to add `Horizontal` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Horizontal sketch relation
+  swDoc.SketchAddConstraints ("sgHORIZONTAL2D")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Horizontal* Sketch Relation to Line**
+
+![line-after-horizontal-relation](/assets/Solidworks_Images/sketch-relations/line-after-horizontal-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add Vertical Sketch Relation to a sketch segment
+
+Here we learn how to add `Vertical` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use a `Line` as shown in below image:
+
+**Before Add *Vertical* Sketch Relation to Line**
+
+![line-before-horizontal-or-vertical-relation](/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png)
+
+**Code to add `Vertical` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Vertical sketch relation
+  swDoc.SketchAddConstraints ("sgVERTICAL2D")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Vertical* Sketch Relation to Line**
+
+![line-after-vertical-relation](/assets/Solidworks_Images/sketch-relations/line-after-vertical-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
