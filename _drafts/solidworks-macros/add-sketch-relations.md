@@ -544,3 +544,60 @@ End Sub
 ![lines-after-adding-equal-relation](/assets/Solidworks_Images/sketch-relations/lines-after-adding-equal-relation.png)
 
 I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add Tangent Sketch Relation to a sketch segment
+
+Here we learn how to add `Tangent` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use a `Line` and a `Circle` as shown in below image:
+
+**Before Add *Tangent* Sketch Relation to Line**
+
+![line-circle-before-adding-tangent-relation](/assets/Solidworks_Images/sketch-relations/line-circle-before-adding-tangent-relation.png)
+
+**Code to add `Tangent` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Tangent sketch relation
+  swDoc.SketchAddConstraints ("sgSAMELENGTH")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Tangent* Sketch Relation to Line**
+
+![line-circle-after-adding-tangent-relation](/assets/Solidworks_Images/sketch-relations/line-circle-after-adding-tangent-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
