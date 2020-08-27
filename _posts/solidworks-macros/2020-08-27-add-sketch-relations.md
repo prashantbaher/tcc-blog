@@ -21,33 +21,33 @@ An absolute beginner can follow what is written here.
 
 This post is divided into below sections:
 
-  - *[Add Sketch Relations (Constraints) method](#add-sketch-relations--constraints--method)*
+  - *[Add Sketch Relations (Constraints) method](#add-sketch-relations-constraints-method)*
   
-  - *[Add 'Fix' Sketch Relation to a sketch segment](#Add--Fix--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Fix' Sketch Relation to a sketch segment](#add-fix-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Coincident' Sketch Relation to a sketch segment](#Add--Coincident--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Coincident' Sketch Relation to a sketch segment](#add-coincident-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Horizontal' Sketch Relation to a sketch segment](#Add--Horizontal--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Horizontal' Sketch Relation to a sketch segment](#add-horizontal-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Vertical' Sketch Relation to a sketch segment](#Add--Vertical--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Vertical' Sketch Relation to a sketch segment](#add-vertical-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Midpoint' Sketch Relation to a sketch segment](#Add--Midpoint--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Midpoint' Sketch Relation to a sketch segment](#add-midpoint-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Co-Linear' Sketch Relation to a sketch segment](#Add--Co-Linear--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Co-Linear' Sketch Relation to a sketch segment](#add-co-linear-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Perpendicular' Sketch Relation to a sketch segment](#Add--Perpendicular--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Perpendicular' Sketch Relation to a sketch segment](#add-perpendicular-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Parallel' Sketch Relation to a sketch segment](#Add--Parallel--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Parallel' Sketch Relation to a sketch segment](#add-parallel-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Equal Length' Sketch Relation to a sketch segment](#Add--Equal-Length--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Equal Length' Sketch Relation to a sketch segment](#add-equal-length-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Tangent' Sketch Relation to a sketch segment](#Add--Tangent--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Tangent' Sketch Relation to a sketch segment](#id="add-tangent-sketch-relation-to-a-sketch-segment")*
 
-  - *[Add 'Same Curve Length' Sketch Relation to a sketch segment](#Add--Same-Curve-Length--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Same Curve Length' Sketch Relation to a sketch segment](#add-same-curve-length-sketch-relation-to-a-sketch-segment)*
 
-  - *[Add 'Coincident' Sketch Relation to a sketch segment](#Add--Coincident--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Coincident' Sketch Relation to a sketch segment](#add-coincident-sketch-relation-to-a-sketch-segment-1)*
 
-  - *[Add 'Coradial' Sketch Relation to a sketch segment](#Add--Coradial--Sketch-Relation-to-a-sketch-segment)*
+  - *[Add 'Coradial' Sketch Relation to a sketch segment](#add-coradial-sketch-relation-to-a-sketch-segment)*
 
 Feel free to select the section you want to go!
 
@@ -172,7 +172,7 @@ End Sub
 
 **After Add *Coincident* Sketch Relation to Circle**
 
-![circle-after-Coincident-relation](/assets/Solidworks_Images/sketch-relations/circle-after-Coincident-relation.png)
+![circle-after-coincident-relation](/assets/Solidworks_Images/sketch-relations/circle-after-coincident-relation.png)
 
 I have added comments to each line `code sample`, hence it is easy to understand.
 
