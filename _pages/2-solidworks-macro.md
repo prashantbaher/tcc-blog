@@ -162,6 +162,7 @@ In Below posts, I show you how to **Managing** Sketch Relations from Solidworks 
 
 * [Sketch Relations - Toggle (Hide/Show) Sketch Relations](/solidworks-macro/toggle-display-sketch-relation)
 
+* [Sketch Relations - Add Sketch Relations (Constraints)](/solidworks-macro/add-sketch-relations)
 
 Please select any of the above post.
 

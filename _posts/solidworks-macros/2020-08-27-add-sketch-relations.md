@@ -21,9 +21,33 @@ An absolute beginner can follow what is written here.
 
 This post is divided into below sections:
 
-  - *[Code Sample](#code-sample)*
+  - *[Add Sketch Relations (Constraints) method](#add-sketch-relations--constraints--method)*
   
-  - *[Understanding the Code](#understanding-the-code)*
+  - *[Add 'Fix' Sketch Relation to a sketch segment](#Add--Fix--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Coincident' Sketch Relation to a sketch segment](#Add--Coincident--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Horizontal' Sketch Relation to a sketch segment](#Add--Horizontal--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Vertical' Sketch Relation to a sketch segment](#Add--Vertical--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Midpoint' Sketch Relation to a sketch segment](#Add--Midpoint--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Co-Linear' Sketch Relation to a sketch segment](#Add--Co-Linear--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Perpendicular' Sketch Relation to a sketch segment](#Add--Perpendicular--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Parallel' Sketch Relation to a sketch segment](#Add--Parallel--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Equal Length' Sketch Relation to a sketch segment](#Add--Equal-Length--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Tangent' Sketch Relation to a sketch segment](#Add--Tangent--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Same Curve Length' Sketch Relation to a sketch segment](#Add--Same-Curve-Length--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Coincident' Sketch Relation to a sketch segment](#Add--Coincident--Sketch-Relation-to-a-sketch-segment)*
+
+  - *[Add 'Coradial' Sketch Relation to a sketch segment](#Add--Coradial--Sketch-Relation-to-a-sketch-segment)*
 
 Feel free to select the section you want to go!
 
