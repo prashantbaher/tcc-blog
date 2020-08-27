@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Toggle (Hide/Show) Sketch Relations From VBA Macro
-image:  post-image.jpg
+image:  display-hide-relation.png
 tags:   [Solidworks Macro]
 ---
 

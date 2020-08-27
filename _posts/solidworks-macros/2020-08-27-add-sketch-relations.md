@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Add Sketch Relations (Constraints) From VBA Macro
-image:  add-sketch-post-title-image.png
+image:  display-hide-relation.png
 tags:   [Solidworks Macro]
 ---
 
