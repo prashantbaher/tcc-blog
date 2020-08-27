@@ -43,7 +43,7 @@ In following sections we add different sketch constraints to sketch segments.
 
 ---
 
-## Add Fix Sketch Relation to a sketch segment
+## Add 'Fix' Sketch Relation to a sketch segment
 
 Here we learn how to add `Fixed` *sketch relation* to a sketch segment through **VBA**.
 
@@ -97,7 +97,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Coincident Sketch Relation to a sketch segment
+## Add 'Coincident' Sketch Relation to a sketch segment
 
 Here we learn how to add `Coincident` *sketch relation* to a sketch segment through **VBA**.
 
@@ -154,7 +154,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Horizontal Sketch Relation to a sketch segment
+## Add 'Horizontal' Sketch Relation to a sketch segment
 
 Here we learn how to add `Horizontal` *sketch relation* to a sketch segment through **VBA**.
 
@@ -208,7 +208,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Vertical Sketch Relation to a sketch segment
+## Add 'Vertical' Sketch Relation to a sketch segment
 
 Here we learn how to add `Vertical` *sketch relation* to a sketch segment through **VBA**.
 
@@ -262,7 +262,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Midpoint Sketch Relation to a sketch segment
+## Add 'Midpoint' Sketch Relation to a sketch segment
 
 Here we learn how to add `Midpoint` *sketch relation* to a sketch segment through **VBA**.
 
@@ -319,7 +319,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Co-Linear Sketch Relation to a sketch segment
+## Add 'Co-Linear' Sketch Relation to a sketch segment
 
 Here we learn how to add `Co-Linear` *sketch relation* to a sketch segment through **VBA**.
 
@@ -376,7 +376,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Perpendicular Sketch Relation to a sketch segment
+## Add 'Perpendicular' Sketch Relation to a sketch segment
 
 Here we learn how to add `Perpendicular` *sketch relation* to a sketch segment through **VBA**.
 
@@ -433,7 +433,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Parallel Sketch Relation to a sketch segment
+## Add 'Parallel' Sketch Relation to a sketch segment
 
 Here we learn how to add `Parallel` *sketch relation* to a sketch segment through **VBA**.
 
@@ -490,19 +490,19 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Equal Sketch Relation to a sketch segment
+## Add 'Equal Length' Sketch Relation to a sketch segment
 
-Here we learn how to add `Equal` *sketch relation* to a sketch segment through **VBA**.
+Here we learn how to add `Equal Length` *sketch relation* to a sketch segment through **VBA**.
 
 We need *an unconstraint sketch segment*.
 
 In this post, I use two `Lines` as shown in below image:
 
-**Before Add *Equal* Sketch Relation to Line**
+**Before Add *Equal Length* Sketch Relation to Line**
 
 ![lines-before-addng-equal-relation](/assets/Solidworks_Images/sketch-relations/lines-before-addng-equal-relation.png)
 
-**Code to add `Equal` sketch relation**
+**Code to add `Equal Length` sketch relation**
 
 ```vb
 Option Explicit
@@ -530,7 +530,7 @@ Sub main()
   ' Select Line 2
   BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
-  ' Add Equal sketch relation
+  ' Add Equal Length sketch relation
   swDoc.SketchAddConstraints ("sgSAMELENGTH")
   
   ' Clear selection after adding relation
@@ -539,7 +539,7 @@ Sub main()
 End Sub
 ```
 
-**After Add *Equal* Sketch Relation to Line**
+**After Add *Equal Length* Sketch Relation to Line**
 
 ![lines-after-adding-equal-relation](/assets/Solidworks_Images/sketch-relations/lines-after-adding-equal-relation.png)
 
@@ -547,7 +547,7 @@ I have added comments to each line `code sample`, hence it is easy to understand
 
 ---
 
-## Add Tangent Sketch Relation to a sketch segment
+## Add 'Tangent' Sketch Relation to a sketch segment
 
 Here we learn how to add `Tangent` *sketch relation* to a sketch segment through **VBA**.
 
@@ -585,10 +585,10 @@ Sub main()
   BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
   ' Select Line 2
-  BoolStatus = swDoc.Extension.SelectByID2("Line2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
   
   ' Add Tangent sketch relation
-  swDoc.SketchAddConstraints ("sgSAMELENGTH")
+  swDoc.SketchAddConstraints ("sgTANGENT")
   
   ' Clear selection after adding relation
   swDoc.ClearSelection2 True
@@ -601,3 +601,192 @@ End Sub
 ![line-circle-after-adding-tangent-relation](/assets/Solidworks_Images/sketch-relations/line-circle-after-adding-tangent-relation.png)
 
 I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add 'Same Curve Length' Sketch Relation to a sketch segment
+
+Here we learn how to add `Same Curve Length` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use a `Line` and a `Circle` as shown in below image:
+
+**Before Add *Same Curve Length* Sketch Relation to Line**
+
+![line-circle-before-adding-equal-curve-length-relation](/assets/Solidworks_Images/sketch-relations/line-circle-before-adding-equal-curve-length-relation.png)
+
+**Code to add `Same Curve Length` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Line1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Same Curve Length sketch relation
+  swDoc.SketchAddConstraints ("sgSAMECURVELENGTH")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Same Curve Length* Sketch Relation to Line**
+
+![line-circle-after-adding-equal-curve-length-relation](/assets/Solidworks_Images/sketch-relations/line-circle-after-adding-equal-curve-length-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add 'Coincident' Sketch Relation to a sketch segment
+
+Here we learn how to add `Coincident` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use **two** `Circles` as shown in below image:
+
+**Before Add *Coincident* Sketch Relation to Line**
+
+![circles-before-adding-concentric-relation](/assets/Solidworks_Images/sketch-relations/circles-before-adding-concentric-relation.png)
+
+**Code to add `Coincident` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Arc2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Coincident sketch relation
+  swDoc.SketchAddConstraints ("sgCONCENTRIC")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Coincident* Sketch Relation to Line**
+
+![circles-after-adding-concentric-relation](/assets/Solidworks_Images/sketch-relations/circles-after-adding-concentric-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+## Add 'Coradial' Sketch Relation to a sketch segment
+
+Here we learn how to add `Coradial` *sketch relation* to a sketch segment through **VBA**.
+
+We need *an unconstraint sketch segment*.
+
+In this post, I use **two** `Circles` as shown in below image:
+
+**Before Add *Coradial* Sketch Relation to Line**
+
+![circles-before-adding-coradial-relation](/assets/Solidworks_Images/sketch-relations/circles-before-adding-coradial-relation.png)
+
+**Code to add `Coradial` sketch relation**
+
+```vb
+Option Explicit
+
+' Create variable for Solidworks application
+Dim swApp As SldWorks.SldWorks
+
+' Create variable for Solidworks document
+Dim swDoc As SldWorks.ModelDoc2
+
+' Boolean Variable
+Dim BoolStatus As Boolean
+
+Sub main()
+
+  ' Set Solidworks variable to Solidworks application
+  Set swApp = Application.SldWorks
+  
+  ' Set Solidworks document to new part document
+  Set swDoc = swApp.ActiveDoc
+  
+  ' Select Line 1
+  BoolStatus = swDoc.Extension.SelectByID2("Arc1", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Select Line 2
+  BoolStatus = swDoc.Extension.SelectByID2("Arc2", "SKETCHSEGMENT", 0, 0, 0, True, 0, Nothing, swSelectOption_e.swSelectOptionDefault)
+  
+  ' Add Coradial sketch relation
+  swDoc.SketchAddConstraints ("sgCORADIAL")
+  
+  ' Clear selection after adding relation
+  swDoc.ClearSelection2 True
+
+End Sub
+```
+
+**After Add *Coradial* Sketch Relation to Line**
+
+![circles-after-adding-coradial-relation](/assets/Solidworks_Images/sketch-relations/circles-after-adding-coradial-relation.png)
+
+I have added comments to each line `code sample`, hence it is easy to understand.
+
+---
+
+**This is it !!!**
+
+*I hope my efforts will helpful to someone!*
+
+If you found anything to **add or update**, please let me know on my *e-mail*.
+
+Hope this post helps you to ***Add Sketch Relations (Constraints)*** with Solidworks VBA Macros.
+
+For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
+
+***If you like the post then please share it with your friends also.***
+
+***Do let me know by you like this post or not!***
+
+***Till then, Happy learning!!!***
