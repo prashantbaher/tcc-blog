@@ -1,11 +1,11 @@
 ---
 categories: Solidworks-macro
-title:  Solidworks Macro - Convert Sketch Segment to Construction Sketch From VBA Macro
+title:  Solidworks Macro - Convert to Construction Sketch From VBA Macro
 image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
-In this post, I tell you about **Convert Sketch Segment to Construction Sketch From VBA Macro** in a Sketch.
+In this post, I tell you about **Convert to Construction Sketch From VBA Macro** in a Sketch.
 
 In this post, I explain about `CreateConstructionGeometry` method from **Solidworks**'s `SketchManager` object.
 
@@ -233,7 +233,7 @@ For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document vari
 
 If you found anything to **add or update**, please let me know on my *e-mail*.
 
-Hope this post helps you to ***Convert Sketch Segment to Construction Sketch*** with Solidworks VBA Macros.
+Hope this post helps you to ***Convert to Construction Sketch*** with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 

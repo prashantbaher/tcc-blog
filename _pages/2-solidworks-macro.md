@@ -164,6 +164,12 @@ In Below posts, I show you how to **Managing** Sketch Relations from Solidworks 
 
 * [Sketch Relations - Add Sketch Relations (Constraints)](/solidworks-macro/add-sketch-relations)
 
+### Other posts
+
+In below posts, I listed some individual post which is small and related to sketch.
+
+* [Sketch - Convert to Construction Sketch](/solidworks-macro/convert-to-construction-sketch-segment)
+
 Please select any of the above post.
 
 ##### I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.
