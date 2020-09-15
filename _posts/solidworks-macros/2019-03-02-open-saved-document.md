@@ -13,6 +13,17 @@ We open document with 2 different methods.
 
 2. By `OpenDoc6` method
 
+## Video of Code on YouTube
+
+Please see below video on **how to Open Saved Documents** from Visual Studio.
+
+<iframe src="https://www.youtube.com/embed/DeltLKXAIjY" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
 ## By OpenDoc method
 
 This is **the simplest** method to open a saved part from your computer.
