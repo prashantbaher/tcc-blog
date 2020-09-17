@@ -170,6 +170,8 @@ In below posts, I listed some individual post which is small and related to sket
 
 * [Sketch - Convert to Construction Sketch](/solidworks-macro/convert-to-construction-sketch-segment)
 
+* [Sketch - Split Open/Closed Sketch Entities](/solidworks-macro/split-sketch-segments)
+
 Please select any of the above post.
 
 ##### I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.

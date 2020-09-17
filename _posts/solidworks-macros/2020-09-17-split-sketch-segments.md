@@ -11,15 +11,13 @@ This post is divided into below sections:
 
   - *[Introduction](#introduction)*
 
-  - *[Code Sample](#code-sample)*
+  - *[CASE 1 : Split Closed Sketch Entites](#code-sample)*
   
-  - *[Understanding the Code](#understanding-the-code)*
-
-  - *[Multiple Cases](#cases)*
-
-    - *[Move Sketch Entities](#case-1--move-sketch-entities)*
-
-    - *[Copy Sketch Entities](#case-2--copy-sketch-entities)*
+    - *[Understanding the Code](#understanding-the-code)*
+    
+  - *[CASE 2 : Split Open Sketch Entites](#code-sample)*
+  
+    - *[Understanding the Code](#understanding-the-code)*
 
 Feel free to select the section you want to go!
 
@@ -154,7 +152,7 @@ End Sub
 
 ---
 
-### Understanding the Code
+### Understanding Split Closed Sketch Segment the Code
 
 Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
@@ -166,7 +164,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+For more information please visit **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post.
 
 ```vb
 ' Create variable for Solidworks application
@@ -256,9 +254,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+For **detailed information** about these lines please visit **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
+I have discussed them **thoroghly** in **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post, so do checkout that post if you want to understand above code in more detail.
 
 ```vb
 '-----------------------UNIT CONVERSION----------------------------------------
@@ -353,7 +351,7 @@ In above line, we set the value of Solidworks Sketch Segment variable `swSketchS
 
 This `CreateCircle` method creates *a Circle* between "2 given point distance as diameter".
 
-For more information about `CreateCircle` method, you can read my [Solidworks Macro - Create Circle From VBA Macro](/solidworks-macro/create-circle) post.
+For more information about `CreateCircle` method, you can read my **[Solidworks Macro - Create Circle From VBA Macro](/solidworks-macro/create-circle)** post.
 
 That post describe all the parameters we need for this `CreateCircle` method in details.
 
@@ -540,7 +538,7 @@ End Sub
 
 ---
 
-### Understanding the Code
+### Understanding Split Open Sketch Segment the Code
 
 Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
@@ -552,7 +550,7 @@ Option Explicit
 
 This line forces us to define every variable we are going to use. 
 
-For more information please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+For more information please visit **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post.
 
 ```vb
 ' Create variable for Solidworks application
@@ -642,9 +640,9 @@ Set swDoc = swApp.NewDocument(defaultTemplate, 0, 0, 0)
 
 In this line, we set the value of our `swDoc` variable to new document.
 
-For **detailed information** about these lines please visit [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post.
+For **detailed information** about these lines please visit **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post.
 
-I have discussed them **thoroghly** in [Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document) post, so do checkout that post if you want to understand above code in more detail.
+I have discussed them **thoroghly** in **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post, so do checkout that post if you want to understand above code in more detail.
 
 ```vb
 '-----------------------UNIT CONVERSION----------------------------------------
@@ -739,7 +737,7 @@ In above line, we set the value of Solidworks Sketch Segment variable `swSketchS
 
 This `CreateLine` method creates *a line* between "2 given point".
 
-For more information about `CreateLine` method, you can read my [Solidworks Sketch Macro - Create Line](/solidworks-macro/sketch-create-line) post.
+For more information about `CreateLine` method, you can read my **[Solidworks Sketch Macro - Create Line](/solidworks-macro/sketch-create-line)** post.
 
 That post describe all the parameters we need for this `CreateLine` method in details.
 
