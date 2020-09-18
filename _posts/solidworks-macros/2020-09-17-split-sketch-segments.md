@@ -11,11 +11,11 @@ This post is divided into below sections:
 
   - *[Introduction](#introduction)*
 
-  - *[CASE 1 : Split Closed Sketch Entites](#case-1--split-closed-sketch-entites)*
+  - *[CASE 1 : Split Closed Sketch Entities](#case-1--split-closed-sketch-entities)*
   
     - *[Understanding the Code](#understanding-split-closed-sketch-segment-the-code)*
-    
-  - *[CASE 2 : Split Open Sketch Entites](#case-2--split-open-sketch-entites)*
+  
+  - *[CASE 2 : Split Open Sketch Entities](#case-2--split-open-sketch-entities)*
   
     - *[Understanding the Code](#understanding-split-open-sketch-segment-the-code)*
 
@@ -35,9 +35,9 @@ So ***use this method*** if you want to *Split Open/Closed Sketch Entities*.
 
 ---
 
-## CASE 1 : Split Closed Sketch Entites 
+## CASE 1 : Split Closed Sketch Entities 
 
-Below is the `code` sample to *Split Closed Sketch Entites*.
+Below is the `code` sample to *Split Closed Sketch Entities*.
 
 ```vb
 Option Explicit
@@ -421,9 +421,9 @@ Below image shows before and after Circular Sketch Pattern.
 
 ---
 
-## CASE 2 : Split Open Sketch Entites 
+## CASE 2 : Split Open Sketch Entities 
 
-Below is the `code` sample to *Split Open Sketch Entites*.
+Below is the `code` sample to *Split Open Sketch Entities*.
 
 ```vb
 Option Explicit
