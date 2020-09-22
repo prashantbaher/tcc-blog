@@ -15,6 +15,23 @@ This method is ***most updated*** method, I found in *Solidworks API Help*.
 
 So ***use this method*** if you want to create a new line.
 
+---
+
+## Video of Code on YouTube
+
+Please see below video on **how to Open Saved Documents** from Visual Studio.
+
+<iframe src="https://www.youtube.com/embed/qDvQF8xBCSk" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
+---
+
+## Code Sample
+
 Below is the `code` sample for creating lines.
 
 ```vb
