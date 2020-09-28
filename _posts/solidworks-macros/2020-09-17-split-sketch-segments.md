@@ -419,6 +419,69 @@ Below image shows before and after Circular Sketch Pattern.
 
 ![close-segment-after-split](/assets/Solidworks_Images/split-sketch-segments/close-segment-after-split.png)
 
+```vb
+' De-select the Sketch after creation
+swDoc.ClearSelection2 True
+```
+
+In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Show Front View after Linear Sketch Pattern
+swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+```
+
+In the above line of code, we update the *view orientation* to **Front View**.
+
+In my machine, after inserting a sketch view orientation does not changed.
+
+Because of this I have to update the view to **Front view**.
+
+For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
+
+This method takes 2 parameter described as follows:
+
+  - **VName** : Name of the view to display or an empty string to use ViewId instead
+
+  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+
+*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
+
+`swStandardViews_e` has following Standard View Types:
+
+  - *swBackView*
+
+  - *swBottomView*
+
+  - *swDimetricView*
+
+  - *swFrontView*
+
+  - *swIsometricView*
+
+  - *swLeftView*
+
+  - *swRightView*
+
+  - *swTopView*
+
+  - *swExtendetricView*
+
+In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
+
+I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
+
+```vb
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit
+```
+
+In this last line we use *zoom to fit* command.
+
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
+
 ---
 
 ## CASE 2 : Split Open Sketch Entities 
@@ -788,6 +851,69 @@ Below image shows before and after Circular Sketch Pattern.
 **After Circular Sketch Pattern**
 
 ![open-segment-after-split](/assets/Solidworks_Images/split-sketch-segments/open-segment-after-split.png)
+
+```vb
+' De-select the Sketch after creation
+swDoc.ClearSelection2 True
+```
+
+In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Show Front View after Linear Sketch Pattern
+swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+```
+
+In the above line of code, we update the *view orientation* to **Front View**.
+
+In my machine, after inserting a sketch view orientation does not changed.
+
+Because of this I have to update the view to **Front view**.
+
+For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
+
+This method takes 2 parameter described as follows:
+
+  - **VName** : Name of the view to display or an empty string to use ViewId instead
+
+  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+
+*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
+
+`swStandardViews_e` has following Standard View Types:
+
+  - *swBackView*
+
+  - *swBottomView*
+
+  - *swDimetricView*
+
+  - *swFrontView*
+
+  - *swIsometricView*
+
+  - *swLeftView*
+
+  - *swRightView*
+
+  - *swTopView*
+
+  - *swExtendetricView*
+
+In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
+
+I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
+
+```vb
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit
+```
+
+In this last line we use *zoom to fit* command.
+
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
 ---
 

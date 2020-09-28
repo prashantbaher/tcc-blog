@@ -25,19 +25,21 @@ Feel free to select the section you want to go!
 
 ## Introduction
 
-In this post, I tell you about **how to Split Open/Closed Sketch Entities using Solidworks VBA Macros** in a Sketch.
+In this post, I tell you about **how to Add dimension to Sketch Entities using Solidworks VBA Macros** in a Sketch.
 
-In this post, I explain about `SplitOpenSegment` and `SplitClosedSegment` method from **Solidworks** `SketchManager` object.
+In this post, I explain about **2 different methods** from  which are listed below.
 
-This method is ***most updated*** method, I found in *Solidworks API Help*. 
+  1. From `ModelDoc2` object
 
-So ***use this method*** if you want to *Split Open/Closed Sketch Entities*.
+  2. From `ModelDocExtension` object
+
+Methods from these objects are ***updated*** methods, hence ***use any one of them*** for adding dimension.
 
 ---
 
-## CASE 1 : Split Closed Sketch Entities 
+## Method From `ModelDoc2` object
 
-Below is the `code` sample to *Split Closed Sketch Entities*.
+Below is the `code` sample to *Add dimension to Sketch Entities using `ModelDoc2` object's `AddDimension2` method*.
 
 ```vb
 Option Explicit
@@ -132,11 +134,14 @@ Sub main()
   ' Create a circle of diameter 10
   Set swSketchSegment = swSketchManager.CreateCircle(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
   
-  ' Local variant type variable to hold return array of sketch segments
-  Dim swSketchSegmentArray As Variant
+  ' Disable dimension input box before adding dimension
+  swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, False
   
-  ' Spliting the circle created and store the return array into local variable
-  swSketchSegmentArray = swSketchManager.SplitClosedSegment(-10 * LengthConversionFactor, 0, 0, 10 * LengthConversionFactor, 0, 0)
+  ' Add dimension to circle
+  swDoc.AddDimension2 10 * LengthConversionFactor, 10 * LengthConversionFactor, 0
+  
+  ' Enable dimension input box after adding dimension
+  swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, True
   
   ' De-select all after creation
   swDoc.ClearSelection2 True
@@ -152,7 +157,7 @@ End Sub
 
 ---
 
-### Understanding Split Closed Sketch Segment the Code
+### Understanding `ModelDoc2` object method
 
 Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
@@ -341,7 +346,6 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 
 This method allows us to insert a sketch in selected plane.
 
-
 ```vb
 ' Create a circle of diameter 10
 Set swSketchSegment = swSketchManager.CreateCircle(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
@@ -362,68 +366,126 @@ In above line, we create a Circle with:
   - **Circle Diameter** : **10** unit length
 
 ```vb
-' Local variant type variable to hold return array of sketch segments
-Dim swSketchSegmentArray As Variant
+' Disable dimension input box before adding dimension
+swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, False
 ```
 
-In above line of code, we create a `variant` type variable to hold return array of *sketch segments*.
+In above line of code, we **Disable** dimension input box before adding dimension.
 
 ```vb
-' Spliting the circle created and store the return array into local variable
-swSketchSegmentArray = swSketchManager.SplitClosedSegment(-10 * LengthConversionFactor, 0, 0, 10 * LengthConversionFactor, 0, 0)
+' Add dimension to circle
+swDoc.AddDimension2 10 * LengthConversionFactor, 10 * LengthConversionFactor, 0
 ```
 
-For "**Spliting**" an *closed* sketch entity, we need `SplitClosedSegment` method from **Solidworks** `SketchManager` object.
+For "**adding dimension**" to an sketch entity, we need `AddDimension2` method from **Solidworks** `ModelDoc2` object.
 
-This `SplitClosedSegment` method takes following parameters as explained:
+This `AddDimension2` method takes following parameters as explained:
 
-  - **X1** : *X coordinate of first point.*
+  - **X** : *X coordinate of Dimension text location in meters.*
 
-  - **Y1** : *y coordinate of first point.*
+  - **Y** : *y coordinate of Dimension text location in meters.*
 
-  - **Z1** : *z coordinate of first point.*
-
-  - **X2** : *X coordinate of second point.*
-
-  - **Y2** : *Y coordinate of second point.*
-
-  - **Z2** : *Z coordinate of second point.*
+  - **Z** : *z coordinate of Dimension text location in meters.*
 
 After the function complete following are the results:
 
 **Return Value**:
 
-  - **Array Sketch Segments**: *Array of sketch segments of the now split formerly closed sketch skegment.*
+  - **IDisplayDimension**: *Newly created dimension.*
 
 In our code, I have used following values:
 
-  - **X1** : *X coordinate of first point = `-10 * LengthConversionFactor`.*
+  - **X** : *X coordinate of Dimension text location = `10 * LengthConversionFactor`.*
 
-  - **Y1** : *y coordinate of first point = `0`.*
+  - **Y** : *y coordinate of Dimension text location = `10 * LengthConversionFactor`.*
 
-  - **Z1** : *z coordinate of first point = `0`.*
-
-  - **X2** : *X coordinate of second point = `10 * LengthConversionFactor`.*
-
-  - **Y2** : *Y coordinate of second point = `0`.*
-
-  - **Z2** : *Z coordinate of second point = `0`.*
+  - **Z** : *z coordinate of Dimension text location = `0`.*
 
 Below image shows before and after Circular Sketch Pattern.
 
 **Before Circular Sketch Pattern**
 
-![close-segment-before-split](/assets/Solidworks_Images/split-sketch-segments/close-segment-before-split.png)
+![before-add-dimension](/assets/Solidworks_Images/dimensions/before-add-dimension.png)
 
 **After Circular Sketch Pattern**
 
-![close-segment-after-split](/assets/Solidworks_Images/split-sketch-segments/close-segment-after-split.png)
+![after-add-dimension](/assets/Solidworks_Images/dimensions/after-add-dimension.png)
+
+```vb
+' Enable dimension input box after adding dimension
+swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, True
+```
+
+In above line of code, we **Enable** dimension input box after adding dimension.
+
+```vb
+' De-select the Sketch after creation
+swDoc.ClearSelection2 True
+```
+
+In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Show Front View after Linear Sketch Pattern
+swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+```
+
+In the above line of code, we update the *view orientation* to **Front View**.
+
+In my machine, after inserting a sketch view orientation does not changed.
+
+Because of this I have to update the view to **Front view**.
+
+For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
+
+This method takes 2 parameter described as follows:
+
+  - **VName** : Name of the view to display or an empty string to use ViewId instead
+
+  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+
+*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
+
+`swStandardViews_e` has following Standard View Types:
+
+  - *swBackView*
+
+  - *swBottomView*
+
+  - *swDimetricView*
+
+  - *swFrontView*
+
+  - *swIsometricView*
+
+  - *swLeftView*
+
+  - *swRightView*
+
+  - *swTopView*
+
+  - *swExtendetricView*
+
+In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
+
+I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
+
+```vb
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit
+```
+
+In this last line we use *zoom to fit* command.
+
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
 ---
 
-## CASE 2 : Split Open Sketch Entities 
+## Method From `ModelDocExtension` object 
 
-Below is the `code` sample to *Split Open Sketch Entities*.
+Below is the `code` sample to *Add dimension to Sketch Entities using `ModelDocExtension` object's `AddDimension` method*
 
 ```vb
 Option Explicit
@@ -442,6 +504,9 @@ Dim swSketchManager As SldWorks.SketchManager
 
 ' Create Variable for Solidworks Sketch Segment
 Dim swSketchSegment As SldWorks.SketchSegment
+
+' Create Variable for Solidworks Display Dimension
+Dim swDisplayDim As SldWorks.DisplayDimension
 
 ' Main function of our VBA program
 Sub main()
@@ -515,14 +580,17 @@ Sub main()
   ' Insert a sketch into selected plane
   swSketchManager.InsertSketch True
   
-  ' Create a line of distance 10
-  Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
+  ' Create a circle of diameter 10
+  Set swSketchSegment = swSketchManager.CreateCircle(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
   
-  ' Local variant type variable to hold return array of sketch segments
-  Dim swSketchSegmentArray As Variant
+  ' Disable dimension input box before adding dimension
+  swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, False
   
-  ' Spliting the line at distance of 5 and store the return array into local variable
-  swSketchSegmentArray = swSketchManager.SplitOpenSegment(5 * LengthConversionFactor, 0, 0)
+  ' Add dimension to circle
+  Set swDisplayDim = swDoc.Extension.AddDimension(0, 12 * LengthConversionFactor, 0, swSmartDimensionDirection_e.swSmartDimensionDirection_Right)
+  
+  ' Enable dimension input box after adding dimension
+  swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, True
   
   ' De-select all after creation
   swDoc.ClearSelection2 True
@@ -538,7 +606,7 @@ End Sub
 
 ---
 
-### Understanding Split Open Sketch Segment the Code
+### Understanding `ModelDocExtension` object method
 
 Now let us walk through **each line** in the above code, and **understand** the meaning and purpose of every line.
 
@@ -727,67 +795,133 @@ In above line, we use `InsertSketch` method of *SketchManager* and give `True` v
 
 This method allows us to insert a sketch in selected plane.
 
-
 ```vb
-' Create a line of distance 10
-Set swSketchSegment = swSketchManager.CreateLine(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
+' Create a circle of diameter 10
+Set swSketchSegment = swSketchManager.CreateCircle(0, 0, 0, 10 * LengthConversionFactor, 0, 0)
 ```
 
-In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateLine` method from *Solidworks Sketch Manager*.
+In above line, we set the value of Solidworks Sketch Segment variable `swSketchSegment` by `CreateCircle` method from *Solidworks Sketch Manager*.
 
-This `CreateLine` method creates *a line* between "2 given point".
+This `CreateCircle` method creates *a Circle* between "2 given point distance as diameter".
 
-For more information about `CreateLine` method, you can read my **[Solidworks Sketch Macro - Create Line](/solidworks-macro/sketch-create-line)** post.
+For more information about `CreateCircle` method, you can read my **[Solidworks Macro - Create Circle From VBA Macro](/solidworks-macro/create-circle)** post.
 
-That post describe all the parameters we need for this `CreateLine` method in details.
+That post describe all the parameters we need for this `CreateCircle` method in details.
 
-In above line, we create a line of 10 unit in X-direction.
+In above line, we create a Circle with:
 
-```vb
-' Local variant type variable to hold return array of sketch segments
-Dim swSketchSegmentArray As Variant
-```
+  - **Circle Centerpoint** : At origin i.e. *(0, 0, 0)*
 
-In above line of code, we create a `variant` type variable to hold return array of *sketch segments*.
+  - **Circle Diameter** : **10** unit length
 
 ```vb
-' Spliting the line at distance of 5 and store the return array into local variable
-swSketchSegmentArray = swSketchManager.SplitOpenSegment(5 * LengthConversionFactor, 0, 0)
+' Disable dimension input box before adding dimension
+swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, False
 ```
 
-For "**Spliting**" an *closed* sketch entity, we need `SplitOpenSegment` method from **Solidworks** `SketchManager` object.
+In above line of code, we **Disable** dimension input box before adding dimension.
 
-This `SplitOpenSegment` method takes following parameters as explained:
+```vb
+' Add dimension to circle
+swDoc.AddDimension2 10 * LengthConversionFactor, 10 * LengthConversionFactor, 0
+```
 
-  - **X** : *X coordinate of the point that splits the sketch segment in two.*
+For "**adding dimension**" to an sketch entity, we need `AddDimension2` method from **Solidworks** `ModelDoc2` object.
 
-  - **Y** : *y coordinate of the point that splits the sketch segment in two.*
+This `AddDimension2` method takes following parameters as explained:
 
-  - **Z** : *z coordinate of the point that splits the sketch segment in two.*
+  - **X** : *X coordinate of Dimension text location in meters.*
+
+  - **Y** : *y coordinate of Dimension text location in meters.*
+
+  - **Z** : *z coordinate of Dimension text location in meters.*
 
 After the function complete following are the results:
 
 **Return Value**:
 
-  - **Array Sketch Segments**: *Array of sketch segments of the now split formerly closed sketch skegment.*
+  - **IDisplayDimension**: *Newly created dimension.*
 
 In our code, I have used following values:
 
-  - **X** : *X coordinate of the point that splits the sketch segment in two = `5 * LengthConversionFactor`.*
+  - **X** : *X coordinate of Dimension text location = `10 * LengthConversionFactor`.*
 
-  - **Y** : *y coordinate of the point that splits the sketch segment in twot = `0`.*
+  - **Y** : *y coordinate of Dimension text location = `10 * LengthConversionFactor`.*
 
-  - **Z** : *z coordinate of the point that splits the sketch segment in two = `0`.*
+  - **Z** : *z coordinate of Dimension text location = `0`.*
 
 Below image shows before and after Circular Sketch Pattern.
 
 **Before Circular Sketch Pattern**
 
-![open-segment-before-split](/assets/Solidworks_Images/split-sketch-segments/open-segment-before-split.png)
+![before-add-dimension](/assets/Solidworks_Images/dimensions/before-add-dimension.png)
 
 **After Circular Sketch Pattern**
 
-![open-segment-after-split](/assets/Solidworks_Images/split-sketch-segments/open-segment-after-split.png)
+![after-add-dimension](/assets/Solidworks_Images/dimensions/after-add-dimension.png)
+
+```vb
+' De-select the Sketch after creation
+swDoc.ClearSelection2 True
+```
+
+In the above line of code, we deselect the **Sketch** after the *Linear Sketch Pattern* operation.
+
+For de-selecting, we use `ClearSelection2` method from our Solidworks document name `swDoc`.
+
+```vb
+' Show Front View after Linear Sketch Pattern
+swDoc.ShowNamedView2 "", swStandardViews_e.swFrontView
+```
+
+In the above line of code, we update the *view orientation* to **Front View**.
+
+In my machine, after inserting a sketch view orientation does not changed.
+
+Because of this I have to update the view to **Front view**.
+
+For showing **Front View** we used `ShowNamedView2` method from our Solidworks document name `swDoc`.
+
+This method takes 2 parameter described as follows:
+
+  - **VName** : Name of the view to display or an empty string to use ViewId instead
+
+  - **ViewId** : ID of the view to display as defined by `swStandardViews_e` or -1 to use the **VName** argument instead.
+
+*NOTE:* If you specify both **VName** and **ViewId**, then **ViewId** takes precedence if the two arguments do not resolve to the same view.
+
+`swStandardViews_e` has following Standard View Types:
+
+  - *swBackView*
+
+  - *swBottomView*
+
+  - *swDimetricView*
+
+  - *swFrontView*
+
+  - *swIsometricView*
+
+  - *swLeftView*
+
+  - *swRightView*
+
+  - *swTopView*
+
+  - *swExtendetricView*
+
+In our code, we did not use **VName** instead I used *empty string* in form of ***""*** symbol.
+
+I used **ViewId** value to specify view and used `swStandardViews_e.swFrontView` value to use *Standard Front View*.
+
+```vb
+' Zoom to fit screen in Solidworks Window
+swDoc.ViewZoomtofit
+```
+
+In this last line we use *zoom to fit* command.
+
+For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document variable `swDoc`.
 
 ---
 
