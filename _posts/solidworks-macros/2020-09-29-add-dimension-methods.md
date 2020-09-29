@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Add dimension to Sketch Entities From VBA Macro
-image:  post-image.jpg
+image:  add-dimension.jpg
 tags:   [Solidworks Macro]
 ---
 
@@ -11,13 +11,15 @@ This post is divided into below sections:
 
   - *[Introduction](#introduction)*
 
-  - *[CASE 1 : Split Closed Sketch Entities](#case-1--split-closed-sketch-entities)*
+
+  - *[Method From `ModelDoc2` object](#method-from-modeldoc2-object)*
   
-    - *[Understanding the Code](#understanding-split-closed-sketch-segment-the-code)*
+    - *[Understanding `ModelDoc2` object method](#understanding-modeldoc2-object-method)*
   
-  - *[CASE 2 : Split Open Sketch Entities](#case-2--split-open-sketch-entities)*
+
+  - *[Method From `ModelDocExtension` object](#method-from-modeldocextension-object)*
   
-    - *[Understanding the Code](#understanding-split-open-sketch-segment-the-code)*
+    - *[Understanding `ModelDocExtension` object method](#understanding-modeldocextension-object-method)*
 
 Feel free to select the section you want to go!
 
@@ -663,6 +665,15 @@ We create variable `swSketchSegment` for **Solidworks Sketch Segments**.
 
 To see methods and properties related to `swSketchSegment` object, please visit [this page](http://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html)
 
+```vb
+' Create Variable for Solidworks Display Dimension
+Dim swDisplayDim As SldWorks.DisplayDimension
+```
+
+In this line, we Create a variable which we named as `swDisplayDim` and the type of this `swDisplayDim` variable is `SldWorks.DisplayDimension`.
+
+We create variable `swDisplayDim` for **dimension** we create.
+
 These all are our global variables.
 
 As you can see in code sample, they are **Solidworks API Objects**.
@@ -823,18 +834,32 @@ In above line of code, we **Disable** dimension input box before adding dimensio
 
 ```vb
 ' Add dimension to circle
-swDoc.AddDimension2 10 * LengthConversionFactor, 10 * LengthConversionFactor, 0
+Set swDisplayDim = swDoc.Extension.AddDimension(0, 12 * LengthConversionFactor, 0, swSmartDimensionDirection_e.swSmartDimensionDirection_Right)
 ```
 
-For "**adding dimension**" to an sketch entity, we need `AddDimension2` method from **Solidworks** `ModelDoc2` object.
+For "**adding dimension**" to an sketch entity, we need `AddDimension` method from **Solidworks** `ModelDocExtension` object.
 
-This `AddDimension2` method takes following parameters as explained:
+This `AddDimension` method takes following parameters as explained:
 
   - **X** : *X coordinate of Dimension text location in meters.*
 
   - **Y** : *y coordinate of Dimension text location in meters.*
 
   - **Z** : *z coordinate of Dimension text location in meters.*
+
+  - **Direction** : *Direction of dimensioning extension line or rapid dimensioning quadrant as defined in `swSmartDimensionDirection_e`.*
+
+There are 4 values we can use from `swSmartDimensionDirection_e` enum.
+
+They are as follows:
+
+  - `swSmartDimensionDirection_Down`
+
+  - `swSmartDimensionDirection_Left`
+
+  - `swSmartDimensionDirection_Right`
+
+  - `swSmartDimensionDirection_Up`
 
 After the function complete following are the results:
 
@@ -844,11 +869,13 @@ After the function complete following are the results:
 
 In our code, I have used following values:
 
-  - **X** : *X coordinate of Dimension text location = `10 * LengthConversionFactor`.*
+  - **X** : *X coordinate of Dimension text location = `0`.*
 
-  - **Y** : *y coordinate of Dimension text location = `10 * LengthConversionFactor`.*
+  - **Y** : *y coordinate of Dimension text location = `12 * LengthConversionFactor`.*
 
   - **Z** : *z coordinate of Dimension text location = `0`.*
+
+  - **Direction** : *Direction of dimensioning extension line or rapid dimensioning quadrant = `swSmartDimensionDirection_e.swSmartDimensionDirection_Right`.*
 
 Below image shows before and after Circular Sketch Pattern.
 
@@ -859,6 +886,13 @@ Below image shows before and after Circular Sketch Pattern.
 **After Circular Sketch Pattern**
 
 ![after-add-dimension](/assets/Solidworks_Images/dimensions/after-add-dimension.png)
+
+```vb
+' Enable dimension input box after adding dimension
+swApp.SetUserPreferenceToggle swUserPreferenceToggle_e.swInputDimValOnCreate, True
+```
+
+In above line of code, we **Enable** dimension input box after adding dimension.
 
 ```vb
 ' De-select the Sketch after creation
@@ -931,7 +965,7 @@ For Zoom to fit, we use `ViewZoomtofit` method from our Solidworks document vari
 
 If you found anything to **add or update**, please let me know on my *e-mail*.
 
-Hope this post helps you to *Split Open/Closed Sketch Entities* with Solidworks VBA Macros.
+Hope this post helps you to *Add dimension to Sketch Entities* with Solidworks VBA Macros.
 
 For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
 

@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Split Open/Closed Sketch Entities From VBA Macro
-image:  post-image.jpg
+image:  display-hide-relation.jpg
 tags:   [Solidworks Macro]
 ---
 

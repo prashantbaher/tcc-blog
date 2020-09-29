@@ -28,6 +28,8 @@ If you are a *total begineer* and want to learn how to create `VBA macros` in *S
 
 If you have done `VBA programming` in *Solidworks* before and you are looking for somethings specific then go to that topic.
 
+---
+
 ## General Solidworks Functions
 
 Below list contains posts on *general Solidworks functions*. These posts will guide you on how to do write macros on these *common general Solidworks functions*.
@@ -44,6 +46,8 @@ Below list contains posts on *general Solidworks functions*. These posts will gu
 
 * [General - Fix Unit Issue](/solidworks-macro/unit-correction)
 
+---
+
 ## Solidworks Sketch VBA Macro Tutorial Posts list
 
 Below list contains posts on *Solidworks Sketch functions*. These posts will guide you on how to do write macros on these *general Solidworks Sketch functions*.
@@ -55,6 +59,8 @@ Below posts teach you how to create different types of `Line` in *Solidworks* us
 * [Sketch - Create Lines](/solidworks-macro/sketch-create-line)
 
 * [Sketch - Create CenterLines](/solidworks-macro/sketch-create-centerline)
+
+---
 
 ### Create Different Rectangle From VBA Macro
 
@@ -70,6 +76,8 @@ Below posts teach you how to create different types of `Rectangle` in *Solidwork
 
 * [Sketch - Create A Parallelogram](/solidworks-macro/create-parallelogram)
 
+---
+
 ### Create Different Circle From VBA Macro
 
 Below posts teach you how to create different types of `Circle` in *Solidworks* using **VBA macros**.
@@ -79,6 +87,8 @@ Below posts teach you how to create different types of `Circle` in *Solidworks* 
 * [Sketch - Create Circle By Radius](/solidworks-macro/create-circle-by-radius)
 
 * [Sketch - Create Perimeter Circle](/solidworks-macro/create-perimeter-circle)
+
+---
 
 ### Create Different Arc From VBA Macro
 
@@ -92,6 +102,8 @@ Below posts teach you how to create different types of `Arc` in *Solidworks* usi
 
 * [Sketch - Create Polygon](/solidworks-macro/create-polygon)
 
+---
+
 ### Create Different Slot From VBA Macro
 
 Below posts teach you how to create different types of `Slot` in *Solidworks* using **VBA macros**.
@@ -104,6 +116,8 @@ Below posts teach you how to create different types of `Slot` in *Solidworks* us
 
 * [Sketch - Create Centerpoint Arc Slot](/solidworks-macro/create-centerpoint-arc-slot)
 
+---
+
 ### Create Points and Spline From VBA Macro
 
 Below posts teach you how to create Points and Spline in *Solidworks* using **VBA macros**.
@@ -111,6 +125,8 @@ Below posts teach you how to create Points and Spline in *Solidworks* using **VB
 * [Sketch - Create a Point](/solidworks-macro/create-point)
 
 * [Sketch - Create a Spline](/solidworks-macro/create-spline)
+
+---
 
 ### Create Sketch Fillet and Chamfer From VBA Macro
 
@@ -120,6 +136,8 @@ Below posts teach you how to create Sketch Fillet and Sketch Chamfer in *Solidwo
 
 * [Sketch - Create a Chamfer](/solidworks-macro/create-chamfer)
 
+---
+
 ### Create Sketch Trim and Extend From VBA Macro
 
 Below posts teach you how to create Sketch Trim and Sketch Extend in *Solidworks* using **VBA macros**.
@@ -128,6 +146,8 @@ Below posts teach you how to create Sketch Trim and Sketch Extend in *Solidworks
 
 * [Sketch - Extend Entities](/solidworks-macro/extend-entities)
 
+---
+
 ### Create Sketch Offset and Mirror Sketch From VBA Macro
 
 Below posts teach you how to create Sketch Offset and Mirror Sketch in *Solidworks* using **VBA macros**.
@@ -135,6 +155,8 @@ Below posts teach you how to create Sketch Offset and Mirror Sketch in *Solidwor
 * [Sketch - Offset Entities](/solidworks-macro/offset-entities)
 
 * [Sketch - Mirror Entities](/solidworks-macro/mirror-entities)
+
+---
 
 ### Create Sketch Patterns and Edit existing Sketch Patterns From VBA Macro
 
@@ -148,6 +170,8 @@ In Below posts, I show you how to create **Sketch Patterns** and **edit patterns
 
 * [Sketch - Edit Circular Sketch Pattern](/solidworks-macro/edit-circular-skech-pattern)
 
+---
+
 ### Sketch Transformation From VBA Macro
 
 In Below posts, I show you how to **Move/Copy** and **Rotate/Copy** Sketch entities from Solidworks macro using VBA programming language.
@@ -155,6 +179,8 @@ In Below posts, I show you how to **Move/Copy** and **Rotate/Copy** Sketch entit
 * [Sketch Transformation - Move/Copy Sketch Entities](/solidworks-macro/move-copy-sketch-entities)
 
 * [Sketch Transformation - Rotate/Copy Sketch Entities](/solidworks-macro/rotate-copy-sketch-entities)
+
+---
 
 ### Managing Sketch Relations From VBA Macro
 
@@ -164,6 +190,8 @@ In Below posts, I show you how to **Managing** Sketch Relations from Solidworks 
 
 * [Sketch Relations - Add Sketch Relations (Constraints)](/solidworks-macro/add-sketch-relations)
 
+---
+
 ### Other posts
 
 In below posts, I listed some individual post which is small and related to sketch.
@@ -171,6 +199,16 @@ In below posts, I listed some individual post which is small and related to sket
 * [Sketch - Convert to Construction Sketch](/solidworks-macro/convert-to-construction-sketch-segment)
 
 * [Sketch - Split Open/Closed Sketch Entities](/solidworks-macro/split-sketch-segments)
+
+---
+
+### Sketch Dimensioning from Solidworks VBA Macros
+
+In Below posts, I show you how to **Dimension** Sketchs from Solidworks macro using VBA programming language.
+
+* [Sketch - Add dimension to Sketch Entities](/solidworks-macro/add-dimension-methods)
+
+---
 
 Please select any of the above post.
 
