@@ -13,11 +13,11 @@ This post is divided into below sections:
 
   - *[CASE 1 : Split Closed Sketch Entities](#case-1--split-closed-sketch-entities)*
   
-    - *[Understanding the Code](#understanding-split-closed-sketch-segment-the-code)*
+  - *[Understanding the Code](#understanding-split-closed-sketch-segment-the-code)*
   
   - *[CASE 2 : Split Open Sketch Entities](#case-2--split-open-sketch-entities)*
   
-    - *[Understanding the Code](#understanding-split-open-sketch-segment-the-code)*
+  - *[Understanding the Code](#understanding-split-open-sketch-segment-the-code)*
 
 Feel free to select the section you want to go!
 
