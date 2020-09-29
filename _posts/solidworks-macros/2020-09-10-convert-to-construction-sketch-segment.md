@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Convert to Construction Sketch From VBA Macro
-image:  display-hide-relation.jpg
+image:  display-hide-relation.png
 tags:   [Solidworks Macro]
 ---
 

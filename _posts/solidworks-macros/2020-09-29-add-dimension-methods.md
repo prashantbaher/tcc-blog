@@ -1,7 +1,7 @@
 ---
 categories: Solidworks-macro
 title:  Solidworks Macro - Add dimension to Sketch Entities From VBA Macro
-image:  add-dimension.jpg
+image:  post-image.jpg
 tags:   [Solidworks Macro]
 ---
 
