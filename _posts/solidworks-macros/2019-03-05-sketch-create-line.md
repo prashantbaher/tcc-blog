@@ -19,7 +19,7 @@ So ***use this method*** if you want to create a new line.
 
 ## Video of Code on YouTube
 
-Please see below video on **how to Open Saved Documents** from Visual Studio.
+Please see below video on **how to create 2D Line** from Solidworks VBA Macros.
 
 <iframe src="https://www.youtube.com/embed/qDvQF8xBCSk" frameborder="0" allowfullscreen></iframe>
 <br>
