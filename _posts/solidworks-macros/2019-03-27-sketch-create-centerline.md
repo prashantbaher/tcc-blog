@@ -15,6 +15,23 @@ This method is ***most updated*** method, I found in *Solidworks API Help*.
 
 So ***use this method*** if you want to create a new **Centerline**.
 
+---
+
+## Video of Code on YouTube
+
+Please see below video on **how to create 2D Center Line** from Solidworks VBA Macros.
+
+<iframe src="https://www.youtube.com/embed/tw7dmZzIdxU" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
+---
+
+## Code Sample
+
 Below is the `code` sample for creating lines.
 
 ```vb
@@ -66,6 +83,10 @@ Sub main()
 
 End Sub
 ```
+
+---
+
+### Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
