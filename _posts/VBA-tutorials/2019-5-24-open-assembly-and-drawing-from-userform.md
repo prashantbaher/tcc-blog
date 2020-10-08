@@ -17,9 +17,9 @@ Please see below video how visually we *Open new Assembly and Drawing document* 
 <iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
 <br>
 
-Please note that there are **no explaination** in the video. 
+Please note that there are **no explanation** in the video. 
 
-**Explaination** of each line and why we write code this way is given in this post.
+**Explanation** of each line and why we write code this way is given in this post.
 
 ## Create a new macro
 

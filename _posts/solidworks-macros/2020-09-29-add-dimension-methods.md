@@ -11,15 +11,13 @@ This post is divided into below sections:
 
   - *[Introduction](#introduction)*
 
-
   - *[Method From `ModelDoc2` object](#method-from-modeldoc2-object)*
   
-    - *[Understanding `ModelDoc2` object method](#understanding-modeldoc2-object-method)*
-  
+  - *[Understanding `ModelDoc2` object method](#understanding-modeldoc2-object-method)*
 
   - *[Method From `ModelDocExtension` object](#method-from-modeldocextension-object)*
   
-    - *[Understanding `ModelDocExtension` object method](#understanding-modeldocextension-object-method)*
+  - *[Understanding `ModelDocExtension` object method](#understanding-modeldocextension-object-method)*
 
 Feel free to select the section you want to go!
 
