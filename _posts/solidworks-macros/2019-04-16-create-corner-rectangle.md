@@ -9,11 +9,28 @@ In this post, I tell you about *how to create Corner Rectangle through Solidwork
 
 For this, I take the example from previous [Sketch - Create Lines](/solidworks-macro/sketch-create-line) post.
 
-In this post, I tell you about `CreateCenterLine` method from **Solidworks** `SketchManager` object.
+In this post, I tell you about `CreateCornerRectangle` method from **Solidworks** `SketchManager` object.
 
 This method is ***most updated*** method, I found in *Solidworks API Help*. 
 
-So ***use this method*** if you want to create a new Corner Rectangle.
+So ***use this method*** if you want to create a new **Corner Rectangle**.
+
+---
+
+## Video of Code on YouTube
+
+Please see below video on **how to create 2D Center Line** from Solidworks VBA Macros.
+
+<iframe src="https://www.youtube.com/embed/03s3pWNIC08" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
+---
+
+## Code Sample
 
 Below is the `code` sample for creating Corner Rectangle.
 
@@ -62,10 +79,14 @@ Sub main()
   swDoc.ClearSelection2 True
   
   ' Zoom to fit screen in Solidworks Window
-  swDoc.ViewZoomtofit
+  swDoc.ViewZoomtofit2
 
 End Sub
 ```
+
+---
+
+### Understanding the Code
 
 Now let us walk through *each line* in the above code, and **understand** the meaning of every line.
 
@@ -215,7 +236,6 @@ For example, every sketch segment has an ID and can be programmatically selected
 
 Therefore, the `ISketchSegment` interface provides functions to obtain the ID and to select the item.
 
-
 ### NOTE
 
 It is ***very important*** to remember that, when you give distance or any other numeric value in **Solidworks API**, Solidworks takes that numeric value in ***Meter only***.
@@ -237,7 +257,7 @@ For de-selecting, we use `ClearSelection2` method from our Solidworks document n
 
 ```vb
 ' Zoom to fit screen in Solidworks Window
-swDoc.ViewZoomtofit
+swDoc.ViewZoomtofit2
 ```
 
 In this last line we use *zoom to fit* command.
