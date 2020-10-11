@@ -71,6 +71,7 @@ sass:
   sass_dir: _sass
   style: compressed
 
+remote_theme: pmarsceill/just-the-docs
 
 #-------------------------------
 # Exclude from processing.
