@@ -27,7 +27,7 @@ Feel free to select the section you want to go!
 
 In this post, I tell you about **how to Add dimension to Sketch Entities using Solidworks VBA Macros** in a Sketch.
 
-In this post, I explain about **2 different methods** from  which are listed below.
+In this post, I explain about **2 different methods** from which are listed below.
 
   1. From `ModelDoc2` object
 
