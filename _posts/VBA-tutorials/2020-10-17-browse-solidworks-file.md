@@ -18,11 +18,11 @@ This post is divided into below sections:
 
   - *[Updating Properties](#updating-properties)*
 
-  - *[Call UserForm in Main Module](#call-userForm-in-main-module)*
+  - *[Call UserForm in Main Module](#call-userform-in-main-module)*
 
   - *[Add Functionality to Button](#add-functionality-to-button)*
 
-  - *[Method 1 - From `SldWorks` object directly](#method-1---from-sldWorks-object-directly)*
+  - *[Method 1 - From `SldWorks` object directly](#method-1---from-sldworks-object-directly)*
 
   - *[Method 2 - From **Microsoft Excel** externally](#method-2---from-microsoft-excel-externally)*
 
@@ -36,7 +36,7 @@ Feel free to select the section you want to go!
 
 In this article, we learn **how to browse SOLIDWORKS file(s)** from a **SOLIDWORKS VBA Userform**.
 
-In this article, I explain about ***2 different methods*** from which are listed below.
+In this article, I explain about ***2 different methods*** which are listed below.
 
 1. From `SldWorks` object directly.
 
@@ -387,15 +387,15 @@ Please see following steps for adding reference files:
 
   1. Select reference option as shown in below image.
 
-![select-reference-option](/assets/vba-images/browse-solidworks-files/select-reference-option.png "Select reference option from Tools options")
+  ![select-reference-option](/assets/vba-images/browse-solidworks-files/select-reference-option.png "Select reference option from Tools options")
 
   2. This open Reference window as shown in below image.
 
-![reference-window](/assets/vba-images/browse-solidworks-files/reference-window.png "Reference window")
+  ![reference-window](/assets/vba-images/browse-solidworks-files/reference-window.png "Reference window")
 
   3. Now select option given in below images and Press OK after selecting files..
 
-![add-excel-reference](/assets/vba-images/browse-solidworks-files/add-excel-reference.png "Select reference file highlighted in red box")
+  ![add-excel-reference](/assets/vba-images/browse-solidworks-files/add-excel-reference.png "Select reference file highlighted in red box")
 
 Now, replace code in *[Add Functionality to Button](#add-functionality-to-button)* with below code sample.
 
