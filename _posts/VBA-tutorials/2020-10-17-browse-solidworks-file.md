@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: Visual-Basic
-title:  VBA Userforms - Browse SOLIDWORKS file
+title:  VBA Userforms - Browse SOLIDWORKS file(s)
 image:  post-image.jpg
 tags:   [VBA]
 ---
@@ -12,11 +12,21 @@ This post is divided into below sections:
 
   - *[Introduction](#introduction)*
 
-  - *[Code block to check](#code-block-to-check)*
+  - *[Creating Userform](#creating-userform)*
   
-  - *[Apply check](#apply-check)*
+  - *[Adding Controls into Userform](#adding-controls-into-userform)*
 
-  - *[Cause of Error](#cause-of-error)*
+  - *[Updating Properties](#updating-properties)*
+
+  - *[Call UserForm in Main Module](#call-userForm-in-main-module)*
+
+  - *[Add Functionality to Button](#add-functionality-to-button)*
+
+  - *[Method 1 - From `SldWorks` object directly](#method-1---from-sldWorks-object-directly)*
+
+  - *[Method 2 - From **Microsoft Excel** externally](#method-2---from-microsoft-excel-externally)*
+
+  - *[Final words](#final-words)*
 
 Feel free to select the section you want to go!
 
@@ -35,7 +45,7 @@ In this article, I explain about ***2 different methods*** from which are listed
 Methods from these objects are ***updated*** methods, hence ***use any one of them*** for browsing SOLIDWORKS file(s).
 
 ***
-
+<!--
 ## Video of Code on YouTube
 
 Please see below video how visually we *browse SOLIDWORKS file(s)* in **SOLIDWORKS VBA Userform**.
@@ -48,6 +58,7 @@ Please note that there are **no explanation** in the video.
 **Explanation** of each line and why we write code this way is given in this post.
 
 ---
+-->
 
 ## Creating Userform
 
@@ -250,7 +261,7 @@ Private Sub BrowseDocumentButton_Click()
   swFilter = "SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw"
   
   ' Browse and get the Selected file name
-  fileName = swApp.GetOpenFileName("File to Attach", "", swFilter, fileOptions, fileConfig, fileDispName)
+  fileName = swApp.GetOpenFileName("Browse Document", "", swFilter, fileOptions, fileConfig, fileDispName)
 
   ' Show the selected file's full path in text box
   SelectedFileTextBox.Text = fileName
@@ -281,7 +292,7 @@ Dim swApp As SldWorks.SldWorks
 
 In this line, we create a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
 
-Next is our button click event `CommandButton1_Click` procedure.
+Next is our button click event `BrowseDocumentButton_Click` procedure.
 
 This procedure hold all the *statements (instructions)* we give to computer.
 
@@ -314,7 +325,7 @@ In above line of code, we set filters for different SOLIDWORKS files.
 
 ```vb
 ' Browse and get the Selected file name
-fileName = swApp.GetOpenFileName("File to Attach", "", swFilter, fileOptions, fileConfig, fileDispName)
+fileName = swApp.GetOpenFileName("Browse Document", "", swFilter, fileOptions, fileConfig, fileDispName)
 ```
 
 For "**Browse and get the Selected file name**", we use `GetOpenFileName` method from **Solidworks** `SldWorks` object.
@@ -362,6 +373,12 @@ Final window of method 1 is shown below/.
 
 ## Method 2 - From **Microsoft Excel** externally
 
+**Prerequisite**:
+
+  1. **Office 365**
+
+  2. **Following below steps carefully**
+
 For this method we need to use **Microsoft Excel** from SOLIDWORKS.
 
 For using **Microsoft Excel**, we need to add reference files.
@@ -376,26 +393,49 @@ Please see following steps for adding reference files:
 
 ![reference-window](/assets/vba-images/browse-solidworks-files/reference-window.png "Reference window")
 
-  3. Browse file
+  3. Now select option given in below images and Press OK after selecting files..
+
+![add-excel-reference](/assets/vba-images/browse-solidworks-files/add-excel-reference.png "Select reference file highlighted in red box")
 
 Now, replace code in *[Add Functionality to Button](#add-functionality-to-button)* with below code sample.
+
 
 ```vb
 Option Explicit
 
-' Private function of Browse Button
+' Private function of Open New Part Button
 Private Sub BrowseDocumentButton_Click()
-
+    
+  ' Excel object
   Dim xlObj As Object
+  
+  ' File dialog object
+  Dim fDialog As Object
+  
+  ' File name sting
+  Dim strFile As String
+  
+  ' Create Excel object
   Set xlObj = CreateObject("Excel.Application")
-  With xlObj.FileDialog(4)
-      If .Show = -1 Then ' if OK is pressed
-          sFolder = .SelectedItems(1)
+  
+  ' Create File dialog object by setting option 3
+  Set fDialog = xlObj.FileDialog(3)
+  
+  ' Setting different properties of file dialog
+  With fDialog
+    .Title = "Browse Document"  ' Title of window
+    .AllowMultiSelect = True    ' Allowing multiple select
+    .Filters.Clear              ' Clear the filters
+    .Filters.Add "SOLIDWORKS Files", "*.sldprt; *.sldasm; *.slddrw"       ' Add filters for Solidworks files
+      If .Show Then
+        strFile = .SelectedItems(1)
+      Else
+        strFile = vbNullString
       End If
   End With
-  
+    
   ' Show the selected file's full path in text box
-  SelectedFileTextBox.Text = fileName
+  SelectedFileTextBox.Text = strFile
     
 End Sub
 ```
@@ -416,70 +456,77 @@ This line forces us to define every variable we are going to use.
 
 For more information please visit **[Solidworks Macros - Open new Part document](/solidworks-macro/open-new-document)** post.
 
-```vb
-' Create variable for Solidworks application
-Dim swApp As SldWorks.SldWorks
-```
-
-In this line, we create a variable which we named as `swApp` and the type of this `swApp` variable is `SldWorks.SldWorks`.
-
-Next is our button click event `CommandButton1_Click` procedure.
+Next is our button click event `BrowseDocumentButton_Click` procedure.
 
 This procedure hold all the *statements (instructions)* we give to computer.
 
 ```vb
-' Set Solidworks variable to Solidworks application
-Set swApp = Application.SldWorks
+' Excel object
+Dim xlObj As Object
 ```
 
-In this line, we set the value of our Solidworks variable `swApp`; which we define earlier; to Solidworks application.
+In this line, we create object for **Microsoft Excel Application**.
 
 ```vb
-' Solidworks file filter string
-Dim swFilter As String
+' File dialog object
+Dim fDialog As Object
 
-' Method parameters
-Dim fileName As String
-Dim fileConfig As String
-Dim fileDispName As String
-Dim fileOptions As Long
+' File name sting
+Dim strFile As String
 ```
 
-In above lines of code, we create SOLIDWORKS *files filter* string and *Method parameters*.
+In above lines of code, we create `objects` for **File Dialog** and `string` for file name.
 
 ```vb
-' Set filters for different Solidworks files.
-Filter = "SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw"
+' Create Excel object
+Set xlObj = CreateObject("Excel.Application")
 ```
 
-In above line of code, we set filters for different SOLIDWORKS files.
+In above line of code, we create **Microsoft Excel Application** and set the value of excel object.
 
 ```vb
-' Browse and get the Selected file name
-fileName = swApp.GetOpenFileName("File to Attach", "", swFilter, fileOptions, fileConfig, fileDispName)
+' Create File dialog object by setting option 3
+Set fDialog = xlObj.FileDialog(3)
 ```
 
-For "**Browse and get the Selected file name**", we use `GetOpenFileName` method from **Solidworks** `SldWorks` object.
+In above line of code, we create **File dialog** and set the value of file dialog by `FileDialog` method.
 
-This `GetOpenFileName` method takes following parameters as explained:
+`FileDialog` method take 1 parameter `enum`. Please see below links for more details about `FileDialog`
 
-  - **DialogTitle** : *Title of the dialog.*
+**[Application.FileDialog property (Excel)](https://docs.microsoft.com/en-us/office/vba/api/excel.application.filedialog)**
 
-  - **InitialFileName** : *Path and file name of the file to open.*
+**[MsoFileDialogType enumeration (Office)](https://docs.microsoft.com/en-us/office/vba/api/office.msofiledialogtype)**
+
+```vb
+' Setting different properties of file dialog
+With fDialog
+  .Title = "Browse Document"  ' Title of window
+  .AllowMultiSelect = True    ' Allowing multiple select
+  .Filters.Clear              ' Clear the filters
+  .Filters.Add "SOLIDWORKS Files", "*.sldprt; *.sldasm; *.slddrw"       ' Add filters for Solidworks files
+    If .Show Then
+      strFile = .SelectedItems(1)     ' Select 3rd item from list
+    Else
+      strFile = vbNullString
+    End If
+End With
+```
+
+In above code we set different properties of File dialog object.
+
+  - **Title** : *Title of the dialog.*
+
+  - **AllowMultiSelect** : *Allowing multi select of files.*
 
   - **FileFilter** : *File name extension of the file to open.*
 
-  - **OpenOptions** : *Not used.*
-
-  - **ConfigName** : *Name of the configuration.*
-
-  - **DisplayName** : *Recommended file name to use.*
+`If` statement shows that, if *file dialog* is shown then assign the *first value* to **file name** string object.
 
 After the function complete following are the results:
 
 **Return Value**:
 
-  - *Path and file name of the file to open.*
+  - *Path and file name of the selected file(s).*
 
 Below image shows our **form** in SOLIDWORKS.
 
@@ -487,7 +534,11 @@ Below image shows our **form** in SOLIDWORKS.
 
 Below image shows the opened window.
 
-![browse-window](/assets/vba-images/browse-solidworks-files/browse-window.png "Browsing window")
+![excel-browse-window](/assets/vba-images/browse-solidworks-files/excel-browse-window.png "Browsing window using MS Excel")
+
+Below image shows the **multi-selection** in opened window.
+
+![multiple-select-window](/assets/vba-images/browse-solidworks-files/multiple-select-window.png "Multilpe file selection in Browsing window using MS Excel")
 
 ```vb
 ' Show the selected file's full path in text box
@@ -498,7 +549,26 @@ Now we set the value of text box to **browsed** file name.
 
 Final window of method 1 is shown below/.
 
-![final-window-of-method-first](/assets/vba-images/browse-solidworks-files/final-window-of-method-first.png "Final window from Method 1")
+![final-window-of-method-second](/assets/vba-images/browse-solidworks-files/final-window-of-method-first.png "Final window from Method 2")
+
+*Final window of both method is same.*
 
 ---
 
+## Final words
+
+**This is it !!!**
+
+*I hope my efforts will helpful to someone!*
+
+If you found anything to **add or update**, please let me know on my *e-mail*.
+
+Hope this post helps you in *Browsing SOLIDWORKS file(s)* with Solidworks VBA Macros.
+
+For more such tutorials on **Solidworks VBA Macro**, do come to this blog after sometime.
+
+*If you like the post then please share it with your friends also.*
+
+*Do let me know by you like this post or not!*
+
+*Till then, Happy learning!!!*

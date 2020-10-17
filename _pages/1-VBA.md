@@ -86,3 +86,5 @@ By doing this, we understand **UserForms** and **Macro sample code** at the same
 * [VBA Userforms - Open new Assembly and Drawing document](/visual-basic/open-assembly-and-drawing-from-userform)
 
 * [VBA Userforms - Testing Open new Assembly and Drawing document](/visual-basic/testing-open-assembly-and-drawing-document-macro)
+
+* [VBA Userforms - Browse SOLIDWORKS file(s)](/visual-basic/browse-solidworks-file)
