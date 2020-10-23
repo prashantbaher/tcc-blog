@@ -19,7 +19,7 @@ So ***use this method*** if you want to create a new **Corner Rectangle**.
 
 ## Video of Code on YouTube
 
-Please see below video on **how to create 2D Center Line** from Solidworks VBA Macros.
+Please see below video on **how to create Corner Rectangle** from Solidworks VBA Macros.
 
 <iframe src="https://www.youtube.com/embed/03s3pWNIC08" frameborder="0" allowfullscreen></iframe>
 <br>

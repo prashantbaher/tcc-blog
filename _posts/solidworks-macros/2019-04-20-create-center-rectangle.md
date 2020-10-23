@@ -15,6 +15,23 @@ This method is ***most updated*** method, I found in *Solidworks API Help*.
 
 So ***use this method*** if you want to create a *Center Rectangle*.
 
+---
+
+## Video of Code on YouTube
+
+Please see below video on **how to create Center Rectangle** from Solidworks VBA Macros.
+
+<iframe src="https://www.youtube.com/embed/J_CjUAN4JOc" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explaination** in the video. 
+
+**Explaination** of each line and why we write code this way is given in this post.
+
+---
+
+## Code Sample
+
 Below is the `code` sample for creating a *Center Rectangle*.
 
 ```vb
@@ -257,9 +274,3 @@ For more such tutorials on **Solidworks VBA Macros**, do come to this blog after
 
 Till then, Happy learning!!!
 
-<!-- This is post navigation bar 
-<div class="w3-bar w3-margin-top w3-margin-bottom">
-  <a href="/solidworks-macros/create-corner-rectangle" class="w3-button w3-rose">&#10094; Previous</a>
-  <a href="/solidworks-macros/create-3point-corner-rectangle" class="w3-button w3-rose w3-right">Next &#10095;</a>
-</div>
--->
