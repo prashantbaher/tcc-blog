@@ -1,8 +1,8 @@
 module.exports = {
   title: 'The Cad Coder',
   tagline: 'Free SOLIDWORKS API Tutorials for Engineers.',
-  url: 'https://thecadcoder.com/',
-  baseUrl: '/tcc-blog/',
+  url: 'https://prashantbaher.github.io/',
+  baseUrl: 'https://thecadcoder.com/',
   onBrokenLinks: 'throw',
   favicon: 'img/logo_icon.ico',
   organizationName: 'prashantbaher', // Usually your GitHub org/user name.
