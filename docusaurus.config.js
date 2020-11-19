@@ -1,7 +1,7 @@
 module.exports = {
   title: 'The Cad Coder',
   tagline: 'Free SOLIDWORKS API Tutorials for Engineers.',
-  url: 'https://thecadcoder.com/',
+  url: 'https://prashantbaher.github.io/',
   baseUrl: '/tcc-blog/',
   onBrokenLinks: 'throw',
   favicon: 'img/logo_icon.ico',
