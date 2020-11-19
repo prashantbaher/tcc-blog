@@ -7,11 +7,17 @@ module.exports = {
   favicon: 'img/logo_icon.ico',
   organizationName: 'prashantbaher', // Usually your GitHub org/user name.
   projectName: 'tcc-blog', // Usually your repo name.
+  plugins: [
+    'docusaurus-plugin-google-adsense',
+  ],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-117501871-2',
       // Optional fields.
       anonymizeIP: true, // Should IPs be anonymized?
+    },
+    googleAdsense: {
+      dataAdClient: "ca-pub-8158659264340002",
     },
     navbar: {
       title: 'The Cad Coder',
@@ -77,6 +83,9 @@ module.exports = {
 //          position: 'right',
 //        },
       ],
+    },
+    googleAdsense: {
+      dataAdClient: "ca-pub-8158659264340002",
     },
     footer: {
       style: 'light',
