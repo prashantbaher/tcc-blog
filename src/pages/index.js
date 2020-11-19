@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import Head from '@docusaurus/Head';
 
 const features = [
   {
@@ -66,6 +67,20 @@ function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
+      <Head>
+        <div>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-8158659264340002"
+              data-ad-slot="6644001766"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </Head>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -92,19 +107,6 @@ function Home() {
                 ))}
               </div>
             </div>
-            <div>
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-8158659264340002"
-                    data-ad-slot="6644001766"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true">
-                </ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-          </div>
           </section>
         )}
       </main>
