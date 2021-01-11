@@ -1,8 +1,8 @@
 ---
-layout: page
 title: Solidworks VBA Macro
-image:  post-image.jpg
 permalink: /Solidworks-macro-guide/
+toc: true
+excerpt: "Page containing all articles related to Solidworks VBA Macro."
 ---
 
 `Visual Basic for Application` or `VBA` macros is easiest way to start with programming in *Solidworks*. 

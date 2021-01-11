@@ -1,0 +1,1210 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Solidworks Macro - Mirror Sketch Entities - The CAD Coder</title>
+<meta name="description" content="In this post, I tell you about how to Mirror Sketch Entities using Solidworks VBA Macros in a Sketch.">
+
+
+  <meta name="author" content="Admin">
+  
+  <meta property="article:author" content="Admin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks Macro - Mirror Sketch Entities">
+<meta property="og:url" content="http://localhost:4000/solidworks-macros/mirror-entities/">
+
+
+  <meta property="og:description" content="In this post, I tell you about how to Mirror Sketch Entities using Solidworks VBA Macros in a Sketch.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-01-11T14:35:59+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-macros/mirror-entities/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Admin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The CAD Coder
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/vba/vba-Introduction/">VBA</a>
+            </li><li class="masthead__menu-item">
+              <a href="/solidworks-macros/vba-in-solidworks/">Solidworks VBA Macro</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-cpp-api-tutorials/">Solidworks C++ API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/resources/">Resources</a>
+            </li><li class="masthead__menu-item">
+              <a href="/aboutMe/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/vba-in-solidworks/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/" class="active">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/" class="active">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Solidworks Macro - Mirror Sketch Entities">
+    <meta itemprop="description" content="In this post, I tell you about how to Mirror Sketch Entities using Solidworks VBA Macros in a Sketch.">
+    <meta itemprop="datePublished" content="2021-01-11T14:35:59+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Mirror Sketch Entities
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#for-experience-macro-developer">For Experience Macro Developer</a></li><li><a href="#for-beginners-macro-developers">For Beginners Macro Developers</a><ul><li><a href="#understanding-the-code">Understanding the Code</a></li><li><a href="#note">NOTE</a></li></ul></li><li><a href="#vba-language-feature-used-in-this-post">VBA Language feature used in this post</a></li><li><a href="#solidworks-api-objects">Solidworks API Objects</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>In this post, I tell you about <em>how to Mirror Sketch Entities using Solidworks VBA Macros</em> in a Sketch.</p>
+
+<hr />
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below video how visually we <em>Mirror Sketch Entities</em> in <strong>Solidworks VBA macro</strong>.</p>
+
+<iframe src="https://www.youtube.com/embed/iVCCMKYgxcA" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explaination</strong> given in the video.</p>
+
+<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+
+<hr />
+
+<h2 id="for-experience-macro-developer">For Experience Macro Developer</h2>
+
+<p>If you are an experience <strong>Solidworks Macro developer</strong>, then you are looking for a specific code sample.</p>
+
+<p>Below is the code for <strong>Mirror Sketch Entities</strong> from <strong>Solidworks VBA Macro</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Select Center Line for Mirror</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+
+<span class="c1">' Select Circle we want to Mirror</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+
+<span class="c1">' Mirror Selected Sketch entities</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">SketchMirror</span>
+</code></pre></div></div>
+
+<p><strong>Method Name</strong>: <code class="language-plaintext highlighter-rouge">SketchMirror</code></p>
+
+<p><strong>Description</strong>: <em>Mirrors</em> the selected sketch entities with reference from a Centerline.</p>
+
+<p>For <strong>Mirror</strong> Solidworks Sketch entities, first we need following things:</p>
+
+<ol>
+  <li>
+    <p>Sketch Entity/Entities to <em>Mirror</em></p>
+  </li>
+  <li>
+    <p><em>A Centerline</em>, from which we <em>Mirror</em> the sketch entities</p>
+  </li>
+</ol>
+
+<p>If you want more detailed explaination then please read further otherwise this will help you to <strong>Mirror Sketch Entities From VBA Macro</strong>.</p>
+
+<hr />
+
+<h2 id="for-beginners-macro-developers">For Beginners Macro Developers</h2>
+
+<p>In this post, I tell you about <code class="language-plaintext highlighter-rouge">SketchMirror</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>This method is <strong><em>easiest</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+
+<p>So <strong><em>use this method</em></strong> if you want to <em>Mirror Sketches</em>.</p>
+
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for <em>Mirror Sketches</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Create variable for Solidworks Sketch Manager</span>
+<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+
+<span class="c1">' Create Variable for Solidworks Sketch Segment</span>
+<span class="k">Dim</span> <span class="nv">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+
+<span class="c1">' Main function of our VBA program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Create string type variable for storing default part location</span>
+  <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+
+  <span class="c1">' Set value of this string type variable to "Default part template"</span>
+  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1">' Select Front Plane</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+
+  <span class="c1">' Set Sketch manager for our sketch</span>
+  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+
+  <span class="c1">' Insert a sketch into selected plane</span>
+  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+  
+  <span class="c1">' Set Sketch Segment value and Create a Center Line</span>
+  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCenterLine</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">' Set Sketch Segment value and Create a Circle</span>
+  <span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+  
+  <span class="c1">' De-select the lines after creation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+  <span class="c1">' Select Center Line for Mirror</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+
+  <span class="c1">' Select Circle we want to Mirror</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+
+  <span class="c1">' Mirror Selected Sketch entities</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchMirror</span>
+
+  <span class="c1">' De-select the Sketch Segment after Mirror</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+  <span class="c1">' Show Front View after Mirror Sketch Segments</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">""</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
+  
+  <span class="c1">' Zoom to fit screen in Solidworks Window</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="understanding-the-code">Understanding the Code</h3>
+
+<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+
+<p>I also give some link so that you can go through them if there are anything I explained in previous posts.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object type.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks Sketch Manager</span>
+<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+</code></pre></div></div>
+
+<p>In above line, we create variable <code class="language-plaintext highlighter-rouge">swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
+
+<p>As the name suggested, a <strong>Sketch Manager</strong> holds variours methods and properties to manage <em>Sketches</em>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SketchManager</code> object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page of Solidworks API Help</a></strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks Sketch Segment</span>
+<span class="k">Dim</span> <span class="nv">swSketchSegment</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchSegment</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swSketchSegment</code> and the type of this <code class="language-plaintext highlighter-rouge">swSketchSegment</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SketchSegment</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swSketchSegment</code> for <strong>Solidworks Sketch Segments</strong>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">swSketchSegment</code> object, please visit <strong><a href="https://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this page of Solidworks API Help</a></strong></p>
+
+<p>These all are our global variables.</p>
+
+<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
+
+<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
+
+<p>I have also place <code class="language-plaintext highlighter-rouge">boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
+
+<p>Thus, I have started placing it here.</p>
+
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to Solidworks application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create string type variable for storing default part location</span>
+<span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="c1">' Set value of this string type variable to "Default part template"</span>
+<span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In 1st statement of above example, we are defining a variable of <code class="language-plaintext highlighter-rouge">string</code> type and named it as <code class="language-plaintext highlighter-rouge">defaultTemplate</code>.</p>
+
+<p>This variable <code class="language-plaintext highlighter-rouge">defaultTemplate</code>, hold the location the location of <strong>Default Part Template</strong>.</p>
+
+<p>In 2nd line of above example. we assign value to our newly define <code class="language-plaintext highlighter-rouge">defaultTemplate</code> variable.</p>
+
+<p>We assign the value by using a <em>Method</em> named <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code>.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code> method is a part of our main Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document to new part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our <code class="language-plaintext highlighter-rouge">swDoc</code> variable to new document.</p>
+
+<p>For <strong>detailed information</strong> about these lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<p>I have discussed them <strong>thoroghly</strong> in <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post, so do checkout that post if you want to understand above code in more detail.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Front Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line, we select the <em>front plane</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Sketch manager for our sketch</span>
+<span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+</code></pre></div></div>
+
+<p>In above line, we set the <em>Sketch manager</em> variable to <em>current document’s sketch manager</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Insert a sketch into selected plane</span>
+<span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In above line, we use <code class="language-plaintext highlighter-rouge">InsertSketch</code> method of <em>SketchManager</em> and give <code class="language-plaintext highlighter-rouge">True</code> value.</p>
+
+<p>This method allows us to insert a sketch in selected plane.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Sketch Segment value and Create a Center Line</span>
+<span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCenterLine</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line, we set the value of Solidworks Sketch Segment variable <code class="language-plaintext highlighter-rouge">swSketchSegment</code> by <code class="language-plaintext highlighter-rouge">CreateCenterLine</code> method from <em>Solidworks Sketch Manager</em>.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateCenterLine</code> method creates a Center Line between 2 given points.</p>
+
+<p>For more information about <code class="language-plaintext highlighter-rouge">CreateCenterLine</code> method, you can read my <strong><a href="/solidworks-macros/sketch-create-centerline">Solidworks Sketch Macros - Create CenterLines</a></strong> post.</p>
+
+<p>That post describe all the parameters we need for this <code class="language-plaintext highlighter-rouge">CreateCenterLine</code> method in details.</p>
+
+<p>In above line, we create a Line between <strong>point (0, 0, 0)</strong> and <strong>point (0, 1, 0)</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Sketch Segment value and Create a Circle</span>
+<span class="k">Set</span> <span class="n">swSketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircleByRadius</span><span class="p">(</span><span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line we create <em>a Circle</em> by using same <code class="language-plaintext highlighter-rouge">CreateCircleByRadius</code> method from <em>Solidworks Sketch Manager</em>.</p>
+
+<p>In above code, we create <em>a Circle</em> at <strong>point (0, 0, 0)</strong> with a radius of <strong>0.2</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the lines after creation</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>After creating both entities we <em>de-select</em> them.</p>
+
+<blockquote>
+  <p>We need to <strong>de-select</strong> both the entities because we have to <strong>mark</strong> them with options when we select them individually.</p>
+</blockquote>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Center Line for Mirror</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we select the <em>Center Line</em> i.e. <strong>Line 1</strong> for our Mirror option.</p>
+
+<p><strong>NOTE</strong>: To differentiate a <em>Center Line</em> between selected entities, we use <strong>Mark</strong> option of <code class="language-plaintext highlighter-rouge">2</code> while selecting the Center Line. This is IMPORTANT for defining the Centerline in <strong>Mirror</strong> operation.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Circle we want to Mirror</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we select the Circle i.e. <strong>Arc 1</strong> and add it to selection list.</p>
+
+<p><strong>NOTE</strong>: While selecting entities to Mirror, we use <strong>Mark</strong> option of <code class="language-plaintext highlighter-rouge">1</code> while selecting the Center Line. This is IMPORTANT for while selecting sketch entities in <strong>Mirror</strong> operation. If any selected entity is <strong>NOT</strong> marked with <code class="language-plaintext highlighter-rouge">1</code> then it will not mirror.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Mirror Selected Sketch entities</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">SketchMirror</span>
+</code></pre></div></div>
+
+<p>In above line, we <strong>Mirror</strong> selected <em>Circle</em> by <code class="language-plaintext highlighter-rouge">SketchMirror</code> method from <em>Solidworks Document</em> variable.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">SketchMirror</code> method does not take any parameters.</p>
+
+<p>Below image shows before and after Mirror operation on the sketch.</p>
+
+<p><strong>Before Mirror Operation</strong></p>
+
+<p><img src="/assets/Solidworks_Images/Mirror-sketch-entities/before-Mirror.png" alt="before-Mirror" /></p>
+
+<p><strong>After Mirror Operation</strong></p>
+
+<p><img src="/assets/Solidworks_Images/Mirror-sketch-entities/after-Mirror.png" alt="after-Mirror" /></p>
+
+<hr />
+
+<h3 id="note">NOTE</h3>
+
+<p>It is <strong><em>very important</em></strong> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <strong><em>Meter only</em></strong>.</p>
+
+<p>Solidworks API does not care about your application’s Unit systems.</p>
+
+<p>For example, I works in <strong>ANSI</strong> system means <em>inches</em> for distance. But when I used <strong>Solidworks API</strong> through <em>VBA macros or C#</em>, I need to converted numeric values.</p>
+
+<p>Because Solidworks API output the distance in <strong>Meter</strong> which is not my requirement.</p>
+
+<hr />
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the Sketch after creation</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In the above line of code, we deselect the <strong>Sketch</strong> after the <em>Mirror</em> operation.</p>
+
+<p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document name <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show Front View after Sketch Mirror</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">""</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
+</code></pre></div></div>
+
+<p>In the above line of code, we update the <em>view orientation</em> to <strong>Front View</strong>.</p>
+
+<p>In my machine, after inserting a sketch view orientation does not changed.</p>
+
+<p>Because of this I have to update the view to <strong>Front view</strong>.</p>
+
+<p>For showing <strong>Front View</strong> we used <code class="language-plaintext highlighter-rouge">ShowNamedView2</code> method from our Solidworks document name <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+<p>This method takes 2 parameter described as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>VName</strong> : Name of the view to display or an empty string to use ViewId instead</p>
+  </li>
+  <li>
+    <p><strong>ViewId</strong> : ID of the view to display as defined by <code class="language-plaintext highlighter-rouge">swStandardViews_e</code> or -1 to use the <strong>VName</strong> argument instead.</p>
+  </li>
+</ul>
+
+<p><em>NOTE:</em> If you specify both <strong>VName</strong> and <strong>ViewId</strong>, then <strong>ViewId</strong> takes precedence if the two arguments do not resolve to the same view.</p>
+
+<p><code class="language-plaintext highlighter-rouge">swStandardViews_e</code> has following Standard View Types:</p>
+
+<ul>
+  <li>
+    <p><em>swBackView</em></p>
+  </li>
+  <li>
+    <p><em>swBottomView</em></p>
+  </li>
+  <li>
+    <p><em>swDimetricView</em></p>
+  </li>
+  <li>
+    <p><em>swFrontView</em></p>
+  </li>
+  <li>
+    <p><em>swIsometricView</em></p>
+  </li>
+  <li>
+    <p><em>swLeftView</em></p>
+  </li>
+  <li>
+    <p><em>swRightView</em></p>
+  </li>
+  <li>
+    <p><em>swTopView</em></p>
+  </li>
+  <li>
+    <p><em>swExtendetricView</em></p>
+  </li>
+</ul>
+
+<p>In our code, we did not use <strong>VName</strong> instead I used <em>empty string</em> in form of <strong><em>”“</em></strong> symbol.</p>
+
+<p>I used <strong>ViewId</strong> value to specify view and used <code class="language-plaintext highlighter-rouge">swStandardViews_e.swFrontView</code> value to use <em>Standard Front View</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit screen in Solidworks Window</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
+</code></pre></div></div>
+
+<p>In this last line we use <em>zoom to fit</em> command.</p>
+
+<p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+<p>This is it !!!</p>
+
+<p>If you found anything to add or update, please let me know on my e-mail.</p>
+
+<hr />
+
+<h2 id="vba-language-feature-used-in-this-post">VBA Language feature used in this post</h2>
+
+<p>In this post used some features of <strong>VBA programming language</strong>.</p>
+
+<p>This section of post, has some brief information about the VBA programming language specific features.</p>
+
+<ol>
+  <li>
+    <p>We use <strong>Option Explicit</strong> for capturing un-declared variables. If you want to read more about <strong>Option Explicit</strong> then please visit <strong><a href="/vba/declaring-and-scoping-of-variables">Declaring and Scoping of Variables</a></strong>.</p>
+  </li>
+  <li>
+    <p>Then we create <strong>variable</strong> for different data types. If you know in detail about the <strong>Variables</strong>, then please visit <strong><a href="/vba/variables">Variables</a></strong> and <strong><a href="/vba/programming-concepts/#data-types-in-vba">Data-types</a></strong> posts of this blog. It will help you to understand what <strong>Variables</strong> are and how to use them.</p>
+  </li>
+  <li>
+    <p>Then we create <strong>main Sub procedure</strong> for our macro. If you know in detail about the <strong>Sub procedure</strong>, then I suggest you to visit <strong><a href="/vba/sub-and-function-procedure">VBA Sub and Function Procedures</a></strong> and <strong><a href="/vba/executing-procedures">Executing Sub and Function Procedures</a></strong> posts of this blog. It will help you to understand what <strong>Procedures</strong> are and how to use them.</p>
+  </li>
+  <li>
+    <p>In most part we create some variables and set their values. We set those values by using some <strong>functions</strong> provided from objects. If you don’t know about the <strong>functions</strong>, then you should visit <strong><a href="/vba/functions">VBA Functions</a></strong> and <strong><a href="/vba/more-functions">VBA Functions that do more</a></strong> posts of this blog. It will help you to understand what <strong>functions</strong> are and how to use them.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="solidworks-api-objects">Solidworks API Objects</h2>
+
+<p>In this post of <strong>Sketch Mirror</strong>, we use <em>Solidworks API objects and their methods</em>.</p>
+
+<p>This section contains the list of all <strong>Solidworks Objects</strong> used in this post.</p>
+
+<p>I have also attached links of these <strong>Solidworks API Objects</strong> in <strong>API Help website</strong>.</p>
+
+<p>If you want to explore those objects, you can use these links.</p>
+
+<p>These Solidworks API Objects are listed below:</p>
+
+<ul>
+  <li>
+    <p><strong>Solidworks Application Object</strong></p>
+
+    <p>If you want explore <strong><em>Properties and Methods/Functions</em></strong> of <strong>Solidworks Application Object</strong> object you can visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this link</a></strong>.</p>
+  </li>
+  <li>
+    <p><strong>Solidworks Document Object</strong></p>
+
+    <p>If you want explore <strong><em>Properties and Methods/Functions</em></strong> of <strong>Solidworks Document Object</strong> object you can visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this link</a></strong>.</p>
+  </li>
+  <li>
+    <p><strong>Solidworks Sketch Manager Object</strong></p>
+
+    <p>If you want explore <strong><em>Properties and Methods/Functions</em></strong> of <strong>Solidworks Sketch Manager Object</strong> you can visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this link</a></strong>.</p>
+  </li>
+  <li>
+    <p><strong>Solidworks Sketch Segment Object</strong></p>
+
+    <p>If you want explore <strong><em>Properties and Methods/Functions</em></strong> of <strong>Solidworks Sketch Segment Object</strong> you can visit <strong><a href="https://help.solidworks.com/2019/English/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSegment_members.html">this link</a></strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>Hope this post helps you to <em>Mirror</em> Sketch Entities with Solidworks VBA Macros.</p>
+
+<p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+
+<p>Till then, Happy learning!!!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#solidworks-macro" class="page__taxonomy-item" rel="tag">Solidworks Macro</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#solidworks-macro" class="page__taxonomy-item" rel="tag">Solidworks-macro</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-01-11T14:35:59+00:00">January 11, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Solidworks+Macro+-+Mirror+Sketch+Entities%20http%3A%2F%2Flocalhost%3A4000%2Fsolidworks-macros%2Fmirror-entities%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsolidworks-macros%2Fmirror-entities%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsolidworks-macros%2Fmirror-entities%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/solidworks-macros/offset-entities/" class="pagination--pager" title="Solidworks Macro - Offset Sketch Entities
+">Previous</a>
+    
+    
+      <a href="/solidworks-macros/linear-skech-pattern/" class="pagination--pager" title="Solidworks Macro - Linear Sketch Pattern
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+      </div>
+    </div>
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://facebook.com/thecadcoder" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" rel="nofollow noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+        
+      
+        
+          <li><a href="mailto:thecadcoder@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Admin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. | <strong><a href="http://localhost:4000/Disclaimer/" rel="nofollow"><i class="fas fa-lock" aria-hidden="true"></i> Privacy Policy</a></strong></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  </body>
+</html>
