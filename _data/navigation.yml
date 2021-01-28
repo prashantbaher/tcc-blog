@@ -214,6 +214,10 @@ solidworks-macros:
     children:
       - title: "Add dimension to Sketch Entities"
         url: /solidworks-macros/add-dimension-methods/
+  - title: Features
+    children:
+      - title: "Extrude Feature"
+        url: /solidworks-macros/create-extrude-feature/        
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
