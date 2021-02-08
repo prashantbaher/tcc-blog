@@ -8,7 +8,7 @@ tags:   [Solidworks C++ API]
 
 Nothing special I have to say or write for this *Solidworks C++ API* tutorials.
 
-I will start posting on *Solidworks C++ API* tutorials along with [Solidworks VBA tutorials](/solidworks-macros/vba-in-solidworks/) on regular basis.
+I will start posting on *Solidworks C++ API* tutorials along with [Solidworks VBA tutorials](/solidworks-macros/vba-in-solidworks/) on **casual basis** (Whenever I got time).
 
 For whom this section might be interested?
 
@@ -22,7 +22,7 @@ One thing is sure, I am not going to explain in very detail because I am more of
 
 I just want to explore **C++ in Visual studio** and best way to do is writing some program using my existing knowledge of ***Solidworks C# API***.
 
-So ***Solidworks C++ API*** posts are more "**how**" to type not much descriptive like [Solidworks VBA posts](/solidworks-macros/vba-in-solidworks), which tends to describe all in detailed manner.
+So ***Solidworks C++ API*** posts are more "**how**" to type not much descriptive like [Solidworks VBA posts](/solidworks-macros/vba-in-solidworks), which tends to describe in detailed manner.
 
 That's it!!!
 

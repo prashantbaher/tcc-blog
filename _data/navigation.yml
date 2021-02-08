@@ -6,6 +6,8 @@ main:
     url: /vba/vba-Introduction/   
   - title: "Solidworks VBA Macro"
     url: /solidworks-macros/vba-in-solidworks/
+  - title: "Solidworks C# API"
+    url: /Solidworks-csharp-api-tutorials/
   - title: "Solidworks C++ API"
     url: /Solidworks-cpp-api-tutorials/
   - title: "Resources"
@@ -224,3 +226,11 @@ solidworks-macros:
         url: /solidworks-macros/convert-to-construction-sketch-segment/
       - title: "Split Open/Closed Sketch Entities"
         url: /solidworks-macros/split-sketch-segments/
+
+solidworks-csharp:
+  - title: Getting Started
+    children:
+      - title: "Introduction"
+        url: /Solidworks-csharp-api-tutorials/
+      - title: "Prerequisite"
+        url: /solidworks-csharp/Prerequisite/
