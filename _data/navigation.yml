@@ -234,3 +234,6 @@ solidworks-csharp:
         url: /Solidworks-csharp-api-tutorials/
       - title: "Prerequisite"
         url: /solidworks-csharp/Prerequisite/
+      - title: "Open Solidworks"
+        url: /solidworks-csharp/open-solidworks/
+        
