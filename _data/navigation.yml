@@ -236,4 +236,6 @@ solidworks-csharp:
         url: /solidworks-csharp/Prerequisite/
       - title: "Open Solidworks"
         url: /solidworks-csharp/open-solidworks/
+      - title: "Open Solidworks Document"
+        url: /solidworks-csharp/open-solidworks-document/
         
