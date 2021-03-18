@@ -1,0 +1,747 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>If-Then-Else and Select Case structure - The CAD Coder</title>
+<meta name="description" content="If-Then is VBA’s most important control structure. You’ll probably use this command on a daily basis.">
+
+
+  <meta name="author" content="Admin">
+  
+  <meta property="article:author" content="Admin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="If-Then-Else and Select Case structure">
+<meta property="og:url" content="http://localhost:4000/vba/if-then-structure-select-case/">
+
+
+  <meta property="og:description" content="If-Then is VBA’s most important control structure. You’ll probably use this command on a daily basis.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-18T05:21:32+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/vba/if-then-structure-select-case/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Admin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The CAD Coder
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/vba/vba-Introduction/">VBA</a>
+            </li><li class="masthead__menu-item">
+              <a href="/solidworks-macros/vba-in-solidworks/">Solidworks VBA Macro</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-csharp-api-tutorials/">Solidworks C# API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-cpp-api-tutorials/">Solidworks C++ API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/resources/">Resources</a>
+            </li><li class="masthead__menu-item">
+              <a href="/aboutMe/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/" class="active">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="If-Then-Else and Select Case structure">
+    <meta itemprop="description" content="If-Then is VBA’s most important control structure. You’ll probably use this command on a daily basis.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">If-Then-Else and Select Case structure
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#if-then-examples">If-Then examples</a></li><li><a href="#if-then-else-examples">If-Then-Else examples</a></li><li><a href="#if-elseif-else-examples">If-ElseIf-Else examples</a></li><li><a href="#select-case-example">Select Case example</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><code class="language-plaintext highlighter-rouge">If-Then</code> is VBA’s most important control structure. You’ll probably use this command on a daily basis.</p>
+
+<p>As in many other aspects of life, effective <em>decision-making</em> is the key to success in writing CAD or any other macros.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">If-Then</code> structure has this basic syntax:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">If</span> <span class="n">condition</span> <span class="k">Then</span> <span class="n">statements</span> <span class="err">[</span><span class="k">Else</span> <span class="n">elsestatements</span><span class="err">]</span>
+</code></pre></div></div>
+
+<p>Use the <strong>If-Then</strong> structure when you want to execute one or more statements conditionally.</p>
+
+<p>The optional <strong>Else</strong> clause, if included, lets you execute one or more statements if the condition you’re testing is not true.</p>
+
+<p>Sound confusing? Don’t worry; a few examples make this crystal clear.</p>
+
+<h2 id="if-then-examples">If-Then examples</h2>
+
+<p>The following routine demonstrates the <code class="language-plaintext highlighter-rouge">If-Then</code> structure without the optional Else clause:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning</span><span class="p">()</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Morning</span><span class="p">.</span><span class="err">”</span>
+<span class="n">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">GoodMorning</code> procedure uses VBA’s <code class="language-plaintext highlighter-rouge">Time</code> function to get the system time.</p>
+
+<p>If the current system time is less than <em>.5</em> (in other words, before noon), the routine displays a friendly greeting.</p>
+
+<p>If Time is greater than or equal to <em>.5</em>, the routine ends and nothing happens.</p>
+
+<p>To display a different greeting if Time is greater than or equal to <em>.5</em>, add another <em>If-Then</em> statement after the first one:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning2</span><span class="p">()</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Morning</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">If</span> <span class="n">Time</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Afternoon</span><span class="p">.</span><span class="err">”</span>
+<span class="n">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Notice that I used <code class="language-plaintext highlighter-rouge">&gt;=</code> (greater than or equal to) for the second <em>If-Then</em> statement.</p>
+
+<p>This ensures that the entire day is covered. Had I used <code class="language-plaintext highlighter-rouge">&gt;</code> (greater than), then no message would appear if this procedure were executed at precisely 12:00 noon.</p>
+
+<h2 id="if-then-else-examples">If-Then-Else examples</h2>
+
+<p>Another approach to the preceding problem uses the <code class="language-plaintext highlighter-rouge">Else</code> clause.</p>
+
+<p>Here’s the same routine recoded to use the <code class="language-plaintext highlighter-rouge">If-Then-Else</code> structure:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning3</span><span class="p">()</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Morning</span><span class="p">.</span><span class="err">”</span> <span class="n">Else</span> <span class="n">_</span>
+  <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Afternoon</span><span class="p">.</span><span class="err">”</span>
+<span class="n">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Notice that I use the <em>line continuation character (underscore)</em> in the preceding example.</p>
+
+<p>The <strong>If-Then-Else</strong> statement is actually a single statement.</p>
+
+<p>VBA provides a slightly different way of coding <strong>If-Then-Else</strong> constructs that use an <strong>End-If</strong> statement.</p>
+
+<p>Therefore, the <code class="language-plaintext highlighter-rouge">GoodMorning</code> procedure can be rewritten as:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning4</span><span class="p">()</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Morning</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">Else</span>
+    <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span> <span class="n">Afternoon</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">End</span> <span class="k">If</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>In fact, you can insert any number of statements under the <code class="language-plaintext highlighter-rouge">If</code> part, and any number of statements under the <code class="language-plaintext highlighter-rouge">Else</code> part.</p>
+
+<p>I prefer to use this syntax because it’s easier to read and makes the statements shorter.</p>
+
+<p>What if you need to expand the <code class="language-plaintext highlighter-rouge">GoodMorning</code> routine to handle three conditions: <em>morning, afternoon, and evening</em>?</p>
+
+<p>You have two options: Use three <code class="language-plaintext highlighter-rouge">If-Then</code> statements or use a nested <code class="language-plaintext highlighter-rouge">If-Then-Else</code> structure.</p>
+
+<p><strong>Nesting</strong> means placing an <strong>If-Then-Else</strong> structure within another <strong>If-Then-Else</strong> structure.</p>
+
+<p>The first approach, the three statements, is simplest:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning5</span><span class="p">()</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span> <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Morning</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">If</span> <span class="n">Time</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">And</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.75</span> <span class="k">Then</span> <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Afternoon</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">If</span> <span class="n">Time</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="k">Then</span> <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Evening</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span><span class="err">”</span> <span class="o">&amp;</span> <span class="n">Msg</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Msg</code> variable gets a different text value, depending on the time of day.</p>
+
+<p>The final <code class="language-plaintext highlighter-rouge">MsgBox</code> statement displays the greeting: <em>Good Morning, Good Afternoon, or Good Evening</em>.</p>
+
+<p>The following routine performs the same action but uses an <strong>If-Then-End If</strong> structure:</p>
+
+<pre><code class="language-VB">Sub GoodMorning6()
+  Dim Msg As String
+  If Time &lt; 0.5 Then
+    Msg = “Morning.”
+  If Time &gt;= 0.5 And Time &lt; 0.75 Then
+    Msg = “Afternoon.”
+  If Time &gt;= 0.75 Then
+    Msg = “Evening.”
+  End If
+  MsgBox “Good” &amp; Msg
+End Sub
+</code></pre>
+
+<h2 id="if-elseif-else-examples">If-ElseIf-Else examples</h2>
+
+<p>In the previous examples, every statement in the routine is executed — even in the morning.</p>
+
+<p>A more efficient structure would exit the routine as soon as a condition is found to be true.</p>
+
+<p>In the morning, for example, the procedure should display the Good Morning message and then exit — without evaluating the other <em>superfluous</em> conditions.</p>
+
+<p>With a tiny routine like this, you don’t have to worry about execution speed.</p>
+
+<p>But for larger applications in which speed is important, you should know about another syntax for the If-Then structure.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">ElseIf</code> syntax follows:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">If</span> <span class="n">condition</span> <span class="k">Then</span>
+<span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="err">[</span><span class="k">Else</span> <span class="n">condition</span><span class="o">-</span><span class="n">n</span> <span class="k">Then</span>
+<span class="err">[</span><span class="n">elseifstatements</span><span class="err">]]</span>
+<span class="err">[</span><span class="k">Else</span>
+<span class="err">[</span><span class="n">elsestatements</span><span class="err">]]</span>
+</code></pre></div></div>
+
+<p>Here’s how you can rewrite the <code class="language-plaintext highlighter-rouge">GreetMe</code> routine by using this syntax:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GoodMorning7</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">Msg</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">If</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">Then</span>
+    <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Morning</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">ElseIf</span> <span class="n">Time</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">And</span> <span class="n">Time</span> <span class="o">&lt;</span> <span class="mf">0.75</span> <span class="k">Then</span>
+    <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Afternoon</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">Else</span>
+    <span class="n">Msg</span> <span class="o">=</span> <span class="err">“</span><span class="n">Evening</span><span class="p">.</span><span class="err">”</span>
+  <span class="n">End</span> <span class="k">If</span>
+  <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Good</span><span class="err">”</span> <span class="o">&amp;</span> <span class="n">Msg</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>When a condition is <code class="language-plaintext highlighter-rouge">true</code>, VBA executes the conditional statements and the If structure ends.</p>
+
+<p>In other words, VBA doesn’t waste time evaluating the extraneous conditions, which makes this procedure a bit more efficient than the previous examples.</p>
+
+<p>The trade-off (there are always trade-offs) is that the code is more difficult to understand. (Of course, you already knew that.)</p>
+
+<h1 id="select-case-structure">Select Case structure</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">Select</code> Case structure is useful for decisions involving three or more options (although it also works with two options, but using <strong>If-Then-Else</strong> structure is more efficient for that).</p>
+
+<p>The syntax for the <code class="language-plaintext highlighter-rouge">Select</code> Case structure follows:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Select</span> <span class="k">Case</span> <span class="n">testexpression</span>
+<span class="err">[</span><span class="k">Case</span> <span class="n">expressionlist</span><span class="o">-</span><span class="n">n</span> 
+  <span class="err">[</span><span class="n">statements</span><span class="o">-</span><span class="n">n</span><span class="err">]]</span>
+<span class="err">[</span><span class="k">Case</span> <span class="k">Else</span>
+  <span class="err">[</span><span class="n">elsestatements</span><span class="err">]]</span>
+<span class="k">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+
+<p>Don’t be scared off by this official syntax. Using the <strong>Select Case structure</strong> is quite easy.</p>
+
+<h2 id="select-case-example">Select Case example</h2>
+
+<p>The following example shows how to use the <strong>Select Case structure</strong>.</p>
+
+<p>This also shows another way to code the examples presented in the previous section:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">SelectPartLength</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">PartNumber</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Dim</span> <span class="nv">PartLength</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">PartNumber</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="err">“</span><span class="n">Please</span> <span class="n">Enter</span> <span class="n">part</span> <span class="n">number</span><span class="p">:</span><span class="err">”</span><span class="p">)</span>
+  <span class="k">Select</span> <span class="k">Case</span> <span class="n">PartNumber</span>
+    <span class="k">Case</span> <span class="n">Part001</span>
+      <span class="n">PartLength</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">Case</span> <span class="n">Part002</span>
+      <span class="n">PartLength</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">Case</span> <span class="n">Part003</span>
+      <span class="n">PartLength</span> <span class="o">=</span> <span class="mi">3</span>
+  <span class="k">End</span> <span class="k">Select</span>
+  <span class="n">MsgBox</span> <span class="err">“</span><span class="n">Part</span> <span class="n">Length</span> <span class="n">for</span> <span class="n">this</span><span class="err">”</span> <span class="o">&amp;</span> <span class="n">PartNumber</span> <span class="o">&amp;</span> <span class="err">“</span><span class="n">is</span><span class="err">”</span> <span class="o">&amp;</span> <span class="n">PartLength</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>In this example, the <code class="language-plaintext highlighter-rouge">PartNumber</code> variable is being evaluated.</p>
+
+<p>The routine is checking for three different cases.</p>
+
+<p>Next post will be about <strong><em>VBA Looping</em></strong>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#vba" class="page__taxonomy-item" rel="tag">VBA</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=If-Then-Else+and+Select+Case+structure%20http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fif-then-structure-select-case%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fif-then-structure-select-case%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fif-then-structure-select-case%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/vba/controlling-flow-making-desicions/" class="pagination--pager" title="Controlling Program Flow and Making Decisions
+">Previous</a>
+    
+    
+      <a href="/vba/looping/" class="pagination--pager" title="VBA Looping
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://facebook.com/thecadcoder" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" rel="nofollow noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+        
+      
+        
+          <li><a href="mailto:thecadcoder@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Admin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. | <strong><a href="http://localhost:4000/Disclaimer/" rel="nofollow"><i class="fas fa-lock" aria-hidden="true"></i> Privacy Policy</a></strong></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+    <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,660 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Visual Basic for Application Introduction - The CAD Coder</title>
+<meta name="description" content="To understand Visual Basic for Application, lets look at the following questions.">
+
+
+  <meta name="author" content="Admin">
+  
+  <meta property="article:author" content="Admin">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Visual Basic for Application Introduction">
+<meta property="og:url" content="http://localhost:4000/vba/vba-Introduction/">
+
+
+  <meta property="og:description" content="To understand Visual Basic for Application, lets look at the following questions.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-18T05:21:32+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/vba/vba-Introduction/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Admin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The CAD Coder
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/vba/vba-Introduction/">VBA</a>
+            </li><li class="masthead__menu-item">
+              <a href="/solidworks-macros/vba-in-solidworks/">Solidworks VBA Macro</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-csharp-api-tutorials/">Solidworks C# API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-cpp-api-tutorials/">Solidworks C++ API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/resources/">Resources</a>
+            </li><li class="masthead__menu-item">
+              <a href="/aboutMe/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/" class="active">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Visual Basic for Application Introduction">
+    <meta itemprop="description" content="To understand Visual Basic for Application, lets look at the following questions.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Visual Basic for Application Introduction
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#what-is-visual-basic-for-application">What is Visual Basic for Application?</a></li><li><a href="#what-can-you-do-with-vba">What can you do with VBA?</a></li><li><a href="#what-are-the-advantages-and-disadvantages-of-vba">What are the advantages and disadvantages of VBA?</a><ul><li><a href="#vba-advantages">VBA Advantages</a></li><li><a href="#vba-disadvantages">VBA disadvantages</a></li></ul></li><li><a href="#vba-in-nutshell">VBA in nutshell</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>To understand <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code>, lets look at the following <em>questions</em>.</p>
+
+<h2 id="what-is-visual-basic-for-application">What is Visual Basic for Application?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Visual Basic for Applications</code> also known as <code class="language-plaintext highlighter-rouge">VBA</code>, is a <em>programming language</em> developed by <strong>Microsoft</strong>.</p>
+
+<p><em>SOLIDWORKS</em>, along with <em>Excel</em> and other software of <em>Office Suit</em>, includes <code class="language-plaintext highlighter-rouge">VBA</code> language (at no extra cost).</p>
+
+<p>In a nutshell, <code class="language-plaintext highlighter-rouge">VBA</code> is a tool that people use to develop program that control <em>SOLIDWORKS</em>.</p>
+
+<p>Think about <code class="language-plaintext highlighter-rouge">a robot</code> that knows everything about <em>SOLIDWORKS</em>. This robot can <code class="language-plaintext highlighter-rouge">read instruction</code>, and it can also <code class="language-plaintext highlighter-rouge">operate</code> <em>SOLIDWORKS</em> very fast and accurate.</p>
+
+<p>When you want the robot to do something in <em>SOLIDWORKS</em>, you write up a set of robotic instruction by using special codes.</p>
+
+<p>Tell the robot to follow your instruction, while you sit back and take some rest. That’s kind of what <code class="language-plaintext highlighter-rouge">VBA</code> is all about.</p>
+
+<h2 id="what-can-you-do-with-vba">What can you do with VBA?</h2>
+
+<p>You know that people use different <em>CAD softwares</em>, not just <em>SOLIDWORKS</em>, for different tasks.</p>
+
+<p>Below is a list of some common tasks:</p>
+
+<ul>
+  <li>
+    <p>Creating sketches</p>
+  </li>
+  <li>
+    <p>Creating 3D models</p>
+  </li>
+  <li>
+    <p>Creating Simple to Complex assemblies of 3D models</p>
+  </li>
+  <li>
+    <p>Linking files with external softwares mostly excel and many more tasks</p>
+  </li>
+</ul>
+
+<p>This list could go on and on, but you get the idea.</p>
+
+<p>My point is simply that a CAD Software like <em>SOLIDWORKS</em> used for wide variety of things.</p>
+
+<p>Everyone visiting this blog has different <em>needs and expectations</em>.</p>
+
+<p>One thing virtually every visitor has common is the need to automate some aspect of their work. That is what VBA is all about.</p>
+
+<h2 id="what-are-the-advantages-and-disadvantages-of-vba">What are the advantages and disadvantages of VBA?</h2>
+
+<p>In this section, I briefly describe the good things about <code class="language-plaintext highlighter-rouge">VBA</code> – and I also explore its darker side.</p>
+
+<h3 id="vba-advantages">VBA Advantages</h3>
+
+<p>You can <code class="language-plaintext highlighter-rouge">automate</code> almost anything you do in <em>SOLIDWORKS</em>.</p>
+
+<p>To do so, you write <code class="language-plaintext highlighter-rouge">instructions</code> that <em>SOLIDWORKS</em> carries out.</p>
+
+<p>Automating a task by using <code class="language-plaintext highlighter-rouge">VBA</code> offers several advantages:</p>
+
+<ul>
+  <li>
+    <p><em>SOLIDWORKS</em> always executes the tasks in exactly the <code class="language-plaintext highlighter-rouge">same way</code>. (In most cases consistency is good.)</p>
+  </li>
+  <li>
+    <p><em>SOLIDWORKS</em> performs the task much <code class="language-plaintext highlighter-rouge">faster</code> than you do it manually.</p>
+  </li>
+  <li>
+    <p>If you are a good macro programmer, <em>SOLIDWORKS</em> <code class="language-plaintext highlighter-rouge">always</code> performs the task without <code class="language-plaintext highlighter-rouge">error</code>.</p>
+  </li>
+  <li>
+    <p>If you set things properly, someone who don’t know anything about <em>SOLIDWORKS</em> can perform task.</p>
+  </li>
+  <li>
+    <p>For long, time-consuming tasks, you don’t have to sit in front of your computer and get board. <em>SOLIDWORKS</em> does work, while you drink water.</p>
+  </li>
+</ul>
+
+<h3 id="vba-disadvantages">VBA disadvantages</h3>
+
+<p>It’s only fair that I give equal time to listing the <code class="language-plaintext highlighter-rouge">disadvantages</code> (or potential disadvantages) of <code class="language-plaintext highlighter-rouge">VBA</code>:</p>
+
+<ul>
+  <li>
+    <p>You have to know how to write programs in <code class="language-plaintext highlighter-rouge">VBA</code> (but that’s why you are here, right?). Fortunately, it’s not as difficult as you might expect.</p>
+  </li>
+  <li>
+    <p>Sometimes, things go wrong. In other words, you can’t blindly assume that your VBA program will always work correctly under all circumstances. Welcome to world of <code class="language-plaintext highlighter-rouge">debugging</code> and, if others are using your macros, be prepared for <code class="language-plaintext highlighter-rouge">technical support</code>.</p>
+  </li>
+</ul>
+
+<h2 id="vba-in-nutshell">VBA in nutshell</h2>
+
+<p>Just to let you know what you are in for, I’ve prepared a quick summary of what <code class="language-plaintext highlighter-rouge">VBA</code> is all about.</p>
+
+<ul>
+  <li>
+    <p>You perform actions in <code class="language-plaintext highlighter-rouge">VBA</code> by writing (or recording) <em>code</em> in a <strong>VBA module</strong>. You view and edit <strong>VBA modules</strong> by using the <code class="language-plaintext highlighter-rouge">Visual Basic Editor (VBE)</code>.</p>
+  </li>
+  <li>
+    <p>A <strong>VBA module</strong> consists of <code class="language-plaintext highlighter-rouge">Sub procedures</code>. A <code class="language-plaintext highlighter-rouge">sub procedure</code> is a chunk of computer code that performs some action on or with objects. The following example shows a simple <code class="language-plaintext highlighter-rouge">Sub procedure</code> called AddThem.</p>
+  </li>
+</ul>
+
+<p>This amazing program displays the result of 1 plus 1.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">AddThem</span><span class="p">()</span>
+    <span class="n">Sum</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"The answer is "</span> <span class="o">&amp;</span> <span class="n">Sum</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Next post will be about <code class="language-plaintext highlighter-rouge">Visual Basic Editor</code> or <code class="language-plaintext highlighter-rouge">VBE</code>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#vba" class="page__taxonomy-item" rel="tag">VBA</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Visual+Basic+for+Application+Introduction%20http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fvba-Introduction%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fvba-Introduction%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fvba%2Fvba-Introduction%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/vba/vba-vbe-editor/" class="pagination--pager" title="Visual Basic Editor (VBE)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://facebook.com/thecadcoder" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" rel="nofollow noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+        
+      
+        
+          <li><a href="mailto:thecadcoder@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Admin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. | <strong><a href="http://localhost:4000/Disclaimer/" rel="nofollow"><i class="fas fa-lock" aria-hidden="true"></i> Privacy Policy</a></strong></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+    <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+  </body>
+</html>

@@ -98,6 +98,8 @@ solidworks-cpp:
         url: /solidworks-cpp/open-solidworks/ 
       - title: "Open Solidworks Part Document"
         url: /solidworks-cpp/open-part-document/
+      - title: "Browse and Open Solidworks Document"
+        url: /solidworks-cpp/browse-and-open-solidworks-document-managed-version/
 
 solidworks-macros:
   - title: General - Solidworks Functions

@@ -1,0 +1,753 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Solidworks VBA Macro - The CAD Coder</title>
+<meta name="description" content="Page containing all articles related to Solidworks VBA Macro.">
+
+
+  <meta name="author" content="Admin">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks VBA Macro">
+<meta property="og:url" content="http://localhost:4000/Solidworks-macro-guide/">
+
+
+  <meta property="og:description" content="Page containing all articles related to Solidworks VBA Macro.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Solidworks-macro-guide/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Admin",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The CAD Coder
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/vba/vba-Introduction/">VBA</a>
+            </li><li class="masthead__menu-item">
+              <a href="/solidworks-macros/vba-in-solidworks/">Solidworks VBA Macro</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-csharp-api-tutorials/">Solidworks C# API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Solidworks-cpp-api-tutorials/">Solidworks C++ API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/resources/">Resources</a>
+            </li><li class="masthead__menu-item">
+              <a href="/aboutMe/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Admin</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am a <em>Mechanical engineer</em> and intrested in learning and sharing the <em>CAD Automation</em> knowledge to other.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">India</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:thecadcoder@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://facebook.com/thecadcoder" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Solidworks VBA Macro">
+    <meta itemprop="description" content="Page containing all articles related to Solidworks VBA Macro.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#general-solidworks-functions">General Solidworks Functions</a></li><li><a href="#solidworks-sketch-vba-macro-tutorial-posts-list">Solidworks Sketch VBA Macro Tutorial Posts list</a><ul><li><a href="#create-different-lines-from-vba-macro">Create Different Lines From VBA Macro</a></li><li><a href="#create-different-rectangle-from-vba-macro">Create Different Rectangle From VBA Macro</a></li><li><a href="#create-different-circle-from-vba-macro">Create Different Circle From VBA Macro</a></li><li><a href="#create-different-arc-from-vba-macro">Create Different Arc From VBA Macro</a></li><li><a href="#create-different-slot-from-vba-macro">Create Different Slot From VBA Macro</a></li><li><a href="#create-points-and-spline-from-vba-macro">Create Points and Spline From VBA Macro</a></li><li><a href="#create-sketch-fillet-and-chamfer-from-vba-macro">Create Sketch Fillet and Chamfer From VBA Macro</a></li><li><a href="#create-sketch-trim-and-extend-from-vba-macro">Create Sketch Trim and Extend From VBA Macro</a></li><li><a href="#create-sketch-offset-and-mirror-sketch-from-vba-macro">Create Sketch Offset and Mirror Sketch From VBA Macro</a></li><li><a href="#create-sketch-patterns-and-edit-existing-sketch-patterns-from-vba-macro">Create Sketch Patterns and Edit existing Sketch Patterns From VBA Macro</a></li><li><a href="#sketch-transformation-from-vba-macro">Sketch Transformation From VBA Macro</a></li><li><a href="#managing-sketch-relations-from-vba-macro">Managing Sketch Relations From VBA Macro</a></li><li><a href="#other-posts">Other posts</a></li><li><a href="#sketch-dimensioning-from-solidworks-vba-macros">Sketch Dimensioning from Solidworks VBA Macros</a><ul><li><a href="#i-hope-you-will-learn-solidworks-vba-macro-and-solidworks-api-from-above-posts">I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.</a></li></ul></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><code class="language-plaintext highlighter-rouge">Visual Basic for Application</code> or <code class="language-plaintext highlighter-rouge">VBA</code> macros is easiest way to start with programming in <em>Solidworks</em>.</p>
+
+<p>To use <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code>, you must know working knowledge of <em>Solidworks</em> &amp; hands on experience on <em>VB programming language</em>.</p>
+
+<p>With the help of <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code> we can perform any simple action to any complex action. 
+But there are certain limitations to <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code>.</p>
+
+<p>For example I found that for large project <code class="language-plaintext highlighter-rouge">Add-ins</code> are created using <code class="language-plaintext highlighter-rouge">VB.net</code> or <code class="language-plaintext highlighter-rouge">C#</code> <em>programming language</em>.</p>
+
+<p>It is not that with <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code> you cannot do such kind of work. You can do almost any type of work you want in <em>Solidworks</em> but I found that other languages are more useful in creating very large and complex projects.</p>
+
+<p>They are especially useful in organizing the project. For example, in <code class="language-plaintext highlighter-rouge">VB.net &amp; C#</code>, we can create <code class="language-plaintext highlighter-rouge">Folders</code> for project arrangement.</p>
+
+<p>But it not necessary that we should ignore <code class="language-plaintext highlighter-rouge">Visual Basic for Application</code> and jump to these advance languages.</p>
+
+<p>Remember every complex project starts with few <code class="language-plaintext highlighter-rouge">simple procedures</code>.</p>
+
+<p>Likewise after completing some simple macros you can combine more than one macro to form a single macro and make it more complex over the period of time.</p>
+
+<p>If you are a <em>total begineer</em> and want to learn how to create <code class="language-plaintext highlighter-rouge">VBA macros</code> in <em>Solidworks</em> than follow these tutorials in order they are given.</p>
+
+<p>If you have done <code class="language-plaintext highlighter-rouge">VBA programming</code> in <em>Solidworks</em> before and you are looking for somethings specific then go to that topic.</p>
+
+<hr />
+
+<h2 id="general-solidworks-functions">General Solidworks Functions</h2>
+
+<p>Below list contains posts on <em>general Solidworks functions</em>. These posts will guide you on how to do write macros on these <em>common general Solidworks functions</em>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/vba-in-solidworks">General - VBA in Solidworks</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/open-new-document">General - Open new Part document</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/open-assembly-and-drawing">General - Open Assembly and Drawing document</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/select-plane-from-tree">General - Selection Methods</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/open-saved-document">General - Open Saved Documents</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/unit-correction">General - Fix Unit Issue</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="solidworks-sketch-vba-macro-tutorial-posts-list">Solidworks Sketch VBA Macro Tutorial Posts list</h2>
+
+<p>Below list contains posts on <em>Solidworks Sketch functions</em>. These posts will guide you on how to do write macros on these <em>general Solidworks Sketch functions</em>.</p>
+
+<h3 id="create-different-lines-from-vba-macro">Create Different Lines From VBA Macro</h3>
+
+<p>Below posts teach you how to create different types of <code class="language-plaintext highlighter-rouge">Line</code> in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/sketch-create-line">Sketch - Create Lines</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/sketch-create-centerline">Sketch - Create CenterLines</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-different-rectangle-from-vba-macro">Create Different Rectangle From VBA Macro</h3>
+
+<p>Below posts teach you how to create different types of <code class="language-plaintext highlighter-rouge">Rectangle</code> in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-corner-rectangle">Sketch - Create Corner Rectangle</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-center-rectangle">Sketch - Create Center Rectangle</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-3point-corner-rectangle">Sketch - Create 3-Point Corner Rectangle</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-3point-center-rectangle">Sketch - Create 3-Point Center Rectangle</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-parallelogram">Sketch - Create A Parallelogram</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-different-circle-from-vba-macro">Create Different Circle From VBA Macro</h3>
+
+<p>Below posts teach you how to create different types of <code class="language-plaintext highlighter-rouge">Circle</code> in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-circle">Sketch - Create A Circle</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-circle-by-radius">Sketch - Create Circle By Radius</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-perimeter-circle">Sketch - Create Perimeter Circle</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-different-arc-from-vba-macro">Create Different Arc From VBA Macro</h3>
+
+<p>Below posts teach you how to create different types of <code class="language-plaintext highlighter-rouge">Arc</code> in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-centerpoint-arc">Sketch - Create Centerpoint Arc</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-tangent-arc">Sketch - Create Tangent Arc</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-3point-arc">Sketch - Create 3-Point Arc</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-polygon">Sketch - Create Polygon</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-different-slot-from-vba-macro">Create Different Slot From VBA Macro</h3>
+
+<p>Below posts teach you how to create different types of <code class="language-plaintext highlighter-rouge">Slot</code> in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-straight-slot">Sketch - Create Straight Slot</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-centerpoint-straight-slot">Sketch - Create Centerpoint Straight Slot</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-3point-arc-slot">Sketch - Create 3-Point Arc Slot</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-centerpoint-arc-slot">Sketch - Create Centerpoint Arc Slot</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-points-and-spline-from-vba-macro">Create Points and Spline From VBA Macro</h3>
+
+<p>Below posts teach you how to create Points and Spline in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-point">Sketch - Create a Point</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-spline">Sketch - Create a Spline</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-sketch-fillet-and-chamfer-from-vba-macro">Create Sketch Fillet and Chamfer From VBA Macro</h3>
+
+<p>Below posts teach you how to create Sketch Fillet and Sketch Chamfer in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/create-fillet">Sketch - Create a Fillet</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/create-chamfer">Sketch - Create a Chamfer</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-sketch-trim-and-extend-from-vba-macro">Create Sketch Trim and Extend From VBA Macro</h3>
+
+<p>Below posts teach you how to create Sketch Trim and Sketch Extend in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/trim-entities">Sketch - Trim Entities</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/extend-entities">Sketch - Extend Entities</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-sketch-offset-and-mirror-sketch-from-vba-macro">Create Sketch Offset and Mirror Sketch From VBA Macro</h3>
+
+<p>Below posts teach you how to create Sketch Offset and Mirror Sketch in <em>Solidworks</em> using <strong>VBA macros</strong>.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/offset-entities">Sketch - Offset Entities</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/mirror-entities">Sketch - Mirror Entities</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="create-sketch-patterns-and-edit-existing-sketch-patterns-from-vba-macro">Create Sketch Patterns and Edit existing Sketch Patterns From VBA Macro</h3>
+
+<p>In Below posts, I show you how to create <strong>Sketch Patterns</strong> and <strong>edit patterns</strong> from Solidworks macro using VBA.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/linear-skech-pattern">Sketch - Linear Sketch Pattern</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/edit-linear-skech-pattern">Sketch - Edit Linear Sketch Pattern</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/circular-skech-pattern">Sketch - Circular Sketch Pattern</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/edit-circular-skech-pattern">Sketch - Edit Circular Sketch Pattern</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="sketch-transformation-from-vba-macro">Sketch Transformation From VBA Macro</h3>
+
+<p>In Below posts, I show you how to <strong>Move/Copy</strong> and <strong>Rotate/Copy</strong> Sketch entities from Solidworks macro using VBA programming language.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/move-copy-sketch-entities">Sketch Transformation - Move/Copy Sketch Entities</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/rotate-copy-sketch-entities">Sketch Transformation - Rotate/Copy Sketch Entities</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="managing-sketch-relations-from-vba-macro">Managing Sketch Relations From VBA Macro</h3>
+
+<p>In Below posts, I show you how to <strong>Managing</strong> Sketch Relations from Solidworks macro using VBA programming language.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/toggle-display-sketch-relation">Sketch Relations - Toggle (Hide/Show) Sketch Relations</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/add-sketch-relations">Sketch Relations - Add Sketch Relations (Constraints)</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="other-posts">Other posts</h3>
+
+<p>In below posts, I listed some individual post which is small and related to sketch.</p>
+
+<ul>
+  <li>
+    <p><a href="/solidworks-macro/convert-to-construction-sketch-segment">Sketch - Convert to Construction Sketch</a></p>
+  </li>
+  <li>
+    <p><a href="/solidworks-macro/split-sketch-segments">Sketch - Split Open/Closed Sketch Entities</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="sketch-dimensioning-from-solidworks-vba-macros">Sketch Dimensioning from Solidworks VBA Macros</h3>
+
+<p>In Below posts, I show you how to <strong>Dimension</strong> Sketchs from Solidworks macro using VBA programming language.</p>
+
+<ul>
+  <li><a href="/solidworks-macro/add-dimension-methods">Sketch - Add dimension to Sketch Entities</a></li>
+</ul>
+
+<hr />
+
+<p>Please select any of the above post.</p>
+
+<h5 id="i-hope-you-will-learn-solidworks-vba-macro-and-solidworks-api-from-above-posts">I hope you will learn Solidworks VBA Macro and Solidworks API from above posts.</h5>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://facebook.com/thecadcoder" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" rel="nofollow noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+        
+      
+        
+          <li><a href="mailto:thecadcoder@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Admin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>. | <strong><a href="http://localhost:4000/Disclaimer/" rel="nofollow"><i class="fas fa-lock" aria-hidden="true"></i> Privacy Policy</a></strong></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+    <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+  </body>
+</html>
