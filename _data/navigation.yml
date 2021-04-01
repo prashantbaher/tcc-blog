@@ -221,7 +221,9 @@ solidworks-macros:
   - title: Features
     children:
       - title: "Extrude Feature"
-        url: /solidworks-macros/create-extrude-feature/        
+        url: /solidworks-macros/create-extrude-feature/ 
+      - title: "Revolved Boss/Base Feature"
+        url: /solidworks-macros/create-revolved-feature/       
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
