@@ -218,12 +218,14 @@ solidworks-macros:
     children:
       - title: "Add dimension to Sketch Entities"
         url: /solidworks-macros/add-dimension-methods/
-  - title: Features
+  - title: Features - Extrudes
     children:
       - title: "Extrude Feature"
         url: /solidworks-macros/create-extrude-feature/ 
       - title: "Revolved Boss/Base Feature"
-        url: /solidworks-macros/create-revolved-feature/       
+        url: /solidworks-macros/create-revolved-feature/  
+      - title: "Sweep Base Feature"
+        url: /solidworks-macros/create-sweep-feature/     
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
