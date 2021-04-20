@@ -224,8 +224,10 @@ solidworks-macros:
         url: /solidworks-macros/create-extrude-feature/ 
       - title: "Revolved Boss/Base Feature"
         url: /solidworks-macros/create-revolved-feature/  
-      - title: "Sweep Base Feature"
-        url: /solidworks-macros/create-sweep-feature/     
+      - title: "Sweep Boss/Base Feature"
+        url: /solidworks-macros/create-sweep-feature/
+      - title: "Lofted Boss/Base Feature"
+      url: /solidworks-macros/create-lofted-boss-feature/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
