@@ -227,7 +227,7 @@ solidworks-macros:
       - title: "Sweep Boss/Base Feature"
         url: /solidworks-macros/create-sweep-feature/
       - title: "Lofted Boss/Base Feature"
-      url: /solidworks-macros/create-lofted-boss-feature/
+        url: /solidworks-macros/create-lofted-boss-feature/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
