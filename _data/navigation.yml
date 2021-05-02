@@ -231,7 +231,9 @@ solidworks-macros:
   - title: Features - Cuts
     children:
       - title: "Extrude Cut Feature"
-        url: /solidworks-macros/create-extrude-cut-feature/ 
+        url: /solidworks-macros/create-extrude-cut-feature/
+      - title: "Revolve Cut Feature"
+        url: /solidworks-macros/create-revolve-cut-feature/ 
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
