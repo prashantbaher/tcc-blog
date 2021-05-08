@@ -25,7 +25,7 @@ vba:
       - title: "VBE Windows"
         url: /vba/vba-windows/ 
       - title: "VBA Sub and Function Procedures"
-        url: /vba/sub-and-function-procedure/  
+        url: /vba/sub-and-function-procedure/
       - title: "VBA Executing Sub and Function Procedures"
         url: /vba/executing-procedures/
   - title: Programming Concepts
