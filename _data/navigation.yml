@@ -236,6 +236,8 @@ solidworks-macros:
         url: /solidworks-macros/create-revolve-cut-feature/ 
       - title: "Sweep Cut Feature"
         url: /solidworks-macros/create-sweep-cut-feature/ 
+      - title: "Lofted Cut Feature"
+        url: /solidworks-macros/create-loft-cut-feature/         
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
