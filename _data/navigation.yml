@@ -238,6 +238,10 @@ solidworks-macros:
         url: /solidworks-macros/create-sweep-cut-feature/ 
       - title: "Lofted Cut Feature"
         url: /solidworks-macros/create-loft-cut-feature/         
+  - title: Features - Holes and Threads
+    children:
+      - title: "Holes from Hole Wizard"
+        url: /solidworks-macros/create-hole-from-hole-wizard/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
