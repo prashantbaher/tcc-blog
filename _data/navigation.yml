@@ -242,6 +242,8 @@ solidworks-macros:
     children:
       - title: "Holes from Hole Wizard"
         url: /solidworks-macros/create-hole-from-hole-wizard/
+      - title: "Threads"
+        url: /solidworks-macros/create-threads/        
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
