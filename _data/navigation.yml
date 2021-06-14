@@ -243,7 +243,11 @@ solidworks-macros:
       - title: "Holes from Hole Wizard"
         url: /solidworks-macros/create-hole-from-hole-wizard/
       - title: "Threads"
-        url: /solidworks-macros/create-threads/        
+        url: /solidworks-macros/create-threads/
+  - title: Features - Fillet & Chamfer
+    children:
+      - title: "Fillet Feature"
+        url: /solidworks-macros/create-fillet/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
