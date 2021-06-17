@@ -248,6 +248,8 @@ solidworks-macros:
     children:
       - title: "Fillet Feature"
         url: /solidworks-macros/create-fillet/
+      - title: "Chamfer Feature"
+        url: /solidworks-macros/create-chamfer/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
