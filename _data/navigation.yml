@@ -250,6 +250,10 @@ solidworks-macros:
         url: /solidworks-macros/create-fillet/
       - title: "Chamfer Feature"
         url: /solidworks-macros/create-chamfer/
+  - title: Features - Mirror & Patterns
+    children:
+      - title: "Mirror Feature"
+        url: /solidworks-macros/create-mirror/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
