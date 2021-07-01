@@ -255,7 +255,7 @@ solidworks-macros:
       - title: "Mirror Feature"
         url: /solidworks-macros/create-mirror/
       - title: "Linear Pattern Feature"
-        url: /solidworks-macros/create-linear-pattern/
+        url: /solidworks-macros/create-linear-patterns/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
