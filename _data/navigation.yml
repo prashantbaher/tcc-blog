@@ -256,6 +256,8 @@ solidworks-macros:
         url: /solidworks-macros/create-mirror/
       - title: "Linear Pattern Feature"
         url: /solidworks-macros/create-linear-patterns/
+      - title: "Circular Pattern Feature"
+        url: /solidworks-vba-macros/create-circular-patterns/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
