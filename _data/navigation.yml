@@ -258,6 +258,8 @@ solidworks-macros:
         url: /solidworks-macros/create-linear-patterns/
       - title: "Circular Pattern Feature"
         url: /solidworks-vba-macros/create-circular-patterns/
+      - title: "Sketch Driven Pattern Feature"
+        url: /solidworks-vba-macros/create-sketch-driven-pattern/        
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
