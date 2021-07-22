@@ -5,7 +5,7 @@ main:
   - title: "VBA"
     url: /vba/vba-Introduction/   
   - title: "Solidworks VBA Macro"
-    url: /solidworks-macros/vba-in-solidworks/
+    url: /solidworks-macros/Solidworks-macro-guide/
   - title: "Solidworks C# API"
     url: /Solidworks-csharp-api-tutorials/
   - title: "Solidworks C++ API"
