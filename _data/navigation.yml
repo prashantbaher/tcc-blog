@@ -105,7 +105,7 @@ solidworks-macros:
   - title: General - Solidworks Functions
     children:
       - title: "Introduction"
-        url: /solidworks-macros/vba-in-solidworks/
+        url: /solidworks-macros/Solidworks-macro-guide/
       - title: "Open new Part document"
         url: /solidworks-macros/open-new-document/
       - title: "Open Assembly and Drawing document"
