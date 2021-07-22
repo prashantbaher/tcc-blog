@@ -1,6 +1,6 @@
 ---
 title: VBA 
-permalink: /VBA-tutorials/
+permalink: /VBA-guide/
 toc: true
 toc_sticky: true
 excerpt: "This page is about VBA and its related pages"

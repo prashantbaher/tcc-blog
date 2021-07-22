@@ -1,6 +1,6 @@
 ---
 title: Solidworks VBA Macro
-permalink: /Solidworks-macro-guide/
+permalink: /Solidworks-macro-tutorials/
 toc: true
 excerpt: "Page containing all articles related to Solidworks VBA Macro."
 ---
