@@ -5,7 +5,7 @@ main:
   - title: "VBA"
     url: /vba/vba-Introduction/   
   - title: "Solidworks VBA Macro"
-    url: /solidworks-macro-guide/
+    url: /Solidworks-macro-guide/
   - title: "Solidworks C# API"
     url: /Solidworks-csharp-api-tutorials/
   - title: "Solidworks C++ API"
@@ -105,7 +105,7 @@ solidworks-macros:
   - title: General - Solidworks Functions
     children:
       - title: "Introduction"
-        url: /solidworks-macro-guide/
+        url: /Solidworks-macro-guide/
       - title: "Open new Part document"
         url: /solidworks-macros/open-new-document/
       - title: "Open Assembly and Drawing document"
