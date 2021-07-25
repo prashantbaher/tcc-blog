@@ -260,6 +260,10 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-circular-patterns/
       - title: "Sketch Driven Pattern Feature"
         url: /solidworks-vba-macros/create-sketch-driven-pattern/        
+  - title: Features - Transformation
+    children:
+      - title: "Rib Feature"
+        url: /solidworks-vba-macros/create-rib/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
