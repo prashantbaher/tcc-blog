@@ -284,4 +284,8 @@ solidworks-csharp:
         url: /solidworks-csharp/open-solidworks/
       - title: "Open Solidworks Document"
         url: /solidworks-csharp/open-solidworks-document/
+  - title: Others
+    children:
+      - title: "Update Dimension State"
+        url: /solidworks-csharp/update-dimension-state/
         
