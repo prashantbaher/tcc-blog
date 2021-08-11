@@ -266,6 +266,8 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-rib/
       - title: "Draft Feature"
         url: /solidworks-vba-macros/create-draft/
+      - title: "Shell Feature"
+        url: /solidworks-vba-macros/create-shell/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
