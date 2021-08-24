@@ -171,9 +171,9 @@ solidworks-macros:
   - title: Sketch - Fillet and Chamfer
     children:
       - title: "Create a Fillet"
-        url: /solidworks-macros/create-fillet/
+        url: /solidworks-macros/create-sketch-fillet/
       - title: "Create a Chamfer"
-        url: /solidworks-macros/create-chamfer/    
+        url: /solidworks-macros/create-sketch-chamfer/    
   - title: Sketch - Trim and Extend
     children:
       - title: "Trim Sketch Entities"
@@ -270,6 +270,8 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-shell/
       - title: "Wrap Feature"
         url: /solidworks-vba-macros/create-wrap/
+      - title: "Scale Feature"
+        url: /solidworks-vba-macros/create-scale/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
