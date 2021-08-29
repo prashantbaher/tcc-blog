@@ -272,6 +272,10 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-wrap/
       - title: "Scale Feature"
         url: /solidworks-vba-macros/create-scale/
+  - title: Reference Geometry
+    children:
+      - title: "Reference Plane"
+        url: /solidworks-vba-macros/create-reference-plane/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
