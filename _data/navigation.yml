@@ -4,6 +4,8 @@ main:
 #   url: /docs/quick-start-guide/
   - title: "VBA"
     url: /vba/vba-Introduction/   
+  - title: "Inventor C# API"
+    url: /inventor-csharp-api-tutorials/
   - title: "Solidworks VBA Macro"
     url: /Solidworks-macro-guide/
   - title: "Solidworks C# API"
@@ -298,4 +300,9 @@ solidworks-csharp:
     children:
       - title: "Update Dimension State"
         url: /solidworks-csharp/update-dimension-state/
-        
+
+inventor-csharp:
+  - title: Getting Started
+    children:
+      - title: "Introduction"
+        url: /inventor-csharp-api-tutorials/

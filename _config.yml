@@ -228,6 +228,9 @@ collections:
   drafts:
     output: true
     permalink: /:collection/:path/
+  inventor-csharp:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -336,6 +339,21 @@ defaults:
       toc_sticky: true
       sidebar:
           nav: "solidworks-macros"
+  # _inventor-csharp
+  - scope:
+      path: ""
+      type: inventor-csharp
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true       
+      sidebar:
+          nav: "inventor-csharp"
 
 # Sass/SCSS
 sass:
