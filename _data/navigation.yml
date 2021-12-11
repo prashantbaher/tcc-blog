@@ -4,8 +4,8 @@ main:
 #   url: /docs/quick-start-guide/
   - title: "VBA"
     url: /vba/vba-Introduction/   
-  - title: "Inventor C# API"
-    url: /inventor-csharp-api-tutorials/
+#  - title: "Inventor C# API"
+#    url: /inventor-csharp-api-tutorials/
   - title: "Solidworks VBA Macro"
     url: /Solidworks-macro-guide/
   - title: "Solidworks C# API"
