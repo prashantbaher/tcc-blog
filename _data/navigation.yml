@@ -278,6 +278,8 @@ solidworks-macros:
     children:
       - title: "Reference Plane"
         url: /solidworks-vba-macros/create-reference-plane/
+      - title: "Reference Axis"
+        url: /solidworks-vba-macros/create-reference-axis/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
