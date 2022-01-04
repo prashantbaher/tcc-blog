@@ -280,7 +280,7 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-reference-plane/
       - title: "Reference Axis"
         url: /solidworks-vba-macros/create-reference-axis/
-       - title: "Reference Co-Ordinate"
+      - title: "Reference Co-Ordinate"
         url: /solidworks-vba-macros/create-reference-coordinate/
       - title: "Reference Point"
         url: /solidworks-vba-macros/create-reference-point/
