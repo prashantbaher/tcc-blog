@@ -284,6 +284,10 @@ solidworks-macros:
         url: /solidworks-vba-macros/create-reference-coordinate/
       - title: "Reference Point"
         url: /solidworks-vba-macros/create-reference-point/
+  - title: Assembly
+    children:
+      - title: "Insert Component"
+        url: /solidworks-vba-macros/assembly-insert-component/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
