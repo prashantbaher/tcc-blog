@@ -290,6 +290,8 @@ solidworks-macros:
         url: /solidworks-vba-macros/assembly-insert-component/
       - title: "Unfix Component"
         url: /solidworks-vba-macros/assembly-unfix-component/
+      - title: "Add Coincident Mate"
+        url: /solidworks-vba-macros/assembly-conicident-mate/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
