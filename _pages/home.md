@@ -7,9 +7,9 @@ header:
   #overlay_image: /assets/images/mm-home-page-feature.jpg
   actions:
     - label: "Get Started"
-      url: "/solidworks-macros/vba-in-solidworks/"
+      url: "/Solidworks-macro-guide/"
 excerpt: >
-  Free <strong>SOLIDWORKS API [VBA + C#]</strong> Tutorials for Mechanical Engineers.
+  Free <strong>SOLIDWORKS API [VBA + C# + C++]</strong> Tutorials for Mechanical Engineers.
 feature_row:
   - image_path: /assets/blogger.svg
     alt: "Easy to Understand"
@@ -30,11 +30,9 @@ feature_row:
     # btn_class: "btn--primary"
     # btn_label: "Learn more"
   - image_path: /assets/opensource.svg
-    alt: "Future Path"
-    title: "Future Path"
-    excerpt: "Currently, I am focusing on 2 things for this blog. <br/>
-        1) Userform tutorials for each SOLIDWORKS article. <br/>
-        2) Adding videos in SOLIDWORKS articles. <br/>
+    alt: "Current Path"
+    title: "Current Path"
+    excerpt: "Currently, I am focusing completing SOLIDWORKS VBA API. <br/>
         I am also thinking of starting <strong>SOLIDWORKS C# API</strong> tutorial articles. 
         Let me know what you think about it."
     # url: "/docs/license/"
