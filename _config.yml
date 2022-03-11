@@ -201,9 +201,9 @@ kramdown:
 
 # Collections
 collections:
-  main:
-    output: true
-    permalink: /:collection/:path/
+#  docs:
+#    output: true
+#    permalink: /:collection/:path/
 #  recipes:
 #    output: true
 #    permalink: /:collection/:path/
