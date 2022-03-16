@@ -6,14 +6,12 @@ main:
     url: /vba/vba-Introduction/   
 #  - title: "Inventor C# API"
 #    url: /inventor-csharp-api-tutorials/
-  - title: "Solidworks API Tutorials"
-    children:
-      - title: "Solidworks VBA Macro"
-        url: /Solidworks-macro-guide/
-      - title: "Solidworks C# API"
-        url: /Solidworks-csharp-api-tutorials/
-      - title: "Solidworks C++ API"
-        url: /Solidworks-cpp-api-tutorials/
+  - title: "Solidworks VBA Macro"
+    url: /Solidworks-macro-guide/
+  - title: "Solidworks C# API"
+    url: /Solidworks-csharp-api-tutorials/
+  - title: "Solidworks C++ API"
+    url: /Solidworks-cpp-api-tutorials/
   - title: "Resources"
     url: /resources/
   - title: "About"
