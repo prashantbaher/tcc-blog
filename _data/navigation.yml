@@ -300,6 +300,8 @@ solidworks-macros:
         url: /solidworks-vba-macros/assembly-tangent-mate/
       - title: "Add Concentric Mate"
         url: /solidworks-vba-macros/assembly-concentric-mate/
+      - title: "Add Distance Mate"
+        url: /solidworks-vba-macros/assembly-distance-mate/
   - title: Sketch - Others
     children:
       - title: "Convert to Construction Sketch"
