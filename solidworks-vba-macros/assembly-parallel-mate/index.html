@@ -1,0 +1,1848 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Add Parallel Mate - The CAD Coder</title>
+<meta name="description" content="This post has “beginner ➡ intermediate” level Macro program. If you are following my articles then will not be an issue for you. In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user. I hope you will also like this type of tutorials.Thank you for reading.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks VBA Macro - Add Parallel Mate">
+<meta property="og:url" content="http://localhost:4000/solidworks-vba-macros/assembly-parallel-mate/">
+
+
+  <meta property="og:description" content="This post has “beginner ➡ intermediate” level Macro program. If you are following my articles then will not be an issue for you. In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user. I hope you will also like this type of tutorials.Thank you for reading.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-30T00:17:54-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-vba-macros/assembly-parallel-mate/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/" class="active">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Add Parallel Mate">
+    <meta itemprop="description" content="This post has “beginner ➡ intermediate” level Macro program.If you are following my articles then will not be an issue for you.In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.I hope you will also like this type of tutorials.Thank you for reading.">
+    <meta itemprop="datePublished" content="2022-03-30T00:17:54-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Add Parallel Mate
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-and-initialize-required-variables">Create and Initialize required variables</a></li><li><a href="#get-assembly-title">Get Assembly Title</a></li><li><a href="#first-component-and-plane-list">First Component and Plane List</a></li><li><a href="#get-plane-names">Get Plane names</a></li><li><a href="#select-planes">Select Planes</a></li><li><a href="#add-parallel-mate">Add Parallel Mate</a></li><li><a href="#final-work">Final work</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div>
+          <p class="notice--warning">This post has “<strong>beginner ➡ intermediate</strong>” level Macro program.<br />
+If you are following my articles then will not be an issue for you.<br />
+In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+I hope you will also like this type of tutorials.<br />Thank you for reading.</p>
+
+<h2 id="objective">Objective</h2>
+
+<p>In this article we <strong>create and understand</strong> VBA macro of adding <strong>Parallel Mate</strong> in <strong>Assembly document</strong> of <em>SOLIDWORKS CAD Software</em>.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to add <strong>Parallel Mate</strong> quickly.</p>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>After running our macro we successfully add <strong>Parallel Mate</strong> a Component in an Assembly as a result.</p>
+
+<p>Below image shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-parallel-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-parallel-mate/final-result-gif.gif" alt="unfix-component-final-result" /></a></p>
+
+<p>We <strong>Parallel Mate</strong> in following steps in general.</p>
+
+<ol>
+  <li><em>Get Assembly Name without extension.</em></li>
+  <li><em>Loop through each plane.</em></li>
+  <li><em>Get Plane names for selection.</em></li>
+  <li><em>Select Both Planes.</em></li>
+  <li><em>Add Parallel Mate.</em></li>
+  <li><em>Final Work</em></li>
+</ol>
+
+<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows <strong>Adding Parallel Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/25JuT77X2BM" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+
+<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Parallel Mate</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Variable for Solidworks Application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Program to add Parallel Mate</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks Application variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+  
+  <span class="c1">' variable for Assembly Title</span>
+  <span class="k">Dim</span> <span class="nv">assemblyTitle</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Get assembly title</span>
+  <span class="n">assemblyTitle</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetTitle</span>
+  
+  <span class="c1">' Variable for List of elements</span>
+  <span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  
+  <span class="c1">' Using this variable for getting Assembly name without extension</span>
+  <span class="n">vArray</span> <span class="o">=</span> <span class="n">Split</span><span class="p">(</span><span class="n">assemblyTitle</span><span class="p">,</span> <span class="s">"."</span><span class="p">)</span>
+  
+  <span class="c1">' Update Assembly Title</span>
+  <span class="n">assemblyTitle</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">' Get Components list in opened assembly</span>
+  <span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+  
+  <span class="c1">' Set Solidworks Component variable</span>
+  <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">' Redefine array variable</span>
+  <span class="k">ReDim</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Update Array list</span>
+  <span class="n">vArray</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Front Plane"</span>
+  <span class="n">vArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Right Plane"</span>
+  <span class="n">vArray</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Top Plane"</span>
+  
+  <span class="c1">' Variable for loop</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  
+  <span class="c1">' Loop Plane List</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">vArray</span><span class="p">)</span>
+    
+    <span class="c1">' Variable for Current Plane</span>
+    <span class="k">Dim</span> <span class="nv">currentPlane</span> <span class="ow">As</span> <span class="kt">String</span>
+    
+    <span class="c1">' Set current plane</span>
+    <span class="n">currentPlane</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+    <span class="c1">' Variable for First Plane name</span>
+    <span class="k">Dim</span> <span class="nv">firstSelection</span> <span class="ow">As</span> <span class="kt">String</span>
+    
+    <span class="c1">' Set First Plane Name</span>
+    <span class="n">firstSelection</span> <span class="o">=</span> <span class="n">currentPlane</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">assemblyTitle</span>
+    
+    <span class="c1">' Variable for Second Plane name</span>
+    <span class="k">Dim</span> <span class="nv">secondSelection</span> <span class="ow">As</span> <span class="kt">String</span>
+    
+    <span class="c1">' Set Second Plane name</span>
+    <span class="n">secondSelection</span> <span class="o">=</span> <span class="n">currentPlane</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">Name</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">assemblyTitle</span>
+    
+    <span class="c1">' Select First Plane</span>
+    <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="n">firstSelection</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOptionDefault</span><span class="p">)</span>
+    
+    <span class="c1">' Select Second Plane</span>
+    <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="n">secondSelection</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+    <span class="c1">' Add Parallel Mate</span>
+    <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">AddMate5</span><span class="p">(</span><span class="n">swMatePARALLEL</span><span class="p">,</span> <span class="n">swMateAlignALIGNED</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">swAddMateError_ErrorUknown</span><span class="p">)</span>
+    
+    <span class="c1">' Check if Mate is added or not</span>
+    <span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="s">"Failed to Add Mate."</span>
+      <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+    <span class="nf">End</span> <span class="k">If</span>
+    
+  <span class="k">Next</span>
+  
+  <span class="c1">' Rebuild assembly</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+  
+  <span class="c1">' Zoom to fit</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisite</em> for this article.</p>
+
+<ul>
+  <li>
+    <p>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</p>
+  </li>
+  <li>
+    <p>We use an existing part in Assembly document.</p>
+  </li>
+  <li>
+    <p>This component is Float as shown in below image.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/assembly-parallel-mate/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-parallel-mate/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create and Initialize required variables</em></li>
+  <li><em>Get Assembly Title</em></li>
+  <li><em>First Component and Plane List</em></li>
+  <li><em>Get Plane names</em></li>
+  <li><em>Select Planes</em></li>
+  <li><em>Add Parallel Mate</em></li>
+  <li><em>Final Work</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Solidworks Mate Feature</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeature</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Boolean</em> selection.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">boolStatus</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code></li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to add Parallel Mate</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create <em>main Program to add Parallel Mate in assembly</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<h3 id="get-assembly-title">Get Assembly Title</h3>
+
+<p>In this section, we <em>Get Assembly Title</em> without extension.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' variable for Assembly Title</span>
+<span class="k">Dim</span> <span class="nv">assemblyTitle</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Assembly Title</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">assemblyTitle</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get assembly title</span>
+<span class="n">assemblyTitle</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetTitle</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">assemblyTitle</code></strong> variable.</li>
+  <li>We set value by <strong><code class="language-plaintext highlighter-rouge">GetTitle</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for List of elements</span>
+<span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>List of elements</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">vArray</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Using this variable for getting Assembly name without extension</span>
+<span class="n">vArray</span> <span class="o">=</span> <span class="n">Split</span><span class="p">(</span><span class="n">assemblyTitle</span><span class="p">,</span> <span class="s">"."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We set value by <strong><code class="language-plaintext highlighter-rouge">Split</code></strong> method.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Split</code></strong> method takes 2 arguments.
+    <ol>
+      <li>Input <strong><code class="language-plaintext highlighter-rouge">String</code></strong> which we want to split.</li>
+      <li>Delimiter, by which we want to split the Input <strong><code class="language-plaintext highlighter-rouge">String</code></strong>.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Assembly Title</span>
+<span class="n">assemblyTitle</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">assemblyTitle</code></strong> variable.</li>
+  <li>We set value to <strong>First</strong> instance <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+</ul>
+
+<h3 id="first-component-and-plane-list">First Component and Plane List</h3>
+
+<p>In this section, we <em>Get First Component and update Plane List</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get Components list in opened assembly</span>
+<span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We set value by <strong><code class="language-plaintext highlighter-rouge">GetComponents</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Component variable</span>
+<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong>First</strong> component inside <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We get current component by Indexing <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Redefine array variable</span>
+<span class="k">ReDim</span> <span class="n">vArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we Redefine 🚀 <strong><a href="/vba/arrays/">Array</a></strong> of <em>String</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">vArray</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li><strong>Length of Array</strong>: <em>(1 To 3)</em></li>
+  <li><strong>Reference</strong>: Please visit
+    <ul>
+      <li><strong>For Arrays in VBA</strong> : 🚀 <strong><a href="/vba/arrays/">Array on this website</a></strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Array list</span>
+<span class="n">vArray</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Front Plane"</span>
+<span class="n">vArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Right Plane"</span>
+<span class="n">vArray</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="s">"Top Plane"</span>
+</code></pre></div></div>
+
+<p>In above code, we update Array list by adding Plane names.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for loop</span>
+<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable as a counter.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Integer</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop Plane List</span>
+<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">vArray</span><span class="p">)</span>
+
+<span class="k">Next</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</li>
+  <li>This loops start from <code class="language-plaintext highlighter-rouge">i = 1</code> to maximum of <code class="language-plaintext highlighter-rouge">vArray</code> we select.</li>
+</ul>
+
+<h3 id="get-plane-names">Get Plane names</h3>
+
+<p>In this section, we <em>Get Plane names</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Current Plane</span>
+<span class="k">Dim</span> <span class="nv">currentPlane</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable for Current Plane.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">currentPlane</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set current plane</span>
+<span class="n">currentPlane</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">currentPlane</code></strong> variable.</li>
+  <li>This <em>value</em> is plane inside <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We get current component by Indexing <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for First Plane name</span>
+<span class="k">Dim</span> <span class="nv">firstSelection</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable for First Plane name.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">firstSelection</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set First Plane Name</span>
+<span class="n">firstSelection</span> <span class="o">=</span> <span class="n">currentPlane</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">assemblyTitle</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">firstSelection</code></strong> variable.</li>
+  <li>This <em>value</em> is combinations of <strong><code class="language-plaintext highlighter-rouge">currentPlane</code></strong> &amp;  <strong><code class="language-plaintext highlighter-rouge">assemblyTitle</code></strong> variables.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Second Plane name</span>
+<span class="k">Dim</span> <span class="nv">secondSelection</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable for Second Plane name.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">secondSelection</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Second Plane name</span>
+<span class="n">secondSelection</span> <span class="o">=</span> <span class="n">currentPlane</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">Name</span> <span class="o">+</span> <span class="s">"@"</span> <span class="o">+</span> <span class="n">assemblyTitle</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">secondSelection</code></strong> variable.</li>
+  <li>This <em>value</em> is combinations of <strong><code class="language-plaintext highlighter-rouge">currentPlane</code></strong>, <strong><code class="language-plaintext highlighter-rouge">swComponent.Name</code></strong> &amp;  <strong><code class="language-plaintext highlighter-rouge">assemblyTitle</code></strong> variables.</li>
+</ul>
+
+<h3 id="select-planes">Select Planes</h3>
+
+<p>In this section, we <em>Select Planes</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select First Plane</span>
+<span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="n">firstSelection</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we select <em>First Plane</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Second Plane</span>
+<span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="n">secondSelection</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we select <em>Second Plane</em>.</li>
+</ul>
+
+<h3 id="add-parallel-mate">Add Parallel Mate</h3>
+
+<p>In this section, we add <em>Parallel Mate</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Add Parallel Mate</span>
+<span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">AddMate5</span><span class="p">(</span><span class="n">swMatePARALLEL</span><span class="p">,</span> <span class="n">swMateAlignALIGNED</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">swAddMateError_ErrorUknown</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line, we set the value of variable <code class="language-plaintext highlighter-rouge">swMateFeature</code> by <code class="language-plaintext highlighter-rouge">AddMate5</code> method.</p>
+  </li>
+  <li>
+    <p>This <code class="language-plaintext highlighter-rouge">AddMate5</code> method takes following parameters as explained:</p>
+
+    <ul>
+      <li>
+        <p><strong>MateTypeFromEnum</strong> - <em>Type of mate as defined in <strong><code class="language-plaintext highlighter-rouge">swMateType_e</code></strong></em>:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateANGLE</code></strong></td>
+              <td><em>6</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateCAMFOLLOWER</code></strong></td>
+              <td><em>9</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateCOINCIDENT</code></strong></td>
+              <td><em>0</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateCONCENTRIC</code></strong></td>
+              <td><em>1</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateCOORDINATE</code></strong></td>
+              <td><em>20</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateDISTANCE</code></strong></td>
+              <td><em>5</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateGEAR</code></strong></td>
+              <td><em>10</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateHINGE</code></strong></td>
+              <td><em>22</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateLINEARCOUPLER</code></strong></td>
+              <td><em>18</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateLOCK</code></strong></td>
+              <td><em>16</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateLOCKTOSKETCH</code></strong></td>
+              <td><em>12</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateMAGNETIC</code></strong></td>
+              <td><em>25</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateMAXMATES</code></strong></td>
+              <td><em>14</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMatePARALLEL</code></strong></td>
+              <td><em>3</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMatePATH</code></strong></td>
+              <td><em>15</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMatePERPENDICULAR</code></strong></td>
+              <td><em>2</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMatePROFILECENTER</code></strong></td>
+              <td><em>24</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateRACKPINION</code></strong></td>
+              <td><em>13</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateSCREW</code></strong></td>
+              <td><em>17</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateSLIDER</code></strong></td>
+              <td><em>23</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateSLOT</code></strong></td>
+              <td><em>21</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateSYMMETRIC</code></strong></td>
+              <td><em>8</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateTANGENT</code></strong></td>
+              <td><em>4</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateUNIVERSALJOINT</code></strong></td>
+              <td><em>19</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateUNKNOWN</code></strong></td>
+              <td><em>7</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateWIDTH</code></strong></td>
+              <td><em>11</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><strong>AlignFromEnum</strong> - <em>Type of mate as defined in <strong><code class="language-plaintext highlighter-rouge">swMateAlign_e</code></strong></em>:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAlignAGAINST</code></strong></td>
+              <td><em>Obsolete. Do not use.</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAlignNONE</code></strong></td>
+              <td><em>Obsolete. Do not use.</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAlignSAME</code></strong></td>
+              <td><em>Obsolete. Do not use.</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateAlignALIGNED</code></strong></td>
+              <td><em>0</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateAlignANTI_ALIGNED</code></strong></td>
+              <td><em>1</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateAlignCLOSEST</code></strong></td>
+              <td><em>2</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><strong>Flip</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to flip the mate entities, <code class="language-plaintext highlighter-rouge">False</code> to not; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMatetype_e.swMateDISTANCE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>Distance</strong> - <em>Distance value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateDISTANCE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>DistanceAbsUpperLimit</strong> - <em>Absolute maximum distance value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateDISTANCE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>DistanceAbsLowerLimit</strong> - <em>Absolute minimum distance value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateDISTANCE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>GearRatioNumerator</strong> - <em>Gear ratio numerator value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateGEAR</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>GearRatioDenominator</strong> - <em>Gear ratio denominator value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateGEAR</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>Angle</strong> - <em>Angle value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateANGLE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>AngleAbsUpperLimit</strong> - <em>Absolute maximum angle value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateANGLE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>AngleAbsLowerLimit</strong> - <em>Absolute minimum angle value; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateANGLE</code></strong></em>.</p>
+      </li>
+      <li>
+        <p><strong>ForPositioningOnly</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to only position the components according to the mating relationship and not return a mate, <code class="language-plaintext highlighter-rouge">False</code> to return a mate</em>.</p>
+      </li>
+      <li>
+        <p><strong>LockRotation</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to lock component rotation, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</p>
+      </li>
+      <li>
+        <p><strong>WidthMateOption</strong> - <em>Width mate options as defined in <strong><code class="language-plaintext highlighter-rouge">swMateWidthOptions_e</code></strong>; valid only if <strong><code class="language-plaintext highlighter-rouge">MateTypeFromEnum</code></strong> is <strong><code class="language-plaintext highlighter-rouge">swMateType_e.swMateWIDTH</code></strong></em>.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateWidth_Centered</code></strong></td>
+              <td><em>0</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateWidth_Dimension</code></strong></td>
+              <td><em>2</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateWidth_Free</code></strong></td>
+              <td><em>1</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swMateWidth_Percent</code></strong></td>
+              <td><em>3</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p><strong>ErrorStatus</strong> - <em>Success or error as defined by <strong><code class="language-plaintext highlighter-rouge">swAddMateError_e</code></strong> as follows</em>.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_ErrorUknown</code></strong></td>
+              <td><em>0</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_IncorrectAlignment</code></strong></td>
+              <td><em>3</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_IncorrectGearRatios</code></strong></td>
+              <td><em>6</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_IncorrectMateType</code></strong></td>
+              <td><em>2</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_IncorrectSelections</code></strong></td>
+              <td><em>4</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_NoError</code></strong></td>
+              <td><em>1</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swAddMateError_OverDefinedAssembly</code></strong></td>
+              <td><em>5</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">AddMate5</code> method return 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IMate2.html">Mate2</a></strong> data object.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MateTypeFromEnum</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swMatePARALLEL</code></td>
+        </tr>
+        <tr>
+          <td><strong>AlignFromEnum</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swMateAlignALIGNED</code></td>
+        </tr>
+        <tr>
+          <td><strong>Flip</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">false</code></td>
+        </tr>
+        <tr>
+          <td><strong>Distance</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>DistanceAbsUpperLimit</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>DistanceAbsLowerLimit</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>GearRatioNumerator</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>GearRatioDenominator</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Angle</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>AngleAbsUpperLimit</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>AngleAbsLowerLimit</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>ForPositioningOnly</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>LockRotation</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>WidthMateOption</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>ErrorStatus</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swAddMateError_ErrorUknown</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Reference</strong>: For more details about</p>
+
+<ul>
+  <li><strong>Solidworks AssemblyDoc details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
+  <li><strong>AddMate5 Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc~AddMate5.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">AddMate5</code> Method.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Mate is added or not</span>
+<span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to Add Mate."</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully added <strong>Parallel Mate</strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swMateFeature Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: *Failed to Add Mate.</li>
+      <li>After that we clear the selection.</li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Now we run the macro and after running macro we get <strong>Parallel Mate</strong> as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-parallel-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-parallel-mate/final-result-gif.gif" alt="unfix-component-final-result" /></a></p>
+
+<h3 id="final-work">Final work</h3>
+
+<p>In this section, after adding <strong>Parallel Mate</strong>, we have to do some cleaning work so that we can use this macro frequently.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild assembly</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we Rebuild assembly.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we make our view zoom to fit the model.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>Parallel Mate</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-30T00:17:54-04:00">March 30, 2022</time></p>
+
+ 
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-conicident-mate/" title="Solidworks VBA Macro - Add Coincident Mate
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-perpendicular-mate/" title="Solidworks VBA Macro - Add Perpendicular Mate
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+    </div>
+  </article>
+  
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

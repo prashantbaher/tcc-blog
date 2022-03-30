@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Solidworks Macro - Add Sketch Relations (Constraints) - The CAD Coder</title>
+<meta name="description" content="In this post, I tell you about how to Add Sketch Relations (Constraints) using Solidworks VBA Macros in a Sketch.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks Macro - Add Sketch Relations (Constraints)">
+<meta property="og:url" content="http://localhost:4000/solidworks-macros/add-sketch-relations/">
+
+
+  <meta property="og:description" content="In this post, I tell you about how to Add Sketch Relations (Constraints) using Solidworks VBA Macros in a Sketch.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-30T00:17:54-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-macros/add-sketch-relations/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/" class="active">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Solidworks Macro - Add Sketch Relations (Constraints)">
+    <meta itemprop="description" content="In this post, I tell you about how to Add Sketch Relations (Constraints) using Solidworks VBA Macros in a Sketch.">
+    <meta itemprop="datePublished" content="2022-03-30T00:17:54-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Add Sketch Relations (Constraints)
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#add-sketch-relations-constraints-method">Add Sketch Relations (Constraints) method</a></li><li><a href="#add-fix-sketch-relation-to-a-sketch-segment">Add ‘Fix’ Sketch Relation to a sketch segment</a></li><li><a href="#add-coincident-sketch-relation-to-a-sketch-segment">Add ‘Coincident’ Sketch Relation to a sketch segment</a></li><li><a href="#add-horizontal-sketch-relation-to-a-sketch-segment">Add ‘Horizontal’ Sketch Relation to a sketch segment</a></li><li><a href="#add-vertical-sketch-relation-to-a-sketch-segment">Add ‘Vertical’ Sketch Relation to a sketch segment</a></li><li><a href="#add-midpoint-sketch-relation-to-a-sketch-segment">Add ‘Midpoint’ Sketch Relation to a sketch segment</a></li><li><a href="#add-co-linear-sketch-relation-to-a-sketch-segment">Add ‘Co-Linear’ Sketch Relation to a sketch segment</a></li><li><a href="#add-perpendicular-sketch-relation-to-a-sketch-segment">Add ‘Perpendicular’ Sketch Relation to a sketch segment</a></li><li><a href="#add-parallel-sketch-relation-to-a-sketch-segment">Add ‘Parallel’ Sketch Relation to a sketch segment</a></li><li><a href="#add-equal-length-sketch-relation-to-a-sketch-segment">Add ‘Equal Length’ Sketch Relation to a sketch segment</a></li><li><a href="#add-tangent-sketch-relation-to-a-sketch-segment">Add ‘Tangent’ Sketch Relation to a sketch segment</a></li><li><a href="#add-same-curve-length-sketch-relation-to-a-sketch-segment">Add ‘Same Curve Length’ Sketch Relation to a sketch segment</a></li><li><a href="#add-coincident-sketch-relation-to-a-sketch-segment-1">Add ‘Coincident’ Sketch Relation to a sketch segment</a></li><li><a href="#add-coradial-sketch-relation-to-a-sketch-segment">Add ‘Coradial’ Sketch Relation to a sketch segment</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div>
+          <p>In this post, I tell you about <strong>how to Add Sketch Relations (Constraints) using Solidworks VBA Macros</strong> in a Sketch.</p>
+
+<p>In this post, I explain about <code class="language-plaintext highlighter-rouge">SketchAddConstraints</code> method from <strong>Solidworks</strong>’s <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+
+<p>This post will utilize the methods explained in earlier posts, hence knowledge to those is required but it is not mandatory.</p>
+
+<p>An absolute beginner can follow what is written here.</p>
+
+<hr />
+
+<h2 id="add-sketch-relations-constraints-method">Add Sketch Relations (Constraints) method</h2>
+
+<p>For adding relations to a sketch segment, we use <code class="language-plaintext highlighter-rouge">SketchAddConstraints</code> method from <strong>Solidworks</strong>’s <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">SketchAddConstraints</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li><strong>Constraint</strong> : <em>ID of constraint as given on <strong><a href="http://help.solidworks.com/2020/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IModelDoc2~SketchAddConstraints.html?verRedirect=1">this page of Solidworks API Help</a></strong>.</em></li>
+</ul>
+
+<p><strong>Return Value</strong>: There are no return value for this method.</p>
+
+<p>In following sections we add different sketch constraints to sketch segments.</p>
+
+<hr />
+
+<h2 id="add-fix-sketch-relation-to-a-sketch-segment">Add ‘Fix’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Fixed</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">circle</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Fix</em> Sketch Relation to Circle</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circle-before-fixed-relation.png" alt="circle-before-fixed-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Fix</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to active part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Circle</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Fix sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgFIXED"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Fix</em> Sketch Relation to Circle</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circle-after-fixed-relation.png" alt="circle-after-fixed-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-coincident-sketch-relation-to-a-sketch-segment">Add ‘Coincident’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Coincident</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">circle</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Coincident</em> Sketch Relation to Circle</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circle-before-coincident-relation.png" alt="circle-before-coincident-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Coincident</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Circle center point</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Point2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Origin</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Point1@Origin"</span><span class="p">,</span> <span class="s">"EXTSKETCHPOINT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Coincident sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgCOINCIDENT"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Coincident</em> Sketch Relation to Circle</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circle-after-coincident-relation.png" alt="circle-after-coincident-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-horizontal-sketch-relation-to-a-sketch-segment">Add ‘Horizontal’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Horizontal</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">Line</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Horizontal</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png" alt="line-before-horizontal-or-vertical-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Horizontal</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Horizontal sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgHORIZONTAL2D"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Horizontal</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-after-horizontal-relation.png" alt="line-after-horizontal-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-vertical-sketch-relation-to-a-sketch-segment">Add ‘Vertical’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Vertical</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">Line</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Vertical</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png" alt="line-before-horizontal-or-vertical-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Vertical</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Vertical sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgVERTICAL2D"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Vertical</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-after-vertical-relation.png" alt="line-after-vertical-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-midpoint-sketch-relation-to-a-sketch-segment">Add ‘Midpoint’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Midpoint</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">Line</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Midpoint</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-before-horizontal-or-vertical-relation.png" alt="line-before-horizontal-or-vertical-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Midpoint</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Origin</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Point1@Origin"</span><span class="p">,</span> <span class="s">"EXTSKETCHPOINT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Midpoint sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgATMIDDLE"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Midpoint</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-after-midpoint-relation.png" alt="line-after-midpoint-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-co-linear-sketch-relation-to-a-sketch-segment">Add ‘Co-Linear’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Co-Linear</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use two <code class="language-plaintext highlighter-rouge">Lines</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Co-Linear</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-before-addng-colinear-relation.png" alt="lines-before-addng-colinear-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Co-Linear</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Co-Linear sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgCOLINEAR"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Co-Linear</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-after-colinear-relation.png" alt="lines-after-colinear-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-perpendicular-sketch-relation-to-a-sketch-segment">Add ‘Perpendicular’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Perpendicular</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use two <code class="language-plaintext highlighter-rouge">Lines</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Perpendicular</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-before-addng-perpendicular-relation.png" alt="lines-before-addng-perpendicular-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Perpendicular</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Perpendicular sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgPERPENDICULAR"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Perpendicular</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-after-adding-perpendicular-relation.png" alt="lines-after-adding-perpendicular-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-parallel-sketch-relation-to-a-sketch-segment">Add ‘Parallel’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Parallel</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use two <code class="language-plaintext highlighter-rouge">Lines</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Parallel</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-before-addng-parallel-relation.png" alt="lines-before-addng-parallel-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Parallel</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Parallel sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgPARALLEL"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Parallel</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-after-adding-parallel-relation.png" alt="lines-after-adding-parallel-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-equal-length-sketch-relation-to-a-sketch-segment">Add ‘Equal Length’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Equal Length</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use two <code class="language-plaintext highlighter-rouge">Lines</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Equal Length</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-before-addng-equal-relation.png" alt="lines-before-addng-equal-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Equal Length</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Equal Length sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgSAMELENGTH"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Equal Length</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/lines-after-adding-equal-relation.png" alt="lines-after-adding-equal-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-tangent-sketch-relation-to-a-sketch-segment">Add ‘Tangent’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Tangent</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">Line</code> and a <code class="language-plaintext highlighter-rouge">Circle</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Tangent</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-circle-before-adding-tangent-relation.png" alt="line-circle-before-adding-tangent-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Tangent</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Tangent sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgTANGENT"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Tangent</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-circle-after-adding-tangent-relation.png" alt="line-circle-after-adding-tangent-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-same-curve-length-sketch-relation-to-a-sketch-segment">Add ‘Same Curve Length’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Same Curve Length</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use a <code class="language-plaintext highlighter-rouge">Line</code> and a <code class="language-plaintext highlighter-rouge">Circle</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Same Curve Length</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-circle-before-adding-equal-curve-length-relation.png" alt="line-circle-before-adding-equal-curve-length-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Same Curve Length</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Line1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Same Curve Length sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgSAMECURVELENGTH"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Same Curve Length</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/line-circle-after-adding-equal-curve-length-relation.png" alt="line-circle-after-adding-equal-curve-length-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-coincident-sketch-relation-to-a-sketch-segment-1">Add ‘Coincident’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Coincident</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use <strong>two</strong> <code class="language-plaintext highlighter-rouge">Circles</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Coincident</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circles-before-adding-concentric-relation.png" alt="circles-before-adding-concentric-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Coincident</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Coincident sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgCONCENTRIC"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Coincident</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circles-after-adding-concentric-relation.png" alt="circles-after-adding-concentric-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<h2 id="add-coradial-sketch-relation-to-a-sketch-segment">Add ‘Coradial’ Sketch Relation to a sketch segment</h2>
+
+<p>Here we learn how to add <code class="language-plaintext highlighter-rouge">Coradial</code> <em>sketch relation</em> to a sketch segment through <strong>VBA</strong>.</p>
+
+<p>We need <em>an unconstraint sketch segment</em>.</p>
+
+<p>In this post, I use <strong>two</strong> <code class="language-plaintext highlighter-rouge">Circles</code> as shown in below image:</p>
+
+<p><strong>Before Add <em>Coradial</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circles-before-adding-coradial-relation.png" alt="circles-before-adding-coradial-relation" /></p>
+
+<p><strong>Code to add <code class="language-plaintext highlighter-rouge">Coradial</code> sketch relation</strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Select Line 1</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Select Line 2</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc2"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Add Coradial sketch relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchAddConstraints</span> <span class="p">(</span><span class="s">"sgCORADIAL"</span><span class="p">)</span>
+  
+  <span class="c1">' Clear selection after adding relation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p><strong>After Add <em>Coradial</em> Sketch Relation to Line</strong></p>
+
+<p><img src="/assets/Solidworks_Images/sketch-relations/circles-after-adding-coradial-relation.png" alt="circles-after-adding-coradial-relation" /></p>
+
+<p>I have added comments to each line <code class="language-plaintext highlighter-rouge">code sample</code>, hence it is easy to understand.</p>
+
+<hr />
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong><em>Add Sketch Relations (Constraints)</em></strong> with Solidworks VBA Macros.</p>
+
+<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+
+<p><strong><em>If you like the post then please share it with your friends also.</em></strong></p>
+
+<p><strong><em>Do let me know by you like this post or not!</em></strong></p>
+
+<p><strong><em>Till then, Happy learning!!!</em></strong></p>
+
+        </div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-30T00:17:54-04:00">March 30, 2022</time></p>
+
+ 
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/toggle-display-sketch-relation/" title="Solidworks Macro - Toggle (Hide/Show) Sketch Relations
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/add-dimension-methods/" title="Solidworks Macro - Add dimension to Sketch Entities
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+    </div>
+  </article>
+  
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Executing Sub and Function Procedures - The CAD Coder</title>
+<meta name="description" content="Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Executing Sub and Function Procedures">
+<meta property="og:url" content="http://localhost:4000/vba/executing-procedures/">
+
+
+  <meta property="og:description" content="Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-30T00:17:54-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/vba/executing-procedures/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/" class="active">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Executing Sub and Function Procedures">
+    <meta itemprop="description" content="Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.">
+    <meta itemprop="datePublished" content="2022-03-30T00:17:54-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Executing Sub and Function Procedures
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#executing-sub-procedure">Executing Sub procedure</a><ul><li><a href="#executing-the-sub-procedure-directly">Executing the Sub procedure directly</a></li><li><a href="#executing-the-sub-procedure-from-another-procedure">Executing the Sub procedure from another procedure</a></li></ul></li><li><a href="#executing-function-procedure">Executing Function procedure</a><ul><li><a href="#executing-the-function-procedure-from-a-sub-procedure">Executing the Function procedure from a Sub procedure</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div>
+          <p>Although you may not know much about developing procedures at this point, I’m going to jump ahead a bit and discuss how to execute these procedures.</p>
+
+<p>This is important because these procedures are worthless unless you know how to execute it.</p>
+
+<h2 id="executing-sub-procedure">Executing Sub procedure</h2>
+
+<p>Executing a <code class="language-plaintext highlighter-rouge">Sub procedure</code> means the same thing as running or calling a <code class="language-plaintext highlighter-rouge">Sub procedure</code>.</p>
+
+<p>You can use whatever terminology you like.</p>
+
+<p>You can execute a <code class="language-plaintext highlighter-rouge">VBA Sub</code> in many ways - that’s one reason you can do so many useful things with <code class="language-plaintext highlighter-rouge">Sub procedures</code>.</p>
+
+<p>Here’s a list of the ways to execute a <code class="language-plaintext highlighter-rouge">Sub procedure</code>:</p>
+
+<ul>
+  <li>With the <code class="language-plaintext highlighter-rouge">Run -&gt; Run Sub/UserForm</code> command (in the <code class="language-plaintext highlighter-rouge">VBE</code>). <code class="language-plaintext highlighter-rouge">VBE</code> executes the <code class="language-plaintext highlighter-rouge">Sub procedure</code> in which the cursor is located. This menu command has two alternatives: the <code class="language-plaintext highlighter-rouge">F5</code> key and the <code class="language-plaintext highlighter-rouge">Run Sub/UserForm</code> button on the Standard toolbar in the <code class="language-plaintext highlighter-rouge">VBE</code>. These methods don’t work if the procedure requires one or more arguments.</li>
+  <li>From another <code class="language-plaintext highlighter-rouge">Sub procedure</code> that you write.</li>
+  <li>From a custom item on the ribbon you develop.</li>
+  <li>From the <code class="language-plaintext highlighter-rouge">Immediate window</code> in the <code class="language-plaintext highlighter-rouge">VBE</code>. Just type the name of the <code class="language-plaintext highlighter-rouge">Sub procedure</code> and press <code class="language-plaintext highlighter-rouge">Enter</code>.</li>
+  <li>From <code class="language-plaintext highlighter-rouge">Run</code> <strong>Macro</strong> -&gt; <strong>Select Macro</strong> you want to run. By this, your macro runs the <code class="language-plaintext highlighter-rouge">Sub procedure</code> without opening <code class="language-plaintext highlighter-rouge">VBE</code>.</li>
+</ul>
+
+<p>I demonstrate some of these techniques in the following sections.</p>
+
+<p>Before I can do that, you need to enter a <code class="language-plaintext highlighter-rouge">Sub procedure</code> into a <code class="language-plaintext highlighter-rouge">VBA</code> module as suggested below:</p>
+
+<ul>
+  <li>Open the VBE in <em>Solidworks</em>.</li>
+  <li>Enter the following code into your module</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">CubeRoot</span><span class="p">()</span>
+   <span class="n">Number</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Enter a positive number."</span><span class="p">)</span>
+   <span class="n">MsgBox</span> <span class="n">number</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"is the cube root."</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>This procedure asks the user for a <em>number</em> and then displays that number’s cube root in a <code class="language-plaintext highlighter-rouge">message box</code>.</p>
+
+<p>Below Figures shows what happens when you execute this procedure.</p>
+
+<p><img src="http://localhost:4000/assets/vba-images/VBA_Sub_and_Function_Procedure/1.VBA_InputBox_function.PNG" alt="VBA-InputBox-function" /></p>
+
+<p>I entered 4 as input value. And get result as shown in below image.</p>
+
+<p><img src="http://localhost:4000/assets/vba-images/VBA_Sub_and_Function_Procedure/2.Displaying_the_cube_root_of_a_number_via_MsgBox.PNG" alt="VBA-InputBox-result" /></p>
+
+<p>By the way, <code class="language-plaintext highlighter-rouge">CubeRoot</code> is not an example of a good macro. It doesn’t check for errors, so it fails easily.</p>
+
+<p>To see what I mean, try clicking the <code class="language-plaintext highlighter-rouge">Cancel</code> button in the <em>input box</em> or entering a <em>negative number</em>.</p>
+
+<h3 id="executing-the-sub-procedure-directly">Executing the Sub procedure directly</h3>
+
+<p>The <strong>quickest</strong> way to execute this procedure is by doing so directly from the VBA module in which you defined it.</p>
+
+<p>Follow these steps:</p>
+
+<ul>
+  <li>Activate the <code class="language-plaintext highlighter-rouge">VBE</code> and select the <code class="language-plaintext highlighter-rouge">VBA module</code> that contains the procedure.</li>
+  <li>Move the cursor anywhere in the procedure’s code.</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">F5</code> (or choose <code class="language-plaintext highlighter-rouge">Run -&gt; Run Sub/UserForm</code>).</li>
+  <li>Respond to the input box and click <code class="language-plaintext highlighter-rouge">OK</code>.</li>
+  <li>The procedure displays the <code class="language-plaintext highlighter-rouge">cube root</code> of the number you entered.</li>
+</ul>
+
+<p>You can’t use the <code class="language-plaintext highlighter-rouge">Run -&gt; Run Sub/UserForm</code> command to execute a <code class="language-plaintext highlighter-rouge">Sub procedure</code> that uses arguments, because you have no way to pass the arguments to the procedure.</p>
+
+<p>If the procedure contains <em>one</em> or <em>more arguments</em>, the only way to execute it is to call it from <code class="language-plaintext highlighter-rouge">another procedure</code> — which must supply the argument(s).</p>
+
+<h3 id="executing-the-sub-procedure-from-another-procedure">Executing the Sub procedure from another procedure</h3>
+
+<p>You can also execute a <code class="language-plaintext highlighter-rouge">Sub procedure</code> from another procedure.</p>
+
+<p>Follow these steps if you want to give this a try:</p>
+
+<ul>
+  <li>Activate the <code class="language-plaintext highlighter-rouge">VBA</code> module that holds the <code class="language-plaintext highlighter-rouge">CubeRoot</code> routine.</li>
+  <li>
+    <p>Enter this new procedure (either above or below <code class="language-plaintext highlighter-rouge">CubeRoot</code> code — it makes no difference):</p>
+
+    <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">Sub</span> <span class="nf">NewSub</span><span class="p">()</span>
+    <span class="k">Call</span> <span class="n">CubeRoot</span>
+ <span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Execute the NewSub macro.</li>
+</ul>
+
+<p>The easiest way to do this is to move the cursor anywhere within the <code class="language-plaintext highlighter-rouge">NewSub</code> code and press <code class="language-plaintext highlighter-rouge">F5</code>. 
+Notice that this NewSub procedure simply executes the CubeRoot procedure.</p>
+
+<blockquote>
+  <p>Please note that the keyword <code class="language-plaintext highlighter-rouge">Call</code> is optional. The statement can consist of only the Sub procedure’s name. I find that using the <code class="language-plaintext highlighter-rouge">Call</code> keyword makes it perfectly clear that a procedure is being <em>called</em>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="executing-function-procedure">Executing Function procedure</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Function</code> procedures, unlike <code class="language-plaintext highlighter-rouge">Sub</code> procedures, can be only executed in only one way:</p>
+
+<ul>
+  <li>By calling the function from another <code class="language-plaintext highlighter-rouge">Sub</code> procedure or <code class="language-plaintext highlighter-rouge">Function</code> procedure.</li>
+</ul>
+
+<p>Try this simple function. Enter it into a VBA module:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Function</span> <span class="nf">CubeRoot</span><span class="p">()</span>
+   <span class="n">CubeRoot</span> <span class="o">=</span> <span class="n">number</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+
+<p>This function is pretty bored — it merely calculates the cube root of the number passed to it as its argument.</p>
+
+<p>It does provide a starting point for understanding <code class="language-plaintext highlighter-rouge">functions</code>.</p>
+
+<p>It also presents an important concept about functions: <strong>how to return the value</strong>.</p>
+
+<p>(You do remember that a function returns a value, right?)</p>
+
+<p>Notice that the single line of code that makes up this <code class="language-plaintext highlighter-rouge">Function</code> procedure performs a calculation.</p>
+
+<p>The result of the math (number to the power of 1⁄3) is assigned to the variable <code class="language-plaintext highlighter-rouge">CubeRoot</code>.</p>
+
+<p>Not coincidentally, <code class="language-plaintext highlighter-rouge">CubeRoot</code> is also the name of the function.</p>
+
+<p>To tell the function what value to return, you assign that value to the name of the function.</p>
+
+<h3 id="executing-the-function-procedure-from-a-sub-procedure">Executing the Function procedure from a Sub procedure</h3>
+
+<p>Because you can’t execute a <code class="language-plaintext highlighter-rouge">function</code> directly, you must call it from another procedure.</p>
+
+<p>Enter the following simple procedure in the same <code class="language-plaintext highlighter-rouge">VBA</code> module that contains the <code class="language-plaintext highlighter-rouge">CubeRoot</code> function:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">CubeRoot</span><span class="p">()</span>
+   <span class="n">Ans</span> <span class="o">=</span> <span class="n">CubeRoot</span><span class="p">(</span><span class="mi">125</span><span class="p">)</span>
+   <span class="n">MsgBox</span> <span class="n">Ans</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>When you execute the <code class="language-plaintext highlighter-rouge">CubeRoot</code> procedure (using any of the methods described earlier), Youe software displays a message box that contains the value of the <code class="language-plaintext highlighter-rouge">Ans</code> variable, which is <strong>5</strong>.</p>
+
+<p>Here’s what’s going on:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CubeRoot(125)</code> means it <code class="language-plaintext highlighter-rouge">CubeRoot</code> receive argument of <em>125</em>.</li>
+  <li>Then <code class="language-plaintext highlighter-rouge">Function CubeRoot(number)</code> is executed. As described previously, number is an argument. And here the value of this is <em>125</em>.</li>
+  <li>Then by <strong>number ^ (1/3)</strong> we get the cube of 125. (why? Because <em>125</em> is argument passed by the <code class="language-plaintext highlighter-rouge">sub</code> function and this <em>125</em> is the value of <em>number</em>.)</li>
+  <li>After that cube value of <em>125</em>, i.e. <em>5</em>, is assigned to or given to or equal to <code class="language-plaintext highlighter-rouge">CubeRoot</code>. This <code class="language-plaintext highlighter-rouge">CubeRoot</code> assigned to or given to or equal to <code class="language-plaintext highlighter-rouge">Ans</code>. After that message boxes show the value of <em>5</em> in your screen.</li>
+</ul>
+
+<blockquote>
+  <p>Please read again if you don’t understand what is going on here.</p>
+</blockquote>
+
+<p>Next post will be about <strong><em>Programming Concepts, Comments and Data-types</em></strong>.</p>
+
+        </div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-30T00:17:54-04:00">March 30, 2022</time></p>
+
+ 
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/sub-and-function-procedure/" title="Sub and Function Procedures
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/programming-concepts/" title="Programming Concepts, Comments and Data-types
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+    </div>
+  </article>
+  
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
