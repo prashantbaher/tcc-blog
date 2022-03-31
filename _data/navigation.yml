@@ -1,0 +1,332 @@
+# main links
+main:
+#  - title: "Quick-Start Guide"
+#   url: /docs/quick-start-guide/
+  - title: "VBA"
+    url: /vba/vba-Introduction/   
+#  - title: "Inventor C# API"
+#    url: /inventor-csharp-api-tutorials/
+  - title: "Solidworks VBA Macro"
+    url: /Solidworks-macro-guide/
+  - title: "Solidworks C# API"
+    url: /Solidworks-csharp-api-tutorials/
+  - title: "Solidworks C++ API"
+    url: /Solidworks-cpp-api-tutorials/
+  - title: "Resources"
+    url: /resources/
+  - title: "About"
+    url: /aboutMe/
+
+vba:
+  - title: Getting Started
+    children:
+      - title: "VBA Introduction"
+        url: /vba/vba-Introduction/
+      - title: "VBA Visual Basic Editor"
+        url: /vba/vba-vbe-editor/    
+      - title: "VBE Windows"
+        url: /vba/vba-windows/ 
+      - title: "VBA Sub and Function Procedures"
+        url: /vba/sub-and-function-procedure/
+      - title: "VBA Executing Sub and Function Procedures"
+        url: /vba/executing-procedures/
+  - title: Programming Concepts
+    children:
+      - title: "VBA Programming Concepts, Comments and Data-types"
+        url: /vba/programming-concepts/ 
+      - title: "VBA Variables"
+        url: /vba/variables/ 
+      - title: "VBA Declaring and Scoping of Variables"
+        url: /vba/declaring-and-scoping-of-variables/ 
+      - title: "VBA Variable Scope"
+        url: /vba/variable-scope/ 
+      - title: "VBA Public, Static and Variable's Life"
+        url: /vba/publc-static-variable-life/ 
+      - title: "VBA Constants"
+        url: /vba/constant/ 
+      - title: "VBA String Basics"
+        url: /vba/string-basic/
+      - title: "VBA Assignment Statements And Operators"
+        url: /vba/assignment-statement-and-operator/
+      - title: "VBA Arrays"
+        url: /vba/arrays/
+      - title: "VBA Functions"
+        url: /vba/functions/
+      - title: "VBA Functions that do more"
+        url: /vba/more-functions/
+      - title: "VBA Controlling Program Flow and Making Decisions"
+        url: /vba/controlling-flow-making-desicions/
+      - title: "VBA If-Then-Else and Select Case structure"
+        url: /vba/if-then-structure-select-case/
+      - title: "VBA Looping"
+        url: /vba/looping/
+      - title: "VBA Bug Finding"
+        url: /vba/bug-finding/
+      - title: "VBA Debugger"
+        url: /vba/debugger/
+      - title: "VBA Bug Reduction Tips"
+        url: /vba/bug-reduction-tips/
+  - title: Dialog Boxes
+    children:
+      - title: "VBA Dialog Boxes"
+        url: /vba/dialog-boxes/
+      - title: "VBA MsgBox Function"
+        url: /vba/msgBox-function/
+      - title: "VBA InputBox Function"
+        url: /vba/inputbox-function/
+      - title: "VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name"
+        url: /vba/other-dialogs/
+  - title: UserForms
+    children:
+      - title: "VBA UserForms"
+        url: /vba/userform/
+      - title: "VBA Userforms - Open new Part document"
+        url: /vba/open-part-from-userform/
+      - title: "VBA Userforms - Open new Assembly and Drawing document"
+        url: /vba/open-assembly-and-drawing-from-userform/
+      - title: "VBA Userforms - Testing Open new Assembly and Drawing document"
+        url: /vba/testing-open-assembly-and-drawing-document-macro/
+      - title: "VBA Userforms - Browse SOLIDWORKS file(s)"
+        url: /vba/browse-solidworks-file/
+
+solidworks-cpp:
+  - title: Getting Started
+    children:
+      - title: "Introduction"
+        url: /Solidworks-cpp-api-tutorials/
+      - title: "Prerequisite"
+        url: /solidworks-cpp/Prerequisite/
+      - title: "Open Solidworks & Hello World"
+        url: /solidworks-cpp/open-solidworks/ 
+      - title: "Open Solidworks Part Document"
+        url: /solidworks-cpp/open-part-document/
+      - title: "Browse and Open Solidworks Document"
+        url: /solidworks-cpp/browse-and-open-solidworks-document-managed-version/
+
+solidworks-macros:
+  - title: General - Solidworks Functions
+    children:
+      - title: "Introduction"
+        url: /Solidworks-macro-guide/
+      - title: "Open new Part document"
+        url: /solidworks-macros/open-new-document/
+      - title: "Open Assembly and Drawing document"
+        url: /solidworks-macros/open-assembly-and-drawing/
+      - title: "Selection Methods"
+        url: /solidworks-macros/select-plane-from-tree/
+      - title: "Open Saved Documents"
+        url: /solidworks-macros/open-saved-document/
+      - title: "Fix Unit Issue"
+        url: /solidworks-macros/unit-correction/
+  - title: Sketch - Lines
+    children:
+      - title: "Create Line"
+        url: /solidworks-macros/sketch-create-line/
+      - title: "Create CenterLine"
+        url: /solidworks-macros/sketch-create-centerline/
+  - title: Sketch - Rectangles
+    children:
+      - title: "Create Corner Rectangle"
+        url: /solidworks-macros/create-corner-rectangle/
+      - title: "Create Center Rectangle"
+        url: /solidworks-macros/create-center-rectangle/
+      - title: "Create 3-Point Corner Rectangle"
+        url: /solidworks-macros/create-3point-corner-rectangle/
+      - title: "Create 3-Point Center Rectangle"
+        url: /solidworks-macros/create-3point-center-rectangle/
+      - title: "Create A Parallelogram"
+        url: /solidworks-macros/create-parallelogram/
+  - title: Sketch - Circles
+    children:
+      - title: "Create Circle"
+        url: /solidworks-macros/create-circle/
+      - title: "Create Circle By Radius"
+        url: /solidworks-macros/create-circle-by-radius/
+      - title: "Create Perimeter Circle"
+        url: /solidworks-macros/create-perimeter-circle/
+  - title: Sketch - Arcs
+    children:
+      - title: "Create Centerpoint Arc"
+        url: /solidworks-macros/create-centerpoint-arc/
+      - title: "Create Tangent Arc"
+        url: /solidworks-macros/create-tangent-arc/
+      - title: "Create 3-Point Arc"
+        url: /solidworks-macros/create-3point-arc/       
+      - title: "Create Polygon"
+        url: /solidworks-macros/polygon/   
+  - title: Sketch - Slots
+    children:
+      - title: "Create a Straight Slot"
+        url: /solidworks-macros/create-straight-slot/
+      - title: "Create a Centerpoint Straight Slot"
+        url: /solidworks-macros/create-centerpoint-straight-slot/
+      - title: "Create a 3-Point Arc Slot"
+        url: /solidworks-macros/create-3point-arc-slot/
+      - title: "Create a Centerpoint Arc Slot"
+        url: /solidworks-macros/create-centerpoint-arc-slot/
+  - title: Sketch - Point and Spline
+    children:
+      - title: "Create a Point"
+        url: /solidworks-macros/create-point/
+      - title: "Create a Spline"
+        url: /solidworks-macros/create-spline/
+  - title: Sketch - Fillet and Chamfer
+    children:
+      - title: "Create a Fillet"
+        url: /solidworks-macros/create-sketch-fillet/
+      - title: "Create a Chamfer"
+        url: /solidworks-macros/create-sketch-chamfer/    
+  - title: Sketch - Trim and Extend
+    children:
+      - title: "Trim Sketch Entities"
+        url: /solidworks-macros/trim-entities/
+      - title: "Extend Sketch Entities"
+        url: /solidworks-macros/extend-entities/
+  - title: Sketch - Offset and Mirror
+    children:
+      - title: "Offset Sketch Entities"
+        url: /solidworks-macros/offset-entities/
+      - title: "Mirror Sketch Entities"
+        url: /solidworks-macros/mirror-entities/
+  - title: Sketch - Offset and Mirror
+    children:
+      - title: "Offset Sketch Entities"
+        url: /solidworks-macros/offset-entities/
+      - title: "Mirror Sketch Entities"
+        url: /solidworks-macros/mirror-entities/
+  - title: Sketch - Patterns
+    children:
+      - title: "Linear Sketch Pattern"
+        url: /solidworks-macros/linear-skech-pattern/
+      - title: "Edit Linear Sketch Pattern"
+        url: /solidworks-macros/edit-linear-skech-pattern/ 
+      - title: "Circular Sketch Pattern"
+        url: /solidworks-macros/circular-skech-pattern/
+      - title: "Edit Circular Sketch Pattern"
+        url: /solidworks-macros/edit-circular-skech-pattern/
+  - title: Sketch - Move and Rotate
+    children:
+      - title: "Move/Copy Sketch Entities"
+        url: /solidworks-macros/move-copy-sketch-entities/
+      - title: "Rotate/Copy Sketch Entities"
+        url: /solidworks-macros/rotate-copy-sketch-entities/    
+  - title: Sketch - Relations
+    children:
+      - title: "Toggle (Hide/Show) Sketch Relations"
+        url: /solidworks-macros/toggle-display-sketch-relation/
+      - title: "Add Sketch Relations (Constraints)"
+        url: /solidworks-macros/add-sketch-relations/                       
+  - title: Sketch - Dimensions
+    children:
+      - title: "Add dimension to Sketch Entities"
+        url: /solidworks-macros/add-dimension-methods/
+  - title: Features - Extrudes
+    children:
+      - title: "Extrude Feature"
+        url: /solidworks-macros/create-extrude-feature/ 
+      - title: "Revolved Boss/Base Feature"
+        url: /solidworks-macros/create-revolved-feature/  
+      - title: "Sweep Boss/Base Feature"
+        url: /solidworks-macros/create-sweep-feature/
+      - title: "Lofted Boss/Base Feature"
+        url: /solidworks-macros/create-lofted-boss-feature/
+  - title: Features - Cuts
+    children:
+      - title: "Extrude Cut Feature"
+        url: /solidworks-macros/create-extrude-cut-feature/
+      - title: "Revolve Cut Feature"
+        url: /solidworks-macros/create-revolve-cut-feature/ 
+      - title: "Sweep Cut Feature"
+        url: /solidworks-macros/create-sweep-cut-feature/ 
+      - title: "Lofted Cut Feature"
+        url: /solidworks-macros/create-loft-cut-feature/         
+  - title: Features - Holes and Threads
+    children:
+      - title: "Holes from Hole Wizard"
+        url: /solidworks-macros/create-hole-from-hole-wizard/
+      - title: "Threads"
+        url: /solidworks-macros/create-threads/
+  - title: Features - Fillet & Chamfer
+    children:
+      - title: "Fillet Feature"
+        url: /solidworks-macros/create-fillet/
+      - title: "Chamfer Feature"
+        url: /solidworks-macros/create-chamfer/
+  - title: Features - Mirror & Patterns
+    children:
+      - title: "Mirror Feature"
+        url: /solidworks-macros/create-mirror/
+      - title: "Linear Pattern Feature"
+        url: /solidworks-macros/create-linear-patterns/
+      - title: "Circular Pattern Feature"
+        url: /solidworks-vba-macros/create-circular-patterns/
+      - title: "Sketch Driven Pattern Feature"
+        url: /solidworks-vba-macros/create-sketch-driven-pattern/        
+  - title: Features - Transformation
+    children:
+      - title: "Rib Feature"
+        url: /solidworks-vba-macros/create-rib/
+      - title: "Draft Feature"
+        url: /solidworks-vba-macros/create-draft/
+      - title: "Shell Feature"
+        url: /solidworks-vba-macros/create-shell/
+      - title: "Wrap Feature"
+        url: /solidworks-vba-macros/create-wrap/
+      - title: "Scale Feature"
+        url: /solidworks-vba-macros/create-scale/
+  - title: Reference Geometry
+    children:
+      - title: "Reference Plane"
+        url: /solidworks-vba-macros/create-reference-plane/
+      - title: "Reference Axis"
+        url: /solidworks-vba-macros/create-reference-axis/
+      - title: "Reference Co-Ordinate"
+        url: /solidworks-vba-macros/create-reference-coordinate/
+      - title: "Reference Point"
+        url: /solidworks-vba-macros/create-reference-point/
+  - title: Assembly
+    children:
+      - title: "Insert Component"
+        url: /solidworks-vba-macros/assembly-insert-component/
+      - title: "Unfix Component"
+        url: /solidworks-vba-macros/assembly-unfix-component/
+      - title: "Add Coincident Mate"
+        url: /solidworks-vba-macros/assembly-conicident-mate/
+      - title: "Add Parallel Mate"
+        url: /solidworks-vba-macros/assembly-parallel-mate/
+      - title: "Add Perpendicular Mate"
+        url: /solidworks-vba-macros/assembly-perpendicular-mate/
+      - title: "Add Tangent Mate"
+        url: /solidworks-vba-macros/assembly-tangent-mate/
+      - title: "Add Concentric Mate"
+        url: /solidworks-vba-macros/assembly-concentric-mate/
+      - title: "Add Distance Mate"
+        url: /solidworks-vba-macros/assembly-distance-mate/
+  - title: Sketch - Others
+    children:
+      - title: "Convert to Construction Sketch"
+        url: /solidworks-macros/convert-to-construction-sketch-segment/
+      - title: "Split Open/Closed Sketch Entities"
+        url: /solidworks-macros/split-sketch-segments/
+
+solidworks-csharp:
+  - title: Getting Started
+    children:
+      - title: "Introduction"
+        url: /Solidworks-csharp-api-tutorials/
+      - title: "Prerequisite"
+        url: /solidworks-csharp/Prerequisite/
+      - title: "Open Solidworks"
+        url: /solidworks-csharp/open-solidworks/
+      - title: "Open Solidworks Document"
+        url: /solidworks-csharp/open-solidworks-document/
+  - title: Others
+    children:
+      - title: "Update Dimension State"
+        url: /solidworks-csharp/update-dimension-state/
+
+inventor-csharp:
+  - title: Getting Started
+    children:
+      - title: "Introduction"
+        url: /inventor-csharp-api-tutorials/

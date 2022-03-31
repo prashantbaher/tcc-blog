@@ -1,0 +1,24 @@
+{% if page.previous or page.next %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if page.previous %}
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "❮ Previous" }}</a>
+    </li>
+    {% else %}
+    <li class="page-item mr-5">
+      <a class="btn btn-primary disabled text-light" href="#" >{{ site.data.ui-text[site.locale].pagination_previous | default: "❮ Previous" }}</a>
+    </li>
+    {% endif %}
+    {% if page.next %}
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next ❯" }}</a>
+    </li>
+    {% else %}
+    <li class="page-item ml-5">
+      <a class="btn btn-primary disabled text-light" href="#">{{ site.data.ui-text[site.locale].pagination_next | default: "Next ❯" }}</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
