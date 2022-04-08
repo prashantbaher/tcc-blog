@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Open SOLIDWORKS - The CAD Coder</title>
+<meta name="description" content="OBJECTIVE">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS C# API - Open SOLIDWORKS">
+<meta property="og:url" content="http://localhost:4000/solidworks-csharp/open-solidworks/">
+
+
+  <meta property="og:description" content="OBJECTIVE">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-08T13:33:15-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-csharp/open-solidworks/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+          
+            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks/" class="active">Open Solidworks</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS C# API - Open SOLIDWORKS">
+    
+    <meta itemprop="description" content="OBJECTIVE">
+    
+    
+    <meta itemprop="datePublished" content="2022-04-08T13:33:15-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Open SOLIDWORKS
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">OBJECTIVE</a></li><li><a href="#demo-video">DEMO VIDEO</a></li><li><a href="#create-a-new-prism-project">CREATE A NEW PRISM PROJECT</a></li><li><a href="#build-solution">BUILD SOLUTION</a></li><li><a href="#add-button-to-window">ADD BUTTON TO WINDOW</a></li><li><a href="#add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</a></li><li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#open-solidworks">OPEN SOLIDWORKS</a></li><li><a href="#add-command-to-button">ADD COMMAND TO BUTTON</a></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">OBJECTIVE</h2>
+
+<p>How to Open SOLIDWORKS using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p>
+
+<p>If not then please go to <strong><a href="/solidworks-csharp/Prerequisite">SOLIDWORKS C# API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
+
+<hr />
+
+<h2 id="demo-video">DEMO VIDEO</h2>
+
+<p>Please see below video on how to Open SOLIDWORKS using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<iframe src="https://www.youtube.com/embed/fgXLJIa2510" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+<p><strong>Explanation</strong> of each step/line and why we write code this way is given in this post.</p>
+
+<hr />
+
+<h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
+
+<p>In the below image I have shown you how to create a new Prism Template project.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/create-prism-project.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/create-prism-project.gif" alt="create-prism-project" /></a></p>
+
+<p>For creating a new Prism Project follow these steps:</p>
+
+<ul>
+  <li>
+    <p><em>Open <strong>Visual Studio 2019 (or 2017)</strong>. This bring us a new window as shown in below image</em>.</p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/1.open-visual-studio-2019.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/1.open-visual-studio-2019.svg" alt="open-visual-studio-2019" /></a></p>
+  </li>
+  <li>
+    <p><em>In this window, we need to select “<strong>Create a new project</strong>” option as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/2.select-create-a-new-project-option.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/2.select-create-a-new-project-option.svg" alt="select-create-a-new-project-option" /></a></p>
+  </li>
+  <li>
+    <p><em>This will open a new window of “Create a new project” as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/3.create-a-new-project-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/3.create-a-new-project-window.svg" alt="create-a-new-project-window" /></a></p>
+  </li>
+  <li>
+    <p><em>In this window, we need to apply filter for “<strong>Prism</strong>” project by type “<strong>Prism</strong>” in filter section as shown in below images.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/4.filter-prism-project.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/4.filter-prism-project.svg" alt="filter-prism-project" /></a></p>
+  </li>
+  <li>
+    <p><em>After applying this filter ‘select’ “<strong>Prism Blank App (WPF)</strong>” option from list and press “<strong>Next</strong>” as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/5.select-prism-blank-app-option.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/5.select-prism-blank-app-option.svg" alt="select-prism-blank-app-option" /></a></p>
+  </li>
+  <li>
+    <p><em>This will open a new window of “Configure your new project” as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/6.configure-your-project-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/6.configure-your-project-window.svg" alt="configure-your-project-window" /></a></p>
+  </li>
+  <li>
+    <p><em>In this new window, we define “<strong>Project Name</strong>”. For project name we used “OpenSolidworks” value and press “<strong>Create</strong>” as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/7.update-project-name-and-create-project.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/7.update-project-name-and-create-project.svg" alt="update-project-name-and-create-project" /></a></p>
+  </li>
+  <li>
+    <p><em>Pressing “<strong>Create</strong>” button open a new window of “PRISM PROJECT WIZARD”. In this window select “<strong>CREATE PROJECT</strong>” button as shown in below image.</em></p>
+
+    <p><a href="/assets/solidworks-csharp-images/open-solidworks/8.prism-project-wizard.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/8.prism-project-wizard.svg" alt="prism-project-wizard" /></a></p>
+  </li>
+</ul>
+
+<p>This will open a new window as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/9.openSolidworks-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/9.openSolidworks-window.svg" alt="openSolidworks-window" /></a></p>
+
+<h2 id="build-solution">BUILD SOLUTION</h2>
+
+<p>After we create our “OpenSolidworks” project, we need to select “Build Solution” option.</p>
+
+<p>We build our solution because we want to make sure everything is working and there are no broken references.</p>
+
+<p>Please see below image for reference.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/10.build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/10.build-solution.svg" alt="build-solution" /></a></p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file before <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/11.before-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/11.before-build-solution.svg" alt="before-build-solution" /></a></p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file after <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/12.after-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/12.after-build-solution.svg" alt="after-build-solution" /></a></p>
+
+<h2 id="add-button-to-window">ADD BUTTON TO WINDOW</h2>
+
+<p>To add button in window, we need to update <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/create-button-xaml.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/create-button-xaml.gif" alt="create-button-xaml" /></a></p>
+
+<p>Understand what we have changed.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WindowStartupLocation="CenterScreen"
+</code></pre></div></div>
+
+<p>Above code help us show window at center of screen.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">"Open Solidworks"</span>
+        <span class="na">Width=</span><span class="s">"250"</span>
+        <span class="na">Height=</span><span class="s">"100"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Above code add button to our window.</p>
+
+<p>In above code we set 3 properties as follows:</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Content="Open Solidworks"</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Width="250"</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Height="100"</code></p>
+  </li>
+</ol>
+
+<p>Below image shows above parameters.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/13.button-parameters.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/13.button-parameters.svg" alt="button-parameters" /></a></p>
+
+<h2 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h2>
+
+<p>Now we need to add <em>Prism Command</em> to our <code class="language-plaintext highlighter-rouge">MainWindowViewModel.cs</code> file as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/create-button-xaml.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/create-button-xaml.gif" alt="create-button-xaml" /></a></p>
+
+<p>In <code class="language-plaintext highlighter-rouge">MainWindowViewModel.cs</code> file, we add <em>Prism Command</em> by <code class="language-plaintext highlighter-rouge">cmd</code> code snippet.</p>
+
+<p>Using this code snippet, we add following code.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_OpenSolidworksCommand</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">OpenSolidworksCommand</span> <span class="p">=&gt;</span>
+    <span class="n">_OpenSolidworksCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_OpenSolidworksCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteOpenSolidworksCommand</span><span class="p">));</span>
+
+<span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, we use <code class="language-plaintext highlighter-rouge">DelegateCommand</code> <em>Prism Command</em> from <code class="language-plaintext highlighter-rouge">Prism.Command</code> namespace.</p>
+
+<p class="notice--warning">Please forgive me, I am not able to explained <strong>Prism Command</strong> correctly.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_OpenSolidworksCommand</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">OpenSolidworksCommand</span> <span class="p">=&gt;</span>
+    <span class="n">_OpenSolidworksCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_OpenSolidworksCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteOpenSolidworksCommand</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Above line of code shows <em>Prism Commands</em>.</p>
+
+<p>For more detail about <em>Prism Commands</em> please visit below video.</p>
+
+<iframe src="https://www.youtube.com/embed/tYItSPv58Bo" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Above code shows function we execute when command is run.</p>
+
+<h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
+
+<p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+
+<p>Please see below image for how to add SOLIDWORKS reference.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+
+<h2 id="open-solidworks">OPEN SOLIDWORKS</h2>
+
+<p>Now for opening SOLIDWORKS we need to add following code as shown in below image.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Create a new SOLIDWORKS instance</span>
+    <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+
+    <span class="c1">// Make solidworks visible</span>
+    <span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/open-solidworks-code.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/open-solidworks-code.gif" alt="open-solidworks-code" /></a></p>
+
+<h2 id="add-command-to-button">ADD COMMAND TO BUTTON</h2>
+
+<p>Now we need to <strong>Bind</strong> our <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> command to button as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/add-command-to-button.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/add-command-to-button.gif" alt="add-command-to-button" /></a></p>
+
+<h2 id="final-result">FINAL RESULT</h2>
+
+<p>Now, we have done everything needed to Open SOLIDWORKS through our application.</p>
+
+<p>Please see below image for final result of our work.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/final-result.gif"><img src="/assets/solidworks-csharp-images/open-solidworks/final-result.gif" alt="final-result" /></a></p>
+
+<p>As you can see from above image, we have done followings:</p>
+
+<ul>
+  <li>Build Solution as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/10.build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/10.build-solution.svg" alt="build-solution" /></a></p>
+
+<ul>
+  <li>Start app as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/14.run-application-by-start-button.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/14.run-application-by-start-button.svg" alt="run-application-by-start-button" /></a></p>
+
+<ul>
+  <li>By Start app we have a window, in this window we need to press “Open Solidworks” button as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks/15.Open-Solidworks.svg"><img src="/assets/solidworks-csharp-images/open-solidworks/15.Open-Solidworks.svg" alt="Open-Solidworks" /></a></p>
+
+<hr />
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>Open SOLIDWORKS</strong> from WPF PRISM Application.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-08T13:33:15-04:00">April 8, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/Prerequisite/" title="SOLIDWORKS C# API - Prerequisite
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/open-solidworks-document/" title="SOLIDWORKS C# API - Open SOLIDWORKS Document
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1668 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Create Rib - The CAD Coder</title>
+<meta name="description" content="This post has “beginner ➡ intermediate” level Macro program. If you are following my articles then will not be an issue for you. In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user. I hope you will also like this type of tutorials.Thank you for reading.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks VBA Macro - Create Rib">
+<meta property="og:url" content="http://localhost:4000/solidworks-vba-macros/create-rib/">
+
+
+  <meta property="og:description" content="This post has “beginner ➡ intermediate” level Macro program. If you are following my articles then will not be an issue for you. In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user. I hope you will also like this type of tutorials.Thank you for reading.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-08T13:33:15-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-vba-macros/create-rib/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/" class="active">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Solidworks VBA Macro - Create Rib">
+    
+    <meta itemprop="description" content="This post has “beginner ➡ intermediate” level Macro program.If you are following my articles then will not be an issue for you.In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.I hope you will also like this type of tutorials.Thank you for reading.">
+    
+    
+    <meta itemprop="datePublished" content="2022-04-08T13:33:15-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Create Rib
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#creating-global-variables">Creating Global Variables</a></li><li><a href="#initializing-required-variables">Initializing Required Variables</a></li><li><a href="#select-rib-sketch">Select Rib Sketch</a></li><li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li><li><a href="#get-rib-thickness-and-validation">Get Rib Thickness And Validation</a></li><li><a href="#create-rib-feature">Create Rib Feature</a></li></ul></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p class="notice--warning">This post has “<strong>beginner ➡ intermediate</strong>” level Macro program.<br />
+If you are following my articles then will not be an issue for you.<br />
+In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+I hope you will also like this type of tutorials.<br />Thank you for reading.</p>
+
+<h2 id="objective">Objective</h2>
+
+<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Rib feature</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Rib Feature</strong> quickly.</p>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>After running our macro we successfully create <strong>Rib feature</strong> as a result.</p>
+
+<p>Below <strong>GIF</strong> shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-rib/final-result-gif.gif"><img src="/assets/Solidworks_Images/feature-rib/final-result-gif.gif" alt="Rib Feature final result" /></a></p>
+
+<p>We create <strong>Rib Feature</strong> in following steps in general.</p>
+
+<ol>
+  <li><em>Ask user to input <strong>Rib Thickness</strong>.</em></li>
+  <li><em>Create Rib thickness.</em></li>
+</ol>
+
+<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows <strong>Rib feature</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/cXKjNcd_yRs" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+
+<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Rib Feature</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Solidworks application variable</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Solidworks document variable</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Solidwors Feature variable</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">' Main program for Rib</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks application variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Check if Solidworks is opened or not</span>
+  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks document variable to open document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Get First feature in Feature tree</span>
+  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+  
+  <span class="c1">' Check if Solidworks document is selected or not</span>
+  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to selected First feature in Feature Tree."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Traversing through the Feature Tree,</span>
+  <span class="c1">' until Feature name is "Rib-Sketch"</span>
+  <span class="k">While</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">&lt;&gt;</span> <span class="s">"Rib-Sketch"</span>
+    
+    <span class="c1">' Print current Feature name is Immediate window</span>
+    <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+    
+    <span class="c1">' Get the next feature</span>
+    <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
+  <span class="k">Wend</span>
+  
+  <span class="c1">' Print current Feature name is Immediate window</span>
+  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+  
+  <span class="c1">' Get the faces of selected feature</span>
+  <span class="n">swFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
+  
+  <span class="c1">'-----------------------BELOW IS THE SOLUTION----------------------------------------</span>
+
+  <span class="c1">' Local variables used as Conversion Factors</span>
+  <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+  <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+  
+  <span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
+  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
+    
+    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  <span class="k">End</span> <span class="k">Select</span>
+
+  <span class="c1">'----------------------------------------------------------------</span>
+  
+  <span class="c1">' Variable to store user response</span>
+  <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please input Rib Thickness:"</span><span class="p">,</span> <span class="s">"Rib Thickness"</span><span class="p">)</span>
+  
+  <span class="c1">' This will handle empty value or cancel case</span>
+  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' This will handle case for Non-numeric values</span>
+  <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Variable to store Rib Thickness</span>
+  <span class="k">Dim</span> <span class="nv">RibThickness</span> <span class="ow">As</span> <span class="kt">Double</span>
+  <span class="n">RibThickness</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+  
+  <span class="c1">' This will handle case for 0 thickness</span>
+  <span class="k">If</span> <span class="n">RibThickness</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Create Rib Feature</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertRib</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">RibThickness</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisite</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We are <strong>not</strong> creating feature from code but we use existing 🚀 <strong><a href="/solidworks-macros/create-extrude-feature">Extrude feature</a></strong> and 🚀 <strong><a href="/solidworks-macros/sketch-create-line/">Sketch Line</a></strong> to create <strong>Sketch Driven pattern feature</strong>.</li>
+</ul>
+
+<p><em>Below image shown prerequisite 3D model for our demo.</em></p>
+
+<p><a href="/assets/Solidworks_Images/feature-rib/prerequisite.png"><img src="/assets/Solidworks_Images/feature-rib/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p>As shown in above image, there are <strong><em>1 Extrude features</em></strong> and <strong><em>1 Sketch Line</em></strong> in our part.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Base Feature</code> : This is our <strong>Base Extrude feature</strong>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Sketch Line</code> : This is our <strong>Sketch for Rib feature</strong>.</li>
+</ul>
+
+<p>If you want to create these <strong>Extrude</strong> features and <strong>Sketch Line</strong> <strong><em>programmatically</em></strong> then please refer to below article.</p>
+
+<ul>
+  <li>🚀 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
+  <li>🚀<strong><a href="/solidworks-macros/sketch-create-line/">Solidworks Macro - Create Line</a></strong></li>
+</ul>
+
+<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>Rib Feature VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Creating Global Variables</em></li>
+  <li><em>Initializing required variables</em></li>
+  <li><em>Select Rib Sketch</em></li>
+  <li><em>Get unit Conversion factors</em></li>
+  <li><em>Get Rib Thickness And Validation</em></li>
+  <li><em>Create Rib Feature</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="creating-global-variables">Creating Global Variables</h3>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Solidwors Feature variable</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for looping through Feature Tree and feature selection.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swFeature</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Rib</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create <em>Main program for Rib</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<h3 id="initializing-required-variables">Initializing Required Variables</h3>
+
+<p>Inside this section we initialize required variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks variable to current application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
+<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document variable to opened part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Solidworks document is not opened. Please open a document.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get First feature in Feature tree</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
+  <li>We set <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable’s value to <strong><em>1st feature</em></strong> in <em>Feature Tree</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is selected or not</span>
+<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to selected First feature in Feature Tree."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swFeature Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to selected First feature in Feature Tree.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="select-rib-sketch">Select Rib Sketch</h3>
+
+<p>In this section, we select <strong>Rib-Sketch Feature</strong> for <em>Rib feature</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Traversing through the Feature Tree,</span>
+<span class="c1">' until Feature name is "Rib-Sketch"</span>
+<span class="k">While</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">&lt;&gt;</span> <span class="s">"Rib-Sketch"</span>
+
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code> loop.</li>
+  <li>We loop until <code class="language-plaintext highlighter-rouge">swFeature.Name</code> variable’s value is not equal to <strong>Rib-Sketch</strong>.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print current Feature name is Immediate window</span>
+<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we print current Feature name is Immediate window.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get the next feature</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we again set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
+  <li>We set <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable’s value to <strong><em>next feature</em></strong> in <em>Feature Tree</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print current Feature name is Immediate window</span>
+<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we print current Feature name is Immediate window.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the current feature</span>
+<span class="n">swFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we select the current feature.</li>
+</ul>
+
+<h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
+
+<p>In this section we get unit Conversion factors.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">'-----------------------Unit Conversion Factors----------------------------------------</span>
+  
+<span class="c1">' Local variables used as Conversion Factors</span>
+<span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+<span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+
+<span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
+
+<span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+
+<span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
+  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
+  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+<span class="k">End</span> <span class="k">Select</span>
+
+<span class="c1">'----------------------------------------------------------------</span>
+</code></pre></div></div>
+
+<ul>
+  <li>I have already explained about this in previous 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</li>
+  <li>Please visit 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</li>
+</ul>
+
+<h3 id="get-rib-thickness-and-validation">Get Rib Thickness And Validation</h3>
+
+<p>In this section, we get get the <strong>Rib Thickness</strong> from user and apply some validation on <strong>Rib Thickness</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to store user response</span>
+<span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable as a counter.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">response</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please input Rib Thickness:"</span><span class="p">,</span> <span class="s">"Rib Thickness"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
+
+    <p>Those 3 steps are explained below.</p>
+
+    <ul>
+      <li><strong>Step 1</strong> - Getting <strong>Rib Thickness</strong> from user.</li>
+    </ul>
+
+    <p>Below image shows the message for <strong>Rib Thickness</strong> to the user.</p>
+
+    <p><a href="/assets/Solidworks_Images/feature-rib/message-to-select-rib-thickness.png"><img src="/assets/Solidworks_Images/feature-rib/message-to-select-rib-thickness.png" alt="message-to-select-rib-thickness" /></a></p>
+
+    <ul>
+      <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">response</code></strong> variable.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle empty value or cancel case</span>
+<span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check the <strong><em>length of input value</em></strong>.</li>
+  <li>This check will handle <strong>case for empty value</strong> or <strong>cancel operation case</strong>.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(response) = 0</code></strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">Len()</code></strong> is pre-build VBA function which check the length of a object.</li>
+      <li>In above cases, we will get <strong>0</strong> value.</li>
+    </ul>
+  </li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Empty or no value. Please try again.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for Non-numeric values</span>
+<span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if the <em>input value</em> is <strong>Non-numeric</strong>.</li>
+  <li>This check will handle <strong>case for Non-numeric values</strong>.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">IsNumeric(response) = False</code></strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">IsNumeric()</code></strong> is pre-build VBA function which check if <em>passing object is <strong>Numeric</strong> or not</em>.</li>
+      <li>In above cases, we will get <strong>False</strong> value.</li>
+    </ul>
+  </li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Entered value is Non-numeric. Please try again.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to store Rib Thickness</span>
+<span class="k">Dim</span> <span class="nv">RibThickness</span> <span class="ow">As</span> <span class="kt">Double</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a variable to store Rib Thickness.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">RibThickness</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RibThickness</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line of code we are doing <strong>3 steps</strong> in one line.</p>
+
+    <p>Those 3 steps are explained below.</p>
+
+    <ul>
+      <li><strong>Step 1</strong> - Converting <strong>Rib Thickness</strong> from user to <strong><code class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
+      <li>
+        <p><strong>Step 2</strong> - Updating converted Rib Thickness as per document unit system.</p>
+      </li>
+      <li><strong>Step 3</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">RibThickness</code></strong> variable.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for 0 thickness</span>
+<span class="k">If</span> <span class="n">RibThickness</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if the <em>input value</em> is <strong>zero (0)</strong>.</li>
+  <li>This check will handle <strong>case for 0 thickness</strong>.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">RibThickness = 0</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Entered value must be greater than 0. Please try again.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="create-rib-feature">Create Rib Feature</h3>
+
+<p>In this section we create <strong>Rib Feature</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Rib Feature</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertRib</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">RibThickness</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line of code we create <strong>Rib Feature</strong> by <code class="language-plaintext highlighter-rouge">InsertRib</code> method.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">InsertRib</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+  </li>
+  <li>This <code class="language-plaintext highlighter-rouge">InsertRib</code> method takes following parameters as explained:
+    <ul>
+      <li><strong>Is2Sided</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if the rib is double-sided, <code class="language-plaintext highlighter-rouge">False</code> if the rib is single sided</em>.</li>
+      <li><strong>ReverseThicknessDir</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to thicken the opposite side of the sketch normal, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
+      <li><strong>Thickness</strong> - <em>Rib thickness.</em></li>
+      <li><strong>ReferenceEdgeIndex</strong> - <em>Edge in the sketch to use to determine the material direction and for draft reference.</em></li>
+      <li><strong>ReverseMaterialDir</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to flip the direction of the extrusion, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
+      <li><strong>IsDrafted</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to draft the rib, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
+      <li><strong>DraftOutward</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to draft the rib outward, <code class="language-plaintext highlighter-rouge">False</code> to not. only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code></em>.</li>
+      <li><strong>DraftAngle</strong> - <em>Draft angle of the rib; only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code></em>.</li>
+      <li><strong>IsNormToSketch</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if extrusion direction is normal to sketch, <code class="language-plaintext highlighter-rouge">False</code> if parallel to sketch</em>.</li>
+      <li><strong>IsDraftedFromWall</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if draft is from wall, <code class="language-plaintext highlighter-rouge">False</code> if not; only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code>.</em></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertRib</code> method did not return any value.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Is2Sided</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">True</code></td>
+        </tr>
+        <tr>
+          <td><strong>ReverseThicknessDir</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>Thickness</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">RibThickness</code></td>
+        </tr>
+        <tr>
+          <td><strong>ReferenceEdgeIndex</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>ReverseMaterialDir</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>IsDrafted</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>DraftOutward</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>DraftAngle</strong></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><strong>IsNormToSketch</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>IsDraftedFromWall</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Reference</strong>: For more details about</p>
+
+<ul>
+  <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
+  <li><strong>InsertRib Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeatureManager~InsertRib.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">InsertRib</code> Method.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we get <strong>Rib feature</strong> as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-rib/final-result-gif.gif"><img src="/assets/Solidworks_Images/feature-rib/final-result-gif.gif" alt="Rib Feature final result" /></a></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we clear all previous selection.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>create Rib feature</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-08T13:33:15-04:00">April 8, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-sketch-driven-pattern/" title="Solidworks VBA Macro - Create Sketch Driven Pattern
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-draft/" title="Solidworks VBA Macro - Create Draft
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

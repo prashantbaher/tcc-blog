@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>VBA Functions that do more - The CAD Coder</title>
+<meta name="description" content="A few VBA functions go above and beyond the call of duty. Rather than simply return a value, these functions have some useful side effects.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="VBA Functions that do more">
+<meta property="og:url" content="http://localhost:4000/vba/more-functions/">
+
+
+  <meta property="og:description" content="A few VBA functions go above and beyond the call of duty. Rather than simply return a value, these functions have some useful side effects.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-08T13:33:15-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/vba/more-functions/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/" class="active">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="VBA Functions that do more">
+    
+    <meta itemprop="description" content="A few VBA functions go above and beyond the call of duty. Rather than simply return a value, these functions have some useful side effects.">
+    
+    
+    <meta itemprop="datePublished" content="2022-04-08T13:33:15-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">VBA Functions that do more
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#discovering-vba-functions">Discovering VBA functions</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>A few VBA <code class="language-plaintext highlighter-rouge">functions</code> go above and beyond the call of duty. Rather than simply return a value, these functions have some useful side effects.</p>
+
+<p>Below table lists them.</p>
+
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">Functions with Useful Side Benefits</th>
+    </tr>
+    <tr>
+        <th>Function</th>
+        <th>What is does</th>
+    </tr>
+    <tr>
+        <td>MsgBox</td>
+        <td>
+            Displays a handy dialog box containing a message and buttons. 
+            The function returns a code that identifies which button the user clicks.
+        </td>
+    </tr>
+    <tr>
+        <td>InputBox</td>
+        <td>
+            Displays a simple dialog box that asks the user for some input. 
+            The function returns whatever the user enters into the dialog box.
+        </td>
+    </tr>
+    <tr>
+        <td>Shell</td>
+        <td>
+            Executes another program. The function returns the task ID (a unique identifier) 
+            of the other program (or an error if the function can’t start the other program).
+        </td>
+    </tr>
+    <tr>
+        <td>GetObject/CreateObject</td>
+        <td>
+            Returns/Create a reference to an object provided by an ActiveX component. 
+            (If you don't understand, don't bother about it. Just remember we use this 
+            function to for checking &#38; creating objects in later topics)
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<h2 id="discovering-vba-functions">Discovering VBA functions</h2>
+
+<p>How do we find out which function does VBA provides?</p>
+
+<p>The best source is the <em>Visual Basic Help system</em> in build in your CAD Application.</p>
+
+<p>I compiled a partial list of <code class="language-plaintext highlighter-rouge">functions</code>, which I share with you in following Table.</p>
+
+<p>I omitted some of the more specialized or obscure functions.</p>
+
+<p>For complete details on a particular function, type the function name into a VBA module, move the cursor anywhere in the text, and press <code class="language-plaintext highlighter-rouge">F1</code>.</p>
+
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">VBA’s Most Useful Built-In Functions</th>
+    </tr>
+    <tr>
+        <th>Function</th>
+        <th>What is does</th>
+    </tr>
+    <tr>
+        <td>Abs</td>
+        <td>Returns a number’s absolute value.</td>
+    </tr>
+    <tr>
+        <td>Array</td>
+        <td>Returns a variant containing an array.</td>
+    </tr>
+    <tr>
+        <td>Asc</td>
+        <td>Converts the first character of a string to its ASCII value.</td>
+    </tr>
+    <tr>
+        <td>Atn</td>
+        <td>Returns the arctangent of a number.</td>
+    </tr>
+    <tr>
+        <td>Choose</td>
+        <td>Returns a value from a list of items.</td>
+    </tr>
+    <tr>
+        <td>Chr</td>
+        <td>Converts an ANSI value to a string.</td>
+    </tr>
+    <tr>
+        <td>Cos</td>
+        <td>Returns a number’s cosine.</td>
+    </tr>
+    <tr>
+        <td>CurDir</td>
+        <td>Returns the current path.</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>Returns the current system date.</td>
+    </tr>
+    <tr>
+        <td>DateAdd</td>
+        <td>Returns a date to which a specified time interval has been added — for example, one month from a particular date.</td>
+    </tr>
+    <tr>
+        <td>DatePart</td>
+        <td>Returns an integer containing the specified part of a given date — for example, a date’s day of the year.</td>
+    </tr>
+    <tr>
+        <td>DateSerial</td>
+        <td>Converts a date to a serial number.</td>
+    </tr>
+    <tr>
+        <td>DateValue</td>
+        <td>Converts a string to a date.</td>
+    </tr>
+    <tr>
+        <td>Day</td>
+        <td>Returns the day of the month from a date value.</td>
+    </tr>
+    <tr>
+        <td>Dir</td>
+        <td>Returns the name of a file or directory that matches a pattern.</td>
+    </tr>
+    <tr>
+        <td>Erl</td>
+        <td>Returns the line number that caused an error.</td>
+    </tr>
+    <tr>
+        <td>Err</td>
+        <td>Returns the error number of an error condition.</td>
+    </tr>
+    <tr>
+        <td>Error</td>
+        <td>Returns the error message that corresponds to an error number.</td>
+    </tr>
+    <tr>
+        <td>Exp</td>
+        <td>Returns the base of the natural logarithm (e) raised to a power.</td>
+    </tr>
+    <tr>
+        <td>FileLen</td>
+        <td>Returns the number of bytes in a file.</td>
+    </tr>
+    <tr>
+        <td>Fix</td>
+        <td>Returns a number’s integer portion.</td>
+    </tr>
+    <tr>
+        <td>Format</td>
+        <td>Displays an expression in a particular format.</td>
+    </tr>
+    <tr>
+        <td>GetSetting</td>
+        <td>Returns a value from the Windows registry.</td>
+    </tr>
+    <tr>
+        <td>Hex</td>
+        <td>Converts from decimal to hexadecimal.</td>
+    </tr>
+    <tr>
+        <td>Hour</td>
+        <td>Returns the hours portion of a time.</td>
+    </tr>
+    <tr>
+        <td>InputBox</td>
+        <td>Displays a box to prompt a user for input.</td>
+    </tr>
+    <tr>
+        <td>InStr</td>
+        <td>Returns the position of a string within another string.</td>
+    </tr>
+    <tr>
+        <td>Int</td>
+        <td>Returns the integer portion of a number.</td>
+    </tr>
+    <tr>
+        <td>IPmt</td>
+        <td>Returns the interest payment for an annuity or loan.</td>
+    </tr>
+    <tr>
+        <td>IsArray</td>
+        <td>Returns True if a variable is an array.</td>
+    </tr>
+    <tr>
+        <td>IsDate</td>
+        <td>Returns True if an expression is a date.</td>
+    </tr>
+    <tr>
+        <td>IsEmpty</td>
+        <td>Returns True if a variable has not been initialized.</td>
+    </tr>
+    <tr>
+        <td>IsError</td>
+        <td>Returns True if an expression is an error value.</td>
+    </tr>
+    <tr>
+        <td>IsMissing</td>
+        <td>Returns True if an optional argument was not passed to a procedure.</td>
+    </tr>
+    <tr>
+        <td>IsNull</td>
+        <td>Returns True if an expression contains no valid data.</td>
+    </tr>
+    <tr>
+        <td>IsNumeric</td>
+        <td>Returns True if an expression can be evaluated as a number.</td>
+    </tr>
+    <tr>
+        <td>IsObject</td>
+        <td>Returns True if an expression references an OLE Automation object.</td>
+    </tr>
+    <tr>
+        <td>LBound</td>
+        <td>Returns the smallest subscript for a dimension of an array.</td>
+    </tr>
+    <tr>
+        <td>LCase</td>
+        <td>Returns a string converted to lowercase.</td>
+    </tr>
+    <tr>
+        <td>Left</td>
+        <td>Returns a specified number of characters from the left of a string.</td>
+    </tr>
+    <tr>
+        <td>Len</td>
+        <td>Returns the number of characters in a string.</td>
+    </tr>
+    <tr>
+        <td>Log</td>
+        <td>Returns the natural logarithm of a number to base.</td>
+    </tr>
+    <tr>
+        <td>LTrim</td>
+        <td>Returns a copy of a string, with any leading spaces removed.</td>
+    </tr>
+    <tr>
+        <td>Mid</td>
+        <td>Returns a specified number of characters from a string.</td>
+    </tr>
+    <tr>
+        <td>Minutes</td>
+        <td>Returns the minutes portion of a time value.</td>
+    </tr>
+    <tr>
+        <td>Month</td>
+        <td>Returns the month from a date value.</td>
+    </tr>
+    <tr>
+        <td>MsgBox</td>
+        <td>Displays a message box and (optionally) returns a value.</td>
+    </tr>
+    <tr>
+        <td>Now</td>
+        <td>Returns the current system date and time.</td>
+    </tr>
+    <tr>
+        <td>RGB</td>
+        <td>Returns a numeric RGB value representing a color.</td>
+    </tr>
+    <tr>
+        <td>Replace</td>
+        <td>Replaces a substring in a string with another substring.</td>
+    </tr>
+    <tr>
+        <td>Right</td>
+        <td>Returns a specified number of characters from the right of a string.</td>
+    </tr>
+    <tr>
+        <td>Rnd</td>
+        <td>Returns a random number between 0 and 1.</td>
+    </tr>
+    <tr>
+        <td>RTrim</td>
+        <td>Returns a copy of a string, with any trailing spaces removed.</td>
+    </tr>
+    <tr>
+        <td>Second</td>
+        <td>Returns the seconds portion of a time value.</td>
+    </tr>
+    <tr>
+        <td>Sgn</td>
+        <td>Returns an integer that indicates a number’s sign.</td>
+    </tr>
+    <tr>
+        <td>Shell</td>
+        <td>Runs an executable program.</td>
+    </tr>
+    <tr>
+        <td>Sin</td>
+        <td>Returns a number’s sine.</td>
+    </tr>
+    <tr>
+        <td>Space</td>
+        <td>Returns a string with a specified number of spaces.</td>
+    </tr>
+    <tr>
+        <td>Split</td>
+        <td>Splits a string into parts, using a delimiting character.</td>
+    </tr>
+    <tr>
+        <td>Sqr</td>
+        <td>Returns a number’s square root.</td>
+    </tr>
+    <tr>
+        <td>Str</td>
+        <td>Returns a string representation of a number.</td>
+    </tr>
+    <tr>
+        <td>StrComp</td>
+        <td>Returns a value indicating the result of a string comparison.</td>
+    </tr>
+    <tr>
+        <td>String</td>
+        <td>Returns a repeating character or string.</td>
+    </tr>
+    <tr>
+        <td>Tan</td>
+        <td>Returns a number’s tangent.</td>
+    </tr>
+    <tr>
+        <td>Time</td>
+        <td>Returns the current system time.</td>
+    </tr>
+    <tr>
+        <td>Timer</td>
+        <td>Returns the number of seconds since midnight.</td>
+    </tr>
+    <tr>
+        <td>TimeSerial</td>
+        <td>Returns the time for a specified hour, minute, and second.</td>
+    </tr>
+    <tr>
+        <td>TimeValue</td>
+        <td>Converts a string to a time serial number.</td>
+    </tr>
+    <tr>
+        <td>Trim</td>
+        <td>Returns a string without leading or trailing spaces.</td>
+    </tr>
+    <tr>
+        <td>TypeName</td>
+        <td>Returns a string that describes a variable’s data type.</td>
+    </tr>
+    <tr>
+        <td>UBound</td>
+        <td>Returns the largest available subscript for an array’s dimension.</td>
+    </tr>
+    <tr>
+        <td>UCase</td>
+        <td>Converts a string to uppercase.</td>
+    </tr>
+    <tr>
+        <td>Val</td>
+        <td>Returns the numbers contained in a string.</td>
+    </tr>
+    <tr>
+        <td>VarType</td>
+        <td>Returns a value indicating a variable’s subtype.</td>
+    </tr>
+    <tr>
+        <td>Weekday</td>
+        <td>Returns a number representing a day of the week.</td>
+    </tr>
+    <tr>
+        <td>Year</td>
+        <td>Returns the year from a date value.</td>
+    </tr>
+</table>
+
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-08T13:33:15-04:00">April 8, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/functions/" title="VBA Functions
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/controlling-flow-making-desicions/" title="Controlling Program Flow and Making Decisions
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

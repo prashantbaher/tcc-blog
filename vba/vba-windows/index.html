@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>VBE Windows - The CAD Coder</title>
+<meta name="description" content="In this post we look following windows in Visual Basic Editor:">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="VBE Windows">
+<meta property="og:url" content="http://localhost:4000/vba/vba-windows/">
+
+
+  <meta property="og:description" content="In this post we look following windows in Visual Basic Editor:">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-08T13:33:15-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/vba/vba-windows/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/" class="active">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="VBE Windows">
+    
+    <meta itemprop="description" content="In this post we look following windows in Visual Basic Editor:">
+    
+    
+    <meta itemprop="datePublished" content="2022-04-08T13:33:15-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">VBE Windows
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#project-window">Project Window</a><ul><li><a href="#adding-a-new-vba-module">Adding a new VBA module</a></li><li><a href="#removing-a-new-vba-module">Removing a new VBA module</a></li><li><a href="#exporting-and-importing-of-objects">Exporting and Importing of objects</a></li></ul></li><li><a href="#code-window">Code Window</a><ul><li><a href="#minimize-and-maximize-code-windows">Minimize and maximize Code windows</a></li><li><a href="#creating-a-module">Creating a Module</a></li><li><a href="#inserting-vba-code-into-a-module">Inserting VBA code into a Module</a></li><li><a href="#entering-code-directly-into-a-module">Entering code directly into a module</a></li><li><a href="#using-the-macro-recorder">Using the Macro recorder</a></li><li><a href="#copying-vba-code">Copying VBA code</a></li></ul></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>In this post we look following windows in <code class="language-plaintext highlighter-rouge">Visual Basic Editor</code>:</p>
+
+<ol>
+  <li>Project Window</li>
+  <li>Code Window</li>
+</ol>
+
+<h2 id="project-window">Project Window</h2>
+
+<p>When you are working in <code class="language-plaintext highlighter-rouge">VBE</code>, each file open is called a Project. 
+You can think of a <code class="language-plaintext highlighter-rouge">project</code> as a <code class="language-plaintext highlighter-rouge">collection</code> of objects.</p>
+
+<p>You can <em>expand</em> a project by clicking plus sign (+) at the left of the project’s name in Project window.</p>
+
+<p><em>Contract</em> a project by clicking minus sign (-) to the left of the project’s name in Project window. Or you can simply <em>double</em> click the items to expand or contract them.</p>
+
+<p>Every project expands to show at least one node. In our previous image we have <code class="language-plaintext highlighter-rouge">SOLIDWORKS Objects</code>. This node expands to show an item for Solidworks application.</p>
+
+<p>If the project has any <code class="language-plaintext highlighter-rouge">VBA</code> module, the project listing also shows a <code class="language-plaintext highlighter-rouge">Module node</code>.</p>
+
+<p>A project can also contain a node called <code class="language-plaintext highlighter-rouge">Forms</code>, which contains <code class="language-plaintext highlighter-rouge">UserForm objects</code> (which holds custom dialog boxes).</p>
+
+<p>The concept of <code class="language-plaintext highlighter-rouge">Object</code> may not be clear to you at this moment. However, things become much clearer in subsequent topics.</p>
+
+<p>Don’t be too concerned if you don’t understand what’s going on at this point.</p>
+
+<h3 id="adding-a-new-vba-module">Adding a new VBA module</h3>
+
+<p>Follow below steps to add a new VBA module to a project:</p>
+
+<ol>
+  <li>Select the projects name in the Project Window.</li>
+  <li>Select Insert -&gt; Module.</li>
+</ol>
+
+<p>or</p>
+
+<ol>
+  <li>Right click the project’s name.</li>
+  <li>Select Insert -&gt; Module from the shortcut menu.</li>
+</ol>
+
+<p>When you record a macro or create a blank macro, <code class="language-plaintext highlighter-rouge">Solidworks</code> automatically adds a module to hold the codes.</p>
+
+<h3 id="removing-a-new-vba-module">Removing a new VBA module</h3>
+
+<p>If you want to remove a module from Project window then follow below steps for that:</p>
+
+<ol>
+  <li>Select the module’s name in the Project Window.</li>
+  <li>Select Fie -&gt; Remove.</li>
+</ol>
+
+<p>Or</p>
+
+<ol>
+  <li>Right-click the module’s name.</li>
+  <li>Select remove from the shortcut menu.</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">VBE</code> always trying to keep you from doing something that you will regret, hence it will ask if you want to export the code in the module before deleting the code.</p>
+
+<p>And in most cases, you don’t want to export. If you do want to export the code, please see next section.</p>
+
+<h3 id="exporting-and-importing-of-objects">Exporting and Importing of objects</h3>
+
+<p>Every object in a <code class="language-plaintext highlighter-rouge">VBA project</code> can be saved to a separate file. Saving an individual object in a project is known as <code class="language-plaintext highlighter-rouge">Exporting</code>.</p>
+
+<p>Reason for exporting a file is that you can also <code class="language-plaintext highlighter-rouge">import</code> objects in a project.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Exporting</code> and <code class="language-plaintext highlighter-rouge">Importing</code> objects might be useful if you want to use a particular object (such as a VBA module or a UserForm) in a different project.</p>
+
+<p>Below steps show how to export an object:</p>
+
+<ol>
+  <li>Select an object in the Project window.</li>
+  <li>Select File -&gt; Export file or press Ctrl + E.</li>
+</ol>
+
+<p>You get a <code class="language-plaintext highlighter-rouge">dialog box</code> that asks for a filename. Note that the object remains in the original project only a copy of object is exported.</p>
+
+<p>Importing an object is also a similar process, which is shown below:</p>
+
+<ol>
+  <li>Select the project’s name in the Explorer window.</li>
+  <li>Select File -&gt; Import file or press <code class="language-plaintext highlighter-rouge">Ctrl + M</code>.</li>
+</ol>
+
+<p>You get a dialog box that asks for a file. Locate the file and click open.</p>
+
+<p>You should only import a file if was export by using <code class="language-plaintext highlighter-rouge">File -&gt; Export</code> file command.</p>
+
+<hr />
+
+<h2 id="code-window">Code Window</h2>
+
+<p>As you become proficient with <code class="language-plaintext highlighter-rouge">VBA</code>, you spend a lot of time with working in the <code class="language-plaintext highlighter-rouge">Code window</code>.</p>
+
+<p>Macros that you record are stored in a module, and you can type a <code class="language-plaintext highlighter-rouge">VBA code</code> <em>directly</em> into a VBA module.</p>
+
+<h3 id="minimize-and-maximize-code-windows">Minimize and maximize Code windows</h3>
+
+<p>If you have several projects open, the <code class="language-plaintext highlighter-rouge">VBE</code> may have lots of Code window at any given time. Below figure shows an example of this.</p>
+
+<p><img src="/assets/vba-images/VBE_Environment/2.Example_of_Many_code_window.PNG" alt="Visual-basic-editor" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Code windows</code> are much like your files opened in <code class="language-plaintext highlighter-rouge">Solidworks</code>. You can minimize them, maximize them, resize them, and hide them and so on.</p>
+
+<p>Most people find it much easier to <em>maximize</em> the <code class="language-plaintext highlighter-rouge">code window</code> that they are working on. Doing so lets you see more code and keeps you from getting distracted.</p>
+
+<p>To maximize the <code class="language-plaintext highlighter-rouge">Code window</code>, click the maximize button in its <em>title bar</em> or just <em>double-click</em> the title bar of Code window to maximize it.</p>
+
+<p>To restore a window to its original size, click the restore button. When the Code window is maximized, its title bar is not visible, so you will find the restore below the <code class="language-plaintext highlighter-rouge">VBE title bar</code>.</p>
+
+<p>Sometimes you want to have two or more <code class="language-plaintext highlighter-rouge">Code windows</code> visible.</p>
+
+<p>For example, you want to compare the code in the two modules or copy code from one module to another.</p>
+
+<p>You can arrange the windows manually, or use the <code class="language-plaintext highlighter-rouge">Window -&gt; Tile Horizontally</code> or <code class="language-plaintext highlighter-rouge">Window ⇨ Tile Vertically</code> command to arrange them automatically.</p>
+
+<p>You can quickly switch among code window by pressing <code class="language-plaintext highlighter-rouge">Ctrl + TAB</code>. If you repeat that key combination, you keep cycling through all the open code windows.</p>
+
+<p>Pressing <code class="language-plaintext highlighter-rouge">Ctrl + Shift + TAB</code> cycles through the windows in reverse order.</p>
+
+<p>Minimizing a window gets it out of the way. You can also click the window close button in a Code window’s title bar to close the window completely. (Closing a window just hides it; you won’t lose anything.)</p>
+
+<p>To open it again, just double-click the appropriate object in the Project window. Working with these Code windows sounds difficult that it really is.</p>
+
+<h3 id="creating-a-module">Creating a Module</h3>
+
+<p>In general, a <code class="language-plaintext highlighter-rouge">VBA module</code> can hold <strong>three</strong> types of code:</p>
+
+<ol>
+  <li>
+    <p><strong>Declaration</strong>: One or more information statement that you provide to <code class="language-plaintext highlighter-rouge">VBA</code>. For example, you can declare the data type for variables you plan to use, or set some other module-wide options.</p>
+  </li>
+  <li>
+    <p><strong>Sub procedures:</strong> A set of programming instructions that performs some actions.</p>
+  </li>
+  <li>
+    <p><strong>Function procedures:</strong> A set of programming instructions that returns a single value.</p>
+  </li>
+</ol>
+
+<p>A single <code class="language-plaintext highlighter-rouge">VBA module</code> can store any number of <code class="language-plaintext highlighter-rouge">Sub procedures</code>, <code class="language-plaintext highlighter-rouge">Function procedure</code> and <code class="language-plaintext highlighter-rouge">declaration</code>.</p>
+
+<p>Well, there is a limit – about 64,000 characters per module. It is very rare that if anybody reaches that limit but if someone reaches then the solution is simply insert a new module.</p>
+
+<p>How you organize a <code class="language-plaintext highlighter-rouge">VBA module</code> is totally up to you. Some people prefer to keep all their VBA code in a <em>single module</em> others (like me) likes to split up the code into <code class="language-plaintext highlighter-rouge">several different modules or even classes</code>. It is a personal choice like arranging furniture.</p>
+
+<h3 id="inserting-vba-code-into-a-module">Inserting VBA code into a Module</h3>
+
+<p>An empty <code class="language-plaintext highlighter-rouge">VBA module</code> is like a <strong>fake</strong> food you see in the advertisements. It looks good but it does not really do much.</p>
+
+<p>Before you can do anything meaningful, you must have some <code class="language-plaintext highlighter-rouge">VBA code</code> in the <code class="language-plaintext highlighter-rouge">VBA module</code>. You can insert VBA code into VBA module in three ways:</p>
+
+<ol>
+  <li>
+    <p>Insert code directly into code window.</p>
+  </li>
+  <li>
+    <p>Use the macro recorder to record your actions and convert them into VBA code.</p>
+  </li>
+  <li>
+    <p>Copy the code from one module and paste it into another module.</p>
+  </li>
+</ol>
+
+<h3 id="entering-code-directly-into-a-module">Entering code directly into a module</h3>
+
+<p>Sometimes the best route is the most <code class="language-plaintext highlighter-rouge">direct one</code>. Entering the <code class="language-plaintext highlighter-rouge">code directly</code> involves, typing the code via your keyboard.</p>
+
+<p>Entering and editing a text in a VBA module works as you might expect. You can select, copy, cut, paste and do other things as you do in other word processing software.</p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">TAB</code> key to indent some of the lines to make your code easier to read. This is not necessary, but it is a good habit to acquire.</p>
+
+<p>As you go through you will understand why indenting code lines is helpful.</p>
+
+<p>A single line of <code class="language-plaintext highlighter-rouge">VBA code</code> can be as long as you like.</p>
+
+<p>However, you may want to use the <code class="language-plaintext highlighter-rouge">line-continuation</code> character to break up the lengthy line of code.</p>
+
+<p>To continue a single line of code (also known as <code class="language-plaintext highlighter-rouge">statement</code>) from one line to next, end the first line with a space followed by an underscore (_). Then continue the <code class="language-plaintext highlighter-rouge">statement</code> in the next line.</p>
+
+<p>Below is given the example of a single statement split into two lines:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set</span> <span class="n">swPart</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span> <span class="n">_</span>
+    <span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This statement would perform the same way if it were entered in a single line (with no continuation characters).</p>
+
+<p>Notice that I indented the second line of statement. Indenting is optional but it clarifies the fact that these lines are not separate statements.</p>
+
+<blockquote>
+  <p>If you are wondering what above statement does, then the answer is above statement open a new part with <code class="language-plaintext highlighter-rouge">default part template</code> in <em>SolidWorks</em>. This code is <strong><em>not</em></strong> inserted using macro recorder, instead I write it manually to find a default part template and use that template to open a new part.</p>
+</blockquote>
+
+<p>The engineers who designed <code class="language-plaintext highlighter-rouge">VBE</code> knew that people like us would be making mistakes. Therefore, the VBE has multiple levels of Undo and Redo.</p>
+
+<p>If you deleted a statement that you should not have, use the <code class="language-plaintext highlighter-rouge">Undo button</code> on the toolbar (or press <code class="language-plaintext highlighter-rouge">Ctrl+Z</code>) until the statement shows up.</p>
+
+<p>After undoing, you can use the <code class="language-plaintext highlighter-rouge">Redo button</code> to perform the changes you have undone. This redo/undo stuff is much like you use in other software. Until you use it, you cannot understand.</p>
+
+<p>Ready to enter some <code class="language-plaintext highlighter-rouge">live code</code>, try the following steps:</p>
+
+<ol>
+  <li>Go to your VBE.</li>
+  <li>Double-click your module if it is not opened.</li>
+  <li>Go to COde Window.</li>
+  <li>Type the following code into <code class="language-plaintext highlighter-rouge">Code window</code>:</li>
+</ol>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GuessName</span><span class="p">()</span>
+    <span class="n">Msg</span> <span class="o">=</span> <span class="s">"Is this a CAD Software?"</span>
+    <span class="n">Ans</span> <span class="o">=</span> <span class="n">MsgBox</span><span class="p">(</span><span class="n">Msg</span><span class="p">,</span> <span class="n">vbYesNo</span><span class="p">)</span>
+    <span class="k">If</span> <span class="n">Ans</span> <span class="o">=</span> <span class="n">vbNo</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="s">"Oh, that’s fine."</span>
+    <span class="k">If</span> <span class="n">Ans</span> <span class="o">=</span> <span class="n">vbYes</span> <span class="k">Then</span> <span class="n">MsgBox</span> <span class="s">"You must be joking!"</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+<ol>
+  <li>Make sure the cursor is located anywhere within the text you typed, and then press <code class="language-plaintext highlighter-rouge">F5</code> to execute the procedure.</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">F5</code> is a shortcut for the <code class="language-plaintext highlighter-rouge">Run -&gt; Run Sub/UserForm command</code>.</p>
+
+<p>If you entered the code correctly, <code class="language-plaintext highlighter-rouge">VBE</code> execute the procedure, and you can respond to the simple dialog box as shown in below figure.</p>
+
+<p><img src="/assets/vba-images/VBE_Environment/3.Guess_Name_Dialog_box.PNG" alt="Visual-basic-editor" /></p>
+
+<p>When you enter the code listed in <code class="language-plaintext highlighter-rouge">step 4</code>, you might notice that the <code class="language-plaintext highlighter-rouge">VBE</code> makes some adjustments to the text you enter.</p>
+
+<p>For example, after you type the <code class="language-plaintext highlighter-rouge">sub statement</code>, the <code class="language-plaintext highlighter-rouge">VBE</code> automatically insert the End Sub statement, and if omit the space before or after an equal sign, the <code class="language-plaintext highlighter-rouge">VBE</code> insert the space for you.</p>
+
+<p>Also, the <code class="language-plaintext highlighter-rouge">VBE</code> changes the color and capitalization of some text. This is all perfectly normal. It is just VBE’s way of keeping things neat and readable.</p>
+
+<p>If you followed the previous steps, you just wrote a <code class="language-plaintext highlighter-rouge">VBA Sub procedure</code>, also known as a <code class="language-plaintext highlighter-rouge">macro</code>.</p>
+
+<p>When you press <code class="language-plaintext highlighter-rouge">F5</code>, VBE executes the code and follows the instructions.</p>
+
+<p>In other words, VBE evaluates each statement and does what you told it to do.</p>
+
+<p>This simple macro uses the following concepts:</p>
+
+<ul>
+  <li>Defining a Sub procedure (the first line).</li>
+  <li>Assigning values to variables (Msg and Ans).</li>
+  <li>Using a built-in VBA function (MsgBox).</li>
+  <li>Using built-in VBA constants (vbYesNo, vbNo, and vbYes).</li>
+  <li>Using an If-Then construct (twice).</li>
+  <li>Ending a Sub procedure (the last line)</li>
+</ul>
+
+<h3 id="using-the-macro-recorder">Using the Macro recorder</h3>
+
+<p>Another way you can get code into a <code class="language-plaintext highlighter-rouge">VBA module</code> is by recording your actions, using the in-built <code class="language-plaintext highlighter-rouge">macro recorder</code>.</p>
+
+<p>By the way, there is absolutely <strong>no way</strong> you can record the <code class="language-plaintext highlighter-rouge">GuessName</code> procedure shown in the preceding section.</p>
+
+<p>You can record only things that you can do directly in <em>Solidworks</em>.</p>
+
+<p>Displaying a message box is not in application’s normal repertoire. The macro recorder is useful, but in many cases, you’ll probably need to enter at least some code manually.</p>
+
+<p>We have already seen how macros are recorded. So there is no need for us to go twice for same thing. If you want to see how it is done go to Open <a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks topic</a></p>
+
+<h3 id="copying-vba-code">Copying VBA code</h3>
+
+<p>The final method for getting <code class="language-plaintext highlighter-rouge">code</code> into a <code class="language-plaintext highlighter-rouge">VBA module</code> is to copy it from another module or from some other place (such as a Web site i.e. Solidworks forum).</p>
+
+<p>For example, a <code class="language-plaintext highlighter-rouge">Sub or Function procedure</code> that you write for one project might also be useful in another project.</p>
+
+<p>Instead of <em>wasting time</em> in <code class="language-plaintext highlighter-rouge">re-entering</code> the code, you can activate the module and use the normal Clipboard <code class="language-plaintext highlighter-rouge">copy-and-paste</code> procedures.</p>
+
+<p>After pasting it into a <code class="language-plaintext highlighter-rouge">VBA module</code>, you can modify the code if necessary.</p>
+
+<p>You’ll also find lots of VBA code examples on the Web.</p>
+
+<p>If you’d like to try them, select the code in your browser and press <code class="language-plaintext highlighter-rouge">Ctrl+C</code> to <em>copy</em> it. Then, activate a module and press <code class="language-plaintext highlighter-rouge">Ctrl+V</code> to <em>paste</em> it.</p>
+
+<p>Next post will be about <code class="language-plaintext highlighter-rouge">Sub and Function Procedures</code>.</p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-08T13:33:15-04:00">April 8, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/vba-vbe-editor/" title="Visual Basic Editor (VBE)
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/sub-and-function-procedure/" title="Sub and Function Procedures
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '4b2b9cb8c831ee0fb';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
