@@ -1,0 +1,238 @@
+I"KI<p>The term <em>looping</em> refers to repeating a block of VBA statements numerous times.</p>
+
+<p>VBA provides various looping command for repeating code to make correct decision making.</p>
+
+<p>We will go through them in following topics:</p>
+
+<h2 id="for--next-loop">For -Next Loop</h2>
+
+<p>The simplest type of loop is a <code class="language-plaintext highlighter-rouge">For-Next</code> loop. Here’s the syntax for this structure:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">For</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">start</span> <span class="k">To</span> <span class="n">end</span> <span class="err">[</span><span class="k">Step</span> <span class="n">stepval</span><span class="err">]</span>
+<span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="err">[</span><span class="k">Exit</span> <span class="k">For</span><span class="err">]</span>
+<span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="k">Next</span> <span class="err">[</span><span class="n">counter</span><span class="err">]</span>
+</code></pre></div></div>
+
+<p>The <em>looping</em> is controlled by a counter variable, which starts at one value and stops at another value.</p>
+
+<p>The statements between the <code class="language-plaintext highlighter-rouge">For</code> statement and the <code class="language-plaintext highlighter-rouge">Next</code> statement are the statements that get repeated in the loop.</p>
+
+<p>To see how this works, keep reading.</p>
+
+<h3 id="for-next-example">For-Next example</h3>
+
+<p>The following example shows a <code class="language-plaintext highlighter-rouge">For-Next</code> loop that doesn’t use the optional Step value or the optional <code class="language-plaintext highlighter-rouge">Exit</code> For statement.</p>
+
+<p>This routine loops 10 times and uses the VBA <code class="language-plaintext highlighter-rouge">MsgBox</code> function to show a number from 1 to 10:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowNumbers1</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">10</span>
+    <span class="n">MsgBox</span> <span class="n">i</span>
+  <span class="k">Next</span> <span class="n">i</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">i</code> (the loop counter variable) starts with a value of 1 and increases by 1 each time through the loop.</p>
+
+<p>Because I didn’t specify a Step value the <code class="language-plaintext highlighter-rouge">MsgBox</code> method uses the value of i as an argument.</p>
+
+<p>The first time through the <em>loop</em>, <code class="language-plaintext highlighter-rouge">i</code> is 1 and the procedure shows a number.</p>
+
+<p>The second time through (i = 2), the procedure show a number, and so on.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowNumbers2</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="mi">2</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">10</span>
+    <span class="n">MsgBox</span> <span class="n">i</span>
+  <span class="k">Next</span> <span class="n">i</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Count starts out as 1 and then takes on a value of 3, 5, 7, and 9. The final Count value is 9.</p>
+
+<p>The Step value determines how the counter is <em>incremented</em>. Notice that the upper loop value (9) is not used because the highest value of Count after 9 would be 11, and 11 is larger than 10.</p>
+
+<h3 id="for-next-example-with-an-exit-for-statement">For-Next example with an Exit For statement</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">For-Next</code> loop can also include one or more <code class="language-plaintext highlighter-rouge">Exit For</code> statements within the loop.</p>
+
+<p>When VBA encounters this statement, the loop terminates immediately.</p>
+
+<p>Here’s the same procedure as in the preceding section, rewritten to insert random numbers.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowNumbers3</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span> <span class="k">Step</span> <span class="mi">2</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">10</span>
+    <span class="k">If</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="err">“</span><span class="n">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">mid</span> <span class="n">value</span><span class="err">”</span>
+      <span class="k">Exit</span> <span class="k">For</span>
+    <span class="k">End</span> <span class="k">If</span>
+    <span class="n">MsgBox</span> <span class="n">i</span>
+  <span class="k">Next</span> <span class="n">i</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>This routine performs the as earlier but when the variable i reached to 5, it shows a message, stating that this is a mid value and exit from loop.</p>
+
+<h2 id="do-while-loop">Do-While Loop</h2>
+
+<p>VBA supports another type of looping structure known as a <code class="language-plaintext highlighter-rouge">Do-While</code> loop.</p>
+
+<p>Unlike a For-Next loop, a <code class="language-plaintext highlighter-rouge">Do-While</code> loop continues until a specified condition is met.</p>
+
+<p>Here’s the <code class="language-plaintext highlighter-rouge">Do-While</code> loop syntax:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Do-While Structure</span>
+<span class="k">Do</span> <span class="err">[</span><span class="k">While</span> <span class="n">condition</span><span class="err">]</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+  <span class="err">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="err">]</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="k">Loop</span>
+</code></pre></div></div>
+
+<p>The following example uses a <code class="language-plaintext highlighter-rouge">Do-While</code> loop. This routine uses 1 as a starting point and runs through next numbers.</p>
+
+<p>The loop continues until the routine encounter the condition of <code class="language-plaintext highlighter-rouge">i = 8</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Do-While Example</span>
+<span class="k">Sub</span> <span class="nf">ShowNumbers4</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Do</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="mi">8</span>
+    <span class="n">MsgBox</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">Loop</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Some people prefer to code a <code class="language-plaintext highlighter-rouge">Do-While</code> loop as a <code class="language-plaintext highlighter-rouge">Do-Loop While</code> loop.</p>
+
+<p>This example performs exactly as the previous procedure but uses different loop syntax:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Do-Loop While Example</span>
+<span class="k">Sub</span> <span class="nf">ShowNumbers5</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Do</span> 
+    <span class="n">MsgBox</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">Loop</span> <span class="k">While</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="mi">8</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Here’s the key difference between the <code class="language-plaintext highlighter-rouge">Do-While</code> and <code class="language-plaintext highlighter-rouge">Do-Loop While</code> loops.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Do-While</code> loop always performs its conditional test first. If the test is not true, the instructions inside the loop are never executed.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Do-Loop While</code> loop, on the other hand, always performs its conditional test after the instructions inside the loop are executed.</p>
+
+<p>Thus, the loop instructions are always executed at least once, regardless of the test.</p>
+
+<p>This difference can sometimes have a big effect on how your program functions.</p>
+
+<h2 id="do-until-loop">Do-Until Loop</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">Do-Until</code> loop structure is similar to the <code class="language-plaintext highlighter-rouge">Do-While</code> structure.</p>
+
+<p>The two structures differ in their handling of the tested condition.</p>
+
+<p>A program continues to execute a <code class="language-plaintext highlighter-rouge">Do-While</code> loop while the condition remains true.</p>
+
+<p>In a <code class="language-plaintext highlighter-rouge">Do-Until</code> loop, the program executes the loop until the condition is true. Here’s the <code class="language-plaintext highlighter-rouge">Do-Until</code> syntax:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Do-Until Structure</span>
+<span class="k">Do</span> <span class="err">[</span><span class="n">Until</span> <span class="n">condition</span><span class="err">]</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+  <span class="err">[</span><span class="k">Exit</span> <span class="k">Do</span><span class="err">]</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="k">Loop</span>
+</code></pre></div></div>
+
+<p>The following example is the same one presented for the <code class="language-plaintext highlighter-rouge">Do-While</code> loop but recoded to use a <code class="language-plaintext highlighter-rouge">Do-Until</code> loop:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowNumbers6</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Do</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="mi">8</span>
+    <span class="n">MsgBox</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">Loop</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Just like with the <code class="language-plaintext highlighter-rouge">Do-While</code> loop, you may encounter a different form of the <code class="language-plaintext highlighter-rouge">Do-Until</code> loop — a <code class="language-plaintext highlighter-rouge">Do-Loop Until</code> loop.</p>
+
+<p>The following example, which has the same effect as the preceding procedure, demonstrates an alternate syntax for this type of loop:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowNumbers7</span><span class="p">()</span>
+<span class="c1">' Do-Loop Until Example</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Do</span> 
+    <span class="n">MsgBox</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">Loop</span> <span class="n">Until</span> <span class="n">i</span> <span class="o">&lt;&gt;</span> <span class="mi">8</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>There is a subtle difference in how the <code class="language-plaintext highlighter-rouge">Do-Until</code> loop and the <code class="language-plaintext highlighter-rouge">Do-Loop Until</code> loop operate.</p>
+
+<p>In the former, the test is performed at the beginning of the loop, before anything in the body of the loop is executed.</p>
+
+<p>This means that it is possible that the code in the loop body will not be executed if the test condition is met.</p>
+
+<p>In the later version, the condition is tested at the end of the loop.</p>
+
+<p>Therefore, at a minimum, the <code class="language-plaintext highlighter-rouge">Do-Loop</code> Until loop always results in the body of the loop being executed once.</p>
+
+<p>Another way to think about it is like this: The <code class="language-plaintext highlighter-rouge">Do-While</code> loop keeps looping as long as the condition is true.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Do-Until</code> loop keeps looping as long as the condition is False.</p>
+
+<h2 id="looping-through-a-collection">Looping through a Collection</h2>
+
+<p>VBA supports yet another type of looping — looping through each object in a <strong>collection</strong> of objects.</p>
+
+<p>Please note that I have not covered Object topic so far. For your understanding I give a brief explanation about <strong>collection</strong>.</p>
+
+<p>A <strong>collection</strong> is a group of same type of objects.</p>
+
+<p>For example, a drawing file in any CAD application is a collection of Sheets, and each sheet is a collection of drawing views and so on.</p>
+
+<p>When you need to loop through each object in a collection, use the For Each-Next structure. The syntax is</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' For Each-Next Structure</span>
+<span class="k">For</span> <span class="k">Each</span> <span class="n">element</span> <span class="ow">In</span> <span class="n">collection</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+  <span class="err">[</span><span class="k">Exit</span> <span class="k">For</span><span class="err">]</span>
+  <span class="err">[</span><span class="n">statements</span><span class="err">]</span>
+<span class="k">Next</span> <span class="err">[</span><span class="n">element</span><span class="err">]</span>
+</code></pre></div></div>
+
+<p>The following example loops through each drawing sheet in the active drawing and shows name of each active drawing sheet:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' For Each-Next Example</span>
+<span class="k">Option</span> <span class="n">Explicit</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+<span class="k">Dim</span> <span class="nv">swPart</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+<span class="k">Dim</span> <span class="nv">swDwg</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">SheetNamesList</span> <span class="ow">As</span> <span class="kt">Variant</span>
+<span class="k">Sub</span> <span class="nf">ShowSheetName</span><span class="p">()</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  <span class="k">Set</span> <span class="n">swPart</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  <span class="k">Set</span> <span class="n">swDwg</span> <span class="o">=</span> <span class="n">swPart</span>
+  <span class="n">SheetNamesList</span> <span class="o">=</span> <span class="n">swDwg</span><span class="p">.</span><span class="n">GetSheetNames</span>
+  <span class="k">Dim</span> <span class="nv">SheetName</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  <span class="k">For</span> <span class="k">Each</span> <span class="n">SheetName</span> <span class="ow">In</span> <span class="n">SheetNamesList</span>
+    <span class="n">MsgBox</span> <span class="n">SheetName</span>
+  <span class="k">Next</span> <span class="n">SheetName</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>In this example, first we get the list of all sheet names in opened drawing, then we loop through each sheet name in collection and show sheet name in a message box.</p>
+
+<p>For this example please notes that we did not need to load all sheet, this code can work on non-activate and non-loaded sheets also.</p>
+
+<p>Next post will be about <strong><em>Bug Finding</em></strong>.</p>
+
+:ET

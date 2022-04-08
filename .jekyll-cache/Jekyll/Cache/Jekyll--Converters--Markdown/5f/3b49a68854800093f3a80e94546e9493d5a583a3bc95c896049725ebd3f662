@@ -1,0 +1,159 @@
+I"Q$<p>In this section, I discuss the details of using the VBA debugging tools.</p>
+
+<p>These tools are much more powerful than the techniques I discuss in the previous section.</p>
+
+<p>But along with power comes responsibility. Using the debugging tools takes a bit of setup work.</p>
+
+<h2 id="setting-breakpoints-in-your-code">Setting breakpoints in your code</h2>
+
+<p>In earlier sections, I discuss using <code class="language-plaintext highlighter-rouge">MsgBox</code> functions in your code to monitor the values of certain variables.</p>
+
+<p>Displaying a message box essentially halts your code in mid-execution, and clicking the <strong>OK</strong> button resumes execution.</p>
+
+<p>Wouldn’t it be nice if you could halt a routine’s execution, take a look at the value of any of your variables, and then continue execution?</p>
+
+<p>Well, that’s exactly what you can do by setting a <em>breakpoint</em>.</p>
+
+<p>You can set a <em>breakpoint</em> in your VBA code in several ways:</p>
+
+<ul>
+  <li>Move the cursor to the statement at which you want execution to stop; then press <code class="language-plaintext highlighter-rouge">F9</code>.</li>
+  <li>Click in the <em>gray</em> margin to the left of the statement at which you want execution to stop. <em>This is I used mainly.</em></li>
+  <li>Position the insertion point in the statement at which you want execution to stop. Then use the <strong>Debug -&gt; Toggle Breakpoint</strong> command.</li>
+  <li><em>Right-click</em> a statement and choose <strong>Toggle -&gt; Breakpoint</strong> from the shortcut menu.</li>
+</ul>
+
+<p>The results of setting a breakpoint are shown in below figure.</p>
+
+<p><em>VBE</em> highlights the line to remind you that you set a breakpoint there; it also inserts a large dot in the gray margin.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/1.BreakpointInProcedure.PNG" alt="Breakpoint-in-procedure" /></p>
+
+<p>When you execute the procedure, VBE goes into Break mode before the line with the breakpoint is executed.</p>
+
+<p>In <em>Break mode</em>, the word <strong><em>break</em></strong> is displayed in the VBE title bar.</p>
+
+<p>To get out of Break mode and continue execution, press <code class="language-plaintext highlighter-rouge">F5</code> or click the <strong>Run Sub/UserForm</strong> button in the VBE toolbar.</p>
+
+<p>To quickly remove a breakpoint, click the large dot in the gray margin or move the cursor to the highlighted line and press <code class="language-plaintext highlighter-rouge">F9</code>.</p>
+
+<p>To remove all breakpoints in the module, press <code class="language-plaintext highlighter-rouge">Ctrl+Shift+F9</code>.</p>
+
+<p>What is Break mode? You can think of it as a state of suspended animation.</p>
+
+<p>Your VBA code stops running and the current statement is highlighted in bright yellow. In Break mode, you can</p>
+
+<ul>
+  <li>Type VBA statements in the <em>Immediate window</em>.</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">F8</code> to step through your code one line at a time to check various things while the program is paused.</li>
+  <li>Move the mouse pointer over a variable to display its value in a small pop-up window.</li>
+  <li>Skip the next statement(s) and continue execution there (or even go back a couple of statements).</li>
+  <li>Edit a statement and then continue.</li>
+</ul>
+
+<p>Below figure shows some debugging action.</p>
+
+<p>A breakpoint is set (notice the big dot), and I’m using the <code class="language-plaintext highlighter-rouge">F8</code> key to step through the code line by line (notice the arrow that points to the current statement).</p>
+
+<p>I used the <em>Immediate window</em> to print <code class="language-plaintext highlighter-rouge">Hello world</code>.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/2.BreakMode.PNG" alt="Break-mode" /></p>
+
+<h3 id="using-the-immediate-window">Using the Immediate window</h3>
+
+<p>The <em>Immediate window</em> may not be visible in the VBE.</p>
+
+<p>You can display the VBE’s <em>Immediate window</em> at any time by pressing <code class="language-plaintext highlighter-rouge">Ctrl+G</code>.</p>
+
+<p>In Break mode, the Immediate window is particularly useful for finding the current value of any variable in your program.</p>
+
+<p>For example, if you want to know the current value of a variable, enter the following in the Immediate window and press <code class="language-plaintext highlighter-rouge">Enter</code>.</p>
+
+<p>The Immediate window lets you do other things besides check variable values.</p>
+
+<p>For example, you can change the value of a variable, try for a new condition.</p>
+
+<p>Just make sure that the command you enter is a valid VBA statement.</p>
+
+<h3 id="stepping-through-your-code">Stepping through your code</h3>
+
+<p>While in <em>Break mode</em>, you can also step through your code line by line.</p>
+
+<p>One statement is executed each time you press <code class="language-plaintext highlighter-rouge">F8</code>.</p>
+
+<p>Throughout this line-by-line execution of your code, you can activate the Immediate window at any time to check the status of your variables.</p>
+
+<p>You can use your mouse to change which statement VBA will execute next.</p>
+
+<p>If you put your mouse pointer in the gray margin to the left of the currently highlighted statement (which will usually be yellow), your pointer changes to a right-pointing arrow.</p>
+
+<p>Simply drag your mouse to the statement you want done next and watch that statement turn yellow.</p>
+
+<h2 id="using-the-watch-window">Using the Watch window</h2>
+
+<p>In some cases, you may want to know whether a certain variable or expression takes on a particular value.</p>
+
+<p>For example, suppose that a procedure loops through <strong>1,000 times</strong>.</p>
+
+<p>You notice that a problem occurs during the <strong>800th</strong> iteration of the loop.</p>
+
+<p>Well, you could insert a breakpoint in the loop, but that would mean responding to <strong>799</strong> prompts before the code finally gets to the iteration you want to see (and that gets boring real fast).</p>
+
+<p>A more efficient solution involves setting a <strong>watch</strong> expression.</p>
+
+<p>For example, you can create a watch expression that puts the procedure into Break mode whenever a certain variable takes on a specific value — for example, <code class="language-plaintext highlighter-rouge">AnyNumber=800</code>.</p>
+
+<p>To create a watch expression, choose <strong>Debug -&gt; Add Watch</strong> to display the Add Watch dialog box. See below figure.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/3.WatchWindowDialogBox.PNG" alt="Break-mode" /></p>
+
+<p>The Add Watch dialog has three parts:</p>
+
+<ul>
+  <li>
+    <p><em>Expression</em>: Enter a valid VBA expression or a variable here. For example, <code class="language-plaintext highlighter-rouge">AnyNumber=900</code> or just <code class="language-plaintext highlighter-rouge">AnyNumber</code>.</p>
+  </li>
+  <li>
+    <p><em>Context</em>: Select the procedure and the module you want to watch. Note that you can select All Procedures and All Modules.</p>
+  </li>
+  <li>
+    <p><em>Watch Type</em>: Select the type of watch by clicking an option button. Your choice here depends on the expression you enter. The first choice, Watch Expression, does not cause a break; it simply displays the expression’s value when a break occurs.</p>
+  </li>
+</ul>
+
+<p>Execute your procedure after setting up your watch expression(s).</p>
+
+<p>Things run normally until your watch expression is satisfied (based on the Watch Type you specified).</p>
+
+<p>When that happens, VBE enters Break mode (you did set the Watch Type to “Break When Value Is True,” didn’t you?).</p>
+
+<p>From there, you can step through the code or use the Immediate window to debug your code.</p>
+
+<p>When you create a watch, VBE displays the Watches window shown in below figure.</p>
+
+<p>This window displays the value of all watches that you’ve defined.</p>
+
+<p>In this figure, when the value hit <code class="language-plaintext highlighter-rouge">800</code>, which caused VBE to enter Break mode.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/4.WatchWindowDialogBoxWithAllWatches.PNG" alt="Watch-window-dialog-box-with-all-watches" /></p>
+
+<p>The best way to understand how this Watch business works is to use it and try various options.</p>
+
+<p>Before long, you’ll probably wonder how you ever got along without it.</p>
+
+<h2 id="using-the-locals-window">Using the Locals window</h2>
+
+<p>Another useful debugging aid is the Locals window.</p>
+
+<p>You can show this window by choosing <strong>View -&gt; Locals</strong> Window from the VBE’s menu.</p>
+
+<p>When you are in Break mode, this window will show you a list of all variables that are local to the current procedure (see below figure).</p>
+
+<p>The nice thing about this window is that you don’t have to add a load of watches manually if you want to look at the content of many variables.</p>
+
+<p>The VBE has done all the hard workfor you.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/5.LocalWindow.PNG" alt="Local-window" /></p>
+
+<p>Next post will be about <strong><em>VBA Bug Reduction Tips</em></strong>.</p>
+:ET

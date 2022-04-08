@@ -1,0 +1,107 @@
+I"> <p>The <code class="language-plaintext highlighter-rouge">VBA</code> code that you write in the <code class="language-plaintext highlighter-rouge">Visual Basic Editor</code> is known as a <code class="language-plaintext highlighter-rouge">procedure</code>.</p>
+
+<p>The two most common types of procedures are <code class="language-plaintext highlighter-rouge">Sub</code> and <code class="language-plaintext highlighter-rouge">Function</code>.</p>
+
+<ul>
+  <li>A <code class="language-plaintext highlighter-rouge">Sub</code> procedure is a group of <code class="language-plaintext highlighter-rouge">VBA statements</code> that performs an <em>action</em> (or <em>actions</em>).</li>
+  <li>A <code class="language-plaintext highlighter-rouge">Function</code> procedure is a group of <code class="language-plaintext highlighter-rouge">VBA statements</code> that performs a <em>calculation</em> and returns a <em>single value</em>.</li>
+</ul>
+
+<p>Most of the macros you write in <code class="language-plaintext highlighter-rouge">VBA</code> are <code class="language-plaintext highlighter-rouge">Sub</code> procedures.</p>
+
+<p>You can think of a <code class="language-plaintext highlighter-rouge">Sub</code> procedure as being like a command: “Execute the <code class="language-plaintext highlighter-rouge">Sub</code> procedure and something happens”.</p>
+
+<p>Exactly what happens depends on the <code class="language-plaintext highlighter-rouge">Sub</code> procedure’s <code class="language-plaintext highlighter-rouge">VBA code</code>.</p>
+
+<p>A <code class="language-plaintext highlighter-rouge">Function</code> is also a procedure, but it’s quite different from a <code class="language-plaintext highlighter-rouge">Sub</code>.</p>
+
+<p>For understanding a <code class="language-plaintext highlighter-rouge">Function</code> let’s take an example from <code class="language-plaintext highlighter-rouge">MS Excel</code>.</p>
+
+<p><strong>Excel</strong> includes many worksheet functions that you use every day. Examples include <code class="language-plaintext highlighter-rouge">SUM</code>. This <code class="language-plaintext highlighter-rouge">SUM function</code> takes input in form of values and then it does calculation behind the scene, and then returns a single value.</p>
+
+<p>The same goes for <code class="language-plaintext highlighter-rouge">Function procedure</code> that you develop with <code class="language-plaintext highlighter-rouge">VBA</code>.</p>
+
+<h2 id="sub-procedures">Sub procedures</h2>
+
+<p>Every <code class="language-plaintext highlighter-rouge">Sub</code> procedure starts with the keyword <strong>Sub</strong> and ends with an <strong>End Sub</strong> statement. Here’s an example:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">Message</span><span class="p">()</span>
+   <span class="n">MsgBox</span> <span class="s">"That’s all folks!"</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>This example shows a procedure named <code class="language-plaintext highlighter-rouge">Message</code>. A set of <em>parentheses</em> follows the procedure’s name.</p>
+
+<p>In most cases, these <em>parentheses</em> are empty. However, you may pass arguments to <code class="language-plaintext highlighter-rouge">Sub procedures</code> from other procedures.</p>
+
+<p>If your <code class="language-plaintext highlighter-rouge">Sub</code> uses arguments, list them between the parentheses.</p>
+
+<blockquote>
+  <p>Please remember when you record a macro with the macro recorder; the result is always a Sub procedure.</p>
+</blockquote>
+
+<h2 id="function-procedures">Function procedures</h2>
+
+<p>Every <code class="language-plaintext highlighter-rouge">Function</code> procedure starts with the keyword <strong>Function</strong> and ends with an <strong>End Function</strong> statement.</p>
+
+<p>Here’s an example:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Function</span> <span class="nf">CubeRoot</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+   <span class="n">CubeRoot</span> <span class="o">=</span> <span class="n">number</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+<p>This function, named <code class="language-plaintext highlighter-rouge">CubeRoot</code>, takes one argument (named <code class="language-plaintext highlighter-rouge">number</code>), which is enclosed in <em>parentheses</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Functions</code> can have any number of arguments or none at all.</p>
+
+<p>When you execute the function, it returns a <em>single value</em> — the cube root of the argument passed to the function.</p>
+
+<p><code class="language-plaintext highlighter-rouge">VBA</code> allows you to specify what type of information (also known as <code class="language-plaintext highlighter-rouge">data type</code>) is returned by a <code class="language-plaintext highlighter-rouge">Function procedure</code>.</p>
+
+<p>You can execute a <code class="language-plaintext highlighter-rouge">Function procedure</code> from another procedure (a <code class="language-plaintext highlighter-rouge">Sub</code> or another <code class="language-plaintext highlighter-rouge">Function procedure</code>).</p>
+
+<blockquote>
+  <p>Please note that no matter how hard you try, you can’t use the macro recorder to record a Function procedure. You must manually enter every Function procedure that you create.</p>
+</blockquote>
+
+<h2 id="naming-subs-and-functions">Naming Subs and Functions</h2>
+
+<p>Like humans &amp; pets, every <code class="language-plaintext highlighter-rouge">Sub</code> and <code class="language-plaintext highlighter-rouge">Function</code> procedure must have a name.</p>
+
+<p>Although it is perfectly acceptable to name anything what you want, it’s usually not a good idea to use such a <em>freewheeling</em> attitude when <code class="language-plaintext highlighter-rouge">naming procedures</code>.</p>
+
+<p>When naming <code class="language-plaintext highlighter-rouge">procedures</code>, you must follow a <strong>few rules</strong>:</p>
+
+<ul>
+  <li>
+    <p>You can use <em>letters, numbers, and some punctuation characters</em>, but the <strong>first</strong> character must be a <strong>letter</strong>.</p>
+  </li>
+  <li>
+    <p>You <strong>can’t</strong> use any spaces or periods in the name.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VBA</code> does not distinguish between <em>uppercase</em> and <em>lowercase</em> letters.</p>
+  </li>
+  <li>
+    <p>You <strong>can’t</strong> embed any of the following characters in a procedure name: <strong>#, $, %, &amp;, @, ^, *, or !</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Procedure</code> names can be no longer than <em>255 characters</em>. (Of course, you would never make a procedure name this long.)</p>
+  </li>
+</ul>
+
+<p>Ideally, a procedure’s name describes the routine’s purpose.</p>
+
+<p>Some programmers prefer using <code class="language-plaintext highlighter-rouge">sentence-like</code> names that provide a complete description of the procedure.</p>
+
+<p>Some examples include <code class="language-plaintext highlighter-rouge">WriteReportToTextFile</code> and <code class="language-plaintext highlighter-rouge">Get_Print_Options_and_Print_Report</code>.</p>
+
+<p>The use of such lengthy names has <em>pros</em> and <em>cons</em>.</p>
+
+<p>On the one hand, such names are <em>descriptive</em> and usually <em>unambiguous</em>. 
+On the other hand, they take longer to type.</p>
+
+<p>Everyone develops a naming style, but the main objectives are to make the names descriptive and to avoid meaningless names such as <strong>Update, Fix, and Macro1</strong>.</p>
+
+<p>Next post will be about <code class="language-plaintext highlighter-rouge">Executing Sub &amp; Function procedures</code>.</p>
+:ET

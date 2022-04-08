@@ -1,0 +1,250 @@
+I"sQ<p>In this post, I tell you about <em>how to create Circle through Solidworks VBA Macros</em> in a sketch.</p>
+
+<p>The process is almost identical with previous <strong><a href="/solidworks-macros/sketch-create-line">Solidworks Sketch Macros - Create Line</a></strong> post.</p>
+
+<p>In this post, I tell you about <code class="language-plaintext highlighter-rouge">CreateCircle</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">SketchManager</code> object.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+
+<p>So <strong><em>use this method</em></strong> if you want to create a new <strong>Circle</strong>.</p>
+
+<hr />
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below video on <strong>how to create Circle</strong> from Solidworks VBA Macros.</p>
+
+<iframe src="https://www.youtube.com/embed/Y5fh4DS_caM" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explaination</strong> in the video.</p>
+
+<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+
+<hr />
+
+<h2 id="code-sample">Code Sample</h2>
+
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>a Circle</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Creating variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+<span class="c1">' Creating variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="c1">' Creating variable for Solidworks Sketch Manager</span>
+<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+
+<span class="c1">' Main function of our VBA program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Setting Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Creating string type variable for storing default part location</span>
+  <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="c1">' Setting value of this string type variable to "Default part template"</span>
+  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+
+  <span class="c1">' Setting Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1">' Selecting Front Plane</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Setting Sketch manager for our sketch</span>
+  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+  
+  <span class="c1">' Creating Variable for Solidworks Sketch segment</span>
+  <span class="k">Dim</span> <span class="nv">mySketchSegment</span> <span class="ow">As</span> <span class="n">SketchSegment</span>
+  
+  <span class="c1">' Inserting a sketch into selected plane</span>
+  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+  
+  <span class="c1">' Creating a circle</span>
+  <span class="k">Set</span> <span class="n">mySketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">' De-select the line after creation</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+  <span class="c1">' Zoom to fit screen in Solidworks Window</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="understanding-the-code">Understanding the Code</h2>
+
+<p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure named <code class="language-plaintext highlighter-rouge">main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks variable to Solidworks application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we are setting the value of our Solidworks variable which we define earlier to Solidworks application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating string type variable for storing default part location</span>
+<span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="c1">' Setting value of this string type variable to "Default part template"</span>
+<span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In 1st statement of above example, we are defining a variable of <code class="language-plaintext highlighter-rouge">string</code> type and named it as <code class="language-plaintext highlighter-rouge">defaultTemplate</code>.</p>
+
+<p>This variable <code class="language-plaintext highlighter-rouge">defaultTemplate</code>, hold the location the location of <strong>Default Part Template</strong>.</p>
+
+<p>In 2nd line of above example. we assign value to our newly define <code class="language-plaintext highlighter-rouge">defaultTemplate</code> variable.</p>
+
+<p>We assign the value by using a <em>Method</em> named <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code>. This method is a part of our main Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document to new part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our <code class="language-plaintext highlighter-rouge">swDoc</code> variable to new document.</p>
+
+<p>For <strong>detailed information</strong> about these lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Selecting Front Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In 1st line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object.</p>
+
+<p>In next line, we select the <em>front plane</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sketch Manager</span>
+<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
+</code></pre></div></div>
+
+<p>In above line, we create variable <code class="language-plaintext highlighter-rouge">swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
+
+<p>As the name suggested, a Sketch Manager holds variours methods and properties to manage Sketches.</p>
+
+<p>To see methods and properties related to SketchManager object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page of Solidworks API</a></strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Sketch manager for our sketch</span>
+<span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
+</code></pre></div></div>
+
+<p>In above line, we set the sketch manager variable to current document’s sketch manager.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inserting a sketch into selected plane</span>
+<span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In above line, we use <code class="language-plaintext highlighter-rouge">InsertSketch</code> method of <em>SketchManager</em> and give <code class="language-plaintext highlighter-rouge">True</code> value.</p>
+
+<p>This method allows us to insert a sketch in selected plane.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating Variable for Solidworks Sketch segment</span>
+<span class="k">Dim</span> <span class="nv">mySketchSegment</span> <span class="ow">As</span> <span class="n">SketchSegment</span>
+
+<span class="c1">' Creating a Circle</span>
+<span class="k">Set</span> <span class="n">mySketchSegment</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateCircle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above sample code, we 1st create a variable named <code class="language-plaintext highlighter-rouge">mySketchSegment</code> of type <code class="language-plaintext highlighter-rouge">SketchSegment</code>.</p>
+
+<p>A <code class="language-plaintext highlighter-rouge">SketchSegment</code> represent <em>a line, ellipse, parabola or spline.</em></p>
+
+<p>A <code class="language-plaintext highlighter-rouge">SketchSegment</code> provides functions that are <strong>generic</strong> to every type of sketch segment.</p>
+
+<p>For example, every sketch segment has <strong>an ID</strong> and can be selected programmatically.</p>
+
+<p>Therefore, the <code class="language-plaintext highlighter-rouge">SketchSegment</code> interface provides functions to obtain the ID and to select the item.</p>
+
+<p>For detailed information about the <code class="language-plaintext highlighter-rouge">SketchSegment</code> please visit <strong><a href="http://help.solidworks.com/2017/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.ISketchSegment.html">this page of Solidworks API Help</a></strong></p>
+
+<p>In 2nd line, we set the value of sketch segment variable <code class="language-plaintext highlighter-rouge">mySketchSegment</code>.</p>
+
+<p>We get this value from <code class="language-plaintext highlighter-rouge">CreateCircle</code> method which is inside the <code class="language-plaintext highlighter-rouge">swSketchManager</code> variable.</p>
+
+<p><code class="language-plaintext highlighter-rouge">swSketchManager</code> variable is a type of SketchManager, hence we used <code class="language-plaintext highlighter-rouge">CreateCircle</code> method from SketchManager.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateCircle</code> method takes following parameters as explained:</p>
+
+<p><em>XC</em> : X coordinate of the circle center point</p>
+
+<p><em>YC</em> : Y coordinate of the circle center point</p>
+
+<p><em>ZC</em> : Z coordinate of the circle center point</p>
+
+<p><em>XP</em> : X coordinate of the point on the circle perimeter</p>
+
+<p><em>YP</em> : Y coordinate of the point on the circle perimeter</p>
+
+<p><em>ZP</em> : Z coordinate of the point on the circle perimeter</p>
+
+<p>In the above code sample I have used origin point (0, 0, 0) for circle center point.</p>
+
+<p>This is origin of sketch hence I use center point at origin.</p>
+
+<p>For End point I used (0, 2, 0) which is 2 point distance in Y-direction or vertical direction.</p>
+
+<h3 id="note">NOTE</h3>
+
+<p>It is <strong><em>very important</em></strong> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <strong><em>Meter only</em></strong>.</p>
+
+<p><em>Solidworks API</em> does not care about your application’s Unit systems.</p>
+
+<p>For example, I works in ANSI system means “inches” for distance.</p>
+
+<p>But when I used Solidworks API through <em>VBA macros</em> or <em>C#</em>, I have to use <strong>converted</strong> numeric values.</p>
+
+<p>Because Solidworks API output the distance in <strong>Meter</strong> only; which is not my requirement.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the line after creation</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In the this line of code, we de-select the created line.</p>
+
+<p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit screen in Solidworks Window</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
+</code></pre></div></div>
+
+<p>In this last line we use <em>zoom to fit</em> command.</p>
+
+<p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+<p>Hope this post helps you to <em>create Circle</em> in Sketches with Solidworks VB Macros.</p>
+
+<p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+
+<p>Till then, Happy learning!!!</p>
+
+:ET

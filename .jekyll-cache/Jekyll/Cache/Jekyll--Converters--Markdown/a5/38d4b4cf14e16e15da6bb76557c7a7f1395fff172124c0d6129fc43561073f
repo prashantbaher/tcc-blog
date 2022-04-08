@@ -1,0 +1,314 @@
+I"/\<h2 id="objective">OBJECTIVE</h2>
+
+<p>How to Open SOLIDWORKS Document using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p>
+
+<p>If not then please go to <strong><a href="/solidworks-csharp/Prerequisite">SOLIDWORKS C# API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
+
+<hr />
+
+<h2 id="demo-video">DEMO VIDEO</h2>
+
+<p>Please see below video on how to “Open SOLIDWORKS Document” using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+<p><strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
+
+<hr />
+
+<h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
+
+<p>In the below image I have shown you how to create a new Prism project.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif" alt="create-open-solidworks-document-project" /></a></p>
+
+<p>All the steps has been already explained in <strong><a href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open SOLIDWORKS</a></strong> article.</p>
+
+<p>This will open a new window as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg" alt="create-new-project" /></a></p>
+
+<h2 id="build-solution">BUILD SOLUTION</h2>
+
+<p>After we create our “<em>OpenSolidworksDocument</em>” project, we need to select “Build Solution” option as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg" alt="build-solution" /></a></p>
+
+<h3 id="why-we-build-solution-">WHY WE BUILD SOLUTION ?</h3>
+
+<p>We build our solution because we want to make sure everything is working and there are no broken references.</p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file before <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg" alt="before-build-solution" /></a></p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file after <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg" alt="after-build-solution" /></a></p>
+
+<h2 id="add-user-interface-controls">ADD USER INTERFACE CONTROLS</h2>
+
+<p>Below we add some UI control for user interaction.</p>
+
+<h3 id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</h3>
+
+<p>In below image, we update ‘<em>Start-up location</em>’ and ‘<em>Width &amp; Height</em>’ of our window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif" alt="update-window-startup-location-width-height" /></a></p>
+
+<p>First we update <em>Start-up location of window</em> by adding following line.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WindowStartupLocation="CenterScreen"
+</code></pre></div></div>
+
+<p>After this, we update window’s <em>Height and Width</em> to following values.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Height="250" Width="500"
+</code></pre></div></div>
+
+<h3 id="remove-content-control">REMOVE CONTENT CONTROL</h3>
+
+<p>In below image we remove ContentControl Tag in Grid.</p>
+
+<p>Also, we change <code class="language-plaintext highlighter-rouge">Grid</code> to <code class="language-plaintext highlighter-rouge">StackPanel</code> for helding our UI Controls.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif" alt="remove-content-control" /></a></p>
+
+<h3 id="add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">TextBlock</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for indicating user to select a document.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif" alt="add-textblock" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">TextBlock</code> with <code class="language-plaintext highlighter-rouge">Text</code> and <em>other properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Select Document"</span>
+           <span class="na">Width=</span><span class="s">"350"</span>
+           <span class="na">Height=</span><span class="s">"30"</span>
+           <span class="na">Margin=</span><span class="s">"25 10"</span>
+           <span class="na">FontSize=</span><span class="s">"25"</span>
+           <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">ComboBox</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for holding our list of <strong>SOLIDWORKS documents</strong>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif" alt="add-documents-combobox" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">ComboBox</code> with set <em>properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">Button</code> to open selected <em>SOLIDWORKS document</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif" alt="add-button-for-solidworks-document" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">Button</code> with <code class="language-plaintext highlighter-rouge">Content</code> and <em>other properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Width=</span><span class="s">"350"</span>
+        <span class="na">Height=</span><span class="s">"50"</span>
+        <span class="na">FontSize=</span><span class="s">"18"</span>
+        <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+        <span class="na">Content=</span><span class="s">"Open Solidworks"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="update-viewmodel">UPDATE VIEWMODEL</h2>
+
+<p>Now, we update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> viewmodel, for showing data and adding functionalities.</p>
+
+<h3 id="add-documents-list">ADD DOCUMENTS LIST</h3>
+
+<p>In below image we a list of SOLIDWORKS document in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif" alt="add-document-list-to-viewmodel" /></a></p>
+
+<p>For this we use below code.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_DocumentsList</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">DocumentsList</span>
+<span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DocumentsList</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DocumentsList</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, <code class="language-plaintext highlighter-rouge">_DocumentsList</code> is private member of our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class, whose value we set in the <code class="language-plaintext highlighter-rouge">Constructor</code> of <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DocumentsList</code> will use for <code class="language-plaintext highlighter-rouge">Binding</code> document list to our <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+
+<p>Here we use <code class="language-plaintext highlighter-rouge">ObservableCollection&lt;T&gt;</code> because of <strong>MVVM</strong>.</p>
+
+<p>For more details please visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0">this link</a></strong>.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_DocumentsList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="s">"Part Document"</span><span class="p">,</span>
+        <span class="s">"Assembly Document"</span><span class="p">,</span>
+        <span class="s">"Drawing Document"</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, we add SOLIDWORKS documents into our <code class="language-plaintext highlighter-rouge">_DocumentsList</code> list.</p>
+
+<h3 id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</h3>
+
+<p>In below image we <em>Bind</em> our document list i.e. <code class="language-plaintext highlighter-rouge">DocumentsList</code> to <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif" alt="binding-document-list" /></a></p>
+
+<p>For Binding <code class="language-plaintext highlighter-rouge">DocumentsList</code> we add following line.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemsSource="{Binding DocumentsList}"
+</code></pre></div></div>
+
+<p>After this update our ComboBox looks like as:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> 
+          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg" alt="comboBox-list-window" /></a></p>
+
+<p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get <strong>error</strong> when we click “<em>Open Solidworks</em>” button.</p>
+
+<p>To avoid this error we define <code class="language-plaintext highlighter-rouge">SelectedIndex</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code> to <strong>0</strong>.</p>
+
+<p>After this update our ComboBox looks like as:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> 
+          <span class="na">SelectedIndex=</span><span class="s">"0"</span>
+          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg" alt="part-document-selected-in-list" /></a></p>
+
+<h3 id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</h3>
+
+<p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p>
+
+<p>To get the selected value, we need a property i.e. <code class="language-plaintext highlighter-rouge">SelectedDocument</code> in our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel and bind this property to <code class="language-plaintext highlighter-rouge">SelectValue</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code>.</p>
+
+<p>For more details please see below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif" alt="selectedvalue-binding" /></a></p>
+
+<h3 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h3>
+
+<p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our button.</p>
+
+<p>For this we need to do following:</p>
+
+<ul>
+  <li>
+    <p>We need to create a <em>Prism Command</em> i.e. <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel.</p>
+  </li>
+  <li>
+    <p>Bind this <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> to our button.</p>
+  </li>
+</ul>
+
+<p>In below we see how to do this, also we checked the selected value.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif" alt="add-command-to-button" /></a></p>
+
+<h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
+
+<p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+
+<p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+
+<h2 id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</h2>
+
+<p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below image.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Create a new Instance of Solidworks Application</span>
+    <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+
+    <span class="c1">// Make Solidworks visible</span>
+    <span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="c1">// Variable to hold selected document's template path</span>
+    <span class="kt">string</span> <span class="n">templatePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+    <span class="c1">// Switch Conditional Statement</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">SelectedDocument</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"Part Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Part template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"Assembly Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Assembly template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"Drawing Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Drawing template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create a new Document as ModelDoc2 object</span>
+    <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">templatePath</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif" alt="add-open-solidworks-document-code" /></a></p>
+
+<h2 id="final-result">FINAL RESULT</h2>
+
+<p>Now, we have done everything needed to <strong>Open</strong> <em>SOLIDWORKS Document</em> through our application.</p>
+
+<p>Please see below image for final result of our work.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif" alt="final-result" /></a></p>
+
+<hr />
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>Open SOLIDWORKS Documents</strong> from WPF PRISM Application.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+:ET

@@ -1,0 +1,124 @@
+I"#<p>If you read the previous topics, you now know a bit about <a href="/vba/variables">Variables</a> and <a href="/vba/programming-concepts#data-types-in-vba">Data-types</a>.</p>
+
+<p>In this topic, you discover how to <strong>declare</strong> a <code class="language-plaintext highlighter-rouge">variable</code> as a certain <em>data type</em>.</p>
+
+<p>If you don’t <em>declare</em> the <em>data type</em> for a <code class="language-plaintext highlighter-rouge">variable</code> you use in a <code class="language-plaintext highlighter-rouge">VBA routine</code>, <code class="language-plaintext highlighter-rouge">VBA</code> uses the default data type: <code class="language-plaintext highlighter-rouge">Variant</code>.</p>
+
+<p><em>Data stored</em> as a <code class="language-plaintext highlighter-rouge">Variant</code> acts like a <strong>chameleon</strong>; it changes type depending on what you do with it.</p>
+
+<p>For example, if a <em>variable</em> is a <code class="language-plaintext highlighter-rouge">Variant</code> data type and contains a text string that looks like a number (such as “123”), you can use this <em>variable</em> for <code class="language-plaintext highlighter-rouge">string</code> manipulations as well as <code class="language-plaintext highlighter-rouge">numeric</code> calculations.</p>
+
+<p><code class="language-plaintext highlighter-rouge">VBA</code> automatically handles the conversion. Letting <code class="language-plaintext highlighter-rouge">VBA</code> handle data types may seem like an easy way out — but remember that you sacrifice speed and memory.</p>
+
+<p>Before you use <em>variables</em> in a <code class="language-plaintext highlighter-rouge">procedure</code>, it’s an excellent practice to <em>declare</em> your variables — that is, tell <code class="language-plaintext highlighter-rouge">VBA</code> each variable’s data type.</p>
+
+<p>Declaring your <em>variables</em> makes your program run <strong>faster</strong> and use memory <em>more efficiently</em>.</p>
+
+<p>The default <em>data type</em>, <code class="language-plaintext highlighter-rouge">Variant</code>, causes <code class="language-plaintext highlighter-rouge">VBA</code> to repeatedly perform time consuming checks and reserve more memory than necessary.</p>
+
+<p>If <code class="language-plaintext highlighter-rouge">VBA</code> knows a <em>variable’s data type</em>, it doesn’t have to investigate and can reserve just enough memory to store the data.</p>
+
+<p>To force yourself to declare all the variables you use, include the following as the first statement in your <code class="language-plaintext highlighter-rouge">VBA</code> module:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>When this <em>statement</em> is present, you won’t be able to run your code if it contains any undeclared <em>variables</em>.</p>
+
+<p>You need to use <code class="language-plaintext highlighter-rouge">Option Explicit</code> only once: at the <em>beginning</em> of your module, prior to the declaration of any procedures in the module.</p>
+
+<p>Keep in mind that the <code class="language-plaintext highlighter-rouge">Option Explicit</code> statement applies only to the module in which it resides.</p>
+
+<p>If you have more than one <code class="language-plaintext highlighter-rouge">VBA</code> module in a <strong>project</strong>, you need an <code class="language-plaintext highlighter-rouge">Option Explicit</code> statement for each module.</p>
+
+<p>Suppose that you use an <em>undeclared variable</em> (that is, a <code class="language-plaintext highlighter-rouge">Variant</code>) named <code class="language-plaintext highlighter-rouge">myDimension</code>.</p>
+
+<p>At some point in your routine, you insert the following statement:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">myDimnsion</span> <span class="o">=</span> <span class="mi">11</span>
+</code></pre></div></div>
+
+<p>This misspelled <em>variable</em>, which is difficult to spot, will probably cause your routine to give incorrect results.</p>
+
+<p>If you use <code class="language-plaintext highlighter-rouge">Option Explicit</code> at the beginning of your module (forcing you to declare the <code class="language-plaintext highlighter-rouge">myDimension</code> variable), <code class="language-plaintext highlighter-rouge">VBE</code> generates an error if it encounters a misspelled variation of that variable.</p>
+
+<p>To ensure that the <code class="language-plaintext highlighter-rouge">Option Explicit</code> statement is inserted automatically whenever you insert a new <code class="language-plaintext highlighter-rouge">VBA</code> module; turn on the <em>Require Variable Definition option</em>.</p>
+
+<p>You find it in the <strong>Editor tab</strong> of the <strong>Options dialog box</strong> (in the VBE, choose <strong>Tools -&gt; Options</strong>).</p>
+
+<blockquote>
+  <p>I highly recommend doing so.</p>
+</blockquote>
+
+<p>Declaring your variables also lets you take advantage of a shortcut that can save some typing.</p>
+
+<p>Just type the first two or three characters of the variable name, and then press <code class="language-plaintext highlighter-rouge">Ctrl + Space</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">VBE</code> will either complete the entry for you or — if the choice is ambiguous — show you a list of matching words to select from.</p>
+
+<p>In fact, this slick trick works with <em>reserved words</em> and <em>functions</em>, too.</p>
+
+<p>You now know the advantages of declaring <em>variables</em>, but how do you do this?</p>
+
+<p>The most common way is to use a <code class="language-plaintext highlighter-rouge">Dim</code> statement.</p>
+
+<p>Here are some examples of variables being declared:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">YourName</span> <span class="n">as</span> <span class="kt">String</span>
+<span class="k">Dim</span> <span class="nv">PartLength</span> <span class="n">as</span> <span class="kt">Long</span>
+<span class="k">Dim</span> <span class="nv">bRet</span> <span class="n">as</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">X</span>
+</code></pre></div></div>
+
+<p>The first <em>three</em> variables are declared as a specific <em>data type</em>.</p>
+
+<p>The last variable, <strong>X</strong>, is not declared as a specific <em>data type</em>, so it’s treated as a <code class="language-plaintext highlighter-rouge">Variant</code> (it can be anything).</p>
+
+<p>Besides <code class="language-plaintext highlighter-rouge">Dim</code>, <code class="language-plaintext highlighter-rouge">VBA</code> has <em>three</em> other keywords that are used to declare variables:</p>
+
+<ul>
+  <li>Static</li>
+  <li>Public</li>
+  <li>Private</li>
+</ul>
+
+<p>I explain more about the <code class="language-plaintext highlighter-rouge">Dim, Static, Public</code>, and <code class="language-plaintext highlighter-rouge">Private</code> keywords later on, but first I must cover two other topics that are relevant here: <strong>a variable’s scope</strong> and <strong>a variable’s life</strong>.</p>
+
+<p>Recall that your code can have any number of <code class="language-plaintext highlighter-rouge">VBA modules</code> and a <code class="language-plaintext highlighter-rouge">VBA module</code> can have any number of <code class="language-plaintext highlighter-rouge">Sub</code> and <code class="language-plaintext highlighter-rouge">Function</code> procedures.</p>
+
+<p>A variable’s scope determines which modules and procedures can use the variable.</p>
+
+<p>Below Table describes the scopes:</p>
+
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">VBA’s Variable’s Scope</th>
+    </tr>
+    <tr>
+        <th>Scope</th>
+        <th>How the Variable is Declared</th>
+    </tr>
+    <tr>
+        <td>Procedure only</td>
+        <td>By using a <strong>Dim</strong> or a <strong>Static</strong> statement in the procedure that uses the variable.</td>
+    </tr>
+    <tr>
+        <td>Module only</td>
+        <td>By using a <strong>Dim</strong> or a <strong>Private</strong> statement 
+            before the first <strong>Sub</strong> or <strong>Function</strong> statement in the module.
+        </td>
+    </tr>
+    <tr>
+        <td>All procedures in all modules</td>
+        <td>
+            By using a <strong>Public</strong> statement before the first <strong>Sub</strong> or 
+            <strong>Function</strong> statement in the module.
+        </td>
+    </tr>
+</table>
+
+<p>If you get confused keep reading next post on these topics.</p>
+
+<p>Next post will be about <strong><em>Variable Scope</em></strong>.</p>
+
+:ET

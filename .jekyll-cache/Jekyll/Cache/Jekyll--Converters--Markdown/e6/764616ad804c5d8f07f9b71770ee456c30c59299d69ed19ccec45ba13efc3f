@@ -1,0 +1,66 @@
+I"v<p>Most programming languages support <code class="language-plaintext highlighter-rouge">arrays</code>. An <em>array</em> is a group of variables that share a common name.</p>
+
+<p>You refer to a <em>specific variable</em> in the <code class="language-plaintext highlighter-rouge">array</code> by using the <em>array name</em> and an <em>index number</em> in <em>parentheses</em>.</p>
+
+<p>For example, you can define an array of 12 string variables to hold the names of the months of the year.</p>
+
+<p>If you name the array <code class="language-plaintext highlighter-rouge">MonthNames</code>, you can refer to the first element of the array as <code class="language-plaintext highlighter-rouge">MonthNames(1)</code>, the second element as <code class="language-plaintext highlighter-rouge">MonthNames(2)</code>, and so on.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">MonthNames</span><span class="p">(</span><span class="s">"Jan"</span><span class="p">,</span> <span class="s">"Feb"</span><span class="p">,</span> <span class="s">"Mar"</span><span class="p">,</span> <span class="s">"April"</span><span class="p">,</span> <span class="s">"May"</span><span class="p">,</span> <span class="s">"Jun"</span><span class="p">,</span> <span class="s">"July"</span><span class="p">,</span> <span class="s">"Aug"</span><span class="p">,</span> <span class="s">"Sep"</span><span class="p">,</span> <span class="s">"Oct"</span><span class="p">,</span> <span class="s">"Nov"</span><span class="p">,</span> <span class="s">"Dec"</span><span class="p">)</span> <span class="ow">As</span> <span class="n">string</span>
+<span class="n">print</span><span class="p">(</span><span class="n">MonthNames</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>    <span class="c1">'print Feb</span>
+</code></pre></div></div>
+
+<h2 id="declaring-arrays">Declaring Arrays</h2>
+
+<p>Before you can use an <code class="language-plaintext highlighter-rouge">array</code>, you must declare it. No exceptions.</p>
+
+<p>Unlike normal <em>variables</em>, VBA is very strict about this rule.</p>
+
+<p>You declare an array with a <code class="language-plaintext highlighter-rouge">Dim</code> or <code class="language-plaintext highlighter-rouge">Public</code> statement, just as you declare a regular variable.</p>
+
+<p>However, you also need to specify the number of elements in the array.</p>
+
+<p>You do this by specifying the <em>first index number</em>, the keyword To, and the last index number — all inside parentheses.</p>
+
+<p>The following example shows how to declare an array of <strong>100 integers</strong>:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">MyArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</code></pre></div></div>
+
+<p>When you declare an <code class="language-plaintext highlighter-rouge">array</code>, you can choose to specify only the <em>upper index</em>.</p>
+
+<p>VBA assumes that 0 is the <em>lower index</em>. Therefore, both of the following statements declare the same <em>101-element</em> array:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">MyArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="k">Dim</span> <span class="nv">MyArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If you want VBA to assume that <strong>1</strong> (rather than <strong>0</strong>) is the <em>lower index</em> for your arrays, include the following statement in the Declarations section of your module:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Base</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>This statement forces VBA to use <strong>1</strong> as the first index number for arrays that declare only the <em>upper index</em>.</p>
+
+<p>If above statement is present, the following statements are identical, both declaring a 100-element array:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">MyArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">100</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="k">Dim</span> <span class="nv">MyArray</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>There are two other arrays</p>
+
+<ul>
+  <li>
+    <p>Multi-dimensional array</p>
+  </li>
+  <li>
+    <p>Dynamic array</p>
+  </li>
+</ul>
+
+<p>But I don’t think these two are that much useful for use to learn hence we <strong>will not</strong> delve into them.</p>
+
+<p>Next post will be about <strong><em>VBA Functions</em></strong>.</p>
+
+:ET

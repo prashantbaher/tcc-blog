@@ -1,0 +1,549 @@
+I"6�<p class="notice--warning">This post has “<strong>beginner ➡ intermediate</strong>” level Macro program.<br />
+If you are following my articles then will not be an issue for you.<br />
+In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+I hope you will also like this type of tutorials.<br />Thank you for reading.</p>
+
+<h2 id="objective">Objective</h2>
+
+<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Reference Axis</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Reference Axis</strong> quickly.</p>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>After running our macro we successfully create <strong>Reference Axis</strong> as a result.</p>
+
+<p>Below image shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/reference-axis/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-axis/final-result-gif.gif" alt="scale-feature-final-result" /></a></p>
+
+<p>We create <strong>Reference Axis</strong> in following steps in general.</p>
+
+<ol>
+  <li><em>Create and Initialize required variables</em></li>
+  <li><em>Create Reference Axis</em></li>
+  <li><em>Final Work</em></li>
+</ol>
+
+<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows <strong>Reference Axis</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/vty_8f-T32A" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+
+<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Reference Axis</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Main program for Reference Axis</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+  
+  <span class="c1">' Variable for Solidworks application</span>
+  <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks Application variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Check if Solidworks is opened or not</span>
+  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Variable for storing default part location</span>
+  <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Setting value of variable to "Default part template"</span>
+  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+  
+  <span class="c1">' Variable for Solidworks document</span>
+  <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+  
+  <span class="c1">' Setting Solidworks document to new part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Boolean Variable</span>
+  <span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  
+  <span class="c1">' Selecting Front Plane</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Front Plane is selected or not</span>
+  <span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to select [Front Plane]."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Selecting Top Plane</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Top Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Top Plane is selected or not</span>
+  <span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to select [Top Plane]."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Create Reference Axis</span>
+  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">InsertAxis2</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Reference Axis creates or not</span>
+  <span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Reference Axis."</span><span class="p">)</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' View zoom to fit</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisite</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+</ul>
+
+<p>Since we are creating new part, there are no feature to create.</p>
+
+<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>Reference Axis VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create and Initialize required variables</em></li>
+  <li><em>Create Reference Axis</em></li>
+  <li><em>Final work</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
+
+<p>In this section we create and initialize required variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Scale Feature</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create <em>main program for Scale Feature</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p>Inside this section we initialize required variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
+<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>  
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>  
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
+<span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for storing default part location.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">defaultTemplate</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting value of variable to "Default part template"</span>
+<span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
+  <li>This <em>value</em> is set to “<strong>Default part template</strong>”.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to new part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is <em>new part document</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="create-reference-axis">Create Reference Axis</h3>
+
+<p>In this section, we create Reference Axis.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable Boolean values or function.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">BoolStatus</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we select <strong>Front plane</strong> by <strong><code class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.</li>
+  <li>If we succeed in selecting <strong>Front plane</strong>, we get <strong><code class="language-plaintext highlighter-rouge">True</code></strong> otherwise we get <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Front Plane is selected or not</span>
+<span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to select [Front Plane]."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully selected <strong><code class="language-plaintext highlighter-rouge">Front Plane</code></strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">BoolStatus = False</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to select [Front Plane].</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Top Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Top Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we select <strong>Top plane</strong> by <strong><code class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.</li>
+  <li>If we succeed in selecting <strong>Top plane</strong>, we get <strong><code class="language-plaintext highlighter-rouge">True</code></strong> otherwise we get <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Top Plane is selected or not</span>
+<span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to select [Top Plane]."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully selected <strong><code class="language-plaintext highlighter-rouge">Top Plane</code></strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">BoolStatus = False</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to select [Top Plane].</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Reference Axis</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">InsertAxis2</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line, we insert <strong>Reference Axis</strong> by <code class="language-plaintext highlighter-rouge">InsertAxis2</code> method from <strong>Solidworks Document Object</strong>.</p>
+  </li>
+  <li>
+    <p>This <code class="language-plaintext highlighter-rouge">InsertAxis2</code> method takes following parameters as explained:</p>
+
+    <ul>
+      <li><strong>AutoSize</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if axis is to be automatically sized, <code class="language-plaintext highlighter-rouge">False</code> if not.</em></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertAxis2</code> method return <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if the <strong>Reference Axis</strong> is created successfully, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AutoSize</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">True</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Reference</strong>: For more details about</p>
+
+<ul>
+  <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
+  <li><strong>InsertAxis2 Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2020/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.imodeldoc2~insertaxis2.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">InsertAxis2</code> Method.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Reference Axis creates or not</span>
+<span class="k">If</span> <span class="n">BoolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Reference Axis."</span><span class="p">)</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully create <strong>Reference Axis</strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">BoolStatus = False</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to create Reference Axis.</em></li>
+      <li>Then we <strong>clear all selection</strong> and <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Now we run the macro and after running macro we get <strong>Reference Axis</strong> as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/reference-axis/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-axis/final-result-gif.gif" alt="scale-feature-final-result" /></a></p>
+
+<h3 id="final-work">Final work</h3>
+
+<p>In this section, after creating <strong>Reference Axis</strong>, we have to do some cleaning work so that we can use this macro frequently.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we make our view zoom to fit the model.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we clear all previous selection.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<h2 id="error-solutions">Error-Solutions</h2>
+
+<p>After posting this article, I got to know that code sample is not working for already opened document.</p>
+
+<p>I thought writing a section for these error will be a better idea or future.</p>
+
+<p>Below I list out the error message we got and their probable solution(s).</p>
+
+<h3 id="error-message-1">Error Message 1</h3>
+
+<p><strong>Solidworks document is opened</strong> error message. Image of this error is shown below.</p>
+
+<p><a href="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png"><img src="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png" alt="error-solidworks-document-not-open" /></a></p>
+
+<p><strong>Cause</strong>: Cause of this error is <strong>not</strong> setting <strong>File Location setting</strong> for <strong>Document Templates</strong>.</p>
+
+<p>Please see below image for detail.</p>
+
+<p><a href="/assets/Solidworks_Images/common/document-template-setting.png"><img src="/assets/Solidworks_Images/common/document-template-setting.png" alt="document-template-setting" /></a></p>
+
+<p>After setting <strong>Document Templates</strong> path, this message will not come.</p>
+
+<h3 id="error-message-2">Error Message 2</h3>
+
+<p><strong>Failed to create Reference Axis</strong> error message. Image of this error is shown below.</p>
+
+<p><a href="/assets/Solidworks_Images/common/failed-to-create-axis.png"><img src="/assets/Solidworks_Images/reference-axis/failed-to-create-axis.png" alt="failed-to-create-plane" /></a></p>
+
+<p><strong>Cause</strong>: There might be following case for this error.</p>
+
+<ol>
+  <li>Name of selected plane is different.</li>
+</ol>
+
+<p>You need to confirm plane name first, as I shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/common/plane-names.png"><img src="/assets/Solidworks_Images/common/plane-names.png" alt="plane-names" /></a></p>
+
+<p>As shown in above image, plane name is “<strong>Front</strong>”.</p>
+
+<p>Hence for selecting this plane, I use below code.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If your default part have plane name as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png"><img src="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png" alt="plane-names-with-suffix-plane" /></a></p>
+
+<p>Then you need to use below code for selecting <strong>Front Plane</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="error-3">Error 3</h3>
+
+<p>If you are using code sample provided in this article into an already open document.</p>
+
+<p>And hoping that you will get the result of new Reference Plane in opened document.</p>
+
+<p>Then I suggest you to know few things:</p>
+
+<ol>
+  <li><em>This code sample, <strong>create new part and in that new part it create Reference Axis</strong>.</em></li>
+  <li><em>If you are in this error section, <strong>I seriously want you to read all articles I had written</strong>. Then you will understand the code and change it to fit your need.</em></li>
+</ol>
+
+<p>If you still want to create <strong>new Reference Axis</strong> in already opened document, do following.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
+<span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
+
+<span class="c1">' Setting value of variable to "Default part template"</span>
+<span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+
+<span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Setting Solidworks document to new part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Replace above code, with below code in your macro.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Set Solidworks document variable to currently opened document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<p>I hope this will work.</p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>create Reference Axis</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+:ET

@@ -1,0 +1,286 @@
+I"�8<p>If your VBA procedure needs to ask the user for a filename, you could use the <em>InputBox</em> function.</p>
+
+<p>An input box usually isn’t the best tool for this job, however, because most users find it difficult to remember paths, backslashes, filenames, and file extensions.</p>
+
+<p>In other words, it’s far too easy to make a <strong>typographical error</strong> when typing a filename.</p>
+
+<p>For a better solution to this problem, use the <strong>GetOpenFilename</strong> method of the Application object, which ensures that your code gets its hands on a valid filename, including its complete path.</p>
+
+<p>The <em>GetOpenFilename</em> method displays the familiar Open dialog box.</p>
+
+<p>The <em>GetOpenFilename</em> method doesn’t actually open the specified file.</p>
+
+<p>This method simply returns the user-selected filename as a <code class="language-plaintext highlighter-rouge">string</code>.</p>
+
+<p>Then you can write code to do whatever you want with the filename.</p>
+
+<h2 id="syntax-for-the-getopenfilename-method">Syntax for the GetOpenFilename method</h2>
+
+<p>The official syntax for the <strong>GetOpenFilename</strong> method is as follows:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' The GetOpenFilename method syntax</span>
+<span class="n">object</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="err">[</span><span class="n">fileFilter</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">filterIndex</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">title</span><span class="err">]</span><span class="p">,</span><span class="err">[</span><span class="n">buttonText</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">multiSelect</span><span class="err">]</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The GetOpenFilename method takes the optional arguments shown in below Table.</p>
+
+<!--
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">The GetOpenFilename method Arguments</th>
+    </tr>
+    <tr>
+        <th>Arguments</th>
+        <th>What it does</tr>
+    </tr>
+    <tr>
+        <td>FileFilter</td>
+        <td>
+            Determines the types of files that appear in the dialog box (for example, *.TXT). 
+            You can specify several different filters from which the user can choose.
+        </td>
+    </tr>
+    <tr>
+        <td>FilterIndex</td>
+        <td>
+            Determines which of the file filters the dialog box displays by default.
+        </td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td>
+            Specifies the caption for the dialog box’s title bar.
+        </td>
+    </tr>
+    <tr>
+        <td>ButtonText</td>
+        <td>
+            Ignored
+        </td>
+    </tr>
+    <tr>
+        <td>MultiSelect</td>
+        <td>If True, the user can select multiple files.</td>
+    </tr>
+</table>
+-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Arguments</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FileFilter</td>
+      <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
+    </tr>
+    <tr>
+      <td>You can specify several different filters from which the user can choose.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FilterIndex</td>
+      <td>Determines which of the file filters the dialog box displays by default.</td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td>Specifies the caption for the dialog box’s title bar.</td>
+    </tr>
+    <tr>
+      <td>ButtonText</td>
+      <td>Ignored</td>
+    </tr>
+    <tr>
+      <td>MultiSelect</td>
+      <td>If True, the user can select multiple files.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="a-getopenfilename-example">A GetOpenFilename example</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">fileFilter</code> argument determines what appears in the dialog box’s Files of Type drop-down list.</p>
+
+<p>This argument consists of pairs of file filter strings followed by the wild card file filter specification, with commas separating each part and pair.</p>
+
+<p>If omitted, this argument defaults to the following:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
+<span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="err">*),</span> <span class="err">*.*</span>
+</code></pre></div></div>
+
+<p>Notice that this string consists of two parts:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="err">*)</span>
+</code></pre></div></div>
+
+<p>and</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="p">.</span><span class="err">*</span>
+</code></pre></div></div>
+
+<p>The first part of this string is the text displayed in the Files of Type dropdown list.</p>
+
+<p>The second part determines which files the dialog box displays. For example, <em>.</em> means all files.</p>
+
+<p>The code in the following example brings up a dialog box that asks the user for a filename.</p>
+
+<p>The procedure defines five file filters.</p>
+
+<p>Notice that I use the VBA line continuation sequence to set up the Filter variable; doing so helps simplify this rather complicated argument.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
+<span class="k">Sub</span> <span class="nf">GetImportFileName</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">Finfo</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">FilterIndex</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="k">Dim</span> <span class="nv">Title</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">FileName</span> <span class="ow">As</span> <span class="kt">Variant</span>
+
+  <span class="c1">'Set up list of file filters</span>
+  <span class="k">If</span> <span class="p">(</span><span class="n">IsNumeric</span><span class="p">)</span><span class="n">NumberOfSheets</span> <span class="k">Then</span>
+  <span class="n">FInfo</span> <span class="o">=</span> <span class="s">"Text Files (*.txt),*.txt,"</span> <span class="o">&amp;</span> <span class="n">_</span>
+  <span class="s">"Lotus Files (*.prn),*.prn,"</span> <span class="o">&amp;</span> <span class="n">_</span>
+  <span class="s">"Comma Separated Files (*.csv),*.csv,"</span> <span class="o">&amp;</span> <span class="n">_</span>
+  <span class="s">"ASCII Files (*.asc),*.asc,"</span> <span class="o">&amp;</span> <span class="n">_</span>
+  <span class="s">"All Files (*.*),*.*"</span>
+
+  <span class="c1">'Display *.* by default</span>
+  <span class="n">FilterIndex</span> <span class="o">=</span> <span class="mi">5</span>
+
+  <span class="c1">'Set the dialog box caption</span>
+  <span class="n">Title</span> <span class="o">=</span> <span class="s">"Select a File to Import"</span>
+
+  <span class="c1">'Get the filename</span>
+  <span class="n">FileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="n">FInfo</span><span class="p">,</span> <span class="n">FilterIndex</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
+
+  <span class="c1">'Handle return info from dialog box</span>
+  <span class="k">If</span> <span class="n">FileName</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"No file was selected."</span>
+  <span class="k">Else</span>
+    <span class="n">MsgBox</span> <span class="s">"You selected "</span> <span class="o">&amp;</span> <span class="n">FileName</span>
+  <span class="k">End</span> <span class="k">If</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Notice that the <code class="language-plaintext highlighter-rouge">FileName</code> variable is declared as a Variant data type.</p>
+
+<p>If the user clicks <code class="language-plaintext highlighter-rouge">Cancel</code>, that variable contains a Boolean value (False).</p>
+
+<p>Otherwise, FileName is a <code class="language-plaintext highlighter-rouge">string</code>. Therefore, using a Variant data type handles both possibilities.</p>
+
+<h2 id="getsaveasfilename-method">GetSaveAsFilename Method</h2>
+
+<p>The <em>GetSaveAsFilename</em> method works just like the <em>GetOpenFilename</em> method, but it displays the Save As dialog box rather than its Open dialog box.</p>
+
+<p>The <em>GetSaveAsFilename</em> method gets a path and filename from the user but doesn’t do anything with it.</p>
+
+<p>It’s up to you to write code that actually saves the file.</p>
+
+<p>The syntax for this method follows:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' The GetSaveAsFilename method syntax</span>
+<span class="n">object</span><span class="p">.</span><span class="n">GetSaveAsFilename</span> <span class="p">(</span><span class="err">[</span><span class="n">InitialFilename</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">FileFilter</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">FilterIndex</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">Title</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">ButtonText</span><span class="err">]</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <em>GetSaveAsFilename</em> method takes below arguments, all of which are optional.</p>
+
+<!--
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">The GetSaveAsFilename method Arguments</th>
+    </tr>
+    <tr>
+        <th>Arguments</th>
+        <th>What it does</tr>
+    </tr>
+    <tr>
+        <td>InitialFileName</td>
+        <td>Specifies a default filename that appears in the File Name box.</td>
+    </tr>
+    <tr>
+        <td>FileFilter</td>
+        <td>
+            Determines the types of files that appear in the dialog box (for example, *.TXT). 
+            You can specify several different filters from which the user can choose.
+        </td>
+    </tr>
+    <tr>
+        <td>FilterIndex</td>
+        <td>
+            Determines which of the file filters the dialog box displays by default.
+        </td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td>
+            Specifies the caption for the dialog box’s title bar.
+        </td>
+    </tr>
+</table>
+-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Arguments</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InitialFileName</td>
+      <td>Specifies a default filename that appears in the File Name box.</td>
+    </tr>
+    <tr>
+      <td>FileFilter</td>
+      <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
+    </tr>
+    <tr>
+      <td>You can specify several different filters from which the user can choose.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FilterIndex</td>
+      <td>Determines which of the file filters the dialog box displays by default.</td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td>Specifies the caption for the dialog box’s title bar.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="getting-a-folder-name">Getting a Folder Name</h2>
+
+<p>Sometimes, you don’t need to get a filename; you just need to get a folder name.</p>
+
+<p>If that’s the case, the <em>FileDialog</em> object is just what the doctor ordered.</p>
+
+<p>The following procedure displays a dialog box that allows the user to select a directory.</p>
+
+<p>The selected directory name (or “Canceled”) is then displayed by using the <code class="language-plaintext highlighter-rouge">MsgBox</code> function.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' FileDialog example</span>
+<span class="k">Sub</span> <span class="nf">GetAFolder</span><span class="p">()</span>
+  <span class="k">With</span> <span class="n">Application</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="n">msoFileDialogFolderPicker</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">InitialFileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">DefaultFilePath</span> <span class="o">&amp;</span> <span class="s">"\"</span>
+    <span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"Please select a location for the backup"</span>
+    <span class="p">.</span><span class="n">Show</span>
+    <span class="k">If</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">.</span><span class="n">Count</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="s">"Canceled"</span>
+    <span class="k">Else</span>
+      <span class="n">MsgBox</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">End</span> <span class="k">If</span>
+  <span class="k">End</span> <span class="k">With</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>The <em>FileDialog</em> object lets you specify the starting directory by specifying a value for the InitialFileName property.</p>
+
+<p>In this case, the code uses default file path as the starting directory.</p>
+
+<p>Next post will be about <strong><em>VBA UserForms</em></strong>.</p>
+:ET

@@ -1,0 +1,54 @@
+I"�<p>Some VBA <em>procedures</em> start at the code’s beginning and progress line by line to the end, never deviating from this top-to-bottom program flow.</p>
+
+<p>Macros that you record always work like this.</p>
+
+<p>In many cases, however, you need to <em>control</em> the flow of your code by skipping over some statements, executing some statements multiple times, and testing conditions to determine what the procedure does next.</p>
+
+<p>Some programming newbies can’t understand how a dumb computer can make intelligent decisions.</p>
+
+<p>The secret is in several programming constructs that most programming languages support.</p>
+
+<p>Following table provides a quick summary of these constructs.</p>
+
+<table class="w3-table-all w3-mobile w3-card-4">
+    <tr>
+        <th class="w3-center" colspan="2">Programming Constructs for Making Decisions</th>
+    </tr>
+    <tr>
+        <th>Construct</th>
+        <th>How it works</th>
+    </tr>
+    <tr>
+        <td>If-Then structure</td>
+        <td>
+            Does something if something else is true.
+        </td>
+    </tr>
+    <tr>
+        <td>Select Case</td>
+        <td>
+            Does any of several things, depending on something’s value.
+        </td>
+    </tr>
+    <tr>
+        <td>For-Next loop</td>
+        <td>
+            Executes a series of statements a specified number of times.
+        </td>
+    </tr>
+    <tr>
+        <td>Do-While loop</td>
+        <td>
+            Does something as long as something else remains true.
+        </td>
+    </tr>
+    <tr>
+        <td>Do-Until loop</td>
+        <td>
+            Does something until something else becomes true.
+        </td>
+    </tr>
+</table>
+
+<p>Next post will be about <strong><em>If-Then-Else and Select Case structure</em></strong>.</p>
+:ET

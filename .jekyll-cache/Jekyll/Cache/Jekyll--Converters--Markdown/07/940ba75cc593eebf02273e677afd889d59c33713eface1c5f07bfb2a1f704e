@@ -1,0 +1,367 @@
+I"�x<h2 id="objective">Objective</h2>
+
+<p>In this post, I tell you about <em>how to create Sweep Base through Solidworks VBA Macros</em> in a sketch.</p>
+
+<p>From <em>Solidworks 2018</em>, creating Sweep feature method is changed.</p>
+
+<p>It is now done through creating <em>Feature Definition</em> and create feature from this <em>Feature Definition</em>.</p>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Sweep Base</strong>.</p>
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below video on <strong>how to create Sweep Base</strong> from Solidworks VBA Macros.</p>
+
+<iframe src="https://www.youtube.com/embed/SQv1Mq1m6to" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explaination</strong> in the video.</p>
+
+<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+
+<h2 id="code-sample">Code Sample</h2>
+
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>Sweep Base</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+<span class="c1">' Creating variable for Solidworks Sweep Feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<span class="c1">' Creating variable for Solidworks Sweep Feature data</span>
+<span class="k">Dim</span> <span class="nv">swSweep</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SweepFeatureData</span>
+<span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Sweep Base program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Setting Solidworks variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Check if Solidworks is opened or not</span>
+  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Setting Solidworks document variable to opened part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+   
+  <span class="c1">' Select Sketch 1 as profile and Sketch 2 as path in opened part document</span>
+  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch1"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch2"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  
+  <span class="c1">' Create feature definition</span>
+  <span class="k">Set</span> <span class="n">swSweep</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSweep</span><span class="p">)</span>
+  
+  <span class="c1">' Create sweep feature</span>
+  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swSweep</span><span class="p">)</span>
+
+  <span class="c1">' Check if sweep Feature creates or not</span>
+  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Sweep Feature."</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+
+  <span class="c1">' Zoom to fit</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+    
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>In this article there are some <em>prerequisite</em>.</p>
+
+<p>We are <strong>not</strong> creating sketches from code but we use <strong>existing sketch</strong> to <em>create Sweep Base</em> feature as shown in below picture.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png"><img src="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png" alt="sketches-to-use-for-sweep-feature" /></a></p>
+
+<p>As shown in above image, there are 2 sketch in our part.</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Sketch1</code> : This is our <strong>profile</strong> for Sweep feture.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Sketch2</code> : This is our <strong>path</strong> for Sweep feture.</p>
+  </li>
+</ol>
+
+<p>If you want to create these 2 sketch programatically then please refer to below articles.</p>
+
+<p>For Circle 👉 read <strong><a href="/solidworks-macros/create-circle">Solidworks Macros - Create Circle</a></strong> article.</p>
+
+<p>For Centerpoint Arc 👉 read <strong><a href="/solidworks-macros/create-centerpoint-arc">Solidworks Macros - Create Centerpoint Arc</a></strong> article.</p>
+
+<p>Also, we will apply checks in this article, so that code we write should be error free most of the time.</p>
+
+<h2 id="understanding-the-code">Understanding the Code</h2>
+
+<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+
+<p>I also give some link so that you can go through them if there are anything I explained in previous posts.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>Solidworks Feature</strong>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of Solidworks API Help</a></strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sweep Feature data</span>
+<span class="k">Dim</span> <span class="nv">swSweep</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SweepFeatureData</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swSweep</code> and the type of this <code class="language-plaintext highlighter-rouge">swSweep</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SweepFeatureData</code>.</p>
+
+<p>We create <code class="language-plaintext highlighter-rouge">swSweep</code> variable for Solidworks Sweep feature data before we create Sweep feature using <code class="language-plaintext highlighter-rouge">CreateFeature</code> method from Solidworks Feature Manager.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object type.</p>
+
+<p>These all are our global variables.</p>
+
+<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
+
+<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
+
+<p>I have also place <code class="language-plaintext highlighter-rouge">boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
+
+<p>Thus, I have started placing it here.</p>
+
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to Solidworks application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
+<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks application variable is <em>successfully assigned</em> to current Solidworks application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document variable to opened part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set Solidwors document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+
+<p>If Solidworks document is not opened then code execute inside the code and inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<p>After showing message our program <strong>exit</strong> from here itself.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Sketch 1 as profile and Sketch 2 as path in opened part document</span>
+<span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch1"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+<span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch2"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line, we select the <em>Sketch1</em> and <em>Sketch2</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+
+<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+
+<p>❗ Please note that we need to define <em>profile</em> and <em>path</em> for <em>Sweep feature</em>, hence while selecting sketches we need to define which sketch is profile and path as describe below.</p>
+
+<ul>
+  <li>
+    <p><strong>Profile</strong></p>
+
+    <ul>
+      <li>
+        <p>If a <em>sketch profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select a <em>face, edge, or curve</em>. 
+For a <em>swept-boss</em> feature, the sketch profile must be <strong>closed</strong> ❗. For a <em>swept-surface</em> feature, the sketch profile is <strong>open or closed</strong> ❗.</p>
+      </li>
+      <li>
+        <p>If a <em>circular profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 4</code> to select a <em>sketch line, edge or curve</em>. The circular profile is <strong>open or closed</strong> ❗.</p>
+      </li>
+      <li>
+        <p>If a <em>solid profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select the <em>tool body</em> to use to make the cut and use <code class="language-plaintext highlighter-rouge">Mark = 2048</code> to select the <em>solid body</em> to <strong>cut</strong> ❗. Solid profiles are used only in <code class="language-plaintext highlighter-rouge">swept-cut</code> features.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Sweep path</strong> using <code class="language-plaintext highlighter-rouge">Mark = 4</code></p>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Sweep feature definition</span>
+<span class="k">Set</span> <span class="n">swSweep</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSweep</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swSweep</code> by <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CreateDefinition</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<h2 id="feature-definition-method-createdefinition-parameters-details">Feature Definition Method CreateDefinition Parameters Details</h2>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li>
+    <p><strong>Type</strong> - <em><code class="language-plaintext highlighter-rouge">Feature name ID</code> as defined in <code class="language-plaintext highlighter-rouge">swFeatureNameID_e</code></em>.</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">swFmBoundingBox</code> <em>(bounding box)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmCirPattern</code> <em>(circular pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmCurvePattern</code> <em>(curve-driven pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmDerivedLPattern</code> <em>(derived-driven pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmDimPattern</code> <em>(variable/dimension pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmFillPattern</code> <em>(fill pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmGroundPlane</code> <em>(ground plane)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLibraryFeature</code> <em>(library)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLocalChainPattern</code> <em>(chain component pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLocalCirPattern</code> <em>(circular component pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLocalCurvePattern</code> <em>(curve-driven component pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLocalLPattern</code> <em>(linear component pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLocalSketchPattern</code> <em>(sketch-driven component pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmLPattern</code> <em>(linear pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmNormalCut</code> <em>(sheet metal normal cut)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmRefCurve</code> <em>(projection curve)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmRefSurface</code> <em>(surface sweep)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmSketchPattern</code> <em>(sketch-driven pattern)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmSweep</code> <em>(boss sweep)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmSweepCut</code> <em>(cut sweep)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmSweepThread</code> <em>(sweep thread)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmTabAndSlot</code> <em>(tab and slot)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">swFmTablePattern</code> <em>(table pattern)</em></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method retun <strong>feature or pattern-specific</strong> feature data object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of Solidworks API Help</a></strong>.</p>
+
+<p>In our code, I have used following values:</p>
+
+<ul>
+  <li><strong>Type</strong> - <em>I use <code class="language-plaintext highlighter-rouge">swFmSweep</code> as <code class="language-plaintext highlighter-rouge">Feature name ID</code></em>.</li>
+</ul>
+
+<p>If you want to know more information about Sweep Feature data then please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISweepFeatureData_members.html">this page of Solidworks API Help</a></strong>.</p>
+
+<p>This page will give you information about various properties and methods of <code class="language-plaintext highlighter-rouge">ISweepFeatureData</code> Interface.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create sweep feature</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swSweep</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">CreateFeature</code> method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CreateFeature</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<h2 id="feature-creation-method-createfeature-parameters-details">Feature Creation Method CreateFeature Parameters Details</h2>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li><strong>FeatureData</strong> - <em><code class="language-plaintext highlighter-rouge">Feature or pattern-specific</code> feature data object</em>.</li>
+</ul>
+
+<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method retun <strong>feature</strong> data object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of Solidworks API Help</a></strong>.</p>
+
+<p>In our code, I have used following values:</p>
+
+<ul>
+  <li><strong>FeatureData</strong> - <em>I use <code class="language-plaintext highlighter-rouge">swFmSweep</code> as feature data object which we defined prevously</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Sweep Feature creates or not</span>
+<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Sweep Feature."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create Revolve Feature or not.</p>
+
+<p>If we failed to select then inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</code></pre></div></div>
+
+<p>In above line of code, <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> property to <em>Zoom to fit</em> current view.</p>
+
+<p>Now we run the macro and after running macro we get extrude as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png"><img src="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png" alt="sweep-feature-final-result" /></a></p>
+
+<hr />
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>create Sweep Base</strong> with Solidworks VBA Macros.</p>
+
+<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+:ET

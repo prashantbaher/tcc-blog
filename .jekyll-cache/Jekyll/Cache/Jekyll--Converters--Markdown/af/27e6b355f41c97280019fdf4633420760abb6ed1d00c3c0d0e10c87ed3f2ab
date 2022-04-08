@@ -1,0 +1,126 @@
+I"�<p>A <strong>bug</strong> is an error in your programming. Here I cover the topic of programming bugs — how to identify them and how to remove them from your module.</p>
+
+<h2 id="types-of-bugs">Types of Bugs</h2>
+
+<p>The term <em>program bug</em>, as you probably know, refers to a problem with software.</p>
+
+<p>In other words, if software doesn’t perform as expected, it has a <strong>bug</strong>.</p>
+
+<p>Fact is, all major software programs have bugs — lots of bugs.</p>
+
+<p>A CAD software like <em>Solidworks</em> itself has hundreds (if not thousands) of bugs.</p>
+
+<p>Fortunately, the vast majority of these bugs are relatively obscure and appear in only very specific circumstances.</p>
+
+<p>When you write non-trivial VBA programs, your code probably will have bugs.</p>
+
+<p>This is a fact of life and not necessarily a reflection of your programming ability. The bugs may fall into any of the following categories:</p>
+
+<ul>
+  <li>
+    <p><em>Logical flaws in your code</em>: You can often avoid these bugs by carefully thinking through the problem your program addresses.</p>
+  </li>
+  <li>
+    <p><em>Incorrect context bugs</em>: This type of bug surfaces when you attempt to do something at the wrong time. For example, you may try to update the sketch dimension and there are no sketch is activated.</p>
+  </li>
+  <li>
+    <p><em>Extreme-case bugs</em>: These bugs rear their heads when you encounter data you didn’t anticipate, such as very large or very small numbers.</p>
+  </li>
+  <li>
+    <p><em>Wrong data types bugs</em>: This type of bug occurs when you try to process data of the wrong type, such as attempting to take the square root of a text string.</p>
+  </li>
+</ul>
+
+<p><strong>Debugging</strong> is the process of identifying and correcting bugs in your program.</p>
+
+<p>Developing debugging skills takes time, so don’t be discouraged if this process is difficult at first.</p>
+
+<p>It’s important to understand the distinction between bugs and syntax errors.</p>
+
+<p>A <strong>syntax error</strong> is a language error. For example, you might misspell a keyword, omit the Next statement in a <code class="language-plaintext highlighter-rouge">For-Next</code> loop, or have a mismatched parenthesis.</p>
+
+<p>Before you can even execute the procedure, you must correct these syntax errors.</p>
+
+<p>A program bug is much <em>subtler</em>. You can execute the routine, but it doesn’t perform as expected.</p>
+
+<h2 id="identifying-bugs">Identifying Bugs</h2>
+
+<p>Before you can do any debugging, you must determine whether a bug actually exists.</p>
+
+<p>You can tell that your macro contains a bug if it doesn’t work the way it should. Usually, but not always, you can easily discern this.</p>
+
+<p>A key fact known to all programmers is that bugs often appear when you least expect them.</p>
+
+<p>For example, just because your macro works fine with one data set doesn’t mean you can assume it will work equally as well with all data sets.</p>
+
+<p>Or your macro runs fine in your system but not working properly in your friend’s system.</p>
+
+<p>Such cases happened all the time and are part of debugging.</p>
+
+<p>The best debugging approach is to start with thorough testing, under a variety of real-life conditions.</p>
+
+<p>Because any changes made by your VBA code cannot be undone, it is always a good idea to use a backup copy of your CAD files that you use for testing.</p>
+
+<p>I usually copy some files into a temporary folder and use those files for my testing.</p>
+
+<h2 id="debugging-techniques">Debugging Techniques</h2>
+
+<p>In this section, I discuss the some of the most common methods for debugging VBA code:</p>
+
+<ul>
+  <li>Examine your code</li>
+  <li>Inserting <code class="language-plaintext highlighter-rouge">MsgBox</code> functions at various locations in your code</li>
+  <li>Inserting <code class="language-plaintext highlighter-rouge">Debug.Print</code> statement</li>
+</ul>
+
+<h3 id="examine-your-code">Examine your code</h3>
+
+<p>Perhaps the most straightforward debugging technique is simply taking a close look at your code to see whether you can find the problem.</p>
+
+<p>If you’re lucky, the error jumps right out, and you can fix the problem.</p>
+
+<p>Notice I said, “If you’re lucky.” That’s because often you discover errors when you have been working on your program for long hours and you are running on caffeine and willpower.</p>
+
+<p>At times like that, you are lucky if you can even see your code.</p>
+
+<p>Thus, don’t be surprised if simply examining your code isn’t enough to make you find and expunge all the bugs it contains.</p>
+
+<h3 id="using-the-msgbox-function">Using the MsgBox function</h3>
+
+<p>A common problem in many programs involves one or more variables not taking on the values you expect.</p>
+
+<p>In such cases, monitoring the variable(s) while your code runs is a helpful debugging technique.</p>
+
+<p>One way to do this is by inserting temporary <code class="language-plaintext highlighter-rouge">MsgBox</code> functions into your routine.</p>
+
+<p>For example, I used <code class="language-plaintext highlighter-rouge">MsgBox</code> function to check conditions. Whenever I use <code class="language-plaintext highlighter-rouge">If-Else</code> statement, I put one message in <code class="language-plaintext highlighter-rouge">If</code> condition and put another message in <code class="language-plaintext highlighter-rouge">Else</code> condition.</p>
+
+<p>By this way, I make sure condition which I want is working correct or not.</p>
+
+<p>Feel free to use <code class="language-plaintext highlighter-rouge">MsgBox</code> functions frequently when you debug your code.</p>
+
+<p>Just make sure that you remove them after you identify and correct the problem.</p>
+
+<h3 id="inserting-debugprint-statement">Inserting Debug.Print Statement</h3>
+
+<p>As an alternative to using <code class="language-plaintext highlighter-rouge">MsgBox</code> functions in your code, you can insert one or more temporary <code class="language-plaintext highlighter-rouge">Debug.Print</code> statements.</p>
+
+<p>Use these statements to print the value of one or more variables in the <em>Immediate</em> window.</p>
+
+<p>Here’s an example that displays a message of “This condition is working fine”.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">If</span> <span class="n">swPart</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"This condition is working fine."</span>
+</code></pre></div></div>
+
+<p>If VBE’s <strong>Immediate</strong> window is not visible, press <code class="language-plaintext highlighter-rouge">Ctrl+G</code>.</p>
+
+<p>Unlike <code class="language-plaintext highlighter-rouge">MsgBox</code>, <code class="language-plaintext highlighter-rouge">Debug.Print</code> statements do not halt your code.</p>
+
+<p>So you’ll need to keep an eye on the <strong>Immediate</strong> window to see what’s going on.</p>
+
+<p>After you’ve debugged your code, be sure to remove all the <code class="language-plaintext highlighter-rouge">Debug.Print</code> statements.</p>
+
+<p>Next post will be about <strong><em>VBA Debugger</em></strong>.</p>
+
+:ET

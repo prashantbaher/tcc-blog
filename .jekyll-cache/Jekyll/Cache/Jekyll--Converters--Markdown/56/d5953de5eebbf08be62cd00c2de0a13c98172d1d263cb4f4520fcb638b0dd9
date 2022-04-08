@@ -1,0 +1,914 @@
+I"��<p class="notice--warning">This is post is an intermediate post and required you to have some knowledge of <strong>VBA</strong>.<br />
+If you are following my articles you will notice that till now we were <strong>hardcoding</strong> the selections for input parameters.<br />
+But from this post onward we will take user-inputs.<br />
+Please note that we will not use 👉 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, but use 👉 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and will ask user to <strong>select SOLIDWORKS Entities</strong> from SOLIDWORKS.<br />
+I hope you will also like this type of tutorials.<br />Thank you for reading till now.</p>
+
+<h2 id="objective">Objective</h2>
+
+<p>Objective of this article is to learn <em>how to create <strong>Lofted Cut</strong> through SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
+
+<p>We create <strong>Lofted Cut</strong> in 2 steps.</p>
+
+<ol>
+  <li>Select profiles for Lofted cut.</li>
+  <li>Create Lofted cut feature using <strong><code class="language-plaintext highlighter-rouge">InsertCutBlend</code></strong> method.</li>
+</ol>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Lofted Cut</strong>.</p>
+
+<h2 id="steps-to-create-lofted-cut">Steps To Create Lofted Cut</h2>
+
+<p>We use following steps to create Lofted Cut</p>
+
+<p>A. Select <strong>Profile</strong> for <em>Lofted  Cut</em>.</p>
+
+<ol>
+  <li>Inform user to select <strong>Profile</strong> for <em>Lofted Cut</em>.</li>
+  <li>User select the <strong>Profile</strong> for <em>Lofted Cut</em>.</li>
+</ol>
+
+<p>B. Repeat the <em>step A</em> until we complete profile selection.</p>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>We successfully create Lofted Cut feature as a result.</p>
+
+<p>Below image shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-lofted-cut/lofted-cut-final-result.png"><img src="/assets/Solidworks_Images/feature-lofted-cut/lofted-cut-final-result.png" alt="lofted-cut-final-result" /></a></p>
+
+<blockquote>
+  <p>To get the correct result please follow the steps correctly.</p>
+</blockquote>
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below 🎬 video on <strong>how to create Lofted Cut</strong> from SOLIDWORKS VBA Macros.</p>
+
+<iframe src="https://www.youtube.com/embed/piLx9g1Tjr8" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+<p><strong>Explanation</strong> of each line and why we write code this way is given in this post.</p>
+
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+
+<h2 id="code-sample">Code Sample</h2>
+
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating <em>Lofted Cut</em> feature in <strong>VBA</strong> is given.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Create variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Variable for Solidworks Selection Manager</span>
+<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+
+<span class="c1">' Array of Solidworks Entities</span>
+<span class="k">Dim</span> <span class="nv">swObjects</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+
+<span class="c1">' Variable for Solidworks Entity</span>
+<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+
+<span class="c1">' Variable for Solidworks Lofted Cut feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">' Variable for Solidworks Select Data</span>
+<span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+
+
+<span class="c1">' Lofted Cut program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Setting Solidworks variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Check if Solidworks is opened or not</span>
+  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Setting Solidworks document variable to opened part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Selection Manager variable</span>
+  <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+    
+  <span class="c1">' Local variable for selection</span>
+  <span class="k">Dim</span> <span class="nv">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">selectItems</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="c1">' Loop till we select all entities</span>
+  <span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+      
+    <span class="c1">' Message to show user</span>
+    <span class="k">Dim</span> <span class="nv">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
+
+    <span class="c1">' Update Messages</span>
+    <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+      <span class="k">Case</span> <span class="mi">1</span>
+        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile 1 Sketch from Feature tree for Lofted Cut."</span>
+      <span class="k">Case</span> <span class="mi">2</span>
+        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile 2 Sketch from Feature tree for Lofted Cut."</span>
+      <span class="k">Case</span> <span class="k">Else</span>
+        <span class="k">Exit</span> <span class="k">Sub</span>
+    <span class="nf">End</span> <span class="k">Select</span>
+  
+    <span class="c1">' Show message to user</span>
+    <span class="n">MsgBox</span> <span class="n">messageToUser</span>
+      
+    <span class="c1">' Loop until we complete our selection</span>
+    <span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+        
+      <span class="c1">' Local integer for loop</span>
+      <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+      
+      <span class="c1">' Loop until we select</span>
+      <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          
+        <span class="c1">' If the profile sketch is selected</span>
+        <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+
+          <span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+          <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1">' If the profile sketch is selected</span>
+        <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHSEGS</span> <span class="k">Then</span>
+            
+          <span class="c1">' Inform user to select sketch from Tree</span>
+          <span class="n">MsgBox</span> <span class="s">"Please select Profile sketches from Feature Tree."</span>
+          
+          <span class="c1">' Clear selection</span>
+          <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+        <span class="k">End</span> <span class="k">If</span>
+      <span class="k">Next</span>
+      
+      <span class="n">DoEvents</span>
+    <span class="k">Wend</span>
+      
+    <span class="c1">' Clear previous selection</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    
+    <span class="c1">' Increase the selection count</span>
+    <span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="mi">1</span>
+
+  <span class="k">Wend</span>
+    
+  <span class="c1">' Local variable for counter</span>
+  <span class="k">Dim</span> <span class="nv">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="c1">' Loop till counter is 2, since we have 2 selection</span>
+  <span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span>
+  
+    <span class="c1">' Set the current instance to Solidworks Entity variable</span>
+    <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    
+    <span class="c1">' Create Select data for this entity</span>
+    <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
+      
+    <span class="c1">' For profile, set mark to 1</span>
+    <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1">' Select the profile</span>
+    <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+        
+    <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+      
+  <span class="k">Wend</span>
+  
+  <span class="c1">' Create Lofted feature</span>
+  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertCutBlend</span><span class="p">(</span><span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Lofted Cut Feature creates or not</span>
+  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+      <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Lofted Cut Feature."</span><span class="p">)</span>
+      <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Erase array data</span>
+  <span class="k">Erase</span> <span class="n">swObjects</span>
+  
+  <span class="c1">' View zoom to fit</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisite</em> for this article.</p>
+
+<p>We are <strong>not</strong> creating sketches from code but we use <strong>existing sketch</strong> to <em>create Lofted Cut</em> feature as shown in below picture.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-lofted-cut/prerequisite.png"><img src="/assets/Solidworks_Images/feature-lofted-cut/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p>As shown in above image, there are <em>2 sketches for Profiles</em> and <em>1 Extrude feature</em> in our part.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Extrude Feature</code> : This is our <strong>Extrude part</strong> for <em>Lofted Cut feature.</em></li>
+  <li><code class="language-plaintext highlighter-rouge">Sketch2</code> : This is our <strong>Profile</strong> for <em>Lofted Cut feature.</em></li>
+  <li><code class="language-plaintext highlighter-rouge">Sketch3</code> : This is also our <strong>Profile</strong> for <em>Lofted Cut feature.</em></li>
+</ul>
+
+<p>If you want to create <code class="language-plaintext highlighter-rouge">Sketch2</code> i.e. <strong>Profile</strong> programmatically then please refer to below articles.</p>
+
+<ul>
+  <li>For <strong>Circle</strong> 👉 read <strong><a href="/solidworks-macros/create-circle">SOLIDWORKS Macros - Create Circle</a></strong> article.</li>
+  <li>For <strong>Corner Rectangle</strong> 👉 read <strong><a href="/solidworks-macros/create-corner-rectangle">SOLIDWORKS Macros - Create Corner Rectangle</a></strong> article.</li>
+</ul>
+
+<p>If you want to create <strong>Extrude</strong> feature programmatically then please refer to below article.</p>
+
+<ul>
+  <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
+</ul>
+
+<p>Also, we will apply checks in this article, so the code we write should be error free most of the time.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>For creating Lofted Cut, there are following steps:</p>
+
+<ol>
+  <li>Creating Global Variables</li>
+  <li>Initializing required variables</li>
+  <li>Ask user to select Profile and Path</li>
+  <li>Mark selected Entities</li>
+  <li>Create Lofted Cut Feature</li>
+  <li>Final work</li>
+</ol>
+
+<p>Now let us walk through <strong>each step</strong> as given above, and <strong>understand</strong> every line.</p>
+
+<p>I also give some 📌 <strong><em>links</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="creating-global-variables">Creating Global Variables</h3>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit 👉 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> post.</p>
+
+<p>We create following variables.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks application</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks document</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Selection Manager</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
+<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Array of Solidworks Entities</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Array of Solidworks Entities</span>
+<span class="k">Dim</span> <span class="nv">swObjects</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div></div>
+
+<p>In this line, we create an Array of SOLIDWORKS Entities which we named as <code class="language-plaintext highlighter-rouge">swObjects</code> and the type of this <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+
+<p>This array consist <em>two</em> <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variables.</p>
+
+<p>We define the number of variable this array holds inside <strong>(1 To 2)</strong>.</p>
+
+<p>For more information about the <strong>Arrays</strong> in VBA please 👉 <strong><a href="/vba/arrays/">Array on this website</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Entity</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
+<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code class="language-plaintext highlighter-rouge">swObject</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swObject</code> for <strong>SOLIDWORKS Entities</strong> (<em>Profile and Path</em>) we ask use to select.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Lofted feature</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Lofted Cut feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>SOLIDWORKS Lofted Cut Feature</strong>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Select Data</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Select Data</span>
+<span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">swSelData</code> as <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object type.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swSelData</code> for <strong>SOLIDWORKS Select Data</strong>, which we use for <strong>Marking</strong> selected object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectData_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Lofted Cut program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</p>
+
+<h3 id="initializing-required-variables">Initializing Required Variables</h3>
+
+<p>Inside this procedure we first initialize required variables as given below.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our SOLIDWORKS variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to SOLIDWORKS application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
+<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully assigned</em> to current SOLIDWORKS application.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS document is not opened. Please open a document."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+
+<p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
+<span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+</code></pre></div></div>
+
+<p>In above line, we set SOLIDWORKS Selection Manager<code class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s Selection Manager.</p>
+
+<ul>
+  <li><em>Local variable for User selection</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for selection</span>
+<span class="k">Dim</span> <span class="nv">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="n">selectItems</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line of code, we define a Local variable name <code class="language-plaintext highlighter-rouge">selectItems</code>as <strong>Integer</strong> type.</p>
+
+<p>In next line we assign a value of <strong>1</strong>.</p>
+
+<h3 id="ask-user-to-select-profiles-for-lofted-cut">Ask user to select Profiles for Lofted Cut</h3>
+
+<p>Now we will ask user to select <strong>Profiles</strong> for <em>Lofted Cut feature</em>.</p>
+
+<p>Please follow steps given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till we select all entities</span>
+<span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+
+<p>We want to loop until <code class="language-plaintext highlighter-rouge">selectItems</code> variable’s value is equal to <strong>2</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Message to show user</span>
+<span class="k">Dim</span> <span class="nv">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<p>In above line of code we create a variable named <code class="language-plaintext highlighter-rouge">messageToUser</code> of <code class="language-plaintext highlighter-rouge">String</code> type.</p>
+
+<p>This variable holds the message we want to show before selection.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Messages</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+  <span class="k">Case</span> <span class="mi">1</span>
+    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile 1 Sketch from Feature tree for Lofted Cut."</span>
+  <span class="k">Case</span> <span class="mi">2</span>
+    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile 2 Sketch from Feature tree for Lofted Cut."</span>
+  <span class="k">Case</span> <span class="k">Else</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code> statement to update message.</p>
+
+<p>We use the case on <code class="language-plaintext highlighter-rouge">selectItems</code></p>
+
+<p>When <code class="language-plaintext highlighter-rouge">selectItems = 1</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select Profile 1 Sketch from Feature tree for Lofted Cut."</code></p>
+
+<p>Similarly, when <code class="language-plaintext highlighter-rouge">selectItems = 2</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select Profile 2 Sketch from Feature tree for Lofted Cut."</code></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show message to user</span>
+<span class="n">MsgBox</span> <span class="n">messageToUser</span>
+</code></pre></div></div>
+
+<p>In above line of code, we show the message to user.</p>
+
+<p>Below image show the message to the user.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-lofted-cut/message-to-select-profile1.png"><img src="/assets/Solidworks_Images/feature-lofted-cut/message-to-select-profile1.png" alt="message-to-select-profile1" /></a></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we complete our selection</span>
+<span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+    
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create another <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>This loops until we select the our <strong>Profile</strong> and <strong>Path</strong>.</p>
+
+<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local integer for loop</span>
+<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create a local integer name <code class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we select</span>
+<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">Next</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</p>
+
+<p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If the profile sketch is selected</span>
+<span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+
+  <span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+  <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">' If the profile sketch is selected</span>
+<span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHSEGS</span> <span class="k">Then</span>
+
+  <span class="c1">' Inform user to select sketch from Tree</span>
+  <span class="n">MsgBox</span> <span class="s">"Please select Profile sketch from Feature Tree."</span>
+
+  <span class="c1">' Clear selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+<span class="k">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use  👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else statement</a></strong>  with conditions.</p>
+
+<p>The  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Sketch</em>.</p>
+
+<p>Similarly,  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong>  is True when select <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS External Sketch Segment</em>.</p>
+
+<p class="notice">When we select the sketch from Model view, then selected object is <em>SOLIDWORKS External Sketch Segment</em>.
+<br />
+When we select the sketch from Feature Tree, then select object is <em>SOLIDWORKS Sketch</em>.</p>
+
+<p>When  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True we execute code given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+<span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line, we set the indexed object inside array.</p>
+
+<ul>
+  <li>Array of SOLIDWORKS Entities = <code class="language-plaintext highlighter-rouge">swObjects</code></li>
+  <li>Indexed Entity Object = <code class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
+</ul>
+
+<p>We set the value of this <strong>Indexed Entity Object</strong> by <code class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS Selection Manager.</p>
+
+<p>When we set the <strong>Indexed Entity Object</strong> value as <strong>Profiles</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>When we select both <strong>Profiles</strong>, then we exit all <code class="language-plaintext highlighter-rouge">While</code> loops also.</p>
+
+<p>Similarly, when  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong> is True we execute code given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select sketch from Tree</span>
+<span class="n">MsgBox</span> <span class="s">"Please select Profile sketches from Feature Tree."</span>
+
+<span class="c1">' Clear selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ol>
+  <li>We show message to user to select <strong>Profile</strong> Sketch from <em>Feature Tree</em>.</li>
+  <li>After that we clear our selection.</li>
+</ol>
+
+<blockquote>
+  <p>We do this because if selected object type is <em>SOLIDWORKS External Sketch Segment</em> then we can not assign this object as SOLIDWORKS Entity inside array.</p>
+</blockquote>
+
+<p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
+
+<p>This function repeats the <code class="language-plaintext highlighter-rouge">While</code> loop until we select the <strong>Profile or Path</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear previous selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="c1">' Increase the selection count</span>
+<span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line, when we finished with the <strong>Profile or Path</strong> selection, we clear previous selection and increment the selected count by 1.</p>
+
+<p>After increment the selected count we continue our <code class="language-plaintext highlighter-rouge">while</code> loop.</p>
+
+<h3 id="mark-selected-entities">Mark selected Entities</h3>
+
+<p>Till now we have completed our selection.</p>
+
+<p>Now we need to do <strong>Select and Mark entities</strong> correctly from our Array.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for counter</span>
+<span class="k">Dim</span> <span class="nv">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line of code we create <code class="language-plaintext highlighter-rouge">integer</code> variable for counter.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till counter is 2, since we have 2 selection</span>
+<span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span>
+
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code we create a <code class="language-plaintext highlighter-rouge">while</code> loop with condition that <em>counter value</em> of <strong><code class="language-plaintext highlighter-rouge">j</code></strong> should be <em>less than 3.</em></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the current instance to Solidworks Entity variable</span>
+<span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set the SOLIDWORKS Entity variable to current object from array.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Select data for this entity</span>
+<span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create SOLIDWORKS Select Data for current SOLIDWORKS Entity object.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' For profile, set mark to 1</span>
+<span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above lines, we update the <strong>Mark</strong> to <strong><code class="language-plaintext highlighter-rouge">1</code></strong> for our <em>SOLIDWORKS Select Data</em> variable.</p>
+
+<p>For <strong><em>Lofted Cut</em></strong> feature, <strong><code class="language-plaintext highlighter-rouge">Mark</code></strong> values can be follows:</p>
+
+<ul>
+  <li>If a sketch profile, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> .</li>
+  <li>If a guide curve is given, use <code class="language-plaintext highlighter-rouge">Mark = 2</code> .</li>
+  <li>If a centerline is given, use <code class="language-plaintext highlighter-rouge">Mark = 4</code> .</li>
+</ul>
+
+<p>For more details about <strong>Mark</strong> values for <strong>Lofted Cut</strong> 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager~InsertCutBlend.html">please visit this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the profile</span>
+<span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+</code></pre></div></div>
+
+<p>In above line of code, we select the Profile object.</p>
+
+<p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of <em>SOLIDWORKS Entity object</em>.</p>
+
+<p>This method takes 2 arguments.</p>
+
+<ol>
+  <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> appends the entity to the selection list, <code class="language-plaintext highlighter-rouge">False</code> replaces the selection list with this entity.</em></li>
+  <li><strong>Data</strong> - <em>Pointer to the <strong><code class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
+</ol>
+
+<p>We use following values as parameter.</p>
+
+<ol>
+  <li><strong>Append</strong> - <strong><code class="language-plaintext highlighter-rouge">True</code></strong></li>
+  <li><strong>Data</strong> - <strong><code class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
+</ol>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>After <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> statement, we increment the counter variable <strong><code class="language-plaintext highlighter-rouge">j</code></strong> by <strong>1</strong>.</p>
+
+<h3 id="create-lofted-cut-feature">Create Lofted Cut Feature</h3>
+
+<p>We have completed our <em>selection</em> and <em>Marking</em> of <strong><em>SOLIDWORKS Entities</em></strong>.</p>
+
+<p>Now we create Lofted Cut Feature.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Lofted feature</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertCutBlend</span><span class="p">(</span><span class="k">False</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">InsertCutBlend</code> method.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li>
+    <p><strong>Closed</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if you want the loft to be closed, <code class="language-plaintext highlighter-rouge">False</code> to leave it open</em>.</p>
+  </li>
+  <li>
+    <p><strong>KeepTangency</strong> - <em>Controls whether the section curves are tangent</em>.</p>
+  </li>
+  <li>
+    <p><strong>ForceNonRational</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to force the resulting surface to be non-rational; <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</p>
+  </li>
+  <li>
+    <p><strong>TessToleranceFactor</strong> - <em>A factor to control the number of intermediate sections used for loft with centerline; the default value is 1.0; the greater the variable, the more intermediate sections are created</em>.</p>
+  </li>
+  <li>
+    <p><strong>StartMatchingType</strong> - <em>Tangency type at the start profile</em>.</p>
+  </li>
+  <li>
+    <p><strong>EndMatchingType</strong> - <em>Tangency type at the end profile</em>.</p>
+  </li>
+  <li>
+    <p><strong>IsThinBody</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if this feature is a thin body, <code class="language-plaintext highlighter-rouge">False</code> is not</em>.</p>
+  </li>
+  <li>
+    <p><strong>Thickness1</strong> - <em>Thickness value for the first direction</em>.</p>
+  </li>
+  <li>
+    <p><strong>Thickness2</strong> - <em>Thickness value for the second direction</em>.</p>
+  </li>
+  <li>
+    <p><strong><em>ThinType</em></strong> - <em>Thin wall type are as follows</em>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>One direction</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>One direction reverse</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Mid-plane</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Two direction</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>UseFeatScope</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if the feature only affects selected bodies, <code class="language-plaintext highlighter-rouge">False</code> if the feature affects all bodies</em>.</p>
+  </li>
+  <li>
+    <p><strong>UseAutoSelect</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to automatically select all bodies and have the feature affect those bodies, <code class="language-plaintext highlighter-rouge">False</code> to select the bodies the feature affects</em>.</p>
+  </li>
+</ul>
+
+<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertCutBlend</code> method return <strong>feature</strong> data object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<p>In our code, I have used following values:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Name</th>
+      <th>Value Used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Closed</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+    </tr>
+    <tr>
+      <td><strong>KeepTangency</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><strong>ForceNonRational</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><strong>TessToleranceFactor</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0.01</code></td>
+    </tr>
+    <tr>
+      <td><strong>StartMatchingType</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>EndMatchingType</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>IsThinBody</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+    </tr>
+    <tr>
+      <td><strong>Thickness1</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>Thickness2</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>ThinType</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>UseFeatScope</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><strong>UseAutoSelect</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">InsertCutBlend</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Lofted Cut Feature creates or not</span>
+<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Lofted Cut Feature."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create <strong>Lofted Cut</strong> Feature or not.</p>
+
+<p>If we failed to select then inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+
+<p>Now we run the macro and after running macro we get Revolve as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-lofted-cut/lofted-cut-final-result.png"><img src="/assets/Solidworks_Images/feature-lofted-cut/lofted-cut-final-result.png" alt="lofted-cut-final-result" /></a></p>
+
+<h3 id="final-work">Final work</h3>
+
+<p>After creating <strong>Lofted Cut</strong> feature, we have to do some cleaning work so that we can use this macro frequently.</p>
+
+<ul>
+  <li>Empty SOLIDWORKS Entity Array</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Erase array data</span>
+<span class="k">Erase</span> <span class="n">swObjects</span>
+</code></pre></div></div>
+
+<p>In above line, we <strong>erase</strong> data from <em>SOLIDWORKS Entity array</em>.</p>
+
+<p>For this we use <strong><code class="language-plaintext highlighter-rouge">Erase</code></strong> function in-build in VBA.</p>
+
+<ul>
+  <li>Make part Zoom to fit</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</code></pre></div></div>
+
+<p>In above line, we make our view zoom to fit the model.</p>
+
+<p>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+
+<ul>
+  <li>Clear selection</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In above line, we clear all previous selection.</p>
+
+<p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>create Lofted Cut</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+:ET

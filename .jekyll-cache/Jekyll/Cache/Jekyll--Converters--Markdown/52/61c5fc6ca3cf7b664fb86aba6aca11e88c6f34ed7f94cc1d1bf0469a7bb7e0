@@ -1,0 +1,6 @@
+I"�<p class="notice--warning">This is post is a intermediate post and required you to have some knowledge of <strong>VBA</strong>.<br />
+If you are following my articles you will notice that till now we were <strong>hardcoding</strong> the selections for input parameters.<br />
+But from this post onward we will take user-inputs.<br />
+Please note that we will not use 👉 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, but use 👉 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and will ask user to <strong>select SOLIDWORKS Entities</strong> from SOLIDWORKS.<br />
+I hope you will also like this type of tutorials.<br />Thank you for reading till now.</p>
+:ET

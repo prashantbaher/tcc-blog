@@ -1,0 +1,132 @@
+I"�&<p>A <code class="language-plaintext highlighter-rouge">function</code> essentially performs a calculation and returns a single value.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">SUM</code> function in <strong>MS Excel</strong> returns the sum of a range of values.</p>
+
+<p>The same holds true for functions used in your <strong>VBA expressions</strong>: Each function does its thing and returns a single value.</p>
+
+<p>The functions you use in VBA can come from two sources:</p>
+
+<ul>
+  <li>Built-in functions provided by VBA</li>
+  <li>Custom functions that you (or someone else) write, using VBA.</li>
+</ul>
+
+<h2 id="built-in-vba-functions">Built-In VBA Functions</h2>
+
+<p>VBA provides numerous <em>built-in</em> functions. Some of these functions take arguments and some do not.</p>
+
+<p>I present a few examples of VBA functions in code.</p>
+
+<p>In many of these examples, I use the <code class="language-plaintext highlighter-rouge">MsgBox</code> function to display a value in a message box.</p>
+
+<p>Yes, <code class="language-plaintext highlighter-rouge">MsgBox</code> is a VBA function — a rather unusual one, but a function nonetheless.</p>
+
+<p>This useful function displays a message in a pop-up dialog box.</p>
+
+<h2 id="displaying-the-system-date-or-time">Displaying the system date or time</h2>
+
+<p>The first example uses VBA’s <code class="language-plaintext highlighter-rouge">Date</code> function to display the current system date in a message box:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
+  <span class="n">MsgBox</span> <span class="kt">Date</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Notice that the <code class="language-plaintext highlighter-rouge">Date</code> function doesn’t use an argument.</p>
+
+<p>A VBA function with no argument doesn’t require an empty set of parentheses.</p>
+
+<p>In fact, if you type an empty set of parentheses, the VBE will promptly remove them.</p>
+
+<p>To get the system time, use the <code class="language-plaintext highlighter-rouge">Time</code> function. And if you want it all, use the <code class="language-plaintext highlighter-rouge">Now</code> function to return both the date and the time.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowDate</span><span class="p">()</span>
+  <span class="n">MsgBox</span> <span class="n">Now</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="finding-a-string-length">Finding a string length</h2>
+
+<p>The following procedure uses the VBA’s <code class="language-plaintext highlighter-rouge">Len</code> function, which returns the length of a text string.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Len</code> function takes one argument: the <code class="language-plaintext highlighter-rouge">string</code>.</p>
+
+<p>When you execute this procedure, the <em>message box</em> displays <strong>11</strong> because the argument has <strong>11</strong> characters.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">StringLength</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">MyString</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">StringLength</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">MyString</span> <span class="o">=</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">”</span>
+  <span class="n">StringLength</span> <span class="o">=</span> <span class="n">Len</span><span class="p">(</span><span class="n">MyString</span><span class="p">)</span>
+  <span class="n">MsgBox</span> <span class="n">StringLength</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="displaying-the-integer-part-of-a-number">Displaying the integer part of a number</h2>
+
+<p>The following procedure uses the <code class="language-plaintext highlighter-rouge">Fix</code> function, which returns the integer portion of a value — <em>the value without any decimal digits</em>:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GetIntegerPart</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">MyValue</span> <span class="ow">As</span> <span class="kt">Double</span>
+  <span class="k">Dim</span> <span class="nv">IntValue</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">MyValue</span> <span class="o">=</span> <span class="mf">123.456</span>
+  <span class="n">IntValue</span> <span class="o">=</span> <span class="n">Fix</span><span class="p">(</span><span class="n">MyValue</span><span class="p">)</span>
+  <span class="n">MsgBox</span> <span class="n">IntValue</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>In this case, the message box displays <strong>123</strong>.</p>
+
+<p>VBA has a similar function called <code class="language-plaintext highlighter-rouge">Int</code> Function.</p>
+
+<p>The difference between <code class="language-plaintext highlighter-rouge">Int</code> and <code class="language-plaintext highlighter-rouge">Fix</code> is how each deals with negative numbers.</p>
+
+<p>It’s a subtle difference, but sometimes it’s important.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Int</code> Function returns the first negative integer that’s less than or equal to the argument. <code class="language-plaintext highlighter-rouge">Int(-123.456)</code> returns <strong>-124</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Fix</code> Function returns the first negative integer that’s greater than or equal to the argument. <code class="language-plaintext highlighter-rouge">Fix(-123.456)</code> returns <strong>-123</strong>.</p>
+
+<h2 id="determining-a-file-size">Determining a file size</h2>
+
+<p>The following <code class="language-plaintext highlighter-rouge">Sub</code> procedure displays the size, in bytes, of the executable file.</p>
+
+<p>It finds this value by using the <code class="language-plaintext highlighter-rouge">FileLen</code> function.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">GetFileSize</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">TheFile</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="n">TheFile</span> <span class="err">“</span><span class="n">C</span><span class="p">:</span><span class="o">\</span><span class="n">ProgramFiles</span><span class="o">\</span><span class="n">Program</span> <span class="n">File</span><span class="o">\</span><span class="n">SolidworksCorp</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">exe</span><span class="err">”</span>
+  <span class="n">MsgBox</span> <span class="n">FileLen</span><span class="p">(</span><span class="n">TheFile</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Notice that this routine hard codes the filename (that is, it explicitly states the path).</p>
+
+<p>Generally, this <strong>isn’t</strong> a good idea. The file might not be on the <em>C drive</em>, or the Program File folder may have a different location.</p>
+
+<p>The following statement shows a better approach:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TheFile</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">Path</span> <span class="o">&amp;</span> <span class="err">“</span><span class="o">\</span><span class="n">SLDWORKS</span><span class="p">.</span><span class="n">EXE</span><span class="err">”</span> 
+</code></pre></div></div>
+
+<p>Path is a property of the Application object.</p>
+
+<p>It simply returns the name of the folder in which the application (that is, <em>Solidworks</em>) is installed (without a trailing backslash).</p>
+
+<h2 id="identifying-the-type-of-a-selected-object">Identifying the type of a selected object</h2>
+
+<p>The following procedure uses the <code class="language-plaintext highlighter-rouge">TypeName</code> function, which returns the type of the selection (as a <code class="language-plaintext highlighter-rouge">string</code>):</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">ShowSelectionType</span><span class="p">()</span>
+  <span class="k">Dim</span> <span class="nv">SelType</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="n">SelType</span> <span class="o">=</span> <span class="n">TypeName</span><span class="p">(</span><span class="n">Selection</span><span class="p">)</span>
+  <span class="n">MsgBox</span> <span class="n">SelType</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>This could be <em>a Sketch, a Part, a Assembly</em> or any <em>other type</em> of object that can be selected.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">TypeName</code> function is very versatile. You can also use this function to determine the data type of a variable.</p>
+
+<p>Next post will be about <strong><em>VBA Functions that do more</em></strong>.</p>
+:ET

@@ -1,0 +1,68 @@
+I"*<p>In the following sections we will discussed about following topics:</p>
+
+<ol>
+  <li>
+    <p>Public Variables</p>
+  </li>
+  <li>
+    <p>Static Variables</p>
+  </li>
+  <li>
+    <p>Life of Variables</p>
+  </li>
+</ol>
+
+<p>Let’s look at them one by one.</p>
+
+<h2 id="public-variables">Public Variables</h2>
+
+<p>If you need to make a variable <em>available</em> to all the procedures in all your VBA modules, declare the variable at the module level (in the <em>Declarations</em> section) by using the <code class="language-plaintext highlighter-rouge">Public</code> keyword.</p>
+
+<p>For example, in previous figure, if I use <code class="language-plaintext highlighter-rouge">Public</code> in place of <code class="language-plaintext highlighter-rouge">Dim</code> in declaration section of <strong>VBE</strong>, then you can use those variables in other procedures of same modules, and for other modules also.</p>
+
+<p>If you would like a variable to be available to other modules, you must declare the variable as <code class="language-plaintext highlighter-rouge">Public</code>.</p>
+
+<p>In practice, sharing a variable across modules is hardly ever done.</p>
+
+<p>But I guess it’s nice to know that it can be done.</p>
+
+<h2 id="static-variables">Static Variables</h2>
+
+<p>Normally, when a procedure ends, all the procedure’s variables are reset.</p>
+
+<p><strong>Static</strong> variables are a special case because they retain their value even when the procedure ends.</p>
+
+<p>You declare a static variable at the <em>procedure level</em>.</p>
+
+<p>A static variable may be useful if you need to track the number of times you execute a procedure.</p>
+
+<h2 id="life-of-variables">Life of Variables</h2>
+
+<p>Nothing lives forever, including <strong>variables</strong>.</p>
+
+<p>The scope of a variable not only determines where that variable may be used, it also affects under which circumstances the variable is removed from memory.</p>
+
+<p>You can <em>purge</em> (remove) all variables from memory by using three methods:</p>
+
+<ul>
+  <li>
+    <p>Click the <em>Reset</em> toolbar button (the <em>little blue</em> square button on the <em>Standard</em> toolbar in previous figure).</p>
+  </li>
+  <li>
+    <p>Click <code class="language-plaintext highlighter-rouge">End</code> when a <em>runtime error</em> message dialog box shows up.</p>
+  </li>
+  <li>
+    <p>Include an <code class="language-plaintext highlighter-rouge">End</code> statement anywhere in your code. This is not the same as an <code class="language-plaintext highlighter-rouge">End Sub</code> or <code class="language-plaintext highlighter-rouge">End Function</code> statement. Generally it is an Exit statement.</p>
+  </li>
+</ul>
+
+<p>Otherwise, only procedure-level variables will be removed from memory when the <em>macro code</em> has completed running.</p>
+
+<p>Static variables, module level variables, and global (<code class="language-plaintext highlighter-rouge">public</code>) variables all retain their values in between runs of your code.</p>
+
+<blockquote>
+  <p>If you use <em>module-level</em> or <em>global-level</em> variables, make sure they have the value you expect them to have. You never know whether one of the situations I just mentioned may have caused your variables to lose their content!</p>
+</blockquote>
+
+<p>Next post will be about <strong><em>VBA Constants</em></strong>.</p>
+:ET
