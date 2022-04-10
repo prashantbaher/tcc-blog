@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Add Angle Mate - The CAD Coder</title>
-<meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Add Width Mate - The CAD Coder</title>
+<meta name="description" content="This article has &quot;Intermediate ➡ Advanced&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article I created various 🚀 Functions to avoid duplication of code.   I tried to write code as I would write in real application.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Add Angle Mate">
-<meta property="og:url" content="http://localhost:4000/solidworks-vba-macros/assembly-angle-mate/">
+<meta property="og:title" content="Solidworks VBA Macro - Add Width Mate">
+<meta property="og:url" content="http://localhost:4000/solidworks-vba-macros/assembly-width-mate/">
 
 
-  <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <meta property="og:description" content="This article has &quot;Intermediate ➡ Advanced&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article I created various 🚀 Functions to avoid duplication of code.   I tried to write code as I would write in real application.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/solidworks-vba-macros/assembly-angle-mate/">
+<link rel="canonical" href="http://localhost:4000/solidworks-vba-macros/assembly-width-mate/">
 
 
 
@@ -591,7 +591,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-angle-mate/" class="active">Add Angle Mate</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
           
         </ul>
         
@@ -626,9 +626,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Add Angle Mate">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Add Width Mate">
     
-    <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+    <meta itemprop="description" content="  This article has &quot;Intermediate ➡ Advanced&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article I created various 🚀 Functions to avoid duplication of code.  I tried to write code as I would write in real application.  I hope you will also like this type of tutorials.  Thank you for reading.">
     
     
     <meta itemprop="datePublished" content="2022-04-10T14:47:25-04:00">
@@ -637,7 +637,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Add Angle Mate
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Add Width Mate
 </h1>
         
 
@@ -653,7 +653,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          20 minute read
+          19 minute read
         
       </span>
     
@@ -702,9 +702,10 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
           <div class="notice--warning">
-  This article has <strong>"Beginner ➡ Intermediate"</strong> level Macro program.<br />
+  This article has <strong>"Intermediate ➡ Advanced"</strong> level Macro program.<br />
   If you are following my articles then will not be an issue for you.<br />
-  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+  In this article I created various 🚀 <strong><a href="/vba/functions/">Functions</a></strong> to avoid <em>duplication of code</em>.<br />
+  <strong><em>I tried to write code as I would write in real application</em></strong>.<br />
   I hope you will also like this type of tutorials.<br />
   Thank you for reading.<br />
 </div>
@@ -778,16 +779,19 @@
 <span class="c1">' Variable for Solidworks Face</span>
 <span class="k">Dim</span> <span class="nv">swFace</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Face2</span>
 
-<span class="c1">' Variable for Solidworks Face List</span>
-<span class="k">Dim</span> <span class="nv">vFaces</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Face2</span>
+<span class="c1">' Variable for Solidworks Tab Face List</span>
+<span class="k">Dim</span> <span class="nv">vTabFaces</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Face2</span>
+
+<span class="c1">' Variable for Solidworks Width Face List</span>
+<span class="k">Dim</span> <span class="nv">vWidthFaces</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Face2</span>
 
 <span class="c1">' Variable for Solidworks Mate Feature Data</span>
 <span class="k">Dim</span> <span class="nv">swMateData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">MateFeatureData</span>
 
-<span class="c1">' Variable for Solidworks Angle Mate Feature Data</span>
-<span class="k">Dim</span> <span class="nv">swAngleMateData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AngleMateFeatureData</span>
+<span class="c1">' Variable for Solidworks Width Mate Feature Data</span>
+<span class="k">Dim</span> <span class="nv">swWidthMateData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">WidthMateFeatureData</span>
 
-<span class="c1">' Program to add Angle Mate</span>
+<span class="c1">' Program to add Width Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
   
   <span class="c1">' Set Solidworks Application variable to current application</span>
@@ -806,17 +810,14 @@
   <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
     
   <span class="c1">' Create Assembly Mate Data</span>
-  <span class="k">Set</span> <span class="n">swMateData</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CreateMateData</span><span class="p">(</span><span class="n">swMateType_e</span><span class="p">.</span><span class="n">swMateANGLE</span><span class="p">)</span>
+  <span class="k">Set</span> <span class="n">swMateData</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CreateMateData</span><span class="p">(</span><span class="n">swMateType_e</span><span class="p">.</span><span class="n">swMateWIDTH</span><span class="p">)</span>
   
-  <span class="c1">' Set Angle Mate data to Assembly Mate Data</span>
-  <span class="k">Set</span> <span class="n">swAngleMateData</span> <span class="o">=</span> <span class="n">swMateData</span>
+  <span class="c1">' Set Width Mate data to Assembly Mate Data</span>
+  <span class="k">Set</span> <span class="n">swWidthMateData</span> <span class="o">=</span> <span class="n">swMateData</span>
   
-  <span class="c1">' Set Mate Alignment</span>
-  <span class="n">swAngleMateData</span><span class="p">.</span><span class="n">MateAlignment</span> <span class="o">=</span> <span class="n">SwConst</span><span class="p">.</span><span class="n">swMateAlign_e</span><span class="p">.</span><span class="n">swMateAlignANTI_ALIGNED</span>
-  
-  <span class="c1">' Set Mate Flip Dimension</span>
-  <span class="n">swAngleMateData</span><span class="p">.</span><span class="n">FlipDimension</span> <span class="o">=</span> <span class="k">True</span>
-  
+  <span class="c1">' Set Mate Type</span>
+  <span class="n">swWidthMateData</span><span class="p">.</span><span class="n">ConstraintType</span> <span class="o">=</span> <span class="n">swMateWidthOptions_e</span><span class="p">.</span><span class="n">swMateWidth_Centered</span>
+    
   <span class="c1">' Variable for List of elements</span>
   <span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
   
@@ -833,117 +834,24 @@
     <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">vArray</span><span class="p">(</span><span class="n">componentIndex</span><span class="p">)</span>
     
     <span class="c1">' Calling this function</span>
-    <span class="n">SelectFace</span> <span class="n">swComponent</span><span class="p">,</span> <span class="n">componentIndex</span>
+    <span class="n">GetFaces</span> <span class="n">swComponent</span><span class="p">,</span> <span class="n">componentIndex</span>
     
   <span class="k">Next</span>
   
-  <span class="c1">' Variable for Solidworks Select Data</span>
-  <span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
-  
-  <span class="c1">' Set value of Solidworks Select Data variable</span>
-  <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">CreateSelectData</span>
-  
-  <span class="c1">' Set Mark of Solidworks Select Data</span>
-  <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
-  
-  <span class="c1">' Boolean variable</span>
-  <span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-  
-  <span class="c1">' Select faces for Concentric mate</span>
-  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">MultiSelect2</span><span class="p">(</span><span class="n">vFaces</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">swSelData</span><span class="p">)</span>
-
-  <span class="c1">' Check if faces are selected</span>
-  <span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Failed to select faces."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="c1">' Select Faces for Width Mate</span>
+  <span class="k">If</span> <span class="n">SelectFaces</span><span class="p">()</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="c1">' On failed select, return from here.</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Set Angle Mate Entities to Mate</span>
-  <span class="n">swAngleMateData</span><span class="p">.</span><span class="n">EntitiesToMate</span> <span class="o">=</span> <span class="n">vFaces</span>
+  <span class="c1">' Set Width Mate Tab faces</span>
+  <span class="n">swWidthMateData</span><span class="p">.</span><span class="n">TabSelection</span> <span class="o">=</span> <span class="n">vTabFaces</span>
   
-  <span class="c1">' Local variables used as Conversion Factors</span>
-  <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-  <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-  
-  <span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
-  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
-    
-    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
-    
-    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-    
-    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
-      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
-      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-  <span class="k">End</span> <span class="k">Select</span>
-  
-  <span class="c1">' Variable to hold user input</span>
-  <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
-  
-  <span class="c1">' Getting Angle from user.</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Angle]:"</span><span class="p">)</span>
-  
-  <span class="c1">' This will handle empty value or cancel case</span>
-  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' This will handle case for Non-numeric values</span>
-  <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Variable for Angle</span>
-  <span class="k">Dim</span> <span class="nv">angle</span> <span class="ow">As</span> <span class="kt">Double</span>
-  
-  <span class="c1">' Set Angle</span>
-  <span class="n">angle</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">AngleConversionFactor</span>
-  
-  <span class="c1">' This will handle case for 0 Distance</span>
-  <span class="k">If</span> <span class="n">angle</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Set Angle</span>
-  <span class="n">swAngleMateData</span><span class="p">.</span><span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span>
+  <span class="c1">' Set Width Mate Width faces</span>
+  <span class="n">swWidthMateData</span><span class="p">.</span><span class="n">WidthSelection</span> <span class="o">=</span> <span class="n">vWidthFaces</span>
   
   <span class="c1">' Add Angle Mate</span>
-  <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CreateMate</span><span class="p">(</span><span class="n">swAngleMateData</span><span class="p">)</span>
+  <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CreateMate</span><span class="p">(</span><span class="n">swWidthMateData</span><span class="p">)</span>
 
   <span class="c1">' Check if Mate is added or not</span>
   <span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
@@ -963,8 +871,8 @@
   
 <span class="k">End</span> <span class="k">Sub</span>
 
-<span class="c1">' Function to select required face for Angle mate</span>
-<span class="k">Function</span> <span class="nf">SelectFace</span><span class="p">(</span><span class="n">component</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span><span class="p">,</span> <span class="n">componentIndex</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">)</span>
+<span class="c1">' Function to get required face for Width mate</span>
+<span class="k">Function</span> <span class="nf">GetFaces</span><span class="p">(</span><span class="n">component</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span><span class="p">,</span> <span class="n">componentIndex</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">)</span>
   
   <span class="c1">' Get body of current component</span>
   <span class="k">Set</span> <span class="n">swBody</span> <span class="o">=</span> <span class="n">component</span><span class="p">.</span><span class="n">GetBody</span>
@@ -974,6 +882,9 @@
   
   <span class="c1">' Variable to store Message Box result</span>
   <span class="k">Dim</span> <span class="nv">resp</span> <span class="ow">As</span> <span class="n">VbMsgBoxResult</span>
+  
+  <span class="c1">' Variable to count added faces</span>
+  <span class="k">Dim</span> <span class="nv">faceNumber</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">:</span> <span class="n">faceNumber</span> <span class="o">=</span> <span class="mi">0</span>
   
   <span class="c1">' Loop through all Faces</span>
   <span class="k">Do</span> <span class="k">While</span> <span class="k">Not</span> <span class="n">swFace</span> <span class="ow">Is</span> <span class="k">Nothing</span>
@@ -989,8 +900,16 @@
     
     <span class="c1">' Check if user response if Yes</span>
     <span class="k">If</span> <span class="n">resp</span> <span class="o">=</span> <span class="n">vbYes</span> <span class="k">Then</span>
-      <span class="c1">' Add current face to List of Faces</span>
-      <span class="k">Set</span> <span class="n">vFaces</span><span class="p">(</span><span class="n">componentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swFace</span>
+    
+      <span class="c1">' Calling function for adding faces</span>
+      <span class="n">AddFaces</span> <span class="n">faceNumber</span><span class="p">,</span> <span class="n">componentIndex</span>
+      
+      <span class="c1">' Increment face count</span>
+      <span class="n">faceNumber</span> <span class="o">=</span> <span class="n">faceNumber</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">End</span> <span class="k">If</span>
+    
+    <span class="c1">' When both faces are added</span>
+    <span class="k">If</span> <span class="n">faceNumber</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">Then</span>
       <span class="k">Exit</span> <span class="k">Function</span>
     <span class="nf">End</span> <span class="k">If</span>
     
@@ -998,6 +917,80 @@
     <span class="k">Set</span> <span class="n">swFace</span> <span class="o">=</span> <span class="n">swFace</span><span class="p">.</span><span class="n">GetNextFace</span>
     
   <span class="k">Loop</span>
+  
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="c1">' Function to add Faces for Width mate</span>
+<span class="k">Function</span> <span class="nf">AddFaces</span><span class="p">(</span><span class="n">faceNumber</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">,</span> <span class="n">componentIndex</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">)</span>
+  
+  <span class="k">If</span> <span class="n">componentIndex</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">Then</span>
+    <span class="c1">' Add current face to List of Faces</span>
+    <span class="k">Set</span> <span class="n">vWidthFaces</span><span class="p">(</span><span class="n">faceNumber</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swFace</span>
+    <span class="k">Exit</span> <span class="k">Function</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Add current face to List of Faces</span>
+  <span class="k">Set</span> <span class="n">vTabFaces</span><span class="p">(</span><span class="n">faceNumber</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swFace</span>
+    
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="c1">' Function to select faces for Width mate</span>
+<span class="k">Function</span> <span class="nf">SelectFaces</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+  <span class="c1">' Clear any previous selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+  <span class="c1">' Variable for Solidworks Select Data</span>
+  <span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+  
+  <span class="c1">' Set value of Solidworks Select Data variable</span>
+  <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">CreateSelectData</span>
+  
+  <span class="c1">' Variable to hold return value of SelectFaceArrays function</span>
+  <span class="k">Dim</span> <span class="nv">returnValue</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  
+  <span class="c1">' Calling function to select Tab faces</span>
+  <span class="n">returnValue</span> <span class="o">=</span> <span class="n">SelectFaceArrays</span><span class="p">(</span><span class="n">swSelData</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  
+  <span class="c1">' Calling function to select Width faces</span>
+  <span class="n">returnValue</span> <span class="o">=</span> <span class="n">SelectFaceArrays</span><span class="p">(</span><span class="n">swSelData</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+  
+  <span class="c1">' Send this return value</span>
+  <span class="n">SelectFaces</span> <span class="o">=</span> <span class="n">returnValue</span>
+  
+<span class="k">End</span> <span class="k">Function</span>
+
+<span class="c1">' Function to Select Required Face Arrays</span>
+<span class="k">Function</span> <span class="nf">SelectFaceArrays</span><span class="p">(</span><span class="n">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span><span class="p">,</span> <span class="n">selectMark</span> <span class="ow">As</span> <span class="kt">Integer</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+  <span class="c1">' Set Mark of Solidworks Select Data</span>
+  <span class="n">swSelData</span><span class="p">.</span><span class="n">mark</span> <span class="o">=</span> <span class="n">selectMark</span>
+  
+  <span class="c1">' Boolean variable</span>
+  <span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  
+  <span class="c1">' Error Message</span>
+  <span class="k">Dim</span> <span class="nv">errorMessage</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="k">If</span> <span class="n">selectMark</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">Then</span>
+    <span class="c1">' Select Tab faces</span>
+    <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">MultiSelect2</span><span class="p">(</span><span class="n">vTabFaces</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">swSelData</span><span class="p">)</span>
+    <span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Failed to select Tab faces."</span>
+  <span class="k">Else</span>
+    <span class="c1">' Select Width faces</span>
+    <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">MultiSelect2</span><span class="p">(</span><span class="n">vWidthFaces</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">swSelData</span><span class="p">)</span>
+    <span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Failed to select Width faces."</span>
+  <span class="k">End</span> <span class="k">If</span>
+
+  <span class="c1">' Check if faces are selected</span>
+  <span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="n">errorMessage</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="n">SelectFaceArrays</span> <span class="o">=</span> <span class="n">boolStatus</span>
+    <span class="k">Exit</span> <span class="k">Function</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="n">SelectFaceArrays</span> <span class="o">=</span> <span class="k">True</span>
   
 <span class="k">End</span> <span class="k">Function</span>
 </code></pre></div></div>
@@ -2097,13 +2090,13 @@ Since 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldwork
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-distance-mate/" title="Solidworks VBA Macro - Add Distance Mate
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-angle-mate/" title="Solidworks VBA Macro - Add Angle Mate
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-width-mate/" title="Solidworks VBA Macro - Add Width Mate
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
