@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Insert Component - The CAD Coder</title>
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Add Rename Mate - The CAD Coder</title>
 <meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
@@ -13,8 +13,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Insert Component">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-insert-component/">
+<meta property="og:title" content="Solidworks VBA Macro - Add Rename Mate">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-rename-mate/">
 
 
   <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-insert-component/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-rename-mate/">
 
 
 
@@ -563,7 +563,7 @@
         
         <ul>
           
-            <li><a href="/solidworks-vba-macros/assembly-insert-component/" class="active">Insert Component</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
           
             <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
           
@@ -621,7 +621,7 @@
         
         <ul>
           
-            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-rename-mate/" class="active">Rename Mate</a></li>
           
         </ul>
         
@@ -656,7 +656,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Insert Component">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Add Rename Mate">
     
     <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
     
@@ -667,7 +667,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Insert Component
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Add Rename Mate
 </h1>
         
 
@@ -683,7 +683,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 minute read
+          7 minute read
         
       </span>
     
@@ -700,7 +700,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-and-initialize-required-variables">Create and Initialize required variables</a></li><li><a href="#insert-component">Insert Component</a></li><li><a href="#final-work">Final work</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create global variables</a></li><li><a href="#initialize-global-variables">Initialize global variables</a></li><li><a href="#add-rename-mate">Add Rename Mate</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -741,43 +741,44 @@
 
 <h2 id="objective">Objective</h2>
 
-<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Insert Component</strong> in <strong>Assembly document</strong> of <em>SOLIDWORKS CAD Software</em>.</p>
+<p>In this article, we understand “how to” <strong>Rename a Mate</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to <strong>Insert Component</strong> in <strong>Assembly document</strong>.</p>
+<p>You can use this method to <strong>rename any feature</strong>.</p>
+
+<p>In my example, <em>I am renaming last added mate</em>.</p>
 
 <h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>After running our macro we successfully <strong>Insert Component</strong> in <strong>Assembly document</strong> as a result.</p>
-
 <p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/assembly-insert-component/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-insert-component/final-result-gif.gif" alt="insert-component-final-result" /></a></p>
+<p><a href="/assets/Solidworks_Images/assembly-rename-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-rename-mate/final-result-gif.gif" alt="assembly-rename-mate" /></a></p>
 
-<p>We <strong>Insert Component</strong> in following steps in general.</p>
+<p>We add <strong>Rename Mate</strong> in following steps.</p>
 
 <ol>
-  <li><em>Insert an open Part in new Assembly document.</em></li>
+  <li><em>Ask a name from user.</em></li>
+  <li><em>Rename Mate.</em></li>
 </ol>
 
-<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
 
 <h2 id="macro-video">Macro Video</h2>
 
-<p>Below 🎬 video shows <strong>Insert Component</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<p>Below 🎬 video shows how to <strong>Rename Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/76UA2nl8Cyw" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/fWtj-YwXMFU" frameborder="0" allowfullscreen=""></iframe>
 
 <p><br /></p>
 
-<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
 
-<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+<p><strong><em>I have explained every line in this article.</em></strong></p>
 
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
 
 <h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <strong><em>VBA macro</em></strong> for <em>Insert Component</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Rename Mate</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
@@ -790,13 +791,10 @@
 <span class="c1">' Variable for Solidworks Assembly</span>
 <span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
 
-<span class="c1">' Variable for Solidworks Component</span>
-<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+<span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
 
-<span class="c1">' Open part file name</span>
-<span class="k">Dim</span> <span class="nv">partName</span> <span class="ow">As</span> <span class="kt">String</span>
-
-<span class="c1">' Program to insert a Component in assembly</span>
+<span class="c1">' Program to Rename Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
   
   <span class="c1">' Set Solidworks Application variable to current application</span>
@@ -811,81 +809,87 @@
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Get open part file name</span>
-  <span class="n">partName</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetTitle</span>
-  
-  <span class="c1">' Check if we get the file name or not</span>
-  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">partName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Fail to get Part title."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Variable for storing default Assembly Template</span>
-  <span class="k">Dim</span> <span class="nv">defaultAssemblyTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-  
-  <span class="c1">' Setting value of variable to "Default Assembly template"</span>
-  <span class="n">defaultAssemblyTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
-  
-  <span class="c1">' Check if we get the default Assembly template or not</span>
-  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">defaultAssemblyTemplate</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Fail to get default Assembly template."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Setting Solidworks document to new Assembly document</span>
-  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultAssemblyTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-  
-  <span class="c1">' Check if Solidworks Assembly is opened or not</span>
-  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Solidworks Assembly is not opened."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
   <span class="c1">' Set Solidworks Assembly document</span>
   <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' Insert new component</span>
-  <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">AddComponent5</span><span class="p">(</span><span class="n">partName</span><span class="p">,</span> <span class="n">swAddComponentConfigOptions_CurrentSelectedConfig</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-  
-  <span class="c1">' Check new Component inserted or not</span>
-  <span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Failed to insert component in assembly."</span>
+  <span class="c1">' Get mate feature</span>
+  <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
+
+  <span class="c1">' Check if successfully Get mate</span>
+  <span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' View zoom to fit</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+  <span class="c1">' Select the mate</span>
+  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
+  
+  <span class="c1">' Start editing mate feature</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
+  
+  <span class="c1">' Variable for mate's new name</span>
+  <span class="k">Dim</span> <span class="nv">newName</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Get mate's new name</span>
+  <span class="n">newName</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"New Name:"</span><span class="p">,</span> <span class="s">"Edit Mate"</span><span class="p">)</span>
+  
+  <span class="c1">' This will handle empty value or cancel case</span>
+  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">newName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Update mate's new name</span>
+  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">newName</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+  <span class="c1">' Rebuild assembly</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
   
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <h2 id="prerequisite">Prerequisite</h2>
 
-<p>There are some <em>prerequisite</em> for this article.</p>
+<p>There are some <em>prerequisites</em> for this article.</p>
 
 <ul>
-  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>
+    <p>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</p>
+  </li>
+  <li>
+    <p>We use existing parts in Assembly document.</p>
+  </li>
+  <li>
+    <p>One component is fully constraint and other component is Float as shown in below image.</p>
+  </li>
 </ul>
 
-<p>Since we are creating new part, there are no feature to create.</p>
+<p><a href="/assets/Solidworks_Images/assembly-rename-mate/prerequisite.gif"><img src="/assets/Solidworks_Images/assembly-rename-mate/prerequisite.gif" alt="prerequisite" /></a></p>
 
-<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>mostly error free</strong>.</p>
 
 <h2 id="steps-to-follow">Steps To Follow</h2>
 
-<p>This <strong>Reference Point VBA macro</strong> can be divided into following sections:</p>
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
 
 <ol>
-  <li><em>Create and Initialize required variables</em></li>
-  <li><em>Insert Component</em></li>
-  <li><em>Final work</em></li>
+  <li><em>Create global variables</em></li>
+  <li><em>Initialize global variables</em></li>
+  <li><em>Rename Mate</em></li>
 </ol>
 
 <p><strong><em>Every section with each line is explained below.</em></strong></p>
 
 <p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
 
-<h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
+<h3 id="create-global-variables">Create global variables</h3>
+
+<p>In this section, we create global variables.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 </code></pre></div></div>
@@ -928,43 +932,37 @@
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
-<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Solidworks Component</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Open part file name</span>
-<span class="k">Dim</span> <span class="nv">partName</span> <span class="ow">As</span> <span class="kt">String</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Open part file name</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">partName</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Mate Feature</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeature</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
 <p><strong><em>These all are our global variables.</em></strong></p>
 
 <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to insert a Component in assembly</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Rename Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create <em>main Program to insert a Component in assembly</em>.</li>
+  <li>In above line, we create <em>main Program to Rename Mate in assembly</em>.</li>
   <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
   <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
   <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
 </ul>
+
+<h3 id="initialize-global-variables">Initialize global variables</h3>
+
+<p>In this section, we initialize global variables.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -1004,107 +1002,6 @@
   </li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get open part file name</span>
-<span class="n">partName</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetTitle</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">partName</code></strong> variable.</li>
-  <li>This <em>value</em> is <strong>Title or File Name</strong> of opened part.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if we get the file name or not</span>
-<span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">partName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Fail to get Part title."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">partName</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(partName) = 0</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Fail to get Part title.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for storing default Assembly Template</span>
-<span class="k">Dim</span> <span class="nv">defaultAssemblyTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>storing default Assembly Template</em> path.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">defaultAssemblyTemplate</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting value of variable to "Default Assembly template"</span>
-<span class="n">defaultAssemblyTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">defaultAssemblyTemplate</code></strong> variable.</li>
-  <li>This <em>value</em> is set by <strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong> method from <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> object.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if we get the default Assembly template or not</span>
-<span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">defaultAssemblyTemplate</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Fail to get default Assembly template."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">defaultAssemblyTemplate</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(defaultAssemblyTemplate) = 0</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Fail to get default Assembly template.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to new Assembly document</span>
-<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultAssemblyTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>This <em>value</em> is <em>new Assembly document</em>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks Assembly is opened or not</span>
-<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks Assembly is not opened."</span><span class="p">)</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="insert-component">Insert Component</h3>
-
-<p>In this section, we <em>Insert Component</em>.</p>
-
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
 <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre></div></div>
@@ -1114,161 +1011,158 @@
   <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Insert new component</span>
-<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">AddComponent5</span><span class="p">(</span><span class="n">partName</span><span class="p">,</span> <span class="n">swAddComponentConfigOptions_CurrentSelectedConfig</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<h3 id="add-rename-mate">Add Rename Mate</h3>
+
+<p>In this section, we <em>Rename Mate</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get mate feature</span>
+<span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
 </code></pre></div></div>
 
 <ul>
-  <li>
-    <p>In above line, we set the value of variable <code class="language-plaintext highlighter-rouge">swComponent</code> by <code class="language-plaintext highlighter-rouge">AddComponent5</code> method.</p>
-  </li>
-  <li>
-    <p>This <code class="language-plaintext highlighter-rouge">AddComponent5</code> method takes following parameters as explained:</p>
-
-    <ul>
-      <li>
-        <p><strong>CompName</strong> - <em>Path name of a pre-loaded part or assembly to add as a component.</em></p>
-      </li>
-      <li>
-        <p><strong>ConfigOption</strong> - <em>Type of Scale as defined in <strong><code class="language-plaintext highlighter-rouge">swAddComponentConfigOptions_e</code></strong></em>:</p>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Member</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swAddComponentConfigOptions_CurrentSelectedConfig</code></strong></td>
-              <td><em>2</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swAddComponentConfigOptions_NewConfigWithAllReferenceModels</code></strong></td>
-              <td><em>3</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swAddComponentConfigOptions_NewConfigWithAsmStructure</code></strong></td>
-              <td><em>4</em></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <p><strong>NewConfigName</strong> - <em>Name for the new assembly configuration.</em></p>
-      </li>
-      <li>
-        <p><strong>UseConfigForPartReferences</strong> - <em>If true, the configuration specified in ExistingConfigName is used.</em></p>
-      </li>
-      <li>
-        <p><strong>ExistingConfigName</strong> - <em>Name of the configuration of the loaded component.</em></p>
-      </li>
-      <li>
-        <p><strong>X</strong> - <em>X coordinate of the component center.</em></p>
-      </li>
-      <li>
-        <p><strong>Y</strong> - <em>Y coordinate of the component center.</em></p>
-      </li>
-      <li>
-        <p><strong>Z</strong> - <em>Z coordinate of the component center.</em></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">AddComponent5</code> method return 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IComponent2.html">Component2</a></strong> data object.</p>
-  </li>
-  <li>
-    <p>In our code, I have used following values:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Parameter Name</th>
-          <th>Value Used</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>CompName</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">partName</code></td>
-        </tr>
-        <tr>
-          <td><strong>ConfigOption</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">swAddComponentConfigOptions_CurrentSelectedConfig</code></td>
-        </tr>
-        <tr>
-          <td><strong>NewConfigName</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">""</code></td>
-        </tr>
-        <tr>
-          <td><strong>UseConfigForPartReferences</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
-        </tr>
-        <tr>
-          <td><strong>ExistingConfigName</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">""</code></td>
-        </tr>
-        <tr>
-          <td><strong>X</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>Y</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>Z</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>In above line, we set the value of variable <strong><code class="language-plaintext highlighter-rouge">swMateFeature</code></strong> by <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object is then part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> object.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method gives us last added mate.</li>
 </ul>
 
-<p><strong>Reference</strong>: For more details about</p>
-
-<ul>
-  <li><strong>Solidworks Assembly document details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
-  <li><strong>AddComponent5 Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IAssemblyDoc~AddComponent5.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">AddComponent5</code> Method.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check new Component inserted or not</span>
-<span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Failed to insert component in assembly."</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if successfully Get mate</span>
+<span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above code block, we check if we successfully <strong>insert component in assembly</strong> or not.</li>
+  <li>In above code block, we check if we successfully get <strong>Last Mate</strong> or not.</li>
   <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swComponent Is Nothing</code></strong></li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swMateFeature Is Nothing</code></strong></li>
   <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
       <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Failed to insert component in assembly.</em></li>
+      <li><strong>Message</strong>: <em>Failed to Get Mate</em>.</li>
+      <li>After that we clear the selection.</li>
       <li>Then we <strong>stop</strong> our macro here.</li>
     </ul>
   </li>
 </ul>
 
-<p>Now we run the macro and after running macro we <strong>Insert component</strong> as shown in below image.</p>
-
-<p><a href="/assets/Solidworks_Images/assembly-insert-component/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-insert-component/final-result-gif.gif" alt="assembly-insert-component-final-result" /></a></p>
-
-<h3 id="final-work">Final work</h3>
-
-<p>In this section, after <strong>Insert component</strong>, we have to do some cleaning work so that we can use this macro frequently.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the mate</span>
+<span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we make our view zoom to fit the model.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+  <li>In above line we select the mate by <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method take either <strong><code class="language-plaintext highlighter-rouge">True</code></strong> or <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">True</code></strong>: <em>Appends the feature to the current selection list.</em></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">False</code></strong>: <em>Replaces the current selection list.</em></li>
+    </ul>
+  </li>
 </ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Start editing mate feature</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line we start editing mate feature by <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method puts the current feature into edit mode.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for mate's new name</span>
+<span class="k">Dim</span> <span class="nv">newName</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable to store new name.</li>
+  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">newName</code></strong></li>
+  <li><strong>Type</strong>: <strong><code class="language-plaintext highlighter-rouge">String</code></strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get mate's new name</span>
+<span class="n">newName</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"New Name:"</span><span class="p">,</span> <span class="s">"Edit Mate"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
+
+    <p>Those 2 steps are explained below.</p>
+
+    <ul>
+      <li><strong>Step 1</strong> - Getting <strong>New Name</strong> from user.</li>
+    </ul>
+
+    <p>Below image shows the message for <strong>New Name</strong> to the user.</p>
+
+    <p><a href="/assets/Solidworks_Images/assembly-rename-mate/message-for-new-name.png"><img src="/assets/Solidworks_Images/assembly-rename-mate/message-for-new-name.png" alt="message-for-new-name" /></a></p>
+
+    <ul>
+      <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">newName</code></strong> variable.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle empty value or cancel case</span>
+<span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">newName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check the <strong><em>length of input value</em></strong>.</li>
+  <li>This check will handle <strong>case for empty value</strong> or <strong>cancel operation case</strong>.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(newName) = 0</code></strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">Len()</code></strong> is pre-build VBA function which check the length of a object.</li>
+      <li>In above cases, we will get <strong>0</strong> value.</li>
+    </ul>
+  </li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Empty or no value. Please try again.</em></li>
+      <li>Then we <strong>clear all selection</strong> and <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update mate's name</span>
+<span class="n">swMateFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">newName</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, <em>we update selected mate’s name</em>.</li>
+  <li>For this we set the value <strong><code class="language-plaintext highlighter-rouge">Name</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swMateFeature</code></strong> variable.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature~Name.html">online SOLIDWORKS API Help</a></strong> for more help.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we clear all selection.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild assembly</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we Rebuild assembly.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we get <strong>Rename Mate</strong> as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-rename-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-rename-mate/final-result-gif.gif" alt="assembly-rename-mate" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
@@ -1276,7 +1170,7 @@
 
 <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>Insert component</strong> with SOLIDWORKS VBA Macros.</p>
+<p>Hope this post helps you to <strong>Rename Mate or any Feature</strong> with SOLIDWORKS VBA Macros.</p>
 
 <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
@@ -1321,13 +1215,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-reference-point/" title="Solidworks VBA Macro - Create Reference Point
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-symmetric-mate/" title="Solidworks VBA Macro - Add Symmetric Mate
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-unfix-component/" title="Solidworks VBA Macro - Unfix Component
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
