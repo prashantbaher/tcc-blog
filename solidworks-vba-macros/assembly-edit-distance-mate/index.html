@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Create Rib - The CAD Coder</title>
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Edit Distance Mate - The CAD Coder</title>
 <meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
@@ -13,8 +13,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Create Rib">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/create-rib/">
+<meta property="og:title" content="Solidworks VBA Macro - Edit Distance Mate">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-edit-distance-mate/">
 
 
   <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/create-rib/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-edit-distance-mate/">
 
 
 
@@ -521,7 +521,7 @@
         
         <ul>
           
-            <li><a href="/solidworks-vba-macros/create-rib/" class="active">Rib Feature</a></li>
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
           
             <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
           
@@ -623,7 +623,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/" class="active">Edit Distance Mate</a></li>
           
         </ul>
         
@@ -658,7 +658,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Create Rib">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Edit Distance Mate">
     
     <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
     
@@ -669,7 +669,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Create Rib
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Edit Distance Mate
 </h1>
         
 
@@ -685,7 +685,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          13 minute read
+          14 minute read
         
       </span>
     
@@ -702,7 +702,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#creating-global-variables">Creating Global Variables</a></li><li><a href="#initializing-required-variables">Initializing Required Variables</a></li><li><a href="#select-rib-sketch">Select Rib Sketch</a></li><li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li><li><a href="#get-rib-thickness-and-validation">Get Rib Thickness And Validation</a></li><li><a href="#create-rib-feature">Create Rib Feature</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create global variables</a></li><li><a href="#initialize-global-variables">Initialize global variables</a></li><li><a href="#get-unit-conversion-factors">Get Unit Conversion Factors</a></li><li><a href="#get-distance-and-validations">Get Distance And Validations</a></li><li><a href="#edit-distance-mate">Edit Distance Mate</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -743,108 +743,162 @@
 
 <h2 id="objective">Objective</h2>
 
-<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Rib feature</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
+<p>In this article, we understand “how to” <strong>Edit Distance Mate</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Rib Feature</strong> quickly.</p>
+<p>You can use this method to <strong>Edit any Mate</strong>.</p>
+
+<p>In my example, <em>I am editing Distance mate</em>.</p>
 
 <h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>After running our macro we successfully create <strong>Rib feature</strong> as a result.</p>
+<p>Below image shows the result we get.</p>
 
-<p>Below <strong>GIF</strong> shows the result we get.</p>
+<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif" alt="assembly-edit-distance-mate" /></a></p>
 
-<p><a href="/assets/Solidworks_Images/feature-rib/final-result-gif.gif"><img src="/assets/Solidworks_Images/feature-rib/final-result-gif.gif" alt="Rib Feature final result" /></a></p>
-
-<p>We create <strong>Rib Feature</strong> in following steps in general.</p>
+<p>We <strong>Edit Distance Mate</strong> in following steps.</p>
 
 <ol>
-  <li><em>Ask user to input <strong>Rib Thickness</strong>.</em></li>
-  <li><em>Create Rib thickness.</em></li>
+  <li><em>Ask Distance from user.</em></li>
+  <li><em>Update distance in Mate.</em></li>
 </ol>
 
-<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
 
 <h2 id="macro-video">Macro Video</h2>
 
-<p>Below 🎬 video shows <strong>Rib feature</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<p>Below 🎬 video shows how to <strong>edit Distance Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/cXKjNcd_yRs" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/fuvO2MZPQao" frameborder="0" allowfullscreen=""></iframe>
+
 <p><br /></p>
 
-<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
 
-<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+<p><strong><em>I have explained every line in this article.</em></strong></p>
 
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
 
 <h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Rib Feature</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>editing Distance mate</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Solidworks application variable</span>
+<span class="c1">' Variable for Solidworks Application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
 
-<span class="c1">' Solidworks document variable</span>
+<span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 
-<span class="c1">' Solidwors Feature variable</span>
-<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
 
-<span class="c1">' Main program for Rib</span>
+<span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">' Variable for Solidworks Mate Feature data</span>
+<span class="k">Dim</span> <span class="nv">swMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">MateFeatureData</span>
+
+<span class="c1">' Variable for Solidworks Distance Mate feature data</span>
+<span class="k">Dim</span> <span class="nv">swDistanceMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DistanceMateFeatureData</span>
+
+<span class="c1">' Program to update Distance Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
-  <span class="c1">' Set Solidworks application variable to current application</span>
+  <span class="c1">' Set Solidworks Application variable to current application</span>
   <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
   
-  <span class="c1">' Check if Solidworks is opened or not</span>
-  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Set Solidworks document variable to open document</span>
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
   <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
   
   <span class="c1">' Check if Solidworks document is opened or not</span>
   <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Get First feature in Feature tree</span>
-  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' Check if Solidworks document is selected or not</span>
-  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to selected First feature in Feature Tree."</span><span class="p">)</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Traversing through the Feature Tree,</span>
-  <span class="c1">' until Feature name is "Rib-Sketch"</span>
-  <span class="k">While</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">&lt;&gt;</span> <span class="s">"Rib-Sketch"</span>
-    
-    <span class="c1">' Print current Feature name is Immediate window</span>
-    <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
-    
-    <span class="c1">' Get the next feature</span>
-    <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
-  <span class="k">Wend</span>
-  
-  <span class="c1">' Print current Feature name is Immediate window</span>
-  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
-  
-  <span class="c1">' Get the faces of selected feature</span>
-  <span class="n">swFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
-  
-  <span class="c1">'-----------------------BELOW IS THE SOLUTION----------------------------------------</span>
-
   <span class="c1">' Local variables used as Conversion Factors</span>
   <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
   <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
   
+  <span class="c1">' Get updated unit conversion factors</span>
+  <span class="k">Call</span> <span class="n">GetUnitConversionFactors</span><span class="p">(</span><span class="n">LengthConversionFactor</span><span class="p">,</span> <span class="n">AngleConversionFactor</span><span class="p">)</span>
+  
+  <span class="c1">' Variable to hold user input</span>
+  <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Getting Distance from user.</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Distance]:"</span><span class="p">)</span>
+  
+  <span class="c1">' This will handle empty value or cancel case</span>
+  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' This will handle case for Non-numeric values</span>
+  <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Variable for Distance</span>
+  <span class="k">Dim</span> <span class="nv">newDistance</span> <span class="ow">As</span> <span class="kt">Double</span>
+  
+  <span class="c1">' Set Distance</span>
+  <span class="n">newDistance</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+  
+  <span class="c1">' This will handle case for 0 Distance</span>
+  <span class="k">If</span> <span class="n">newDistance</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+
+  <span class="c1">' Get mate feature</span>
+  <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
+
+  <span class="c1">' Check if successfully Get mate</span>
+  <span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Select the mate</span>
+  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
+  
+  <span class="c1">' Start editing mate feature</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
+  
+  <span class="c1">' Get feature definition of mate</span>
+  <span class="k">Set</span> <span class="n">swMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeature</span><span class="p">.</span><span class="n">GetDefinition</span>
+  
+  <span class="c1">' Set Distance mate feature data</span>
+  <span class="k">Set</span> <span class="n">swDistanceMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeatureData</span>
+  
+  <span class="c1">' Update distance to new value</span>
+  <span class="n">swDistanceMateFeatureData</span><span class="p">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">newDistance</span>
+  
+  <span class="c1">' Modify the definition</span>
+  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">ModifyDefinition</span> <span class="n">swDistanceMateFeatureData</span><span class="p">,</span> <span class="n">swDoc</span><span class="p">,</span> <span class="k">Nothing</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  
+  <span class="c1">' Rebuild assembly</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+
+<span class="c1">' Function to update Unit conversion factors</span>
+<span class="k">Function</span> <span class="nf">GetUnitConversionFactors</span><span class="p">(</span><span class="k">ByRef</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">,</span> <span class="k">ByRef</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">)</span>
+
   <span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
   <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
     
@@ -885,90 +939,48 @@
       <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
   <span class="k">End</span> <span class="k">Select</span>
 
-  <span class="c1">'----------------------------------------------------------------</span>
-  
-  <span class="c1">' Variable to store user response</span>
-  <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please input Rib Thickness:"</span><span class="p">,</span> <span class="s">"Rib Thickness"</span><span class="p">)</span>
-  
-  <span class="c1">' This will handle empty value or cancel case</span>
-  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' This will handle case for Non-numeric values</span>
-  <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Variable to store Rib Thickness</span>
-  <span class="k">Dim</span> <span class="nv">RibThickness</span> <span class="ow">As</span> <span class="kt">Double</span>
-  <span class="n">RibThickness</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
-  
-  <span class="c1">' This will handle case for 0 thickness</span>
-  <span class="k">If</span> <span class="n">RibThickness</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Create Rib Feature</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertRib</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">RibThickness</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span>
-  
-  <span class="c1">' Clear all selection</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    
-<span class="k">End</span> <span class="k">Sub</span>
+<span class="k">End</span> <span class="k">Function</span>
 </code></pre></div></div>
 
 <h2 id="prerequisite">Prerequisite</h2>
 
-<p>There are some <em>prerequisite</em> for this article.</p>
+<p>There are some <em>prerequisites</em> for this article.</p>
 
 <ul>
-  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
-  <li>We are <strong>not</strong> creating feature from code but we use existing 🚀 <strong><a href="/solidworks-macros/create-extrude-feature">Extrude feature</a></strong> and 🚀 <strong><a href="/solidworks-macros/sketch-create-line/">Sketch Line</a></strong> to create <strong>Sketch Driven pattern feature</strong>.</li>
+  <li>
+    <p>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</p>
+  </li>
+  <li>
+    <p>We use existing parts in Assembly document.</p>
+  </li>
+  <li>
+    <p>Both components are fully constraint as shown in below image.</p>
+  </li>
 </ul>
 
-<p><em>Below image shown prerequisite 3D model for our demo.</em></p>
+<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/prerequisite.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/prerequisite.gif" alt="prerequisite" /></a></p>
 
-<p><a href="/assets/Solidworks_Images/feature-rib/prerequisite.png"><img src="/assets/Solidworks_Images/feature-rib/prerequisite.png" alt="prerequisite" /></a></p>
-
-<p>As shown in above image, there are <strong><em>1 Extrude features</em></strong> and <strong><em>1 Sketch Line</em></strong> in our part.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Base Feature</code> : This is our <strong>Base Extrude feature</strong>.</li>
-  <li><code class="language-plaintext highlighter-rouge">Sketch Line</code> : This is our <strong>Sketch for Rib feature</strong>.</li>
-</ul>
-
-<p>If you want to create these <strong>Extrude</strong> features and <strong>Sketch Line</strong> <strong><em>programmatically</em></strong> then please refer to below article.</p>
-
-<ul>
-  <li>🚀 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
-  <li>🚀<strong><a href="/solidworks-macros/sketch-create-line/">Solidworks Macro - Create Line</a></strong></li>
-</ul>
-
-<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
 
 <h2 id="steps-to-follow">Steps To Follow</h2>
 
-<p>This <strong>Rib Feature VBA macro</strong> can be divided into following sections:</p>
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
 
 <ol>
-  <li><em>Creating Global Variables</em></li>
-  <li><em>Initializing required variables</em></li>
-  <li><em>Select Rib Sketch</em></li>
-  <li><em>Get unit Conversion factors</em></li>
-  <li><em>Get Rib Thickness And Validation</em></li>
-  <li><em>Create Rib Feature</em></li>
+  <li><em>Create global variables</em></li>
+  <li><em>Initialize global variables</em></li>
+  <li><em>Get unit conversion factors</em></li>
+  <li><em>Get distance and Validations</em></li>
+  <li><em>Edit distance Mate</em></li>
 </ol>
 
 <p><strong><em>Every section with each line is explained below.</em></strong></p>
 
 <p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
 
-<h3 id="creating-global-variables">Creating Global Variables</h3>
+<h3 id="create-global-variables">Create global variables</h3>
+
+<p>In this section, we create global variables.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 </code></pre></div></div>
@@ -994,45 +1006,78 @@
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
   <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
   <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Solidwors Feature variable</span>
-<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for looping through Feature Tree and feature selection.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swFeature</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature</span>
+<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Mate Feature</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeature</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</li>
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature data</span>
+<span class="k">Dim</span> <span class="nv">swMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">MateFeatureData</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Mate Feature Data</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeatureData</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.MateFeatureData</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IMateFeatureData_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Distance Mate feature data</span>
+<span class="k">Dim</span> <span class="nv">swDistanceMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DistanceMateFeatureData</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Symmetric Mate Feature Data</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.DistanceMateFeatureData </code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDistanceMateFeatureData.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
 <p><strong><em>These all are our global variables.</em></strong></p>
 
 <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Rib</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to update Distance Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create <em>Main program for Rib</em>.</li>
+  <li>In above line, we create <em>main Program to update Distance Mate in assembly</em>.</li>
   <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
   <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
   <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
 </ul>
 
-<h3 id="initializing-required-variables">Initializing Required Variables</h3>
+<h3 id="initialize-global-variables">Initialize global variables</h3>
 
-<p>Inside this section we initialize required variables.</p>
+<p>In this section, we initialize global variables.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks variable to current application</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
 
@@ -1041,27 +1086,7 @@
   <li>This <em>value</em> is currently opened Solidworks application.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
-<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document variable to opened part document</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
 </code></pre></div></div>
 
@@ -1072,7 +1097,7 @@
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
 <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
 </code></pre></div></div>
@@ -1084,154 +1109,126 @@
   <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
       <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Solidworks document is not opened. Please open a document.</em></li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
       <li>Then we <strong>stop</strong> our macro here.</li>
     </ul>
   </li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get First feature in Feature tree</span>
-<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
-  <li>We set <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable’s value to <strong><em>1st feature</em></strong> in <em>Feature Tree</em>.</li>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is selected or not</span>
-<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to selected First feature in Feature Tree."</span><span class="p">)</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+<h3 id="get-unit-conversion-factors">Get Unit Conversion Factors</h3>
 
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swFeature Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Failed to selected First feature in Feature Tree.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+<p>In this section we get <em>Unit conversion factors</em> for new distance.</p>
 
-<h3 id="select-rib-sketch">Select Rib Sketch</h3>
-
-<p>In this section, we select <strong>Rib-Sketch Feature</strong> for <em>Rib feature</em>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Traversing through the Feature Tree,</span>
-<span class="c1">' until Feature name is "Rib-Sketch"</span>
-<span class="k">While</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">&lt;&gt;</span> <span class="s">"Rib-Sketch"</span>
-
-<span class="k">Wend</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code> loop.</li>
-  <li>We loop until <code class="language-plaintext highlighter-rouge">swFeature.Name</code> variable’s value is not equal to <strong>Rib-Sketch</strong>.</li>
-  <li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print current Feature name is Immediate window</span>
-<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we print current Feature name is Immediate window.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get the next feature</span>
-<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we again set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
-  <li>We set <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable’s value to <strong><em>next feature</em></strong> in <em>Feature Tree</em>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print current Feature name is Immediate window</span>
-<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we print current Feature name is Immediate window.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the current feature</span>
-<span class="n">swFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we select the current feature.</li>
-</ul>
-
-<h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
-
-<p>In this section we get unit Conversion factors.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">'-----------------------Unit Conversion Factors----------------------------------------</span>
-  
-<span class="c1">' Local variables used as Conversion Factors</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variables used as Conversion Factors</span>
 <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
 <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
-
-<span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
-<span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
-
-<span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-
-<span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
-  <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
-  <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
-<span class="k">End</span> <span class="k">Select</span>
-
-<span class="c1">'----------------------------------------------------------------</span>
 </code></pre></div></div>
 
 <ul>
-  <li>I have already explained about this in previous 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</li>
-  <li>Please visit 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</li>
+  <li><strong>Purpose</strong>: In above line, we create a variables to store <strong>Unit Conversion Factors</strong>.</li>
+  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong> and <strong><code class="language-plaintext highlighter-rouge">AngleConversionFactor</code></strong></li>
+  <li><strong>Type</strong>: <strong><code class="language-plaintext highlighter-rouge">Double</code></strong></li>
 </ul>
 
-<h3 id="get-rib-thickness-and-validation">Get Rib Thickness And Validation</h3>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get updated unit conversion factors</span>
+<span class="k">Call</span> <span class="n">GetUnitConversionFactors</span><span class="p">(</span><span class="n">LengthConversionFactor</span><span class="p">,</span> <span class="n">AngleConversionFactor</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>In this section, we get get the <strong>Rib Thickness</strong> from user and apply some validation on <strong>Rib Thickness</strong>.</p>
+<ul>
+  <li>In above line, we call a function.</li>
+  <li><strong>Function Name</strong>: <strong><code class="language-plaintext highlighter-rouge">GetUnitConversionFactors</code></strong></li>
+  <li><strong>Function Parameters</strong>: They are
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">AngleConversionFactor</code></strong></li>
+    </ul>
+  </li>
+</ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to store user response</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Function to update Unit conversion factors</span>
+<span class="k">Function</span> <span class="nf">GetUnitConversionFactors</span><span class="p">(</span><span class="k">ByRef</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">,</span> <span class="k">ByRef</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">)</span>
+  
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a <strong>Function</strong> to update Unit conversion factors for editing Distance mate.</li>
+  <li><strong>Function Name</strong>: <strong><code class="language-plaintext highlighter-rouge">GetUnitConversionFactors</code></strong></li>
+  <li><strong>Purpose</strong>: Hold all the <em>statements (instructions)</em> for <em>getting Unit conversion factors</em>.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<p>This function has 2 parameters as follows:</p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">ByRef LengthConversionFactor As Double</code></strong></li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">ByRef AngleConversionFactor As Double</code></strong></p>
+  </li>
+  <li>Above parameters, passed as <strong><code class="language-plaintext highlighter-rouge">ByRef</code></strong>.</li>
+  <li>These parameters get the values in this function.</li>
+  <li>But we are not using them in this function, but we use them in <strong><code class="language-plaintext highlighter-rouge">main</code></strong> procedure.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ByRef</code></strong> provides us the ability to use the updated variables in <strong><code class="language-plaintext highlighter-rouge">main</code></strong> procedure.</li>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference">this link</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
+  
+  <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+<span class="k">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+<p>I have already explained about this in previous 🚀<strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</p>
+
+<p>Please visit 🚀<strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</p>
+
+<h3 id="get-distance-and-validations">Get Distance And Validations</h3>
+
+<p>In this section, we get get the <strong>required Distance</strong> from user and apply some validation on <strong>Distance</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to hold user input</span>
 <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
 </code></pre></div></div>
 
@@ -1241,22 +1238,23 @@
   <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please input Rib Thickness:"</span><span class="p">,</span> <span class="s">"Rib Thickness"</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Getting Distance from user.</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Distance]:"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
   <li>
     <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
 
-    <p>Those 3 steps are explained below.</p>
+    <p>Those 2 steps are explained below.</p>
 
     <ul>
-      <li><strong>Step 1</strong> - Getting <strong>Rib Thickness</strong> from user.</li>
+      <li><strong>Step 1</strong> - Getting <strong>Distance</strong> from user.</li>
     </ul>
 
-    <p>Below image shows the message for <strong>Rib Thickness</strong> to the user.</p>
+    <p>Below image shows the message for <strong>Distance</strong> to the user.</p>
 
-    <p><a href="/assets/Solidworks_Images/feature-rib/message-to-select-rib-thickness.png"><img src="/assets/Solidworks_Images/feature-rib/message-to-select-rib-thickness.png" alt="message-to-select-rib-thickness" /></a></p>
+    <p><a href="/assets/Solidworks_Images/assembly-distance-mate/message-to-select-distance.png"><img src="/assets/Solidworks_Images/assembly-distance-mate/message-to-select-distance.png" alt="message-to-select-distance" /></a></p>
 
     <ul>
       <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">response</code></strong> variable.</li>
@@ -1316,17 +1314,17 @@
   </li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to store Rib Thickness</span>
-<span class="k">Dim</span> <span class="nv">RibThickness</span> <span class="ow">As</span> <span class="kt">Double</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Distance</span>
+<span class="k">Dim</span> <span class="nv">newDistance</span> <span class="ow">As</span> <span class="kt">Double</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create a variable to store Rib Thickness.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">RibThickness</code></li>
+  <li>In above line, we create a variable to store new distance.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">newDistance</code></li>
   <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code></li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RibThickness</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">newDistance</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
 </code></pre></div></div>
 
 <ul>
@@ -1336,17 +1334,15 @@
     <p>Those 3 steps are explained below.</p>
 
     <ul>
-      <li><strong>Step 1</strong> - Converting <strong>Rib Thickness</strong> from user to <strong><code class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
-      <li>
-        <p><strong>Step 2</strong> - Updating converted Rib Thickness as per document unit system.</p>
-      </li>
-      <li><strong>Step 3</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">RibThickness</code></strong> variable.</li>
+      <li><strong>Step 1</strong> - Converting <strong>newDistance</strong> from user to <strong><code class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
+      <li><strong>Step 2</strong> - Updating converted distance as per document unit system.</li>
+      <li><strong>Step 3</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">newDistance</code></strong> variable.</li>
     </ul>
   </li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for 0 thickness</span>
-<span class="k">If</span> <span class="n">RibThickness</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for 0 distance</span>
+<span class="k">If</span> <span class="n">newDistance</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
@@ -1356,7 +1352,7 @@
   <li>In above code block, we check if the <em>input value</em> is <strong>zero (0)</strong>.</li>
   <li>This check will handle <strong>case for 0 thickness</strong>.</li>
   <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">RibThickness = 0</code></strong></li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">newDistance = 0</code></strong></li>
   <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
       <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
@@ -1366,40 +1362,118 @@
   </li>
 </ul>
 
-<h3 id="create-rib-feature">Create Rib Feature</h3>
+<h3 id="edit-distance-mate">Edit Distance Mate</h3>
 
-<p>In this section we create <strong>Rib Feature</strong>.</p>
+<p>In this section, we <em>Edit Distance Mate</em>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Rib Feature</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertRib</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">RibThickness</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get mate feature</span>
+<span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
 </code></pre></div></div>
 
 <ul>
-  <li>
-    <p>In above line of code we create <strong>Rib Feature</strong> by <code class="language-plaintext highlighter-rouge">InsertRib</code> method.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">InsertRib</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
-  </li>
-  <li>This <code class="language-plaintext highlighter-rouge">InsertRib</code> method takes following parameters as explained:
+  <li>In above line, we set the value of variable <strong><code class="language-plaintext highlighter-rouge">swMateFeature</code></strong> by <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object is then part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> object.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method gives us last added mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if successfully Get mate</span>
+<span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully get <strong>Last Mate</strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swMateFeature Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
-      <li><strong>Is2Sided</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if the rib is double-sided, <code class="language-plaintext highlighter-rouge">False</code> if the rib is single sided</em>.</li>
-      <li><strong>ReverseThicknessDir</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to thicken the opposite side of the sketch normal, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
-      <li><strong>Thickness</strong> - <em>Rib thickness.</em></li>
-      <li><strong>ReferenceEdgeIndex</strong> - <em>Edge in the sketch to use to determine the material direction and for draft reference.</em></li>
-      <li><strong>ReverseMaterialDir</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to flip the direction of the extrusion, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
-      <li><strong>IsDrafted</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to draft the rib, <code class="language-plaintext highlighter-rouge">False</code> to not</em>.</li>
-      <li><strong>DraftOutward</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to draft the rib outward, <code class="language-plaintext highlighter-rouge">False</code> to not. only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code></em>.</li>
-      <li><strong>DraftAngle</strong> - <em>Draft angle of the rib; only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code></em>.</li>
-      <li><strong>IsNormToSketch</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if extrusion direction is normal to sketch, <code class="language-plaintext highlighter-rouge">False</code> if parallel to sketch</em>.</li>
-      <li><strong>IsDraftedFromWall</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> if draft is from wall, <code class="language-plaintext highlighter-rouge">False</code> if not; only valid if <code class="language-plaintext highlighter-rouge">IsDrafted</code> is <code class="language-plaintext highlighter-rouge">True</code>.</em></li>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to Get Mate</em>.</li>
+      <li>After that we clear the selection.</li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the mate</span>
+<span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line we select the mate by <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method take either <strong><code class="language-plaintext highlighter-rouge">True</code></strong> or <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">True</code></strong>: <em>Appends the feature to the current selection list.</em></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">False</code></strong>: <em>Replaces the current selection list.</em></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Start editing mate feature</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line we start editing mate feature by <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method puts the current feature into edit mode.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get feature definition of mate</span>
+<span class="k">Set</span> <span class="n">swMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeature</span><span class="p">.</span><span class="n">GetDefinition</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we get the <strong>feature definition</strong> of <em>select distance mate</em>.</li>
+  <li>We get this feature definition by <strong><code class="language-plaintext highlighter-rouge">GetDefinition</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">GetDefinition</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></strong> object.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Distance mate feature data</span>
+<span class="k">Set</span> <span class="n">swDistanceMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeatureData</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <strong>Distance mate feature data</strong> to feature definition of <em>distance mate</em>.</li>
+  <li>We set <strong>value</strong> of variable <strong><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></strong> to variable <strong><code class="language-plaintext highlighter-rouge">swMateFeatureData</code></strong>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDistanceMateFeatureData_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update distance to new value</span>
+<span class="n">swDistanceMateFeatureData</span><span class="p">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">newDistance</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, <em>we selected mate’s distance</em>.</li>
+  <li>For this we set the value <strong><code class="language-plaintext highlighter-rouge">distance</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></strong> variable.</li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">distance</code></strong> property to <strong><code class="language-plaintext highlighter-rouge">newDistance</code></strong> variable, which we asked from user.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Modify the definition</span>
+<span class="n">swMateFeature</span><span class="p">.</span><span class="n">ModifyDefinition</span> <span class="n">swDistanceMateFeatureData</span><span class="p">,</span> <span class="n">swDoc</span><span class="p">,</span> <span class="k">Nothing</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we modify the definition of selected distance mate.</li>
+  <li>We use <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method to update definition.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></strong> object.</li>
+  <li>
+    <p>This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method takes 3 parameters as follows:</p>
+
+    <ul>
+      <li><strong>Data</strong>: <em>Feature data object</em></li>
+      <li><strong>TopDoc</strong>: <em>Top-level document</em></li>
+      <li><strong>Component</strong>: <em>Component for the feature</em></li>
     </ul>
   </li>
   <li>
-    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertRib</code> method did not return any value.</p>
+    <p><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature~ModifyDefinition.html">online SOLIDWORKS API Help</a></strong>.</p>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method return <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if the feature definition modified successfully, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</p>
   </li>
   <li>
     <p>In our code, I have used following values:</p>
@@ -1413,69 +1487,43 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Is2Sided</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">True</code></td>
+          <td><strong>Data</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></td>
         </tr>
         <tr>
-          <td><strong>ReverseThicknessDir</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+          <td><strong>TopDoc</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swDoc</code></td>
         </tr>
         <tr>
-          <td><strong>Thickness</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">RibThickness</code></td>
-        </tr>
-        <tr>
-          <td><strong>ReferenceEdgeIndex</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>ReverseMaterialDir</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
-        </tr>
-        <tr>
-          <td><strong>IsDrafted</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
-        </tr>
-        <tr>
-          <td><strong>DraftOutward</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
-        </tr>
-        <tr>
-          <td><strong>DraftAngle</strong></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td><strong>IsNormToSketch</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
-        </tr>
-        <tr>
-          <td><strong>IsDraftedFromWall</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+          <td><strong>Component</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">Nothing</code></td>
         </tr>
       </tbody>
     </table>
   </li>
 </ul>
 
-<p><strong>Reference</strong>: For more details about</p>
-
-<ul>
-  <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
-  <li><strong>InsertRib Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeatureManager~InsertRib.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">InsertRib</code> Method.</li>
-</ul>
-
-<p>Now we run the macro and after running macro we get <strong>Rib feature</strong> as shown in below image.</p>
-
-<p><a href="/assets/Solidworks_Images/feature-rib/final-result-gif.gif"><img src="/assets/Solidworks_Images/feature-rib/final-result-gif.gif" alt="Rib Feature final result" /></a></p>
-
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we clear all previous selection.</li>
+  <li>In above line, we clear all selection.</li>
   <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
 </ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild assembly</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we Rebuild assembly.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we get <strong>Modified Distance Mate</strong> as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif" alt="assembly-edit-distance-mate" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
@@ -1483,7 +1531,7 @@
 
 <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>create Rib feature</strong> with SOLIDWORKS VBA Macros.</p>
+<p>Hope this post helps you to <strong>Rename Mate or any Feature</strong> with SOLIDWORKS VBA Macros.</p>
 
 <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
@@ -1528,13 +1576,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-sketch-driven-pattern/" title="Solidworks VBA Macro - Create Sketch Driven Pattern
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-rename-mate/" title="Solidworks VBA Macro - Rename Mate
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-draft/" title="Solidworks VBA Macro - Create Draft
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
