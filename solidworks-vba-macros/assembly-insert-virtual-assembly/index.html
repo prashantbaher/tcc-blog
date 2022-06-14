@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks Macro - Convert to Construction Sketch - The CAD Coder</title>
-<meta name="description" content="In this post, I tell you about Convert to Construction Sketch in a Sketch.">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Insert Virtual Assembly - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks Macro - Convert to Construction Sketch">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-macros/convert-to-construction-sketch-segment/">
+<meta property="og:title" content="Solidworks VBA Macro - Insert Virtual Assembly">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-insert-virtual-assembly/">
 
 
-  <meta property="og:description" content="In this post, I tell you about Convert to Construction Sketch in a Sketch.">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-macros/convert-to-construction-sketch-segment/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-insert-virtual-assembly/">
 
 
 
@@ -643,7 +643,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/" class="active">Insert Virtual Assembly</a></li>
           
         </ul>
         
@@ -657,7 +657,7 @@
         
         <ul>
           
-            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/" class="active">Convert to Construction Sketch</a></li>
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
           
             <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
           
@@ -678,9 +678,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks Macro - Convert to Construction Sketch">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Insert Virtual Assembly">
     
-    <meta itemprop="description" content="In this post, I tell you about Convert to Construction Sketch in a Sketch.">
+    <meta itemprop="description" content="Objective">
     
     
     <meta itemprop="datePublished" content="2022-06-14T00:21:53-04:00">
@@ -689,7 +689,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Convert to Construction Sketch
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Insert Virtual Assembly
 </h1>
         
 
@@ -705,7 +705,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          5 minute read
         
       </span>
     
@@ -722,7 +722,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#code-sample">Code Sample</a></li><li><a href="#understanding-the-code">Understanding the Code</a></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-global-variables">Initialize Global Variables</a></li><li><a href="#insert-virtual-assembly">Insert Virtual Assembly</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -753,234 +753,316 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <p>In this post, I tell you about <strong>Convert to Construction Sketch</strong> in a Sketch.</p>
+          <h2 id="objective">Objective</h2>
 
-<p>In this post, I explain about <code class="language-plaintext highlighter-rouge">CreateConstructionGeometry</code> method from <strong>Solidworks</strong>’s <code class="language-plaintext highlighter-rouge">SketchManager</code> object.</p>
+<p>In this article, we understand “how to” <strong>Insert Virtual Assembly</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+<p>This is most updated method of <strong>inserting Virtual Assembly</strong> in an assembly document.</p>
 
-<p>This post will utilize the methods explained in earlier posts, hence knowledge to those is required but it is not mandatory.</p>
+<h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>An absolute beginner can follow what is written here.</p>
+<p>Below image shows the result we get.</p>
 
-<hr />
+<p><a href="/assets/Solidworks_Images/assembly-insert-virtual-assembly/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-insert-virtual-assembly/final-result-gif.gif" alt="assembly-insert-virtual-assembly" /></a></p>
 
-<h2 id="code-sample">Code Sample</h2>
+<p>We <strong>Insert Virtual Assembly</strong> in simple manners.</p>
 
-<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample to <strong><em>Convert Sketch Segment to Construction Sketch</em></strong>.</p>
+<p>There are no extra steps required.</p>
+
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows how to <strong>Insert Virtual Assembly</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/j0N1NvzW_Pc" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
+
+<p><strong><em>I have explained every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Insert Virtual Assembly</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Create variable for Solidworks application</span>
+<span class="c1">' Variable for Solidworks Application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
 
-<span class="c1">' Create variable for Solidworks document</span>
+<span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
 
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Program to Insert virtual Assembly</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-
-  <span class="c1">' Set Solidworks variable to Solidworks application</span>
+  
+  <span class="c1">' Set Solidworks Application variable to current application</span>
   <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
   
-  <span class="c1">' Set Solidworks document to active part document</span>
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
   <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
   
-  <span class="c1">' Select Circle</span>
-  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Convert to construction circle</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="n">CreateConstructionGeometry</span>
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' De-select the Sketch Segment after Convert to construction</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+  <span class="c1">' Insert Virtual Assembly</span>
+  <span class="n">swAssembly</span><span class="p">.</span><span class="n">InsertNewVirtualAssembly</span> <span class="n">swComponent</span>
+  
+  <span class="c1">' If there are error</span>
+  <span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="c1">' Inform user and exit function.</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to add Virtual Assembly."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
 
-  <span class="c1">' Show Front View</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">""</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
-  
-  <span class="c1">' Zoom to fit screen in Solidworks Window</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisites</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We use existing parts in Assembly document.</li>
+  <li>Both components are fully constraint as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/assembly-insert-virtual-assembly/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-insert-virtual-assembly/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Global Variables</em></li>
+  <li><em>Insert Virtual Assembly</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-global-variables">Create Global Variables</h3>
+
+<p>In this section, we create global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>:  In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Insert virtual Assembly</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
-<hr />
+<ul>
+  <li>In above line, we create <em>main Program to Insert virtual Assembly</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
 
-<h2 id="understanding-the-code">Understanding the Code</h2>
+<h3 id="initialize-global-variables">Initialize Global Variables</h3>
 
-<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+<p>In this section, we initialize global variables.</p>
 
-<p>I also give some link so that you can go through them if there are anything I explained in previous posts.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre></div></div>
-
-<p>This line forces us to define every variable we are going to use.</p>
-
-<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
-<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
-
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre></div></div>
-
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</code></pre></div></div>
-
-<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object type.</p>
-
-<p>These all are our global variables.</p>
-
-<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
-
-<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
-
-<p>I have also place <code class="language-plaintext highlighter-rouge">boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
-
-<p>Thus, I have started placing it here.</p>
-
-<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
-
-<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
 
-<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to Solidworks application.</p>
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document to active part document</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
 </code></pre></div></div>
 
-<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swDoc</code> to currently opened part document as shown below in our post.</p>
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Circle we want to Pattern</span>
-<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Arc1"</span><span class="p">,</span> <span class="s">"SKETCHSEGMENT"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
 </code></pre></div></div>
-
-<p>In above line of code, we select the Circle i.e. <strong>Arc 1</strong> and add it to selection list.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Convert to construction circle</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="n">CreateConstructionGeometry</span>
-</code></pre></div></div>
-
-<p>In above line, we convert the selected Solidworks Sketch Segment i.e. our circle <code class="language-plaintext highlighter-rouge">CreateConstructionGeometry</code> method from <em>Solidworks Sketch Manager</em>.</p>
-
-<blockquote>
-  <p>Please note that here we did not create another variable for Sketch Manger like I have done previously.</p>
-</blockquote>
-
-<p>This <code class="language-plaintext highlighter-rouge">CreateConstructionGeometry</code> method takes <strong>NO</strong> parameter and <strong>did not</strong> return any value.</p>
-
-<p><strong>Before <em>Convert</em> Circle</strong></p>
-
-<p><img src="/assets/Solidworks_Images/other-images/before-construction-sketch-segment.png" alt="before-construction-sketch-segment" /></p>
-
-<p><strong>After <em>Convert</em> Circle</strong></p>
-
-<p><img src="/assets/Solidworks_Images/other-images/after-construction-sketch-segment.png" alt="after-construction-sketch-segment" /></p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the Sketch after creation</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<p>In the above line of code, we deselect the <strong>Sketch</strong> after the <em>Circular Sketch Pattern</em> operation.</p>
-
-<p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document name <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show Front View</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ShowNamedView2</span> <span class="s">""</span><span class="p">,</span> <span class="n">swStandardViews_e</span><span class="p">.</span><span class="n">swFrontView</span>
-</code></pre></div></div>
-
-<p>In the above line of code, we update the <em>view orientation</em> to <strong>Front View</strong>.</p>
-
-<p>In my machine, after inserting a sketch view orientation does not changed.</p>
-
-<p>Because of this I have to update the view to <strong>Front view</strong>.</p>
-
-<p>For showing <strong>Front View</strong> we used <code class="language-plaintext highlighter-rouge">ShowNamedView2</code> method from our Solidworks document name <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
-
-<p>This method takes 2 parameter described as follows:</p>
 
 <ul>
-  <li>
-    <p><strong>VName</strong> : Name of the view to display or an empty string to use ViewId instead</p>
-  </li>
-  <li>
-    <p><strong>ViewId</strong> : ID of the view to display as defined by <code class="language-plaintext highlighter-rouge">swStandardViews_e</code> or -1 to use the <strong>VName</strong> argument instead.</p>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
   </li>
 </ul>
 
-<p><em>NOTE:</em> If you specify both <strong>VName</strong> and <strong>ViewId</strong>, then <strong>ViewId</strong> takes precedence if the two arguments do not resolve to the same view.</p>
-
-<p><code class="language-plaintext highlighter-rouge">swStandardViews_e</code> has following Standard View Types:</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+</code></pre></div></div>
 
 <ul>
-  <li>
-    <p><em>swBackView</em></p>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<h3 id="insert-virtual-assembly">Insert Virtual Assembly</h3>
+
+<p>In this section, we <em>Insert Virtual Assembly</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Insert Virtual Assembly</span>
+<span class="n">swAssembly</span><span class="p">.</span><span class="n">InsertNewVirtualAssembly</span> <span class="n">swComponent</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we <strong>Insert Virtual Assembly</strong> into assemly.</li>
+  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">InsertNewVirtualAssembly</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">InsertNewVirtualAssembly</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This method takes 1 parameter.
+    <ul>
+      <li><strong>InsertedComponent</strong>: <em>New assembly inserted as virtual component.</em></li>
+    </ul>
   </li>
   <li>
-    <p><em>swBottomView</em></p>
+    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertNewVirtualAssembly</code> method return 👉 <strong><a href="https://help.solidworks.com/2019/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swInsertNewPartErrorCode_e.html">Error as defined by swInsertNewPartErrorCode_e</a></strong>.</p>
   </li>
   <li>
-    <p><em>swDimetricView</em></p>
+    <p>In our code, I have used following values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>InsertedComponent</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swComponent</code></td>
+        </tr>
+      </tbody>
+    </table>
   </li>
-  <li>
-    <p><em>swFrontView</em></p>
-  </li>
-  <li>
-    <p><em>swIsometricView</em></p>
-  </li>
-  <li>
-    <p><em>swLeftView</em></p>
-  </li>
-  <li>
-    <p><em>swRightView</em></p>
-  </li>
-  <li>
-    <p><em>swTopView</em></p>
-  </li>
-  <li>
-    <p><em>swExtendetricView</em></p>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.iassemblydoc~insertnewvirtualassembly.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If there are error</span>
+<span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="c1">' Inform user and exit function.</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to add Virtual Assembly."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully added <strong>Virtual Assembly</strong> or not.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swComponent Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: *Failed to add Virtual Assembly.</li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
   </li>
 </ul>
 
-<p>In our code, we did not use <strong>VName</strong> instead I used <em>empty string</em> in form of <strong><em>”“</em></strong> symbol.</p>
+<p>Now we run the macro and after running macro we get <strong>a New Virtual Assembly</strong> as shown in below image.</p>
 
-<p>I used <strong>ViewId</strong> value to specify view and used <code class="language-plaintext highlighter-rouge">swStandardViews_e.swFrontView</code> value to use <em>Standard Front View</em>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit screen in Solidworks Window</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
-</code></pre></div></div>
-
-<p>In this last line we use <em>zoom to fit</em> command.</p>
-
-<p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
-
-<hr />
+<p><a href="/assets/Solidworks_Images/assembly-insert-virtual-assembly/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-insert-virtual-assembly/final-result-gif.gif" alt="assembly-insert-virtual-assembly" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
 
-<p>Hope this post helps you to <strong><em>Convert to Construction Sketch</em></strong> with Solidworks VBA Macros.</p>
+<p>Hope this post helps you to <strong>Insert Virtual Assembly</strong> with SOLIDWORKS VBA Macros.</p>
 
-<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
 
 <p><em>Do let me know by you like this post or not!</em></p>
 
@@ -1021,13 +1103,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-insert-virtual-assembly/" title="Solidworks VBA Macro - Insert Virtual Assembly
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-insert-virtual-part/" title="Solidworks VBA Macro - Insert Virtual Part
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/split-sketch-segments/" title="Solidworks Macro - Split Open/Closed Sketch Entities
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
