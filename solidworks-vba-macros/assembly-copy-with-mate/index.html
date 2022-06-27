@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Edit Distance Mate - The CAD Coder</title>
-<meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Copy With Mate - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Edit Distance Mate">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-edit-distance-mate/">
+<meta property="og:title" content="Solidworks VBA Macro - Copy With Mate">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-copy-with-mate/">
 
 
-  <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-edit-distance-mate/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-copy-with-mate/">
 
 
 
@@ -623,7 +623,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/" class="active">Edit Distance Mate</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
           
             <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
           
@@ -645,7 +645,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/" class="active">Copy With Mate</a></li>
           
         </ul>
         
@@ -680,9 +680,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Edit Distance Mate">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Copy With Mate">
     
-    <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+    <meta itemprop="description" content="Objective">
     
     
     <meta itemprop="datePublished" content="2022-06-27T10:37:32-04:00">
@@ -691,7 +691,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Edit Distance Mate
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Copy With Mate
 </h1>
         
 
@@ -707,7 +707,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          14 minute read
+          12 minute read
         
       </span>
     
@@ -724,7 +724,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create global variables</a></li><li><a href="#initialize-global-variables">Initialize global variables</a></li><li><a href="#get-unit-conversion-factors">Get Unit Conversion Factors</a></li><li><a href="#get-distance-and-validations">Get Distance And Validations</a></li><li><a href="#edit-distance-mate">Edit Distance Mate</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-global-variables">Initialize Global Variables</a></li><li><a href="#get-unit-conversion-factors">Get Unit Conversion Factors</a></li><li><a href="#copy-with-mate">Copy With Mate</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -755,43 +755,29 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <div class="notice--warning">
-  This article has <strong>"Beginner ➡ Intermediate"</strong> level Macro program.<br />
-  If you are following my articles then will not be an issue for you.<br />
-  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
-  I hope you will also like this type of tutorials.<br />
-  Thank you for reading.<br />
-</div>
+          <h2 id="objective">Objective</h2>
 
-<h2 id="objective">Objective</h2>
+<p>In this article, we understand “how to” <strong>Copy With Mate</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<p>In this article, we understand “how to” <strong>Edit Distance Mate</strong> in <strong>Assembly document</strong> from VBA macro.</p>
-
-<p>You can use this method to <strong>Edit any Mate</strong>.</p>
-
-<p>In my example, <em>I am editing Distance mate</em>.</p>
+<p>This is most updated method of <strong>Copy Part/Assembly with Mate</strong> in an assembly document.</p>
 
 <h2 id="results-we-can-get">Results We Can Get</h2>
 
 <p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif" alt="assembly-edit-distance-mate" /></a></p>
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif" alt="assembly-copy-with-mates" /></a></p>
 
-<p>We <strong>Edit Distance Mate</strong> in following steps.</p>
+<p>We <strong>Copy With Mate</strong> in simple manners.</p>
 
-<ol>
-  <li><em>Ask Distance from user.</em></li>
-  <li><em>Update distance in Mate.</em></li>
-</ol>
+<p>There are no extra steps required.</p>
 
 <p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
 
 <h2 id="macro-video">Macro Video</h2>
 
-<p>Below 🎬 video shows how to <strong>edit Distance Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<p>Below 🎬 video shows how to <strong>Copy With Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/fuvO2MZPQao" frameborder="0" allowfullscreen=""></iframe>
-
+<iframe src="https://www.youtube.com/embed/Eyq3uO93PY8" frameborder="0" allowfullscreen=""></iframe>
 <p><br /></p>
 
 <p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
@@ -802,7 +788,7 @@
 
 <h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <strong><em>VBA macro</em></strong> for <em>editing Distance mate</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Copy With Mate</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
@@ -815,16 +801,22 @@
 <span class="c1">' Variable for Solidworks Assembly</span>
 <span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
 
-<span class="c1">' Variable for Solidworks Mate Feature</span>
-<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
 
-<span class="c1">' Variable for Solidworks Mate Feature data</span>
-<span class="k">Dim</span> <span class="nv">swMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">MateFeatureData</span>
+<span class="c1">' Variable for Component array</span>
+<span class="k">Dim</span> <span class="nv">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
 
-<span class="c1">' Variable for Solidworks Distance Mate feature data</span>
-<span class="k">Dim</span> <span class="nv">swDistanceMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DistanceMateFeatureData</span>
+<span class="c1">' Variable to define if repeat the mate or not</span>
+<span class="k">Dim</span> <span class="nv">repeatArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 
-<span class="c1">' Program to update Distance Mate</span>
+<span class="c1">' Set the value of mate if is accept the value</span>
+<span class="k">Dim</span> <span class="nv">valueArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+
+<span class="c1">' Boolean variable to check if Opereation is succeed or not</span>
+<span class="k">Dim</span> <span class="nv">status</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Main program for Copy with Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
   <span class="c1">' Set Solidworks Application variable to current application</span>
@@ -842,6 +834,16 @@
   <span class="c1">' Set Solidworks Assembly document</span>
   <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
   
+  <span class="c1">' Get the selected face and set it to the Solidworks Face variable</span>
+  <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  
+  <span class="c1">' If there are error</span>
+  <span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="c1">' Inform user and exit function.</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to get selected part."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
   <span class="c1">' Local variables used as Conversion Factors</span>
   <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
   <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
@@ -849,78 +851,37 @@
   <span class="c1">' Get updated unit conversion factors</span>
   <span class="k">Call</span> <span class="n">GetUnitConversionFactors</span><span class="p">(</span><span class="n">LengthConversionFactor</span><span class="p">,</span> <span class="n">AngleConversionFactor</span><span class="p">)</span>
   
-  <span class="c1">' Variable to hold user input</span>
-  <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="c1">' Copy component with profile center mate</span>
+  <span class="k">Set</span> <span class="n">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">swComponent</span>
   
-  <span class="c1">' Getting Distance from user.</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Distance]:"</span><span class="p">)</span>
+  <span class="c1">' Variable for loop</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
   
-  <span class="c1">' This will handle empty value or cancel case</span>
-  <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
+  <span class="c1">' Loop for setting values</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="mi">2</span>
+    
+    <span class="c1">' Repeat the mate</span>
+    <span class="n">repeatArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="k">True</span>
+    
+    <span class="c1">' Set the value of mate</span>
+    <span class="n">valueArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+    
+  <span class="k">Next</span>
   
-  <span class="c1">' This will handle case for Non-numeric values</span>
-  <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
+  <span class="c1">' Variables for Copy operation</span>
+  <span class="k">Dim</span> <span class="nv">mateReferencesArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Object</span>
+  <span class="k">Dim</span> <span class="nv">flipAlignmentArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">flipDimensionArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">lockRotationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">orientationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Long</span>
   
-  <span class="c1">' Variable for Distance</span>
-  <span class="k">Dim</span> <span class="nv">newDistance</span> <span class="ow">As</span> <span class="kt">Double</span>
-  
-  <span class="c1">' Set Distance</span>
-  <span class="n">newDistance</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
-  
-  <span class="c1">' This will handle case for 0 Distance</span>
-  <span class="k">If</span> <span class="n">newDistance</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-
-  <span class="c1">' Get mate feature</span>
-  <span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
-
-  <span class="c1">' Check if successfully Get mate</span>
-  <span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
-    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Select the mate</span>
-  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
-  
-  <span class="c1">' Start editing mate feature</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
-  
-  <span class="c1">' Get feature definition of mate</span>
-  <span class="k">Set</span> <span class="n">swMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeature</span><span class="p">.</span><span class="n">GetDefinition</span>
-  
-  <span class="c1">' Set Distance mate feature data</span>
-  <span class="k">Set</span> <span class="n">swDistanceMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeatureData</span>
-  
-  <span class="c1">' Update distance to new value</span>
-  <span class="n">swDistanceMateFeatureData</span><span class="p">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">newDistance</span>
-  
-  <span class="c1">' Modify the definition</span>
-  <span class="n">swMateFeature</span><span class="p">.</span><span class="n">ModifyDefinition</span> <span class="n">swDistanceMateFeatureData</span><span class="p">,</span> <span class="n">swDoc</span><span class="p">,</span> <span class="k">Nothing</span>
-  
-  <span class="c1">' Clear all selection</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-  
-  <span class="c1">' Rebuild assembly</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+  <span class="c1">' Create Copy with mate</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CopyWithMates2</span><span class="p">(</span><span class="n">swComponentArray</span><span class="p">,</span> <span class="n">repeatArray</span><span class="p">,</span> <span class="n">mateReferencesArray</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">,</span> <span class="n">flipAlignmentArray</span><span class="p">,</span> <span class="n">flipDimensionArray</span><span class="p">,</span> <span class="n">lockRotationArray</span><span class="p">,</span> <span class="n">orientationArray</span><span class="p">)</span>
   
 <span class="k">End</span> <span class="k">Sub</span>
 
 <span class="c1">' Function to update Unit conversion factors</span>
 <span class="k">Function</span> <span class="nf">GetUnitConversionFactors</span><span class="p">(</span><span class="k">ByRef</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">,</span> <span class="k">ByRef</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">)</span>
-
   <span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
   <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
     
@@ -960,7 +921,6 @@
       <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
       <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
   <span class="k">End</span> <span class="k">Select</span>
-
 <span class="k">End</span> <span class="k">Function</span>
 </code></pre></div></div>
 
@@ -969,18 +929,13 @@
 <p>There are some <em>prerequisites</em> for this article.</p>
 
 <ul>
-  <li>
-    <p>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</p>
-  </li>
-  <li>
-    <p>We use existing parts in Assembly document.</p>
-  </li>
-  <li>
-    <p>Both components are fully constraint as shown in below image.</p>
-  </li>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We use existing parts in Assembly document.</li>
+  <li>Both components are fully constraint as shown in below image.</li>
+  <li>We select the part which we want to copy.</li>
 </ul>
 
-<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/prerequisite.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/prerequisite.gif" alt="prerequisite" /></a></p>
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/prerequisite.png" alt="prerequisite" /></a></p>
 
 <p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
 
@@ -989,18 +944,17 @@
 <p>This <strong>VBA macro</strong> can be divided into following sections:</p>
 
 <ol>
-  <li><em>Create global variables</em></li>
-  <li><em>Initialize global variables</em></li>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Global Variables</em></li>
   <li><em>Get unit conversion factors</em></li>
-  <li><em>Get distance and Validations</em></li>
-  <li><em>Edit distance Mate</em></li>
+  <li><em>Copy With Mate</em></li>
 </ol>
 
 <p><strong><em>Every section with each line is explained below.</em></strong></p>
 
 <p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
 
-<h3 id="create-global-variables">Create global variables</h3>
+<h3 id="create-global-variables">Create Global Variables</h3>
 
 <p>In this section, we create global variables.</p>
 
@@ -1045,57 +999,76 @@
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature</span>
-<span class="k">Dim</span> <span class="nv">swMateFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Mate Feature</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeature</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mate Feature data</span>
-<span class="k">Dim</span> <span class="nv">swMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">MateFeatureData</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Component array</span>
+<span class="k">Dim</span> <span class="nv">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Mate Feature Data</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swMateFeatureData</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.MateFeatureData</code>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IMateFeatureData_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+  <li><strong>Purpose</strong>: In above line, we create an array for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponentArray(0)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Distance Mate feature data</span>
-<span class="k">Dim</span> <span class="nv">swDistanceMateFeatureData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DistanceMateFeatureData</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to define if repeat the mate or not</span>
+<span class="k">Dim</span> <span class="nv">repeatArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Symmetric Mate Feature Data</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.DistanceMateFeatureData </code>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDistanceMateFeatureData.html">online SOLIDWORKS API Help</a></strong>.</li>
+  <li><strong>Purpose</strong>: In above line, we create an array to define if repeat the mate or not.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">repeatArray(2)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the value of mate if is accept the value</span>
+<span class="k">Dim</span> <span class="nv">valueArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an array to set the value of mate if is accept the value.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">valueArray(2)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean variable to check if Opereation is succeed or not</span>
+<span class="k">Dim</span> <span class="nv">status</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an variable to check if Opereation is succeed or not.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">status</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code>.</li>
 </ul>
 
 <p><strong><em>These all are our global variables.</em></strong></p>
 
 <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to update Distance Mate</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Copy with Mate</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create <em>main Program to update Distance Mate in assembly</em>.</li>
+  <li>In above line, we create <em>main program for Copy with Mate</em>.</li>
   <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
   <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
   <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
 </ul>
 
-<h3 id="initialize-global-variables">Initialize global variables</h3>
+<h3 id="initialize-global-variables">Initialize Global Variables</h3>
 
 <p>In this section, we initialize global variables.</p>
 
@@ -1144,6 +1117,38 @@
 <ul>
   <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
   <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get the selected face and set it to the Solidworks Face variable</span>
+<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>We set the value from <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SelectionManager</code></strong> object.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">SelectionManager</code></strong> object is part of swDoc object.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If there are error</span>
+<span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="c1">' Inform user and exit function.</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to get selected part."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swComponent Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to get selected part.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="get-unit-conversion-factors">Get Unit Conversion Factors</h3>
@@ -1246,256 +1251,97 @@
 
 <p>Please visit 🚀<strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</p>
 
-<h3 id="get-distance-and-validations">Get Distance And Validations</h3>
+<h3 id="copy-with-mate">Copy With Mate</h3>
 
-<p>In this section, we get get the <strong>required Distance</strong> from user and apply some validation on <strong>Distance</strong>.</p>
+<p>In this section, we perform <em>Copy With Mate</em> action.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to hold user input</span>
-<span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Copy component with profile center mate</span>
+<span class="k">Set</span> <span class="n">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">swComponent</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create a variable as a counter.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">response</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">swComponentArray</code></strong> variable.</li>
+  <li>Since we want to copy only 1 part.</li>
+  <li>Hence we set only 1 element of array.</li>
+  <li>This value is <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Getting Distance from user.</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Distance]:"</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for loop</span>
+<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
 </code></pre></div></div>
 
 <ul>
-  <li>
-    <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <strong><code class="language-plaintext highlighter-rouge">Loop</code></strong>.</li>
+  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">i</code></strong></li>
+  <li><strong>Type</strong>: <strong><code class="language-plaintext highlighter-rouge">Integer</code></strong>.</li>
+</ul>
 
-    <p>Those 2 steps are explained below.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop for setting values</span>
+<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="mi">2</span>
 
+<span class="k">Next</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create an Loop for setting values.</li>
+  <li>We set the values of variables required for Copy mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Repeat the mate</span>
+<span class="n">repeatArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">repeatArray</code></strong> array variable.</li>
+  <li>This array tell that we want to repeat the mates in new component or not.</li>
+  <li>Setting the value to True confirms repeat mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the value of mate</span>
+<span class="n">valueArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">valueArray</code></strong> array variable.</li>
+  <li>This array sets the value for distance or angle of each mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variables for Copy operation</span>
+<span class="k">Dim</span> <span class="nv">mateReferencesArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Object</span>
+<span class="k">Dim</span> <span class="nv">flipAlignmentArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">flipDimensionArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">lockRotationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">orientationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Long</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we create some array variables.</li>
+  <li>These arrray variables are of different types i.e. <strong><code class="language-plaintext highlighter-rouge">Object</code></strong>, <strong><code class="language-plaintext highlighter-rouge">Boolean</code></strong>, <strong><code class="language-plaintext highlighter-rouge">Long</code></strong>.</li>
+  <li>We did not set any value for these arrays. We just need them for copy operation.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Copy with mate</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CopyWithMates2</span><span class="p">(</span><span class="n">swComponentArray</span><span class="p">,</span> <span class="n">repeatArray</span><span class="p">,</span> <span class="n">mateReferencesArray</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">,</span> <span class="n">flipAlignmentArray</span><span class="p">,</span> <span class="n">flipDimensionArray</span><span class="p">,</span> <span class="n">lockRotationArray</span><span class="p">,</span> <span class="n">orientationArray</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we <strong>Copy With Mate</strong> into assemly.</li>
+  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">CopyWithMates2</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CopyWithMates2</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This method takes 1 parameter.
     <ul>
-      <li><strong>Step 1</strong> - Getting <strong>Distance</strong> from user.</li>
-    </ul>
-
-    <p>Below image shows the message for <strong>Distance</strong> to the user.</p>
-
-    <p><a href="/assets/Solidworks_Images/assembly-distance-mate/message-to-select-distance.png"><img src="/assets/Solidworks_Images/assembly-distance-mate/message-to-select-distance.png" alt="message-to-select-distance" /></a></p>
-
-    <ul>
-      <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">response</code></strong> variable.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle empty value or cancel case</span>
-<span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check the <strong><em>length of input value</em></strong>.</li>
-  <li>This check will handle <strong>case for empty value</strong> or <strong>cancel operation case</strong>.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(response) = 0</code></strong>
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">Len()</code></strong> is pre-build VBA function which check the length of a object.</li>
-      <li>In above cases, we will get <strong>0</strong> value.</li>
-    </ul>
-  </li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Empty or no value. Please try again.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for Non-numeric values</span>
-<span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if the <em>input value</em> is <strong>Non-numeric</strong>.</li>
-  <li>This check will handle <strong>case for Non-numeric values</strong>.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">IsNumeric(response) = False</code></strong>
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">IsNumeric()</code></strong> is pre-build VBA function which check if <em>passing object is <strong>Numeric</strong> or not</em>.</li>
-      <li>In above cases, we will get <strong>False</strong> value.</li>
-    </ul>
-  </li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Entered value is Non-numeric. Please try again.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Distance</span>
-<span class="k">Dim</span> <span class="nv">newDistance</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we create a variable to store new distance.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">newDistance</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code></li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">newDistance</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>In above line of code we are doing <strong>3 steps</strong> in one line.</p>
-
-    <p>Those 3 steps are explained below.</p>
-
-    <ul>
-      <li><strong>Step 1</strong> - Converting <strong>newDistance</strong> from user to <strong><code class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
-      <li><strong>Step 2</strong> - Updating converted distance as per document unit system.</li>
-      <li><strong>Step 3</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">newDistance</code></strong> variable.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for 0 distance</span>
-<span class="k">If</span> <span class="n">newDistance</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if the <em>input value</em> is <strong>zero (0)</strong>.</li>
-  <li>This check will handle <strong>case for 0 thickness</strong>.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">newDistance = 0</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Entered value must be greater than 0. Please try again.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="edit-distance-mate">Edit Distance Mate</h3>
-
-<p>In this section, we <em>Edit Distance Mate</em>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get mate feature</span>
-<span class="k">Set</span> <span class="n">swMateFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">GetLastFeatureAdded</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we set the value of variable <strong><code class="language-plaintext highlighter-rouge">swMateFeature</code></strong> by <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> object is then part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> object.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">GetLastFeatureAdded</code></strong> method gives us last added mate.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if successfully Get mate</span>
-<span class="k">If</span> <span class="n">swMateFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Failed to Get Mate."</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully get <strong>Last Mate</strong> or not.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swMateFeature Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Failed to Get Mate</em>.</li>
-      <li>After that we clear the selection.</li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the mate</span>
-<span class="n">swMateFeature</span><span class="p">.</span><span class="n">Select</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line we select the mate by <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method take either <strong><code class="language-plaintext highlighter-rouge">True</code></strong> or <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">True</code></strong>: <em>Appends the feature to the current selection list.</em></li>
-      <li><strong><code class="language-plaintext highlighter-rouge">False</code></strong>: <em>Replaces the current selection list.</em></li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Start editing mate feature</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">FeatEdit</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line we start editing mate feature by <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">FeatEdit</code></strong> method puts the current feature into edit mode.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get feature definition of mate</span>
-<span class="k">Set</span> <span class="n">swMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeature</span><span class="p">.</span><span class="n">GetDefinition</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we get the <strong>feature definition</strong> of <em>select distance mate</em>.</li>
-  <li>We get this feature definition by <strong><code class="language-plaintext highlighter-rouge">GetDefinition</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">GetDefinition</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></strong> object.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Distance mate feature data</span>
-<span class="k">Set</span> <span class="n">swDistanceMateFeatureData</span> <span class="o">=</span> <span class="n">swMateFeatureData</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we set <strong>Distance mate feature data</strong> to feature definition of <em>distance mate</em>.</li>
-  <li>We set <strong>value</strong> of variable <strong><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></strong> to variable <strong><code class="language-plaintext highlighter-rouge">swMateFeatureData</code></strong>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDistanceMateFeatureData_members.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update distance to new value</span>
-<span class="n">swDistanceMateFeatureData</span><span class="p">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">newDistance</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, <em>we selected mate’s distance</em>.</li>
-  <li>For this we set the value <strong><code class="language-plaintext highlighter-rouge">distance</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></strong> variable.</li>
-  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">distance</code></strong> property to <strong><code class="language-plaintext highlighter-rouge">newDistance</code></strong> variable, which we asked from user.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Modify the definition</span>
-<span class="n">swMateFeature</span><span class="p">.</span><span class="n">ModifyDefinition</span> <span class="n">swDistanceMateFeatureData</span><span class="p">,</span> <span class="n">swDoc</span><span class="p">,</span> <span class="k">Nothing</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we modify the definition of selected distance mate.</li>
-  <li>We use <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method to update definition.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></strong> object.</li>
-  <li>
-    <p>This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method takes 3 parameters as follows:</p>
-
-    <ul>
-      <li><strong>Data</strong>: <em>Feature data object</em></li>
-      <li><strong>TopDoc</strong>: <em>Top-level document</em></li>
-      <li><strong>Component</strong>: <em>Component for the feature</em></li>
+      <li><strong>ComponentsToCopy</strong>: <em>Array of components to copy.</em></li>
+      <li><strong>Repeat</strong>: <em>Array of boolean values; each value indicates whether to use the existing mate reference for the corresponding component to copy; if <strong><code class="language-plaintext highlighter-rouge">True</code></strong>, copies the existing mate reference; if <strong><code class="language-plaintext highlighter-rouge">False</code></strong>, uses the corresponding entry in the NewEntityToMateTo array for the new mate reference.</em></li>
+      <li><strong>NewEnityToMateTo</strong>: <em>Array of new mate references that map to the Repeat array; if an entry in the Repeat array is <strong><code class="language-plaintext highlighter-rouge">False</code></strong>, then the corresponding entry in this array is the new entity with which to mate the component to copy.</em></li>
+      <li><strong>Values</strong>: <em>Array of distance or angle values for the mate references; specify distance in meters and angle in radians; valid for distance, angle, and profile center mates only.</em></li>
+      <li><strong>FlipAlignment</strong>: <em>Array of booleans that map to the NewEntityToMateTo array; each value indicates the corresponding mate’s alignment; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to flip alignment, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to not.</em></li>
+      <li><strong>FlipDimension</strong>: <em>Array of booleans that map to the Values array; each value indicates the corresponding mate’s distance; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> for a positive distance dimension, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> for a negative distance dimension; valid for distance, angle, and profile center mates only.</em></li>
+      <li><strong>LockRotation</strong>: <em>Array of booleans that map to the NewEntityToMateTo array; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to prevent the components from rotating, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to allow the components to rotate; valid for concentric and profile center mates only.</em></li>
+      <li><strong>Orientation</strong>: <em>Array of longs or integers that map to the Values array; each long or integer indicates the number of clicks in the user interface with which to orient the mate; a positive value indicates to orient the mate clockwise, a negative value indicates to orient the mate counterclockwise; valid for profile center mates only.</em></li>
     </ul>
   </li>
   <li>
-    <p><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature~ModifyDefinition.html">online SOLIDWORKS API Help</a></strong>.</p>
-  </li>
-  <li>
-    <p><strong>Return Value</strong> : This <strong><code class="language-plaintext highlighter-rouge">ModifyDefinition</code></strong> method return <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if the feature definition modified successfully, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</p>
+    <p><strong>Return Value</strong> : <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if calling this method succeeded, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if it failed.</p>
   </li>
   <li>
     <p>In our code, I have used following values:</p>
@@ -1509,55 +1355,58 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Data</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">swDistanceMateFeatureData</code></td>
+          <td><strong>ComponentsToCopy</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swComponentArray</code></td>
         </tr>
         <tr>
-          <td><strong>TopDoc</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">swDoc</code></td>
+          <td><strong>Repeat</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">repeatArray</code></td>
         </tr>
         <tr>
-          <td><strong>Component</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">Nothing</code></td>
+          <td><strong>NewEnityToMateTo</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">mateReferencesArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>Values</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">valueArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>FlipAlignment</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">flipAlignmentArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>FlipDimension</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">flipDimensionArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>LockRotation</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">lockRotationArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>Orientation</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">orientationArray</code></td>
         </tr>
       </tbody>
     </table>
   </li>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.iassemblydoc~insertnewvirtualassembly.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+<p>Now we run the macro and after running macro we get a new part/assembly from <strong>Copy with Mate</strong> operation as shown in below image.</p>
 
-<ul>
-  <li>In above line, we clear all selection.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild assembly</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we Rebuild assembly.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
-
-<p>Now we run the macro and after running macro we get <strong>Modified Distance Mate</strong> as shown in below image.</p>
-
-<p><a href="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-edit-distance-mate/final-result-gif.gif" alt="assembly-edit-distance-mate" /></a></p>
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif" alt="assembly-copy-with-mates" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
 
-<p>Hope this post helps you to <strong>Rename Mate or any Feature</strong> with SOLIDWORKS VBA Macros.</p>
+<p>Hope this post helps you to <strong>Copy With Mate</strong> with SOLIDWORKS VBA Macros.</p>
 
 <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
 
 <p><em>Do let me know by you like this post or not!</em></p>
 
@@ -1598,13 +1447,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-rename-mate/" title="Solidworks VBA Macro - Rename Mate
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-insert-virtual-assembly/" title="Solidworks VBA Macro - Insert Virtual Assembly
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-toggle-mate-alignment/" title="Solidworks VBA Macro - Toggle Mate Alignment
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
