@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks Macro - Selection Methods - The CAD Coder</title>
-<meta name="description" content="In this post, we select Default planes with following methods:">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Show Component - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks Macro - Selection Methods">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-macros/select-plane-from-tree/">
+<meta property="og:title" content="Solidworks VBA Macro - Show Component">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-show-component/">
 
 
-  <meta property="og:description" content="In this post, we select Default planes with following methods:">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-macros/select-plane-from-tree/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-show-component/">
 
 
 
@@ -169,7 +169,7 @@
           
             <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
           
-            <li><a href="/solidworks-macros/select-plane-from-tree/" class="active">Selection Methods</a></li>
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
           
             <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
           
@@ -649,7 +649,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected  Component</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected  Component</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-show-component/" class="active">Show Selected  Component</a></li>
           
         </ul>
         
@@ -684,9 +684,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks Macro - Selection Methods">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Show Component">
     
-    <meta itemprop="description" content="In this post, we select Default planes with following methods:">
+    <meta itemprop="description" content="Objective">
     
     
     <meta itemprop="datePublished" content="2022-08-20T01:12:26-04:00">
@@ -695,7 +695,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Selection Methods
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Show Component
 </h1>
         
 
@@ -711,7 +711,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 minute read
+          5 minute read
         
       </span>
     
@@ -728,7 +728,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#by-selectbyid-method-from-modeldoc2-interface">By SelectByID method From ModelDoc2 Interface</a><ul><li><a href="#using-selectbyid-method-in-previous-example">Using SelectByID method in previous example</a></li><li><a href="#using-selectbyid-method-in-an-open-document">Using SelectByID method in an Open document</a></li></ul></li><li><a href="#by-selectbyid2-method-from-imodeldocextension-interface">By SelectByID2 method From IModelDocExtension Interface</a><ul><li><a href="#using-selectbyid2-method-in-previous-example">Using SelectByID2 method in previous example</a></li><li><a href="#using-selectbyid2-method-in-an-open-document">Using SelectByID2 method in an Open document</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-global-variables">Initialize Global Variables</a></li><li><a href="#show-component">Show Component</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -759,303 +759,360 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <p>In this post, we select <strong>Default planes</strong> with following methods:</p>
+          <h2 id="objective">Objective</h2>
 
-<ol>
-  <li>
-    <p>By <code class="language-plaintext highlighter-rouge">SelectByID</code> method From <code class="language-plaintext highlighter-rouge">ModelDoc2</code> Interface</p>
-  </li>
-  <li>
-    <p>By <code class="language-plaintext highlighter-rouge">SelectByID2</code> method From <code class="language-plaintext highlighter-rouge">IModelDocExtension</code> Interface</p>
-  </li>
-</ol>
+<p>In this article, we understand “how to” <strong>Show Component</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<h2 id="by-selectbyid-method-from-modeldoc2-interface">By <strong>SelectByID</strong> method From <strong>ModelDoc2</strong> Interface</h2>
+<p>This is most updated method of <strong>Show Component</strong> in an assembly document.</p>
 
-<p><code class="language-plaintext highlighter-rouge">SelectByID</code> method From <code class="language-plaintext highlighter-rouge">ModelDoc2</code> Interface is the easiest method for selecting Default plane.</p>
+<h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>I will explain the use of this method in 2 different scenerio as follows:</p>
+<p>Below image shows the result we get.</p>
 
-<ol>
-  <li>
-    <p>Using this method in the previous example of creating a new document and then select a Plane.</p>
-  </li>
-  <li>
-    <p>Using this method in an open document.</p>
-  </li>
-</ol>
+<p><a href="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif" alt="assembly-show-component" /></a></p>
 
-<h3 id="using-selectbyid-method-in-previous-example">Using SelectByID method in previous example</h3>
+<p>We <strong>Show Component</strong> in simple manners.</p>
 
-<p>In the previous 2 posts, we learned how to create <em>a new part document, an assembly document, and a drawing document</em>.</p>
+<p>There are no extra steps required.</p>
 
-<p>Now we use the same code and <em>extended</em> it for using selecting planes.</p>
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows how to <strong>Show Component</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/3YCXV0gpN3U" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
+
+<p><strong><em>I have explained every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Show Component</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Creating variable for Solidworks application</span>
+<span class="c1">' Variable for Solidworks Application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-<span class="c1">' Creating variable for Solidworks document</span>
+
+<span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 
-<span class="c1">' Main function of our VBA program</span>
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Program to Show Selected Component</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-
-    <span class="c1">' Setting Solidworks variable to Solidworks application</span>
-    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks Application variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+  
+  <span class="c1">' Variable for List of elements</span>
+  <span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  
+  <span class="c1">' Get Components list in opened assembly</span>
+  <span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+  
+  <span class="c1">' Variable for component</span>
+  <span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  
+  <span class="c1">' Loop Components List</span>
+  <span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
+  
+    <span class="c1">' Set Solidworks Component variable</span>
+    <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
     
-    <span class="c1">' Creating string type variable for storing default part location</span>
-    <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-    <span class="c1">' Setting value of this string type variable to "Default part template"</span>
-    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+    <span class="c1">' If current component is hidden</span>
+    <span class="k">If</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">IsHidden</span><span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="k">Then</span>
+      
+      <span class="c1">' Select the component</span>
+      <span class="n">swComponent</span><span class="p">.</span><span class="n">Select</span> <span class="k">False</span>
+      
+      <span class="c1">' Show selected component</span>
+      <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowComponent2</span>
+    <span class="k">End</span> <span class="k">If</span>
+    
+  <span class="k">Next</span> <span class="n">component</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
 
-    <span class="c1">' Setting Solidworks document to new part document</span>
-    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<h2 id="prerequisite">Prerequisite</h2>
 
-    <span class="c1">' Selecting Front Plane</span>
-    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<p>There are some <em>prerequisites</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We use existing parts in Assembly document.</li>
+  <li>Both components are fully constraint as shown in below image.</li>
+  <li>We select the part which we want to Show.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/assembly-show-component/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-show-component/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Global Variables</em></li>
+  <li><em>Show Component</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-global-variables">Create Global Variables</h3>
+
+<p>In this section, we create global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Show Selected Component</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
-<p>Above code, 1st create a new part document and then select “<strong>Front Plane</strong>” in VBA macro.</p>
+<ul>
+  <li>In above line, we create <em>Program to Show Selected Component</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
 
-<p>To select the plane, I have to add 2 lines. 1st I create a boolean varible above main function as shown in below code:</p>
+<h3 id="initialize-global-variables">Initialize Global Variables</h3>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<p>In this section, we initialize global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
-
-<p>Then I use this <code class="language-plaintext highlighter-rouge">BoolStatus</code> variable to selecting <em>Front Plane</em> as shown in below code:</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
-<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">SelectByID</code> takes following parameters:</p>
 
 <ul>
-  <li>
-    <p><em>Name</em> : Name of the object or an empty string</p>
-  </li>
-  <li>
-    <p><em>Type</em> : Type of object in uppercase or an empty string</p>
-  </li>
-  <li>
-    <p><em>X</em> : X selection location</p>
-  </li>
-  <li>
-    <p><em>Y</em> : Y selection location</p>
-  </li>
-  <li>
-    <p><em>Z</em> : Z selection location</p>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
   </li>
 </ul>
 
-<p><strong>Return Value</strong> -</p>
-
-<p>If the item is select then this method returns <code class="language-plaintext highlighter-rouge">True</code> and otherwise <code class="language-plaintext highlighter-rouge">False</code>.</p>
-
-<p>Since this method returns <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>, hence we use a <code class="language-plaintext highlighter-rouge">boolean</code> variable to perfom this method.</p>
-
-<p>If we want to select <strong>Right Plane</strong> then we just need to replace <code class="language-plaintext highlighter-rouge">"Front Plane"</code> -&gt; <code class="language-plaintext highlighter-rouge">"Right Plane"</code> in previous code sample.</p>
-
-<p>Similar for selecting <strong>Top Plane</strong>, we need to replace <code class="language-plaintext highlighter-rouge">"Front Plane"</code> -&gt; <code class="language-plaintext highlighter-rouge">"Top Plane"</code> in previous code sample.</p>
-
-<h3 id="using-selectbyid-method-in-an-open-document">Using SelectByID method in an Open document</h3>
-
-<p>For using <code class="language-plaintext highlighter-rouge">SelectByID</code> method in an open document we use differnet code sample.</p>
-
-<p>The code sample is given below:</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-
-<span class="c1">' Creating variable for Solidworks application</span>
-<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-<span class="c1">' Creating variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-
-<span class="c1">' Main function of our VBA program</span>
-<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-
-    <span class="c1">' Setting Solidworks variable to Solidworks application</span>
-    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-        
-    <span class="c1">' Setting Solidworks document to active open document</span>
-    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-        
-    <span class="c1">' Selecting Front Plane</span>
-    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectByID</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="k">End</span> <span class="k">Sub</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre></div></div>
-
-<p>Most of the things in this code sample is already explained <strong><a href="/solidworks-macros/open-new-document">previous post</a></strong> and in previous section of this very post.</p>
-
-<p>In this code I have set the <em>Solidworks document variable</em> <code class="language-plaintext highlighter-rouge">swDoc</code> to active open document.</p>
-
-<p>And then we use similar method to select <strong>“Front Plane”</strong>.</p>
-
-<p>As explained in previous section we can select <strong>Right Plane</strong> and <strong>Top Plane</strong>.</p>
-
-<hr />
-
-<h2 id="by-selectbyid2-method-from-imodeldocextension-interface">By <strong>SelectByID2</strong> method From <strong>IModelDocExtension</strong> Interface</h2>
-
-<p>This method is similar to <code class="language-plaintext highlighter-rouge">SelectByID</code> from previous section infact it is the <em>updated version</em> of previous method.</p>
-
-<p>Since it is <em>updated</em> and has <em>additional functionality</em>, I will explain it I <strong><em>frequently</em></strong> use this method. Previous method is easiest method, by far, for selecting objects.</p>
-
-<p>Since <code class="language-plaintext highlighter-rouge">SelectByID2</code> is updated version of <code class="language-plaintext highlighter-rouge">SelectByID</code> it has similar syntax and usage.</p>
-
-<p>I will explain the use of <code class="language-plaintext highlighter-rouge">SelectByID2</code> method in 2 different scenerio as done in previous method:</p>
-
-<ol>
-  <li>
-    <p>Using this method in the previous example of creating a new document and then select a Plane.</p>
-  </li>
-  <li>
-    <p>Using this method in an open document.</p>
-  </li>
-</ol>
-
-<h3 id="using-selectbyid2-method-in-previous-example">Using SelectByID2 method in previous example</h3>
-
-<p>Now we use the same code and <em>extended</em> it for using selecting planes by <code class="language-plaintext highlighter-rouge">SelectByID2</code> method.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-
-<span class="c1">' Creating variable for Solidworks application</span>
-<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-<span class="c1">' Creating variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-
-<span class="c1">' Main function of our VBA program</span>
-<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-
-    <span class="c1">' Setting Solidworks variable to Solidworks application</span>
-    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-    
-    <span class="c1">' Creating string type variable for storing default part location</span>
-    <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-    <span class="c1">' Setting value of this string type variable to "Default part template"</span>
-    <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
-
-    <span class="c1">' Setting Solidworks document to new part document</span>
-    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-    <span class="c1">' Selecting Front Plane</span>
-    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-
-<span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
-
-<p>This method is doing the <em>same thing</em> which I already explained in the previous method.</p>
-
-<p>The difference is in the <em>syntax</em> and <em>input parameters</em>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
-<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>As you can see from the above code sample, this method is a method of <code class="language-plaintext highlighter-rouge">Extension</code> interface/object.</p>
-
-<p>This <code class="language-plaintext highlighter-rouge">Extension</code> interface/object is part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable. This variable is the type of <code class="language-plaintext highlighter-rouge">ModelDoc2</code> interface/object.</p>
-
-<p>Apart from that, we need to give additional input parameters also.</p>
-
-<p>Below I have explained about the input parameters of <code class="language-plaintext highlighter-rouge">SelectByID2</code> method:</p>
 
 <ul>
-  <li>
-    <p><em>Name</em> : Name of the object or an empty string</p>
-  </li>
-  <li>
-    <p><em>Type</em> : Type of object in uppercase or an empty string</p>
-  </li>
-  <li>
-    <p><em>X</em> : X selection location</p>
-  </li>
-  <li>
-    <p><em>Y</em> : Y selection location</p>
-  </li>
-  <li>
-    <p><em>Z</em> : Z selection location</p>
-  </li>
-  <li>
-    <p><em>Append</em> : <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>. It is used the adding the selection into selection list.</p>
-  </li>
-  <li>
-    <p><em>Mark</em> : Value you want to use as a Mark; this value is used by other functions that require ordered selection.</p>
-  </li>
-  <li>
-    <p><em>Callout</em> : Pointer to the <code class="language-plaintext highlighter-rouge">Callout</code> interface/object. (Default value most of the time is <code class="language-plaintext highlighter-rouge">nothing</code>.)</p>
-  </li>
-  <li>
-    <p><em>SelectOption</em> : Selection option. You can use either <code class="language-plaintext highlighter-rouge">swSelectOptionDefault</code> or <code class="language-plaintext highlighter-rouge">swSelectOptionExtensive</code> value.</p>
-  </li>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
 </ul>
 
-<p><strong>Return Value</strong> -</p>
+<h3 id="show-component">Show Component</h3>
 
-<p>If the item is select then this method returns <code class="language-plaintext highlighter-rouge">True</code> and otherwise <code class="language-plaintext highlighter-rouge">False</code>.</p>
+<p>In this section, we perform <em>Show Component</em> action.</p>
 
-<p>There is <strong>a lot more</strong> about this method in the <strong><em>Remark</em></strong> section. For more information visit <a href="http://help.solidworks.com/2017/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.imodeldocextension~selectbyid2.html">here</a>.</p>
-
-<p>Since this method returns <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>, here also we use a <code class="language-plaintext highlighter-rouge">boolean</code> variable to perfom this method.</p>
-
-<p>If we want to select <strong>Right Plane</strong> then we just need to replace <code class="language-plaintext highlighter-rouge">"Front Plane"</code> -&gt; <code class="language-plaintext highlighter-rouge">"Right Plane"</code> in previous code sample.</p>
-
-<p>Similar for selecting <strong>Top Plane</strong>, we need to replace <code class="language-plaintext highlighter-rouge">"Front Plane"</code> -&gt; <code class="language-plaintext highlighter-rouge">"Top Plane"</code> in previous code sample.</p>
-
-<h3 id="using-selectbyid2-method-in-an-open-document">Using SelectByID2 method in an Open document</h3>
-
-<p>For using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method in an open document we use same code sample as used in previous method.</p>
-
-<p>The code sample is given below:</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-
-<span class="c1">' Creating variable for Solidworks application</span>
-<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-<span class="c1">' Creating variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-
-<span class="c1">' Main function of our VBA program</span>
-<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-
-    <span class="c1">' Setting Solidworks variable to Solidworks application</span>
-    <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-        
-    <span class="c1">' Setting Solidworks document to active open document</span>
-    <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-        
-    <span class="c1">' Selecting Front Plane</span>
-    <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-
-<span class="k">End</span> <span class="k">Sub</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for List of elements</span>
+<span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
 </code></pre></div></div>
 
-<p>Most of the things in this code sample is already explained <strong><a href="/solidworks-macros/open-new-document">previous post</a></strong> and in previous section of this very post.</p>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>List of elements</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">vArray</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ul>
 
-<p>In this code I have set the <em>Solidworks document variable</em> <code class="language-plaintext highlighter-rouge">swDoc</code> to active open document.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get Components list in opened assembly</span>
+<span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>And then we use similar method to select <strong>“Front Plane”</strong>.</p>
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We set value by <strong><code class="language-plaintext highlighter-rouge">GetComponents</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+</ul>
 
-<p>As explained in previous section we can select <strong>Right Plane</strong> and <strong>Top Plane</strong>.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for component</span>
+<span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</code></pre></div></div>
 
-<p>This is all for now. This post is getting too long.</p>
+<ul>
+  <li>In above line, we create <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable for looping.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">component</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ul>
 
-<p>In next post we learn about <strong><em>Open Saved Documents</em></strong>.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop Components List</span>
+<span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
+  
+<span class="k">Next</span>
+</code></pre></div></div>
 
+<ul>
+  <li>In above line, we create a <code class="language-plaintext highlighter-rouge">For Each</code> loop.</li>
+  <li>In this loop, <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable loops every item in <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Component variable</span>
+<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>This <em>value</em> is current value of array <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
+  <li>Current value is represented by <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If current component is hidden</span>
+<span class="k">If</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">IsHidden</span><span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="k">Then</span>
+  
+<span class="k">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check <em>if current component is hidden</em>.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swComponent.IsHidden(False)</code></strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the component</span>
+<span class="n">swComponent</span><span class="p">.</span><span class="n">Select</span> <span class="k">False</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we <em>select the component</em>.</li>
+  <li>We use <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show selected component</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ShowComponent2</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we Show selected component.</li>
+  <li>We use <strong><code class="language-plaintext highlighter-rouge">ShowComponent2</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This method return nothing.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we show selected component as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif" alt="assembly-show-component" /></a></p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
+
+<p>Hope this post helps you to <strong>Show Component</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
 
         </div>
         
@@ -1092,13 +1149,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/open-assembly-and-drawing/" title="Solidworks Macro - Open Assembly and Drawing document
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-hide-component/" title="Solidworks VBA Macro - Hide Component
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/open-saved-document/" title="Solidworks Macro - Open Saved Documents
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
