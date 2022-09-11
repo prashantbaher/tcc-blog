@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Sub and Function Procedures - The CAD Coder</title>
+<meta name="description" content="The VBA code that you write in the Visual Basic Editor is known as a procedure.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Sub and Function Procedures">
+<meta property="og:url" content="https://thecadcoder.com//vba/sub-and-function-procedure/">
+
+
+  <meta property="og:description" content="The VBA code that you write in the Visual Basic Editor is known as a procedure.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-20T01:12:26-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://thecadcoder.com//vba/sub-and-function-procedure/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://thecadcoder.com//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/" class="active">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Sub and Function Procedures">
+    
+    <meta itemprop="description" content="The VBA code that you write in the Visual Basic Editor is known as a procedure.">
+    
+    
+    <meta itemprop="datePublished" content="2022-08-20T01:12:26-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Sub and Function Procedures
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#sub-procedures">Sub procedures</a></li><li><a href="#function-procedures">Function procedures</a></li><li><a href="#naming-subs-and-functions">Naming Subs and Functions</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>The <code class="language-plaintext highlighter-rouge">VBA</code> code that you write in the <code class="language-plaintext highlighter-rouge">Visual Basic Editor</code> is known as a <code class="language-plaintext highlighter-rouge">procedure</code>.</p>
+
+<p>The two most common types of procedures are <code class="language-plaintext highlighter-rouge">Sub</code> and <code class="language-plaintext highlighter-rouge">Function</code>.</p>
+
+<ul>
+  <li>A <code class="language-plaintext highlighter-rouge">Sub</code> procedure is a group of <code class="language-plaintext highlighter-rouge">VBA statements</code> that performs an <em>action</em> (or <em>actions</em>).</li>
+  <li>A <code class="language-plaintext highlighter-rouge">Function</code> procedure is a group of <code class="language-plaintext highlighter-rouge">VBA statements</code> that performs a <em>calculation</em> and returns a <em>single value</em>.</li>
+</ul>
+
+<p>Most of the macros you write in <code class="language-plaintext highlighter-rouge">VBA</code> are <code class="language-plaintext highlighter-rouge">Sub</code> procedures.</p>
+
+<p>You can think of a <code class="language-plaintext highlighter-rouge">Sub</code> procedure as being like a command: “Execute the <code class="language-plaintext highlighter-rouge">Sub</code> procedure and something happens”.</p>
+
+<p>Exactly what happens depends on the <code class="language-plaintext highlighter-rouge">Sub</code> procedure’s <code class="language-plaintext highlighter-rouge">VBA code</code>.</p>
+
+<p>A <code class="language-plaintext highlighter-rouge">Function</code> is also a procedure, but it’s quite different from a <code class="language-plaintext highlighter-rouge">Sub</code>.</p>
+
+<p>For understanding a <code class="language-plaintext highlighter-rouge">Function</code> let’s take an example from <code class="language-plaintext highlighter-rouge">MS Excel</code>.</p>
+
+<p><strong>Excel</strong> includes many worksheet functions that you use every day. Examples include <code class="language-plaintext highlighter-rouge">SUM</code>. This <code class="language-plaintext highlighter-rouge">SUM function</code> takes input in form of values and then it does calculation behind the scene, and then returns a single value.</p>
+
+<p>The same goes for <code class="language-plaintext highlighter-rouge">Function procedure</code> that you develop with <code class="language-plaintext highlighter-rouge">VBA</code>.</p>
+
+<h2 id="sub-procedures">Sub procedures</h2>
+
+<p>Every <code class="language-plaintext highlighter-rouge">Sub</code> procedure starts with the keyword <strong>Sub</strong> and ends with an <strong>End Sub</strong> statement. Here’s an example:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">Message</span><span class="p">()</span>
+   <span class="n">MsgBox</span> <span class="s">"That’s all folks!"</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>This example shows a procedure named <code class="language-plaintext highlighter-rouge">Message</code>. A set of <em>parentheses</em> follows the procedure’s name.</p>
+
+<p>In most cases, these <em>parentheses</em> are empty. However, you may pass arguments to <code class="language-plaintext highlighter-rouge">Sub procedures</code> from other procedures.</p>
+
+<p>If your <code class="language-plaintext highlighter-rouge">Sub</code> uses arguments, list them between the parentheses.</p>
+
+<blockquote>
+  <p>Please remember when you record a macro with the macro recorder; the result is always a Sub procedure.</p>
+</blockquote>
+
+<h2 id="function-procedures">Function procedures</h2>
+
+<p>Every <code class="language-plaintext highlighter-rouge">Function</code> procedure starts with the keyword <strong>Function</strong> and ends with an <strong>End Function</strong> statement.</p>
+
+<p>Here’s an example:</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Function</span> <span class="nf">CubeRoot</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+   <span class="n">CubeRoot</span> <span class="o">=</span> <span class="n">number</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+<p>This function, named <code class="language-plaintext highlighter-rouge">CubeRoot</code>, takes one argument (named <code class="language-plaintext highlighter-rouge">number</code>), which is enclosed in <em>parentheses</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Functions</code> can have any number of arguments or none at all.</p>
+
+<p>When you execute the function, it returns a <em>single value</em> — the cube root of the argument passed to the function.</p>
+
+<p><code class="language-plaintext highlighter-rouge">VBA</code> allows you to specify what type of information (also known as <code class="language-plaintext highlighter-rouge">data type</code>) is returned by a <code class="language-plaintext highlighter-rouge">Function procedure</code>.</p>
+
+<p>You can execute a <code class="language-plaintext highlighter-rouge">Function procedure</code> from another procedure (a <code class="language-plaintext highlighter-rouge">Sub</code> or another <code class="language-plaintext highlighter-rouge">Function procedure</code>).</p>
+
+<blockquote>
+  <p>Please note that no matter how hard you try, you can’t use the macro recorder to record a Function procedure. You must manually enter every Function procedure that you create.</p>
+</blockquote>
+
+<h2 id="naming-subs-and-functions">Naming Subs and Functions</h2>
+
+<p>Like humans &amp; pets, every <code class="language-plaintext highlighter-rouge">Sub</code> and <code class="language-plaintext highlighter-rouge">Function</code> procedure must have a name.</p>
+
+<p>Although it is perfectly acceptable to name anything what you want, it’s usually not a good idea to use such a <em>freewheeling</em> attitude when <code class="language-plaintext highlighter-rouge">naming procedures</code>.</p>
+
+<p>When naming <code class="language-plaintext highlighter-rouge">procedures</code>, you must follow a <strong>few rules</strong>:</p>
+
+<ul>
+  <li>
+    <p>You can use <em>letters, numbers, and some punctuation characters</em>, but the <strong>first</strong> character must be a <strong>letter</strong>.</p>
+  </li>
+  <li>
+    <p>You <strong>can’t</strong> use any spaces or periods in the name.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VBA</code> does not distinguish between <em>uppercase</em> and <em>lowercase</em> letters.</p>
+  </li>
+  <li>
+    <p>You <strong>can’t</strong> embed any of the following characters in a procedure name: <strong>#, $, %, &amp;, @, ^, *, or !</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Procedure</code> names can be no longer than <em>255 characters</em>. (Of course, you would never make a procedure name this long.)</p>
+  </li>
+</ul>
+
+<p>Ideally, a procedure’s name describes the routine’s purpose.</p>
+
+<p>Some programmers prefer using <code class="language-plaintext highlighter-rouge">sentence-like</code> names that provide a complete description of the procedure.</p>
+
+<p>Some examples include <code class="language-plaintext highlighter-rouge">WriteReportToTextFile</code> and <code class="language-plaintext highlighter-rouge">Get_Print_Options_and_Print_Report</code>.</p>
+
+<p>The use of such lengthy names has <em>pros</em> and <em>cons</em>.</p>
+
+<p>On the one hand, such names are <em>descriptive</em> and usually <em>unambiguous</em>. 
+On the other hand, they take longer to type.</p>
+
+<p>Everyone develops a naming style, but the main objectives are to make the names descriptive and to avoid meaningless names such as <strong>Update, Fix, and Macro1</strong>.</p>
+
+<p>Next post will be about <code class="language-plaintext highlighter-rouge">Executing Sub &amp; Function procedures</code>.</p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-08-20T01:12:26-04:00">August 20, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/vba-windows/" title="VBE Windows
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/executing-procedures/" title="Executing Sub and Function Procedures
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

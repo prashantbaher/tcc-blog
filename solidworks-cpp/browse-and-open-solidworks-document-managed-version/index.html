@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Browse and Open Solidworks Document - The CAD Coder</title>
+<meta name="description" content="Objective">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Browse and Open Solidworks Document">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-cpp/browse-and-open-solidworks-document-managed-version/">
+
+
+  <meta property="og:description" content="Objective">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-20T01:12:26-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://thecadcoder.com//solidworks-cpp/browse-and-open-solidworks-document-managed-version/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://thecadcoder.com//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-cpp-api-tutorials/">Introduction</a></li>
+          
+            <li><a href="/solidworks-cpp/Prerequisite/">Prerequisite</a></li>
+          
+            <li><a href="/solidworks-cpp/open-solidworks/">Open Solidworks & Hello World</a></li>
+          
+            <li><a href="/solidworks-cpp/open-part-document/">Open Solidworks Part Document</a></li>
+          
+            <li><a href="/solidworks-cpp/browse-and-open-solidworks-document-managed-version/" class="active">Browse and Open Solidworks Document</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Browse and Open Solidworks Document">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2022-08-20T01:12:26-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Browse and Open Solidworks Document
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#create-a-new-project">Create a New project</a></li><li><a href="#creating-ui">Creating UI</a><ul><li><a href="#update-xaml-code">Update Xaml Code</a></li><li><a href="#understanding-above-code">Understanding Above Code</a><ul><li><a href="#window-tag">&lt;Window&gt; Tag</a></li><li><a href="#grid-tag">&lt;Grid&gt; Tag</a></li><li><a href="#define-grid-columns">Define &lt;Grid&gt; Columns</a></li><li><a href="#define-grid-rows">Define &lt;Grid&gt; Rows</a></li><li><a href="#add-textblock-for-label">Add &lt;TextBlock&gt; For Label</a></li><li><a href="#add-textbox-for-file-path">Add &lt;TextBox&gt; For File Path</a></li><li><a href="#add-button-for-browse-and-open">Add &lt;Button&gt; For Browse and Open</a></li></ul></li></ul></li><li><a href="#update-mainwindowviewmodel">Update MainWindowViewModel</a><ul><li><a href="#update-title-property">Update Title Property</a></li><li><a href="#add-filepath-property">Add FilePath Property</a></li><li><a href="#add-comment-to-constructor">Add Comment to Constructor</a></li><li><a href="#add-browse-and-open-solidworks-command">Add Browse and Open Solidworks Command</a></li></ul></li><li><a href="#add-cliclr-c-project">Add CLI/CLR C++ Project</a></li><li><a href="#add-solidworks-reference-files">Add Solidworks Reference Files</a></li><li><a href="#update-solidworksfunctions-header-file">Update SolidworksFunctions Header File</a></li><li><a href="#update-solidworksfunctions-cpp-file">Update SolidworksFunctions Cpp file</a></li><li><a href="#update-executeopenbrowsedocumentcommand-method-in-mainwindowviewmodel">Update ExecuteOpenBrowseDocumentCommand method in MainWindowViewModel</a></li><li><a href="#final-result">Final Result</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
+
+<p>In this post, I tell you about how to <strong>Browse and Open Solidworks Document</strong> using <em>Solidworks C++ API</em> from Visual Studio.</p>
+
+<p class="notice--warning">In this post I am using <strong>Visual C++</strong> in a <em>C++/CLI project</em>. <br /><br />
+For more detail please visit <strong><a href="https://docs.microsoft.com/en-us/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-160">.NET programming with C++/CLI</a></strong></p>
+
+<p>Purpose of using a <strong>C++/CLI project</strong> is to use <strong>Solidworks C++ API</strong> functions from <strong>Prism WPF Application</strong>.</p>
+
+<p>In short we have -</p>
+
+<ol>
+  <li>
+    <p><em>An WPF UI</em></p>
+  </li>
+  <li>
+    <p><em>A ViewModel class for our UI</em></p>
+  </li>
+  <li>
+    <p><em>A <strong>Solidworks C++ function</strong> invoke from a <strong>Prism command</strong>.</em></p>
+  </li>
+</ol>
+
+<p>If you are confused, just watch the video first before try out anything.</p>
+
+<p>This will give you an idea about what I am saying.</p>
+
+<p>Then follow this post to write similar program at your end.</p>
+
+<p>By following this article, you can able to <strong>Browse and Open Solidworks Document</strong> using <em>Solidworks C++ API</em> successfuly.</p>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>For this post, we required <em>Some prior knowledge of C++.</em></p>
+
+<p>For more details about prerequisite please visit <strong><a href="/solidworks-cpp/Prerequisite/">Solidworks C++ API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below video on how to <strong>Browse and Open Solidworks Document</strong> using <em>Solidworks C++ API</em> from Visual Studio.</p>
+
+<iframe src="https://www.youtube.com/embed/O-bRqtW4wKQ" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that in the video, I just show how to do things.</p>
+
+<p><strong>Explaination</strong> of each line and why we write code this way is given in this article.</p>
+
+<h2 id="create-a-new-project">Create a New project</h2>
+
+<p>First, we will create a new project in <em>Visual Studio 2019</em>.</p>
+
+<p>When <em>Visual Studio 2019</em> open, we need to select “Create New Project” as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/1.create-new-project.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/1.create-new-project.png" alt="create-new-project" /></a></p>
+
+<p>Now, from this new window, select Prism Blank App template as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/2.select-prism-prism-template.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/2.select-prism-prism-template.png" alt="select-prism-prism-template" /></a></p>
+
+<p>Next, a new window open and here we need to configure our project.</p>
+
+<p>In this window we give a name to our <em>Prism project</em>.</p>
+
+<p>I will continue will default location and other options but if you want, you can change it.</p>
+
+<p>As shown in below image I have created a new project named <code class="language-plaintext highlighter-rouge">BrowseAndOpenDocument_Cpp</code> in <em>Visual Studio 2019</em>.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/3.give-project-name.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/3.give-project-name.png" alt="give-project-name" /></a></p>
+
+<p>After giving project name we need to select “<code class="language-plaintext highlighter-rouge">Create</code>” button as shown in above image.</p>
+
+<p>This will create another window as shown below.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/4.select-dependency-injection-container.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/4.select-dependency-injection-container.png" alt="select-dependency-injection-container" /></a></p>
+
+<p>This window ask us to select “<strong>Dependecy Injection Container</strong>” for our <em>Prism project</em></p>
+
+<p>For our project we will continue with default “Unity” container.</p>
+
+<p class="notice--warning">Please do not worry about this container.<br />
+In our future article, I will explain and show you how we can use them.<br />
+I want to keep this as much as absolute begineer friendly.<br />
+Hence don’t worry about this too much.</p>
+
+<h2 id="creating-ui">Creating UI</h2>
+
+<p>Now we need to create <strong>User Interface (UI)</strong> for our application.</p>
+
+<p>First we need to <em>Build</em> our solution so that any broken reference or anything missed we get at start.</p>
+
+<p>To build our solution you can either use keyboard shortcut <code class="language-plaintext highlighter-rouge">Ctrl + Shift + B</code> or select “<strong>Build Solution</strong>” option from “<em>Build</em>” menu as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/5.build-solution.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/5.build-solution.png" alt="build-solution" /></a></p>
+
+<h3 id="update-xaml-code">Update Xaml Code</h3>
+
+<p>Now we need to create UI by updating xaml code.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Window</span> <span class="na">x:Class=</span><span class="s">"BrowseAndOpenDocument_Cpp.Views.MainWindow"</span>
+        <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+        <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+        <span class="na">xmlns:prism=</span><span class="s">"http://prismlibrary.com/"</span>
+        <span class="na">prism:ViewModelLocator.AutoWireViewModel=</span><span class="s">"True"</span>
+        <span class="na">Title=</span><span class="s">"{Binding Title}"</span> <span class="na">Height=</span><span class="s">"200"</span> <span class="na">Width=</span><span class="s">"525"</span>
+        <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Grid</span> <span class="na">Margin=</span><span class="s">"25"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
+            <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
+
+        <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
+            <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"30"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"30"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Grid.RowDefinitions&gt;</span>
+
+        <span class="nt">&lt;TextBlock</span> <span class="na">Grid.Row=</span><span class="s">"0"</span>
+                   <span class="na">Grid.Column=</span><span class="s">"0"</span>
+                   <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                   <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+                   <span class="na">FontSize=</span><span class="s">"16"</span>
+                   <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+                   <span class="na">Text=</span><span class="s">"Browse Solidworks Document"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;TextBox</span> <span class="na">Grid.Row=</span><span class="s">"0"</span>
+                 <span class="na">Grid.Column=</span><span class="s">"2"</span>
+                 <span class="na">VerticalContentAlignment=</span><span class="s">"Center"</span>
+                 <span class="na">Text=</span><span class="s">"{Binding FilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;Button</span> <span class="na">Grid.Row=</span><span class="s">"2"</span>
+                <span class="na">Grid.Column=</span><span class="s">"0"</span> <span class="na">Grid.ColumnSpan=</span><span class="s">"3"</span>
+                <span class="na">Content=</span><span class="s">"Open Document"</span>
+                <span class="na">FontSize=</span><span class="s">"16"</span> <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+                <span class="na">Width=</span><span class="s">"150"</span> <span class="na">Command=</span><span class="s">"{Binding OpenBrowseDocumentCommand}"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/Window&gt;</span>
+</code></pre></div></div>
+
+<h3 id="understanding-above-code">Understanding Above Code</h3>
+
+<p>In <code class="language-plaintext highlighter-rouge">&lt;Window&gt;</code> tag we made 2 changes which are following :</p>
+
+<ol>
+  <li>
+    <p>Add <code class="language-plaintext highlighter-rouge">WindowStartupLocation="CenterScreen"</code></p>
+  </li>
+  <li>
+    <p>Update <code class="language-plaintext highlighter-rouge">Height="200"</code></p>
+  </li>
+</ol>
+
+<h4 id="window-tag"><code class="language-plaintext highlighter-rouge">&lt;Window&gt;</code> Tag</h4>
+
+<p>We add <code class="language-plaintext highlighter-rouge">WindowStartupLocation="CenterScreen"</code>, so that when application start, it will open at center of screen.</p>
+
+<p>We update <code class="language-plaintext highlighter-rouge">Height="200"</code>, because default height is more than required.</p>
+
+<p><em>Because of this we need to reduce the height.</em></p>
+
+<h4 id="grid-tag"><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code> Tag</h4>
+
+<p>In <code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code> tag, we add <code class="language-plaintext highlighter-rouge">Margin="25"</code> property.</p>
+
+<p>We add this property because we want a space aof 25 pixels around this grid.</p>
+
+<h4 id="define-grid-columns">Define <code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code> Columns</h4>
+
+<p>Inside this grid, we define Grid’s Columns as shown in below code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
+  <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
+</code></pre></div></div>
+
+<p>In above code, we had 3 columns.</p>
+
+<p><strong>1st</strong> and <strong>3rd</strong> column have <code class="language-plaintext highlighter-rouge">Width="*"</code>.</p>
+
+<p>It means they get equal and remaining space.</p>
+
+<p><strong>2nd</strong> column has <code class="language-plaintext highlighter-rouge">Width="15"</code>.</p>
+
+<p>It means this column has fix <em>Width</em> space of <em>15 pixels</em>.</p>
+
+<h4 id="define-grid-rows">Define <code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code> Rows</h4>
+
+<p>Inside this grid, we define Grid’s Rows as shown in below code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Grid.RowDefinitions&gt;</span>
+	<span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"30"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"30"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Grid.RowDefinitions&gt;</span>
+</code></pre></div></div>
+
+<p>In above code, we had 4 rows.</p>
+
+<p><strong>1st</strong> and <strong>3rd</strong> rows have <code class="language-plaintext highlighter-rouge">Height="30"</code></p>
+
+<p>It means they have fix <em>Height</em> space of <em>30 pixels</em>.</p>
+
+<p><strong>2nd</strong> row has <code class="language-plaintext highlighter-rouge">Height="15"</code></p>
+
+<p>It means it has fix <em>Height</em> space of <em>15 pixels</em>.</p>
+
+<p><strong>4th</strong> row has <code class="language-plaintext highlighter-rouge">Height="*"</code></p>
+
+<p>It means this row get <em>remaining available</em> space.</p>
+
+<h4 id="add-textblock-for-label">Add <code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code> For Label</h4>
+
+<p>After defining grid’s columns and rows we add and <code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code> tag as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span> <span class="na">Grid.Row=</span><span class="s">"0"</span>
+  <span class="na">Grid.Column=</span><span class="s">"0"</span>
+  <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+  <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+  <span class="na">FontSize=</span><span class="s">"16"</span>
+  <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+  <span class="na">Text=</span><span class="s">"Browse Solidworks Document"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>In above tag we define following properties:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Row="0"</code> : This means it is positioned at <em>1st row</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Column="0"</code> : This means it is positioned at <em>1st column</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">HorizontalAlignment="Center"</code> : This means it’s alignment in <em>horizontal axis</em> will be <strong>Center</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">VerticalAlignment="Center"</code> : This means it’s alignment in <em>vertical axis</em> will be <strong>Center</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">FontSize="16"</code> : This means <em>Font size</em> will be <em>16</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">FontWeight="Medium"</code> : This means <em>Font Weight</em> will be <em>Medium</em> (type of Semi-bold).</p>
+
+<p><code class="language-plaintext highlighter-rouge">Text="Browse Solidworks Document"</code> : In this property we define the text we want to see, which is <strong>Browse Solidworks Document</strong>.</p>
+
+<h4 id="add-textbox-for-file-path">Add <code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code> For File Path</h4>
+
+<p>After defining TextBlock we add and <code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code> tag to show Opened file path as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBox</span> <span class="na">Grid.Row=</span><span class="s">"0"</span>
+  <span class="na">Grid.Column=</span><span class="s">"2"</span>
+  <span class="na">VerticalContentAlignment=</span><span class="s">"Center"</span>
+  <span class="na">Text=</span><span class="s">"{Binding FilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>In above tag we define following properties:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Row="0"</code> : This means it is positioned at <em>1st row</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Column="2"</code> : This means it is positioned at <em>3rd column</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">VerticalContentAlignment="Center"</code> : This means it’s content’s alignment in <em>vertical axis</em> will be <strong>Center</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Text="{Binding FilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</code> : In this line we define Text.</p>
+
+<p>Now let us break this property.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Binding FilePath</code> : This Binds the Text property with a property named <code class="language-plaintext highlighter-rouge">**FilePath**</code>, which we define in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel class.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Mode=TwoWay</code> : With TwoWay mode, UI can change viewmodel property and viewmodel property chage UI text property.</p>
+
+<p>For more details about Mode, please <strong><a href="https://stackoverflow.com/questions/2305179/what-are-the-various-wpf-binding-modes#2305234">visit this link of Stackoverflow</a></strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">UpdateSourceTrigger=PropertyChanged</code> : When the property changed in viewmodel, the text update in UI.</p>
+
+<h4 id="add-button-for-browse-and-open">Add <code class="language-plaintext highlighter-rouge">&lt;Button&gt;</code> For Browse and Open</h4>
+
+<p>After <code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code> for file path we add and <code class="language-plaintext highlighter-rouge">&lt;Button&gt;</code> tag as shown below:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Grid.Row=</span><span class="s">"2"</span>
+    <span class="na">Grid.Column=</span><span class="s">"0"</span> <span class="na">Grid.ColumnSpan=</span><span class="s">"3"</span>
+    <span class="na">Content=</span><span class="s">"Open Document"</span>
+    <span class="na">FontSize=</span><span class="s">"16"</span> <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+    <span class="na">Width=</span><span class="s">"150"</span> <span class="na">Command=</span><span class="s">"{Binding OpenBrowseDocumentCommand}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>In above tag we define following properties:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Row="2"</code> : This means it is positioned at <em>3rd row</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.Column="0"</code> : This means it is positioned at <em>1st column</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Grid.ColumnSpan="3"</code> : This means this button will overlap <em>3 columns</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Content="Open Document"</code> : This property define the content we want to show in button.</p>
+
+<p>In our case, we want to show a text of “<strong>Open Document</strong>”.</p>
+
+<p>We can define images or links inside our button.</p>
+
+<p>For more info you can use <em>Google</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">FontSize="16"</code> : This means <em>Font size</em> will be <em>16</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">FontWeight="Medium"</code> : This means <em>Font Weight</em> will be <em>Medium</em> (type of Semi-bold).</p>
+
+<p><code class="language-plaintext highlighter-rouge">Width="150"</code> : This means Width of button is 150.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Command="{Binding OpenBrowseDocumentCommand}"</code> : In MVVM, inplace of Click event, we use Command.</p>
+
+<p>In our case we <strong>Bind</strong> <code class="language-plaintext highlighter-rouge">OpenBrowseDocumentCommand</code> from ViewModel with this button.</p>
+
+<p>This means whenever we click this button, this command will execute.</p>
+
+<h2 id="update-mainwindowviewmodel">Update MainWindowViewModel</h2>
+
+<p>Now we need to update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> file for properties and Command.</p>
+
+<h3 id="update-title-property">Update Title Property</h3>
+
+<p>1st we update Title property as shown below.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// The title</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">private</span> <span class="kt">string</span> <span class="n">_title</span> <span class="p">=</span> <span class="s">"Browse and Open Solidworks Document"</span><span class="p">;</span>
+<span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Gets or sets the title.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;value&gt;</span>
+<span class="c1">/// The title.</span>
+<span class="c1">/// &lt;/value&gt;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+<span class="p">{</span>
+	<span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_title</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_title</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, I have updated <code class="language-plaintext highlighter-rouge">_title</code> field to <code class="language-plaintext highlighter-rouge">"Browse and Open Solidworks Document"</code>.</p>
+
+<p>This will be shown at the <strong>Window title</strong> of our application.</p>
+
+<p>You noticed that I have added Comments also.</p>
+
+<p>These comments helps you too understand the code.</p>
+
+<h3 id="add-filepath-property">Add FilePath Property</h3>
+
+<p>After this we need to add FilePath property as shown below:</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// The file path</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">private</span> <span class="kt">string</span> <span class="n">_FilePath</span><span class="p">;</span>
+<span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Gets or sets the file path.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;value&gt;</span>
+<span class="c1">/// The file path.</span>
+<span class="c1">/// &lt;/value&gt;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">FilePath</span>
+<span class="p">{</span>
+	<span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_FilePath</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_FilePath</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, we add <strong>Prism property</strong> with backend field using <code class="language-plaintext highlighter-rouge">prop</code> code-snippet.</p>
+
+<p>There is nothing special about this <strong>Prism property</strong>.</p>
+
+<h3 id="add-comment-to-constructor">Add Comment to Constructor</h3>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Initializes a new instance of the &lt;see cref="MainWindowViewModel"/&gt; class.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, I have just added a comment to <em>Constructor</em>.</p>
+
+<h3 id="add-browse-and-open-solidworks-command">Add Browse and Open Solidworks Command</h3>
+
+<p>After Constructor, we add <em>Browse and Open Solidworks Command</em> using <code class="language-plaintext highlighter-rouge">cmd</code> code-snippet.</p>
+
+<p>This snippet add following code .</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// The open browse document command</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_OpenBrowseDocumentCommand</span><span class="p">;</span>
+<span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Gets the open browse document command.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;value&gt;</span>
+<span class="c1">/// The open browse document command.</span>
+<span class="c1">/// &lt;/value&gt;</span>
+<span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">OpenBrowseDocumentCommand</span> <span class="p">=&gt;</span>
+	<span class="n">_OpenBrowseDocumentCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_OpenBrowseDocumentCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteOpenBrowseDocumentCommand</span><span class="p">));</span>
+
+<span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Executes the open browse document command.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="k">void</span> <span class="nf">ExecuteOpenBrowseDocumentCommand</span><span class="p">()</span>
+<span class="p">{</span>
+	
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This snipped a <code class="language-plaintext highlighter-rouge">DelegateCommand</code> name <code class="language-plaintext highlighter-rouge">OpenBrowseDocumentCommand</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DelegateCommand</code> is present in <code class="language-plaintext highlighter-rouge">Prism.Commands</code> namespace.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">OpenBrowseDocumentCommand</code> command has backend field named <code class="language-plaintext highlighter-rouge">_OpenBrowseDocumentCommand</code>.</p>
+
+<p>This command execute a funtion named <code class="language-plaintext highlighter-rouge">ExecuteOpenBrowseDocumentCommand()</code>.</p>
+
+<p>Please watch the video, how I have added the command.</p>
+
+<p>Also I have added Comments for better understanding.</p>
+
+<p>Now our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> looks like following:</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Prism.Commands</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Prism.Mvvm</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">BrowseAndOpenDocument_Cpp.ViewModels</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">MainWindowViewModel</span> <span class="p">:</span> <span class="n">BindableBase</span>
+    <span class="p">{</span>
+        <span class="err">#</span><span class="n">region</span> <span class="n">Properties</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// The title</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="n">_title</span> <span class="p">=</span> <span class="s">"Browse and Open Solidworks Document"</span><span class="p">;</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets the title.</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;value&gt;</span>
+        <span class="c1">/// The title.</span>
+        <span class="c1">/// &lt;/value&gt;</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_title</span><span class="p">;</span> <span class="p">}</span>
+            <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_title</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// The file path</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="n">_FilePath</span><span class="p">;</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets the file path.</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;value&gt;</span>
+        <span class="c1">/// The file path.</span>
+        <span class="c1">/// &lt;/value&gt;</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">FilePath</span>
+        <span class="p">{</span>
+            <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_FilePath</span><span class="p">;</span> <span class="p">}</span>
+            <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_FilePath</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="err">#</span><span class="n">endregion</span>
+
+        <span class="err">#</span><span class="n">region</span> <span class="n">Constructor</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Initializes a new instance of the &lt;see cref="MainWindowViewModel"/&gt; class.</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
+        <span class="p">{</span>
+
+        <span class="p">}</span>
+
+        <span class="err">#</span><span class="n">endregion</span>
+
+        <span class="err">#</span><span class="n">region</span> <span class="n">Browse</span> <span class="n">and</span> <span class="n">Open</span> <span class="n">Solidworks</span> <span class="n">Command</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// The open browse document command</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_OpenBrowseDocumentCommand</span><span class="p">;</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets the open browse document command.</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;value&gt;</span>
+        <span class="c1">/// The open browse document command.</span>
+        <span class="c1">/// &lt;/value&gt;</span>
+        <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">OpenBrowseDocumentCommand</span> <span class="p">=&gt;</span>
+            <span class="n">_OpenBrowseDocumentCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_OpenBrowseDocumentCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteOpenBrowseDocumentCommand</span><span class="p">));</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Executes the open browse document command.</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">void</span> <span class="nf">ExecuteOpenBrowseDocumentCommand</span><span class="p">()</span>
+        <span class="p">{</span>
+            
+        <span class="p">}</span>
+
+        <span class="err">#</span><span class="n">endregion</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can see from above code I have arranged properties, commands and Constructor in their separate regions.</p>
+
+<p>This will help us to organize the code.</p>
+
+<p>I also suggest to do this.</p>
+
+<p>I have a little memory for retaining information so I depend upon on this type of things.</p>
+
+<h2 id="add-cliclr-c-project">Add CLI/CLR C++ Project</h2>
+
+<p>Now we need to a <strong>CLI/CLR C++ Project</strong> for Solidworks functions.</p>
+
+<p>Click on our Solution “BrowseAndOpenDocument_Cpp” as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/6.select-solution-file.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/6.select-solution-file.png" alt="select-solution-file" /></a></p>
+
+<p>Right Click on the Solution then select <strong>Add -&gt; New Project</strong> as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/7.add-new-project.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/7.add-new-project.png" alt="add-new-project" /></a></p>
+
+<p>This will open a new Window as shown in below image.</p>
+
+<p>From this window we need to select “<strong>CLR Class Library</strong>” as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/8.select-clr-class-library-project.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/8.select-clr-class-library-project.png" alt="select-clr-class-library-project" /></a></p>
+
+<p>After clicking “<strong>Next</strong>” button a new “Configure your new project” Window appears.</p>
+
+<p>In this window can define following things:</p>
+
+<ol>
+  <li>
+    <p>Project Name</p>
+  </li>
+  <li>
+    <p>Location</p>
+  </li>
+  <li>
+    <p>Framework</p>
+  </li>
+</ol>
+
+<p>For our project we define only Project Name to <strong>SolidworksFunctions</strong> as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/9.create-cpp-project.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/9.create-cpp-project.png" alt="create-cpp-project" /></a></p>
+
+<p>This will add a new project in our Solution as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/10.new-project-in-solution.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/10.new-project-in-solution.png" alt="new-project-in-solution" /></a></p>
+
+<h2 id="add-solidworks-reference-files">Add Solidworks Reference Files</h2>
+
+<p>Now we need to add <strong>Solidworks Introp Files</strong> as references.</p>
+
+<p>For this we need to <strong>Right Click</strong> on <strong>Reference</strong> then select <strong>Add Reference</strong> as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/11.add-reference-option.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/11.add-reference-option.png" alt="add-reference-option" /></a></p>
+
+<p>This will open a new window as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/12.add-reference-window.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/12.add-reference-window.png" alt="add-reference-window" /></a></p>
+
+<p>From this window select “<strong>Browse</strong>” option then select “<strong>Browse</strong>” button as shown in below image:</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/13.browse-reference.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/13.browse-reference.png" alt="browse-reference" /></a></p>
+
+<p>This will open a new File Browser window to select the file we want to add as a reference.</p>
+
+<p>Please see below image for more details.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/14.select-reference-file-window.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/14.select-reference-file-window.png" alt="select-reference-file-window" /></a></p>
+
+<p>In above window you need to browse to folder path where Solidworks is installed.</p>
+
+<p>If you have not changed installation path, then this folder path will be <strong><em>C:\Program Files\SOLIDWORKS Corp\SOLIDWORKS</em></strong>.</p>
+
+<p>Inside this folder, we need to select 2 files.</p>
+
+<ol>
+  <li>
+    <p><em>SolidWorks.Interop.sldworks</em></p>
+  </li>
+  <li>
+    <p><em>SolidWorks.Interop.swconst</em></p>
+  </li>
+</ol>
+
+<p>We can add one file at a time hence we need to do this 2 time.</p>
+
+<h2 id="update-solidworksfunctions-header-file">Update SolidworksFunctions Header File</h2>
+
+<p>Now we need to update the <code class="language-plaintext highlighter-rouge">SolidworksFunctions.h</code> header file as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/15.update-header-file.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/15.update-header-file.png" alt="update-header-file" /></a></p>
+
+<p>Now I want to keep this very simple.</p>
+
+<p>So I will move the code from <code class="language-plaintext highlighter-rouge">SolidworksFunctions.h</code> header file to  <code class="language-plaintext highlighter-rouge">SolidworksFunctions.cpp</code> file.</p>
+
+<p>Below is the code I will move.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">SolidworksFunctions</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="n">ref</span> <span class="k">class</span> <span class="nc">Class1</span>
+  <span class="p">{</span>
+    <span class="c1">// TODO: Add your methods for this class here.</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="update-solidworksfunctions-cpp-file">Update SolidworksFunctions Cpp file</h2>
+
+<p>Now we need to update <code class="language-plaintext highlighter-rouge">SolidworksFunctions.cpp</code> file.</p>
+
+<p>Please copy below code and paste in <code class="language-plaintext highlighter-rouge">SolidworksFunctions.cpp</code> file.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">"pch.h"</span><span class="cp">
+#include</span> <span class="cpf">"SolidworksFunctions.h"</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">System</span><span class="o">::</span><span class="n">IO</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">SolidWorks</span><span class="o">::</span><span class="n">Interop</span><span class="o">::</span><span class="n">sldworks</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">SolidWorks</span><span class="o">::</span><span class="n">Interop</span><span class="o">::</span><span class="n">swconst</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">SolidworksFunctions</span> <span class="p">{</span>
+	<span class="c1">/// &lt;summary&gt;</span>
+	<span class="c1">/// Browse and Open Solidworks document</span>
+	<span class="c1">/// &lt;/summary&gt;</span>
+	<span class="k">public</span> <span class="n">ref</span> <span class="k">class</span> <span class="nc">BrowseAndOpenSolidworksDocument</span>
+	<span class="p">{</span>		
+	<span class="nl">public:</span>		
+		<span class="c1">/// &lt;summary&gt;</span>
+		<span class="c1">/// Browses the and open.</span>
+		<span class="c1">/// &lt;/summary&gt;</span>
+		<span class="c1">/// &lt;param name="path"&gt;The path.&lt;/param&gt;</span>
+		<span class="c1">/// &lt;param name="errorMessage"&gt;The error message.&lt;/param&gt;</span>
+		<span class="c1">/// &lt;returns&gt;&lt;/returns&gt;</span>
+		<span class="k">static</span> <span class="kt">bool</span> <span class="n">BrowseAndOpen</span><span class="p">(</span><span class="n">String</span><span class="o">^%</span> <span class="n">path</span><span class="p">,</span> <span class="n">String</span><span class="o">^%</span> <span class="n">errorMessage</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">// Solidworks variable</span>
+			<span class="n">ISldWorks</span><span class="o">^</span> <span class="n">swApp</span><span class="p">;</span>
+
+			<span class="c1">// Create an instance of Solidworks application</span>
+			<span class="c1">//swApp = gcnew SldWorks();</span>
+
+			<span class="c1">// If failed to open Solidworks application</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">swApp</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">// Inform user and exit the function</span>
+				<span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Failed to open Solidworks."</span><span class="p">;</span>
+				<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Make solidworks visible</span>
+			<span class="n">swApp</span><span class="o">-&gt;</span><span class="n">Visible</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+			<span class="c1">// Solidworks File Filter, File Config, File Display name, File options</span>
+			<span class="n">String</span><span class="o">^</span> <span class="n">fileFilter</span> <span class="o">=</span> <span class="s">"SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw"</span><span class="p">;</span>
+			<span class="n">String</span><span class="o">^</span> <span class="n">fileConfig</span><span class="p">;</span>
+			<span class="n">String</span><span class="o">^</span> <span class="n">fileDispName</span><span class="p">;</span>
+			<span class="kt">int</span> <span class="n">fileOptions</span><span class="p">;</span>
+
+			<span class="c1">// Browse Solidworks document</span>
+			<span class="n">path</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">-&gt;</span><span class="n">GetOpenFileName</span><span class="p">(</span><span class="s">"Select File"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="n">fileFilter</span><span class="p">,</span> <span class="n">fileOptions</span><span class="p">,</span> <span class="n">fileConfig</span><span class="p">,</span> <span class="n">fileDispName</span><span class="p">);</span>
+
+			<span class="c1">// If failed to Browse Solidworks document</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">// Inform user and exit the function</span>
+				<span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Failed to browse Solidworks document."</span><span class="p">;</span>
+				<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Variable to hold document type</span>
+			<span class="kt">int</span> <span class="n">documentType</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+			<span class="c1">// Get selected file's extension</span>
+			<span class="n">FileInfo</span><span class="o">^</span> <span class="n">fileInfo</span> <span class="o">=</span> <span class="n">gcnew</span> <span class="n">FileInfo</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+			<span class="n">String</span><span class="o">^</span> <span class="n">fileExtension</span> <span class="o">=</span> <span class="n">fileInfo</span><span class="o">-&gt;</span><span class="n">Extension</span><span class="o">-&gt;</span><span class="n">ToLower</span><span class="p">();</span>
+
+			<span class="c1">// If selected document is part file</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">fileExtension</span> <span class="o">==</span> <span class="s">".sldprt"</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">// Update document type</span>
+				<span class="n">documentType</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="o">::</span><span class="n">swDocPART</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">// If selected document is assembly file</span>
+			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">fileExtension</span> <span class="o">==</span> <span class="s">".sldasm"</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">// Update document type</span>
+				<span class="n">documentType</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="o">::</span><span class="n">swDocASSEMBLY</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">// If selected document is drawing file</span>
+			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="c1">// Update document type</span>
+				<span class="n">documentType</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="o">::</span><span class="n">swDocDRAWING</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Config and error</span>
+			<span class="n">String</span><span class="o">^</span> <span class="n">config</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+			<span class="kt">int</span> <span class="n">error</span><span class="p">;</span>
+
+			<span class="c1">// Open Selected file</span>
+			<span class="n">IModelDoc2</span><span class="o">^</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">-&gt;</span><span class="n">IOpenDoc5</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">documentType</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swOpenDocOptions_e</span><span class="o">::</span><span class="n">swOpenDocOptions_Silent</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+
+			<span class="c1">// If failed to Open Solidworks document</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">swDoc</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">// Inform user and exit the function</span>
+				<span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Failed to open Solidworks document."</span><span class="p">;</span>
+				<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Everything is good, return true</span>
+			<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>I have commented each line so that you can understand the code easily.</p>
+
+<h2 id="update-executeopenbrowsedocumentcommand-method-in-mainwindowviewmodel">Update ExecuteOpenBrowseDocumentCommand method in MainWindowViewModel</h2>
+
+<p>Please copy and paste the below code into <code class="language-plaintext highlighter-rouge">ExecuteOpenBrowseDocumentCommand</code> method in <code class="language-plaintext highlighter-rouge">MainWindowViewModel.cs</code> file.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Reference path variable</span>
+<span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="c1">// Reference error message</span>
+<span class="kt">string</span> <span class="n">errorMessage</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="c1">// Get the status of Solidworks Browse and Open function from C++ project</span>
+<span class="kt">bool</span> <span class="n">status</span> <span class="p">=</span> <span class="n">SolidworksFunctions</span><span class="p">.</span><span class="n">BrowseAndOpenSolidworksDocument</span><span class="p">.</span><span class="nf">BrowseAndOpen</span><span class="p">(</span><span class="k">ref</span> <span class="n">path</span><span class="p">,</span> <span class="k">ref</span> <span class="n">errorMessage</span><span class="p">);</span>
+
+<span class="c1">// If there are any error</span>
+<span class="k">if</span> <span class="p">(!</span><span class="n">status</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">// Inform to user and exit function</span>
+	<span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">,</span> <span class="s">"Error"</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+	<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Update file path</span>
+<span class="n">FilePath</span> <span class="p">=</span> <span class="n">path</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>I have commented each line so that you can understand the code easily.</p>
+
+<p>Now Build the Solution as shown in below image.</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/5.build-solution.png"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/5.build-solution.png" alt="build-solution" /></a></p>
+
+<p>After Building Solution run the program by pressing <strong>F5</strong>.</p>
+
+<h2 id="final-result">Final Result</h2>
+
+<p>After running the program wait for few minute.</p>
+
+<p>You will get result as shown in below image!!!</p>
+
+<p><a href="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/final-result.gif"><img src="/assets/solidworks-cpp-images/browse-and-open-document-vcpp/final-result.gif" alt="final-result" /></a></p>
+
+<p><strong><em>I hope this will helpful!!!</em></strong></p>
+
+<hr />
+
+<p><strong><em>This is it !!!</em></strong></p>
+
+<p>We have completed our <em>Browse and Open Solidworks Document</em> program using <strong>Solidworks C++ APIs</strong>.</p>
+
+<p>Hope this post helps you to start with <em>Solidworks C++ API</em>.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not! I will continue creating Solidworks C++ posts.</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-08-20T01:12:26-04:00">August 20, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-cpp/open-part-document/" title="Open Solidworks Part Document
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

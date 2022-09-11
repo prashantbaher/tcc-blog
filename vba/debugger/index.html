@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>VBA Debugger - The CAD Coder</title>
+<meta name="description" content="In this section, I discuss the details of using the VBA debugging tools.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="VBA Debugger">
+<meta property="og:url" content="https://thecadcoder.com//vba/debugger/">
+
+
+  <meta property="og:description" content="In this section, I discuss the details of using the VBA debugging tools.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-20T01:12:26-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://thecadcoder.com//vba/debugger/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://thecadcoder.com//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/" class="active">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="VBA Debugger">
+    
+    <meta itemprop="description" content="In this section, I discuss the details of using the VBA debugging tools.">
+    
+    
+    <meta itemprop="datePublished" content="2022-08-20T01:12:26-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">VBA Debugger
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#setting-breakpoints-in-your-code">Setting breakpoints in your code</a><ul><li><a href="#using-the-immediate-window">Using the Immediate window</a></li><li><a href="#stepping-through-your-code">Stepping through your code</a></li></ul></li><li><a href="#using-the-watch-window">Using the Watch window</a></li><li><a href="#using-the-locals-window">Using the Locals window</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>In this section, I discuss the details of using the VBA debugging tools.</p>
+
+<p>These tools are much more powerful than the techniques I discuss in the previous section.</p>
+
+<p>But along with power comes responsibility. Using the debugging tools takes a bit of setup work.</p>
+
+<h2 id="setting-breakpoints-in-your-code">Setting breakpoints in your code</h2>
+
+<p>In earlier sections, I discuss using <code class="language-plaintext highlighter-rouge">MsgBox</code> functions in your code to monitor the values of certain variables.</p>
+
+<p>Displaying a message box essentially halts your code in mid-execution, and clicking the <strong>OK</strong> button resumes execution.</p>
+
+<p>Wouldn’t it be nice if you could halt a routine’s execution, take a look at the value of any of your variables, and then continue execution?</p>
+
+<p>Well, that’s exactly what you can do by setting a <em>breakpoint</em>.</p>
+
+<p>You can set a <em>breakpoint</em> in your VBA code in several ways:</p>
+
+<ul>
+  <li>Move the cursor to the statement at which you want execution to stop; then press <code class="language-plaintext highlighter-rouge">F9</code>.</li>
+  <li>Click in the <em>gray</em> margin to the left of the statement at which you want execution to stop. <em>This is I used mainly.</em></li>
+  <li>Position the insertion point in the statement at which you want execution to stop. Then use the <strong>Debug -&gt; Toggle Breakpoint</strong> command.</li>
+  <li><em>Right-click</em> a statement and choose <strong>Toggle -&gt; Breakpoint</strong> from the shortcut menu.</li>
+</ul>
+
+<p>The results of setting a breakpoint are shown in below figure.</p>
+
+<p><em>VBE</em> highlights the line to remind you that you set a breakpoint there; it also inserts a large dot in the gray margin.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/1.BreakpointInProcedure.PNG" alt="Breakpoint-in-procedure" /></p>
+
+<p>When you execute the procedure, VBE goes into Break mode before the line with the breakpoint is executed.</p>
+
+<p>In <em>Break mode</em>, the word <strong><em>break</em></strong> is displayed in the VBE title bar.</p>
+
+<p>To get out of Break mode and continue execution, press <code class="language-plaintext highlighter-rouge">F5</code> or click the <strong>Run Sub/UserForm</strong> button in the VBE toolbar.</p>
+
+<p>To quickly remove a breakpoint, click the large dot in the gray margin or move the cursor to the highlighted line and press <code class="language-plaintext highlighter-rouge">F9</code>.</p>
+
+<p>To remove all breakpoints in the module, press <code class="language-plaintext highlighter-rouge">Ctrl+Shift+F9</code>.</p>
+
+<p>What is Break mode? You can think of it as a state of suspended animation.</p>
+
+<p>Your VBA code stops running and the current statement is highlighted in bright yellow. In Break mode, you can</p>
+
+<ul>
+  <li>Type VBA statements in the <em>Immediate window</em>.</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">F8</code> to step through your code one line at a time to check various things while the program is paused.</li>
+  <li>Move the mouse pointer over a variable to display its value in a small pop-up window.</li>
+  <li>Skip the next statement(s) and continue execution there (or even go back a couple of statements).</li>
+  <li>Edit a statement and then continue.</li>
+</ul>
+
+<p>Below figure shows some debugging action.</p>
+
+<p>A breakpoint is set (notice the big dot), and I’m using the <code class="language-plaintext highlighter-rouge">F8</code> key to step through the code line by line (notice the arrow that points to the current statement).</p>
+
+<p>I used the <em>Immediate window</em> to print <code class="language-plaintext highlighter-rouge">Hello world</code>.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/2.BreakMode.PNG" alt="Break-mode" /></p>
+
+<h3 id="using-the-immediate-window">Using the Immediate window</h3>
+
+<p>The <em>Immediate window</em> may not be visible in the VBE.</p>
+
+<p>You can display the VBE’s <em>Immediate window</em> at any time by pressing <code class="language-plaintext highlighter-rouge">Ctrl+G</code>.</p>
+
+<p>In Break mode, the Immediate window is particularly useful for finding the current value of any variable in your program.</p>
+
+<p>For example, if you want to know the current value of a variable, enter the following in the Immediate window and press <code class="language-plaintext highlighter-rouge">Enter</code>.</p>
+
+<p>The Immediate window lets you do other things besides check variable values.</p>
+
+<p>For example, you can change the value of a variable, try for a new condition.</p>
+
+<p>Just make sure that the command you enter is a valid VBA statement.</p>
+
+<h3 id="stepping-through-your-code">Stepping through your code</h3>
+
+<p>While in <em>Break mode</em>, you can also step through your code line by line.</p>
+
+<p>One statement is executed each time you press <code class="language-plaintext highlighter-rouge">F8</code>.</p>
+
+<p>Throughout this line-by-line execution of your code, you can activate the Immediate window at any time to check the status of your variables.</p>
+
+<p>You can use your mouse to change which statement VBA will execute next.</p>
+
+<p>If you put your mouse pointer in the gray margin to the left of the currently highlighted statement (which will usually be yellow), your pointer changes to a right-pointing arrow.</p>
+
+<p>Simply drag your mouse to the statement you want done next and watch that statement turn yellow.</p>
+
+<h2 id="using-the-watch-window">Using the Watch window</h2>
+
+<p>In some cases, you may want to know whether a certain variable or expression takes on a particular value.</p>
+
+<p>For example, suppose that a procedure loops through <strong>1,000 times</strong>.</p>
+
+<p>You notice that a problem occurs during the <strong>800th</strong> iteration of the loop.</p>
+
+<p>Well, you could insert a breakpoint in the loop, but that would mean responding to <strong>799</strong> prompts before the code finally gets to the iteration you want to see (and that gets boring real fast).</p>
+
+<p>A more efficient solution involves setting a <strong>watch</strong> expression.</p>
+
+<p>For example, you can create a watch expression that puts the procedure into Break mode whenever a certain variable takes on a specific value — for example, <code class="language-plaintext highlighter-rouge">AnyNumber=800</code>.</p>
+
+<p>To create a watch expression, choose <strong>Debug -&gt; Add Watch</strong> to display the Add Watch dialog box. See below figure.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/3.WatchWindowDialogBox.PNG" alt="Break-mode" /></p>
+
+<p>The Add Watch dialog has three parts:</p>
+
+<ul>
+  <li>
+    <p><em>Expression</em>: Enter a valid VBA expression or a variable here. For example, <code class="language-plaintext highlighter-rouge">AnyNumber=900</code> or just <code class="language-plaintext highlighter-rouge">AnyNumber</code>.</p>
+  </li>
+  <li>
+    <p><em>Context</em>: Select the procedure and the module you want to watch. Note that you can select All Procedures and All Modules.</p>
+  </li>
+  <li>
+    <p><em>Watch Type</em>: Select the type of watch by clicking an option button. Your choice here depends on the expression you enter. The first choice, Watch Expression, does not cause a break; it simply displays the expression’s value when a break occurs.</p>
+  </li>
+</ul>
+
+<p>Execute your procedure after setting up your watch expression(s).</p>
+
+<p>Things run normally until your watch expression is satisfied (based on the Watch Type you specified).</p>
+
+<p>When that happens, VBE enters Break mode (you did set the Watch Type to “Break When Value Is True,” didn’t you?).</p>
+
+<p>From there, you can step through the code or use the Immediate window to debug your code.</p>
+
+<p>When you create a watch, VBE displays the Watches window shown in below figure.</p>
+
+<p>This window displays the value of all watches that you’ve defined.</p>
+
+<p>In this figure, when the value hit <code class="language-plaintext highlighter-rouge">800</code>, which caused VBE to enter Break mode.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/4.WatchWindowDialogBoxWithAllWatches.PNG" alt="Watch-window-dialog-box-with-all-watches" /></p>
+
+<p>The best way to understand how this Watch business works is to use it and try various options.</p>
+
+<p>Before long, you’ll probably wonder how you ever got along without it.</p>
+
+<h2 id="using-the-locals-window">Using the Locals window</h2>
+
+<p>Another useful debugging aid is the Locals window.</p>
+
+<p>You can show this window by choosing <strong>View -&gt; Locals</strong> Window from the VBE’s menu.</p>
+
+<p>When you are in Break mode, this window will show you a list of all variables that are local to the current procedure (see below figure).</p>
+
+<p>The nice thing about this window is that you don’t have to add a load of watches manually if you want to look at the content of many variables.</p>
+
+<p>The VBE has done all the hard workfor you.</p>
+
+<p><img src="/assets/vba-images/Bug_Finding_Debugging_techniques/5.LocalWindow.PNG" alt="Local-window" /></p>
+
+<p>Next post will be about <strong><em>VBA Bug Reduction Tips</em></strong>.</p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-08-20T01:12:26-04:00">August 20, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/bug-finding/" title="Bug Finding
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/bug-reduction-tips/" title="VBA Bug Reduction Tips
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
