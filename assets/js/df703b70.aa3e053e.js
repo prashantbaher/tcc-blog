@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_website=self.webpackChunkdocs_website||[]).push([[7266],{8435:s=>{s.exports=JSON.parse('[{"label":"Solidworks C++ API","permalink":"/solidworks-cpp/tags/solidworks-c-api","count":5},{"label":"Managed C++","permalink":"/solidworks-cpp/tags/managed-c","count":1},{"label":"VC++","permalink":"/solidworks-cpp/tags/vc","count":1}]')}}]);
