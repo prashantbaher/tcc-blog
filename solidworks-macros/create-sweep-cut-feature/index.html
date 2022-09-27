@@ -1,0 +1,1876 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS Macro - Create Sweep Cut - The CAD Coder</title>
+<meta name="description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS Macro - Create Sweep Cut">
+<meta property="og:url" content="http://localhost:4000/solidworks-macros/create-sweep-cut-feature/">
+
+
+  <meta property="og:description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-27T15:07:36-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-macros/create-sweep-cut-feature/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/" class="active">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - General</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Standard Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Advanced Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Editing Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Components</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS Macro - Create Sweep Cut">
+    
+    <meta itemprop="description" content="  This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.  If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.  But from this post onward we will take user-inputs.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+    
+    
+    <meta itemprop="datePublished" content="2022-09-27T15:07:36-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS Macro - Create Sweep Cut
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          19 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#steps-to-create-sweep-cut">Steps To Create Sweep Cut</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#creating-global-variables">Creating Global Variables</a></li><li><a href="#initializing-required-variables">Initializing Required Variables</a></li><li><a href="#ask-user-to-select-profile-and-path">Ask user to select Profile and Path</a></li><li><a href="#mark-selected-entities">Mark selected Entities</a></li><li><a href="#create-sweep-cut-feature">Create Sweep Cut Feature</a></li><li><a href="#final-work">Final work</a></li></ul></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <div class="notice--warning">
+  This article is an <strong>"Intermediate"</strong> post and required you to have some knowledge of <strong>VBA</strong>.<br />
+  If you are following my articles you will notice that till now we were <strong>hardcoding</strong> the selections for input parameters.<br />
+  But from this post onward we will take user-inputs.<br />
+  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+  I hope you will also like this type of tutorials.<br />
+  Thank you for reading.<br />
+</div>
+
+<h2 id="objective">Objective</h2>
+
+<p>Objective of this article is to learn <em>how to create <strong>Sweep Cut</strong> through SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
+
+<p>We create <strong>Sweep Cut</strong> through in 2 steps.</p>
+
+<ol>
+  <li>Create sweep cut feature definition</li>
+  <li>Create sweep cut feature using above feature definition</li>
+</ol>
+
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Sweep Cut</strong>.</p>
+
+<h2 id="steps-to-create-sweep-cut">Steps To Create Sweep Cut</h2>
+
+<p>We use following steps to create Sweep Cut</p>
+
+<p>A. Select <strong>Profile</strong> for <em>Sweep Cut</em>.</p>
+
+<ol>
+  <li>Inform user to select <strong>Profile</strong> for <em>Sweep Cut</em>.</li>
+  <li>User select the <strong>Profile</strong> for <em>Sweep Cut</em>.</li>
+</ol>
+
+<p>B. Select <strong>Path</strong> for <em>Sweep Cut</em>.</p>
+
+<ol>
+  <li>Inform user to select <strong>Path</strong> for <em>Sweep Cut</em>.</li>
+  <li>User select the <strong>Path</strong> for <em>Sweep Cut</em>.</li>
+</ol>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>We <em>either</em> create Sweep Cut feature <em>or</em> failed to create the feature as a result.</p>
+
+<p>Both cases are shown below.</p>
+
+<ul>
+  <li>When user select <strong>correct Profile and Path</strong>, we will have result as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep-cut/final-result-sweep-cut.png"><img src="/assets/Solidworks_Images/feature-sweep-cut/final-result-sweep-cut.png" alt="final-result-sweep-cut" /></a></p>
+
+<ul>
+  <li>When user select <strong>Incorrect Profile and Path</strong>, we will have result as shown in below image.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep-cut/failed-to-create-sweep-cut.png"><img src="/assets/Solidworks_Images/feature-sweep-cut/failed-to-create-sweep-cut.png" alt="failed-to-create-sweep-cut" /></a></p>
+
+<blockquote>
+  <p>To get the correct result please follow the steps correctly.</p>
+</blockquote>
+
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+<p>Please see below 🎬 video on <strong>how to create Sweep Cut</strong> from SOLIDWORKS VBA Macros.</p>
+
+<iframe src="https://www.youtube.com/embed/z3K30PvzPO8" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+<p><strong>Explanation</strong> of each line and why we write code this way is given in this post.</p>
+
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+
+<h2 id="code-sample">Code Sample</h2>
+
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating <em>Sweep Cut</em> feature in <strong>VBA</strong> is given.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Variable for Solidworks Selection Manager</span>
+<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+
+<span class="c1">' Array of Solidworks Entities</span>
+<span class="k">Dim</span> <span class="nv">swObjects</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+
+<span class="c1">' Variable for Solidworks Entity</span>
+<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+
+<span class="c1">' Variable for Solidworks sweep feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">' Variable for Solidworks sweep feature data</span>
+<span class="k">Dim</span> <span class="nv">swSweep</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SweepFeatureData</span>
+
+<span class="c1">' Variable for Solidworks Select Data</span>
+<span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+
+<span class="c1">' Sweep feature program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Check if Solidworks opened or not</span>
+  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks document variable to currently opened part document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks part is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks part is not opened."</span><span class="p">)</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Selection Manager variable</span>
+  <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+  
+  <span class="c1">' Local variable for selection</span>
+  <span class="k">Dim</span> <span class="nv">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">selectItems</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="c1">' Loop till we select all entities</span>
+  <span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+      
+    <span class="c1">' Message to show user</span>
+    <span class="k">Dim</span> <span class="nv">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
+
+    <span class="c1">' Update Messages</span>
+    <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+      <span class="k">Case</span> <span class="mi">1</span>
+        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile Sketch from Feature tree for Sweep Cut."</span>
+      <span class="k">Case</span> <span class="mi">2</span>
+        <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Path Sketch from Feature tree for Sweep Cut."</span>
+      <span class="k">Case</span> <span class="k">Else</span>
+        <span class="k">Exit</span> <span class="k">Sub</span>
+    <span class="nf">End</span> <span class="k">Select</span>
+  
+    <span class="c1">' Show message to user</span>
+    <span class="n">MsgBox</span> <span class="n">messageToUser</span>
+      
+    <span class="c1">' Loop until we complete our selection</span>
+    <span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+        
+      <span class="c1">' Local integer for loop</span>
+      <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+      
+      <span class="c1">' Loop until we select</span>
+      <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          
+        <span class="c1">' If the profile sketch is selected</span>
+        <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+
+          <span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+          <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1">' If the profile sketch is selected</span>
+        <span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHSEGS</span> <span class="k">Then</span>
+            
+          <span class="c1">' Inform user to select sketch from Tree</span>
+          <span class="n">MsgBox</span> <span class="s">"Please select Profile/Path sketch from Feature Tree."</span>
+          
+          <span class="c1">' Clear selection</span>
+          <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+        <span class="k">End</span> <span class="k">If</span>
+      <span class="k">Next</span>
+      
+      <span class="n">DoEvents</span>
+    <span class="k">Wend</span>
+      
+    <span class="c1">' Clear previous selection</span>
+    <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    
+    <span class="c1">' Increase the selection count</span>
+    <span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="mi">1</span>
+
+  <span class="k">Wend</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    
+  <span class="c1">' Local variable for counter</span>
+  <span class="k">Dim</span> <span class="nv">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="c1">' Loop till counter is 2, since we have 2 selection</span>
+  <span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span>
+  
+    <span class="c1">' Set the current instance to Solidworks Entity variable</span>
+    <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    
+    <span class="c1">' Create Select data for this entity</span>
+    <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
+      
+    <span class="c1">' Depend upon the entity we update the mark while selection</span>
+    <span class="k">Select</span> <span class="k">Case</span> <span class="n">j</span>
+      <span class="k">Case</span> <span class="mi">1</span>
+        <span class="c1">' For profile, set mark to 1</span>
+        <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1">' Select the profile</span>
+        <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+      <span class="k">Case</span> <span class="mi">2</span>
+        <span class="c1">' For path, set mark to 4</span>
+        <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="c1">' Select the profile</span>
+        <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+    <span class="k">End</span> <span class="k">Select</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+      
+  <span class="k">Wend</span>
+  
+  <span class="c1">' Create sweep cut feature definition</span>
+  <span class="k">Set</span> <span class="n">swSweep</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSweepCut</span><span class="p">)</span>
+  
+  <span class="c1">' Create sweep cut feature</span>
+  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swSweep</span><span class="p">)</span>
+  
+  <span class="c1">' Check if Sweep cut feature is created or not</span>
+  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Sweep cut feature is not created."</span><span class="p">)</span>
+    <span class="c1">' Erase array data</span>
+    <span class="k">Erase</span> <span class="n">swObjects</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Erase array data</span>
+  <span class="k">Erase</span> <span class="n">swObjects</span>
+  
+  <span class="c1">' View zoom to fit</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+  
+  <span class="c1">' Clear all selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+    
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisite</em> for this article.</p>
+
+<p>We are <strong>not</strong> creating sketches from code but we use <strong>existing sketch</strong> to <em>create Sweep Cut</em> feature as shown in below picture.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep-cut/prerequisite.png"><img src="/assets/Solidworks_Images/feature-sweep-cut/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p>As shown in above image, there are <em>2 sketches for Profile &amp; Path</em> and <em>1 Extrude feature</em> in our part.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Extrude Feature</code> : This is our <strong>Extrude part</strong> for <em>Sweep Cut feature.</em></li>
+  <li><code class="language-plaintext highlighter-rouge">Sketch2</code> : This is our <strong>Profile</strong> for <em>Sweep Cut feature.</em></li>
+  <li><code class="language-plaintext highlighter-rouge">Sketch3</code> : This is our <strong>Path</strong> for <em>Sweep Cut feature.</em></li>
+</ul>
+
+<p>If you want to create <code class="language-plaintext highlighter-rouge">Sketch2</code> i.e. <strong>Profile</strong> programmatically then please refer to below articles.</p>
+
+<ul>
+  <li>For Circle 👉 read <strong><a href="/solidworks-macros/create-circle">SOLIDWORKS Macros - Create Circle</a></strong> article.</li>
+</ul>
+
+<p>If you want to create <strong>Extrude</strong> feature programmatically then please refer to below article.</p>
+
+<ul>
+  <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
+</ul>
+
+<p>Also, we will apply checks in this article, so the code we write should be error free most of the time.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>For creating Sweep Cut, there are following steps:</p>
+
+<ol>
+  <li>Creating Global Variables</li>
+  <li>Initializing required variables</li>
+  <li>Ask user to select Profile and Path</li>
+  <li>Mark selected Entities</li>
+  <li>Create Sweep Cut Feature</li>
+  <li>Final work</li>
+</ol>
+
+<p>Now let us walk through <strong>each step</strong> as given above, and <strong>understand</strong> every line.</p>
+
+<p>I also give some 📌 <strong><em>links</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="creating-global-variables">Creating Global Variables</h3>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit 👉 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> post.</p>
+
+<p>We create following variables.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks application</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks document</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Selection Manager</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
+<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Array of Solidworks Entities</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Array of Solidworks Entities</span>
+<span class="k">Dim</span> <span class="nv">swObjects</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div></div>
+
+<p>In this line, we create an Array of SOLIDWORKS Entities which we named as <code class="language-plaintext highlighter-rouge">swObjects</code> and the type of this <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+
+<p>This array consist <em>two</em> <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variables.</p>
+
+<p>We define the number of variable this array holds inside <strong>(1 To 2)</strong>.</p>
+
+<p>For more information about the <strong>Arrays</strong> in VBA please 👉 <strong><a href="/vba/arrays/">Array on this website</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Entity</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
+<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code class="language-plaintext highlighter-rouge">swObject</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swObject</code> for <strong>SOLIDWORKS Entities</strong> (<em>Profile and Path</em>) we ask use to select.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks sweep feature</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks sweep feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>SOLIDWORKS Sweep Cut Feature</strong>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks sweep feature data</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks sweep feature data</span>
+<span class="k">Dim</span> <span class="nv">swSweep</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SweepFeatureData</span>
+</code></pre></div></div>
+
+<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swSweep</code> and the type of this <code class="language-plaintext highlighter-rouge">swSweep</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SweepFeatureData</code>.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swSweep</code> for <strong>SOLIDWORKS Sweep Feature Data</strong>.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SweepFeatureData</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISweepFeatureData_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<ul>
+  <li><strong>Variable for Solidworks Select Data</strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Select Data</span>
+<span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">swSelData</code> as <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object type.</p>
+
+<p>We create variable <code class="language-plaintext highlighter-rouge">swSelData</code> for <strong>SOLIDWORKS Select Data</strong>, which we use for <strong>Marking</strong> selected object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectData_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main function of our VBA program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</p>
+
+<h3 id="initializing-required-variables">Initializing Required Variables</h3>
+
+<p>Inside this procedure we first initialize required variables as given below.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our SOLIDWORKS variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to SOLIDWORKS application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
+<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully assigned</em> to current SOLIDWORKS application.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS document is not opened. Please open a document."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+
+<p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<ul>
+  <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
+<span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+</code></pre></div></div>
+
+<p>In above line, we set SOLIDWORKS Selection Manager<code class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s Selection Manager.</p>
+
+<ul>
+  <li><em>Local variable for User selection</em></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for selection</span>
+<span class="k">Dim</span> <span class="nv">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="n">selectItems</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line of code, we define a Local variable name <code class="language-plaintext highlighter-rouge">selectItems</code>as <strong>Integer</strong> type.</p>
+
+<p>In next line we assign a value of <strong>1</strong>.</p>
+
+<h3 id="ask-user-to-select-profile-and-path">Ask user to select Profile and Path</h3>
+
+<p>Now we will ask user to select Profile and Path for Sweep Cut feature.</p>
+
+<p>Please follow steps given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till we select all entities</span>
+<span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+
+<p>We want to loop until <code class="language-plaintext highlighter-rouge">selectItems</code> variable’s value is equal to <strong>2</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Message to show user</span>
+<span class="k">Dim</span> <span class="nv">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<p>In above line of code we create a variable named <code class="language-plaintext highlighter-rouge">messageToUser</code> of <code class="language-plaintext highlighter-rouge">String</code> type.</p>
+
+<p>This variable holds the message we want to show before selection.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Messages</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
+  <span class="k">Case</span> <span class="mi">1</span>
+    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Profile Sketch from Feature tree for Sweep Cut."</span>
+  <span class="k">Case</span> <span class="mi">2</span>
+    <span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select Path Sketch from Feature tree for Sweep Cut."</span>
+  <span class="k">Case</span> <span class="k">Else</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code> statement to update message.</p>
+
+<p>We use the case on <code class="language-plaintext highlighter-rouge">selectItems</code></p>
+
+<p>When <code class="language-plaintext highlighter-rouge">selectItems = 1</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select Profile Sketch from Feature tree for Sweep Cut."</code></p>
+
+<p>Similarly, when <code class="language-plaintext highlighter-rouge">selectItems = 2</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select Path Sketch from Feature tree for Sweep Cut."</code></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show message to user</span>
+<span class="n">MsgBox</span> <span class="n">messageToUser</span>
+</code></pre></div></div>
+
+<p>In above line of code, we show the message to user.</p>
+
+<p>Below image show the message to the user.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep-cut/message-to-select-profile.png"><img src="/assets/Solidworks_Images/feature-sweep-cut/message-to-select-profile.png" alt="message-to-select-profile" /></a></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we complete our selection</span>
+<span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+    
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create another <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>This loops until we select the our <strong>Profile</strong> and <strong>Path</strong>.</p>
+
+<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local integer for loop</span>
+<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create a local integer name <code class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we select</span>
+<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">Next</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</p>
+
+<p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If the profile sketch is selected</span>
+<span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelSKETCHES</span> <span class="k">Then</span>
+
+  <span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+  <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">' If the profile sketch is selected</span>
+<span class="k">ElseIf</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHSEGS</span> <span class="k">Then</span>
+
+  <span class="c1">' Inform user to select sketch from Tree</span>
+  <span class="n">MsgBox</span> <span class="s">"Please select Profile sketch from Feature Tree."</span>
+
+  <span class="c1">' Clear selection</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+<span class="k">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use  👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else statement</a></strong>  with conditions.</p>
+
+<p>The  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Sketch</em>.</p>
+
+<p>Similarly,  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong>  is True when select <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS External Sketch Segment</em>.</p>
+
+<p class="notice">When we select the sketch from Model view, then selected object is <em>SOLIDWORKS External Sketch Segment</em>.
+<br />
+When we select the sketch from Feature Tree, then select object is <em>SOLIDWORKS Sketch</em>.</p>
+
+<p>When  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True we execute code given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to profile sketch</span>
+<span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line, we set the indexed object inside array.</p>
+
+<ul>
+  <li>Array of SOLIDWORKS Entities = <code class="language-plaintext highlighter-rouge">swObjects</code></li>
+  <li>Indexed Entity Object = <code class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
+</ul>
+
+<p>We set the value of this <strong>Indexed Entity Object</strong> by <code class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS Selection Manager.</p>
+
+<p>When we set the <strong>Indexed Entity Object</strong> value as either <strong>Profile or Path</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+
+<p>When we select both <strong>Profile and Path</strong>, then we exit all <code class="language-plaintext highlighter-rouge">While</code> loops.</p>
+
+<p>Similarly, when  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong> is True we execute code given below.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select sketch from Tree</span>
+<span class="n">MsgBox</span> <span class="s">"Please select Profile/Path sketch from Feature Tree."</span>
+
+<span class="c1">' Clear selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ol>
+  <li>We show message to user to select <strong>Profile/Path</strong> Sketch from <em>Feature Tree</em>.</li>
+  <li>After that we clear our selection.</li>
+</ol>
+
+<blockquote>
+  <p>We do this because if selected object type is <em>SOLIDWORKS External Sketch Segment</em> then we can not assign this object as SOLIDWORKS Entity inside array.</p>
+</blockquote>
+
+<p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
+
+<p>This function repeats the <code class="language-plaintext highlighter-rouge">While</code> loop until we select the <strong>Profile or Path</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear previous selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+
+<span class="c1">' Increase the selection count</span>
+<span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line, when we finished with the <strong>Profile or Path</strong> selection, we clear previous selection and increment the selected count by 1.</p>
+
+<p>After increment the selected count we continue our <code class="language-plaintext highlighter-rouge">while</code> loop.</p>
+
+<h3 id="mark-selected-entities">Mark selected Entities</h3>
+
+<p>Till now we have completed our selection.</p>
+
+<p>Now we need to do following things.</p>
+
+<ol>
+  <li>Clear any previous selection</li>
+  <li>Select and Mark entities correctly from our Array.</li>
+</ol>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In above line of code we clear any previous selection.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for counter</span>
+<span class="k">Dim</span> <span class="nv">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above line of code we create <code class="language-plaintext highlighter-rouge">integer</code> variable for counter.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till counter is 2, since we have 2 selection</span>
+<span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span>
+
+<span class="k">Wend</span>
+</code></pre></div></div>
+
+<p>In above line of code we create a <code class="language-plaintext highlighter-rouge">while</code> loop with condition that <em>counter value</em> of <strong><code class="language-plaintext highlighter-rouge">j</code></strong> should be <em>less than 3.</em></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the current instance to Solidworks Entity variable</span>
+<span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set the SOLIDWORKS Entity variable to current object from array.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Select data for this entity</span>
+<span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create SOLIDWORKS Select Data for current SOLIDWORKS Entity object.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Depend upon the entity we update the mark while selection</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">j</span>
+	<span class="k">Case</span> <span class="mi">1</span>
+    <span class="c1">' For profile, set mark to 1</span>
+    <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1">' Select the profile</span>
+    <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+  <span class="k">Case</span> <span class="mi">2</span>
+    <span class="c1">' For path, set mark to 4</span>
+    <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="c1">' Select the profile</span>
+    <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+<span class="k">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+
+<p>In above line of code, now use a <code class="language-plaintext highlighter-rouge">Select</code> statement on counter <strong><code class="language-plaintext highlighter-rouge">j</code></strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Case 1</code> indicate the <strong>first object</strong> which is our <strong><em>Profile</em></strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Case 2</code> indicate the <strong>second object</strong> which is our <strong><em>Path</em></strong>.</p>
+
+<p>In <code class="language-plaintext highlighter-rouge">Case 1</code>, we apply following code.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' For profile, set mark to 1</span>
+<span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In above lines, we update the <strong>Mark</strong> to <strong><code class="language-plaintext highlighter-rouge">1</code></strong> for our <em>SOLIDWORKS Select Data</em> variable.</p>
+
+<p>For <strong><em>Sweep Cut</em></strong> feature, <strong><code class="language-plaintext highlighter-rouge">Mark</code></strong> value for <strong>Profile</strong> can be follows:</p>
+
+<ul>
+  <li>If a sketch profile, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select a face, edge, or curve. 
+For a  swept-boss feature, the sketch profile must be closed. 
+For a swept-surface  feature, the sketch profile is open or closed.</li>
+  <li>If a circular profile, use <code class="language-plaintext highlighter-rouge">Mark = 4</code> to select a sketch line, edge or curve.<br />
+The circular profile is open or closed.</li>
+  <li>If a solid profile, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select the tool body to use to make the cut and use Mark = 2048 to select the solid body to cut. 
+Solid profiles are used  only in swept-cut features.</li>
+</ul>
+
+<p>For more details about 👉 <strong><a href="https://help.solidworks.com/2019/English/api/sldworksapiprogguide/OVERVIEW/Sweep_Features_and_SweepFeatureData_Objects.htm">please visit this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the profile</span>
+<span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+</code></pre></div></div>
+
+<p>In above line of code, we select the Profile object.</p>
+
+<p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of <em>SOLIDWORKS Entity object</em>.</p>
+
+<p>This method takes 2 arguments.</p>
+
+<ol>
+  <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> appends the entity to the selection list, <code class="language-plaintext highlighter-rouge">False</code> replaces the selection list with this entity.</em></li>
+  <li><strong>Data</strong> - <em>Pointer to the <strong><code class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
+</ol>
+
+<p>We use following values as parameter.</p>
+
+<ol>
+  <li><strong>Append</strong> - <strong><code class="language-plaintext highlighter-rouge">True</code></strong></li>
+  <li><strong>Data</strong> - <strong><code class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
+</ol>
+
+<p>In <code class="language-plaintext highlighter-rouge">Case 2</code>, we apply following code.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' For path, set mark to 4</span>
+<span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<p>In above lines, we update the <strong>Mark</strong> to <strong><code class="language-plaintext highlighter-rouge">4</code></strong> for our <em>SOLIDWORKS Select Data</em> variable.</p>
+
+<p>For <strong><em>Sweep Cut</em></strong> feature, <strong><code class="language-plaintext highlighter-rouge">Mark</code></strong> value for <strong>Path</strong> can be follows:</p>
+
+<ul>
+  <li>Select a set of sketched curves contained in one sketch, a curve, or a set of model edges.</li>
+  <li>The sweep path is open or closed.</li>
+  <li>The starting point of the sweep path must lie on the plane of the profile for a 1-directional sweep. 
+If the sweep path extends to both sides of the profile, you can create a bidirectional sweep.</li>
+  <li>Sweep paths are not used with circular profiles.</li>
+</ul>
+
+<p>For more details about 👉 <strong><a href="https://help.solidworks.com/2019/English/api/sldworksapiprogguide/OVERVIEW/Sweep_Features_and_SweepFeatureData_Objects.htm">please visit this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the path</span>
+<span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
+</code></pre></div></div>
+
+<p>In above line of code, we select the Profile object.</p>
+
+<p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of <em>SOLIDWORKS Entity object</em>.</p>
+
+<p>This method takes 2 arguments.</p>
+
+<ol>
+  <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> appends the entity to the selection list, <code class="language-plaintext highlighter-rouge">False</code> replaces the selection list with this entity.</em></li>
+  <li><strong>Data</strong> - <em>Pointer to the <strong><code class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
+</ol>
+
+<p>We use following values as parameter.</p>
+
+<ol>
+  <li><strong>Append</strong> - <strong><code class="language-plaintext highlighter-rouge">True</code></strong></li>
+  <li><strong>Data</strong> - <strong><code class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
+</ol>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>After <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> statement, we increment the counter variable <strong><code class="language-plaintext highlighter-rouge">j</code></strong> by <strong>1</strong>.</p>
+
+<h3 id="create-sweep-cut-feature">Create Sweep Cut Feature</h3>
+
+<p>We have completed our <em>selection</em> and <em>Marking</em> of <strong><em>SOLIDWORKS Entities</em></strong>.</p>
+
+<p>Now we create Sweep Cut Feature.</p>
+
+<p>For this we use 2 steps as follows:</p>
+
+<ol>
+  <li><em>Create Sweep Cut Feature definition</em></li>
+  <li><em>Create Sweep Cut Feature using the definition</em></li>
+</ol>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create sweep cut feature definition</span>
+<span class="k">Set</span> <span class="n">swSweep</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSweepCut</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swSweep</code> by <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CreateDefinition</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>For more detail about <strong><code class="language-plaintext highlighter-rouge">CreateDefinition</code></strong> method please visit 👉 <strong><a href="/solidworks-macros/create-sweep-feature/#feature-definition-method-createdefinition-parameters-details">Feature Definition Method CreateDefinition Parameters Details</a></strong> of 👉 <strong><a href="/solidworks-macros/create-sweep-feature/">Solidworks Macro - Create Sweep Base</a></strong> article.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Sweep cut feature</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swSweep</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">CreateFeature</code> method.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li><strong>FeatureData</strong> - <em><code class="language-plaintext highlighter-rouge">Feature or pattern-specific</code> feature data object</em>.</li>
+</ul>
+
+<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method retun <strong>feature</strong> data object.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CreateFeature</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+
+<p>In our code, I have used following values:</p>
+
+<ul>
+  <li><strong>FeatureData</strong> - <em>I use <code class="language-plaintext highlighter-rouge">swSweep</code> as feature data object which we defined prevously</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Sweep Cut Feature creates or not</span>
+<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Sweep Cut Feature."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create <strong>Sweep Cut</strong> Feature or not.</p>
+
+<p>If we failed to select then inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+
+<p>Now we run the macro and after running macro we get Revolve as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/feature-sweep-cut/final-result-sweep-cut.png"><img src="/assets/Solidworks_Images/feature-sweep-cut/final-result-sweep-cut.png" alt="final-result-sweep-cut" /></a></p>
+
+<h3 id="final-work">Final work</h3>
+
+<p>After creating <strong>Sweep Cut</strong> feature, we have to do some cleaning work so that we can use this macro frequently.</p>
+
+<ul>
+  <li>Empty SOLIDWORKS Entity Array</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Erase array data</span>
+<span class="k">Erase</span> <span class="n">swObjects</span>
+</code></pre></div></div>
+
+<p>In above line, we <strong>erase</strong> data from <em>SOLIDWORKS Entity array</em>.</p>
+
+<p>For this we use <strong><code class="language-plaintext highlighter-rouge">Erase</code></strong> function in-build in VBA.</p>
+
+<ul>
+  <li>Make part Zoom to fit</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+</code></pre></div></div>
+
+<p>In above line, we make our view zoom to fit the model.</p>
+
+<p>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+
+<ul>
+  <li>Clear selection</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>In above line, we clear all previous selection.</p>
+
+<p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>create Sweep Cut</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-09-27T15:07:36-04:00">September 27, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/create-revolve-cut-feature/" title="SOLIDWORKS Macro - Create Revolve Cut
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/create-loft-cut-feature/" title="SOLIDWORKS Macro - Create Lofted Cut
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

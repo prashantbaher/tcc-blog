@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Copy With Mate - The CAD Coder</title>
+<meta name="description" content="Objective">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Solidworks VBA Macro - Copy With Mate">
+<meta property="og:url" content="http://localhost:4000/solidworks-vba-macros/assembly-copy-with-mate/">
+
+
+  <meta property="og:description" content="Objective">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-27T15:07:36-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-vba-macros/assembly-copy-with-mate/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - General</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Standard Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Advanced Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Editing Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Components</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/" class="active">Copy With Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Solidworks VBA Macro - Copy With Mate">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2022-09-27T15:07:36-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Copy With Mate
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-global-variables">Initialize Global Variables</a></li><li><a href="#get-unit-conversion-factors">Get Unit Conversion Factors</a></li><li><a href="#copy-with-mate">Copy With Mate</a></li></ul></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
+
+<p>In this article, we understand “how to” <strong>Copy With Mate</strong> in <strong>Assembly document</strong> from VBA macro.</p>
+
+<p>This is most updated method of <strong>Copy Part/Assembly with Mate</strong> in an assembly document.</p>
+
+<h2 id="results-we-can-get">Results We Can Get</h2>
+
+<p>Below image shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif" alt="assembly-copy-with-mates" /></a></p>
+
+<p>We <strong>Copy With Mate</strong> in simple manners.</p>
+
+<p>There are no extra steps required.</p>
+
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows how to <strong>Copy With Mate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/Eyq3uO93PY8" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
+
+<p><strong><em>I have explained every line in this article.</em></strong></p>
+
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
+
+<h2 id="vba-macro">VBA Macro</h2>
+
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Copy With Mate</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Variable for Solidworks Application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Variable for Component array</span>
+<span class="k">Dim</span> <span class="nv">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Variable to define if repeat the mate or not</span>
+<span class="k">Dim</span> <span class="nv">repeatArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Set the value of mate if is accept the value</span>
+<span class="k">Dim</span> <span class="nv">valueArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+
+<span class="c1">' Boolean variable to check if Opereation is succeed or not</span>
+<span class="k">Dim</span> <span class="nv">status</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="c1">' Main program for Copy with Mate</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+  <span class="c1">' Set Solidworks Application variable to current application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+  
+  <span class="c1">' Get the selected face and set it to the Solidworks Face variable</span>
+  <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  
+  <span class="c1">' If there are error</span>
+  <span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="c1">' Inform user and exit function.</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to get selected part."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Local variables used as Conversion Factors</span>
+  <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+  <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+  
+  <span class="c1">' Get updated unit conversion factors</span>
+  <span class="k">Call</span> <span class="n">GetUnitConversionFactors</span><span class="p">(</span><span class="n">LengthConversionFactor</span><span class="p">,</span> <span class="n">AngleConversionFactor</span><span class="p">)</span>
+  
+  <span class="c1">' Copy component with profile center mate</span>
+  <span class="k">Set</span> <span class="n">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">swComponent</span>
+  
+  <span class="c1">' Variable for loop</span>
+  <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+  
+  <span class="c1">' Loop for setting values</span>
+  <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="mi">2</span>
+    
+    <span class="c1">' Repeat the mate</span>
+    <span class="n">repeatArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="k">True</span>
+    
+    <span class="c1">' Set the value of mate</span>
+    <span class="n">valueArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+    
+  <span class="k">Next</span>
+  
+  <span class="c1">' Variables for Copy operation</span>
+  <span class="k">Dim</span> <span class="nv">mateReferencesArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Object</span>
+  <span class="k">Dim</span> <span class="nv">flipAlignmentArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">flipDimensionArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">lockRotationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  <span class="k">Dim</span> <span class="nv">orientationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Long</span>
+  
+  <span class="c1">' Create Copy with mate</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CopyWithMates2</span><span class="p">(</span><span class="n">swComponentArray</span><span class="p">,</span> <span class="n">repeatArray</span><span class="p">,</span> <span class="n">mateReferencesArray</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">,</span> <span class="n">flipAlignmentArray</span><span class="p">,</span> <span class="n">flipDimensionArray</span><span class="p">,</span> <span class="n">lockRotationArray</span><span class="p">,</span> <span class="n">orientationArray</span><span class="p">)</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+
+<span class="c1">' Function to update Unit conversion factors</span>
+<span class="k">Function</span> <span class="nf">GetUnitConversionFactors</span><span class="p">(</span><span class="k">ByRef</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">,</span> <span class="k">ByRef</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">)</span>
+  <span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
+  <span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
+    
+    <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+    
+    <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
+      <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
+      <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  <span class="k">End</span> <span class="k">Select</span>
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>There are some <em>prerequisites</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We use existing parts in Assembly document.</li>
+  <li>Both components are fully constraint as shown in below image.</li>
+  <li>We select the part which we want to copy.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Global Variables</em></li>
+  <li><em>Get unit conversion factors</em></li>
+  <li><em>Copy With Mate</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-global-variables">Create Global Variables</h3>
+
+<p>In this section, we create global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Component array</span>
+<span class="k">Dim</span> <span class="nv">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an array for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponentArray(0)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to define if repeat the mate or not</span>
+<span class="k">Dim</span> <span class="nv">repeatArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an array to define if repeat the mate or not.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">repeatArray(2)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the value of mate if is accept the value</span>
+<span class="k">Dim</span> <span class="nv">valueArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Double</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an array to set the value of mate if is accept the value.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">valueArray(2)</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean variable to check if Opereation is succeed or not</span>
+<span class="k">Dim</span> <span class="nv">status</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create an variable to check if Opereation is succeed or not.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">status</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code>.</li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Copy with Mate</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create <em>main program for Copy with Mate</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<h3 id="initialize-global-variables">Initialize Global Variables</h3>
+
+<p>In this section, we initialize global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get the selected face and set it to the Solidworks Face variable</span>
+<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>We set the value from <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SelectionManager</code></strong> object.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">SelectionManager</code></strong> object is part of swDoc object.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If there are error</span>
+<span class="k">If</span> <span class="n">swComponent</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="c1">' Inform user and exit function.</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to get selected part."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swComponent Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
+    <ul>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>Failed to get selected part.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="get-unit-conversion-factors">Get Unit Conversion Factors</h3>
+
+<p>In this section we get <em>Unit conversion factors</em> for new distance.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variables used as Conversion Factors</span>
+<span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+<span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variables to store <strong>Unit Conversion Factors</strong>.</li>
+  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong> and <strong><code class="language-plaintext highlighter-rouge">AngleConversionFactor</code></strong></li>
+  <li><strong>Type</strong>: <strong><code class="language-plaintext highlighter-rouge">Double</code></strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get updated unit conversion factors</span>
+<span class="k">Call</span> <span class="n">GetUnitConversionFactors</span><span class="p">(</span><span class="n">LengthConversionFactor</span><span class="p">,</span> <span class="n">AngleConversionFactor</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we call a function.</li>
+  <li><strong>Function Name</strong>: <strong><code class="language-plaintext highlighter-rouge">GetUnitConversionFactors</code></strong></li>
+  <li><strong>Function Parameters</strong>: They are
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong></li>
+      <li><strong><code class="language-plaintext highlighter-rouge">AngleConversionFactor</code></strong></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Function to update Unit conversion factors</span>
+<span class="k">Function</span> <span class="nf">GetUnitConversionFactors</span><span class="p">(</span><span class="k">ByRef</span> <span class="n">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">,</span> <span class="k">ByRef</span> <span class="n">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span><span class="p">)</span>
+  
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a <strong>Function</strong> to update Unit conversion factors for editing Distance mate.</li>
+  <li><strong>Function Name</strong>: <strong><code class="language-plaintext highlighter-rouge">GetUnitConversionFactors</code></strong></li>
+  <li><strong>Purpose</strong>: Hold all the <em>statements (instructions)</em> for <em>getting Unit conversion factors</em>.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
+
+<p>This function has 2 parameters as follows:</p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">ByRef LengthConversionFactor As Double</code></strong></li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">ByRef AngleConversionFactor As Double</code></strong></p>
+  </li>
+  <li>Above parameters, passed as <strong><code class="language-plaintext highlighter-rouge">ByRef</code></strong>.</li>
+  <li>These parameters get the values in this function.</li>
+  <li>But we are not using them in this function, but we use them in <strong><code class="language-plaintext highlighter-rouge">main</code></strong> procedure.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ByRef</code></strong> provides us the ability to use the updated variables in <strong><code class="language-plaintext highlighter-rouge">main</code></strong> procedure.</li>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference">this link</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Use a Select Case, to get the length of active Unit and set the different factors</span>
+<span class="k">Select</span> <span class="k">Case</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">GetUnits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>       <span class="c1">' GetUnits function gives us, active unit</span>
+  
+  <span class="k">Case</span> <span class="n">swMETER</span>    <span class="c1">' If length is in Meter</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span>
+  
+  <span class="k">Case</span> <span class="n">swMM</span>       <span class="c1">' If length is in MM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swCM</span>       <span class="c1">' If length is in CM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swINCHES</span>   <span class="c1">' If length is in INCHES</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swFEET</span>     <span class="c1">' If length is in FEET</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.0254</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swFEETINCHES</span>     <span class="c1">' If length is in FEET &amp; INCHES</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1">' For length we use sama as Inch</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swANGSTROM</span>        <span class="c1">' If length is in ANGSTROM</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10000000000</span><span class="p">#</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swNANOMETER</span>       <span class="c1">' If length is in NANOMETER</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+  
+  <span class="k">Case</span> <span class="n">swMICRON</span>       <span class="c1">' If length is in MICRON</span>
+    <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
+    <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
+<span class="k">End</span> <span class="k">Select</span>
+</code></pre></div></div>
+<p>I have already explained about this in previous 🚀<strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</p>
+
+<p>Please visit 🚀<strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</p>
+
+<h3 id="copy-with-mate">Copy With Mate</h3>
+
+<p>In this section, we perform <em>Copy With Mate</em> action.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Copy component with profile center mate</span>
+<span class="k">Set</span> <span class="n">swComponentArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">swComponent</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">swComponentArray</code></strong> variable.</li>
+  <li>Since we want to copy only 1 part.</li>
+  <li>Hence we set only 1 element of array.</li>
+  <li>This value is <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for loop</span>
+<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <strong><code class="language-plaintext highlighter-rouge">Loop</code></strong>.</li>
+  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">i</code></strong></li>
+  <li><strong>Type</strong>: <strong><code class="language-plaintext highlighter-rouge">Integer</code></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop for setting values</span>
+<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="mi">2</span>
+
+<span class="k">Next</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create an Loop for setting values.</li>
+  <li>We set the values of variables required for Copy mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Repeat the mate</span>
+<span class="n">repeatArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">repeatArray</code></strong> array variable.</li>
+  <li>This array tell that we want to repeat the mates in new component or not.</li>
+  <li>Setting the value to True confirms repeat mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the value of mate</span>
+<span class="n">valueArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">valueArray</code></strong> array variable.</li>
+  <li>This array sets the value for distance or angle of each mate.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variables for Copy operation</span>
+<span class="k">Dim</span> <span class="nv">mateReferencesArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Object</span>
+<span class="k">Dim</span> <span class="nv">flipAlignmentArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">flipDimensionArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">lockRotationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<span class="k">Dim</span> <span class="nv">orientationArray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">Long</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we create some array variables.</li>
+  <li>These arrray variables are of different types i.e. <strong><code class="language-plaintext highlighter-rouge">Object</code></strong>, <strong><code class="language-plaintext highlighter-rouge">Boolean</code></strong>, <strong><code class="language-plaintext highlighter-rouge">Long</code></strong>.</li>
+  <li>We did not set any value for these arrays. We just need them for copy operation.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Copy with mate</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">CopyWithMates2</span><span class="p">(</span><span class="n">swComponentArray</span><span class="p">,</span> <span class="n">repeatArray</span><span class="p">,</span> <span class="n">mateReferencesArray</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">,</span> <span class="n">flipAlignmentArray</span><span class="p">,</span> <span class="n">flipDimensionArray</span><span class="p">,</span> <span class="n">lockRotationArray</span><span class="p">,</span> <span class="n">orientationArray</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we <strong>Copy With Mate</strong> into assemly.</li>
+  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">CopyWithMates2</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CopyWithMates2</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This method takes 1 parameter.
+    <ul>
+      <li><strong>ComponentsToCopy</strong>: <em>Array of components to copy.</em></li>
+      <li><strong>Repeat</strong>: <em>Array of boolean values; each value indicates whether to use the existing mate reference for the corresponding component to copy; if <strong><code class="language-plaintext highlighter-rouge">True</code></strong>, copies the existing mate reference; if <strong><code class="language-plaintext highlighter-rouge">False</code></strong>, uses the corresponding entry in the NewEntityToMateTo array for the new mate reference.</em></li>
+      <li><strong>NewEnityToMateTo</strong>: <em>Array of new mate references that map to the Repeat array; if an entry in the Repeat array is <strong><code class="language-plaintext highlighter-rouge">False</code></strong>, then the corresponding entry in this array is the new entity with which to mate the component to copy.</em></li>
+      <li><strong>Values</strong>: <em>Array of distance or angle values for the mate references; specify distance in meters and angle in radians; valid for distance, angle, and profile center mates only.</em></li>
+      <li><strong>FlipAlignment</strong>: <em>Array of booleans that map to the NewEntityToMateTo array; each value indicates the corresponding mate’s alignment; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to flip alignment, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to not.</em></li>
+      <li><strong>FlipDimension</strong>: <em>Array of booleans that map to the Values array; each value indicates the corresponding mate’s distance; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> for a positive distance dimension, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> for a negative distance dimension; valid for distance, angle, and profile center mates only.</em></li>
+      <li><strong>LockRotation</strong>: <em>Array of booleans that map to the NewEntityToMateTo array; <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to prevent the components from rotating, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to allow the components to rotate; valid for concentric and profile center mates only.</em></li>
+      <li><strong>Orientation</strong>: <em>Array of longs or integers that map to the Values array; each long or integer indicates the number of clicks in the user interface with which to orient the mate; a positive value indicates to orient the mate clockwise, a negative value indicates to orient the mate counterclockwise; valid for profile center mates only.</em></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if calling this method succeeded, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if it failed.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ComponentsToCopy</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swComponentArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>Repeat</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">repeatArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>NewEnityToMateTo</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">mateReferencesArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>Values</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">valueArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>FlipAlignment</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">flipAlignmentArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>FlipDimension</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">flipDimensionArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>LockRotation</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">lockRotationArray</code></td>
+        </tr>
+        <tr>
+          <td><strong>Orientation</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">orientationArray</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.iassemblydoc~insertnewvirtualassembly.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we get a new part/assembly from <strong>Copy with Mate</strong> operation as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-copy-with-mates/final-result-gif.gif" alt="assembly-copy-with-mates" /></a></p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
+
+<p>Hope this post helps you to <strong>Copy With Mate</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-09-27T15:07:36-04:00">September 27, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-insert-virtual-assembly/" title="Solidworks VBA Macro - Insert Virtual Assembly
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-hide-component/" title="Solidworks VBA Macro - Hide Component
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

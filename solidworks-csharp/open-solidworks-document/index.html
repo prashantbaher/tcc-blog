@@ -1,16 +1,763 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="docs-wrapper docs-doc-page docs-version-current plugin-docs plugin-id-solidworks-csharp docs-doc-id-open-solidworks-document">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v2.1.0">
-<title data-rh="true">SOLIDWORKS C# API - Open SOLIDWORKS Document | The CAD Coder</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://thecadcoder.com//solidworks-csharp/open-solidworks-document"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-solidworks-csharp-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-solidworks-csharp-current"><meta data-rh="true" property="og:title" content="SOLIDWORKS C# API - Open SOLIDWORKS Document | The CAD Coder"><meta data-rh="true" name="description" content="OBJECTIVE"><meta data-rh="true" property="og:description" content="OBJECTIVE"><link data-rh="true" rel="icon" href="/assets/logo.png"><link data-rh="true" rel="canonical" href="https://thecadcoder.com//solidworks-csharp/open-solidworks-document"><link data-rh="true" rel="alternate" href="https://thecadcoder.com//solidworks-csharp/open-solidworks-document" hreflang="en"><link data-rh="true" rel="alternate" href="https://thecadcoder.com//solidworks-csharp/open-solidworks-document" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.fa9eade3.css">
-<link rel="preload" href="/assets/js/runtime~main.87a6ab9f.js" as="script">
-<link rel="preload" href="/assets/js/main.6107f5d7.js" as="script">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Open SOLIDWORKS Document - The CAD Coder</title>
+<meta name="description" content="OBJECTIVE">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
+<meta property="og:url" content="http://localhost:4000/solidworks-csharp/open-solidworks-document/">
+
+
+  <meta property="og:description" content="OBJECTIVE">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-27T15:07:36-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/solidworks-csharp/open-solidworks-document/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
 </head>
-<body class="navigation-with-keyboard">
-<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
-<div role="region" aria-label="theme.common.skipToMainContent"><a href="#" class="skipToContent_fXgn">Skip to main content</a></div><nav class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Navigation bar toggle" class="navbar__toggle clean-btn" type="button" tabindex="0"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/logo.png" alt="My Site Logo" class="themedImage_ToTc themedImage--light_HNdA"><img src="/assets/logo.png" alt="My Site Logo" class="themedImage_ToTc themedImage--dark_i4oU"></div><b class="navbar__title text--truncate">The CAD Coder</b></a><a class="navbar__item navbar__link" href="/vba/vba-introduction">VBA</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Solidworks API Tutorials</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/solidworks-macros/vba-in-solidworks">Solidworks API + VBA</a></li><li><a class="dropdown__link" href="/solidworks-csharp/solidworks-CSharp-Api">Solidworks API + C#</a></li><li><a class="dropdown__link" href="/solidworks-cpp/solidworks-Cpp-Api">Solidworks API + C++</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/resources">Resources</a><a class="navbar__item navbar__link" href="/aboutme">About Me</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div><div class="searchHintContainer_Pkmr"><kbd class="searchHint_iIMx">ctrl</kbd><kbd class="searchHint_iIMx">K</kbd></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="main-wrapper mainWrapper_z2l0 docsWrapper_BCFX"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docPage__5DB"><aside class="theme-doc-sidebar-container docSidebarContainer_b6E3"><div class="sidebar_njMd"><nav class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/solidworks-csharp/solidworks-CSharp-Api">Getting Started</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/solidworks-csharp/solidworks-CSharp-Api">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/solidworks-csharp/csharp-prerequisite">Prerequisite</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/solidworks-csharp/open-solidworks">Open Solidworks &amp; Hello World</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/solidworks-csharp/open-solidworks-document">Open Solidworks Part Document</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/solidworks-csharp/dimension-state">Update Dimension State</a></li></ul></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></aside><main class="docMainContainer_gTbr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_OVgt"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Getting Started</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Open Solidworks Part Document</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>SOLIDWORKS C# API - Open SOLIDWORKS Document</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="objective">OBJECTIVE<a class="hash-link" href="#objective" title="Direct link to heading">​</a></h2><p>How to Open SOLIDWORKS Document using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p><p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p><p>If not then please go to <strong><a href="/solidworks-csharp/csharp-prerequisite">SOLIDWORKS C# API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="demo-video">DEMO VIDEO<a class="hash-link" href="#demo-video" title="Direct link to heading">​</a></h2><p>Please see below video on how to &quot;Open SOLIDWORKS Document&quot; using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p><iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" width="100%" height="500"></iframe><p>Please note that there are <strong>no explanation</strong> in the video. </p><p><strong>Explanation</strong> of each step and why we write code this way is given in this post.</p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT<a class="hash-link" href="#create-a-new-prism-project" title="Direct link to heading">​</a></h2><p>In the below image I have shown you how to create a new Prism project.</p><p><a target="_blank" href="/assets/files/1.create-open-solidworks-document-project-09b1be06b24b751d8377783fb89c8f09.gif"><img loading="lazy" alt="create-open-solidworks-document-project" src="/assets/images/1.create-open-solidworks-document-project-09b1be06b24b751d8377783fb89c8f09.gif" width="1364" height="726" class="img_ev3q"></a></p><p>All the steps has been already explained in <strong><a href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open SOLIDWORKS</a></strong> article.</p><p>This will open a new window as shown in below image.</p><p><a target="_blank" href="/assets/files/1.create-new-project-04e3322a13f0f2ac34a218232853f5c9.svg"><img loading="lazy" alt="create-new-project" src="/assets/images/1.create-new-project-04e3322a13f0f2ac34a218232853f5c9.svg" width="1248" height="664" class="img_ev3q"></a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="build-solution">BUILD SOLUTION<a class="hash-link" href="#build-solution" title="Direct link to heading">​</a></h2><p>After we create our &quot;<em>OpenSolidworksDocument</em>&quot; project, we need to select &quot;Build Solution&quot; option as shown in below image.</p><p><a target="_blank" href="/assets/files/2.build-solution-58c1a3710d12713d55b9470e86300e45.svg"><img loading="lazy" alt="build-solution" src="/assets/images/2.build-solution-58c1a3710d12713d55b9470e86300e45.svg" width="976" height="665" class="img_ev3q"></a></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-we-build-solution-">WHY WE BUILD SOLUTION ?<a class="hash-link" href="#why-we-build-solution-" title="Direct link to heading">​</a></h3><p>We build our solution because we want to make sure everything is working and there are no broken references.</p><p>Below image show <code>MainWindow.xaml</code> file before <em>building solution</em>.</p><p><a target="_blank" href="/assets/files/3.before-build-solution-47bc2cf0209c7667a480a1c532c9e3d8.svg"><img loading="lazy" alt="before-build-solution" src="/assets/images/3.before-build-solution-47bc2cf0209c7667a480a1c532c9e3d8.svg" width="1234" height="657" class="img_ev3q"></a></p><p>Below image show <code>MainWindow.xaml</code> file after <em>building solution</em>.</p><p><a target="_blank" href="/assets/files/4.after-build-solution-0d9704d06704b72f1f4d760578c252de.svg"><img loading="lazy" alt="after-build-solution" src="/assets/images/4.after-build-solution-0d9704d06704b72f1f4d760578c252de.svg" width="1234" height="657" class="img_ev3q"></a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-user-interface-controls">ADD USER INTERFACE CONTROLS<a class="hash-link" href="#add-user-interface-controls" title="Direct link to heading">​</a></h2><p>Below we add some UI control for user interaction.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH<a class="hash-link" href="#update-window-start-up-location-and-heightwidth" title="Direct link to heading">​</a></h3><p>In below image, we update &#x27;<em>Start-up location</em>&#x27; and &#x27;<em>Width &amp; Height</em>&#x27; of our window.</p><p><a target="_blank" href="/assets/files/2.update-window-startup-location-width-height-a26562a85ce89ecbaae63b6cb1380fe5.gif"><img loading="lazy" alt="update-window-startup-location-width-height" src="/assets/images/2.update-window-startup-location-width-height-a26562a85ce89ecbaae63b6cb1380fe5.gif" width="1364" height="726" class="img_ev3q"></a></p><p>First we update <em>Start-up location of window</em> by adding following line.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain">WindowStartupLocation=&quot;CenterScreen&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>After this, we update window&#x27;s <em>Height and Width</em> to following values.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain">Height=&quot;250&quot; Width=&quot;500&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove-content-control">REMOVE CONTENT CONTROL<a class="hash-link" href="#remove-content-control" title="Direct link to heading">​</a></h3><p>In below image we remove ContentControl Tag in Grid.</p><p>Also, we change <code>Grid</code> to <code>StackPanel</code> for helding our UI Controls.</p><p><a target="_blank" href="/assets/files/3.remove-content-control-777c7d107c145dabdbaa35717dae070a.gif"><img loading="lazy" alt="remove-content-control" src="/assets/images/3.remove-content-control-777c7d107c145dabdbaa35717dae070a.gif" width="1364" height="726" class="img_ev3q"></a></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT<a class="hash-link" href="#add-textblock-for-selecting-document" title="Direct link to heading">​</a></h3><p>In below image we add <code>TextBlock</code> inside <code>StackPanel</code> for indicating user to select a document.</p><p><a target="_blank" href="/assets/files/4.add-textblock-0f325555575a8c39fbee4b8172294022.gif"><img loading="lazy" alt="add-textblock" src="/assets/images/4.add-textblock-0f325555575a8c39fbee4b8172294022.gif" width="1364" height="726" class="img_ev3q"></a></p><p><code>TextBlock</code> with <code>Text</code> and <em>other properties</em> are given below.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag" style="color:rgb(128, 0, 0)">TextBlock</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Text</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Select Document</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">350</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">30</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Margin</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">25 10</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontSize</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">25</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontWeight</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Medium</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">           </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">VerticalAlignment</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Center</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST<a class="hash-link" href="#add-combobox-for-documents-list" title="Direct link to heading">​</a></h3><p>In below image we add <code>ComboBox</code> inside <code>StackPanel</code> for holding our list of <strong>SOLIDWORKS documents</strong>.</p><p><a target="_blank" href="/assets/files/5.add-documents-combobox-85c0117e9948c9a26b9f2cbc927bdf44.gif"><img loading="lazy" alt="add-documents-combobox" src="/assets/images/5.add-documents-combobox-85c0117e9948c9a26b9f2cbc927bdf44.gif" width="1364" height="726" class="img_ev3q"></a></p><p><code>ComboBox</code> with set <em>properties</em> are given below.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag" style="color:rgb(128, 0, 0)">ComboBox</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">350</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">30</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Margin</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">10</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">VerticalAlignment</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Center</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontSize</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">16</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT<a class="hash-link" href="#add-button-for-selected-document" title="Direct link to heading">​</a></h3><p>In below image we add <code>Button</code> to open selected <em>SOLIDWORKS document</em>.</p><p><a target="_blank" href="/assets/files/6.add-button-for-solidworks-document-5c9f784af4b68f1b043b6c69ad781f64.gif"><img loading="lazy" alt="add-button-for-solidworks-document" src="/assets/images/6.add-button-for-solidworks-document-5c9f784af4b68f1b043b6c69ad781f64.gif" width="1364" height="726" class="img_ev3q"></a></p><p><code>Button</code> with <code>Content</code> and <em>other properties</em> are given below.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag" style="color:rgb(128, 0, 0)">Button</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">350</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">        </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">50</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">        </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontSize</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">18</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">        </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontWeight</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Medium</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">        </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Content</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Open Solidworks</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="update-viewmodel">UPDATE VIEWMODEL<a class="hash-link" href="#update-viewmodel" title="Direct link to heading">​</a></h2><p>Now, we update our <code>MainWindowViewModel</code> viewmodel, for showing data and adding functionalities.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-documents-list">ADD DOCUMENTS LIST<a class="hash-link" href="#add-documents-list" title="Direct link to heading">​</a></h3><p>In below image we a list of SOLIDWORKS document in <code>MainWindowViewModel</code>.</p><p><a target="_blank" href="/assets/files/7.add-document-list-to-viewmodel-8729a77785d74ad00d35135eca07e375.gif"><img loading="lazy" alt="add-document-list-to-viewmodel" src="/assets/images/7.add-document-list-to-viewmodel-8729a77785d74ad00d35135eca07e375.gif" width="1364" height="726" class="img_ev3q"></a></p><p>For this we use below code.</p><div class="language-cs codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-cs codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">private</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(38, 127, 153)">ObservableCollection</span><span class="token class-name punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token class-name keyword" style="color:rgb(0, 0, 255)">string</span><span class="token class-name punctuation" style="color:rgb(4, 81, 165)">&gt;</span><span class="token plain"> _DocumentsList</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">public</span><span class="token plain"> </span><span class="token return-type class-name" style="color:rgb(38, 127, 153)">ObservableCollection</span><span class="token return-type class-name punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token return-type class-name keyword" style="color:rgb(0, 0, 255)">string</span><span class="token return-type class-name punctuation" style="color:rgb(4, 81, 165)">&gt;</span><span class="token plain"> DocumentsList</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">get</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">return</span><span class="token plain"> _DocumentsList</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">set</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">SetProperty</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token keyword" style="color:rgb(0, 0, 255)">ref</span><span class="token plain"> _DocumentsList</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">value</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above code, <code>_DocumentsList</code> is private member of our <code>MainWindowViewModel</code> class, whose value we set in the <code>Constructor</code> of <code>MainWindowViewModel</code> class.</p><p><code>DocumentsList</code> will use for <code>Binding</code> document list to our <code>ComboBox</code> as <code>ItemSource</code>.</p><p>Here we use <code>ObservableCollection&lt;T&gt;</code> because of <strong>MVVM</strong>.</p><p>For more details please visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0" target="_blank" rel="noopener noreferrer">this link</a></strong>.</p><div class="language-cs codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-cs codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">public</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">MainWindowViewModel</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    _DocumentsList </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">new</span><span class="token plain"> </span><span class="token constructor-invocation class-name" style="color:rgb(38, 127, 153)">ObservableCollection</span><span class="token constructor-invocation class-name punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token constructor-invocation class-name keyword" style="color:rgb(0, 0, 255)">string</span><span class="token constructor-invocation class-name punctuation" style="color:rgb(4, 81, 165)">&gt;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Part Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Assembly Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Drawing Document&quot;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above code, we add SOLIDWORKS documents into our <code>_DocumentsList</code> list.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX<a class="hash-link" href="#binding-document-list-to-combobox" title="Direct link to heading">​</a></h3><p>In below image we <em>Bind</em> our document list i.e. <code>DocumentsList</code> to <code>ComboBox</code> as <code>ItemSource</code>.</p><p><a target="_blank" href="/assets/files/8.binding-document-list-fab3a636bc61fbc1c3499c1ecfdd1fc9.gif"><img loading="lazy" alt="binding-document-list" src="/assets/images/8.binding-document-list-fab3a636bc61fbc1c3499c1ecfdd1fc9.gif" width="1364" height="726" class="img_ev3q"></a></p><p>For Binding <code>DocumentsList</code> we add following line.</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain">ItemsSource=&quot;{Binding DocumentsList}&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>After this update our ComboBox looks like as:</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag" style="color:rgb(128, 0, 0)">ComboBox</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">350</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">30</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Margin</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">10</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">VerticalAlignment</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Center</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontSize</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">16</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">ItemsSource</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">{Binding DocumentsList}</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>When we <strong><code>Run</code></strong> our code, we get following window.</p><p><a target="_blank" href="/assets/files/5.comboBox-list-window-ca19c4d045197375c71f1d02d0910e08.svg"><img loading="lazy" alt="comboBox-list-window" src="/assets/images/5.comboBox-list-window-ca19c4d045197375c71f1d02d0910e08.svg" width="1234" height="657" class="img_ev3q"></a></p><p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get <strong>error</strong> when we click &quot;<em>Open Solidworks</em>&quot; button.</p><p>To avoid this error we define <code>SelectedIndex</code> property of <code>ComboBox</code> to <strong>0</strong>.</p><p>After this update our ComboBox looks like as:</p><div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag" style="color:rgb(128, 0, 0)">ComboBox</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">350</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">30</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">Margin</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">10</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">VerticalAlignment</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">Center</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">FontSize</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">16</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">SelectedIndex</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">0</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag" style="color:rgb(128, 0, 0)"></span><br></span><span class="token-line" style="color:#000000"><span class="token tag" style="color:rgb(128, 0, 0)">          </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">ItemsSource</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">{Binding DocumentsList}</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">&quot;</span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>When we <strong><code>Run</code></strong> our code, we get following window.</p><p><a target="_blank" href="/assets/files/6.part-document-selected-in-list-a39df3867f92f605e33b4df10697c8e5.svg"><img loading="lazy" alt="part-document-selected-in-list" src="/assets/images/6.part-document-selected-in-list-a39df3867f92f605e33b4df10697c8e5.svg" width="1234" height="657" class="img_ev3q"></a></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX<a class="hash-link" href="#add-selected-value-in-combobox" title="Direct link to heading">​</a></h3><p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p><p>To get the selected value, we need a property i.e. <code>SelectedDocument</code> in our <code>MainWindowViewModel</code> ViewModel and bind this property to <code>SelectValue</code> property of <code>ComboBox</code>.</p><p>For more details please see below image.</p><p><a target="_blank" href="/assets/files/9.selectedvalue-binding-ee728082901b1fbbffe92941d3b6496a.gif"><img loading="lazy" alt="selectedvalue-binding" src="/assets/images/9.selectedvalue-binding-ee728082901b1fbbffe92941d3b6496a.gif" width="1364" height="726" class="img_ev3q"></a></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL<a class="hash-link" href="#add-command-to-viewmodel" title="Direct link to heading">​</a></h3><p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our button.</p><p>For this we need to do following:</p><ul><li><p>We need to create a <em>Prism Command</em> i.e. <code>OpenSolidworksCommand</code> in <code>MainWindowViewModel</code> ViewModel.</p></li><li><p>Bind this <code>OpenSolidworksCommand</code> to our button.</p></li></ul><p>In below we see how to do this, also we checked the selected value.</p><p><a target="_blank" href="/assets/files/10-add-command-to-button-edf78f8a18d6e3a80f03dc4104336649.gif"><img loading="lazy" alt="add-command-to-button" src="/assets/images/10-add-command-to-button-edf78f8a18d6e3a80f03dc4104336649.gif" width="1364" height="726" class="img_ev3q"></a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-solidworks-references">ADD SOLIDWORKS REFERENCES<a class="hash-link" href="#add-solidworks-references" title="Direct link to heading">​</a></h2><p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p><p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p><p><a target="_blank" href="/assets/files/11.add-solidworks-references-05111283bb25889c4d64541c2681169c.gif"><img loading="lazy" alt="add-solidworks-references" src="/assets/images/11.add-solidworks-references-05111283bb25889c4d64541c2681169c.gif" width="1364" height="726" class="img_ev3q"></a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT<a class="hash-link" href="#open-solidworks-document" title="Direct link to heading">​</a></h2><p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below image.</p><div class="language-cs codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-cs codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token return-type class-name keyword" style="color:rgb(0, 0, 255)">void</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">ExecuteOpenSolidworksCommand</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">// Create a new Instance of Solidworks Application</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token class-name" style="color:rgb(38, 127, 153)">SldWorks</span><span class="token class-name punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token class-name" style="color:rgb(38, 127, 153)">SldWorks</span><span class="token plain"> swApp </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">new</span><span class="token plain"> </span><span class="token constructor-invocation class-name" style="color:rgb(38, 127, 153)">SldWorks</span><span class="token constructor-invocation class-name punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token constructor-invocation class-name" style="color:rgb(38, 127, 153)">SldWorks</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">// Make Solidworks visible</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Visible </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token boolean">true</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">// Variable to hold selected document&#x27;s template path</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token class-name keyword" style="color:rgb(0, 0, 255)">string</span><span class="token plain"> templatePath </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">string</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Empty</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">// Switch Conditional Statement</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">switch</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">SelectedDocument</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token keyword" style="color:rgb(0, 0, 255)">case</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Part Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">:</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token comment" style="color:rgb(0, 128, 0)">// Get default Part template path</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            templatePath </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token function" style="color:rgb(0, 0, 255)">GetUserPreferenceStringValue</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token keyword" style="color:rgb(0, 0, 255)">int</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain">SwConst</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swUserPreferenceStringValue_e</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swDefaultTemplatePart</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token keyword" style="color:rgb(0, 0, 255)">break</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token keyword" style="color:rgb(0, 0, 255)">case</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Assembly Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">:</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token comment" style="color:rgb(0, 128, 0)">// Get default Assembly template path</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            templatePath </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token function" style="color:rgb(0, 0, 255)">GetUserPreferenceStringValue</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token keyword" style="color:rgb(0, 0, 255)">int</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain">SwConst</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swUserPreferenceStringValue_e</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swDefaultTemplateAssembly</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token keyword" style="color:rgb(0, 0, 255)">break</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        </span><span class="token keyword" style="color:rgb(0, 0, 255)">case</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Drawing Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">:</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token comment" style="color:rgb(0, 128, 0)">// Get default Drawing template path</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            templatePath </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token function" style="color:rgb(0, 0, 255)">GetUserPreferenceStringValue</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token keyword" style="color:rgb(0, 0, 255)">int</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain">SwConst</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swUserPreferenceStringValue_e</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">swDefaultTemplateDrawing</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">            </span><span class="token keyword" style="color:rgb(0, 0, 255)">break</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">// Create a new Document as ModelDoc2 object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token class-name" style="color:rgb(38, 127, 153)">SldWorks</span><span class="token class-name punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token class-name" style="color:rgb(38, 127, 153)">ModelDoc2</span><span class="token plain"> swDoc </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token function" style="color:rgb(0, 0, 255)">NewDocument</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">templatePath</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(9, 134, 88)">0</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(9, 134, 88)">0</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(9, 134, 88)">0</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p><a target="_blank" href="/assets/files/12.add-open-solidworks-document-code-22e57901167523f9efb729ef3817fe5c.gif"><img loading="lazy" alt="add-open-solidworks-document-code" src="/assets/images/12.add-open-solidworks-document-code-22e57901167523f9efb729ef3817fe5c.gif" width="1364" height="726" class="img_ev3q"></a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="final-result">FINAL RESULT<a class="hash-link" href="#final-result" title="Direct link to heading">​</a></h2><p>Now, we have done everything needed to <strong>Open</strong> <em>SOLIDWORKS Document</em> through our application.</p><p>Please see below image for final result of our work.</p><p><a target="_blank" href="/assets/files/final-result-67aa12a239288f135d7f605e4842b479.gif"><img loading="lazy" alt="final-result" src="/assets/images/final-result-67aa12a239288f135d7f605e4842b479.gif" width="1364" height="726" class="img_ev3q"></a></p><hr><p><strong>This is it !!!</strong></p><p><em>I hope my efforts will helpful to someone!</em></p><p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p><p>Hope this post helps you to <strong>Open SOLIDWORKS Documents</strong> from WPF PRISM Application.</p><p><em>If you like the post then please share it with your friends also.</em></p><p><em>Do let me know by you like this post or not!</em></p><p><em>Till then, Happy learning!!!</em></p></div><br><script>window.location.reload(!0)</script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002" data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-tags-row row margin-bottom--sm"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/solidworks-csharp/tags/solidworks-c-api">SOLIDWORKS C# API</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/solidworks-csharp/open-solidworks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">SOLIDWORKS C# API - Open SOLIDWORKS</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/solidworks-csharp/dimension-state"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SOLIDWORKS C# API - Update Dimension State</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><div><ul class="table-of-contents table-of-contents__left-border"><li><a href="#objective" class="table-of-contents__link toc-highlight">OBJECTIVE</a></li><li><a href="#demo-video" class="table-of-contents__link toc-highlight">DEMO VIDEO</a></li><li><a href="#create-a-new-prism-project" class="table-of-contents__link toc-highlight">CREATE A NEW PRISM PROJECT</a></li><li><a href="#build-solution" class="table-of-contents__link toc-highlight">BUILD SOLUTION</a><ul><li><a href="#why-we-build-solution-" class="table-of-contents__link toc-highlight">WHY WE BUILD SOLUTION ?</a></li></ul></li><li><a href="#add-user-interface-controls" class="table-of-contents__link toc-highlight">ADD USER INTERFACE CONTROLS</a><ul><li><a href="#update-window-start-up-location-and-heightwidth" class="table-of-contents__link toc-highlight">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</a></li><li><a href="#remove-content-control" class="table-of-contents__link toc-highlight">REMOVE CONTENT CONTROL</a></li><li><a href="#add-textblock-for-selecting-document" class="table-of-contents__link toc-highlight">ADD TEXTBLOCK FOR SELECTING DOCUMENT</a></li><li><a href="#add-combobox-for-documents-list" class="table-of-contents__link toc-highlight">ADD COMBOBOX FOR DOCUMENTS LIST</a></li><li><a href="#add-button-for-selected-document" class="table-of-contents__link toc-highlight">ADD BUTTON FOR SELECTED DOCUMENT</a></li></ul></li><li><a href="#update-viewmodel" class="table-of-contents__link toc-highlight">UPDATE VIEWMODEL</a><ul><li><a href="#add-documents-list" class="table-of-contents__link toc-highlight">ADD DOCUMENTS LIST</a></li><li><a href="#binding-document-list-to-combobox" class="table-of-contents__link toc-highlight">BINDING DOCUMENT LIST TO COMBOBOX</a></li><li><a href="#add-selected-value-in-combobox" class="table-of-contents__link toc-highlight">ADD SELECTED VALUE IN COMBOBOX</a></li><li><a href="#add-command-to-viewmodel" class="table-of-contents__link toc-highlight">ADD COMMAND TO VIEWMODEL</a></li></ul></li><li><a href="#add-solidworks-references" class="table-of-contents__link toc-highlight">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#open-solidworks-document" class="table-of-contents__link toc-highlight">OPEN SOLIDWORKS DOCUMENT</a></li><li><a href="#final-result" class="table-of-contents__link toc-highlight">FINAL RESULT</a></li></ul><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002" data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div></div></div></div></main></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/vba/vba-introduction">VBA Tutorials</a></li><li class="footer__item"><a class="footer__link-item" href="/solidworks-macros/vba-in-solidworks">Solidworks VBA Tutorials</a></li></ul></div><div class="col footer__col"><div class="footer__title">Links</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/aboutme">About</a></li><li class="footer__item"><a class="footer__link-item" href="/resources">Resources</a></li><li class="footer__item"><a class="footer__link-item" href="/privacy">Privacy Policy</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2022 The CAD Coder.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.87a6ab9f.js"></script>
-<script src="/assets/js/main.6107f5d7.js"></script>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+          
+            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks-document/" class="active">Open Solidworks Document</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
+    
+    <meta itemprop="description" content="OBJECTIVE">
+    
+    
+    <meta itemprop="datePublished" content="2022-09-27T15:07:36-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Open SOLIDWORKS Document
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">OBJECTIVE</a></li><li><a href="#demo-video">DEMO VIDEO</a></li><li><a href="#create-a-new-prism-project">CREATE A NEW PRISM PROJECT</a></li><li><a href="#build-solution">BUILD SOLUTION</a><ul><li><a href="#why-we-build-solution-">WHY WE BUILD SOLUTION ?</a></li></ul></li><li><a href="#add-user-interface-controls">ADD USER INTERFACE CONTROLS</a><ul><li><a href="#update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</a></li><li><a href="#remove-content-control">REMOVE CONTENT CONTROL</a></li><li><a href="#add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</a></li><li><a href="#add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</a></li><li><a href="#add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</a></li></ul></li><li><a href="#update-viewmodel">UPDATE VIEWMODEL</a><ul><li><a href="#add-documents-list">ADD DOCUMENTS LIST</a></li><li><a href="#binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</a></li><li><a href="#add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</a></li><li><a href="#add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</a></li></ul></li><li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</a></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">OBJECTIVE</h2>
+
+<p>How to Open SOLIDWORKS Document using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p>
+
+<p>If not then please go to <strong><a href="/solidworks-csharp/Prerequisite">SOLIDWORKS C# API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
+
+<hr />
+
+<h2 id="demo-video">DEMO VIDEO</h2>
+
+<p>Please see below video on how to “Open SOLIDWORKS Document” using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+
+<iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+<p><strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
+
+<hr />
+
+<h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
+
+<p>In the below image I have shown you how to create a new Prism project.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif" alt="create-open-solidworks-document-project" /></a></p>
+
+<p>All the steps has been already explained in <strong><a href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open SOLIDWORKS</a></strong> article.</p>
+
+<p>This will open a new window as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg" alt="create-new-project" /></a></p>
+
+<h2 id="build-solution">BUILD SOLUTION</h2>
+
+<p>After we create our “<em>OpenSolidworksDocument</em>” project, we need to select “Build Solution” option as shown in below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg" alt="build-solution" /></a></p>
+
+<h3 id="why-we-build-solution-">WHY WE BUILD SOLUTION ?</h3>
+
+<p>We build our solution because we want to make sure everything is working and there are no broken references.</p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file before <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg" alt="before-build-solution" /></a></p>
+
+<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file after <em>building solution</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg" alt="after-build-solution" /></a></p>
+
+<h2 id="add-user-interface-controls">ADD USER INTERFACE CONTROLS</h2>
+
+<p>Below we add some UI control for user interaction.</p>
+
+<h3 id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</h3>
+
+<p>In below image, we update ‘<em>Start-up location</em>’ and ‘<em>Width &amp; Height</em>’ of our window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif" alt="update-window-startup-location-width-height" /></a></p>
+
+<p>First we update <em>Start-up location of window</em> by adding following line.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WindowStartupLocation="CenterScreen"
+</code></pre></div></div>
+
+<p>After this, we update window’s <em>Height and Width</em> to following values.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Height="250" Width="500"
+</code></pre></div></div>
+
+<h3 id="remove-content-control">REMOVE CONTENT CONTROL</h3>
+
+<p>In below image we remove ContentControl Tag in Grid.</p>
+
+<p>Also, we change <code class="language-plaintext highlighter-rouge">Grid</code> to <code class="language-plaintext highlighter-rouge">StackPanel</code> for helding our UI Controls.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif" alt="remove-content-control" /></a></p>
+
+<h3 id="add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">TextBlock</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for indicating user to select a document.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif" alt="add-textblock" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">TextBlock</code> with <code class="language-plaintext highlighter-rouge">Text</code> and <em>other properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Select Document"</span>
+           <span class="na">Width=</span><span class="s">"350"</span>
+           <span class="na">Height=</span><span class="s">"30"</span>
+           <span class="na">Margin=</span><span class="s">"25 10"</span>
+           <span class="na">FontSize=</span><span class="s">"25"</span>
+           <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">ComboBox</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for holding our list of <strong>SOLIDWORKS documents</strong>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif" alt="add-documents-combobox" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">ComboBox</code> with set <em>properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</h3>
+
+<p>In below image we add <code class="language-plaintext highlighter-rouge">Button</code> to open selected <em>SOLIDWORKS document</em>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif" alt="add-button-for-solidworks-document" /></a></p>
+
+<p><code class="language-plaintext highlighter-rouge">Button</code> with <code class="language-plaintext highlighter-rouge">Content</code> and <em>other properties</em> are given below.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Width=</span><span class="s">"350"</span>
+        <span class="na">Height=</span><span class="s">"50"</span>
+        <span class="na">FontSize=</span><span class="s">"18"</span>
+        <span class="na">FontWeight=</span><span class="s">"Medium"</span>
+        <span class="na">Content=</span><span class="s">"Open Solidworks"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="update-viewmodel">UPDATE VIEWMODEL</h2>
+
+<p>Now, we update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> viewmodel, for showing data and adding functionalities.</p>
+
+<h3 id="add-documents-list">ADD DOCUMENTS LIST</h3>
+
+<p>In below image we a list of SOLIDWORKS document in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif" alt="add-document-list-to-viewmodel" /></a></p>
+
+<p>For this we use below code.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_DocumentsList</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">DocumentsList</span>
+<span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DocumentsList</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DocumentsList</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, <code class="language-plaintext highlighter-rouge">_DocumentsList</code> is private member of our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class, whose value we set in the <code class="language-plaintext highlighter-rouge">Constructor</code> of <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DocumentsList</code> will use for <code class="language-plaintext highlighter-rouge">Binding</code> document list to our <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+
+<p>Here we use <code class="language-plaintext highlighter-rouge">ObservableCollection&lt;T&gt;</code> because of <strong>MVVM</strong>.</p>
+
+<p>For more details please visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0">this link</a></strong>.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_DocumentsList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="s">"Part Document"</span><span class="p">,</span>
+        <span class="s">"Assembly Document"</span><span class="p">,</span>
+        <span class="s">"Drawing Document"</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code, we add SOLIDWORKS documents into our <code class="language-plaintext highlighter-rouge">_DocumentsList</code> list.</p>
+
+<h3 id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</h3>
+
+<p>In below image we <em>Bind</em> our document list i.e. <code class="language-plaintext highlighter-rouge">DocumentsList</code> to <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif" alt="binding-document-list" /></a></p>
+
+<p>For Binding <code class="language-plaintext highlighter-rouge">DocumentsList</code> we add following line.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemsSource="{Binding DocumentsList}"
+</code></pre></div></div>
+
+<p>After this update our ComboBox looks like as:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> 
+          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg" alt="comboBox-list-window" /></a></p>
+
+<p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get <strong>error</strong> when we click “<em>Open Solidworks</em>” button.</p>
+
+<p>To avoid this error we define <code class="language-plaintext highlighter-rouge">SelectedIndex</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code> to <strong>0</strong>.</p>
+
+<p>After this update our ComboBox looks like as:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+          <span class="na">Height=</span><span class="s">"30"</span>
+          <span class="na">Margin=</span><span class="s">"10"</span>
+          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+          <span class="na">FontSize=</span><span class="s">"16"</span> 
+          <span class="na">SelectedIndex=</span><span class="s">"0"</span>
+          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg" alt="part-document-selected-in-list" /></a></p>
+
+<h3 id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</h3>
+
+<p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p>
+
+<p>To get the selected value, we need a property i.e. <code class="language-plaintext highlighter-rouge">SelectedDocument</code> in our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel and bind this property to <code class="language-plaintext highlighter-rouge">SelectValue</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code>.</p>
+
+<p>For more details please see below image.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif" alt="selectedvalue-binding" /></a></p>
+
+<h3 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h3>
+
+<p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our button.</p>
+
+<p>For this we need to do following:</p>
+
+<ul>
+  <li>
+    <p>We need to create a <em>Prism Command</em> i.e. <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel.</p>
+  </li>
+  <li>
+    <p>Bind this <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> to our button.</p>
+  </li>
+</ul>
+
+<p>In below we see how to do this, also we checked the selected value.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif" alt="add-command-to-button" /></a></p>
+
+<h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
+
+<p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+
+<p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+
+<h2 id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</h2>
+
+<p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below image.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Create a new Instance of Solidworks Application</span>
+    <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+
+    <span class="c1">// Make Solidworks visible</span>
+    <span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="c1">// Variable to hold selected document's template path</span>
+    <span class="kt">string</span> <span class="n">templatePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+    <span class="c1">// Switch Conditional Statement</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">SelectedDocument</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"Part Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Part template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"Assembly Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Assembly template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"Drawing Document"</span><span class="p">:</span>
+            <span class="c1">// Get default Drawing template path</span>
+            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create a new Document as ModelDoc2 object</span>
+    <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">templatePath</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif" alt="add-open-solidworks-document-code" /></a></p>
+
+<h2 id="final-result">FINAL RESULT</h2>
+
+<p>Now, we have done everything needed to <strong>Open</strong> <em>SOLIDWORKS Document</em> through our application.</p>
+
+<p>Please see below image for final result of our work.</p>
+
+<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif" alt="final-result" /></a></p>
+
+<hr />
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you to <strong>Open SOLIDWORKS Documents</strong> from WPF PRISM Application.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-09-27T15:07:36-04:00">September 27, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/open-solidworks/" title="SOLIDWORKS C# API - Open SOLIDWORKS
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/update-dimension-state/" title="SOLIDWORKS C# API - Update Dimension State
+">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
 </body>
+
 </html>

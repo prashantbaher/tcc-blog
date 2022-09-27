@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_website=self.webpackChunkdocs_website||[]).push([[3115],{38614:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"solidworks-macros"}')}}]);

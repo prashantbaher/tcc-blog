@@ -1,26 +1,1115 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="docs-wrapper docs-doc-page docs-version-current plugin-docs plugin-id-vba docs-doc-id-browse-solidworks-file">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v2.1.0">
-<title data-rh="true">VBA Userforms - Browse SOLIDWORKS file(s) | The CAD Coder</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://thecadcoder.com//vba/browse-solidworks-file"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-vba-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-vba-current"><meta data-rh="true" property="og:title" content="VBA Userforms - Browse SOLIDWORKS file(s) | The CAD Coder"><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="/assets/logo.png"><link data-rh="true" rel="canonical" href="https://thecadcoder.com//vba/browse-solidworks-file"><link data-rh="true" rel="alternate" href="https://thecadcoder.com//vba/browse-solidworks-file" hreflang="en"><link data-rh="true" rel="alternate" href="https://thecadcoder.com//vba/browse-solidworks-file" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.fa9eade3.css">
-<link rel="preload" href="/assets/js/runtime~main.87a6ab9f.js" as="script">
-<link rel="preload" href="/assets/js/main.6107f5d7.js" as="script">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html --><title>VBA Userforms - Browse SOLIDWORKS file(s) - The CAD Coder</title>
+<meta name="description" content="Introduction">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="VBA Userforms - Browse SOLIDWORKS file(s)">
+<meta property="og:url" content="http://localhost:4000/vba/browse-solidworks-file/">
+
+
+  <meta property="og:description" content="Introduction">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-27T15:07:36-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/vba/browse-solidworks-file/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
+<!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+  
 </head>
-<body class="navigation-with-keyboard">
-<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
-<div role="region" aria-label="theme.common.skipToMainContent"><a href="#" class="skipToContent_fXgn">Skip to main content</a></div><nav class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Navigation bar toggle" class="navbar__toggle clean-btn" type="button" tabindex="0"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/logo.png" alt="My Site Logo" class="themedImage_ToTc themedImage--light_HNdA"><img src="/assets/logo.png" alt="My Site Logo" class="themedImage_ToTc themedImage--dark_i4oU"></div><b class="navbar__title text--truncate">The CAD Coder</b></a><a class="navbar__item navbar__link" href="/vba/vba-introduction">VBA</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Solidworks API Tutorials</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/solidworks-macros/vba-in-solidworks">Solidworks API + VBA</a></li><li><a class="dropdown__link" href="/solidworks-csharp/solidworks-CSharp-Api">Solidworks API + C#</a></li><li><a class="dropdown__link" href="/solidworks-cpp/solidworks-Cpp-Api">Solidworks API + C++</a></li></ul></div></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/resources">Resources</a><a class="navbar__item navbar__link" href="/aboutme">About Me</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div><div class="searchHintContainer_Pkmr"><kbd class="searchHint_iIMx">ctrl</kbd><kbd class="searchHint_iIMx">K</kbd></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div class="main-wrapper mainWrapper_z2l0 docsWrapper_BCFX"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docPage__5DB"><aside class="theme-doc-sidebar-container docSidebarContainer_b6E3"><div class="sidebar_njMd"><nav class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/vba/vba-introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/vba/vba-programming-concepts">Programming Concepts</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/vba/vba-dialog-boxes">Dialog Boxes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/vba/vba-userform">UserForms</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vba/vba-userform">UserForms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vba/open-part-from-userform">Open new Part document</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vba/open-assembly-and-drawing-from-userform">Open new Assembly and Drawing document</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/vba/testing-open-assembly-and-drawing-document-macro">Testing Open new Assembly and Drawing document</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/vba/browse-solidworks-file">Browse SOLIDWORKS file(s)</a></li></ul></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></aside><main class="docMainContainer_gTbr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_OVgt"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">UserForms</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Browse SOLIDWORKS file(s)</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>VBA Userforms - Browse SOLIDWORKS file(s)</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" href="#introduction" title="Direct link to heading">​</a></h2><p>In this article, we learn <strong>how to browse SOLIDWORKS file(s)</strong> from a <strong>SOLIDWORKS VBA Userform</strong>.</p><p>In this article, I explain about <strong><em>2 different methods</em></strong> which are listed below.</p><ol><li><p>From <code>SldWorks</code> object directly.</p></li><li><p>From <strong>Microsoft Excel</strong> externally.</p></li></ol><p>Methods from these objects are <strong><em>updated</em></strong> methods, hence <strong><em>use any one of them</em></strong> for browsing SOLIDWORKS file(s).</p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-userform">Creating Userform<a class="hash-link" href="#creating-userform" title="Direct link to heading">​</a></h2><p>1st we need to create a <strong>new macro</strong> in <em>SOLIDWORKS</em>.</p><p>If you don&#x27;t know how to create a new macro in Solidworks, please go to <strong><a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a></strong> post for this.</p><p>This opens a <strong>Visual Basic Editor</strong> with some code as shown in below image.</p><p><img loading="lazy" alt="solidworks-vba-window" src="/assets/images/solidworks-vba-window-a2306fb840c24ee7a3d2bcdec139c288.png" width="1278" height="711" class="img_ev3q"> </p><p>After this we need to insert <em>a userform</em> in our macro.</p><p>For this, select the button shown in below image.</p><p><img loading="lazy" alt="insert-userform-button" src="/assets/images/insert-userform-button-1a76fae5ef7d21f830a84232a383123e.png" width="832" height="462" class="img_ev3q"> </p><p>This button is called <strong><em>insert userform</em></strong>. </p><p>As the name suggest, function of this button is <em>inserting a userform</em>.</p><blockquote><p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p></blockquote><p>After clicking the <strong><em>insert userform</em></strong> button we get the userform window as shown in above image.</p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="adding-controls-into-userform">Adding Controls into Userform<a class="hash-link" href="#adding-controls-into-userform" title="Direct link to heading">​</a></h2><p>Now in our userform window, we add following controls:</p><ol><li><p><strong>A TextBox</strong></p></li><li><p><strong>A CommandButton</strong></p></li></ol><h3 class="anchor anchorWithStickyNavbar_LWe7" id="adding-combobox">Adding ComboBox<a class="hash-link" href="#adding-combobox" title="Direct link to heading">​</a></h3><p>You can find <code>TextBox</code> option, as highlighted in <em>Red Square</em> in below image.</p><p><img loading="lazy" alt="textbox-in-userform" src="/assets/images/textbox-in-userform-0095a641164c76aca5efd3ec8deb68c0.png" width="910" height="538" class="img_ev3q"></p><p>After adding ComboBox, we get window as shown in below image.</p><p><img loading="lazy" alt="textbox-inside-userform" src="/assets/images/textbox-inside-userform-f1d5b0518135f88bc38abef5800988a9.png" width="575" height="523" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="adding-commandbutton">Adding CommandButton<a class="hash-link" href="#adding-commandbutton" title="Direct link to heading">​</a></h3><p>You can find <code>CommandButton</code> option, as highlighted in <em>Red Square</em> in below image.</p><p><img loading="lazy" alt="insert-command-button-into-userform" src="/assets/images/insert-command-button-into-userform-95681f4d7d9f86fe783ed2aa755f0377.png" width="563" height="541" class="img_ev3q"></p><p>After adding CommandButton, we get window as shown in below image.</p><p><img loading="lazy" alt="command-button-into-userform" src="/assets/images/command-button-into-userform-d4394e15f57ffa9718b1712c1de2f813.png" width="573" height="541" class="img_ev3q"></p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="updating-properties">Updating Properties<a class="hash-link" href="#updating-properties" title="Direct link to heading">​</a></h2><p>Now we update some properties of following:</p><ol><li><p><strong>Userform</strong></p></li><li><p><strong>TextBox</strong></p></li><li><p><strong>CommandButton</strong></p></li></ol><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update-userform-properties">Update Userform Properties<a class="hash-link" href="#update-userform-properties" title="Direct link to heading">​</a></h3><p>We update following properties of the Userform:</p><ol><li><p>Name of Userform</p></li><li><p>Caption of Userform</p></li></ol><p>In below image, I have shown the properties of <code>Userform1</code> and update the properties:</p><p><img loading="lazy" alt="update-userform-properties" src="/assets/images/update-userform-properties-57ed6b9c1fed1c7095f3bb83e33a341c.png" width="605" height="655" class="img_ev3q"></p><p>Update the value of <em>Name</em> property from <code>UserForm1</code> to <code>BrowseDocumentWindow</code>.</p><ul><li>From <em>Name</em> property, we access the Userform.</li></ul><p>Update the value of <em>Caption</em> property from <code>UserForm1</code> to <code>Browse Document</code>.</p><ul><li>From <em>Caption</em> property, we update the text appears in the window of our Userform.</li></ul><blockquote><p>Please note that it is <strong>not necessary</strong> to update properties but it is a good habit to update them for our purpose. </p></blockquote><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update-textbox-properties">Update TextBox Properties<a class="hash-link" href="#update-textbox-properties" title="Direct link to heading">​</a></h3><p>We update following property of the TextBox:</p><ol><li>Name of TextBox</li></ol><p>In below image, I have shown the properties of <code>TextBox</code> and update the properties:</p><p><img loading="lazy" alt="update-textbox-properties" src="/assets/images/update-textbox-properties-f63bf6b2e13b55bcaeb9fdc496c27741.png" width="605" height="655" class="img_ev3q"></p><p>Update the value of <em>Name</em> property from <code>TextBox</code> to <code>SelectedFileTextBox</code>.</p><ul><li>From <em>Name</em> property, we access the TextBox <em>properties</em> like <strong>Text</strong> we want to show.</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update-commandbutton-properties">Update CommandButton Properties<a class="hash-link" href="#update-commandbutton-properties" title="Direct link to heading">​</a></h3><p>We update following properties of the Command Button:</p><ol><li><p>Name of Command Button</p></li><li><p>Caption of Command Button</p></li></ol><p>In below image, I have shown the properties of <code>CommandButton1</code> and update the properties:</p><p><img loading="lazy" alt="update-command-button-properties" src="/assets/images/update-command-button-properties-61e56fb4974d6b99e73e20e91faf2bb5.png" width="637" height="669" class="img_ev3q"></p><p>Update the value of <em>Name</em> property from <code>CommandButton1</code> to <code>BrowseDocumentButton</code>.</p><blockquote><p>From <em>Name</em> property, we access the Command Button.</p></blockquote><p>Update the value of <em>Caption</em> property from <code>CommandButton1</code> to <code>Browse SOLIDOWRKS File(s)</code>.</p><blockquote><p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p></blockquote><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="call-userform-in-main-module">Call UserForm in Main Module<a class="hash-link" href="#call-userform-in-main-module" title="Direct link to heading">​</a></h2><p>Now, we need to call the our <em>Userform</em> inside main <strong><em>module</em></strong>.</p><p>For this goto main <code>Sub procedure</code> inside the <strong>main Module</strong>.</p><p>Code inside the main Module is as given below.</p><p>{% highlight vb showLineNumbers %}
-Dim swApp As Object
-Sub main()</p><p>Set swApp = Application.SldWorks
-End Sub
-{% endhighlight %}</p><p>To call our <code>Userform</code>, replace above code with below code:</p><p>{% highlight vb showLineNumbers %}
-&#x27; Main function of our VBA program
-Sub main()
-&#x27; Calling our window to show
-BrowseDocumentWindow.Show
-End Sub
-{% endhighlight %}</p><p>Above function call our window to appears on screen.</p><p>When the window appears on screen, we hit the <em>Browse button</em> to browse SOLIDWORKS File(s).</p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-functionality-to-button">Add Functionality to Button<a class="hash-link" href="#add-functionality-to-button" title="Direct link to heading">​</a></h2><p>To add functionality in our <code>BrowseDocumentButton</code>, just double click the <em>button</em>.</p><p>This will add some code behind the designer.</p><p>Now open the <strong>code window</strong> of Userform designer.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">Private</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span><span class="token plain"> CommandButton1_Click</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>We need to update this code for opening new part after clicking the button.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="method-1---from-sldworks-object-directly">Method 1 - From <code>SldWorks</code> object directly<a class="hash-link" href="#method-1---from-sldworks-object-directly" title="Direct link to heading">​</a></h2><p>For this replace all above code with below code.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">Option</span><span class="token plain"> Explicit</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Creating variable for Solidworks application</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> swApp </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> SldWorks</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SldWorks</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Private function of Open New Part Button</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Private</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span><span class="token plain"> BrowseDocumentButton_Click</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Setting Solidworks variable to Solidworks application</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> swApp </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> Application</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SldWorks</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Solidworks file filter string</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> swFilter </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Method parameters</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileName </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileConfig </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileDispName </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileOptions </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Long</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Set filters for different Solidworks files.</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  swFilter </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw&quot;</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Browse and get the Selected file name</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  fileName </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">GetOpenFileName</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Browse Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> swFilter</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileOptions</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileConfig</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileDispName</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Show the selected file&#x27;s full path in text box</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  SelectedFileTextBox</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Text </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> fileName</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><hr><h3 class="anchor anchorWithStickyNavbar_LWe7" id="understanding-method-1">Understanding Method 1<a class="hash-link" href="#understanding-method-1" title="Direct link to heading">​</a></h3><p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p><p>I also give some link so that you can go through them if there are anything I explained in <strong>previous posts</strong>.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">Option</span><span class="token plain"> Explicit</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>This line forces us to define every variable we are going to use. </p><p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Create variable for Solidworks application</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> swApp </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> SldWorks</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SldWorks</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In this line, we create a variable which we named as <code>swApp</code> and the type of this <code>swApp</code> variable is <code>SldWorks.SldWorks</code>.</p><p>Next is our button click event <code>BrowseDocumentButton_Click</code> procedure.</p><p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Set Solidworks variable to Solidworks application</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> swApp </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> Application</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SldWorks</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In this line, we set the value of our Solidworks variable <code>swApp</code>; which we define earlier; to Solidworks application.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Solidworks file filter string</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> swFilter </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Method parameters</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileName </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileConfig </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileDispName </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fileOptions </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Long</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above lines of code, we create SOLIDWORKS <em>files filter</em> string and <em>Method parameters</em>.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Set filters for different Solidworks files.</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">Filter </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw&quot;</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above line of code, we set filters for different SOLIDWORKS files.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Browse and get the Selected file name</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">fileName </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> swApp</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">GetOpenFileName</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Browse Document&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> swFilter</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileOptions</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileConfig</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> fileDispName</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>For &quot;<strong>Browse and get the Selected file name</strong>&quot;, we use <code>GetOpenFileName</code> method from <strong>Solidworks</strong> <code>SldWorks</code> object.</p><p>This <code>GetOpenFileName</code> method takes following parameters as explained:</p><ul><li><p><strong>DialogTitle</strong> : <em>Title of the dialog.</em></p></li><li><p><strong>InitialFileName</strong> : <em>Path and file name of the file to open.</em></p></li><li><p><strong>FileFilter</strong> : <em>File name extension of the file to open.</em></p></li><li><p><strong>OpenOptions</strong> : <em>Not used.</em></p></li><li><p><strong>ConfigName</strong> : <em>Name of the configuration.</em></p></li><li><p><strong>DisplayName</strong> : <em>Recommended file name to use.</em></p></li></ul><p>After the function complete following are the results:</p><p><strong>Return Value</strong>:</p><ul><li><em>Path and file name of the file to open.</em></li></ul><p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p><p><img loading="lazy" alt="userform-in-solidworks" src="data:image/png;base64,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" title="Our userform in Solidworks" width="331" height="253" class="img_ev3q"></p><p>Below image shows the opened window.</p><p><img loading="lazy" alt="browse-window" src="/assets/images/browse-window-1414208ffb1827bfd7c9d49e7cd9616c.png" title="Browsing window" width="784" height="611" class="img_ev3q"></p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Show the selected file&#x27;s full path in text box</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain">SelectedFileTextBox</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Text </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> fileName</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>Now we set the value of text box to <strong>browsed</strong> file name.</p><p>Final window of method 1 is shown below/.</p><p><img loading="lazy" alt="final-window-of-method-first" src="data:image/png;base64,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" title="Final window from Method 1" width="331" height="253" class="img_ev3q"></p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="method-2---from-microsoft-excel-externally">Method 2 - From <strong>Microsoft Excel</strong> externally<a class="hash-link" href="#method-2---from-microsoft-excel-externally" title="Direct link to heading">​</a></h2><p><strong>Prerequisite</strong>:</p><ol><li><p><strong>Office 365</strong></p></li><li><p><strong>Following below steps carefully</strong></p></li></ol><p>For this method we need to use <strong>Microsoft Excel</strong> from SOLIDWORKS.</p><p>For using <strong>Microsoft Excel</strong>, we need to add reference files.</p><p>Please see following steps for adding reference files:</p><ol><li><p>Select reference option as shown in below image.</p><p><img loading="lazy" alt="select-reference-option" src="/assets/images/select-reference-option-9543595b1165077e9f1db49d74545dba.png" title="Select reference option from Tools options" width="609" height="187" class="img_ev3q"></p></li><li><p>This open Reference window as shown in below image.</p><p><img loading="lazy" alt="reference-window" src="/assets/images/reference-window-056e746edb06a2b05d8a72781201fb41.png" title="Reference window" width="447" height="365" class="img_ev3q"></p></li><li><p>Now select option given in below images and Press OK after selecting files..</p><p><img loading="lazy" alt="add-excel-reference" src="/assets/images/add-excel-reference-c8b75186d16d4af57327ba728f7dd1ec.png" title="Select reference file highlighted in red box" width="449" height="369" class="img_ev3q"></p></li></ol><p>Now, replace code in <em><a href="#add-functionality-to-button">Add Functionality to Button</a></em> with below code sample.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">Option</span><span class="token plain"> Explicit</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Private function of Open New Part Button</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Private</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span><span class="token plain"> BrowseDocumentButton_Click</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Excel object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> xlObj </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; File dialog object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fDialog </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; File name sting</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> strFile </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Create Excel object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> xlObj </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> CreateObject</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Excel.Application&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Create File dialog object by setting option 3</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> fDialog </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> xlObj</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">FileDialog</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token number" style="color:rgb(9, 134, 88)">3</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Setting different properties of file dialog</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">With</span><span class="token plain"> fDialog</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Title </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Browse Document&quot;</span><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Title of window</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">AllowMultiSelect </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token boolean">True</span><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Allowing multiple select</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Filters</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Clear              </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Clear the filters</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Filters</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Add </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;SOLIDWORKS Files&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;*.sldprt; *.sldasm; *.slddrw&quot;</span><span class="token plain">       </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Add filters for Solidworks files</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">      </span><span class="token keyword" style="color:rgb(0, 0, 255)">If</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Show </span><span class="token keyword" style="color:rgb(0, 0, 255)">Then</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        strFile </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SelectedItems</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token number" style="color:rgb(9, 134, 88)">1</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">      </span><span class="token keyword" style="color:rgb(0, 0, 255)">Else</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">        strFile </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> vbNullString</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">      </span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">If</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">With</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Show the selected file&#x27;s full path in text box</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  SelectedFileTextBox</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Text </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> strFile</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Sub</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><hr><h3 class="anchor anchorWithStickyNavbar_LWe7" id="understanding-method-2">Understanding Method 2<a class="hash-link" href="#understanding-method-2" title="Direct link to heading">​</a></h3><p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p><p>I also give some link so that you can go through them if there are anything I explained in <strong>previous posts</strong>.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token keyword" style="color:rgb(0, 0, 255)">Option</span><span class="token plain"> Explicit</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>This line forces us to define every variable we are going to use. </p><p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p><p>Next is our button click event <code>BrowseDocumentButton_Click</code> procedure.</p><p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Excel object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> xlObj </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Object</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In this line, we create object for <strong>Microsoft Excel Application</strong>.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; File dialog object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> fDialog </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">Object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain" style="display:inline-block"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; File name sting</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Dim</span><span class="token plain"> strFile </span><span class="token keyword" style="color:rgb(0, 0, 255)">As</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">String</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above lines of code, we create <code>objects</code> for <strong>File Dialog</strong> and <code>string</code> for file name.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Create Excel object</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> xlObj </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> CreateObject</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Excel.Application&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above line of code, we create <strong>Microsoft Excel Application</strong> and set the value of excel object.</p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Create File dialog object by setting option 3</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">Set</span><span class="token plain"> fDialog </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> xlObj</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">FileDialog</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token number" style="color:rgb(9, 134, 88)">3</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above line of code, we create <strong>File dialog</strong> and set the value of file dialog by <code>FileDialog</code> method.</p><p><code>FileDialog</code> method take 1 parameter <code>enum</code>. Please see below links for more details about <code>FileDialog</code></p><p><strong><a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.filedialog" target="_blank" rel="noopener noreferrer">Application.FileDialog property (Excel)</a></strong></p><p><strong><a href="https://docs.microsoft.com/en-us/office/vba/api/office.msofiledialogtype" target="_blank" rel="noopener noreferrer">MsoFileDialogType enumeration (Office)</a></strong></p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Setting different properties of file dialog</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">With</span><span class="token plain"> fDialog</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Title </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;Browse Document&quot;</span><span class="token plain">  </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Title of window</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">AllowMultiSelect </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token boolean">True</span><span class="token plain">    </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Allowing multiple select</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Filters</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Clear              </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Clear the filters</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Filters</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Add </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;SOLIDWORKS Files&quot;</span><span class="token punctuation" style="color:rgb(4, 81, 165)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;*.sldprt; *.sldasm; *.slddrw&quot;</span><span class="token plain">       </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Add filters for Solidworks files</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">If</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Show </span><span class="token keyword" style="color:rgb(0, 0, 255)">Then</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">      strFile </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">SelectedItems</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token number" style="color:rgb(9, 134, 88)">1</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain">     </span><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Select 3rd item from list</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">Else</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">      strFile </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> vbNullString</span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">If</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain"></span><span class="token keyword" style="color:rgb(0, 0, 255)">End</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">With</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>In above code we set different properties of File dialog object.</p><ul><li><p><strong>Title</strong> : <em>Title of the dialog.</em></p></li><li><p><strong>AllowMultiSelect</strong> : <em>Allowing multi select of files.</em></p></li><li><p><strong>FileFilter</strong> : <em>File name extension of the file to open.</em></p></li></ul><p><code>If</code> statement shows that, if <em>file dialog</em> is shown then assign the <em>first value</em> to <strong>file name</strong> string object.</p><p>After the function complete following are the results:</p><p><strong>Return Value</strong>:</p><ul><li><em>Path and file name of the selected file(s).</em></li></ul><p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p><p><img loading="lazy" alt="userform-in-solidworks" src="data:image/png;base64,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" title="Our userform in Solidworks" width="331" height="253" class="img_ev3q"></p><p>Below image shows the opened window.</p><p><img loading="lazy" alt="excel-browse-window" src="/assets/images/excel-browse-window-81e2f7b0dc68d29146529ef90578caca.png" title="Browsing window using MS Excel" width="677" height="482" class="img_ev3q"></p><p>Below image shows the <strong>multi-selection</strong> in opened window.</p><p><img loading="lazy" alt="multiple-select-window" src="/assets/images/multiple-select-window-cea208e69b4198551b6479784e25af85.png" title="Multilpe file selection in Browsing window using MS Excel" width="681" height="485" class="img_ev3q"></p><div class="language-vb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-vb codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv codeBlockLinesWithNumbering_o6Pm"><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token comment" style="color:rgb(0, 128, 0)">&#x27; Show the selected file&#x27;s full path in text box</span><span class="token plain"></span></span></span><span class="token-line codeLine_lJS_" style="color:#000000"><span class="codeLineNumber_Tfdd"></span><span class="codeLineContent_feaV"><span class="token plain">SelectedFileTextBox</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token plain">Text </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> fileName</span></span></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>Now we set the value of text box to <strong>browsed</strong> file name.</p><p>Final window of method 1 is shown below/.</p><p><img loading="lazy" alt="final-window-of-method-second" src="data:image/png;base64,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" title="Final window from Method 2" width="331" height="253" class="img_ev3q"></p><p><em>Final window of both method is same.</em></p><hr><h2 class="anchor anchorWithStickyNavbar_LWe7" id="final-words">Final words<a class="hash-link" href="#final-words" title="Direct link to heading">​</a></h2><p><strong>This is it !!!</strong></p><p><em>I hope my efforts will helpful to someone!</em></p><p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p><p>Hope this post helps you in <em>Browsing SOLIDWORKS file(s)</em> with Solidworks VBA Macros.</p><p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p><p><em>If you like the post then please share it with your friends also.</em></p><p><em>Do let me know by you like this post or not!</em></p><p><em>Till then, Happy learning!!!</em></p></div><br><script>window.location.reload(!0)</script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002" data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-tags-row row margin-bottom--sm"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/vba/tags/vba">VBA</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/vba/testing-open-assembly-and-drawing-document-macro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">VBA Userforms - Testing Open new Assembly and Drawing document</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><div><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#creating-userform" class="table-of-contents__link toc-highlight">Creating Userform</a></li><li><a href="#adding-controls-into-userform" class="table-of-contents__link toc-highlight">Adding Controls into Userform</a><ul><li><a href="#adding-combobox" class="table-of-contents__link toc-highlight">Adding ComboBox</a></li><li><a href="#adding-commandbutton" class="table-of-contents__link toc-highlight">Adding CommandButton</a></li></ul></li><li><a href="#updating-properties" class="table-of-contents__link toc-highlight">Updating Properties</a><ul><li><a href="#update-userform-properties" class="table-of-contents__link toc-highlight">Update Userform Properties</a></li><li><a href="#update-textbox-properties" class="table-of-contents__link toc-highlight">Update TextBox Properties</a></li><li><a href="#update-commandbutton-properties" class="table-of-contents__link toc-highlight">Update CommandButton Properties</a></li></ul></li><li><a href="#call-userform-in-main-module" class="table-of-contents__link toc-highlight">Call UserForm in Main Module</a></li><li><a href="#add-functionality-to-button" class="table-of-contents__link toc-highlight">Add Functionality to Button</a></li><li><a href="#method-1---from-sldworks-object-directly" class="table-of-contents__link toc-highlight">Method 1 - From <code>SldWorks</code> object directly</a><ul><li><a href="#understanding-method-1" class="table-of-contents__link toc-highlight">Understanding Method 1</a></li></ul></li><li><a href="#method-2---from-microsoft-excel-externally" class="table-of-contents__link toc-highlight">Method 2 - From <strong>Microsoft Excel</strong> externally</a><ul><li><a href="#understanding-method-2" class="table-of-contents__link toc-highlight">Understanding Method 2</a></li></ul></li><li><a href="#final-words" class="table-of-contents__link toc-highlight">Final words</a></li></ul><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002" data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div></div></div></div></main></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/vba/vba-introduction">VBA Tutorials</a></li><li class="footer__item"><a class="footer__link-item" href="/solidworks-macros/vba-in-solidworks">Solidworks VBA Tutorials</a></li></ul></div><div class="col footer__col"><div class="footer__title">Links</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/aboutme">About</a></li><li class="footer__item"><a class="footer__link-item" href="/resources">Resources</a></li><li class="footer__item"><a class="footer__link-item" href="/privacy">Privacy Policy</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2022 The CAD Coder.</div></div></div></footer></div>
-<script src="/assets/js/runtime~main.87a6ab9f.js"></script>
-<script src="/assets/js/main.6107f5d7.js"></script>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+  <div class="sidebar sticky" style="overflow-y: auto; height:550px;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/" class="active">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
+      <div class="col-md-9 col-sm-8">
+        <div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="VBA Userforms - Browse SOLIDWORKS file(s)">
+    
+    <meta itemprop="description" content="Introduction">
+    
+    
+    <meta itemprop="datePublished" content="2022-09-27T15:07:36-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">VBA Userforms - Browse SOLIDWORKS file(s)
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#creating-userform">Creating Userform</a></li><li><a href="#adding-controls-into-userform">Adding Controls into Userform</a><ul><li><a href="#adding-combobox">Adding ComboBox</a></li><li><a href="#adding-commandbutton">Adding CommandButton</a></li></ul></li><li><a href="#updating-properties">Updating Properties</a><ul><li><a href="#update-userform-properties">Update Userform Properties</a></li><li><a href="#update-textbox-properties">Update TextBox Properties</a></li><li><a href="#update-commandbutton-properties">Update CommandButton Properties</a></li></ul></li><li><a href="#call-userform-in-main-module">Call UserForm in Main Module</a></li><li><a href="#add-functionality-to-button">Add Functionality to Button</a></li><li><a href="#method-1---from-sldworks-object-directly">Method 1 - From SldWorks object directly</a><ul><li><a href="#understanding-method-1">Understanding Method 1</a></li></ul></li><li><a href="#method-2---from-microsoft-excel-externally">Method 2 - From Microsoft Excel externally</a><ul><li><a href="#understanding-method-2">Understanding Method 2</a></li></ul></li><li><a href="#final-words">Final words</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="introduction">Introduction</h2>
+
+<p>In this article, we learn <strong>how to browse SOLIDWORKS file(s)</strong> from a <strong>SOLIDWORKS VBA Userform</strong>.</p>
+
+<p>In this article, I explain about <strong><em>2 different methods</em></strong> which are listed below.</p>
+
+<ol>
+  <li>
+    <p>From <code class="language-plaintext highlighter-rouge">SldWorks</code> object directly.</p>
+  </li>
+  <li>
+    <p>From <strong>Microsoft Excel</strong> externally.</p>
+  </li>
+</ol>
+
+<p>Methods from these objects are <strong><em>updated</em></strong> methods, hence <strong><em>use any one of them</em></strong> for browsing SOLIDWORKS file(s).</p>
+
+<hr />
+<!--
+## Video of Code on YouTube
+
+Please see below video how visually we *browse SOLIDWORKS file(s)* in **SOLIDWORKS VBA Userform**.
+
+<iframe src="https://www.youtube.com/embed/AQ3Fyw78ExI" frameborder="0" allowfullscreen></iframe>
+<br>
+
+Please note that there are **no explanation** in the video. 
+
+**Explanation** of each line and why we write code this way is given in this post.
+
+---
+-->
+
+<h2 id="creating-userform">Creating Userform</h2>
+
+<p>1st we need to create a <strong>new macro</strong> in <em>SOLIDWORKS</em>.</p>
+
+<p>If you don’t know how to create a new macro in Solidworks, please go to <strong><a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a></strong> post for this.</p>
+
+<p>This opens a <strong>Visual Basic Editor</strong> with some code as shown in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/solidworks-vba-window.png" alt="solidworks-vba-window" /></p>
+
+<p>After this we need to insert <em>a userform</em> in our macro.</p>
+
+<p>For this, select the button shown in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/insert-userform-button.png" alt="insert-userform-button" /></p>
+
+<p>This button is called <strong><em>insert userform</em></strong>.</p>
+
+<p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
+
+<blockquote>
+  <p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p>
+</blockquote>
+
+<p>After clicking the <strong><em>insert userform</em></strong> button we get the userform window as shown in above image.</p>
+
+<hr />
+
+<h2 id="adding-controls-into-userform">Adding Controls into Userform</h2>
+
+<p>Now in our userform window, we add following controls:</p>
+
+<ol>
+  <li>
+    <p><strong>A TextBox</strong></p>
+  </li>
+  <li>
+    <p><strong>A CommandButton</strong></p>
+  </li>
+</ol>
+
+<h3 id="adding-combobox">Adding ComboBox</h3>
+
+<p>You can find <code class="language-plaintext highlighter-rouge">TextBox</code> option, as highlighted in <em>Red Square</em> in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/textbox-in-userform.png" alt="textbox-in-userform" /></p>
+
+<p>After adding ComboBox, we get window as shown in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/textbox-inside-userform.png" alt="textbox-inside-userform" /></p>
+
+<h3 id="adding-commandbutton">Adding CommandButton</h3>
+
+<p>You can find <code class="language-plaintext highlighter-rouge">CommandButton</code> option, as highlighted in <em>Red Square</em> in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/insert-command-button-into-userform.png" alt="insert-command-button-into-userform" /></p>
+
+<p>After adding CommandButton, we get window as shown in below image.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/command-button-into-userform.png" alt="command-button-into-userform" /></p>
+
+<hr />
+
+<h2 id="updating-properties">Updating Properties</h2>
+
+<p>Now we update some properties of following:</p>
+
+<ol>
+  <li>
+    <p><strong>Userform</strong></p>
+  </li>
+  <li>
+    <p><strong>TextBox</strong></p>
+  </li>
+  <li>
+    <p><strong>CommandButton</strong></p>
+  </li>
+</ol>
+
+<h3 id="update-userform-properties">Update Userform Properties</h3>
+
+<p>We update following properties of the Userform:</p>
+
+<ol>
+  <li>
+    <p>Name of Userform</p>
+  </li>
+  <li>
+    <p>Caption of Userform</p>
+  </li>
+</ol>
+
+<p>In below image, I have shown the properties of <code class="language-plaintext highlighter-rouge">Userform1</code> and update the properties:</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/update-userform-properties.png" alt="update-userform-properties" /></p>
+
+<p>Update the value of <em>Name</em> property from <code class="language-plaintext highlighter-rouge">UserForm1</code> to <code class="language-plaintext highlighter-rouge">BrowseDocumentWindow</code>.</p>
+
+<ul>
+  <li>From <em>Name</em> property, we access the Userform.</li>
+</ul>
+
+<p>Update the value of <em>Caption</em> property from <code class="language-plaintext highlighter-rouge">UserForm1</code> to <code class="language-plaintext highlighter-rouge">Browse Document</code>.</p>
+
+<ul>
+  <li>From <em>Caption</em> property, we update the text appears in the window of our Userform.</li>
+</ul>
+
+<blockquote>
+  <p>Please note that it is <strong>not necessary</strong> to update properties but it is a good habit to update them for our purpose.</p>
+</blockquote>
+
+<h3 id="update-textbox-properties">Update TextBox Properties</h3>
+
+<p>We update following property of the TextBox:</p>
+
+<ol>
+  <li>Name of TextBox</li>
+</ol>
+
+<p>In below image, I have shown the properties of <code class="language-plaintext highlighter-rouge">TextBox</code> and update the properties:</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/update-textbox-properties.png" alt="update-textbox-properties" /></p>
+
+<p>Update the value of <em>Name</em> property from <code class="language-plaintext highlighter-rouge">TextBox</code> to <code class="language-plaintext highlighter-rouge">SelectedFileTextBox</code>.</p>
+
+<ul>
+  <li>From <em>Name</em> property, we access the TextBox <em>properties</em> like <strong>Text</strong> we want to show.</li>
+</ul>
+
+<h3 id="update-commandbutton-properties">Update CommandButton Properties</h3>
+
+<p>We update following properties of the Command Button:</p>
+
+<ol>
+  <li>
+    <p>Name of Command Button</p>
+  </li>
+  <li>
+    <p>Caption of Command Button</p>
+  </li>
+</ol>
+
+<p>In below image, I have shown the properties of <code class="language-plaintext highlighter-rouge">CommandButton1</code> and update the properties:</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/update-command-button-properties.png" alt="update-command-button-properties" /></p>
+
+<p>Update the value of <em>Name</em> property from <code class="language-plaintext highlighter-rouge">CommandButton1</code> to <code class="language-plaintext highlighter-rouge">BrowseDocumentButton</code>.</p>
+
+<blockquote>
+  <p>From <em>Name</em> property, we access the Command Button.</p>
+</blockquote>
+
+<p>Update the value of <em>Caption</em> property from <code class="language-plaintext highlighter-rouge">CommandButton1</code> to <code class="language-plaintext highlighter-rouge">Browse SOLIDOWRKS File(s)</code>.</p>
+
+<blockquote>
+  <p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="call-userform-in-main-module">Call UserForm in Main Module</h2>
+
+<p>Now, we need to call the our <em>Userform</em> inside main <strong><em>module</em></strong>.</p>
+
+<p>For this goto main <code class="language-plaintext highlighter-rouge">Sub procedure</code> inside the <strong>main Module</strong>.</p>
+
+<p>Code inside the main Module is as given below.</p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="kt">Object</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+<span class="k">End</span> <span class="k">Sub</span></code></pre></figure>
+
+<p>To call our <code class="language-plaintext highlighter-rouge">Userform</code>, replace above code with below code:</p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="c1">' Main function of our VBA program</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
+  <span class="c1">' Calling our window to show</span>
+  <span class="n">BrowseDocumentWindow</span><span class="p">.</span><span class="n">Show</span>
+<span class="k">End</span> <span class="k">Sub</span></code></pre></figure>
+
+<p>Above function call our window to appears on screen.</p>
+
+<p>When the window appears on screen, we hit the <em>Browse button</em> to browse SOLIDWORKS File(s).</p>
+
+<hr />
+
+<h2 id="add-functionality-to-button">Add Functionality to Button</h2>
+
+<p>To add functionality in our <code class="language-plaintext highlighter-rouge">BrowseDocumentButton</code>, just double click the <em>button</em>.</p>
+
+<p>This will add some code behind the designer.</p>
+
+<p>Now open the <strong>code window</strong> of Userform designer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">CommandButton1_Click</span><span class="p">()</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>We need to update this code for opening new part after clicking the button.</p>
+
+<h2 id="method-1---from-sldworks-object-directly">Method 1 - From <code class="language-plaintext highlighter-rouge">SldWorks</code> object directly</h2>
+
+<p>For this replace all above code with below code.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Creating variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+
+<span class="c1">' Private function of Open New Part Button</span>
+<span class="k">Private</span> <span class="k">Sub</span> <span class="nf">BrowseDocumentButton_Click</span><span class="p">()</span>
+
+  <span class="c1">' Setting Solidworks variable to Solidworks application</span>
+  <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Solidworks file filter string</span>
+  <span class="k">Dim</span> <span class="nv">swFilter</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Method parameters</span>
+  <span class="k">Dim</span> <span class="nv">fileName</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">fileConfig</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">fileDispName</span> <span class="ow">As</span> <span class="kt">String</span>
+  <span class="k">Dim</span> <span class="nv">fileOptions</span> <span class="ow">As</span> <span class="kt">Long</span>
+
+  <span class="c1">' Set filters for different Solidworks files.</span>
+  <span class="n">swFilter</span> <span class="o">=</span> <span class="s">"SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw"</span>
+  
+  <span class="c1">' Browse and get the Selected file name</span>
+  <span class="n">fileName</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetOpenFileName</span><span class="p">(</span><span class="s">"Browse Document"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="n">swFilter</span><span class="p">,</span> <span class="n">fileOptions</span><span class="p">,</span> <span class="n">fileConfig</span><span class="p">,</span> <span class="n">fileDispName</span><span class="p">)</span>
+
+  <span class="c1">' Show the selected file's full path in text box</span>
+  <span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span>
+    
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="understanding-method-1">Understanding Method 1</h3>
+
+<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+
+<p>I also give some link so that you can go through them if there are anything I explained in <strong>previous posts</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+<p>Next is our button click event <code class="language-plaintext highlighter-rouge">BrowseDocumentButton_Click</code> procedure.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
+<span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to Solidworks application.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Solidworks file filter string</span>
+<span class="k">Dim</span> <span class="nv">swFilter</span> <span class="ow">As</span> <span class="kt">String</span>
+
+<span class="c1">' Method parameters</span>
+<span class="k">Dim</span> <span class="nv">fileName</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="k">Dim</span> <span class="nv">fileConfig</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="k">Dim</span> <span class="nv">fileDispName</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="k">Dim</span> <span class="nv">fileOptions</span> <span class="ow">As</span> <span class="kt">Long</span>
+</code></pre></div></div>
+
+<p>In above lines of code, we create SOLIDWORKS <em>files filter</em> string and <em>Method parameters</em>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set filters for different Solidworks files.</span>
+<span class="n">Filter</span> <span class="o">=</span> <span class="s">"SOLIDWORKS Files (*.sldprt; *.sldasm; *.slddrw)|*.sldprt;*.sldasm;*.slddrw"</span>
+</code></pre></div></div>
+
+<p>In above line of code, we set filters for different SOLIDWORKS files.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Browse and get the Selected file name</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetOpenFileName</span><span class="p">(</span><span class="s">"Browse Document"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="n">swFilter</span><span class="p">,</span> <span class="n">fileOptions</span><span class="p">,</span> <span class="n">fileConfig</span><span class="p">,</span> <span class="n">fileDispName</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For “<strong>Browse and get the Selected file name</strong>”, we use <code class="language-plaintext highlighter-rouge">GetOpenFileName</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">SldWorks</code> object.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">GetOpenFileName</code> method takes following parameters as explained:</p>
+
+<ul>
+  <li>
+    <p><strong>DialogTitle</strong> : <em>Title of the dialog.</em></p>
+  </li>
+  <li>
+    <p><strong>InitialFileName</strong> : <em>Path and file name of the file to open.</em></p>
+  </li>
+  <li>
+    <p><strong>FileFilter</strong> : <em>File name extension of the file to open.</em></p>
+  </li>
+  <li>
+    <p><strong>OpenOptions</strong> : <em>Not used.</em></p>
+  </li>
+  <li>
+    <p><strong>ConfigName</strong> : <em>Name of the configuration.</em></p>
+  </li>
+  <li>
+    <p><strong>DisplayName</strong> : <em>Recommended file name to use.</em></p>
+  </li>
+</ul>
+
+<p>After the function complete following are the results:</p>
+
+<p><strong>Return Value</strong>:</p>
+
+<ul>
+  <li><em>Path and file name of the file to open.</em></li>
+</ul>
+
+<p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png" alt="userform-in-solidworks" title="Our userform in Solidworks" /></p>
+
+<p>Below image shows the opened window.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/browse-window.png" alt="browse-window" title="Browsing window" /></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show the selected file's full path in text box</span>
+<span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span>
+</code></pre></div></div>
+
+<p>Now we set the value of text box to <strong>browsed</strong> file name.</p>
+
+<p>Final window of method 1 is shown below/.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/final-window-of-method-first.png" alt="final-window-of-method-first" title="Final window from Method 1" /></p>
+
+<hr />
+
+<h2 id="method-2---from-microsoft-excel-externally">Method 2 - From <strong>Microsoft Excel</strong> externally</h2>
+
+<p><strong>Prerequisite</strong>:</p>
+
+<ol>
+  <li>
+    <p><strong>Office 365</strong></p>
+  </li>
+  <li>
+    <p><strong>Following below steps carefully</strong></p>
+  </li>
+</ol>
+
+<p>For this method we need to use <strong>Microsoft Excel</strong> from SOLIDWORKS.</p>
+
+<p>For using <strong>Microsoft Excel</strong>, we need to add reference files.</p>
+
+<p>Please see following steps for adding reference files:</p>
+
+<ol>
+  <li>Select reference option as shown in below image.</li>
+</ol>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/select-reference-option.png" alt="select-reference-option" title="Select reference option from Tools options" /></p>
+
+<ol>
+  <li>This open Reference window as shown in below image.</li>
+</ol>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/reference-window.png" alt="reference-window" title="Reference window" /></p>
+
+<ol>
+  <li>Now select option given in below images and Press OK after selecting files..</li>
+</ol>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/add-excel-reference.png" alt="add-excel-reference" title="Select reference file highlighted in red box" /></p>
+
+<p>Now, replace code in <em><a href="#add-functionality-to-button">Add Functionality to Button</a></em> with below code sample.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+
+<span class="c1">' Private function of Open New Part Button</span>
+<span class="k">Private</span> <span class="k">Sub</span> <span class="nf">BrowseDocumentButton_Click</span><span class="p">()</span>
+    
+  <span class="c1">' Excel object</span>
+  <span class="k">Dim</span> <span class="nv">xlObj</span> <span class="ow">As</span> <span class="kt">Object</span>
+  
+  <span class="c1">' File dialog object</span>
+  <span class="k">Dim</span> <span class="nv">fDialog</span> <span class="ow">As</span> <span class="kt">Object</span>
+  
+  <span class="c1">' File name sting</span>
+  <span class="k">Dim</span> <span class="nv">strFile</span> <span class="ow">As</span> <span class="kt">String</span>
+  
+  <span class="c1">' Create Excel object</span>
+  <span class="k">Set</span> <span class="n">xlObj</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
+  
+  <span class="c1">' Create File dialog object by setting option 3</span>
+  <span class="k">Set</span> <span class="n">fDialog</span> <span class="o">=</span> <span class="n">xlObj</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+  
+  <span class="c1">' Setting different properties of file dialog</span>
+  <span class="k">With</span> <span class="n">fDialog</span>
+    <span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"Browse Document"</span>  <span class="c1">' Title of window</span>
+    <span class="p">.</span><span class="n">AllowMultiSelect</span> <span class="o">=</span> <span class="k">True</span>    <span class="c1">' Allowing multiple select</span>
+    <span class="p">.</span><span class="n">Filters</span><span class="p">.</span><span class="n">Clear</span>              <span class="c1">' Clear the filters</span>
+    <span class="p">.</span><span class="n">Filters</span><span class="p">.</span><span class="n">Add</span> <span class="s">"SOLIDWORKS Files"</span><span class="p">,</span> <span class="s">"*.sldprt; *.sldasm; *.slddrw"</span>       <span class="c1">' Add filters for Solidworks files</span>
+      <span class="k">If</span> <span class="p">.</span><span class="n">Show</span> <span class="k">Then</span>
+        <span class="n">strFile</span> <span class="o">=</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">Else</span>
+        <span class="n">strFile</span> <span class="o">=</span> <span class="n">vbNullString</span>
+      <span class="k">End</span> <span class="k">If</span>
+  <span class="k">End</span> <span class="k">With</span>
+    
+  <span class="c1">' Show the selected file's full path in text box</span>
+  <span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">strFile</span>
+    
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="understanding-method-2">Understanding Method 2</h3>
+
+<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+
+<p>I also give some link so that you can go through them if there are anything I explained in <strong>previous posts</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<p>This line forces us to define every variable we are going to use.</p>
+
+<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+
+<p>Next is our button click event <code class="language-plaintext highlighter-rouge">BrowseDocumentButton_Click</code> procedure.</p>
+
+<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Excel object</span>
+<span class="k">Dim</span> <span class="nv">xlObj</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre></div></div>
+
+<p>In this line, we create object for <strong>Microsoft Excel Application</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' File dialog object</span>
+<span class="k">Dim</span> <span class="nv">fDialog</span> <span class="ow">As</span> <span class="kt">Object</span>
+
+<span class="c1">' File name sting</span>
+<span class="k">Dim</span> <span class="nv">strFile</span> <span class="ow">As</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<p>In above lines of code, we create <code class="language-plaintext highlighter-rouge">objects</code> for <strong>File Dialog</strong> and <code class="language-plaintext highlighter-rouge">string</code> for file name.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Excel object</span>
+<span class="k">Set</span> <span class="n">xlObj</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create <strong>Microsoft Excel Application</strong> and set the value of excel object.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create File dialog object by setting option 3</span>
+<span class="k">Set</span> <span class="n">fDialog</span> <span class="o">=</span> <span class="n">xlObj</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In above line of code, we create <strong>File dialog</strong> and set the value of file dialog by <code class="language-plaintext highlighter-rouge">FileDialog</code> method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">FileDialog</code> method take 1 parameter <code class="language-plaintext highlighter-rouge">enum</code>. Please see below links for more details about <code class="language-plaintext highlighter-rouge">FileDialog</code></p>
+
+<p><strong><a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.filedialog">Application.FileDialog property (Excel)</a></strong></p>
+
+<p><strong><a href="https://docs.microsoft.com/en-us/office/vba/api/office.msofiledialogtype">MsoFileDialogType enumeration (Office)</a></strong></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting different properties of file dialog</span>
+<span class="k">With</span> <span class="n">fDialog</span>
+  <span class="p">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"Browse Document"</span>  <span class="c1">' Title of window</span>
+  <span class="p">.</span><span class="n">AllowMultiSelect</span> <span class="o">=</span> <span class="k">True</span>    <span class="c1">' Allowing multiple select</span>
+  <span class="p">.</span><span class="n">Filters</span><span class="p">.</span><span class="n">Clear</span>              <span class="c1">' Clear the filters</span>
+  <span class="p">.</span><span class="n">Filters</span><span class="p">.</span><span class="n">Add</span> <span class="s">"SOLIDWORKS Files"</span><span class="p">,</span> <span class="s">"*.sldprt; *.sldasm; *.slddrw"</span>       <span class="c1">' Add filters for Solidworks files</span>
+    <span class="k">If</span> <span class="p">.</span><span class="n">Show</span> <span class="k">Then</span>
+      <span class="n">strFile</span> <span class="o">=</span> <span class="p">.</span><span class="n">SelectedItems</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>     <span class="c1">' Select 3rd item from list</span>
+    <span class="k">Else</span>
+      <span class="n">strFile</span> <span class="o">=</span> <span class="n">vbNullString</span>
+    <span class="k">End</span> <span class="k">If</span>
+<span class="k">End</span> <span class="k">With</span>
+</code></pre></div></div>
+
+<p>In above code we set different properties of File dialog object.</p>
+
+<ul>
+  <li>
+    <p><strong>Title</strong> : <em>Title of the dialog.</em></p>
+  </li>
+  <li>
+    <p><strong>AllowMultiSelect</strong> : <em>Allowing multi select of files.</em></p>
+  </li>
+  <li>
+    <p><strong>FileFilter</strong> : <em>File name extension of the file to open.</em></p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">If</code> statement shows that, if <em>file dialog</em> is shown then assign the <em>first value</em> to <strong>file name</strong> string object.</p>
+
+<p>After the function complete following are the results:</p>
+
+<p><strong>Return Value</strong>:</p>
+
+<ul>
+  <li><em>Path and file name of the selected file(s).</em></li>
+</ul>
+
+<p>Below image shows our <strong>form</strong> in SOLIDWORKS.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/userform-in-solidworks.png" alt="userform-in-solidworks" title="Our userform in Solidworks" /></p>
+
+<p>Below image shows the opened window.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/excel-browse-window.png" alt="excel-browse-window" title="Browsing window using MS Excel" /></p>
+
+<p>Below image shows the <strong>multi-selection</strong> in opened window.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/multiple-select-window.png" alt="multiple-select-window" title="Multilpe file selection in Browsing window using MS Excel" /></p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show the selected file's full path in text box</span>
+<span class="n">SelectedFileTextBox</span><span class="p">.</span><span class="n">Text</span> <span class="o">=</span> <span class="n">fileName</span>
+</code></pre></div></div>
+
+<p>Now we set the value of text box to <strong>browsed</strong> file name.</p>
+
+<p>Final window of method 1 is shown below/.</p>
+
+<p><img src="/assets/vba-images/browse-solidworks-files/final-window-of-method-first.png" alt="final-window-of-method-second" title="Final window from Method 2" /></p>
+
+<p><em>Final window of both method is same.</em></p>
+
+<hr />
+
+<h2 id="final-words">Final words</h2>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em></p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+
+<p>Hope this post helps you in <em>Browsing SOLIDWORKS file(s)</em> with Solidworks VBA Macros.</p>
+
+<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em></p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-09-27T15:07:36-04:00">September 27, 2022</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/testing-open-assembly-and-drawing-document-macro/" title="VBA Userforms - Testing Open new Assembly and Drawing document
+">❮ Previous</a>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
+
+    </div>
+  </article>
+
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
 </body>
+
 </html>
