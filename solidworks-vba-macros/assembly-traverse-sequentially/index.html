@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks Macro - Create Centerpoint Arc - The CAD Coder</title>
-<meta name="description" content="In this post, I tell you about how to create a Centerpoint Arc through Solidworks VBA Macros in a sketch.">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Traverse Components Sequentially - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks Macro - Create Centerpoint Arc">
-<meta property="og:url" content="https://thecadcoder.com//solidworks-macros/create-centerpoint-arc/">
+<meta property="og:title" content="Solidworks VBA Macro - Traverse Components Sequentially">
+<meta property="og:url" content="https://thecadcoder.com//solidworks-vba-macros/assembly-traverse-sequentially/">
 
 
-  <meta property="og:description" content="In this post, I tell you about how to create a Centerpoint Arc through Solidworks VBA Macros in a sketch.">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com//solidworks-macros/create-centerpoint-arc/">
+<link rel="canonical" href="https://thecadcoder.com//solidworks-vba-macros/assembly-traverse-sequentially/">
 
 
 
@@ -243,7 +243,7 @@
         
         <ul>
           
-            <li><a href="/solidworks-macros/create-centerpoint-arc/" class="active">Create Centerpoint Arc</a></li>
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
           
             <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
           
@@ -669,7 +669,7 @@
           
             <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
           
-            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
+            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/" class="active">Traverse Components Sequentially</a></li>
           
         </ul>
         
@@ -705,9 +705,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks Macro - Create Centerpoint Arc">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Traverse Components Sequentially">
     
-    <meta itemprop="description" content="In this post, I tell you about how to create a Centerpoint Arc through Solidworks VBA Macros in a sketch.">
+    <meta itemprop="description" content="Objective">
     
     
     <meta itemprop="datePublished" content="2022-10-04T16:24:41-04:00">
@@ -716,7 +716,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Create Centerpoint Arc
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Traverse Components Sequentially
 </h1>
         
 
@@ -749,7 +749,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#understanding-the-code">Understanding the Code</a><ul><li><a href="#note">NOTE</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-global-variables">Initialize Global Variables</a></li><li><a href="#traverse-components">Traverse Components</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -780,284 +780,421 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <p>In this post, I tell you about <em>how to create a Centerpoint Arc through Solidworks VBA Macros</em> in a sketch.</p>
+          <h2 id="objective">Objective</h2>
 
-<p>The process is almost identical with previous <strong><a href="/solidworks-macros/sketch-create-line">Solidworks Sketch Macros - Create Line</a></strong> post.</p>
+<p>In this article, we understand “how to” <strong>Traverse Components Sequentially</strong> in <strong>Assembly document</strong> from VBA macro.</p>
 
-<p>In this post, I tell you about <code class="language-plaintext highlighter-rouge">CreateArc</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">SketchManager</code> object.</p>
+<p>There are no direct method to <strong>Traverse Components in Sequentially</strong> manner.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+<p>There are 2 methods available from which we get Components in an Assembly document.</p>
 
-<p>So <strong><em>use this method</em></strong> if you want to create a new <strong>Centerpoint Arc</strong>.</p>
+<ol>
+  <li>
+    <p><strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html"><code class="language-plaintext highlighter-rouge">GetComponents()</code></a></strong> method from <strong><code class="language-plaintext highlighter-rouge">AssemblyDoc</code></strong> object.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2~GetChildren.html"><code class="language-plaintext highlighter-rouge">GetChildren()</code></a></strong> method from <strong><code class="language-plaintext highlighter-rouge">Component2</code></strong> object.</p>
+  </li>
+</ol>
 
-<hr />
+<p>Both methods, return collection of <strong><code class="language-plaintext highlighter-rouge">Component2</code></strong> object but not in the same order as they are in Feature tree.</p>
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+<p>To address this issue, we have this macro.</p>
 
-<p>Please see below video on <strong>how to create a Centerpoint Arc</strong> from Solidworks VBA Macros.</p>
+<h2 id="results-we-can-get">Results We Can Get</h2>
 
-<iframe src="https://www.youtube.com/embed/Y9nEY9yY70g" frameborder="0" allowfullscreen=""></iframe>
+<p>Below image shows the result we get.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-traverse-sequentially/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-traverse-sequentially/final-result-gif.gif" alt="assembly-traverse-sequentially" /></a></p>
+
+<p>We <strong>Traverse Components Sequentially</strong> in simple manners.</p>
+
+<p>There are no extra steps required.</p>
+
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
+
+<h2 id="macro-video">Macro Video</h2>
+
+<p>Below 🎬 video shows how to <strong>Traverse Components Sequentially</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/tQfObXgqPoA" frameborder="0" allowfullscreen=""></iframe>
 <p><br /></p>
 
-<p>Please note that there are <strong>no explaination</strong> in the video.</p>
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
 
-<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+<p><strong><em>I have explained every line in this article.</em></strong></p>
 
-<hr />
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
 
-<h2 id="code-sample">Code Sample</h2>
+<h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>a Centerpoint Arc</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Traverse Components Sequentially</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Creating variable for Solidworks application</span>
+<span class="c1">' Variable for Solidworks Application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-<span class="c1">' Creating variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-<span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-<span class="c1">' Creating variable for Solidworks Sketch Manager</span>
-<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
 
-<span class="c1">' Main function of our VBA program</span>
+<span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+
+<span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+
+<span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+
+<span class="c1">' Variable for Solidworks Feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+
+<span class="c1">'  Program to sequentially Traversing Assembly document</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
-  <span class="c1">' Setting Solidworks variable to Solidworks application</span>
+  <span class="c1">' Set Solidworks Application variable to current application</span>
   <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
+  
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
+  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
+  
+  <span class="c1">' Check if Solidworks document is opened or not</span>
+  <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
+    <span class="k">Exit</span> <span class="k">Sub</span>
+  <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Set Solidworks Assembly document</span>
+  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+  
+  <span class="c1">' Variable for List of elements</span>
+  <span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  
+  <span class="c1">' Get Components list in opened assembly</span>
+  <span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+  
+  <span class="c1">' Variable for component</span>
+  <span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  
+  <span class="c1">' Get first feature in Feature Tree</span>
+  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+  
+  <span class="c1">' Loop until Solidworks Feature is nothing</span>
+  <span class="k">Do</span> <span class="k">While</span> <span class="k">Not</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span>
     
-  <span class="c1">' Creating string type variable for storing default part location</span>
-  <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-  <span class="c1">' Setting value of this string type variable to "Default part template"</span>
-  <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+    <span class="c1">' Loop Components List</span>
+    <span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
+    
+      <span class="c1">' Set Solidworks Component variable</span>
+      <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
+      
+      <span class="c1">' Check if current feature name is same as current component</span>
+      <span class="k">If</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">Name</span> <span class="k">Then</span>
+    
+        <span class="c1">' Print Feature name</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+    
+      <span class="k">End</span> <span class="k">If</span>
+    
+    <span class="c1">' Move to next component</span>
+    <span class="k">Next</span> <span class="n">component</span>
+    
+    <span class="c1">' Get next Feature in Feature tree</span>
+    <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
+    
+  <span class="k">Loop</span>
+  
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
 
-  <span class="c1">' Setting Solidworks document to new part document</span>
-  <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<h2 id="prerequisite">Prerequisite</h2>
 
-  <span class="c1">' Selecting Front Plane</span>
-  <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-    
-  <span class="c1">' Setting Sketch manager for our sketch</span>
-  <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
-    
-  <span class="c1">' Inserting a sketch into selected plane</span>
-  <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
-    
-  <span class="c1">' Creating variable name "myCenterpointArc" of "SketchArc" type</span>
-  <span class="k">Dim</span> <span class="nv">myCenterpointArc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchArc</span>
-    
-  <span class="c1">' Creating a new Centerpoint Arc</span>
-  <span class="k">Set</span> <span class="n">myCenterpointArc</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateArc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    
-  <span class="c1">' De-select the Arc after creation</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    
-  <span class="c1">' Zoom to fit screen in Solidworks Window</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
+<p>There are some <em>prerequisites</em> for this article.</p>
+
+<ul>
+  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We use existing parts in Assembly document.</li>
+  <li>All components are fully constraint as shown in below image.</li>
+  <li>Immediate Window needs to open to see result.</li>
+</ul>
+
+<p><a href="/assets/Solidworks_Images/assembly-traverse-sequentially/prerequisite.png"><img src="/assets/Solidworks_Images/assembly-traverse-sequentially/prerequisite.png" alt="prerequisite" /></a></p>
+
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
+
+<h2 id="steps-to-follow">Steps To Follow</h2>
+
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
+
+<ol>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Global Variables</em></li>
+  <li><em>Traverse Components</em></li>
+</ol>
+
+<p><strong><em>Every section with each line is explained below.</em></strong></p>
+
+<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+
+<h3 id="create-global-variables">Create Global Variables</h3>
+
+<p>In this section, we create global variables.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
+<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Assembly</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swAssembly</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
+<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Component</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swComponent</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Feature</span>
+<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Feature</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swFeature</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.Ifeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
+<p><strong><em>These all are our global variables.</em></strong></p>
+
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">'  Program to sequentially Traversing Assembly document</span>
+<span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
-<hr />
+<ul>
+  <li>In above line, we create <em>Program to sequentially Traversing Assembly document</em>.</li>
+  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
+</ul>
 
-<h2 id="understanding-the-code">Understanding the Code</h2>
+<h3 id="initialize-global-variables">Initialize Global Variables</h3>
 
-<p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
+<p>In this section, we initialize global variables.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre></div></div>
-
-<p>This line forces us to define every variable we are going to use.</p>
-
-<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks application</span>
-<span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
-
-<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks document</span>
-<span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre></div></div>
-
-<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
-
-<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure named <code class="language-plaintext highlighter-rouge">main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks variable to Solidworks application</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
 
-<p>In this line, we are setting the value of our Solidworks variable which we define earlier to Solidworks application.</p>
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <em>value</em> is currently opened Solidworks application.</li>
+</ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating string type variable for storing default part location</span>
-<span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-<span class="c1">' Setting value of this string type variable to "Default part template"</span>
-<span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
+<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
 </code></pre></div></div>
-
-<p>In 1st statement of above example, we are defining a variable of <code class="language-plaintext highlighter-rouge">string</code> type and named it as <code class="language-plaintext highlighter-rouge">defaultTemplate</code>.</p>
-
-<p>This variable <code class="language-plaintext highlighter-rouge">defaultTemplate</code>, hold the location the location of <strong>Default Part Template</strong>.</p>
-
-<p>In 2nd line of above example. we assign value to our newly define <code class="language-plaintext highlighter-rouge">defaultTemplate</code> variable.</p>
-
-<p>We assign the value by using a <em>Method</em> named <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code>. This method is a part of our main Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document to new part document</span>
-<span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>In this line, we set the value of our <code class="language-plaintext highlighter-rouge">swDoc</code> variable to new document.</p>
-
-<p>For <strong>detailed information</strong> about these lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
-<span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-
-<span class="c1">' Selecting Front Plane</span>
-<span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>In 1st line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object.</p>
-
-<p>In next line, we select the <em>front plane</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
-
-<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sketch Manager</span>
-<span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
-</code></pre></div></div>
-
-<p>In above line, we create variable <code class="language-plaintext highlighter-rouge">swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
-
-<p>As the name suggested, a Sketch Manager holds variours methods and properties to manage Sketches.</p>
-
-<p>To see methods and properties related to SketchManager object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page of Solidworks API</a></strong></p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Sketch manager for our sketch</span>
-<span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
-</code></pre></div></div>
-
-<p>In above line, we set the sketch manager variable to current document’s sketch manager.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inserting a sketch into selected plane</span>
-<span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<p>In above line, we use <code class="language-plaintext highlighter-rouge">InsertSketch</code> method of <em>SketchManager</em> and give <code class="language-plaintext highlighter-rouge">True</code> value.</p>
-
-<p>This method allows us to insert a sketch in selected plane.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable name "myCenterpointArc" of "SketchArc" type</span>
-<span class="k">Dim</span> <span class="nv">myCenterpointArc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchArc</span>
-    
-<span class="c1">' Creating a new Centerpoint Arc</span>
-<span class="k">Set</span> <span class="n">myCenterpointArc</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateArc</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>In above sample code, we 1st create a variable named <code class="language-plaintext highlighter-rouge">myCenterpointArc</code> of type <code class="language-plaintext highlighter-rouge">SketchArc</code>.</p>
-
-<p>A <code class="language-plaintext highlighter-rouge">SketchArc</code> holds variours <em>methods and properties</em> to manage Arcs.</p>
-
-<p>To see <em>methods and properties</em> related to <code class="language-plaintext highlighter-rouge">SketchArc</code> object, please <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchArc.html">this page of Solidworks API Help</a></strong></p>
-
-<p>In 2nd line, we set the value of sketch segment variable <code class="language-plaintext highlighter-rouge">myCenterpointArc</code>.</p>
-
-<p>We get this value from <code class="language-plaintext highlighter-rouge">CreateArc</code> method which is inside the <code class="language-plaintext highlighter-rouge">swSketchManager</code> variable.</p>
-
-<p><code class="language-plaintext highlighter-rouge">swSketchManager</code> variable is a type of SketchManager, hence we used <code class="language-plaintext highlighter-rouge">CreateArc</code> method from SketchManager.</p>
-
-<p>This <code class="language-plaintext highlighter-rouge">CreateArc</code> method takes following parameters as explained:</p>
 
 <ul>
-  <li>
-    <p><em>Xc</em> : X coordinate of the center point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Yc</em> : Y coordinate of the center point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Zc</em> : Z coordinate of the center point, of the arc</p>
-  </li>
-  <li>
-    <p><em>X1</em> : X coordinate of the start point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Y1</em> : Y coordinate of the start point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Z1</em> : Z coordinate of the start point, of the arc</p>
-  </li>
-  <li>
-    <p><em>X2</em> : X coordinate of the end point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Y2</em> : Y coordinate of the end point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Z2</em> : Z coordinate of the end point, of the arc</p>
-  </li>
-  <li>
-    <p><em>Direction</em> : Clockwise or Anti-clockwise (Counter Clockwise) direction</p>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <em>value</em> is currently <em>opened part document</em>.</li>
+</ul>
 
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+<span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
-      <li>
-        <p>+1 : Start point to end point in Anti-clockwise (Counter Clockwise) direction.</p>
-      </li>
-      <li>
-        <p>-1 : Start point to end point in Clockwise direction.</p>
-      </li>
+      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
+      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened.</em></li>
+      <li>Then we <strong>stop</strong> our macro here.</li>
     </ul>
   </li>
 </ul>
 
-<p>In the above code sample I have used (0, 0, 0) which is at origin as center of Arc.</p>
-
-<p>For start point of the Arc I used (1, 0, 0) which is 1 point distance in X-direction.</p>
-
-<p>For End point of the Arc I used (-1, 0, 0) which is -1 point distance in X-direction.</p>
-
-<p>For Direction, I give +1 value, which means <em>Anti-Clockwise</em> direction.</p>
-
-<p>Below Image show above parameters in Details.</p>
-
-<p><img src="/assets/Solidworks_Images/arcs/centerpoint-arc-parameter.png" alt="centerpoint-arc-parameter-details" /></p>
-
-<h3 id="note">NOTE</h3>
-
-<p>It is <strong><em>very important</em></strong> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <strong><em>Meter only</em></strong>.</p>
-
-<p><em>Solidworks API</em> does not care about your application’s Unit systems.</p>
-
-<p>For example, I works in ANSI system means “inches” for distance.</p>
-
-<p>But when I used Solidworks API through <em>VBA macros</em> or <em>C#</em>, I have to use <strong>converted</strong> numeric values.</p>
-
-<p>Because Solidworks API output the distance in <strong>Meter</strong> only; which is not my requirement.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the Arc after creation</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
+<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre></div></div>
 
-<p>In the this line of code, we de-select the created Centerpoint Arc.</p>
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
 
-<p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+<h3 id="traverse-components">Traverse Components</h3>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit screen in Solidworks Window</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
+<p>In this section, we perform <em>Traverse Components</em> action.</p>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for List of elements</span>
+<span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
 </code></pre></div></div>
 
-<p>In this last line we use <em>zoom to fit</em> command.</p>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>List of elements</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">vArray</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ul>
 
-<p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get Components list in opened assembly</span>
+<span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">False</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Hope this post helps you to <em>create Centerpoint Arc</em> in Sketches with Solidworks VB Macros.</p>
+<ul>
+  <li>In above line, we set the value of <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
+  <li>We set value by <strong><code class="language-plaintext highlighter-rouge">GetComponents</code></strong> method of <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+  <li>By passing <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to <strong><code class="language-plaintext highlighter-rouge">GetComponents</code></strong> method, we get all components from Feature Tree.</li>
+</ul>
 
-<p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for component</span>
+<span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</code></pre></div></div>
 
-<p>Till then, Happy learning!!!</p>
+<ul>
+  <li>In above line, we create <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable for looping.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">component</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get first feature in Feature Tree</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FirstFeature</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we get the first feature in Feature Tree.</li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">FirstFeature</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until Solidworks Feature is nothing</span>
+<span class="k">Do</span> <span class="k">While</span> <span class="k">Not</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span>
+  
+<span class="k">Loop</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a <code class="language-plaintext highlighter-rouge">Do While</code> loop.</li>
+  <li>We loop Feature tree manager.</li>
+  <li>We loop until Solidworks Feature is nothing.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop Components List</span>
+<span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
+  
+<span class="c1">' Move to next component</span>
+<span class="k">Next</span> <span class="n">component</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we create a <code class="language-plaintext highlighter-rouge">For Each</code> loop.</li>
+  <li>In this loop, <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable loops every item in <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Component variable</span>
+<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
+  <li>This <em>value</em> is current value of array <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
+  <li>Current value is represented by <strong><code class="language-plaintext highlighter-rouge">component</code></strong> variable.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if current feature name is same as current component</span>
+<span class="k">If</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">Name</span> <span class="k">Then</span>
+  
+<span class="k">End</span> <span class="k">If</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code block, we check <em>if current feature name is same as current component</em>.</li>
+  <li>We use 🚀 <strong><a href="/vba/vba-if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swFeature.Name = swComponent.Name</code></strong></li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print Feature name</span>
+<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">Name</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above code, we print the <strong>Feature name</strong> in <em>Immediate window</em>.</li>
+</ul>
+
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get next Feature in Feature tree</span>
+<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swFeature</span><span class="p">.</span><span class="n">GetNextFeature</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In above line of code, we get next Feature in Feature tree.</li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
+  <li>We set the value to <strong><code class="language-plaintext highlighter-rouge">GetNextFeature</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swFeature</code></strong> variable.</li>
+</ul>
+
+<p>Now we run the macro and after running macro we show selected component as shown in below image.</p>
+
+<p><a href="/assets/Solidworks_Images/assembly-traverse-sequentially/final-result-gif.gif"><img src="/assets/Solidworks_Images/assembly-traverse-sequentially/final-result-gif.gif" alt="assembly-traverse-sequentially" /></a></p>
+
+<p><strong>This is it !!!</strong></p>
+
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
+
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
+
+<p>Hope this post helps you to <strong>Traverse Components</strong> with SOLIDWORKS VBA Macros.</p>
+
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
+
+<p><em>Do let me know by you like this post or not!</em></p>
+
+<p><em>Till then, Happy learning!!!</em></p>
 
         </div>
         
@@ -1094,13 +1231,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-perimeter-circle/" title="Solidworks Macro - Create Perimeter Circle
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-insert-folder/" title="Solidworks VBA Macro - Insert Folder
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-tangent-arc/" title="Solidworks Macro - Create Tangent Arc
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
