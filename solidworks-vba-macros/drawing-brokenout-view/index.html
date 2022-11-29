@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Create Reference Co-Ordinate - The CAD Coder</title>
-<meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Insert Broken-out View - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Create Reference Co-Ordinate">
-<meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/create-reference-coordinate/">
+<meta property="og:title" content="Solidworks VBA Macro - Insert Broken-out View">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/drawing-brokenout-view/">
 
 
-  <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/create-reference-coordinate/">
+<link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/drawing-brokenout-view/">
 
 
 
@@ -101,7 +101,7 @@
             
             
             <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
             </li>
             
             
@@ -547,7 +547,7 @@
           
             <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
           
-            <li><a href="/solidworks-vba-macros/create-reference-coordinate/" class="active">Reference Co-Ordinate</a></li>
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
           
             <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
           
@@ -729,9 +729,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Create Reference Co-Ordinate">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Insert Broken-out View">
     
-    <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+    <meta itemprop="description" content="Objective">
     
     
     <meta itemprop="datePublished" content="2022-11-29T09:54:20-05:00">
@@ -740,7 +740,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Create Reference Co-Ordinate
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Insert Broken-out View
 </h1>
         
 
@@ -756,7 +756,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 minute read
+          6 minute read
         
       </span>
     
@@ -773,7 +773,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-and-initialize-required-variables">Create and Initialize required variables</a></li><li><a href="#ask-user-to-select-a-point">Ask user to select a Point</a></li><li><a href="#create-reference-co-ordinate">Create Reference Co-Ordinate</a></li><li><a href="#final-work">Final work</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-variables">Initialize Variables</a></li><li><a href="#insert-broken-out-views">Insert Broken-out Views</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -804,165 +804,119 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <div class="notice--warning">
-  This article has <strong>"Beginner ➡ Intermediate"</strong> level Macro program.<br />
-  If you are following my articles then will not be an issue for you.<br />
-  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
-  I hope you will also like this type of tutorials.<br />
-  Thank you for reading.<br />
-</div>
+          <h2 id="objective">Objective</h2>
 
-<h2 id="objective">Objective</h2>
+<p>In this article, we understand “how to” <strong>Insert Broken-out View</strong> in <strong>Drawing document</strong> from VBA macro.</p>
 
-<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Reference Co-Ordinate</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
-
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Reference Co-Ordinate</strong> quickly.</p>
+<p>This is most updated method of <strong>Insert Broken-out View</strong> in an drawing document.</p>
 
 <h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>After running our macro we successfully create <strong>Reference Co-Ordinate</strong> as a result.</p>
-
 <p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/reference-coordinate/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-coordinate/final-result-gif.gif" alt="reference-coordinate-feature-final-result" /></a></p>
+<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif" alt="drawing-brokenout-view" /></a></p>
 
-<p>We create <strong>Reference Co-Ordinate</strong> in following steps in general.</p>
+<p>We <strong>Insert Broken-out View</strong> in simple manners.</p>
 
-<ol>
-  <li><em>Ask User to select an Entity in Model.</em></li>
-  <li><em>Create Reference Co-Ordinate on selected Entity.</em></li>
-</ol>
+<p>There are no extra steps required.</p>
 
-<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+<p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
 
 <h2 id="macro-video">Macro Video</h2>
 
-<p>Below 🎬 video shows <strong>Reference Co-Ordinate</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<p>Below 🎬 video shows how to <strong>Insert Broken-out View</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/3GqWyDWgHiM" frameborder="0" allowfullscreen=""></iframe>
-
+<iframe src="https://www.youtube.com/embed/lrcGGsFqWyc" frameborder="0" allowfullscreen=""></iframe>
 <p><br /></p>
 
-<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+<p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
 
-<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+<p><strong><em>I have explained every line in this article.</em></strong></p>
 
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+<p class="notice--warning">It is advisable to watch video, since it helps you to better understand the process.</p>
 
 <h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Reference Co-Ordinate</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Insert Broken-out View</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Variable for Solidworks Application</span>
+<span class="c1">' Creating variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
 
-<span class="c1">' Variable for Solidworks document</span>
+<span class="c1">' Creating variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 
-<span class="c1">' Variable for Solidworks Reference Co-ordinate</span>
-<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<span class="c1">' Creating variable for Solidworks Drawing</span>
+<span class="k">Dim</span> <span class="nv">swDrawing</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
 
-<span class="c1">' Variable for Solidworks Selection Manager</span>
-<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
-
-<span class="c1">' Variable for Solidworks Object</span>
-<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="kt">Object</span>
-
-<span class="c1">' Program to create Reference Co-ordinate</span>
+<span class="c1">' Program to Insert Broken-out View</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
-  <span class="c1">' Set Solidworks Application variable</span>
+  <span class="c1">' Setting Solidworks variable to Solidworks application</span>
   <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-
-  <span class="c1">' Check if SOLIDWORKS is opened or not</span>
-  <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Set Solidworks document variable</span>
+  <span class="c1">' Set Solidworks document variable to currently opened document</span>
   <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-
+  
   <span class="c1">' Check if Solidworks document is opened or not</span>
   <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened."</span><span class="p">)</span>
+    <span class="n">MsgBox</span> <span class="s">"Solidworks document is not opened."</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
-
-  <span class="c1">' Set Solidworks Selection Manager</span>
-  <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
   
-  <span class="c1">' Inform user to select a Point for Reference Co-ordinate.</span>
-  <span class="n">MsgBox</span> <span class="s">"Please select a Point for Reference Co-ordinate."</span>
-      
-  <span class="c1">' Loop until we select an Object</span>
-  <span class="k">While</span> <span class="n">swObject</span> <span class="ow">Is</span> <span class="k">Nothing</span>
-      
-    <span class="c1">' Local integer for loop</span>
-    <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-    
-    <span class="c1">' Looping until we select an Object</span>
-    <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    
-      <span class="c1">' If the selection type is a Sketch</span>
-      <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHPOINTS</span> <span class="k">Then</span>
-          
-        <span class="c1">' Set the Solidworks Entity object to selected point</span>
-        <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-      <span class="k">End</span> <span class="k">If</span>
-    <span class="k">Next</span>
-    
-    <span class="n">DoEvents</span>
-  <span class="k">Wend</span>
+  <span class="c1">' Set Solidworks Drawing document variable</span>
+  <span class="k">Set</span> <span class="n">swDrawing</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' Create Reference CoOrdinate feature</span>
-  <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateCoordinateSystem</span><span class="p">(</span><span class="n">swObject</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">)</span>
-
-  <span class="c1">' Check if Reference Co-ordinate created or not</span>
-  <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Reference Co-ordinate."</span><span class="p">)</span>
+  <span class="c1">' Boolean variable</span>
+  <span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+  
+  <span class="c1">' Insert Broken-out View</span>
+  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">CreateBreakOutSection</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+  
+  <span class="c1">' Check if we successfully insert Broken-out View</span>
+  <span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Failed to Insert Broken-out View."</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
+  
+  <span class="c1">' Rebuild drawing</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">False</span>
 
-  <span class="c1">' View zoom to fit</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
-
-  <span class="c1">' Clear all selection</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-    
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <h2 id="prerequisite">Prerequisite</h2>
 
-<p>There are some <em>prerequisite</em> for this article.</p>
+<p>There are some <em>prerequisites</em> for this article.</p>
 
 <ul>
   <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
+  <li>We create <strong>Broken-out view</strong> from an <em>existing (Base) view</em>.</li>
+  <li>We already select a <strong>Circle</strong> in this <em>existing (Base) view</em>.</li>
 </ul>
 
-<p>Since we are creating new part, there are no feature to create.</p>
+<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/prerequisite.png"><img src="/assets/Solidworks_Images/drawing-brokenout-view/prerequisite.png" alt="prerequisite" /></a></p>
 
-<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+<p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
 
 <h2 id="steps-to-follow">Steps To Follow</h2>
 
-<p>This <strong>Reference Co-Ordinate VBA macro</strong> can be divided into following sections:</p>
+<p>This <strong>VBA macro</strong> can be divided into following sections:</p>
 
 <ol>
-  <li><em>Create and Initialize required variables</em></li>
-  <li><em>Ask user to select a Point</em></li>
-  <li><em>Create Reference Co-Ordinate</em></li>
-  <li><em>Final work</em></li>
+  <li><em>Create Global Variables</em></li>
+  <li><em>Initialize Variables</em></li>
+  <li><em>Insert Broken-out Views</em></li>
 </ol>
 
 <p><strong><em>Every section with each line is explained below.</em></strong></p>
 
 <p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
 
-<h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
+<h3 id="create-global-variables">Create Global Variables</h3>
+
+<p>In this section, we create global variables.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 </code></pre></div></div>
@@ -988,60 +942,54 @@
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks document</em>.</li>
   <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
   <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Reference Co-ordinate</span>
-<span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Drawing</span>
+<span class="k">Dim</span> <span class="nv">swDrawing</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Reference Co-ordinate</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swFeature</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code></li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Drawing</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDrawing</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.DrawingDoc</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDrawingDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
-<span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks View</span>
+<span class="k">Dim</span> <span class="nv">insertView</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">View</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>:  In above line, we create a variable for Solidworks Selection Manager.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swSelMgr</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Object</span>
-<span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="kt">Object</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong>Purpose</strong>:  In above line, we create a variable for Object.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swObject</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Object</code></li>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks View</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">insertView</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.View</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IView_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
 <p><strong><em>These all are our global variables.</em></strong></p>
 
 <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Reference Co-ordinate</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Insert Broken-out View</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create <em>main program for Reference Co-ordinate</em>.</li>
+  <li>In above line, we create <em>Program to Insert Broken-out View</em>.</li>
   <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
   <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
   <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
 </ul>
+
+<h3 id="initialize-variables">Initialize Variables</h3>
+
+<p>In this section, we initialize Variables.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -1050,26 +998,6 @@
 <ul>
   <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
   <li>This <em>value</em> is currently opened Solidworks application.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
-<span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>  
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>  
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
 </ul>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to currently opened document</span>
@@ -1101,108 +1029,103 @@
   </li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Selection Manager variable</span>
-<span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Drawing document</span>
+<span class="k">Set</span> <span class="n">swDrawing</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swSelMgr</code></strong> variable.</li>
-  <li>This <em>value</em> is current document’s <em>Selection Manager</em>.</li>
+  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDrawing</code></strong> variable.</li>
+  <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
 </ul>
 
-<h3 id="ask-user-to-select-a-point">Ask user to select a Point</h3>
+<h3 id="insert-broken-out-views">Insert Broken-out Views</h3>
 
-<p>Inside this section we ask user to select a Point and.</p>
+<p>In this section, we <em>Insert Broken-out Views</em>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select an Object for Co-Ordinate feature.</span>
-<span class="n">MsgBox</span> <span class="s">"Please select an Point for Co-Ordinate feature."</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Insert Broken-out View</span>
+<span class="k">Set</span> <span class="n">insertView</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">CreatebrokenoutviewAt4</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">swDetViewSTANDARD</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">"A"</span><span class="p">,</span> <span class="n">swDetCircleCIRCLE</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we show a messages to user.</li>
-  <li>Below image shows the message for <strong>select an Object</strong> to the user.</li>
-</ul>
-
-<p><a href="/assets/Solidworks_Images/reference-coordinate/message-to-select-point.png"><img src="/assets/Solidworks_Images/reference-coordinate/message-to-select-point.png" alt="message-to-select-point" /></a></p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we complete our selection</span>
-<span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>    
-
-<span class="k">Wend</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we create another <code class="language-plaintext highlighter-rouge">While</code> loop.</li>
-  <li>This loops continues to run until we select the our <strong>Feature</strong> and <strong>Edge</strong> for circular pattern.</li>
-  <li><strong>Reference</strong>: 🚀 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local integer for loop</span>
-<span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we create a variable as a counter.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">i</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Integer</code></li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we select</span>
-<span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">Next</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</li>
-  <li>This loops start from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of <code class="language-plaintext highlighter-rouge">objects</code> we select.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If the selection type is a Sketch</span>
-<span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEXTSKETCHPOINTS</span> <span class="k">Then</span>
-    
-  <span class="c1">' Set the Solidworks Entity object to selected point</span>
-  <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">End</span> <span class="k">If</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above code block, we use  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  with conditions.</li>
-  <li>The  🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <strong><em>SOLIDWORKS Pount</em></strong>.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DoEvents</span>
-</code></pre></div></div>
-
-<ul>
-  <li>After <code class="language-plaintext highlighter-rouge">For</code> loop end, we have a call for <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</li>
-  <li>This function repeats the <code class="language-plaintext highlighter-rouge">While</code> loop until we complete <strong>Feature or Edge</strong> selection.</li>
-</ul>
-
-<h3 id="create-reference-co-ordinate">Create Reference Co-Ordinate</h3>
-
-<p>In this section, we create Reference Co-Ordinate.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Reference CoOrdinate feature</span>
-<span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateCoordinateSystem</span><span class="p">(</span><span class="n">swObject</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="k">Nothing</span>
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>In above line, we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">CreateCoordinateSystem</code> method.</p>
-  </li>
-  <li>
-    <p>This <code class="language-plaintext highlighter-rouge">CreateCoordinateSystem</code> method takes following parameters as explained:</p>
-
+  <li>In above code, we <strong>Insert Broken-out View</strong> into Drawing.</li>
+  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">CreatebrokenoutviewAt4</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CreatebrokenoutviewAt4</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swDrawing</code></strong> variable.</li>
+  <li>This method takes following parameters.
     <ul>
-      <li><strong>OriginPointEntity</strong> - <em>Entity for the coordinate system origin.</em></li>
-      <li><strong>XAxisEntities</strong> - <em>Array of entities for the X axis.</em></li>
-      <li><strong>YAxisEntities</strong> - <em>Array of entities for the Y axis.</em></li>
-      <li><strong>ZAxisEntities</strong> - <em>Array of entities for the Z axis.</em></li>
+      <li><strong>X</strong>: <em>X position for the Detail view.</em></li>
+      <li><strong>Y</strong>: <em>Y position for the Detail view.</em></li>
+      <li><strong>Z</strong>: <em>Z position for the Detail view.</em></li>
+      <li>
+        <p><strong>Style</strong>: <em>Style for the detail view as defined in <strong><code class="language-plaintext highlighter-rouge">swDetViewStyle_e</code></strong> as following.</em></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>swDetViewBROKEN</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">1 = Use broken detail view style.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetViewCONNECTED</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">4 = Use connected detail view style.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetViewLEADER</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">2 = Use leader detail view style.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetViewNOLEADER</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">3 = Use no leader detail view style.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetViewSTANDARD</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0 = Use standard detail view style.</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>Scale1</strong>: <em>Scale numerator.</em></li>
+      <li><strong>Scale2</strong>: <em>Scale denominator.</em></li>
+      <li><strong>LabelIn</strong>: <em>Detail view label.</em></li>
+      <li>
+        <p><strong>Showtype</strong>: <em>Type of sketch for the detail view as defined in <strong><code class="language-plaintext highlighter-rouge">swDetCircleShowType_e</code></strong> as following.</em></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>swDetCircleCIRCLE</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">1 = Use sketch circle to create detail view.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetCircleDONTSHOW</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">2 = Do not show a sketch profile.</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDetCirclePROFILE</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0 = Use sketch profile to create detail view.</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>FullOutline</strong>: * <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to show a full outline, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to not; valid only if <strong><code class="language-plaintext highlighter-rouge">NoOutline</code></strong> is <code class="language-plaintext highlighter-rouge">False</code>.*</li>
+      <li><strong>JaggedOutline</strong>: * <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to show a jagged outline, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> does not; valid only if <strong><code class="language-plaintext highlighter-rouge">NoOutline</code></strong> is <code class="language-plaintext highlighter-rouge">False</code>.*</li>
+      <li><strong>NoOutline</strong>: * <strong><code class="language-plaintext highlighter-rouge">True</code></strong> to not show an outline, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> to show an outline.*</li>
+      <li><strong>ShapeIntensity</strong>: <em>Intensity of jagged outline; valid range is 1 (most) to 5 (least) and only valid if <strong><code class="language-plaintext highlighter-rouge">JaggedOutline</code></strong> is <code class="language-plaintext highlighter-rouge">True</code> and <strong><code class="language-plaintext highlighter-rouge">NoOutline</code></strong> is <code class="language-plaintext highlighter-rouge">False</code>.</em></li>
     </ul>
   </li>
   <li>
-    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateCoordinateSystem</code> method return 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IFeature.html">Feature</a></strong> data object.</p>
+    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreatebrokenoutviewAt4</code> method return 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IView_members.html">View</a></strong> data object.</p>
   </li>
   <li>
     <p>In our code, I have used following values:</p>
@@ -1216,90 +1139,103 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>OriginPointEntity</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">swObject</code></td>
+          <td><strong>X</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0.2</code></td>
         </tr>
         <tr>
-          <td><strong>XAxisEntities</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">Nothing</code></td>
+          <td><strong>Y</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0.12</code></td>
         </tr>
         <tr>
-          <td><strong>YAxisEntities</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">Nothing</code></td>
+          <td><strong>Z</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
         </tr>
         <tr>
-          <td><strong>ZAxisEntities</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">Nothing</code></td>
+          <td><strong>Style</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swDetViewSTANDARD</code></td>
+        </tr>
+        <tr>
+          <td><strong>Scale1</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">1</code></td>
+        </tr>
+        <tr>
+          <td><strong>Scale2</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">10</code></td>
+        </tr>
+        <tr>
+          <td><strong>LabelIn</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">A</code></td>
+        </tr>
+        <tr>
+          <td><strong>Showtype</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">swDetCircleCIRCLE</code></td>
+        </tr>
+        <tr>
+          <td><strong>FullOutline</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">True</code></td>
+        </tr>
+        <tr>
+          <td><strong>JaggedOutline</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>NoOutline</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+        </tr>
+        <tr>
+          <td><strong>ShapeIntensity</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">5</code></td>
         </tr>
       </tbody>
     </table>
   </li>
+  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.idrawingdoc~Create3rdAngleViews2.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
-<p><strong>Reference</strong>: For more details about</p>
-
-<ul>
-  <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
-  <li><strong>CreateCoordinateSystem Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager~CreateCoordinateSystem.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">CreateCoordinateSystem</code> Method.</li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Reference Co-ordinate created or not</span>
-<span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Reference Co-ordinate."</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if we successfully insert view</span>
+<span class="k">If</span> <span class="n">insertView</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"Failed to Insert Broken-out View"</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above code block, we check if we successfully create <strong>Reference Co-ordinate</strong> or not.</li>
+  <li>In above code block, we check if we successfully insert views or not.</li>
   <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swFeature Is Nothing</code></strong></li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">insertView Is Nothing</code></strong></li>
   <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
     <ul>
       <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Failed to create Reference Co-ordinate.</em></li>
+      <li><strong>Message</strong>: *Failed to Insert Broken-out View.</li>
       <li>Then we <strong>stop</strong> our macro here.</li>
     </ul>
   </li>
 </ul>
 
-<p>Now we run the macro and after running macro we get <strong>Reference Co-ordinate</strong> as shown in below image.</p>
-
-<p><a href="/assets/Solidworks_Images/reference-coordinate/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-coordinate/final-result-gif.gif" alt="reference-coordinate-feature-final-result" /></a></p>
-
-<h3 id="final-work">Final work</h3>
-
-<p>In this section, after creating <strong>Reference Co-ordinate</strong>, we have to do some cleaning work so that we can use this macro frequently.</p>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild drawing</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we make our view zoom to fit the model.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+  <li>In above line, we Rebuild drawing.</li>
+  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+<p>Now we run the macro and after running macro we show selected component as shown in below image.</p>
 
-<ul>
-  <li>In above line, we clear all previous selection.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
+<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif" alt="drawing-brokenout-view" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em> 😊</p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
 
-<p>Hope this post helps you to <strong>create Reference Co-ordinate</strong> with SOLIDWORKS VBA Macros.</p>
+<p>Hope this post helps you to <strong>Insert Broken-out View</strong> with SOLIDWORKS VBA Macros.</p>
 
 <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em> 🙏🏻</p>
 
 <p><em>Do let me know by you like this post or not!</em></p>
 
@@ -1340,14 +1276,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-reference-axis/" title="Solidworks VBA Macro - Create Reference Axis
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/drawing-insert-detailview/" title="Solidworks VBA Macro - Insert Detail View
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-reference-point/" title="Solidworks VBA Macro - Create Reference Point
-">Next ❯</a>
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
     </li>
     
   </ul>
