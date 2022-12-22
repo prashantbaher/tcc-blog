@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Insert Broken-out View - The CAD Coder</title>
+  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Get View Position - The CAD Coder</title>
 <meta name="description" content="Objective">
 
 
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Insert Broken-out View">
+<meta property="og:title" content="Solidworks VBA Macro - Get View Position">
 <meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/drawing-get-view-position/">
 
 
@@ -25,7 +25,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-12-12T23:40:36-05:00">
+  <meta property="article:published_time" content="2022-12-22T10:03:26-05:00">
 
 
 
@@ -101,7 +101,7 @@
             
             
             <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
             </li>
             
             
@@ -707,6 +707,20 @@
     
       <li>
         
+          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-view-position/" class="active">Get View Position</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
           <span class="nav__sub-title">Sketch - Others</span>
         
 
@@ -735,18 +749,18 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Solidworks VBA Macro - Insert Broken-out View">
+    <meta itemprop="headline" content="Solidworks VBA Macro - Get View Position">
     
     <meta itemprop="description" content="Objective">
     
     
-    <meta itemprop="datePublished" content="2022-12-12T23:40:36-05:00">
+    <meta itemprop="datePublished" content="2022-12-22T10:03:26-05:00">
     
 
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Insert Broken-out View
+        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Get View Position
 </h1>
         
 
@@ -762,7 +776,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 minute read
+          4 minute read
         
       </span>
     
@@ -779,7 +793,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-variables">Initialize Variables</a></li><li><a href="#insert-broken-out-views">Insert Broken-out Views</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-global-variables">Create Global Variables</a></li><li><a href="#initialize-variables">Initialize Variables</a></li><li><a href="#get-view-position">Get View Position</a></li></ul></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -812,17 +826,17 @@
 </script>
           <h2 id="objective">Objective</h2>
 
-<p>In this article, we understand “how to” <strong>Insert Broken-out View</strong> in <strong>Drawing document</strong> from VBA macro.</p>
+<p>In this article, we understand “how to” <strong>Get View Position</strong> in <strong>Drawing document</strong> from VBA macro.</p>
 
-<p>This is most updated method of <strong>Insert Broken-out View</strong> in an drawing document.</p>
+<p>This is most updated method of <strong>Get View Position</strong> in an drawing document.</p>
 
 <h2 id="results-we-can-get">Results We Can Get</h2>
 
 <p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif" alt="drawing-brokenout-view" /></a></p>
+<p><a href="/assets/Solidworks_Images/drawing-get-view-position/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-get-view-position/final-result-gif.gif" alt="drawing-get-view-position" /></a></p>
 
-<p>We <strong>Insert Broken-out View</strong> in simple manners.</p>
+<p>We <strong>Get View Position</strong> in simple manners.</p>
 
 <p>There are no extra steps required.</p>
 
@@ -830,9 +844,9 @@
 
 <h2 id="macro-video">Macro Video</h2>
 
-<p>Below 🎬 video shows how to <strong>Insert Broken-out View</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+<p>Below 🎬 video shows how to <strong>Get View Position</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/n3Q2FYv-skM" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/_66y-tUMMtY" frameborder="0" allowfullscreen=""></iframe>
 <p><br /></p>
 
 <p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
@@ -843,7 +857,7 @@
 
 <h2 id="vba-macro">VBA Macro</h2>
 
-<p>Below is the <strong><em>VBA macro</em></strong> for <em>Insert Broken-out View</em>.</p>
+<p>Below is the <strong><em>VBA macro</em></strong> for <em>Get View Position</em>.</p>
 
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
@@ -856,7 +870,10 @@
 <span class="c1">' Creating variable for Solidworks Drawing</span>
 <span class="k">Dim</span> <span class="nv">swDrawing</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
 
-<span class="c1">' Program to Insert Broken-out View</span>
+<span class="c1">' Creating variable for Solidworks View</span>
+<span class="k">Dim</span> <span class="nv">swView</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">View</span>
+
+<span class="c1">' Program to Get View Position</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
   <span class="c1">' Setting Solidworks variable to Solidworks application</span>
@@ -874,20 +891,12 @@
   <span class="c1">' Set Solidworks Drawing document variable</span>
   <span class="k">Set</span> <span class="n">swDrawing</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' Boolean variable</span>
-  <span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-  
-  <span class="c1">' Insert Broken-out View</span>
-  <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">CreateBreakOutSection</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-  
-  <span class="c1">' Check if we successfully insert Broken-out View</span>
-  <span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-    <span class="n">MsgBox</span> <span class="s">"Failed to Insert Broken-out View."</span>
-    <span class="k">Exit</span> <span class="k">Sub</span>
-  <span class="nf">End</span> <span class="k">If</span>
-  
-  <span class="c1">' Rebuild drawing</span>
-  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">False</span>
+  <span class="c1">' Get activate view</span>
+  <span class="k">Set</span> <span class="n">swView</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">ActiveDrawingView</span>
+
+  <span class="c1">' Print selected View center's X &amp; Y position</span>
+  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"View's X position: "</span> <span class="o">&amp;</span> <span class="n">swView</span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"View's Y position: "</span> <span class="o">&amp;</span> <span class="n">swView</span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
@@ -898,11 +907,11 @@
 
 <ul>
   <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
-  <li>We create <strong>Broken-out view</strong> from an <em>existing (Base) view</em>.</li>
+  <li>We get view positions from an <em>existing (Base) view</em>.</li>
   <li>We already select a <strong>Circle</strong> in this <em>existing (Base) view</em>.</li>
 </ul>
 
-<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/prerequisite.png"><img src="/assets/Solidworks_Images/drawing-brokenout-view/prerequisite.png" alt="prerequisite" /></a></p>
+<p><a href="/assets/Solidworks_Images/drawing-get-view-position/prerequisite.png"><img src="/assets/Solidworks_Images/drawing-get-view-position/prerequisite.png" alt="prerequisite" /></a></p>
 
 <p class="notice">We will apply checks in this article, so the code we write, should be <strong>error free</strong> mostly.</p>
 
@@ -913,7 +922,7 @@
 <ol>
   <li><em>Create Global Variables</em></li>
   <li><em>Initialize Variables</em></li>
-  <li><em>Insert Broken-out Views</em></li>
+  <li><em>Get View Position</em></li>
 </ol>
 
 <p><strong><em>Every section with each line is explained below.</em></strong></p>
@@ -965,18 +974,29 @@
   <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDrawingDoc_members.html">online SOLIDWORKS API Help</a></strong>.</li>
 </ul>
 
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks View</span>
+<span class="k">Dim</span> <span class="nv">swView</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">View</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks View</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swView</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.View</code></li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IView_members.html">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
+
 <p><strong><em>These all are our global variables.</em></strong></p>
 
 <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Insert Broken-out View</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to Get View Position</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above line, we create <em>Program to Insert Broken-out View</em>.</li>
+  <li>In above line, we create <em>Program to Get View Position</em>.</li>
   <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
   <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
   <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
@@ -1033,89 +1053,35 @@
   <li>This <em>value</em> is <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
 </ul>
 
-<h3 id="insert-broken-out-views">Insert Broken-out Views</h3>
+<h3 id="get-view-position">Get View Position</h3>
 
-<p>In this section, we <em>Insert Broken-out Views</em>.</p>
+<p>In this section, we <em>Get View Position</em>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean variable</span>
-<span class="k">Dim</span> <span class="nv">boolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Get activate view</span>
+<span class="k">Set</span> <span class="n">swView</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">ActiveDrawingView</span>
 </code></pre></div></div>
 
 <ul>
-  <li><strong>Purpose</strong>: In above line, we create a <strong><code class="language-plaintext highlighter-rouge">Boolean</code></strong> variable.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">boolStatus</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code></li>
+  <li>In above code, we <strong>Get activate view</strong> from Drawing.</li>
+  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">ActiveDrawingView</code></strong> property.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ActiveDrawingView</code></strong> property is part of <strong><code class="language-plaintext highlighter-rouge">swDrawing</code></strong> variable.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Insert Broken-out View</span>
-<span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">CreateBreakOutSection</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Print selected View center's X &amp; Y position</span>
+<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"View's X Position: "</span> <span class="o">&amp;</span> <span class="n">swView</span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"View's Y Position: "</span> <span class="o">&amp;</span> <span class="n">swView</span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
-  <li>In above code, we <strong>Insert Broken-out View</strong> into Drawing.</li>
-  <li>For this, we use <strong><code class="language-plaintext highlighter-rouge">CreateBreakOutSection</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">CreateBreakOutSection</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swDrawing</code></strong> variable.</li>
-  <li>This method takes following parameters.
-    <ul>
-      <li><strong>Depth</strong>: <em>X position for the Detail view.</em></li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Return Value</strong> : This <strong><code class="language-plaintext highlighter-rouge">CreateBreakOutSection</code></strong> method return <strong><code class="language-plaintext highlighter-rouge">True</code></strong> if the broken-out section was created, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</p>
-  </li>
-  <li>
-    <p>In our code, I have used following values:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Parameter Name</th>
-          <th>Value Used</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Depth</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0.1</code></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.idrawingdoc~CreateBreakOutSection.html">online SOLIDWORKS API Help</a></strong>.</li>
+  <li>In above line, we <strong>Print</strong> selected View center’s <em>X &amp; Y position</em> in <strong>Immediate Window</strong>.</li>
+  <li>If <strong>Immediate Window</strong> is not available then press “<strong><code class="language-plaintext highlighter-rouge">Ctrl + G</code></strong>”.</li>
+  <li>View’s X Position: <strong><code class="language-plaintext highlighter-rouge">swView.position(0)</code></strong> ⬅ This is <strong>0th</strong> index.</li>
+  <li>View’s Y Position: <strong><code class="language-plaintext highlighter-rouge">swView.position(1)</code></strong> ⬅ This is <strong>1st</strong> index.</li>
 </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if we successfully insert Broken-out View</span>
-<span class="k">If</span> <span class="n">boolStatus</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
-  <span class="n">MsgBox</span> <span class="s">"Failed to Insert Broken-out View."</span>
-  <span class="k">Exit</span> <span class="k">Sub</span>
-<span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+<p>Now we run the macro and after running macro we <strong>get view position</strong> as shown in below image.</p>
 
-<ul>
-  <li>In above code block, we check if we successfully insert views or not.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">boolStatus = False</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: *Failed to Insert Broken-out View.</li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Rebuild drawing</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
-</code></pre></div></div>
-
-<ul>
-  <li>In above line, we Rebuild drawing.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
-
-<p>Now we run the macro and after running macro we show selected component as shown in below image.</p>
-
-<p><a href="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-brokenout-view/final-result-gif.gif" alt="drawing-brokenout-view" /></a></p>
+<p><a href="/assets/Solidworks_Images/drawing-get-view-position/final-result-gif.gif"><img src="/assets/Solidworks_Images/drawing-get-view-position/final-result-gif.gif" alt="drawing-get-view-position" /></a></p>
 
 <p><strong>This is it !!!</strong></p>
 
@@ -1123,7 +1089,7 @@
 
 <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em> 📧.</p>
 
-<p>Hope this post helps you to <strong>Insert Broken-out View</strong> with SOLIDWORKS VBA Macros.</p>
+<p>Hope this post helps you to <strong>Get View Position</strong> with SOLIDWORKS VBA Macros.</p>
 
 <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
 
@@ -1158,7 +1124,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-12T23:40:36-05:00">December 12, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-22T10:03:26-05:00">December 22, 2022</time></p>
 
 
       </footer>
@@ -1168,12 +1134,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary disabled text-light" href="#" >❮ Previous</a>
+      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/drawing-crop-view/" title="Solidworks VBA Macro - Insert Crop View
+">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/drawing-get-view-outer-boundary/" title="Solidworks VBA Macro - Insert Broken-out View
+      <a class="btn btn-primary text-light" href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
     </li>
     
