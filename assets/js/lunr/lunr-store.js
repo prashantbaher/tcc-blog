@@ -952,4 +952,10 @@ var store = [{
         "tags": ["WPF Tutorials"],
         "url": "/wpf-tutorials/add-syncfusion-busy-indicator/",
         "teaser": null
+      },{
+        "title": "Add Syncfusion License Key",
+        "excerpt":"Objective   I want to:           Add Syncfusion License Key            We will continue from previous article 🚀 Add Syncfusion Busy Indicator.            Will not add new controls to previous code.       Demo Video   Below 🎬 video shows how to Add Syncfusion License Key in Visual Studio 2022.        Get License Key           Go to Syncfusion Dashboard page.            I have a link in article 🚀 Syncfusion Account Sign Up and Community Version.            This link will directly open Syncfusion Dashboard page.            Please see below 👇🏻 image for reference.             Now go to “Claim License Key” as shown in below 👇🏻 image.         A new page open and select “COPY TO CLIPBOARD” as shown in below 👇🏻 image.        Add Syncfusion Key   In this section we add Syncfusion Key Window.      Open “App.xaml.cs” file as shown in below 👇🏻 image.         Create a Constructor for this  “App.xaml.cs” file as shown in below 👇🏻 image.         Register Syncfusion license shown in below 👇🏻 image.      public App() {     SyncfusionLicenseProvider.RegisterLicense(\"YOUR LICENSE KEY\"); }   Final Result   Now we run the application as shown in below 👇🏻 image.      Now we did not see License message since we add our License Key.   This is it !!!   I hope my efforts will helpful to someone!   If you found anything to add or update, please let me know on my e-mail.   Hope this post helps you to Add Syncfusion License Key.   If you like the post then please share it with your friends also.   Do let me know by you like this post or not!   Till then, Happy learning!!!  ","categories": ["WPF-Tutorials"],
+        "tags": ["WPF Tutorials"],
+        "url": "/wpf-tutorials/add-syncfusion-license-key/",
+        "teaser": null
       }]
