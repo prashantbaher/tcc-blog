@@ -25,7 +25,7 @@
 
 
 
-  <meta property="article:published_time" content="2023-04-08T01:04:16-04:00">
+  <meta property="article:published_time" content="2023-06-29T00:03:31-04:00">
 
 
 
@@ -176,6 +176,8 @@
           
             <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
           
+            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/" class="active">Browse/Open SOLIDWORKS Document</a></li>
+          
         </ul>
         
       </li>
@@ -213,7 +215,7 @@
     <meta itemprop="description" content="OBJECTIVE">
     
     
-    <meta itemprop="datePublished" content="2023-04-08T01:04:16-04:00">
+    <meta itemprop="datePublished" content="2023-06-29T00:03:31-04:00">
     
 
     <div class="page__inner-wrap">
@@ -235,7 +237,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 minute read
+          4 minute read
         
       </span>
     
@@ -252,7 +254,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#objective">OBJECTIVE</a></li><li><a href="#result-we-get">RESULT WE GET</a></li><li><a href="#demo-video">DEMO VIDEO</a></li><li><a href="#create-a-new-prism-project">CREATE A NEW PRISM PROJECT</a></li><li><a href="#build-solution">BUILD SOLUTION</a><ul><li><a href="#why-we-build-solution-">WHY WE BUILD SOLUTION ?</a></li><li><a href="#add-nuget-packages">ADD NUGET PACKAGES</a></li></ul></li><li><a href="#add-user-interface-controls">ADD USER INTERFACE CONTROLS</a><ul><li><a href="#update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</a></li><li><a href="#remove-content-control">REMOVE CONTENT CONTROL</a></li><li><a href="#update-busy-indicator">UPDATE BUSY INDICATOR</a></li><li><a href="#add-grid-to-hold-controls">ADD GRID TO HOLD CONTROLS</a></li><li><a href="#add-textbox-for-file-path">ADD TEXTBOX FOR FILE PATH</a></li><li><a href="#add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</a></li><li><a href="#add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</a></li></ul></li><li><a href="#update-viewmodel">UPDATE VIEWMODEL</a><ul><li><a href="#add-documents-list">ADD DOCUMENTS LIST</a></li><li><a href="#binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</a></li><li><a href="#add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</a></li><li><a href="#add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</a></li></ul></li><li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</a></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
+            <ul class="toc__menu"><li><a href="#objective">OBJECTIVE</a></li><li><a href="#result-we-get">RESULT WE GET</a></li><li><a href="#demo-video">DEMO VIDEO</a></li><li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#check-before-open-document">CHECK BEFORE OPEN DOCUMENT</a></li><li><a href="#open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</a></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -289,13 +291,13 @@
 
 <ul>
   <li>
-    <p><em>Browse and Open an SOLIDWORKS Document using</em></p>
-
-    <ul>
-      <li><strong>SOLIDWORKS C# API</strong></li>
-      <li><strong>Syncfusion WPF UI Controls</strong></li>
-      <li><strong>WPF Prism MVVM Framework</strong></li>
-    </ul>
+    <p><strong><em>Open browsed SOLIDWORKS Document using Solidworks C# API</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Browse Solidworks Document UI</a>.</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
   </li>
 </ul>
 
@@ -305,7 +307,7 @@
 
 <p>Below image shows the result we get.</p>
 
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result-gif.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result-gif.gif" alt="browse-and-open-solidworks-file" /></a></p>
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result.gif" alt="browse-and-open-solidworks-file" /></a></p>
 
 <p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
 
@@ -313,379 +315,346 @@
 
 <h2 id="demo-video">DEMO VIDEO</h2>
 
-<p>Please see below video on how to “Browse and Open SOLIDWORKS Document” using <strong>SOLIDWORKS C# API</strong> from <strong>Desktop Application</strong>.</p>
+<p>Please see below video on how to “Open browsed SOLIDWORKS Document” using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Application</strong>.</p>
 
-<iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/pTB35G-Devg" frameborder="0" allowfullscreen=""></iframe>
 <p><br /></p>
 
-<p>Please note that there are <strong>no explanation</strong> in the video.</p>
-
-<p><strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
+<p class="notice--info">Please note that there are <strong>no explanation</strong> in the video.<br />
+<strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
 
 <hr />
 
-<h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
-
-<p>Create a new Prism project as shown below 👇🏻.</p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/1.create-open-solidworks-document-project.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/1.create-open-solidworks-document-project.gif" alt="create-open-solidworks-document-project" /></a></p>
-
-<ul>
-  <li>
-    <p>All the steps has been already explained in 🚀 <strong><a href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open SOLIDWORKS</a></strong> article.</p>
-  </li>
-  <li>
-    <p>This will open a new window as shown in below image 👇🏻.</p>
-  </li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/2.create-new-project.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/2.create-new-project.png" alt="create-new-project" /></a></p>
-
-<h2 id="build-solution">BUILD SOLUTION</h2>
-
-<p>After we create our “<em>BrowseAndOpenSolidworksDocument</em>” project, we need to select “Build Solution” option as shown in below image.</p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/3.build-solution.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/3.build-solution.png" alt="build-solution" /></a></p>
-
-<ol>
-  <li>Select “<strong>Build</strong>” Option from application “Menu”.</li>
-  <li>Select “<strong>Build Solution</strong>” option.</li>
-</ol>
-
-<h3 id="why-we-build-solution-">WHY WE BUILD SOLUTION ?</h3>
-
-<p>We build our solution because we want to make sure <strong>everything is working</strong> and <strong>there are no broken references</strong>.</p>
-
-<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file before <em>building solution</em>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg" alt="before-build-solution" /></a></p>
-
-<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file after <em>building solution</em>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg" alt="after-build-solution" /></a></p>
-
-<h3 id="add-nuget-packages">ADD NUGET PACKAGES</h3>
-
-<p>Now we need to add following NuGet packages:</p>
-
-<ul>
-  <li><strong>Syncfusion.Tools.WPF</strong></li>
-  <li><strong>Syncfusion.Shared.WPF</strong></li>
-  <li><strong>Syncfusion.SfSkinManager.WPF</strong></li>
-  <li><strong>Syncfusion.Themes.FluentLight.WPF</strong></li>
-  <li><strong>Syncfusion.UI.WPF.NET</strong></li>
-</ul>
-
-<p>Steps to Add NuGet packages:</p>
-
-<ul>
-  <li>Open NuGet Package Manager by <strong>1) Right Click on “Dependencies”</strong> then <strong>2) Select highlighted option</strong> as shown in below image.</li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/6.open-nuget-package-manager.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/6.open-nuget-package-manager.png" alt="6.open-nuget-package-manager.png" /></a></p>
-
-<ul>
-  <li>A new screen open as shown below.</li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/7.pachage-manager-screen.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/7.pachage-manager-screen.png" alt="7.pachage-manager-screen" /></a></p>
-
-<ul>
-  <li>Search and Add “<strong>Syncfusion.Tools.WPF</strong>” package as shown below.</li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/8.add-Syncfusion.Tools.WPF.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/8.add-Syncfusion.Tools.WPF.gif" alt="8.add-Syncfusion.Tools.WPF" /></a></p>
-
-<ul>
-  <li>In similar way, we add remaining packages. List of added Nuget Packages are shown below.</li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/9.list-of-nuget-packages.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/9.list-of-nuget-packages.png" alt="9.list-of-nuget-packages" /></a></p>
-
-<h2 id="add-user-interface-controls">ADD USER INTERFACE CONTROLS</h2>
-
-<p>Below we add some UI control for user interaction.</p>
-
-<h3 id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</h3>
-
-<p>In below image, we update ‘<em>Start-up location</em>’ and ‘<em>Width &amp; Height</em>’ of our window.</p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/4.update-window-startup-location-width-height.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/4.update-window-startup-location-width-height.gif" alt="update-window-startup-location-width-height" /></a></p>
-
-<p>First we update <em>Start-up location of window</em> by adding following line.</p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">WindowStartupLocation="CenterScreen"</code></strong></p>
-
-<p>After this, we update window’s <em>Height and Width</em> to following values.</p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">Height="250" Width="500"</code></strong></p>
-
-<h3 id="remove-content-control">REMOVE CONTENT CONTROL</h3>
-
-<p>Now we will do:</p>
-
-<ul>
-  <li>Add below 👇🏻 <strong>Syncfusion</strong> namespaces to our window.</li>
-</ul>
-
-<p><strong><code class="language-plaintext highlighter-rouge">xmlns:syncfusion="http://schemas.syncfusion.com/wpf"</code></strong></p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">syncfusion:SfSkinManager.Theme="{syncfusion:SkinManagerExtension ThemeName=FluentLight}"</code></strong></p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/10.adding-namespaces-xaml.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/10.adding-namespaces-xaml.png" alt="10.adding-namespaces-xaml" /></a></p>
-
-<ul>
-  <li>In below image we remove <strong><code class="language-plaintext highlighter-rouge">ContentControl</code></strong> Tag in Grid. Also, we change <strong><code class="language-plaintext highlighter-rouge">Grid</code></strong> to <strong><code class="language-plaintext highlighter-rouge">SfBusyIndicator</code></strong> from <strong>Syncfusion library</strong> for helding our UI Controls.</li>
-</ul>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/5.remove-grid-add-busy-indicator.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/5.remove-grid-add-busy-indicator.gif" alt="remove-grid-add-busy-indicator" /></a></p>
-
-<h3 id="update-busy-indicator">UPDATE BUSY INDICATOR</h3>
-
-<p>Now, we update properties of Busy Indicator as shown below.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">IsBusy=</span><span class="s">"{Binding ShowIndicator,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"</span>
-                            <span class="na">Header=</span><span class="s">"Loading..."</span>
-                            <span class="na">AnimationType=</span><span class="s">"Gear"</span><span class="nt">&gt;</span>
-
-<span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
-</code></pre></div></div>
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/11.update-busy-indicator-properties.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/11.update-busy-indicator-properties.gif" alt="11.update-busy-indicator-properties" /></a></p>
-
-<h3 id="add-grid-to-hold-controls">ADD GRID TO HOLD CONTROLS</h3>
-
-<p>In below image, we add <strong><code class="language-plaintext highlighter-rouge">Grid</code></strong> to hold our UI controls.</p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/12.add-grid-control.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/12.add-grid-control.png" alt="12.add-grid-control" /></a></p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">Grid</code></strong> with <strong><code class="language-plaintext highlighter-rouge">Row and Column definition</code></strong> is given below.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Grid&gt;</span>
-    <span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
-        <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"Auto"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
-
-    <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
-        <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"Auto"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/Grid.RowDefinitions&gt;</span>
-    
-<span class="nt">&lt;/Grid&gt;</span>
-</code></pre></div></div>
-
-<h3 id="add-textbox-for-file-path">ADD TEXTBOX FOR FILE PATH</h3>
-
-<p>In below image we add <strong><code class="language-plaintext highlighter-rouge">syncfusion:SfTextBoxExt</code></strong> inside <strong><code class="language-plaintext highlighter-rouge">Grid</code></strong> for showing selected document file path.</p>
-
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/13.add-textbox-with-properties.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/13.add-textbox-with-properties.gif" alt="13.add-textbox-with-properties" /></a></p>
-
-<p><strong><code class="language-plaintext highlighter-rouge">syncfusion:SfTextBoxExt</code></strong> with <strong><code class="language-plaintext highlighter-rouge">Text</code></strong> and <em>other properties</em> are given below.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:SfTextBoxExt</span> <span class="na">Grid.Row=</span><span class="s">"1"</span> 
-                         <span class="na">Grid.Column=</span><span class="s">"1"</span> 
-                         <span class="na">TextWrapping=</span><span class="s">"WrapWithOverflow"</span>
-                         <span class="na">TextAlignment=</span><span class="s">"Center"</span>
-                         <span class="na">Text=</span><span class="s">"{Binding FilePath, Mode=TwoWay}"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/syncfusion:SfTextBoxExt&gt;</span>
-</code></pre></div></div>
-
-<h3 id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</h3>
-
-<p>In below image we add <code class="language-plaintext highlighter-rouge">ComboBox</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for holding our list of <strong>SOLIDWORKS documents</strong>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif" alt="add-documents-combobox" /></a></p>
-
-<p><code class="language-plaintext highlighter-rouge">ComboBox</code> with set <em>properties</em> are given below.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
-          <span class="na">Height=</span><span class="s">"30"</span>
-          <span class="na">Margin=</span><span class="s">"10"</span>
-          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
-          <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h3 id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</h3>
-
-<p>In below image we add <code class="language-plaintext highlighter-rouge">Button</code> to open selected <em>SOLIDWORKS document</em>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif" alt="add-button-for-solidworks-document" /></a></p>
-
-<p><code class="language-plaintext highlighter-rouge">Button</code> with <code class="language-plaintext highlighter-rouge">Content</code> and <em>other properties</em> are given below.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Width=</span><span class="s">"350"</span>
-        <span class="na">Height=</span><span class="s">"50"</span>
-        <span class="na">FontSize=</span><span class="s">"18"</span>
-        <span class="na">FontWeight=</span><span class="s">"Medium"</span>
-        <span class="na">Content=</span><span class="s">"Open Solidworks"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h2 id="update-viewmodel">UPDATE VIEWMODEL</h2>
-
-<p>Now, we update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> viewmodel, for showing data and adding functionalities.</p>
-
-<h3 id="add-documents-list">ADD DOCUMENTS LIST</h3>
-
-<p>In below image we a list of SOLIDWORKS document in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif" alt="add-document-list-to-viewmodel" /></a></p>
-
-<p>For this we use below code.</p>
-
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_DocumentsList</span><span class="p">;</span>
-<span class="k">public</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">DocumentsList</span>
-<span class="p">{</span>
-    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DocumentsList</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DocumentsList</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>In above code, <code class="language-plaintext highlighter-rouge">_DocumentsList</code> is private member of our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class, whose value we set in the <code class="language-plaintext highlighter-rouge">Constructor</code> of <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class.</p>
-
-<p><code class="language-plaintext highlighter-rouge">DocumentsList</code> will use for <code class="language-plaintext highlighter-rouge">Binding</code> document list to our <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
-
-<p>Here we use <code class="language-plaintext highlighter-rouge">ObservableCollection&lt;T&gt;</code> because of <strong>MVVM</strong>.</p>
-
-<p>For more details please visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0">this link</a></strong>.</p>
-
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">_DocumentsList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
-    <span class="p">{</span>
-        <span class="s">"Part Document"</span><span class="p">,</span>
-        <span class="s">"Assembly Document"</span><span class="p">,</span>
-        <span class="s">"Drawing Document"</span>
-    <span class="p">};</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>In above code, we add SOLIDWORKS documents into our <code class="language-plaintext highlighter-rouge">_DocumentsList</code> list.</p>
-
-<h3 id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</h3>
-
-<p>In below image we <em>Bind</em> our document list i.e. <code class="language-plaintext highlighter-rouge">DocumentsList</code> to <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif" alt="binding-document-list" /></a></p>
-
-<p>For Binding <code class="language-plaintext highlighter-rouge">DocumentsList</code> we add following line.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemsSource="{Binding DocumentsList}"
-</code></pre></div></div>
-
-<p>After this update our ComboBox looks like as:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
-          <span class="na">Height=</span><span class="s">"30"</span>
-          <span class="na">Margin=</span><span class="s">"10"</span>
-          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
-          <span class="na">FontSize=</span><span class="s">"16"</span> 
-          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg" alt="comboBox-list-window" /></a></p>
-
-<p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get <strong>error</strong> when we click “<em>Open Solidworks</em>” button.</p>
-
-<p>To avoid this error we define <code class="language-plaintext highlighter-rouge">SelectedIndex</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code> to <strong>0</strong>.</p>
-
-<p>After this update our ComboBox looks like as:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
-          <span class="na">Height=</span><span class="s">"30"</span>
-          <span class="na">Margin=</span><span class="s">"10"</span>
-          <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
-          <span class="na">FontSize=</span><span class="s">"16"</span> 
-          <span class="na">SelectedIndex=</span><span class="s">"0"</span>
-          <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg" alt="part-document-selected-in-list" /></a></p>
-
-<h3 id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</h3>
-
-<p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p>
-
-<p>To get the selected value, we need a property i.e. <code class="language-plaintext highlighter-rouge">SelectedDocument</code> in our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel and bind this property to <code class="language-plaintext highlighter-rouge">SelectValue</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code>.</p>
-
-<p>For more details please see below image.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif" alt="selectedvalue-binding" /></a></p>
-
-<h3 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h3>
-
-<p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our button.</p>
-
-<p>For this we need to do following:</p>
-
-<ul>
-  <li>
-    <p>We need to create a <em>Prism Command</em> i.e. <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel.</p>
-  </li>
-  <li>
-    <p>Bind this <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> to our button.</p>
-  </li>
-</ul>
-
-<p>In below we see how to do this, also we checked the selected value.</p>
-
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif" alt="add-command-to-button" /></a></p>
-
 <h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
 
-<p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+<ul>
+  <li>
+    <p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+  </li>
+  <li>
+    <p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
+  </li>
+</ul>
 
-<p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+<h2 id="check-before-open-document">CHECK BEFORE OPEN DOCUMENT</h2>
+
+<p>In this section we apply some checks.</p>
+
+<ul>
+  <li>
+    <p>First, we check if we have a file path, which we browsed.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/check-we-browsed-a-file.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/check-we-browsed-a-file.gif" alt="check-we-browsed-a-file" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if we browsed a file</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">FilePath</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above code, we are checking, if we browsed a file.</p>
+  </li>
+  <li>
+    <p><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">string.IsNullOrEmpty(FilePath)</code></strong></p>
+
+    <ul>
+      <li>
+        <p>Browsed file path is saved into <strong><code class="language-plaintext highlighter-rouge">FilePath</code></strong> variable.</p>
+      </li>
+      <li>
+        <p>Please see previous article 🚀 <strong><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Browse Solidworks Document UI</a></strong> for more details.</p>
+      </li>
+      <li>
+        <p>If we don’t browse any file, then <strong><code class="language-plaintext highlighter-rouge">FilePath</code></strong> variable did not have any value.</p>
+      </li>
+      <li>
+        <p>We check if value of <strong><code class="language-plaintext highlighter-rouge">FilePath</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or <strong><code class="language-plaintext highlighter-rouge">empty</code></strong> by <strong><code class="language-plaintext highlighter-rouge">IsNullOrEmpty()</code></strong> method.</p>
+      </li>
+      <li>
+        <p>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, means we <strong>don’t</strong> have any file path, we <strong>exit</strong> the function from here.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Now we check if browsed file is exist in at said location.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/check-file-exist.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/check-file-exist.gif" alt="check-file-exist" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if browsed file exist or not</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">FilePath</span><span class="p">)</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">File.Exists(FilePath) == false</code></strong></p>
+
+    <ul>
+      <li>
+        <p>Browsed file path is saved into <strong><code class="language-plaintext highlighter-rouge">FilePath</code></strong> variable.</p>
+      </li>
+      <li>
+        <p>Please see previous article 🚀 <strong><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Browse Solidworks Document UI</a></strong> for more details.</p>
+      </li>
+      <li>
+        <p>We check if browsed file is exist or not.</p>
+      </li>
+      <li>
+        <p>We do this by <strong><code class="language-plaintext highlighter-rouge">Exists</code></strong> method. This <strong><code class="language-plaintext highlighter-rouge">Exists</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">File</code></strong> class.</p>
+      </li>
+      <li>
+        <p>This <strong><code class="language-plaintext highlighter-rouge">Exists</code></strong> method take <em>path of file</em> as parameter.</p>
+      </li>
+      <li>
+        <p>If file exist, then it returns <strong><code class="language-plaintext highlighter-rouge">true</code></strong>. If file does not exis, then return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</p>
+      </li>
+      <li>
+        <p>We are comparing that return value <strong><code class="language-plaintext highlighter-rouge">Exists</code></strong> method equals to <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</p>
+      </li>
+      <li>
+        <p>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, means we <strong>don’t</strong> have browsed file hence we <strong>exit</strong> the function from here.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</h2>
 
-<p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below image.</p>
+<p>In this section, we open browsed Solidworks document.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+<ul>
+  <li>
+    <p>Create a new function <strong><code class="language-plaintext highlighter-rouge">OpenSolidworksDocument()</code></strong>.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-opensolidworksdocument-function.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-opensolidworksdocument-function.gif" alt="add-opensolidworksdocument-function" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">OpenSolidworksDocument</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Create a new Instance of Solidworks Application</span>
-    <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
 
-    <span class="c1">// Make Solidworks visible</span>
-    <span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-
-    <span class="c1">// Variable to hold selected document's template path</span>
-    <span class="kt">string</span> <span class="n">templatePath</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
-
-    <span class="c1">// Switch Conditional Statement</span>
-    <span class="k">switch</span> <span class="p">(</span><span class="n">SelectedDocument</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">case</span> <span class="s">"Part Document"</span><span class="p">:</span>
-            <span class="c1">// Get default Part template path</span>
-            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="s">"Assembly Document"</span><span class="p">:</span>
-            <span class="c1">// Get default Assembly template path</span>
-            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateAssembly</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="k">case</span> <span class="s">"Drawing Document"</span><span class="p">:</span>
-            <span class="c1">// Get default Drawing template path</span>
-            <span class="n">templatePath</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">SwConst</span><span class="p">.</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplateDrawing</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Create a new Document as ModelDoc2 object</span>
-    <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">templatePath</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif" alt="add-open-solidworks-document-code" /></a></p>
+<ul>
+  <li>
+    <p>Now we call this <strong><code class="language-plaintext highlighter-rouge">OpenSolidworksDocument()</code></strong> function in <strong><code class="language-plaintext highlighter-rouge">ExecuteClickCommand()</code></strong> method.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/call-new-function.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/call-new-function.gif" alt="call-new-function" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Show busy indicator</span>
+    <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nf">OpenSolidworksDocument</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Hide busy indicator</span>
+    <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Now, we get browsed file extension.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-browsed-file-info.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-browsed-file-info.gif" alt="get-browsed-file-info" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">OpenSolidworksDocument</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FileInfo</span> <span class="n">fileInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileInfo</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above line, we store <strong>file information</strong> in <strong><code class="language-plaintext highlighter-rouge">fileInfo</code></strong> variable.</p>
+  </li>
+  <li>
+    <p>Type of <strong><code class="language-plaintext highlighter-rouge">fileInfo</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">FileInfo</code></strong>.</p>
+  </li>
+  <li>
+    <p>When we create <strong><code class="language-plaintext highlighter-rouge">fileInfo</code></strong> variable, we pass browsed file path.</p>
+  </li>
+  <li>
+    <p>We want to get information of this browsed file.</p>
+  </li>
+  <li>
+    <p>Now we want to get the <strong>file extension</strong> from this <strong><code class="language-plaintext highlighter-rouge">fileInfo</code></strong> variable.</p>
+  </li>
+  <li>
+    <p>Then we store this <strong>file extension</strong> in a <strong><code class="language-plaintext highlighter-rouge">string</code></strong> type variable.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-file-extension.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-file-extension.gif" alt="get-file-extension" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">OpenSolidworksDocument</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FileInfo</span> <span class="n">fileInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileInfo</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+
+    <span class="kt">string</span> <span class="n">fileExtension</span> <span class="p">=</span> <span class="n">fileInfo</span><span class="p">.</span><span class="n">Extension</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Now we will get the document type of selected file.</p>
+  </li>
+  <li>
+    <p>For this we will check the file extension, we get previously in <strong><code class="language-plaintext highlighter-rouge">fileExtension</code></strong> variable.</p>
+  </li>
+  <li>
+    <p>For this, first we create a new variable <strong><code class="language-plaintext highlighter-rouge">docType</code></strong> of <strong><code class="language-plaintext highlighter-rouge">int</code></strong> data type.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-data-type-variable.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-data-type-variable.gif" alt="add-data-type-variable" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">OpenSolidworksDocument</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FileInfo</span> <span class="n">fileInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileInfo</span><span class="p">(</span><span class="n">FilePath</span><span class="p">);</span>
+
+    <span class="kt">string</span> <span class="n">fileExtension</span> <span class="p">=</span> <span class="n">fileInfo</span><span class="p">.</span><span class="n">Extension</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">docType</span> <span class="p">=</span> <span class="k">default</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>We set the value of <strong><code class="language-plaintext highlighter-rouge">docType</code></strong> variable to Solidworks Document type we have browsed.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-browsed-document-type.png"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/get-browsed-document-type.png" alt="get-browsed-document-type" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Compare</span><span class="p">(</span><span class="n">fileExtension</span><span class="p">,</span> <span class="s">".sldprt"</span><span class="p">,</span> <span class="k">true</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="n">docType</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocPART</span><span class="p">;</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Compare</span><span class="p">(</span><span class="n">fileExtension</span><span class="p">,</span> <span class="s">".sldasm"</span><span class="p">,</span> <span class="k">true</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="n">docType</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocASSEMBLY</span><span class="p">;</span>
+<span class="k">else</span>
+    <span class="n">docType</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDocumentTypes_e</span><span class="p">.</span><span class="n">swDocDRAWING</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above code sample, we check for 3 different conditions as follows.</p>
+
+    <ol>
+      <li>
+        <p>First we check if fileExtension is <strong><code class="language-plaintext highlighter-rouge">.sldprt</code></strong>. If this condition is true, then we set the value of  <strong><code class="language-plaintext highlighter-rouge">docType</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">(int)swDocumentTypes_e.swDocPART</code></strong>.</p>
+      </li>
+      <li>
+        <p>After that we check if fileExtension is <strong><code class="language-plaintext highlighter-rouge">.sldasm</code></strong>. If this condition is true, then we set the value of  <strong><code class="language-plaintext highlighter-rouge">docType</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">(int)swDocumentTypes_e.swDocASSEMBLY</code></strong>.</p>
+      </li>
+      <li>
+        <p>Lastly if above any codition did not get <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, then we set the value of  <strong><code class="language-plaintext highlighter-rouge">docType</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">(int)swDocumentTypes_e.swDocASSEMBLY</code></strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Now we open browsed file in Solidworks.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
+
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/open-solidworks-document.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/open-solidworks-document.gif" alt="open-solidworks-document" /></a></p>
+
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+
+<span class="n">swApp</span><span class="p">.</span><span class="nf">OpenDoc</span><span class="p">(</span><span class="n">FilePath</span><span class="p">,</span> <span class="n">docType</span><span class="p">);</span>
+
+<span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>In above code, we create Solidworks application variable.</p>
+  </li>
+  <li>
+    <p>Then, we open browsed document.</p>
+  </li>
+  <li>
+    <p>After opening document, we make Solidworks visible.</p>
+  </li>
+</ul>
 
 <h2 id="final-result">FINAL RESULT</h2>
 
@@ -693,7 +662,7 @@
 
 <p>Please see below image for final result of our work.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif" alt="final-result" /></a></p>
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/final-result.gif" alt="final-result" /></a></p>
 
 <hr />
 
@@ -737,7 +706,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-04-08T01:04:16-04:00">April 8, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-06-29T00:03:31-04:00">June 29, 2023</time></p>
 
 
       </footer>
