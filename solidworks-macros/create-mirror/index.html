@@ -5,39 +5,42 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>SOLIDWORKS Macro - Create Mirror - The CAD Coder</title>
-<meta name="description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html -->
+  <title>SOLIDWORKS Macro - Create Mirror - The CAD Coder</title>
+  <meta name="description"
+    content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="SOLIDWORKS Macro - Create Mirror">
-<meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-mirror/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="SOLIDWORKS Macro - Create Mirror">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-mirror/">
 
 
-  <meta property="og:description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-08-20T08:09:36-04:00">
+  <meta property="og:description"
+    content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-mirror/">
+
+  <meta property="article:published_time" content="2023-08-27T21:34:10-04:00">
 
 
 
 
-<script type="application/ld+json">
+
+
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-mirror/">
+
+
+
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
@@ -54,870 +57,915 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">General - Solidworks Functions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
-          
-            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
-          
-            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
-          
-            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
-          
-            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
-          
-            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Lines</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Rectangles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Circles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
-          
-            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
-          
-            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Arcs</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
-          
-            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Slots</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Point and Spline</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
-          
-            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
-          
-            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Trim and Extend</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
+          <nav class="nav__list">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Patterns</span>
-        
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Move and Rotate</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Relations</span>
-        
+                <span class="nav__sub-title">General - Solidworks Functions</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
-          
-            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Dimensions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Extrudes</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Cuts</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Holes and Threads</span>
-        
+                  <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
-          
-            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
-        
+                  <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Mirror & Patterns</span>
-        
+                  <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a>
+                  </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-mirror/" class="active">Mirror Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Transformation</span>
-        
+                  <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Reference Geometry</span>
-        
+                  <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - General</span>
-        
+                  <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Standard Mates</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Advanced Mates</span>
-        
+              </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Editing Mates</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Components</span>
-        
+                <span class="nav__sub-title">Sketch - Lines</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Misc</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Insert Views</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Break Views</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Others</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
-          
-            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
+              </li>
 
-    
-  
-  </div>
+              <li>
 
-</div>
+                <span class="nav__sub-title">Sketch - Rectangles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Circles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+
+                  <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+
+                  <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Arcs</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+
+                  <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Slots</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight
+                      Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Point and Spline</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+
+                  <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+
+                  <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Trim and Extend</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Move and Rotate</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Relations</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch
+                      Relations</a></li>
+
+                  <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Dimensions</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Extrudes</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Cuts</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Holes and Threads</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+
+                  <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Mirror & Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-mirror/" class="active">Mirror Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Transformation</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Reference Geometry</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - General</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Standard Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Advanced Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Editing Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Components</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Misc</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components
+                      Sequentially</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Insert Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current
+                      Sheet</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in
+                      Drawing</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in
+                      Drawing</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Break Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Others</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction
+                      Sketch</a></li>
+
+                  <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="SOLIDWORKS Macro - Create Mirror">
-    
-    <meta itemprop="description" content="  This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.  If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.  But from this post onward we will take user-inputs.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
-    
-    
-    <meta itemprop="datePublished" content="2023-08-20T08:09:36-04:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS Macro - Create Mirror
-</h1>
-        
+              <meta itemprop="headline" content="SOLIDWORKS Macro - Create Mirror">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          19 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description"
+                content="  This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.  If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.  But from this post onward we will take user-inputs.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2023-08-27T21:34:10-04:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#creating-global-variables">Creating Global Variables</a></li><li><a href="#initializing-required-variables">Initializing Required Variables</a></li><li><a href="#ask-user-to-select-feature-and-plane">Ask user to select feature and plane</a></li><li><a href="#mark-selected-entities">Mark selected Entities</a></li><li><a href="#create-mirror-feature">Create Mirror Feature</a></li><li><a href="#final-work">Final work</a></li></ul></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <div class="notice--warning">
-  This article is an <strong>"Intermediate"</strong> post and required you to have some knowledge of <strong>VBA</strong>.<br />
-  If you are following my articles you will notice that till now we were <strong>hardcoding</strong> the selections for input parameters.<br />
-  But from this post onward we will take user-inputs.<br />
-  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
-  I hope you will also like this type of tutorials.<br />
-  Thank you for reading.<br />
-</div>
+              <div class="page__inner-wrap">
 
-<h2 id="objective">Objective</h2>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS Macro - Create Mirror
+                  </h1>
 
-<p>Objective of this article is to learn <em>how to create <strong>Mirror</strong> feature through SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
 
-<p>We create <strong>Mirror Feature</strong> in following steps in general.</p>
+                  <p class="page__meta">
 
-<ol>
-  <li>Ask user to select <strong>a Feature to Mirror</strong>.</li>
-  <li>Ask user to select <strong>a Plane for Mirror</strong>.</li>
-  <li>Create <strong>Mirror feature</strong> from method <code class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code>.</li>
-</ol>
 
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Mirror Feature</strong> quickly.</p>
 
-<h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>After running our macro we successfully create <strong>Mirror feature</strong> as a result.</p>
 
-<p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"><img src="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png" alt="mirror-final-result" /></a></p>
 
-<blockquote>
-  <p>To get the correct result please follow the steps correctly.</p>
-</blockquote>
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<p>Please see below 🎬 video on <strong>how to create Mirror feature</strong> from SOLIDWORKS VBA Macros.</p>
+                      19 minute read
 
-<iframe src="https://www.youtube.com/embed/S8ro72v2clQ" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+                    </span>
 
-<p>Please note that there are <strong>no explanation</strong> in the video.</p>
+                  </p>
 
-<p><strong>Explanation</strong> of each line and why we write code this way is given in <strong><em>this article</em></strong>.</p>
 
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
+                </header>
 
-<h2 id="code-sample">Code Sample</h2>
 
-<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating <em>Mirror Feature</em> feature in <strong>VBA</strong> is given.</p>
+                <section class="page__content" itemprop="text">
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#results-we-can-get">Results We Can Get</a></li>
+                        <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+                        <li><a href="#code-sample">Code Sample</a></li>
+                        <li><a href="#prerequisite">Prerequisite</a></li>
+                        <li><a href="#steps-to-follow">Steps To Follow</a>
+                          <ul>
+                            <li><a href="#creating-global-variables">Creating Global Variables</a></li>
+                            <li><a href="#initializing-required-variables">Initializing Required Variables</a></li>
+                            <li><a href="#ask-user-to-select-feature-and-plane">Ask user to select feature and plane</a>
+                            </li>
+                            <li><a href="#mark-selected-entities">Mark selected Entities</a></li>
+                            <li><a href="#create-mirror-feature">Create Mirror Feature</a></li>
+                            <li><a href="#final-work">Final work</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="notice--warning">
+                      This article is an <strong>"Intermediate"</strong> post and required you to have some knowledge of
+                      <strong>VBA</strong>.<br />
+                      If you are following my articles you will notice that till now we were <strong>hardcoding</strong>
+                      the selections for input parameters.<br />
+                      But from this post onward we will take user-inputs.<br />
+                      In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for
+                      taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong>
+                      for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong>
+                      to notify user.<br />
+                      I hope you will also like this type of tutorials.<br />
+                      Thank you for reading.<br />
+                    </div>
+
+                    <h2 id="objective">Objective</h2>
+
+                    <p>Objective of this article is to learn <em>how to create <strong>Mirror</strong> feature through
+                        SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
+
+                    <p>We create <strong>Mirror Feature</strong> in following steps in general.</p>
+
+                    <ol>
+                      <li>Ask user to select <strong>a Feature to Mirror</strong>.</li>
+                      <li>Ask user to select <strong>a Plane for Mirror</strong>.</li>
+                      <li>Create <strong>Mirror feature</strong> from method <code
+                          class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code>.</li>
+                    </ol>
+
+                    <p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this
+                          method</em></strong> if you want to create a new <strong>Mirror Feature</strong> quickly.</p>
+
+                    <h2 id="results-we-can-get">Results We Can Get</h2>
+
+                    <p>After running our macro we successfully create <strong>Mirror feature</strong> as a result.</p>
+
+                    <p>Below image shows the result we get.</p>
+
+                    <p><a href="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"><img
+                          src="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"
+                          alt="mirror-final-result" /></a></p>
+
+                    <blockquote>
+                      <p>To get the correct result please follow the steps correctly.</p>
+                    </blockquote>
+
+                    <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+                    <p>Please see below 🎬 video on <strong>how to create Mirror feature</strong> from SOLIDWORKS VBA
+                      Macros.</p>
+
+                    <iframe src="https://www.youtube.com/embed/S8ro72v2clQ" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
+
+                    <p>Please note that there are <strong>no explanation</strong> in the video.</p>
+
+                    <p><strong>Explanation</strong> of each line and why we write code this way is given in
+                      <strong><em>this article</em></strong>.</p>
+
+                    <p class="notice--warning">It is advisable to watch video, since it help you to better understand
+                      the process.</p>
+
+                    <h2 id="code-sample">Code Sample</h2>
+
+                    <p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating
+                      <em>Mirror Feature</em> feature in <strong>VBA</strong> is given.</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Create variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -1096,269 +1144,425 @@
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="prerequisite">Prerequisite</h2>
+                    <h2 id="prerequisite">Prerequisite</h2>
 
-<p>There are some <em>prerequisite</em> for this article.</p>
+                    <p>There are some <em>prerequisite</em> for this article.</p>
 
-<p>We are <strong>not</strong> creating feature from code but we use existing 👉 <strong><a href="/solidworks-macros/create-extrude-feature">Extrude</a> feature</strong> to create <strong>Mirror feature</strong> as shown in below picture.</p>
+                    <p>We are <strong>not</strong> creating feature from code but we use existing 👉 <strong><a
+                          href="/solidworks-macros/create-extrude-feature">Extrude</a> feature</strong> to create
+                      <strong>Mirror feature</strong> as shown in below picture.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-mirror/prerequisite.png"><img src="/assets/Solidworks_Images/feature-mirror/prerequisite.png" alt="prerequisite" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-mirror/prerequisite.png"><img
+                          src="/assets/Solidworks_Images/feature-mirror/prerequisite.png" alt="prerequisite" /></a></p>
 
-<p>As shown in above image, there are only <em>2 Extrude feature</em> in our part.</p>
+                    <p>As shown in above image, there are only <em>2 Extrude feature</em> in our part.</p>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Base Extrude Feature</code> : This is our <strong>Base Extruded feature</strong>.</li>
-  <li><code class="language-plaintext highlighter-rouge">Mirror Extrude Feature</code> : This is our <strong>Extruded feature</strong> for mirror.</li>
-</ul>
+                    <ul>
+                      <li><code class="language-plaintext highlighter-rouge">Base Extrude Feature</code> : This is our
+                        <strong>Base Extruded feature</strong>.</li>
+                      <li><code class="language-plaintext highlighter-rouge">Mirror Extrude Feature</code> : This is our
+                        <strong>Extruded feature</strong> for mirror.</li>
+                    </ul>
 
-<p>If you want to create <strong>Extrude</strong> feature <em>programmatically</em> then please refer to below article.</p>
+                    <p>If you want to create <strong>Extrude</strong> feature <em>programmatically</em> then please
+                      refer to below article.</p>
 
-<ul>
-  <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
-</ul>
+                    <ul>
+                      <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create
+                            Extrude/Boss</a></strong></li>
+                    </ul>
 
-<blockquote>
-  <p>We will apply checks in this article, so the code we write should be error free most of the time.</p>
-</blockquote>
+                    <blockquote>
+                      <p>We will apply checks in this article, so the code we write should be error free most of the
+                        time.</p>
+                    </blockquote>
 
-<h2 id="steps-to-follow">Steps To Follow</h2>
+                    <h2 id="steps-to-follow">Steps To Follow</h2>
 
-<p>To create <strong>Mirror Feature</strong> there are following steps:</p>
+                    <p>To create <strong>Mirror Feature</strong> there are following steps:</p>
 
-<ol>
-  <li><em>Creating Global Variables</em></li>
-  <li><em>Initializing required variables</em></li>
-  <li><em>Ask user to select feature and plane</em></li>
-  <li><em>Mark selected entities</em></li>
-  <li><em>Create Mirror feature</em></li>
-  <li><em>Final work</em></li>
-</ol>
+                    <ol>
+                      <li><em>Creating Global Variables</em></li>
+                      <li><em>Initializing required variables</em></li>
+                      <li><em>Ask user to select feature and plane</em></li>
+                      <li><em>Mark selected entities</em></li>
+                      <li><em>Create Mirror feature</em></li>
+                      <li><em>Final work</em></li>
+                    </ol>
 
-<p>Now let us walk through <strong>each step</strong> as given above, and <strong>understand</strong> every line.</p>
+                    <p>Now let us walk through <strong>each step</strong> as given above, and
+                      <strong>understand</strong> every line.</p>
 
-<blockquote>
-  <p>I also give some <strong><em>links (see icon 👉)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
-</blockquote>
+                    <blockquote>
+                      <p>I also give some <strong><em>links (see icon 👉)</em></strong> so that you can go through them
+                        if there are anything I explained in previous articles.</p>
+                    </blockquote>
 
-<h3 id="creating-global-variables">Creating Global Variables</h3>
+                    <h3 id="creating-global-variables">Creating Global Variables</h3>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>This line forces us to define every variable we are going to use.</p>
+                    <p>This line forces us to define every variable we are going to use.</p>
 
-<p>For more information please visit 👉 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> post.</p>
+                    <p>For more information please visit 👉 <strong><a
+                          href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part
+                          document</a></strong> post.</p>
 
-<p>We create following variables.</p>
+                    <p>We create following variables.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks application</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks application</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+                    <p>In this line, we create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swApp</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks document</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks document</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+                    <p>In this line, we create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks Selection Manager</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks Selection Manager</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
 <span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
+                    <p>In this line, we create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit
+                      👉 <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks Entity</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks Entity</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
 <span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code class="language-plaintext highlighter-rouge">swObject</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+                    <p>In this line, we Create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swObject</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
 
-<p>We create variable <code class="language-plaintext highlighter-rouge">swObject</code> for <strong>SOLIDWORKS Entities</strong> (<em>Profile and Path</em>) we ask use to select.</p>
+                    <p>We create variable <code class="language-plaintext highlighter-rouge">swObject</code> for
+                      <strong>SOLIDWORKS Entities</strong> (<em>Profile and Path</em>) we ask use to select.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code> object, please visit 👉
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks Mirror feature</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks Mirror feature</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Mirror feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Mirror feature</span>
 <span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+                    <p>In this line, we Create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
 
-<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>SOLIDWORKS Mirror Feature</strong>.</p>
+                    <p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for
+                      <strong>SOLIDWORKS Mirror Feature</strong>.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<ul>
-  <li><strong>Variable for Solidworks Select Data</strong></li>
-</ul>
+                    <ul>
+                      <li><strong>Variable for Solidworks Select Data</strong></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Select Data</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Select Data</span>
 <span class="k">Dim</span> <span class="nv">swSelData</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">swSelData</code> as <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object type.</p>
+                    <p>In this line, we create a variable named <code
+                        class="language-plaintext highlighter-rouge">swSelData</code> as <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object type.</p>
 
-<p>We create variable <code class="language-plaintext highlighter-rouge">swSelData</code> for <strong>SOLIDWORKS Select Data</strong>, which we use for <strong>Marking</strong> selected object.</p>
+                    <p>We create variable <code class="language-plaintext highlighter-rouge">swSelData</code> for
+                      <strong>SOLIDWORKS Select Data</strong>, which we use for <strong>Marking</strong> selected
+                      object.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectData_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SelectData</code> object, please visit 👉
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectData_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<p><strong><em>These all are our global variables.</em></strong></p>
+                    <p><strong><em>These all are our global variables.</em></strong></p>
 
-<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+                    <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-<p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
+                    <p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Mirror program</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Mirror program</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+                    <p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has
+                      name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
 
-<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+                    <p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
 
-<p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</p>
+                    <p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a
+                          href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article
+                      of this website.</p>
 
-<h3 id="initializing-required-variables">Initializing Required Variables</h3>
+                    <h3 id="initializing-required-variables">Initializing Required Variables</h3>
 
-<p>Inside this procedure we first initialize required variables as given below.</p>
+                    <p>Inside this procedure we first initialize required variables as given below.</p>
 
-<ul>
-  <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
-</ul>
+                    <ul>
+                      <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we set the value of our SOLIDWORKS variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to SOLIDWORKS application.</p>
+                    <p>In this line, we set the value of our SOLIDWORKS variable <code
+                        class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to
+                      SOLIDWORKS application.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
 <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully assigned</em> to current SOLIDWORKS application.</p>
+                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully
+                        assigned</em> to current SOLIDWORKS application.</p>
 
-<ul>
-  <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
-</ul>
+                    <ul>
+                      <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we set SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
+                    <p>In above line of code, we set SOLIDWORKS document <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part
+                      document.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
 <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS document is not opened. Please open a document."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if SOLIDWORKS document <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
 
-<p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+                    <p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a
+                      👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
 
-<ul>
-  <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
-</ul>
+                    <ul>
+                      <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
 <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we set SOLIDWORKS Selection Manager<code class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s Selection Manager.</p>
+                    <p>In above line, we set SOLIDWORKS Selection Manager<code
+                        class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s
+                      Selection Manager.</p>
 
-<ul>
-  <li>Array of SOLIDWORKS Entities</li>
-</ul>
+                    <ul>
+                      <li>Array of SOLIDWORKS Entities</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Array of Solidworks Entities</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Array of Solidworks Entities</span>
 <span class="k">Dim</span> <span class="nv">swObjects</span><span class="p">(</span><span class="mi">1</span> <span class="k">To</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create an Array of SOLIDWORKS Entities which we named as <code class="language-plaintext highlighter-rouge">swObjects</code> and the type of this <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+                    <p>In this line, we create an Array of SOLIDWORKS Entities which we named as <code
+                        class="language-plaintext highlighter-rouge">swObjects</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
 
-<p>This array consist <em>two</em> <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variables.</p>
+                    <p>This array consist <em>two</em> <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code> variables.</p>
 
-<p>We define the number of variable this array holds inside <strong>(1 To 2)</strong>.</p>
+                    <p>We define the number of variable this array holds inside <strong>(1 To 2)</strong>.</p>
 
-<p>For more information about the <strong>Arrays</strong> in VBA please 👉 <strong><a href="/vba/arrays/">Array on this website</a></strong>.</p>
+                    <p>For more information about the <strong>Arrays</strong> in VBA please 👉 <strong><a
+                          href="/vba/arrays/">Array on this website</a></strong>.</p>
 
-<ul>
-  <li><em>Local variable for User selection</em></li>
-</ul>
+                    <ul>
+                      <li><em>Local variable for User selection</em></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Local variable for selection</span>
 <span class="k">Dim</span> <span class="nv">selectItems</span> <span class="ow">As</span> <span class="kt">Integer</span>
 <span class="n">selectItems</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we define a Local variable name <code class="language-plaintext highlighter-rouge">selectItems</code>as <strong>Integer</strong> type.</p>
+                    <p>In above line of code, we define a Local variable name <code
+                        class="language-plaintext highlighter-rouge">selectItems</code>as <strong>Integer</strong> type.
+                    </p>
 
-<p>In next line we assign a value of <strong>1</strong>.</p>
+                    <p>In next line we assign a value of <strong>1</strong>.</p>
 
-<h3 id="ask-user-to-select-feature-and-plane">Ask user to select feature and plane</h3>
+                    <h3 id="ask-user-to-select-feature-and-plane">Ask user to select feature and plane</h3>
 
-<p>Now we will ask user to select <strong>feature and plane</strong> for <em>Mirror feature</em>.</p>
+                    <p>Now we will ask user to select <strong>feature and plane</strong> for <em>Mirror feature</em>.
+                    </p>
 
-<p>Please follow steps given below.</p>
+                    <p>Please follow steps given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till we select all entities</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Loop till we select all entities</span>
 <span class="k">While</span> <span class="n">selectItems</span> <span class="o">&lt;=</span> <span class="mi">2</span>
 
 <span class="k">Wend</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+                    <p>In above line of code we start a <code class="language-plaintext highlighter-rouge">While</code>
+                      loop.</p>
 
-<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+                    <p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop,
+                      please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.
+                    </p>
 
-<p>We want to loop until <code class="language-plaintext highlighter-rouge">selectItems</code> variable’s value is equal to <strong>2</strong>.</p>
+                    <p>We want to loop until <code class="language-plaintext highlighter-rouge">selectItems</code>
+                      variable’s value is equal to <strong>2</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Message to show user</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Message to show user</span>
 <span class="k">Dim</span> <span class="nv">messageToUser</span> <span class="ow">As</span> <span class="kt">String</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we create a variable named <code class="language-plaintext highlighter-rouge">messageToUser</code> of <code class="language-plaintext highlighter-rouge">String</code> type.</p>
+                    <p>In above line of code we create a variable named <code
+                        class="language-plaintext highlighter-rouge">messageToUser</code> of <code
+                        class="language-plaintext highlighter-rouge">String</code> type.</p>
 
-<p>This variable holds the message we want to show before selection.</p>
+                    <p>This variable holds the message we want to show before selection.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Messages</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Update Messages</span>
 <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
   <span class="k">Case</span> <span class="mi">1</span>
   	<span class="n">messageToUser</span> <span class="o">=</span> <span class="s">"Please select a Feature for Mirror feature."</span>
@@ -1367,69 +1571,113 @@
   <span class="k">Case</span> <span class="k">Else</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Select</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code> statement to update message.</p>
+                    <p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code>
+                      statement to update message.</p>
 
-<p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code class="language-plaintext highlighter-rouge">selectItems</code>.</p>
+                    <p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code
+                        class="language-plaintext highlighter-rouge">selectItems</code>.</p>
 
-<p>When <code class="language-plaintext highlighter-rouge">selectItems = 1</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select a Feature for Mirror feature."</code></p>
+                    <p>When <code class="language-plaintext highlighter-rouge">selectItems = 1</code> then value of
+                      <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code
+                        class="language-plaintext highlighter-rouge">"Please select a Feature for Mirror feature."</code>
+                    </p>
 
-<p>Similarly, when <code class="language-plaintext highlighter-rouge">selectItems = 2</code> then value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code class="language-plaintext highlighter-rouge">"Please select a Plane for Mirror feature."</code></p>
+                    <p>Similarly, when <code class="language-plaintext highlighter-rouge">selectItems = 2</code> then
+                      value of <code class="language-plaintext highlighter-rouge">messageToUser</code> update to <code
+                        class="language-plaintext highlighter-rouge">"Please select a Plane for Mirror feature."</code>
+                    </p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Show message to user</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Show message to user</span>
 <span class="n">MsgBox</span> <span class="n">messageToUser</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we show the message to user.</p>
+                    <p>In above line of code, we show the message to user.</p>
 
-<p>Below image shows the message for <strong>Feature selection</strong> to the user.</p>
+                    <p>Below image shows the message for <strong>Feature selection</strong> to the user.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-mirror/message-to-select-feature-for-mirror.png"><img src="/assets/Solidworks_Images/feature-mirror/message-to-select-feature-for-mirror.png" alt="message-to-select-feature-for-mirror" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-mirror/message-to-select-feature-for-mirror.png"><img
+                          src="/assets/Solidworks_Images/feature-mirror/message-to-select-feature-for-mirror.png"
+                          alt="message-to-select-feature-for-mirror" /></a></p>
 
-<p>Below image shows the message for <strong>Plane selection</strong> to the user.</p>
+                    <p>Below image shows the message for <strong>Plane selection</strong> to the user.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-mirror/message-to-select-plane-for-mirror.png"><img src="/assets/Solidworks_Images/feature-mirror/message-to-select-plane-for-mirror.png" alt="message-to-select-plane-for-mirror" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-mirror/message-to-select-plane-for-mirror.png"><img
+                          src="/assets/Solidworks_Images/feature-mirror/message-to-select-plane-for-mirror.png"
+                          alt="message-to-select-plane-for-mirror" /></a></p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we complete our selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Loop until we complete our selection</span>
 <span class="k">While</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="ow">Is</span> <span class="k">Nothing</span>
     
 <span class="k">Wend</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we create another <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+                    <p>In above line of code, we create another <code
+                        class="language-plaintext highlighter-rouge">While</code> loop.</p>
 
-<p>This loops until we select the our <strong>Profile</strong> and <strong>Path</strong>.</p>
+                    <p>This loops until we select the our <strong>Profile</strong> and <strong>Path</strong>.</p>
 
-<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
+                    <p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop,
+                      please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.
+                    </p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local integer for loop</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Local integer for loop</span>
 <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we create a local integer name <code class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
+                    <p>In above line of code, we create a local integer name <code
+                        class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we select</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Loop until we select</span>
 <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">Next</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</p>
+                    <p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code>
+                      loop.</p>
 
-<p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
+                    <p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of
+                      <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Messages</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Update Messages</span>
 <span class="k">Select</span> <span class="k">Case</span> <span class="n">selectItems</span>
 
 <span class="k">End</span> <span class="k">Select</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code> statement for selection entities.</p>
+                    <p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code>
+                      statement for selection entities.</p>
 
-<p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code class="language-plaintext highlighter-rouge">selectItems</code>.</p>
+                    <p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code
+                        class="language-plaintext highlighter-rouge">selectItems</code>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Case</span> <span class="mi">1</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Case</span> <span class="mi">1</span>
 	<span class="c1">' If the profile sketch is selected</span>
   <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelBODYFEATURES</span> <span class="k">Then</span>
 
@@ -1445,56 +1693,87 @@
     <span class="c1">' Clear selection</span>
     <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Above code sample we use for <strong><code class="language-plaintext highlighter-rouge">Case 1</code></strong>.</p>
+                    <p>Above code sample we use for <strong><code
+                          class="language-plaintext highlighter-rouge">Case 1</code></strong>.</p>
 
-<p>In above line of code, we use  👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else statement</a></strong>  with conditions.</p>
+                    <p>In above line of code, we use 👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else
+                          statement</a></strong> with conditions.</p>
 
-<p>The  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Body Feature</em>.</p>
+                    <p>The 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is <code
+                        class="language-plaintext highlighter-rouge">True</code> when selected <code
+                        class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Body
+                        Feature</em>.</p>
 
-<p>Similarly,  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong>  is True when select <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Face</em>.</p>
+                    <p>Similarly, 👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong>
+                      is True when select <code class="language-plaintext highlighter-rouge">object</code> is type of
+                      <em>SOLIDWORKS Face</em>.</p>
 
-<p class="notice">When we select the sketch from Model view, then selected object is <em>SOLIDWORKS Face</em>.
-<br />
-When we select the sketch from Feature Tree, then select object is <em>SOLIDWORKS Body Feature</em>.</p>
+                    <p class="notice">When we select the sketch from Model view, then selected object is <em>SOLIDWORKS
+                        Face</em>.
+                      <br />
+                      When we select the sketch from Feature Tree, then select object is <em>SOLIDWORKS Body
+                        Feature</em>.
+                    </p>
 
-<p>When  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True we execute code given below.</p>
+                    <p>When 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True
+                      we execute code given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to feature for mirror</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to feature for mirror</span>
 <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we set the indexed object inside array.</p>
+                    <p>In above line, we set the indexed object inside array.</p>
 
-<ul>
-  <li><em>Array of SOLIDWORKS Entities</em> = <code class="language-plaintext highlighter-rouge">swObjects</code></li>
-  <li><em>Indexed Entity Object</em> = <code class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
-</ul>
+                    <ul>
+                      <li><em>Array of SOLIDWORKS Entities</em> = <code
+                          class="language-plaintext highlighter-rouge">swObjects</code></li>
+                      <li><em>Indexed Entity Object</em> = <code
+                          class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
+                    </ul>
 
-<p>We set the value of this <strong>Indexed Entity Object</strong> by <code class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS Selection Manager.</p>
+                    <p>We set the value of this <strong>Indexed Entity Object</strong> by <code
+                        class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS
+                      Selection Manager.</p>
 
-<p>When we set the <strong>Indexed Entity Object</strong> value as <strong>feature to mirror</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+                    <p>When we set the <strong>Indexed Entity Object</strong> value as <strong>feature to
+                        mirror</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code>
+                      loop.</p>
 
-<p>Similarly, when  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong> is True we execute code given below.</p>
+                    <p>Similarly, when 👉 <strong><a href="/vba/if-then-structure-select-case/">Else
+                          statement</a></strong> is True we execute code given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select feature from Feature Tree</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Inform user to select feature from Feature Tree</span>
 <span class="n">MsgBox</span> <span class="s">"Please select feature from Feature Tree."</span>
 
 <span class="c1">' Clear selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ol>
-  <li>We show message to user to select <strong>Feature</strong> from <em>Feature Tree</em>.</li>
-  <li>After that we clear our selection.</li>
-</ol>
+                    <ol>
+                      <li>We show message to user to select <strong>Feature</strong> from <em>Feature Tree</em>.</li>
+                      <li>After that we clear our selection.</li>
+                    </ol>
 
-<blockquote>
-  <p>We do this because if selected object type is <em>SOLIDWORKS Face</em> then we can not assign this object as SOLIDWORKS Entity inside array.</p>
-</blockquote>
+                    <blockquote>
+                      <p>We do this because if selected object type is <em>SOLIDWORKS Face</em> then we can not assign
+                        this object as SOLIDWORKS Entity inside array.</p>
+                    </blockquote>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Case</span> <span class="mi">2</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Case</span> <span class="mi">2</span>
   <span class="c1">' If the Plane is selected</span>
   <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelDATUMPLANES</span> <span class="k">Then</span>
   
@@ -1508,463 +1787,643 @@ When we select the sketch from Feature Tree, then select object is <em>SOLIDWORK
     <span class="c1">' Clear selection</span>
     <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Above code sample we use for <strong><code class="language-plaintext highlighter-rouge">Case 2</code></strong>.</p>
+                    <p>Above code sample we use for <strong><code
+                          class="language-plaintext highlighter-rouge">Case 2</code></strong>.</p>
 
-<p>In above line of code, we use  👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else statement</a></strong>  with conditions.</p>
+                    <p>In above line of code, we use 👉 <strong><a href="/vba/if-then-structure-select-case/">IF/Else
+                          statement</a></strong> with conditions.</p>
 
-<p>The  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Datum Plane</em>.</p>
+                    <p>The 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is <code
+                        class="language-plaintext highlighter-rouge">True</code> when selected <code
+                        class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Datum
+                        Plane</em>.</p>
 
-<p>If we the selected <code class="language-plaintext highlighter-rouge">object</code> is <strong>not</strong> type of <em>SOLIDWORKS Datum Plane</em> then 👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong> code runs.</p>
+                    <p>If we the selected <code class="language-plaintext highlighter-rouge">object</code> is
+                      <strong>not</strong> type of <em>SOLIDWORKS Datum Plane</em> then 👉 <strong><a
+                          href="/vba/if-then-structure-select-case/">Else statement</a></strong> code runs.</p>
 
-<p>When  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True we execute code given below.</p>
+                    <p>When 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True
+                      we execute code given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to selected plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to selected plane</span>
 <span class="k">Set</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">selectItems</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we set the indexed object inside array.</p>
+                    <p>In above line, we set the indexed object inside array.</p>
 
-<ul>
-  <li><em>Array of SOLIDWORKS Entities</em> = <code class="language-plaintext highlighter-rouge">swObjects</code></li>
-  <li><em>Indexed Entity Object</em> = <code class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
-</ul>
+                    <ul>
+                      <li><em>Array of SOLIDWORKS Entities</em> = <code
+                          class="language-plaintext highlighter-rouge">swObjects</code></li>
+                      <li><em>Indexed Entity Object</em> = <code
+                          class="language-plaintext highlighter-rouge">swObjects[selectItems]</code></li>
+                    </ul>
 
-<p>We set the value of this <strong>Indexed Entity Object</strong> by <code class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS Selection Manager.</p>
+                    <p>We set the value of this <strong>Indexed Entity Object</strong> by <code
+                        class="language-plaintext highlighter-rouge">GetSelectedObject6()</code> method of SOLIDWORKS
+                      Selection Manager.</p>
 
-<p>When we set the <strong>Indexed Entity Object</strong> value as <strong>feature to mirror</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
+                    <p>When we set the <strong>Indexed Entity Object</strong> value as <strong>feature to
+                        mirror</strong>, we exit the 2nd <code class="language-plaintext highlighter-rouge">While</code>
+                      loop.</p>
 
-<p>Similarly, when  👉 <strong><a href="/vba/if-then-structure-select-case/">Else statement</a></strong> is True we execute code given below.</p>
+                    <p>Similarly, when 👉 <strong><a href="/vba/if-then-structure-select-case/">Else
+                          statement</a></strong> is True we execute code given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Inform user to select plane</span>
 <span class="n">MsgBox</span> <span class="s">"Please select a Plane."</span>
 
 <span class="c1">' Clear selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ol>
-  <li>We show message to user to select <strong>Plane</strong> from <em>Feature Tree</em>.</li>
-  <li>After that we clear our selection.</li>
-</ol>
+                    <ol>
+                      <li>We show message to user to select <strong>Plane</strong> from <em>Feature Tree</em>.</li>
+                      <li>After that we clear our selection.</li>
+                    </ol>
 
-<p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
+                    <p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for
+                      <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
 
-<p>This function repeats the <code class="language-plaintext highlighter-rouge">While</code> loop until we select the <strong>Profile or Path</strong>.</p>
+                    <p>This function repeats the <code class="language-plaintext highlighter-rouge">While</code> loop
+                      until we select the <strong>Profile or Path</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear previous selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Clear previous selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
 
 <span class="c1">' Increase the selection count</span>
 <span class="n">selectItems</span> <span class="o">=</span> <span class="n">selectItems</span> <span class="o">+</span> <span class="mi">1</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, when we finished with the <strong>Profile or Path</strong> selection, we clear previous selection and increment the selected count by 1.</p>
+                    <p>In above line, when we finished with the <strong>Profile or Path</strong> selection, we clear
+                      previous selection and increment the selected count by 1.</p>
 
-<p>After increment the selected count we continue our <code class="language-plaintext highlighter-rouge">while</code> loop.</p>
+                    <p>After increment the selected count we continue our <code
+                        class="language-plaintext highlighter-rouge">while</code> loop.</p>
 
-<h3 id="mark-selected-entities">Mark selected Entities</h3>
+                    <h3 id="mark-selected-entities">Mark selected Entities</h3>
 
-<p>Till now we have completed our selection.</p>
+                    <p>Till now we have completed our selection.</p>
 
-<p>Now we need to do <strong>Select and Mark entities</strong> correctly from our Array.</p>
+                    <p>Now we need to do <strong>Select and Mark entities</strong> correctly from our Array.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variable for counter</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Local variable for counter</span>
 <span class="k">Dim</span> <span class="nv">j</span> <span class="ow">As</span> <span class="kt">Integer</span>
 <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we create <code class="language-plaintext highlighter-rouge">integer</code> variable for counter.</p>
+                    <p>In above line of code we create <code class="language-plaintext highlighter-rouge">integer</code>
+                      variable for counter.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop till counter is 2, since we have 2 selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Loop till counter is 2, since we have 2 selection</span>
 <span class="k">While</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span>
 
 <span class="k">Wend</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we create a <code class="language-plaintext highlighter-rouge">while</code> loop with condition that <em>counter value</em> of <strong><code class="language-plaintext highlighter-rouge">j</code></strong> should be <em>less than 3.</em></p>
+                    <p>In above line of code we create a <code class="language-plaintext highlighter-rouge">while</code>
+                      loop with condition that <em>counter value</em> of <strong><code
+                          class="language-plaintext highlighter-rouge">j</code></strong> should be <em>less than 3.</em>
+                    </p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the current instance to Solidworks Entity variable</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set the current instance to Solidworks Entity variable</span>
 <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swObjects</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we set the SOLIDWORKS Entity variable to current object from array.</p>
+                    <p>In above line of code, we set the SOLIDWORKS Entity variable to current object from array.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Select data for this entity</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create Select data for this entity</span>
 <span class="k">Set</span> <span class="n">swSelData</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">CreateSelectData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we create SOLIDWORKS Select Data for current SOLIDWORKS Entity object.</p>
+                    <p>In above line of code, we create SOLIDWORKS Select Data for current SOLIDWORKS Entity object.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Update Messages</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Update Messages</span>
 <span class="k">Select</span> <span class="k">Case</span> <span class="n">j</span>
 
 <span class="k">End</span> <span class="k">Select</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code> statement for selection entities.</p>
+                    <p>In above line of code, we use a <code class="language-plaintext highlighter-rouge">Select</code>
+                      statement for selection entities.</p>
 
-<p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code class="language-plaintext highlighter-rouge">j</code>.</p>
+                    <p>We use the <code class="language-plaintext highlighter-rouge">case</code> on <code
+                        class="language-plaintext highlighter-rouge">j</code>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Case</span> <span class="mi">1</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Case</span> <span class="mi">1</span>
   <span class="c1">' For feature to mirror, set mark to 1</span>
   <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">1</span>
 
   <span class="c1">' Select the feature</span>
   <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Above code sample we use for <strong><code class="language-plaintext highlighter-rouge">Case 1</code></strong>.</p>
+                    <p>Above code sample we use for <strong><code
+                          class="language-plaintext highlighter-rouge">Case 1</code></strong>.</p>
 
-<p>In above lines, we update the <strong>Mark</strong> to <strong><code class="language-plaintext highlighter-rouge">1</code></strong> for our <em>SOLIDWORKS Select Data</em> variable.</p>
+                    <p>In above lines, we update the <strong>Mark</strong> to <strong><code
+                          class="language-plaintext highlighter-rouge">1</code></strong> for our <em>SOLIDWORKS Select
+                        Data</em> variable.</p>
 
-<p>For <strong><em>Mirror</em></strong> feature, <strong><code class="language-plaintext highlighter-rouge">Mark</code></strong> values can be follows:</p>
+                    <p>For <strong><em>Mirror</em></strong> feature, <strong><code
+                          class="language-plaintext highlighter-rouge">Mark</code></strong> values can be follows:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Any…</th>
-      <th>Must be preselected and marked with a value of…</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Features to be mirrored</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Faces to be mirrored</td>
-      <td>128</td>
-    </tr>
-    <tr>
-      <td>Bodies to be mirrored</td>
-      <td>256</td>
-    </tr>
-    <tr>
-      <td>Plane or planar face</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Any…</th>
+                          <th>Must be preselected and marked with a value of…</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Features to be mirrored</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>Faces to be mirrored</td>
+                          <td>128</td>
+                        </tr>
+                        <tr>
+                          <td>Bodies to be mirrored</td>
+                          <td>256</td>
+                        </tr>
+                        <tr>
+                          <td>Plane or planar face</td>
+                          <td>2</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-<p>For more details about <strong>Mark</strong> please visit 👉 <strong><a href="[InsertMirrorFeature2 Method (IFeatureManager) - 2019 - SOLIDWORKS API Help](https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertmirrorfeature2.html)">Mirror Feature</a></strong> in <em>SOLIDWORS API Help</em>.</p>
+                    <p>For more details about <strong>Mark</strong> please visit 👉 <strong><a
+                          href="[InsertMirrorFeature2 Method (IFeatureManager) - 2019 - SOLIDWORKS API Help](https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertmirrorfeature2.html)">Mirror
+                          Feature</a></strong> in <em>SOLIDWORS API Help</em>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Select the feature</span>
 <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we select the Feature object.</p>
+                    <p>In above line of code, we select the Feature object.</p>
 
-<p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of <em>SOLIDWORKS Entity object</em>.</p>
+                    <p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of
+                      <em>SOLIDWORKS Entity object</em>.</p>
 
-<p>This method takes 2 arguments.</p>
+                    <p>This method takes 2 arguments.</p>
 
-<ol>
-  <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> appends the entity to the selection list, <code class="language-plaintext highlighter-rouge">False</code> replaces the selection list with this entity.</em></li>
-  <li><strong>Data</strong> - <em>Pointer to the <strong><code class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
-</ol>
+                    <ol>
+                      <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code>
+                          appends the entity to the selection list, <code
+                            class="language-plaintext highlighter-rouge">False</code> replaces the selection list with
+                          this entity.</em></li>
+                      <li><strong>Data</strong> - <em>Pointer to the <strong><code
+                              class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
+                    </ol>
 
-<p>We use following values as parameter.</p>
+                    <p>We use following values as parameter.</p>
 
-<ol>
-  <li><strong>Append</strong> - <strong><code class="language-plaintext highlighter-rouge">True</code></strong></li>
-  <li><strong>Data</strong> - <strong><code class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
-</ol>
+                    <ol>
+                      <li><strong>Append</strong> - <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong></li>
+                      <li><strong>Data</strong> - <strong><code
+                            class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
+                    </ol>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Case</span> <span class="mi">2</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Case</span> <span class="mi">2</span>
   <span class="c1">' For plane, set mark to 2</span>
   <span class="n">swSelData</span><span class="p">.</span><span class="n">Mark</span> <span class="o">=</span> <span class="mi">2</span>
 
   <span class="c1">' Select the plane</span>
   <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Above code sample we use for <strong><code class="language-plaintext highlighter-rouge">Case 2</code></strong>.</p>
+                    <p>Above code sample we use for <strong><code
+                          class="language-plaintext highlighter-rouge">Case 2</code></strong>.</p>
 
-<p>In above lines, we update the <strong>Mark</strong> to <strong><code class="language-plaintext highlighter-rouge">2</code></strong> for our <em>SOLIDWORKS Select Data</em> variable.</p>
+                    <p>In above lines, we update the <strong>Mark</strong> to <strong><code
+                          class="language-plaintext highlighter-rouge">2</code></strong> for our <em>SOLIDWORKS Select
+                        Data</em> variable.</p>
 
-<p>For <strong><em>Mirror</em></strong> feature, <strong><code class="language-plaintext highlighter-rouge">Mark</code></strong> values can be follows:</p>
+                    <p>For <strong><em>Mirror</em></strong> feature, <strong><code
+                          class="language-plaintext highlighter-rouge">Mark</code></strong> values can be follows:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Any…</th>
-      <th>Must be preselected and marked with a value of…</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Features to be mirrored</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Faces to be mirrored</td>
-      <td>128</td>
-    </tr>
-    <tr>
-      <td>Bodies to be mirrored</td>
-      <td>256</td>
-    </tr>
-    <tr>
-      <td>Plane or planar face</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Any…</th>
+                          <th>Must be preselected and marked with a value of…</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Features to be mirrored</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>Faces to be mirrored</td>
+                          <td>128</td>
+                        </tr>
+                        <tr>
+                          <td>Bodies to be mirrored</td>
+                          <td>256</td>
+                        </tr>
+                        <tr>
+                          <td>Plane or planar face</td>
+                          <td>2</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-<p>For more details about <strong>Mark</strong> please visit 👉 <strong><a href="[InsertMirrorFeature2 Method (IFeatureManager) - 2019 - SOLIDWORKS API Help](https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertmirrorfeature2.html)">Mirror Feature</a></strong> in <em>SOLIDWORS API Help</em>.</p>
+                    <p>For more details about <strong>Mark</strong> please visit 👉 <strong><a
+                          href="[InsertMirrorFeature2 Method (IFeatureManager) - 2019 - SOLIDWORKS API Help](https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertmirrorfeature2.html)">Mirror
+                          Feature</a></strong> in <em>SOLIDWORS API Help</em>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select the feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Select the feature</span>
 <span class="n">swObject</span><span class="p">.</span><span class="n">Select4</span> <span class="k">True</span><span class="p">,</span> <span class="n">swSelData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we select the Feature object.</p>
+                    <p>In above line of code, we select the Feature object.</p>
 
-<p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of <em>SOLIDWORKS Entity object</em>.</p>
+                    <p>We select it by using <code class="language-plaintext highlighter-rouge">Select4</code> method of
+                      <em>SOLIDWORKS Entity object</em>.</p>
 
-<p>This method takes 2 arguments.</p>
+                    <p>This method takes 2 arguments.</p>
 
-<ol>
-  <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> appends the entity to the selection list, <code class="language-plaintext highlighter-rouge">False</code> replaces the selection list with this entity.</em></li>
-  <li><strong>Data</strong> - <em>Pointer to the <strong><code class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
-</ol>
+                    <ol>
+                      <li><strong>Append</strong> - <em><code class="language-plaintext highlighter-rouge">True</code>
+                          appends the entity to the selection list, <code
+                            class="language-plaintext highlighter-rouge">False</code> replaces the selection list with
+                          this entity.</em></li>
+                      <li><strong>Data</strong> - <em>Pointer to the <strong><code
+                              class="language-plaintext highlighter-rouge">ISelectData</code></strong> object.</em></li>
+                    </ol>
 
-<p>We use following values as parameter.</p>
+                    <p>We use following values as parameter.</p>
 
-<ol>
-  <li><strong>Append</strong> - <strong><code class="language-plaintext highlighter-rouge">True</code></strong></li>
-  <li><strong>Data</strong> - <strong><code class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
-</ol>
+                    <ol>
+                      <li><strong>Append</strong> - <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong></li>
+                      <li><strong>Data</strong> - <strong><code
+                            class="language-plaintext highlighter-rouge">swSelData</code></strong></li>
+                    </ol>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>After <strong><code class="language-plaintext highlighter-rouge">Select</code></strong> statement, we increment the counter variable <strong><code class="language-plaintext highlighter-rouge">j</code></strong> by <strong>1</strong>.</p>
+                    <p>After <strong><code class="language-plaintext highlighter-rouge">Select</code></strong>
+                      statement, we increment the counter variable <strong><code
+                          class="language-plaintext highlighter-rouge">j</code></strong> by <strong>1</strong>.</p>
 
-<h3 id="create-mirror-feature">Create Mirror Feature</h3>
+                    <h3 id="create-mirror-feature">Create Mirror Feature</h3>
 
-<p>We have completed our <em>selection</em> and <em>Marking</em> of <strong><em>SOLIDWORKS Entities</em></strong>.</p>
+                    <p>We have completed our <em>selection</em> and <em>Marking</em> of <strong><em>SOLIDWORKS
+                          Entities</em></strong>.</p>
 
-<p>Now we create <strong>Mirror Feature</strong>.</p>
+                    <p>Now we create <strong>Mirror Feature</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Mirror feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create Mirror feature</span>
 <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertMirrorFeature2</span><span class="p">(</span><span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">swFeatureScope_e</span><span class="p">.</span><span class="n">swFeatureScope_AllBodies</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">InsertCutBlend</code> method.</p>
+                    <p>In above line of code we set the value of variable <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> by <code
+                        class="language-plaintext highlighter-rouge">InsertCutBlend</code> method.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes following parameters as explained:</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes
+                      following parameters as explained:</p>
 
-<ul>
-  <li>
-    <p><strong>BMirrorBody</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to mirror solid bodies; <code class="language-plaintext highlighter-rouge">False</code> to mirror a feature or face</em>.</p>
-  </li>
-  <li>
-    <p><strong>BGeometryPattern</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to mirror only the feature geometry, <code class="language-plaintext highlighter-rouge">False</code> to solve the entire feature; applies to mirroring features only</em>.</p>
-  </li>
-  <li>
-    <p><strong>BMerge</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to merge any mirrored solid bodies, <code class="language-plaintext highlighter-rouge">False</code> to not; applies to mirroring solid bodies only</em>.</p>
-  </li>
-  <li>
-    <p><strong>BKnit</strong> - <em><code class="language-plaintext highlighter-rouge">True</code> to knit surfaces, <code class="language-plaintext highlighter-rouge">False</code> to not; applies to mirroring surfaces only</em>.</p>
-  </li>
-  <li>
-    <p><strong><em>ScopeOptions</em></strong> - <em>Feature scope as defined by <code class="language-plaintext highlighter-rouge">swFeatureScope_e</code> as follows</em>.</p>
+                    <ul>
+                      <li>
+                        <p><strong>BMirrorBody</strong> - <em><code
+                              class="language-plaintext highlighter-rouge">True</code> to mirror solid bodies; <code
+                              class="language-plaintext highlighter-rouge">False</code> to mirror a feature or
+                            face</em>.</p>
+                      </li>
+                      <li>
+                        <p><strong>BGeometryPattern</strong> - <em><code
+                              class="language-plaintext highlighter-rouge">True</code> to mirror only the feature
+                            geometry, <code class="language-plaintext highlighter-rouge">False</code> to solve the
+                            entire feature; applies to mirroring features only</em>.</p>
+                      </li>
+                      <li>
+                        <p><strong>BMerge</strong> - <em><code class="language-plaintext highlighter-rouge">True</code>
+                            to merge any mirrored solid bodies, <code
+                              class="language-plaintext highlighter-rouge">False</code> to not; applies to mirroring
+                            solid bodies only</em>.</p>
+                      </li>
+                      <li>
+                        <p><strong>BKnit</strong> - <em><code class="language-plaintext highlighter-rouge">True</code>
+                            to knit surfaces, <code class="language-plaintext highlighter-rouge">False</code> to not;
+                            applies to mirroring surfaces only</em>.</p>
+                      </li>
+                      <li>
+                        <p><strong><em>ScopeOptions</em></strong> - <em>Feature scope as defined by <code
+                              class="language-plaintext highlighter-rouge">swFeatureScope_e</code> as follows</em>.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Member</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureScope_AllBodies</code></strong></td>
-          <td>0 = All of the bodies in the multibody part are affected by the Mirror feature.</td>
-        </tr>
-        <tr>
-          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureScope_SelectedBodiesWithAutoSelect</code></strong></td>
-          <td>1 = Only the specified bodies in the multibody part are affected by the Mirror feature when <strong><code class="language-plaintext highlighter-rouge">AutoSelect</code></strong> is true.</td>
-        </tr>
-        <tr>
-          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureScope_SelectedBodiesWithOutAutoSelect</code></strong></td>
-          <td>2 = Only the specified bodies in the multibody part are affected by the Mirror feature when <strong><code class="language-plaintext highlighter-rouge">AuotSelect</code></strong> is false.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Member</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong><code
+                                    class="language-plaintext highlighter-rouge">swFeatureScope_AllBodies</code></strong>
+                              </td>
+                              <td>0 = All of the bodies in the multibody part are affected by the Mirror feature.</td>
+                            </tr>
+                            <tr>
+                              <td><strong><code
+                                    class="language-plaintext highlighter-rouge">swFeatureScope_SelectedBodiesWithAutoSelect</code></strong>
+                              </td>
+                              <td>1 = Only the specified bodies in the multibody part are affected by the Mirror feature
+                                when <strong><code
+                                    class="language-plaintext highlighter-rouge">AutoSelect</code></strong> is true.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong><code
+                                    class="language-plaintext highlighter-rouge">swFeatureScope_SelectedBodiesWithOutAutoSelect</code></strong>
+                              </td>
+                              <td>2 = Only the specified bodies in the multibody part are affected by the Mirror feature
+                                when <strong><code
+                                    class="language-plaintext highlighter-rouge">AuotSelect</code></strong> is false.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
 
-<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code> method return <strong>feature</strong> data object.</p>
+                    <p><strong>Return Value</strong> : This <code
+                        class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code> method return
+                      <strong>feature</strong> data object.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<p>In our code, I have used following values:</p>
+                    <p>In our code, I have used following values:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter Name</th>
-      <th>Value Used</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>BMirrorBody</strong></td>
-      <td><code class="language-plaintext highlighter-rouge">False</code></td>
-    </tr>
-    <tr>
-      <td><strong>BGeometryPattern</strong></td>
-      <td><code class="language-plaintext highlighter-rouge">False</code></td>
-    </tr>
-    <tr>
-      <td><strong>BMerge</strong></td>
-      <td><code class="language-plaintext highlighter-rouge">False</code></td>
-    </tr>
-    <tr>
-      <td><strong>BKnit</strong></td>
-      <td><code class="language-plaintext highlighter-rouge">False</code></td>
-    </tr>
-    <tr>
-      <td><strong>ScopeOptions</strong></td>
-      <td><code class="language-plaintext highlighter-rouge">swFeatureScope_e.swFeatureScope_AllBodies</code></td>
-    </tr>
-  </tbody>
-</table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter Name</th>
+                          <th>Value Used</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>BMirrorBody</strong></td>
+                          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+                        </tr>
+                        <tr>
+                          <td><strong>BGeometryPattern</strong></td>
+                          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+                        </tr>
+                        <tr>
+                          <td><strong>BMerge</strong></td>
+                          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+                        </tr>
+                        <tr>
+                          <td><strong>BKnit</strong></td>
+                          <td><code class="language-plaintext highlighter-rouge">False</code></td>
+                        </tr>
+                        <tr>
+                          <td><strong>ScopeOptions</strong></td>
+                          <td><code
+                              class="language-plaintext highlighter-rouge">swFeatureScope_e.swFeatureScope_AllBodies</code>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-<p><code class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+                    <p><code class="language-plaintext highlighter-rouge">InsertMirrorFeature2</code> method is part of
+                      <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of
+                      <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code
+                        class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this
+                          page of SOLIDWORKS API Help</a></strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Mirror Feature creates or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Mirror Feature creates or not</span>
 <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Mirror Feature."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create <strong>Mirror</strong> Feature or not.</p>
+                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if we able to create <strong>Mirror</strong> Feature or not.
+                    </p>
 
-<p>If we failed to select then inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+                    <p>If we failed to select then inform the user by a 👉 <strong><a
+                          href="/vba/msgBox-function/">Message Window</a></strong>.</p>
 
-<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+                    <p>After showing error message our program <strong>exit</strong> from here itself.</p>
 
-<p>Now we run the macro and after running macro we get Revolve as shown in below image.</p>
+                    <p>Now we run the macro and after running macro we get Revolve as shown in below image.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"><img src="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png" alt="mirror-final-result" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"><img
+                          src="/assets/Solidworks_Images/feature-mirror/mirror-final-result.png"
+                          alt="mirror-final-result" /></a></p>
 
-<h3 id="final-work">Final work</h3>
+                    <h3 id="final-work">Final work</h3>
 
-<p>After creating <strong>Mirror</strong> feature, we have to do some cleaning work so that we can use this macro frequently.</p>
+                    <p>After creating <strong>Mirror</strong> feature, we have to do some cleaning work so that we can
+                      use this macro frequently.</p>
 
-<ul>
-  <li>Empty SOLIDWORKS Entity Array</li>
-</ul>
+                    <ul>
+                      <li>Empty SOLIDWORKS Entity Array</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Erase array data</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Erase array data</span>
 <span class="k">Erase</span> <span class="n">swObjects</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we <strong>erase</strong> data from <em>SOLIDWORKS Entity array</em>.</p>
+                    <p>In above line, we <strong>erase</strong> data from <em>SOLIDWORKS Entity array</em>.</p>
 
-<p>For this we use <strong><code class="language-plaintext highlighter-rouge">Erase</code></strong> function in-build in VBA.</p>
+                    <p>For this we use <strong><code class="language-plaintext highlighter-rouge">Erase</code></strong>
+                      function in-build in VBA.</p>
 
-<ul>
-  <li>Make part Zoom to fit</li>
-</ul>
+                    <ul>
+                      <li>Make part Zoom to fit</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' View zoom to fit</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we make our view zoom to fit the model.</p>
+                    <p>In above line, we make our view zoom to fit the model.</p>
 
-<p>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+                    <p>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method
+                      which is part of <em>SOLIDWORKS Document</em> variable i.e <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
 
-<ul>
-  <li>Clear selection</li>
-</ul>
+                    <ul>
+                      <li>Clear selection</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Clear all selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we clear all previous selection.</p>
+                    <p>In above line, we clear all previous selection.</p>
 
-<p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+                    <p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method
+                      which is part of <em>SOLIDWORKS Document</em> variable i.e <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
 
-<p><strong>This is it !!!</strong></p>
+                    <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>create Mirror feature</strong> with SOLIDWORKS VBA Macros.</p>
+                    <p>Hope this post helps you to <strong>create Mirror feature</strong> with SOLIDWORKS VBA Macros.
+                    </p>
 
-<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after sometime.</p>
+                    <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after
+                      sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+                    <p><em>Do let me know by you like this post or not!</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+                    <p><em>Till then, Happy learning!!!</em></p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
 
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-08-20T08:09:36-04:00">August 20, 2023</time></p>
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-chamfer/" title="SOLIDWORKS Macro - Create Chamfer
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2023-08-27T21:34:10-04:00">August 27, 2023</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-chamfer/" title="SOLIDWORKS Macro - Create Chamfer
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-linear-patterns/" title="SOLIDWORKS Macro - Create Linear Pattern
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-linear-patterns/" title="SOLIDWORKS Macro - Create Linear Pattern
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -1974,74 +2433,74 @@ When we select the sketch from Feature Tree, then select object is <em>SOLIDWORK
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -2066,15 +2525,15 @@ When we select the sketch from Feature Tree, then select object is <em>SOLIDWORK
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

@@ -5,39 +5,42 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks VBA Macro - Create Reference Plane - The CAD Coder</title>
-<meta name="description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html -->
+  <title>Solidworks VBA Macro - Create Reference Plane - The CAD Coder</title>
+  <meta name="description"
+    content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks VBA Macro - Create Reference Plane">
-<meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/create-reference-plane/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks VBA Macro - Create Reference Plane">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/create-reference-plane/">
 
 
-  <meta property="og:description" content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-08-20T08:09:36-04:00">
+  <meta property="og:description"
+    content="This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.   If you are following my articles then will not be an issue for you.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/create-reference-plane/">
+
+  <meta property="article:published_time" content="2023-08-27T21:34:10-04:00">
 
 
 
 
-<script type="application/ld+json">
+
+
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/create-reference-plane/">
+
+
+
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
@@ -54,866 +57,912 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">General - Solidworks Functions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
-          
-            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
-          
-            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
-          
-            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
-          
-            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
-          
-            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Lines</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Rectangles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Circles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
-          
-            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
-          
-            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Arcs</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
-          
-            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Slots</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Point and Spline</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
-          
-            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
-          
-            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Trim and Extend</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
+          <nav class="nav__list">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Patterns</span>
-        
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Move and Rotate</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Relations</span>
-        
+                <span class="nav__sub-title">General - Solidworks Functions</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
-          
-            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Dimensions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Extrudes</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Cuts</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Holes and Threads</span>
-        
+                  <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
-          
-            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
-        
+                  <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Mirror & Patterns</span>
-        
+                  <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a>
+                  </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Transformation</span>
-        
+                  <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Reference Geometry</span>
-        
+                  <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-plane/" class="active">Reference Plane</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - General</span>
-        
+                  <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Standard Mates</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Advanced Mates</span>
-        
+              </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Editing Mates</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Components</span>
-        
+                <span class="nav__sub-title">Sketch - Lines</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Misc</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Insert Views</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Break Views</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Others</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
-          
-            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
+              </li>
 
-    
-  
-  </div>
+              <li>
 
-</div>
+                <span class="nav__sub-title">Sketch - Rectangles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Circles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+
+                  <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+
+                  <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Arcs</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+
+                  <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Slots</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight
+                      Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Point and Spline</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+
+                  <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+
+                  <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Trim and Extend</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Move and Rotate</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Relations</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch
+                      Relations</a></li>
+
+                  <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Dimensions</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Extrudes</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Cuts</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Holes and Threads</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+
+                  <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Mirror & Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Transformation</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Reference Geometry</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-plane/" class="active">Reference Plane</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - General</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Standard Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Advanced Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Editing Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Components</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Misc</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components
+                      Sequentially</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Insert Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current
+                      Sheet</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in
+                      Drawing</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in
+                      Drawing</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Break Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Others</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction
+                      Sketch</a></li>
+
+                  <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Solidworks VBA Macro - Create Reference Plane">
-    
-    <meta itemprop="description" content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
-    
-    
-    <meta itemprop="datePublished" content="2023-08-20T08:09:36-04:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Create Reference Plane
-</h1>
-        
+              <meta itemprop="headline" content="Solidworks VBA Macro - Create Reference Plane">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          15 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description"
+                content="  This article has &quot;Beginner ➡ Intermediate&quot; level Macro program.  If you are following my articles then will not be an issue for you.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2023-08-27T21:34:10-04:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#vba-macro">VBA Macro</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#create-and-initialize-required-variables">Create and Initialize required variables</a></li><li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li><li><a href="#get-distance-and-validation">Get Distance And Validation</a></li><li><a href="#create-reference-plane">Create Reference Plane</a></li><li><a href="#final-work">Final work</a></li></ul></li><li><a href="#error-solutions">Error-Solutions</a><ul><li><a href="#error-message-1">Error Message 1</a></li><li><a href="#error-message-2">Error Message 2</a></li><li><a href="#error-3">Error 3</a></li></ul></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <div class="notice--warning">
-  This article has <strong>"Beginner ➡ Intermediate"</strong> level Macro program.<br />
-  If you are following my articles then will not be an issue for you.<br />
-  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
-  I hope you will also like this type of tutorials.<br />
-  Thank you for reading.<br />
-</div>
+              <div class="page__inner-wrap">
 
-<h2 id="objective">Objective</h2>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Create Reference
+                    Plane
+                  </h1>
 
-<p>In this article we <strong>create and understand</strong> VBA macro of <strong>Reference Plane</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Reference Plane</strong> quickly.</p>
+                  <p class="page__meta">
 
-<h2 id="results-we-can-get">Results We Can Get</h2>
 
-<p>After running our macro we successfully create <strong>Reference Plane</strong> as a result.</p>
 
-<p>Below image shows the result we get.</p>
 
-<p><a href="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-plane/final-result-gif.gif" alt="scale-feature-final-result" /></a></p>
 
-<p>We create <strong>Reference Plane</strong> in following steps in general.</p>
 
-<ol>
-  <li><em>Ask for <strong>Distance</strong>.</em></li>
-</ol>
 
-<p class="notice--warning">To get the correct result please follow the steps correctly.</p>
 
-<h2 id="macro-video">Macro Video</h2>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<p>Below 🎬 video shows <strong>Reference Plane</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+                      15 minute read
 
-<iframe src="https://www.youtube.com/embed/TLypu7cRPAw" frameborder="0" allowfullscreen=""></iframe>
+                    </span>
 
-<p><br /></p>
+                  </p>
 
-<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
 
-<p><strong><em>I have explained each and every line in this article.</em></strong></p>
+                </header>
 
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
 
-<h2 id="vba-macro">VBA Macro</h2>
+                <section class="page__content" itemprop="text">
 
-<p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Reference Plane</em>.</p>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#results-we-can-get">Results We Can Get</a></li>
+                        <li><a href="#macro-video">Macro Video</a></li>
+                        <li><a href="#vba-macro">VBA Macro</a></li>
+                        <li><a href="#prerequisite">Prerequisite</a></li>
+                        <li><a href="#steps-to-follow">Steps To Follow</a>
+                          <ul>
+                            <li><a href="#create-and-initialize-required-variables">Create and Initialize required
+                                variables</a></li>
+                            <li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li>
+                            <li><a href="#get-distance-and-validation">Get Distance And Validation</a></li>
+                            <li><a href="#create-reference-plane">Create Reference Plane</a></li>
+                            <li><a href="#final-work">Final work</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#error-solutions">Error-Solutions</a>
+                          <ul>
+                            <li><a href="#error-message-1">Error Message 1</a></li>
+                            <li><a href="#error-message-2">Error Message 2</a></li>
+                            <li><a href="#error-3">Error 3</a></li>
+                          </ul>
+                        </li>
+                      </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <div class="notice--warning">
+                      This article has <strong>"Beginner ➡ Intermediate"</strong> level Macro program.<br />
+                      If you are following my articles then will not be an issue for you.<br />
+                      In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for
+                      taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong>
+                      for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong>
+                      to notify user.<br />
+                      I hope you will also like this type of tutorials.<br />
+                      Thank you for reading.<br />
+                    </div>
+
+                    <h2 id="objective">Objective</h2>
+
+                    <p>In this article we <strong>create and understand</strong> VBA macro of <strong>Reference
+                        Plane</strong> in <em>SOLIDWORKS CAD Software</em>.</p>
+
+                    <p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this
+                          method</em></strong> if you want to create a new <strong>Reference Plane</strong> quickly.</p>
+
+                    <h2 id="results-we-can-get">Results We Can Get</h2>
+
+                    <p>After running our macro we successfully create <strong>Reference Plane</strong> as a result.</p>
+
+                    <p>Below image shows the result we get.</p>
+
+                    <p><a href="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"><img
+                          src="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"
+                          alt="scale-feature-final-result" /></a></p>
+
+                    <p>We create <strong>Reference Plane</strong> in following steps in general.</p>
+
+                    <ol>
+                      <li><em>Ask for <strong>Distance</strong>.</em></li>
+                    </ol>
+
+                    <p class="notice--warning">To get the correct result please follow the steps correctly.</p>
+
+                    <h2 id="macro-video">Macro Video</h2>
+
+                    <p>Below 🎬 video shows <strong>Reference Plane</strong> from <em>SOLIDWORKS VBA Macros</em>.</p>
+
+                    <iframe src="https://www.youtube.com/embed/TLypu7cRPAw" frameborder="0" allowfullscreen=""></iframe>
+
+                    <p><br /></p>
+
+                    <p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
+
+                    <p><strong><em>I have explained each and every line in this article.</em></strong></p>
+
+                    <p class="notice--warning">It is advisable to watch video, since it help you to better understand
+                      the process.</p>
+
+                    <h2 id="vba-macro">VBA Macro</h2>
+
+                    <p>Below is the <strong><em>VBA macro</em></strong> for creating <em>Reference Plane</em>.</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Main program for Reference Plane</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
@@ -1051,167 +1100,246 @@
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="prerequisite">Prerequisite</h2>
+                    <h2 id="prerequisite">Prerequisite</h2>
 
-<p>There are some <em>prerequisite</em> for this article.</p>
+                    <p>There are some <em>prerequisite</em> for this article.</p>
 
-<ul>
-  <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.</li>
-</ul>
+                    <ul>
+                      <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.
+                      </li>
+                    </ul>
 
-<p>Since we are creating new part, there are no feature to create.</p>
+                    <p>Since we are creating new part, there are no feature to create.</p>
 
-<p class="notice">We will apply checks in this article, so the code we write should be error free most of the time.</p>
+                    <p class="notice">We will apply checks in this article, so the code we write should be error free
+                      most of the time.</p>
 
-<h2 id="steps-to-follow">Steps To Follow</h2>
+                    <h2 id="steps-to-follow">Steps To Follow</h2>
 
-<p>This <strong>Reference Plane VBA macro</strong> can be divided into following sections:</p>
+                    <p>This <strong>Reference Plane VBA macro</strong> can be divided into following sections:</p>
 
-<ol>
-  <li><em>Create and Initialize required variables</em></li>
-  <li><em>Get Distance And Validation</em></li>
-  <li><em>Get Distance And Validation</em></li>
-  <li><em>Create Reference Plane</em></li>
-  <li><em>Final work</em></li>
-</ol>
+                    <ol>
+                      <li><em>Create and Initialize required variables</em></li>
+                      <li><em>Get Distance And Validation</em></li>
+                      <li><em>Get Distance And Validation</em></li>
+                      <li><em>Create Reference Plane</em></li>
+                      <li><em>Final work</em></li>
+                    </ol>
 
-<p><strong><em>Every section with each line is explained below.</em></strong></p>
+                    <p><strong><em>Every section with each line is explained below.</em></strong></p>
 
-<p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+                    <p class="notice">I also give some <strong><em>links (see icon 🚀)</em></strong> so that you can go
+                      through them if there are anything I explained in previous articles.</p>
 
-<h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
+                    <h3 id="create-and-initialize-required-variables">Create and Initialize required variables</h3>
 
-<p>In this section we create and initialize required variables.</p>
+                    <p>In this section we create and initialize required variables.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.</li>
-  <li><strong>Reference</strong>: 🚀 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> article.</li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: Above line forces us to define every variable we are going to use.
+                      </li>
+                      <li><strong>Reference</strong>: 🚀 <strong><a
+                            href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part
+                            document</a></strong> article.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main program for Scale Feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Main program for Scale Feature</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we create <em>main program for Scale Feature</em>.</li>
-  <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong> procedure which has name of <strong><code class="language-plaintext highlighter-rouge">main</code></strong>.</li>
-  <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
-  <li><strong>Reference</strong>: Detailed information 🚀 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we create <em>main program for Scale Feature</em>.</li>
+                      <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong>
+                        procedure which has name of <strong><code
+                            class="language-plaintext highlighter-rouge">main</code></strong>.</li>
+                      <li>This procedure hold all the <em>statements (instructions)</em> we give to computer.</li>
+                      <li><strong>Reference</strong>: Detailed information 🚀 <strong><a
+                            href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article
+                        of this website.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks application</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks
+                          application</em>.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">swApp</code></li>
+                      <li><strong>Type</strong>: <code
+                          class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+                      <li><strong>Reference</strong>: Please visit 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">online
+                            SOLIDWORKS API Help</a></strong>.</li>
+                    </ul>
 
-<p>Inside this section we initialize required variables.</p>
+                    <p>Inside this section we initialize required variables.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set Solidworks Application variable to current application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-  <li>This <em>value</em> is currently opened Solidworks application.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we set <em>value</em> of <strong><code
+                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+                      <li>This <em>value</em> is currently opened Solidworks application.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
 <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>  
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>  
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                    <ul>
+                      <li>In above code block, we check if we successfully set the value of <strong><code
+                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">swApp Is Nothing</code></strong></li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>SOLIDWORKS is not opened</em></li>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
 <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for storing default part location.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">defaultTemplate</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for storing default part
+                        location.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">defaultTemplate</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting value of variable to "Default part template"</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Setting value of variable to "Default part template"</span>
 <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
-  <li>This <em>value</em> is set to “<strong>Default part template</strong>”.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we set <em>value</em> of <strong><code
+                            class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
+                      <li>This <em>value</em> is set to “<strong>Default part template</strong>”.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for Solidworks document.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">swDoc</code></li>
+                      <li><strong>Type</strong>: <code
+                          class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code></li>
+                      <li><strong>Reference</strong>: Please visit 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">online
+                            SOLIDWORKS API Help</a></strong>.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks document variable to new part document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set Solidworks document variable to new part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we set <em>value</em> of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>This <em>value</em> is <em>new part document</em>.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we set <em>value</em> of <strong><code
+                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+                      <li>This <em>value</em> is <em>new part document</em>.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
 <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check if we successfully set the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened. Please open a document.</em></li>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                    <ul>
+                      <li>In above code block, we check if we successfully set the value of <strong><code
+                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">swDoc Is Nothing</code></strong></li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>SOLIDWORKS document is not opened. Please open a
+                              document.</em></li>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
+                    <h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
 
-<p>In this section we get unit Conversion factors.</p>
+                    <p>In this section we get unit Conversion factors.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local variables used as Conversion Factors</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Local variables used as Conversion Factors</span>
 <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
 <span class="k">Dim</span> <span class="nv">AngleConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
 
@@ -1254,625 +1382,884 @@
   <span class="n">LengthConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000000</span>
   <span class="n">AngleConversionFactor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">0.01745329</span>
 <span class="k">End</span> <span class="k">Select</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>I have already explained about this in previous 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</li>
-  <li>Please visit 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</li>
-</ul>
+                    <ul>
+                      <li>I have already explained about this in previous 🚀 <strong><a
+                            href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong>
+                        article in this website.</li>
+                      <li>Please visit 🚀 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix
+                            Unit Issue</a></strong> article for more details.</li>
+                    </ul>
 
-<h3 id="get-distance-and-validation">Get Distance And Validation</h3>
+                    <h3 id="get-distance-and-validation">Get Distance And Validation</h3>
 
-<p>In this section, we get get the <strong>Distance</strong> from user and apply some validation on <strong>Distance</strong>.</p>
+                    <p>In this section, we get get the <strong>Distance</strong> from user and apply some validation on
+                      <strong>Distance</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to hold user input</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable to hold user input</span>
 <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">String</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we create a variable hold user input.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">response</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
-</ul>
+                    <ul>
+                      <li>In above line, we create a variable hold user input.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">response</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">String</code></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Getting Distance from user</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Getting Distance from user</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please Enter [Distance] from Front Plane:"</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>
-    <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
+                    <ul>
+                      <li>
+                        <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
 
-    <p>Those 2 steps are explained below.</p>
+                        <p>Those 2 steps are explained below.</p>
 
-    <ul>
-      <li><strong>Step 1</strong> - Getting <strong>Distance</strong> from user.</li>
-    </ul>
+                        <ul>
+                          <li><strong>Step 1</strong> - Getting <strong>Distance</strong> from user.</li>
+                        </ul>
 
-    <p>Below image shows the message for <strong>Distance</strong> to the user.</p>
+                        <p>Below image shows the message for <strong>Distance</strong> to the user.</p>
 
-    <p><a href="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"><img src="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png" alt="message-to-enter-distance" /></a></p>
+                        <p><a href="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"><img
+                              src="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"
+                              alt="message-to-enter-distance" /></a></p>
 
-    <ul>
-      <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">response</code></strong> variable.</li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li><strong>Step 2</strong> - Assigned input value to <strong><code
+                                class="language-plaintext highlighter-rouge">response</code></strong> variable.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle empty value or cancel case</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' This will handle empty value or cancel case</span>
 <span class="k">If</span> <span class="n">Len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>  
   <span class="n">MsgBox</span> <span class="s">"Empty or no value. Please try again."</span>  
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check the <strong><em>length of input value</em></strong>.</li>
-  <li>This check will handle <strong>case for empty value</strong> or <strong>cancel operation case</strong>.</li>
-</ul>
+                    <ul>
+                      <li>In above code block, we check the <strong><em>length of input value</em></strong>.</li>
+                      <li>This check will handle <strong>case for empty value</strong> or <strong>cancel operation
+                          case</strong>.</li>
+                    </ul>
 
-<p><a href="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"><img src="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png" alt="message-to-enter-distance" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"><img
+                          src="/assets/Solidworks_Images/reference-plane/message-to-enter-distance.png"
+                          alt="message-to-enter-distance" /></a></p>
 
-<ul>
-  <li>
-    <p>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</p>
-  </li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">Len(response) = 0</code></strong>
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">Len()</code></strong> is pre-build VBA function which check the length of a object.</li>
-      <li>In above cases, we will get <strong>0</strong> value.</li>
-    </ul>
-  </li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Empty or no value. Please try again.</em></li>
-    </ul>
+                    <ul>
+                      <li>
+                        <p>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                          checking.</p>
+                      </li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">Len(response) = 0</code></strong>
+                        <ul>
+                          <li><strong><code class="language-plaintext highlighter-rouge">Len()</code></strong> is
+                            pre-build VBA function which check the length of a object.</li>
+                          <li>In above cases, we will get <strong>0</strong> value.</li>
+                        </ul>
+                      </li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>Empty or no value. Please try again.</em></li>
+                        </ul>
 
-    <p><a href="/assets/Solidworks_Images/reference-plane/message-to-show-when-empty-or-no-value-given.png"><img src="/assets/Solidworks_Images/reference-plane/message-to-show-when-empty-or-no-value-given.png" alt="message-to-show-when-empty-or-no-value-given" /></a></p>
+                        <p><a
+                            href="/assets/Solidworks_Images/reference-plane/message-to-show-when-empty-or-no-value-given.png"><img
+                              src="/assets/Solidworks_Images/reference-plane/message-to-show-when-empty-or-no-value-given.png"
+                              alt="message-to-show-when-empty-or-no-value-given" /></a></p>
 
-    <ul>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for Non-numeric values</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' This will handle case for Non-numeric values</span>
 <span class="k">If</span> <span class="n">IsNumeric</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>  
   <span class="n">MsgBox</span> <span class="s">"Entered value is Non-numeric. Please try again."</span>  
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check if the <em>input value</em> is <strong>Non-numeric</strong>.</li>
-  <li>This check will handle <strong>case for Non-numeric values</strong>.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">IsNumeric(response) = False</code></strong>
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">IsNumeric()</code></strong> is pre-build VBA function which check if <em>passing object is <strong>Numeric</strong> or not</em>.</li>
-    </ul>
+                    <ul>
+                      <li>In above code block, we check if the <em>input value</em> is <strong>Non-numeric</strong>.
+                      </li>
+                      <li>This check will handle <strong>case for Non-numeric values</strong>.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">IsNumeric(response) = False</code></strong>
+                        <ul>
+                          <li><strong><code class="language-plaintext highlighter-rouge">IsNumeric()</code></strong> is
+                            pre-build VBA function which check if <em>passing object is <strong>Numeric</strong> or
+                              not</em>.</li>
+                        </ul>
 
-    <p><a href="/assets/Solidworks_Images/reference-plane/entering-non-numeric-value.png"><img src="/assets/Solidworks_Images/reference-plane/entering-non-numeric-value.png" alt="entering-non-numeric-value" /></a></p>
+                        <p><a href="/assets/Solidworks_Images/reference-plane/entering-non-numeric-value.png"><img
+                              src="/assets/Solidworks_Images/reference-plane/entering-non-numeric-value.png"
+                              alt="entering-non-numeric-value" /></a></p>
 
-    <ul>
-      <li>In above cases, we will get <strong>False</strong> value.</li>
-    </ul>
-  </li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Entered value is Non-numeric. Please try again.</em></li>
-    </ul>
+                        <ul>
+                          <li>In above cases, we will get <strong>False</strong> value.</li>
+                        </ul>
+                      </li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>Entered value is Non-numeric. Please try again.</em></li>
+                        </ul>
 
-    <p><a href="/assets/Solidworks_Images/reference-plane/message-to-show-non-numeric-value-given.png"><img src="/assets/Solidworks_Images/reference-plane/message-to-show-non-numeric-value-given.png" alt="message-to-show-non-numeric-value-given" /></a></p>
+                        <p><a
+                            href="/assets/Solidworks_Images/reference-plane/message-to-show-non-numeric-value-given.png"><img
+                              src="/assets/Solidworks_Images/reference-plane/message-to-show-non-numeric-value-given.png"
+                              alt="message-to-show-non-numeric-value-given" /></a></p>
 
-    <ul>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for distance</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for distance</span>
 <span class="k">Dim</span> <span class="nv">distance</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we create a variable to store <strong>Distance</strong>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">distance</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code></li>
-</ul>
+                    <ul>
+                      <li>In above line, we create a variable to store <strong>Distance</strong>.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">distance</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Double</code></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Distance</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set Distance</span>
 <span class="n">distance</span> <span class="o">=</span> <span class="k">CDbl</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>
-    <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
+                    <ul>
+                      <li>
+                        <p>In above line of code we are doing <strong>2 steps</strong> in one line.</p>
 
-    <p>Those 3 steps are explained below.</p>
+                        <p>Those 3 steps are explained below.</p>
 
-    <ul>
-      <li><strong>Step 1</strong> - Converting <strong>Distance</strong> from user to <strong><code class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
-      <li><strong>Step 2</strong> - Assigned input value to <strong><code class="language-plaintext highlighter-rouge">distance</code></strong> variable.</li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li><strong>Step 1</strong> - Converting <strong>Distance</strong> from user to <strong><code
+                                class="language-plaintext highlighter-rouge">Double</code></strong> type.</li>
+                          <li><strong>Step 2</strong> - Assigned input value to <strong><code
+                                class="language-plaintext highlighter-rouge">distance</code></strong> variable.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' This will handle case for 0 Distance</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' This will handle case for 0 Distance</span>
 <span class="k">If</span> <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="s">"Entered value must be greater than 0. Please try again."</span>
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check if the <em>input value</em> is <strong>zero (0)</strong>.</li>
-  <li>This check will handle <strong>case for 0 Distance</strong>.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">distance = 0</code></strong></li>
-</ul>
+                    <ul>
+                      <li>In above code block, we check if the <em>input value</em> is <strong>zero (0)</strong>.</li>
+                      <li>This check will handle <strong>case for 0 Distance</strong>.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">distance = 0</code></strong></li>
+                    </ul>
 
-<p><a href="/assets/Solidworks_Images/reference-plane/entering-zera-as-value.png"><img src="/assets/Solidworks_Images/reference-plane/entering-zera-as-value.png" alt="entering-zera-as-value" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/reference-plane/entering-zera-as-value.png"><img
+                          src="/assets/Solidworks_Images/reference-plane/entering-zera-as-value.png"
+                          alt="entering-zera-as-value" /></a></p>
 
-<ul>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Entered value must be greater than 0. Please try again.</em></li>
-    </ul>
+                    <ul>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>Entered value must be greater than 0. Please try again.</em>
+                          </li>
+                        </ul>
 
-    <p><a href="/assets/Solidworks_Images/reference-plane/message-to-show-on-zero-given.png"><img src="/assets/Solidworks_Images/reference-plane/message-to-show-on-zero-given.png" alt="message-to-show-on-zero-given" /></a></p>
+                        <p><a href="/assets/Solidworks_Images/reference-plane/message-to-show-on-zero-given.png"><img
+                              src="/assets/Solidworks_Images/reference-plane/message-to-show-on-zero-given.png"
+                              alt="message-to-show-on-zero-given" /></a></p>
 
-    <ul>
-      <li>Then we <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<h3 id="create-reference-plane">Create Reference Plane</h3>
+                    <h3 id="create-reference-plane">Create Reference Plane</h3>
 
-<p>In this section, we create Reference Plane.</p>
+                    <p>In this section, we create Reference Plane.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Boolean Variable</span>
 <span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable Boolean values or function.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">BoolStatus</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code></li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable Boolean values or function.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">BoolStatus</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Boolean</code></li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
 <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we select <strong>Front plane</strong> by <strong><code class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.</li>
-  <li>If we succeed in selecting <strong>Front plane</strong>, we get <strong><code class="language-plaintext highlighter-rouge">True</code></strong> otherwise we get <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we select <strong>Front plane</strong> by <strong><code
+                            class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.</li>
+                      <li>If we succeed in selecting <strong>Front plane</strong>, we get <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong> otherwise we get
+                        <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Reference Plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Reference Plane</span>
 <span class="k">Dim</span> <span class="nv">swRefPlane</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">RefPlane</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Reference Plane</em>.</li>
-  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swRefPlane</code></li>
-  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.RefPlane</code></li>
-  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IRefPlane.html">online SOLIDWORKS API Help</a></strong>.</li>
-</ul>
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Reference
+                          Plane</em>.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">swRefPlane</code></li>
+                      <li><strong>Type</strong>: <code
+                          class="language-plaintext highlighter-rouge">SldWorks.RefPlane</code></li>
+                      <li><strong>Reference</strong>: Please visit 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IRefPlane.html">online
+                            SOLIDWORKS API Help</a></strong>.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Reference Plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create Reference Plane</span>
 <span class="k">Set</span> <span class="n">swRefPlane</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">InsertRefPlane</span><span class="p">(</span><span class="n">swRefPlaneReferenceConstraints_e</span><span class="p">.</span><span class="n">swRefPlaneReferenceConstraint_Distance</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>
-    <p>In above line, we set the value of variable <code class="language-plaintext highlighter-rouge">swRefPlane</code> by <code class="language-plaintext highlighter-rouge">InsertRefPlane</code> method.</p>
-  </li>
-  <li>
-    <p>This <code class="language-plaintext highlighter-rouge">InsertRefPlane</code> method takes following parameters as explained:</p>
+                    <ul>
+                      <li>
+                        <p>In above line, we set the value of variable <code
+                            class="language-plaintext highlighter-rouge">swRefPlane</code> by <code
+                            class="language-plaintext highlighter-rouge">InsertRefPlane</code> method.</p>
+                      </li>
+                      <li>
+                        <p>This <code class="language-plaintext highlighter-rouge">InsertRefPlane</code> method takes
+                          following parameters as explained:</p>
 
-    <ul>
-      <li>
-        <p><strong>FirstConstraint</strong> - <em>First constraint as defined in <strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:</p>
+                        <ul>
+                          <li>
+                            <p><strong>FirstConstraint</strong> - <em>First constraint as defined in <strong><code
+                                    class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:
+                            </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Member</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong></td>
-              <td><em>16</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong></td>
-              <td><em>4</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong></td>
-              <td><em>8</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong></td>
-              <td><em>128</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong></td>
-              <td><em>256</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong></td>
-              <td><em>512</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong></td>
-              <td><em>2056</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong></td>
-              <td><em>1028</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong></td>
-              <td><em>8192</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong></td>
-              <td><em>1</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong></td>
-              <td><em>4096</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong></td>
-              <td><em>2</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong></td>
-              <td><em>64</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong></td>
-              <td><em>32</em></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <p><strong>FirstConstraintAngleOrDistance</strong> - <em>Angle or distance of the first constraint.</em></p>
-      </li>
-      <li>
-        <p><strong>SecondConstraint</strong> - <em>Second constraint as defined in <strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:</p>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Member</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong>
+                                  </td>
+                                  <td><em>16</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong>
+                                  </td>
+                                  <td><em>4</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong>
+                                  </td>
+                                  <td><em>8</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong>
+                                  </td>
+                                  <td><em>128</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong>
+                                  </td>
+                                  <td><em>256</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong>
+                                  </td>
+                                  <td><em>512</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong>
+                                  </td>
+                                  <td><em>2056</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong>
+                                  </td>
+                                  <td><em>1028</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong>
+                                  </td>
+                                  <td><em>8192</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong>
+                                  </td>
+                                  <td><em>1</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong>
+                                  </td>
+                                  <td><em>4096</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong>
+                                  </td>
+                                  <td><em>2</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong>
+                                  </td>
+                                  <td><em>64</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong>
+                                  </td>
+                                  <td><em>32</em></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </li>
+                          <li>
+                            <p><strong>FirstConstraintAngleOrDistance</strong> - <em>Angle or distance of the first
+                                constraint.</em></p>
+                          </li>
+                          <li>
+                            <p><strong>SecondConstraint</strong> - <em>Second constraint as defined in <strong><code
+                                    class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:
+                            </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Member</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong></td>
-              <td><em>16</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong></td>
-              <td><em>4</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong></td>
-              <td><em>8</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong></td>
-              <td><em>128</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong></td>
-              <td><em>256</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong></td>
-              <td><em>512</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong></td>
-              <td><em>2056</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong></td>
-              <td><em>1028</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong></td>
-              <td><em>8192</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong></td>
-              <td><em>1</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong></td>
-              <td><em>4096</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong></td>
-              <td><em>2</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong></td>
-              <td><em>64</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong></td>
-              <td><em>32</em></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <p><strong>SecondConstraintAngleOrDistance</strong> - <em>Angle or distance of the second constraint.</em></p>
-      </li>
-      <li>
-        <p><strong>ThirdConstraint</strong> - <em>Third constraint as defined in <strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:</p>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Member</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong>
+                                  </td>
+                                  <td><em>16</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong>
+                                  </td>
+                                  <td><em>4</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong>
+                                  </td>
+                                  <td><em>8</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong>
+                                  </td>
+                                  <td><em>128</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong>
+                                  </td>
+                                  <td><em>256</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong>
+                                  </td>
+                                  <td><em>512</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong>
+                                  </td>
+                                  <td><em>2056</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong>
+                                  </td>
+                                  <td><em>1028</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong>
+                                  </td>
+                                  <td><em>8192</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong>
+                                  </td>
+                                  <td><em>1</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong>
+                                  </td>
+                                  <td><em>4096</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong>
+                                  </td>
+                                  <td><em>2</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong>
+                                  </td>
+                                  <td><em>64</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong>
+                                  </td>
+                                  <td><em>32</em></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </li>
+                          <li>
+                            <p><strong>SecondConstraintAngleOrDistance</strong> - <em>Angle or distance of the second
+                                constraint.</em></p>
+                          </li>
+                          <li>
+                            <p><strong>ThirdConstraint</strong> - <em>Third constraint as defined in <strong><code
+                                    class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e</code></strong></em>:
+                            </p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Member</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong></td>
-              <td><em>16</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong></td>
-              <td><em>4</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong></td>
-              <td><em>8</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong></td>
-              <td><em>128</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong></td>
-              <td><em>256</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong></td>
-              <td><em>512</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong></td>
-              <td><em>2056</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong></td>
-              <td><em>1028</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong></td>
-              <td><em>8192</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong></td>
-              <td><em>1</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong></td>
-              <td><em>4096</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong></td>
-              <td><em>2</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong></td>
-              <td><em>64</em></td>
-            </tr>
-            <tr>
-              <td><strong><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong></td>
-              <td><em>32</em></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <p><strong>ThirdConstraintAngleOrDistance</strong> - <em>Angle or distance of the third constraint.</em></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">InsertRefPlane</code> method return 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IRefPlane.html">Reference Plane</a></strong> data object.</p>
-  </li>
-  <li>
-    <p>In our code, I have used following values:</p>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Member</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Angle</code></strong>
+                                  </td>
+                                  <td><em>16</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Coincident</code></strong>
+                                  </td>
+                                  <td><em>4</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Distance</code></strong>
+                                  </td>
+                                  <td><em>8</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_MidPlane</code></strong>
+                                  </td>
+                                  <td><em>128</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionFlip</code></strong>
+                                  </td>
+                                  <td><em>256</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionOriginOnCurve</code></strong>
+                                  </td>
+                                  <td><em>512</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectAlongSketchNormal</code></strong>
+                                  </td>
+                                  <td><em>2056</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionProjectToNearestLocation</code></strong>
+                                  </td>
+                                  <td><em>1028</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_OptionReferenceFlip</code></strong>
+                                  </td>
+                                  <td><em>8192</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Parallel</code></strong>
+                                  </td>
+                                  <td><em>1</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_ParallelToScreen</code></strong>
+                                  </td>
+                                  <td><em>4096</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Perpendicular</code></strong>
+                                  </td>
+                                  <td><em>2</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Project</code></strong>
+                                  </td>
+                                  <td><em>64</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraint_Tangent</code></strong>
+                                  </td>
+                                  <td><em>32</em></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </li>
+                          <li>
+                            <p><strong>ThirdConstraintAngleOrDistance</strong> - <em>Angle or distance of the third
+                                constraint.</em></p>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <p><strong>Return Value</strong> : This <code
+                            class="language-plaintext highlighter-rouge">InsertRefPlane</code> method return 🚀
+                          <strong><a
+                              href="https://help.solidworks.com/2019/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IRefPlane.html">Reference
+                              Plane</a></strong> data object.</p>
+                      </li>
+                      <li>
+                        <p>In our code, I have used following values:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Parameter Name</th>
-          <th>Value Used</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>FirstConstraint</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e.swRefPlaneReferenceConstraint_Distance</code></td>
-        </tr>
-        <tr>
-          <td><strong>FirstConstraintAngleOrDistance</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">distance</code></td>
-        </tr>
-        <tr>
-          <td><strong>SecondConstraint</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>SecondConstraintAngleOrDistance</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>ThirdConstraint</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-        <tr>
-          <td><strong>ThirdConstraintAngleOrDistance</strong></td>
-          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter Name</th>
+                              <th>Value Used</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>FirstConstraint</strong></td>
+                              <td><code
+                                  class="language-plaintext highlighter-rouge">swRefPlaneReferenceConstraints_e.swRefPlaneReferenceConstraint_Distance</code>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>FirstConstraintAngleOrDistance</strong></td>
+                              <td><code class="language-plaintext highlighter-rouge">distance</code></td>
+                            </tr>
+                            <tr>
+                              <td><strong>SecondConstraint</strong></td>
+                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+                            </tr>
+                            <tr>
+                              <td><strong>SecondConstraintAngleOrDistance</strong></td>
+                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+                            </tr>
+                            <tr>
+                              <td><strong>ThirdConstraint</strong></td>
+                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+                            </tr>
+                            <tr>
+                              <td><strong>ThirdConstraintAngleOrDistance</strong></td>
+                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
 
-<p><strong>Reference</strong>: For more details about</p>
+                    <p><strong>Reference</strong>: For more details about</p>
 
-<ul>
-  <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
-  <li><strong>InsertRefPlane Method</strong>: 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertrefplane.html">online Solidworks API Help</a></strong> for <code class="language-plaintext highlighter-rouge">InsertRefPlane</code> Method.</li>
-</ul>
+                    <ul>
+                      <li><strong>Solidworks Feature Manager details</strong>: 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">online
+                            Solidworks API Help</a></strong> for Solidworks Feature Manager.</li>
+                      <li><strong>InsertRefPlane Method</strong>: 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~insertrefplane.html">online
+                            Solidworks API Help</a></strong> for <code
+                          class="language-plaintext highlighter-rouge">InsertRefPlane</code> Method.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Reference Plane creates or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Reference Plane creates or not</span>
 <span class="k">If</span> <span class="n">swRefPlane</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Reference Plane."</span><span class="p">)</span>
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above code block, we check if we successfully create <strong>Reference Plane</strong> or not.</li>
-  <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for checking.</li>
-  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swRefPlane Is Nothing</code></strong></li>
-  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">True</code></strong>,
-    <ul>
-      <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to user.</li>
-      <li><strong>Message</strong>: <em>Failed to create Reference Plane.</em></li>
-      <li>Then we <strong>clear all selection</strong> and <strong>stop</strong> our macro here.</li>
-    </ul>
-  </li>
-</ul>
+                    <ul>
+                      <li>In above code block, we check if we successfully create <strong>Reference Plane</strong> or
+                        not.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">swRefPlane Is Nothing</code></strong></li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>Failed to create Reference Plane.</em></li>
+                          <li>Then we <strong>clear all selection</strong> and <strong>stop</strong> our macro here.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<p>Now we run the macro and after running macro we get <strong>Reference Plane</strong> as shown in below image.</p>
+                    <p>Now we run the macro and after running macro we get <strong>Reference Plane</strong> as shown in
+                      below image.</p>
 
-<p><a href="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"><img src="/assets/Solidworks_Images/reference-plane/final-result-gif.gif" alt="scale-feature-final-result" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"><img
+                          src="/assets/Solidworks_Images/reference-plane/final-result-gif.gif"
+                          alt="scale-feature-final-result" /></a></p>
 
-<h3 id="final-work">Final work</h3>
+                    <h3 id="final-work">Final work</h3>
 
-<p>In this section, after creating <strong>Reference Plane</strong>, we have to do some cleaning work so that we can use this macro frequently.</p>
+                    <p>In this section, after creating <strong>Reference Plane</strong>, we have to do some cleaning
+                      work so that we can use this macro frequently.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' View zoom to fit</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' View zoom to fit</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we make our view zoom to fit the model.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we make our view zoom to fit the model.</li>
+                      <li>For this we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code>
+                        method which is part of <em>SOLIDWORKS Document</em> variable i.e <code
+                          class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Clear all selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>In above line, we clear all previous selection.</li>
-  <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
-</ul>
+                    <ul>
+                      <li>In above line, we clear all previous selection.</li>
+                      <li>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code>
+                        method which is part of <em>SOLIDWORKS Document</em> variable i.e <code
+                          class="language-plaintext highlighter-rouge">swDoc</code> variable.</li>
+                    </ul>
 
-<h2 id="error-solutions">Error-Solutions</h2>
+                    <h2 id="error-solutions">Error-Solutions</h2>
 
-<p>After posting this article, I got to know that code sample is not working for already opened document.</p>
+                    <p>After posting this article, I got to know that code sample is not working for already opened
+                      document.</p>
 
-<p>I thought writing a section for these error will be a better idea or future.</p>
+                    <p>I thought writing a section for these error will be a better idea or future.</p>
 
-<p>Below I list out the error message we got and their probable solution(s).</p>
+                    <p>Below I list out the error message we got and their probable solution(s).</p>
 
-<h3 id="error-message-1">Error Message 1</h3>
+                    <h3 id="error-message-1">Error Message 1</h3>
 
-<p><strong>Solidworks document is opened</strong> error message. Image of this error is shown below.</p>
+                    <p><strong>Solidworks document is opened</strong> error message. Image of this error is shown below.
+                    </p>
 
-<p><a href="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png"><img src="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png" alt="error-solidworks-document-not-open" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png"><img
+                          src="/assets/Solidworks_Images/common/error-solidworks-document-not-open.png"
+                          alt="error-solidworks-document-not-open" /></a></p>
 
-<p><strong>Cause</strong>: Cause of this error is <strong>not</strong> setting <strong>File Location setting</strong> for <strong>Document Templates</strong>.</p>
+                    <p><strong>Cause</strong>: Cause of this error is <strong>not</strong> setting <strong>File Location
+                        setting</strong> for <strong>Document Templates</strong>.</p>
 
-<p>Please see below image for detail.</p>
+                    <p>Please see below image for detail.</p>
 
-<p><a href="/assets/Solidworks_Images/common/document-template-setting.png"><img src="/assets/Solidworks_Images/common/document-template-setting.png" alt="document-template-setting" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/common/document-template-setting.png"><img
+                          src="/assets/Solidworks_Images/common/document-template-setting.png"
+                          alt="document-template-setting" /></a></p>
 
-<p>After setting <strong>Document Templates</strong> path, this message will not come.</p>
+                    <p>After setting <strong>Document Templates</strong> path, this message will not come.</p>
 
-<h3 id="error-message-2">Error Message 2</h3>
+                    <h3 id="error-message-2">Error Message 2</h3>
 
-<p><strong>Failed to create Reference Plane</strong> error message. Image of this error is shown below.</p>
+                    <p><strong>Failed to create Reference Plane</strong> error message. Image of this error is shown
+                      below.</p>
 
-<p><a href="/assets/Solidworks_Images/common/failed-to-create-plane.png"><img src="/assets/Solidworks_Images/common/failed-to-create-plane.png" alt="failed-to-create-plane" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/common/failed-to-create-plane.png"><img
+                          src="/assets/Solidworks_Images/common/failed-to-create-plane.png"
+                          alt="failed-to-create-plane" /></a></p>
 
-<p><strong>Cause</strong>: There might be 2 causes for this error.</p>
+                    <p><strong>Cause</strong>: There might be 2 causes for this error.</p>
 
-<ol>
-  <li>Code for getting Distance from user is commented.</li>
-  <li>Name of selected plane is different.</li>
-</ol>
+                    <ol>
+                      <li>Code for getting Distance from user is commented.</li>
+                      <li>Name of selected plane is different.</li>
+                    </ol>
 
-<p><strong>In case of reason 1, I can’t do anything. Commented code did not executed</strong></p>
+                    <p><strong>In case of reason 1, I can’t do anything. Commented code did not executed</strong></p>
 
-<p>In case of  reason 2, you need to confirm plane name first, as I shown in below image.</p>
+                    <p>In case of reason 2, you need to confirm plane name first, as I shown in below image.</p>
 
-<p><a href="/assets/Solidworks_Images/common/plane-names.png"><img src="/assets/Solidworks_Images/common/plane-names.png" alt="plane-names" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/common/plane-names.png"><img
+                          src="/assets/Solidworks_Images/common/plane-names.png" alt="plane-names" /></a></p>
 
-<p>As shown in above image, in my <strong>default part</strong>, plane name is “<strong>Front</strong>”.</p>
+                    <p>As shown in above image, in my <strong>default part</strong>, plane name is
+                      “<strong>Front</strong>”.</p>
 
-<p>Hence for selecting this plane, I use below code.</p>
+                    <p>Hence for selecting this plane, I use below code.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
 <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>If your default part have plane name as shown in below image.</p>
+                    <p>If your default part have plane name as shown in below image.</p>
 
-<p><a href="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png"><img src="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png" alt="plane-names-with-suffix-plane" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png"><img
+                          src="/assets/Solidworks_Images/common/plane-names-with-suffix-plane.png"
+                          alt="plane-names-with-suffix-plane" /></a></p>
 
-<p>Then you need to use below code for selecting <strong>Front Plane</strong>.</p>
+                    <p>Then you need to use below code for selecting <strong>Front Plane</strong>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Selecting Front Plane</span>
 <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h3 id="error-3">Error 3</h3>
+                    <h3 id="error-3">Error 3</h3>
 
-<p>If you are using code sample provided in this article into an already open document.</p>
+                    <p>If you are using code sample provided in this article into an already open document.</p>
 
-<p>And hoping that you will get the result of new Reference Plane in opened document.</p>
+                    <p>And hoping that you will get the result of new Reference Plane in opened document.</p>
 
-<p>Then I suggest you to know few things:</p>
+                    <p>Then I suggest you to know few things:</p>
 
-<ol>
-  <li><em>This code sample, <strong>create new part and in that new part it create reference plane</strong>.</em></li>
-  <li><em>If you are in this error section, <strong>I seriously want you to read all articles I had written</strong>. Then you will understand the code and change it to fit your need.</em></li>
-</ol>
+                    <ol>
+                      <li><em>This code sample, <strong>create new part and in that new part it create reference
+                            plane</strong>.</em></li>
+                      <li><em>If you are in this error section, <strong>I seriously want you to read all articles I had
+                            written</strong>. Then you will understand the code and change it to fit your need.</em>
+                      </li>
+                    </ol>
 
-<p>If you still want to create <strong>new Reference plane</strong> in already opened document, do following.</p>
+                    <p>If you still want to create <strong>new Reference plane</strong> in already opened document, do
+                      following.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for storing default part location</span>
 <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
 
 <span class="c1">' Setting value of variable to "Default part template"</span>
@@ -1883,87 +2270,93 @@
 
 <span class="c1">' Setting Solidworks document to new part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Replace above code, with below code in your macro.</p>
+                    <p>Replace above code, with below code in your macro.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 
 <span class="c1">' Set Solidworks document variable to currently opened document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>I hope this will work.</p>
+                    <p>I hope this will work.</p>
 
-<p><strong>This is it !!!</strong></p>
+                    <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>create Reference Plane</strong> with SOLIDWORKS VBA Macros.</p>
+                    <p>Hope this post helps you to <strong>create Reference Plane</strong> with SOLIDWORKS VBA Macros.
+                    </p>
 
-<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after sometime.</p>
+                    <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after
+                      sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+                    <p><em>Do let me know by you like this post or not!</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+                    <p><em>Till then, Happy learning!!!</em></p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
 
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-08-20T08:09:36-04:00">August 20, 2023</time></p>
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-scale/" title="Solidworks VBA Macro - Create Scale
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2023-08-27T21:34:10-04:00">August 27, 2023</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-scale/" title="Solidworks VBA Macro - Create Scale
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-reference-axis/" title="Solidworks VBA Macro - Create Reference Axis
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/create-reference-axis/" title="Solidworks VBA Macro - Create Reference Axis
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -1973,74 +2366,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -2065,15 +2458,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
