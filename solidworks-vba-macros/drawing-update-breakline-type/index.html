@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- begin _includes/seo.html -->
-  <title>Solidworks VBA Macro - Show Component - The CAD Coder</title>
+  <title>Solidworks VBA Macro - Update Break Line Type - The CAD Coder</title>
   <meta name="description" content="Objective">
 
 
@@ -14,8 +14,8 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="Solidworks VBA Macro - Show Component">
-  <meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/assembly-show-component/">
+  <meta property="og:title" content="Solidworks VBA Macro - Update Break Line Type">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-vba-macros/drawing-update-breakline-type/">
 
 
   <meta property="og:description" content="Objective">
@@ -33,7 +33,7 @@
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/assembly-show-component/">
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-vba-macros/drawing-update-breakline-type/">
 
 
 
@@ -661,8 +661,7 @@
 
                   <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
 
-                  <li><a href="/solidworks-vba-macros/assembly-show-component/" class="active">Show Selected
-                      Component</a></li>
+                  <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
 
                   <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
 
@@ -774,7 +773,8 @@
 
                   <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
 
-                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/" class="active">Update Break Line
+                      Type</a></li>
 
                 </ul>
 
@@ -811,7 +811,7 @@
 
             <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-              <meta itemprop="headline" content="Solidworks VBA Macro - Show Component">
+              <meta itemprop="headline" content="Solidworks VBA Macro - Update Break Line Type">
 
               <meta itemprop="description" content="Objective">
 
@@ -822,7 +822,8 @@
               <div class="page__inner-wrap">
 
                 <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Show Component
+                  <h1 id="page-title" class="page__title" itemprop="headline">Solidworks VBA Macro - Update Break Line
+                    Type
                   </h1>
 
 
@@ -838,7 +839,7 @@
                     <span class="page__meta-readtime">
                       <i class="far fa-clock" aria-hidden="true"></i>
 
-                      5 minute read
+                      6 minute read
 
                     </span>
 
@@ -857,15 +858,15 @@
                       </header>
                       <ul class="toc__menu">
                         <li><a href="#objective">Objective</a></li>
-                        <li><a href="#results-we-can-get">Results We Can Get</a></li>
+                        <li><a href="#final-result">Final Result</a></li>
                         <li><a href="#macro-video">Macro Video</a></li>
                         <li><a href="#vba-macro">VBA Macro</a></li>
                         <li><a href="#prerequisite">Prerequisite</a></li>
                         <li><a href="#steps-to-follow">Steps To Follow</a>
                           <ul>
                             <li><a href="#create-global-variables">Create Global Variables</a></li>
-                            <li><a href="#initialize-global-variables">Initialize Global Variables</a></li>
-                            <li><a href="#show-component">Show Component</a></li>
+                            <li><a href="#initialize-variables">Initialize Variables</a></li>
+                            <li><a href="#update-break-line-position">Update Break line position</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -895,64 +896,59 @@
                     </script>
                     <h2 id="objective">Objective</h2>
 
-                    <p>In this article, we understand “how to” <strong>Show Component</strong> in <strong>Assembly
-                        document</strong> from VBA macro.</p>
+                    <p>Objective of this article is simple, answer the below question.</p>
 
-                    <p>This is most updated method of <strong>Show Component</strong> in an assembly document.</p>
+                    <p>How to <strong><em>Update Break line Type</em></strong> in a drawing from <strong>Solidworks VBA
+                        macro</strong>.</p>
 
-                    <h2 id="results-we-can-get">Results We Can Get</h2>
+                    <h2 id="final-result">Final Result</h2>
 
-                    <p>Below image shows the result we get.</p>
+                    <p>Final result as shown below 👇🏻</p>
 
-                    <p><a href="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"><img
-                          src="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"
-                          alt="assembly-show-component" /></a></p>
-
-                    <p>We <strong>Show Component</strong> in simple manners.</p>
-
-                    <p>There are no extra steps required.</p>
-
-                    <p class="notice--warning">To get the correct result, please follow the steps correctly.</p>
+                    <p><a href="/assets/Solidworks_Images/drawing-update-breakline-type/final-result-gif.gif"><img
+                          src="/assets/Solidworks_Images/drawing-update-breakline-type/final-result-gif.gif"
+                          alt="drawing-update-breakline-type" /></a></p>
 
                     <h2 id="macro-video">Macro Video</h2>
 
-                    <p>Below 🎬 video shows how to <strong>Show Component</strong> from <em>SOLIDWORKS VBA Macros</em>.
-                    </p>
+                    <p>Below 🎬 video shows how to <strong>Update Break Line Type</strong> from <em>SOLIDWORKS VBA
+                        Macros</em>.</p>
 
-                    <iframe src="https://www.youtube.com/embed/3YCXV0gpN3U" frameborder="0" allowfullscreen=""></iframe>
+                    <iframe src="https://www.youtube.com/embed/rAoF3gog2KU" frameborder="0" allowfullscreen=""></iframe>
                     <p><br /></p>
 
-                    <p><strong><em>Above video is just for visualization and there is no explanation.</em></strong></p>
-
-                    <p><strong><em>I have explained every line in this article.</em></strong></p>
-
-                    <p class="notice--warning">It is advisable to watch video, since it helps you to better understand
-                      the process.</p>
+                    <p class="notice--warning">Above video is just for visualization and there is no explanation.
+                      <br />
+                      It is advisable to watch video, since it helps you to better understand the process.
+                    </p>
 
                     <h2 id="vba-macro">VBA Macro</h2>
 
-                    <p>Below is the <strong><em>VBA macro</em></strong> for <em>Show Component</em>.</p>
+                    <p>Below is the <strong><em>VBA macro</em></strong> for <em>Update Break Line Type</em>.</p>
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
                         <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
-<span class="c1">' Variable for Solidworks Application</span>
+<span class="c1">' Creating variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
 
-<span class="c1">' Variable for Solidworks document</span>
+<span class="c1">' Creating variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 
-<span class="c1">' Variable for Solidworks Assembly</span>
-<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+<span class="c1">' Creating variable for Solidworks Drawing</span>
+<span class="k">Dim</span> <span class="nv">swDrawing</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
 
-<span class="c1">' Variable for Solidworks Component</span>
-<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+<span class="c1">' Creating variable for Solidworks View</span>
+<span class="k">Dim</span> <span class="nv">swView</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">View</span>
 
-<span class="c1">' Program to Show Selected Component</span>
+<span class="c1">' Creating variable for Solidworks Breakline</span>
+<span class="k">Dim</span> <span class="nv">swBreakLine</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">BreakLine</span>
+
+<span class="c1">' Program to Update Break line Type</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
-  
-  <span class="c1">' Set Solidworks Application variable to current application</span>
+
+  <span class="c1">' Setting Solidworks variable to Solidworks application</span>
   <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
   
   <span class="c1">' Set Solidworks document variable to currently opened document</span>
@@ -964,36 +960,27 @@
     <span class="k">Exit</span> <span class="k">Sub</span>
   <span class="nf">End</span> <span class="k">If</span>
   
-  <span class="c1">' Set Solidworks Assembly document</span>
-  <span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+  <span class="c1">' Set Solidworks Drawing document variable</span>
+  <span class="k">Set</span> <span class="n">swDrawing</span> <span class="o">=</span> <span class="n">swDoc</span>
   
-  <span class="c1">' Variable for List of elements</span>
-  <span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  <span class="c1">' Get activate view</span>
+  <span class="k">Set</span> <span class="n">swView</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">ActiveDrawingView</span>
   
-  <span class="c1">' Get Components list in opened assembly</span>
-  <span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
+  <span class="c1">' Variable for Break lines</span>
+  <span class="k">Dim</span> <span class="nv">breaks</span> <span class="ow">As</span> <span class="kt">Variant</span>
   
-  <span class="c1">' Variable for component</span>
-  <span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
+  <span class="c1">' Get Break lines in current view</span>
+  <span class="n">breaks</span> <span class="o">=</span> <span class="n">swView</span><span class="p">.</span><span class="n">GetBreakLines</span>
   
-  <span class="c1">' Loop Components List</span>
-  <span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
+  <span class="c1">' Get first break line and set Solidworks Breakline variable</span>
+  <span class="k">Set</span> <span class="n">swBreakLine</span> <span class="o">=</span> <span class="n">breaks</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   
-    <span class="c1">' Set Solidworks Component variable</span>
-    <span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
-    
-    <span class="c1">' If current component is hidden</span>
-    <span class="k">If</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">IsHidden</span><span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="k">Then</span>
-      
-      <span class="c1">' Select the component</span>
-      <span class="n">swComponent</span><span class="p">.</span><span class="n">Select</span> <span class="k">False</span>
-      
-      <span class="c1">' Show selected component</span>
-      <span class="n">swDoc</span><span class="p">.</span><span class="n">ShowComponent2</span>
-    <span class="k">End</span> <span class="k">If</span>
-    
-  <span class="k">Next</span> <span class="n">component</span>
+  <span class="c1">' Set Straight Line style</span>
+  <span class="n">swBreakLine</span><span class="p">.</span><span class="n">Style</span> <span class="o">=</span> <span class="n">swBreakLineStyle_e</span><span class="p">.</span><span class="n">swBreakLine_Straight</span>
   
+  <span class="c1">' Rebuild document</span>
+  <span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
                       </div>
@@ -1004,16 +991,36 @@
                     <p>There are some <em>prerequisites</em> for this article.</p>
 
                     <ul>
-                      <li>Knowledge of <strong>VBA programming language</strong> is ❗<strong><em>required</em></strong>.
+                      <li>Knowledge of <strong>VBA programming language</strong> is❗<strong><em>required</em></strong>.
                       </li>
-                      <li>We use existing parts in Assembly document.</li>
-                      <li>Both components are fully constraint as shown in below image.</li>
-                      <li>We select the part which we want to Show.</li>
                     </ul>
 
-                    <p><a href="/assets/Solidworks_Images/assembly-show-component/prerequisite.png"><img
-                          src="/assets/Solidworks_Images/assembly-show-component/prerequisite.png"
+                    <p><a href="/assets/Solidworks_Images/drawing-update-breakline-type/prerequisite.png"><img
+                          src="/assets/Solidworks_Images/drawing-update-breakline-type/prerequisite.png"
                           alt="prerequisite" /></a></p>
+
+                    <p>As shown in above 👆🏻 image:</p>
+
+                    <ul>
+                      <li>We arleady selected view.</li>
+                      <li>Current Line Style: <strong>Zig Zag Cut</strong></li>
+                    </ul>
+
+                    <p>If you want to <strong>Insert Break view</strong> in a drawing
+                      <strong><em>programmatically</em></strong> then please refer to below article.</p>
+
+                    <ul>
+                      <li>🚀 <strong><a href="/solidworks-vba-macros/drawing-insert-break-view">SOLIDWORKS Macros -
+                            Insert Break view</a></strong>.</li>
+                    </ul>
+
+                    <p>Additionally, if you want to <strong>Update Break Line Position</strong> in a drawing
+                      <strong><em>programmatically</em></strong> then please refer to below article.</p>
+
+                    <ul>
+                      <li>🚀 <strong><a href="/solidworks-vba-macros/drawing-update-breakline-position">SOLIDWORKS
+                            Macros - Update Break line position</a></strong>.</li>
+                    </ul>
 
                     <p class="notice">We will apply checks in this article, so the code we write, should be
                       <strong>error free</strong> mostly.</p>
@@ -1024,8 +1031,8 @@
 
                     <ol>
                       <li><em>Create Global Variables</em></li>
-                      <li><em>Initialize Global Variables</em></li>
-                      <li><em>Show Component</em></li>
+                      <li><em>Initialize Variables</em></li>
+                      <li><em>Update Break line Type</em></li>
                     </ol>
 
                     <p><strong><em>Every section with each line is explained below.</em></strong></p>
@@ -1094,41 +1101,61 @@
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Assembly</span>
-<span class="k">Dim</span> <span class="nv">swAssembly</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">AssemblyDoc</span>
+                        <pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Drawing</span>
+<span class="k">Dim</span> <span class="nv">swDrawing</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">DrawingDoc</span>
 </code></pre>
                       </div>
                     </div>
 
                     <ul>
-                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks
-                          Assembly</em>.</li>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks Drawing</em>.
+                      </li>
                       <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">swAssembly</code></li>
+                          class="language-plaintext highlighter-rouge">swDrawing</code></li>
                       <li><strong>Type</strong>: <code
-                          class="language-plaintext highlighter-rouge">SldWorks.AssemblyDoc</code></li>
+                          class="language-plaintext highlighter-rouge">SldWorks.DrawingDoc</code></li>
                       <li><strong>Reference</strong>: Please visit 🚀 <strong><a
-                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IAssemblyDoc_members.html">online
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IDrawingDoc_members.html">online
                             SOLIDWORKS API Help</a></strong>.</li>
                     </ul>
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Component</span>
-<span class="k">Dim</span> <span class="nv">swComponent</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Component2</span>
+                        <pre class="highlight"><code><span class="c1">' Creating variable for Solidworks View</span>
+<span class="k">Dim</span> <span class="nv">swView</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">View</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks View</em>.
+                      </li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">swView</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.View</code>
+                      </li>
+                      <li><strong>Reference</strong>: Please visit 🚀 <strong><a
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IView_members.html">online
+                            SOLIDWORKS API Help</a></strong>.</li>
+                    </ul>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Breakline</span>
+<span class="k">Dim</span> <span class="nv">swBreakLine</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">BreakLine</span>
 </code></pre>
                       </div>
                     </div>
 
                     <ul>
                       <li><strong>Purpose</strong>: In above line, we create a variable for <em>Solidworks
-                          Component</em>.</li>
+                          Breakline</em>.</li>
                       <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">swComponent</code></li>
+                          class="language-plaintext highlighter-rouge">swBreakLine</code></li>
                       <li><strong>Type</strong>: <code
-                          class="language-plaintext highlighter-rouge">SldWorks.Component2</code>.</li>
+                          class="language-plaintext highlighter-rouge">SldWorks.BreakLine</code></li>
                       <li><strong>Reference</strong>: Please visit 🚀 <strong><a
-                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IComponent2_members.html">online
+                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IBreakLine_members.html">online
                             SOLIDWORKS API Help</a></strong>.</li>
                     </ul>
 
@@ -1138,7 +1165,7 @@
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Program to Show Selected Component</span>
+                        <pre class="highlight"><code><span class="c1">' Program to Update Break line type</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
@@ -1147,7 +1174,7 @@
                     </div>
 
                     <ul>
-                      <li>In above line, we create <em>Program to Show Selected Component</em>.</li>
+                      <li>In above line, we create <em>Program to Update Break line type</em>.</li>
                       <li>This is a <strong><code class="language-plaintext highlighter-rouge">Sub</code></strong>
                         procedure which has name of <strong><code
                             class="language-plaintext highlighter-rouge">main</code></strong>.</li>
@@ -1157,9 +1184,9 @@
                         of this website.</li>
                     </ul>
 
-                    <h3 id="initialize-global-variables">Initialize Global Variables</h3>
+                    <h3 id="initialize-variables">Initialize Variables</h3>
 
-                    <p>In this section, we initialize global variables.</p>
+                    <p>In this section, we initialize Variables.</p>
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
@@ -1220,164 +1247,225 @@
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set Solidworks Assembly document</span>
-<span class="k">Set</span> <span class="n">swAssembly</span> <span class="o">=</span> <span class="n">swDoc</span>
+                        <pre class="highlight"><code><span class="c1">' Set Solidworks Drawing document</span>
+<span class="k">Set</span> <span class="n">swDrawing</span> <span class="o">=</span> <span class="n">swDoc</span>
 </code></pre>
                       </div>
                     </div>
 
                     <ul>
                       <li>In above line, we set <em>value</em> of <strong><code
-                            class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.</li>
+                            class="language-plaintext highlighter-rouge">swDrawing</code></strong> variable.</li>
                       <li>This <em>value</em> is <strong><code
                             class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
                     </ul>
 
-                    <h3 id="show-component">Show Component</h3>
-
-                    <p>In this section, we perform <em>Show Component</em> action.</p>
-
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for List of elements</span>
-<span class="k">Dim</span> <span class="nv">vArray</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li><strong>Purpose</strong>: In above line, we create a variable for <em>List of elements</em>.
-                      </li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">vArray</code></li>
-                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Get Components list in opened assembly</span>
-<span class="n">vArray</span> <span class="o">=</span> <span class="n">swAssembly</span><span class="p">.</span><span class="n">GetComponents</span><span class="p">(</span><span class="k">True</span><span class="p">)</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li>In above line, we set the value of <strong><code
-                            class="language-plaintext highlighter-rouge">vArray</code></strong> variable.</li>
-                      <li>We set value by <strong><code
-                            class="language-plaintext highlighter-rouge">GetComponents</code></strong> method of
-                        <strong><code class="language-plaintext highlighter-rouge">swAssembly</code></strong> variable.
-                      </li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for component</span>
-<span class="k">Dim</span> <span class="nv">component</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li>In above line, we create <strong><code
-                            class="language-plaintext highlighter-rouge">component</code></strong> variable for looping.
-                      </li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">component</code></li>
-                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Loop Components List</span>
-<span class="k">For</span> <span class="k">Each</span> <span class="n">component</span> <span class="ow">In</span> <span class="n">vArray</span>
-  
-<span class="k">Next</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li>In above line, we create a <code class="language-plaintext highlighter-rouge">For Each</code>
-                        loop.</li>
-                      <li>In this loop, <strong><code
-                            class="language-plaintext highlighter-rouge">component</code></strong> variable loops every
-                        item in <strong><code class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set Solidworks Component variable</span>
-<span class="k">Set</span> <span class="n">swComponent</span> <span class="o">=</span> <span class="n">component</span>
+                        <pre class="highlight"><code><span class="c1">' Get activate view</span>
+<span class="k">Set</span> <span class="n">swView</span> <span class="o">=</span> <span class="n">swDrawing</span><span class="p">.</span><span class="n">ActiveDrawingView</span>
 </code></pre>
                       </div>
                     </div>
 
                     <ul>
                       <li>In above line, we set <em>value</em> of <strong><code
-                            class="language-plaintext highlighter-rouge">swComponent</code></strong> variable.</li>
-                      <li>This <em>value</em> is current value of array <strong><code
-                            class="language-plaintext highlighter-rouge">vArray</code></strong>.</li>
-                      <li>Current value is represented by <strong><code
-                            class="language-plaintext highlighter-rouge">component</code></strong> variable.</li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' If current component is hidden</span>
-<span class="k">If</span> <span class="n">swComponent</span><span class="p">.</span><span class="n">IsHidden</span><span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="k">Then</span>
-  
-<span class="k">End</span> <span class="k">If</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li>In above code block, we check <em>if current component is hidden</em>.</li>
-                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
-                        checking.</li>
-                      <li><strong>Condition</strong>: <strong><code
-                            class="language-plaintext highlighter-rouge">swComponent.IsHidden(False)</code></strong>
-                      </li>
-                    </ul>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Select the component</span>
-<span class="n">swComponent</span><span class="p">.</span><span class="n">Select</span> <span class="k">False</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <ul>
-                      <li>In above line, we <em>select the component</em>.</li>
-                      <li>We use <strong><code class="language-plaintext highlighter-rouge">Select</code></strong>
-                        method of <strong><code class="language-plaintext highlighter-rouge">swComponent</code></strong>
+                            class="language-plaintext highlighter-rouge">swView</code></strong> variable.</li>
+                      <li>This value is currently selected view.</li>
+                      <li>We get value by <strong><code
+                            class="language-plaintext highlighter-rouge">ActiveDrawingView</code></strong> method.</li>
+                      <li>This <strong><code
+                            class="language-plaintext highlighter-rouge">ActiveDrawingView</code></strong> method is
+                        part of <strong><code class="language-plaintext highlighter-rouge">swDrawing</code></strong>
                         variable.</li>
                     </ul>
 
                     <div class="language-vb highlighter-rouge">
                       <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Show selected component</span>
-<span class="n">swDoc</span><span class="p">.</span><span class="n">ShowComponent2</span>
+                        <pre class="highlight"><code><span class="c1">' Check if view is selected or not</span>
+<span class="k">If</span> <span class="n">swView</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+  <span class="n">MsgBox</span> <span class="s">"No view selected."</span>
+  <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">If</span>
 </code></pre>
                       </div>
                     </div>
 
                     <ul>
-                      <li>In above line, we Show selected component.</li>
-                      <li>We use <strong><code
-                            class="language-plaintext highlighter-rouge">ShowComponent2</code></strong> method of
-                        <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li>This method return nothing.</li>
+                      <li>In above code block, we check if we successfully get the value of <strong><code
+                            class="language-plaintext highlighter-rouge">swView</code></strong> variable.</li>
+                      <li>We use 🚀 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> for
+                        checking.</li>
+                      <li><strong>Condition</strong>: <strong><code
+                            class="language-plaintext highlighter-rouge">swView Is Nothing</code></strong></li>
+                      <li>When this condition is <strong><code
+                            class="language-plaintext highlighter-rouge">True</code></strong>,
+                        <ul>
+                          <li>We show and 🚀 <strong><a href="/vba/msgBox-function/">message window</a></strong> to
+                            user.</li>
+                          <li><strong>Message</strong>: <em>No view selected.</em></li>
+                          <li>Then we <strong>stop</strong> our macro here.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <h3 id="update-break-line-position">Update Break line position</h3>
+
+                    <p>In this section, we <em>Update Break line position</em>.</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Variable for Break lines</span>
+<span class="k">Dim</span> <span class="nv">breaks</span> <span class="ow">As</span> <span class="kt">Variant</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong>Purpose</strong>: In above line, we create a variable for getting <em>Break lines</em>
+                        from current views.</li>
+                      <li><strong>Variable Name</strong>: <code
+                          class="language-plaintext highlighter-rouge">breaks</code></li>
+                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">Variant</code></li>
+                    </ul>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Get Break lines in current view</span>
+<span class="n">breaks</span> <span class="o">=</span> <span class="n">swView</span><span class="p">.</span><span class="n">GetBreakLines</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li>In above code, we <strong>get Break lines</strong> in current view.</li>
+                      <li>Then we set the value of <strong><code
+                            class="language-plaintext highlighter-rouge">breaks</code></strong> variable.</li>
+                      <li>For this, we use <strong><code
+                            class="language-plaintext highlighter-rouge">GetBreakLines</code></strong> method.</li>
+                      <li>This <strong><code class="language-plaintext highlighter-rouge">GetBreakLines</code></strong>
+                        method is part of <strong><code
+                            class="language-plaintext highlighter-rouge">swView</code></strong> variable.</li>
+                      <li>This method did not take any parameter.</li>
+                      <li><strong>Return Value</strong> : This <strong><code
+                            class="language-plaintext highlighter-rouge">GetBreakLines</code></strong> method returns
+                        <strong>Solidworks Break line</strong>.</li>
+                      <li><strong>Reference</strong>: For more details please visit 🚀 <strong><a
+                            href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.iview~getbreaklines.html">online
+                            SOLIDWORKS API Help</a></strong>.</li>
+                    </ul>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Get first break line and set Solidworks Breakline variable</span>
+<span class="k">Set</span> <span class="n">swBreakLine</span> <span class="o">=</span> <span class="n">breaks</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li>In above line, we get first break line.</li>
+                      <li>Then we set the value of Solidworks Breakline variable <strong><code
+                            class="language-plaintext highlighter-rouge">swBreakLine</code></strong>.</li>
+                    </ul>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set Straight Line style</span>
+<span class="n">swBreakLine</span><span class="p">.</span><span class="n">Style</span> <span class="o">=</span> <span class="n">swBreakLineStyle_e</span><span class="p">.</span><span class="n">swBreakLine_Straight</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li>In above code, we <strong>Set Straight Line style</strong>.</li>
+                      <li>For this, we use <strong><code
+                            class="language-plaintext highlighter-rouge">Style</code></strong> property.</li>
+                      <li>This <strong><code class="language-plaintext highlighter-rouge">Style</code></strong> property
+                        is part of <strong><code
+                            class="language-plaintext highlighter-rouge">swBreakLine</code></strong> variable.</li>
+                      <li>We set the value of this <strong><code
+                            class="language-plaintext highlighter-rouge">Style</code></strong> property to value of
+                        <strong><code
+                            class="language-plaintext highlighter-rouge">swBreakLineStyle_e.swBreakLine_Straight</code></strong>
+                        variable.</li>
+                      <li>
+                        <p><strong><code class="language-plaintext highlighter-rouge">swBreakLineStyle_e</code></strong>
+                          has multiple values for different styles as explained below.</p>
+
+                        <ul>
+                          <li>
+                            <p><strong>Type</strong> - <em>Type of Styles are defined in <strong><code
+                                    class="language-plaintext highlighter-rouge">swBreakLineStyle_e</code></strong></em>:
+                            </p>
+
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Member</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swBreakLine_Curve</code></strong>
+                                  </td>
+                                  <td><em>3</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swBreakLine_Jagged</code></strong>
+                                  </td>
+                                  <td><em>5</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swBreakLine_SmallZigZag</code></strong>
+                                  </td>
+                                  <td><em>4</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swBreakLine_Straight</code></strong>
+                                  </td>
+                                  <td><em>1</em></td>
+                                </tr>
+                                <tr>
+                                  <td><strong><code
+                                        class="language-plaintext highlighter-rouge">swBreakLine_ZigZag</code></strong>
+                                  </td>
+                                  <td><em>2</em></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>You can select type of style from above values as per requirement.</li>
+                    </ul>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Rebuild drawing</span>
+<span class="n">swDoc</span><span class="p">.</span><span class="n">ForceRebuild3</span> <span class="k">True</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li>In above line, we Rebuild drawing.</li>
+                      <li>For this we use <code class="language-plaintext highlighter-rouge">ForceRebuild3</code> method
+                        which is part of <em>SOLIDWORKS Document</em> variable i.e <strong><code
+                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
                     </ul>
 
                     <p>Now we run the macro and after running macro we show selected component as shown in below image.
                     </p>
 
-                    <p><a href="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"><img
-                          src="/assets/Solidworks_Images/assembly-show-component/final-result-gif.gif"
-                          alt="assembly-show-component" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/drawing-update-breakline-type/final-result-gif.gif"><img
+                          src="/assets/Solidworks_Images/drawing-update-breakline-type/final-result-gif.gif"
+                          alt="drawing-update-breakline-type" /></a></p>
 
                     <p><strong>This is it !!!</strong></p>
 
@@ -1386,7 +1474,8 @@
                     <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>
                       📧.</p>
 
-                    <p>Hope this post helps you to <strong>Show Component</strong> with SOLIDWORKS VBA Macros.</p>
+                    <p>Hope this post helps you to <strong>Update Break Line Type</strong> with SOLIDWORKS VBA Macros.
+                    </p>
 
                     <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this website after
                       sometime.</p>
@@ -1429,15 +1518,15 @@
                   <ul class="pagination justify-content-center">
 
                     <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-hide-component/"
-                        title="Solidworks VBA Macro - Hide Component
+                      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/drawing-update-breakline-gap/"
+                        title="Solidworks VBA Macro - Update Break Line Gap
 ">❮ Previous</a>
                     </li>
 
 
                     <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-vba-macros/assembly-suppress-component/"
-                        title="Solidworks VBA Macro - Suppress Component
+                      <a class="btn btn-primary text-light"
+                        href="/solidworks-macros/convert-to-construction-sketch-segment/" title="Solidworks Macro - Convert to Construction Sketch
 ">Next ❯</a>
                     </li>
 

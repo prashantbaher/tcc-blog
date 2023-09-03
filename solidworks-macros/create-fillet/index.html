@@ -5,22 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>SOLIDWORKS Macro - Create Fillet - The CAD Coder</title>
-  <meta name="description"
-    content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS Macro - Create Fillet - The CAD Coder</title>
+<meta name="description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="SOLIDWORKS Macro - Create Fillet">
-  <meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-fillet/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS Macro - Create Fillet">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-fillet/">
 
 
-  <meta property="og:description"
-    content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
+  <meta property="og:description" content="This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.   If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.   But from this post onward we will take user-inputs.   In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.   I hope you will also like this type of tutorials.   Thank you for reading.">
 
 
 
@@ -28,19 +25,19 @@
 
 
 
-  <meta property="article:published_time" content="2023-08-27T21:34:10-04:00">
+  <meta property="article:published_time" content="2023-09-03T05:13:48-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-fillet/">
+<link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-fillet/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
@@ -57,931 +54,886 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
-            href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
-
-
-
-
-
-
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">General - Solidworks Functions</span>
-
-
-
-                <ul>
-
-                  <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
-
-                  <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
-
-                  <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a>
-                  </li>
-
-                  <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
-
-                  <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
-
-                  <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Lines</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
-
-                  <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Rectangles</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
-
-                  <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
-
-                  <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a>
-                  </li>
-
-                  <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a>
-                  </li>
-
-                  <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Circles</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
-
-                  <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
-
-                  <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Arcs</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
-
-                  <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
-
-                  <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
-
-                  <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Slots</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
-
-                  <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight
-                      Slot</a></li>
-
-                  <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
-
-                  <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Point and Spline</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
-
-                  <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
-
-                  <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Trim and Extend</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
-
-                  <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-
-                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-
-                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Patterns</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
-
-                  <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
-
-                  <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
-
-                  <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Move and Rotate</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
-
-                  <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Relations</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch
-                      Relations</a></li>
-
-                  <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Dimensions</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Extrudes</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Cuts</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Holes and Threads</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
-
-                  <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Fillet & Chamfer</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-fillet/" class="active">Fillet Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Mirror & Patterns</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
-
-                  <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a>
-                  </li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Features - Transformation</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Reference Geometry</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - General</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - Standard Mates</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - Advanced Mates</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - Editing Mates</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - Components</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a>
-                  </li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a>
-                  </li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Assembly - Misc</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
-
-                  <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components
-                      Sequentially</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Drawing - Insert Views</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a>
-                  </li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a>
-                  </li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Drawing - View Position and Boundary</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current
-                      Sheet</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in
-                      Drawing</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in
-                      Drawing</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Drawing - Break Views</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a>
-                  </li>
-
-                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch - Others</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction
-                      Sketch</a></li>
-
-                  <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">General - Solidworks Functions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
+          
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
+          
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
+          
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
+          
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
+          
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Rectangles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/" class="active">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - General</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Standard Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Advanced Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Editing Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Components</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Misc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Insert Views</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Break Views</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS Macro - Create Fillet">
+    
+    <meta itemprop="description" content="  This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.  If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.  But from this post onward we will take user-inputs.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+    
+    
+    <meta itemprop="datePublished" content="2023-09-03T05:13:48-04:00">
+    
 
-              <meta itemprop="headline" content="SOLIDWORKS Macro - Create Fillet">
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS Macro - Create Fillet
+</h1>
+        
 
-              <meta itemprop="description"
-                content="  This article is an &quot;Intermediate&quot; post and required you to have some knowledge of VBA.  If you are following my articles you will notice that till now we were hardcoding the selections for input parameters.  But from this post onward we will take user-inputs.  In this article we did not use 🚀 UserForm for taking inputs, instead we use 🚀 Input Box for value input and 🚀 Message Box to notify user.  I hope you will also like this type of tutorials.  Thank you for reading.">
+  <p class="page__meta">
+    
 
+    
 
-              <meta itemprop="datePublished" content="2023-08-27T21:34:10-04:00">
+    
+      
+      
 
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS Macro - Create Fillet
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      18 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
 
 
-                <section class="page__content" itemprop="text">
+      </header>
+      
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#objective">Objective</a></li>
-                        <li><a href="#steps-to-create-fillet">Steps To Create Fillet</a></li>
-                        <li><a href="#results-we-can-get">Results We Can Get</a></li>
-                        <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
-                        <li><a href="#code-sample">Code Sample</a></li>
-                        <li><a href="#prerequisite">Prerequisite</a></li>
-                        <li><a href="#steps-to-follow">Steps To Follow</a>
-                          <ul>
-                            <li><a href="#creating-global-variables">Creating Global Variables</a></li>
-                            <li><a href="#initializing-required-variables">Initializing Required Variables</a></li>
-                            <li><a href="#ask-user-to-select-an-edge">Ask user to select an edge</a></li>
-                            <li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li>
-                            <li><a href="#user-input-for-fillet-radius">User input for Fillet radius</a></li>
-                            <li><a href="#preparing-parameters">Preparing parameters</a></li>
-                            <li><a href="#create-fillet-feature-using-parameters">Create Fillet feature using
-                                parameters</a></li>
-                          </ul>
-                        </li>
-                      </ul>
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#steps-to-create-fillet">Steps To Create Fillet</a></li><li><a href="#results-we-can-get">Results We Can Get</a></li><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#steps-to-follow">Steps To Follow</a><ul><li><a href="#creating-global-variables">Creating Global Variables</a></li><li><a href="#initializing-required-variables">Initializing Required Variables</a></li><li><a href="#ask-user-to-select-an-edge">Ask user to select an edge</a></li><li><a href="#get-unit-conversion-factors">Get unit Conversion factors</a></li><li><a href="#user-input-for-fillet-radius">User input for Fillet radius</a></li><li><a href="#preparing-parameters">Preparing parameters</a></li><li><a href="#create-fillet-feature-using-parameters">Create Fillet feature using parameters</a></li></ul></li></ul>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <div class="notice--warning">
+  This article is an <strong>"Intermediate"</strong> post and required you to have some knowledge of <strong>VBA</strong>.<br />
+  If you are following my articles you will notice that till now we were <strong>hardcoding</strong> the selections for input parameters.<br />
+  But from this post onward we will take user-inputs.<br />
+  In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong> for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong> to notify user.<br />
+  I hope you will also like this type of tutorials.<br />
+  Thank you for reading.<br />
+</div>
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <div class="notice--warning">
-                      This article is an <strong>"Intermediate"</strong> post and required you to have some knowledge of
-                      <strong>VBA</strong>.<br />
-                      If you are following my articles you will notice that till now we were <strong>hardcoding</strong>
-                      the selections for input parameters.<br />
-                      But from this post onward we will take user-inputs.<br />
-                      In this article we did not use 🚀 <strong><a href="/vba/userform/">UserForm</a></strong> for
-                      taking inputs, instead we use 🚀 <strong><a href="/vba/inputbox-function/">Input Box</a></strong>
-                      for <em>value input</em> and 🚀 <strong><a href="/vba/msgBox-function/">Message Box</a></strong>
-                      to notify user.<br />
-                      I hope you will also like this type of tutorials.<br />
-                      Thank you for reading.<br />
-                    </div>
+<h2 id="objective">Objective</h2>
 
-                    <h2 id="objective">Objective</h2>
+<p>Objective of this article is to learn <em>how to create <strong>Fillet</strong> feature through SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
 
-                    <p>Objective of this article is to learn <em>how to create <strong>Fillet</strong> feature through
-                        SOLIDWORKS VBA Macros</em> in SOLIDWORKS.</p>
+<p>We create <strong>Fillet Feature</strong> in following steps in general.</p>
 
-                    <p>We create <strong>Fillet Feature</strong> in following steps in general.</p>
+<ol>
+  <li>Ask user to select <strong>an edge</strong>.</li>
+  <li>Ask user to input <strong>the Radius</strong> of <em>fillet feature</em>.</li>
+  <li>Create <strong>Fillet feature</strong> from method <code class="language-plaintext highlighter-rouge">FeatureFillet3</code>.</li>
+</ol>
 
-                    <ol>
-                      <li>Ask user to select <strong>an edge</strong>.</li>
-                      <li>Ask user to input <strong>the Radius</strong> of <em>fillet feature</em>.</li>
-                      <li>Create <strong>Fillet feature</strong> from method <code
-                          class="language-plaintext highlighter-rouge">FeatureFillet3</code>.</li>
-                    </ol>
+<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Fillet Feature</strong>.</p>
 
-                    <p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this
-                          method</em></strong> if you want to create a new <strong>Fillet Feature</strong>.</p>
+<h2 id="steps-to-create-fillet">Steps To Create Fillet</h2>
 
-                    <h2 id="steps-to-create-fillet">Steps To Create Fillet</h2>
+<p>We use following steps to create <strong>Fillet Feature</strong> while writing macro.</p>
 
-                    <p>We use following steps to create <strong>Fillet Feature</strong> while writing macro.</p>
+<ol>
+  <li>Ask user to select <strong>an edge</strong>.</li>
+  <li>Update code for <strong>Unit Conversion</strong>.</li>
+  <li>Ask user to input <strong>the Radius</strong> of <em>fillet feature</em>.</li>
+  <li>Create parameters variables for <code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method.</li>
+  <li>Create <strong>Fillet feature</strong> from method <code class="language-plaintext highlighter-rouge">FeatureFillet3</code>.</li>
+</ol>
 
-                    <ol>
-                      <li>Ask user to select <strong>an edge</strong>.</li>
-                      <li>Update code for <strong>Unit Conversion</strong>.</li>
-                      <li>Ask user to input <strong>the Radius</strong> of <em>fillet feature</em>.</li>
-                      <li>Create parameters variables for <code
-                          class="language-plaintext highlighter-rouge">FeatureFillet3</code> method.</li>
-                      <li>Create <strong>Fillet feature</strong> from method <code
-                          class="language-plaintext highlighter-rouge">FeatureFillet3</code>.</li>
-                    </ol>
+<h2 id="results-we-can-get">Results We Can Get</h2>
 
-                    <h2 id="results-we-can-get">Results We Can Get</h2>
+<p>After running our macro we successfully create <strong>Fillet feature</strong> as a result.</p>
 
-                    <p>After running our macro we successfully create <strong>Fillet feature</strong> as a result.</p>
+<p>Below image shows the result we get.</p>
 
-                    <p>Below image shows the result we get.</p>
+<p><a href="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"><img src="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png" alt="fillet-final-result" /></a></p>
 
-                    <p><a href="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"><img
-                          src="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"
-                          alt="fillet-final-result" /></a></p>
+<blockquote>
+  <p>To get the correct result please follow the steps correctly.</p>
+</blockquote>
 
-                    <blockquote>
-                      <p>To get the correct result please follow the steps correctly.</p>
-                    </blockquote>
+<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-                    <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+<p>Please see below 🎬 video on <strong>how to create Fillet feature</strong> from SOLIDWORKS VBA Macros.</p>
 
-                    <p>Please see below 🎬 video on <strong>how to create Fillet feature</strong> from SOLIDWORKS VBA
-                      Macros.</p>
+<iframe src="https://www.youtube.com/embed/InKlWYX2LSU" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
 
-                    <iframe src="https://www.youtube.com/embed/InKlWYX2LSU" frameborder="0" allowfullscreen=""></iframe>
-                    <p><br /></p>
+<p>Please note that there are <strong>no explanation</strong> in the video.</p>
 
-                    <p>Please note that there are <strong>no explanation</strong> in the video.</p>
+<p><strong>Explanation</strong> of each line and why we write code this way is given in <strong><em>this article</em></strong>.</p>
 
-                    <p><strong>Explanation</strong> of each line and why we write code this way is given in
-                      <strong><em>this article</em></strong>.</p>
+<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
 
-                    <p class="notice--warning">It is advisable to watch video, since it help you to better understand
-                      the process.</p>
+<h2 id="code-sample">Code Sample</h2>
 
-                    <h2 id="code-sample">Code Sample</h2>
+<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating <em>Fillet Feature</em> feature in <strong>VBA</strong> is given.</p>
 
-                    <p>Below is the <code class="language-plaintext highlighter-rouge">code</code> for creating
-                      <em>Fillet Feature</em> feature in <strong>VBA</strong> is given.</p>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Variable for Solidworks Application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -1154,418 +1106,266 @@
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
     
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <h2 id="prerequisite">Prerequisite</h2>
+<h2 id="prerequisite">Prerequisite</h2>
 
-                    <p>There are some <em>prerequisite</em> for this article.</p>
+<p>There are some <em>prerequisite</em> for this article.</p>
 
-                    <p>We are <strong>not</strong> creating feature from code but we use existing 👉 <strong><a
-                          href="/solidworks-macros/create-extrude-feature">Extrude</a> feature</strong> to create
-                      <strong>Fillet feature</strong> as shown in below picture.</p>
+<p>We are <strong>not</strong> creating feature from code but we use existing 👉 <strong><a href="/solidworks-macros/create-extrude-feature">Extrude</a> feature</strong> to create <strong>Fillet feature</strong> as shown in below picture.</p>
 
-                    <p><a href="/assets/Solidworks_Images/feature-fillet/prerequisite.png"><img
-                          src="/assets/Solidworks_Images/feature-fillet/prerequisite.png" alt="prerequisite" /></a></p>
+<p><a href="/assets/Solidworks_Images/feature-fillet/prerequisite.png"><img src="/assets/Solidworks_Images/feature-fillet/prerequisite.png" alt="prerequisite" /></a></p>
 
-                    <p>As shown in above image, there is only <em>1 Extrude feature</em> in our part.</p>
+<p>As shown in above image, there is only <em>1 Extrude feature</em> in our part.</p>
 
-                    <ul>
-                      <li><code class="language-plaintext highlighter-rouge">Extrude Feature</code> : This is our
-                        <strong>Extruded part</strong> for <strong>Fillet Feature</strong>.</li>
-                    </ul>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Extrude Feature</code> : This is our <strong>Extruded part</strong> for <strong>Fillet Feature</strong>.</li>
+</ul>
 
-                    <p>If you want to create <strong>Extrude</strong> feature <em>programmatically</em> then please
-                      refer to below article.</p>
+<p>If you want to create <strong>Extrude</strong> feature <em>programmatically</em> then please refer to below article.</p>
 
-                    <ul>
-                      <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create
-                            Extrude/Boss</a></strong></li>
-                    </ul>
+<ul>
+  <li>👉 <strong><a href="/solidworks-macros/create-extrude-feature">SOLIDWORKS Macros - Create Extrude/Boss</a></strong></li>
+</ul>
 
-                    <blockquote>
-                      <p>Also, we will apply checks in this article, so the code we write should be error free most of
-                        the time.</p>
-                    </blockquote>
+<blockquote>
+  <p>Also, we will apply checks in this article, so the code we write should be error free most of the time.</p>
+</blockquote>
 
-                    <h2 id="steps-to-follow">Steps To Follow</h2>
+<h2 id="steps-to-follow">Steps To Follow</h2>
 
-                    <p>To create <strong>Fillet Feature</strong>, there are following steps:</p>
+<p>To create <strong>Fillet Feature</strong>, there are following steps:</p>
 
-                    <ol>
-                      <li><em>Creating Global Variables</em></li>
-                      <li><em>Initializing required variables</em></li>
-                      <li><em>Ask user to select an edge</em></li>
-                      <li><em>Get unit Conversion factors</em></li>
-                      <li><em>User input for Fillet radius</em></li>
-                      <li><em>Preparing parameters</em></li>
-                      <li><em>Create Fillet feature using parameters</em></li>
-                    </ol>
+<ol>
+  <li><em>Creating Global Variables</em></li>
+  <li><em>Initializing required variables</em></li>
+  <li><em>Ask user to select an edge</em></li>
+  <li><em>Get unit Conversion factors</em></li>
+  <li><em>User input for Fillet radius</em></li>
+  <li><em>Preparing parameters</em></li>
+  <li><em>Create Fillet feature using parameters</em></li>
+</ol>
 
-                    <p>Now let us walk through <strong>each step</strong> as given <strong>above</strong>, and
-                      <strong>understand</strong> every line.</p>
+<p>Now let us walk through <strong>each step</strong> as given <strong>above</strong>, and <strong>understand</strong> every line.</p>
 
-                    <blockquote>
-                      <p>I also give some <strong><em>links (see icon 👉)</em></strong> so that you can go through them
-                        if there are anything I explained in previous articles.</p>
-                    </blockquote>
+<blockquote>
+  <p>I also give some <strong><em>links (see icon 👉)</em></strong> so that you can go through them if there are anything I explained in previous articles.</p>
+</blockquote>
 
-                    <h3 id="creating-global-variables">Creating Global Variables</h3>
+<h3 id="creating-global-variables">Creating Global Variables</h3>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre></div></div>
 
-                    <p>This line forces us to define every variable we are going to use.</p>
+<p>This line forces us to define every variable we are going to use.</p>
 
-                    <p>For more information please visit 👉 <strong><a
-                          href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part
-                          document</a></strong> post.</p>
+<p>For more information please visit 👉 <strong><a href="/solidworks-macros/open-new-document">SOLIDWORKS Macros - Open new Part document</a></strong> post.</p>
 
-                    <p>We create following variables.</p>
+<p>We create following variables.</p>
 
-                    <ul>
-                      <li><strong>Variable for Solidworks application</strong></li>
-                    </ul>
+<ul>
+  <li><strong>Variable for Solidworks application</strong></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we create a variable which we named as <code
-                        class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code
-                        class="language-plaintext highlighter-rouge">swApp</code> variable is <code
-                        class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉
-                      <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <ul>
-                      <li><strong>Variable for Solidworks document</strong></li>
-                    </ul>
+<ul>
+  <li><strong>Variable for Solidworks document</strong></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we create a variable which we named as <code
-                        class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code
-                        class="language-plaintext highlighter-rouge">swDoc</code> variable is <code
-                        class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉
-                      <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IModelDoc2_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <ul>
-                      <li><strong>Variable for Solidworks Fillet Feature</strong></li>
-                    </ul>
+<ul>
+  <li><strong>Variable for Solidworks Fillet Feature</strong></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Fillet Feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Fillet Feature</span>
 <span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we create a variable which we named as <code
-                        class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code
-                        class="language-plaintext highlighter-rouge">swFeature</code> variable is <code
-                        class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
 
-                    <p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for
-                      <strong>SOLIDWORKS Fillet Feature</strong>.</p>
+<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>SOLIDWORKS Fillet Feature</strong>.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <ul>
-                      <li><strong>Variable for Solidworks Selection Manager</strong></li>
-                    </ul>
+<ul>
+  <li><strong>Variable for Solidworks Selection Manager</strong></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Selection Manager</span>
 <span class="k">Dim</span> <span class="nv">swSelMgr</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SelectionMgr</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we create a variable which we named as <code
-                        class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code
-                        class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code
-                        class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swSelMgr</code> and the type of this <code class="language-plaintext highlighter-rouge">swSelMgr</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code>.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit
-                      👉 <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">SldWorks.SelectionMgr</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISelectionMgr_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <ul>
-                      <li><strong>Variable for Solidworks Entity</strong></li>
-                    </ul>
+<ul>
+  <li><strong>Variable for Solidworks Entity</strong></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable for Solidworks Entity</span>
 <span class="k">Dim</span> <span class="nv">swObject</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Entity</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we create a variable which we named as <code
-                        class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code
-                        class="language-plaintext highlighter-rouge">swObject</code> variable is <code
-                        class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
+<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swObject</code> and the type of this <code class="language-plaintext highlighter-rouge">swObject</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Entity</code>.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">Entity</code> object, please visit 👉 <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Entity</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IEntity_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <p><strong><em>These all are our global variables.</em></strong></p>
+<p><strong><em>These all are our global variables.</em></strong></p>
 
-                    <p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
+<p>They are <strong>SOLIDWORKS API Objects</strong>.</p>
 
-                    <p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
+<p>So basically I group all the <strong>SOLIDWORKS API Objects</strong> in one place.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Program to create Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Program to create Fillet feature</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has
-                      name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
 
-                    <p>This procedure hold all the <strong><em>statements (instructions)</em></strong> we give to
-                      computer.</p>
+<p>This procedure hold all the <strong><em>statements (instructions)</em></strong> we give to computer.</p>
 
-                    <p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a
-                          href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article
-                      of this website.</p>
+<p>To know more about <strong>Sub Procedure</strong> you can check 👉 <strong><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></strong> article of this website.</p>
 
-                    <h3 id="initializing-required-variables">Initializing Required Variables</h3>
+<h3 id="initializing-required-variables">Initializing Required Variables</h3>
 
-                    <p>Inside this procedure we first initialize required variables as given below.</p>
+<p>Inside this procedure we first initialize required variables as given below.</p>
 
-                    <ul>
-                      <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
-                    </ul>
+<ul>
+  <li><em>Set SOLIDWORKS variable to SOLIDWORKS application</em></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS variable to SOLIDWORKS application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In this line, we set the value of our SOLIDWORKS variable <code
-                        class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to
-                      SOLIDWORKS application.</p>
+<p>In this line, we set the value of our SOLIDWORKS variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to SOLIDWORKS application.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS is opened or not</span>
 <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS is not opened"</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
-                          statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully
-                        assigned</em> to current SOLIDWORKS application.</p>
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS application variable is <em>successfully assigned</em> to current SOLIDWORKS application.</p>
 
-                    <ul>
-                      <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
-                    </ul>
+<ul>
+  <li><em>Set SOLIDWORKS document variable to opened part document</em></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS document variable to opened part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we set SOLIDWORKS document <code
-                        class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part
-                      document.</p>
+<p>In above line of code, we set SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if SOLIDWORKS document is opened or not</span>
 <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"SOLIDWORKS document is not opened. Please open a document."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
-                          statement</a></strong> to check if SOLIDWORKS document <code
-                        class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if SOLIDWORKS document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
 
-                    <p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a
-                      👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+<p>If SOLIDWORKS document is not opened then code execute inside the code and inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
 
-                    <ul>
-                      <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
-                    </ul>
+<ul>
+  <li><em>Set SOLIDWORKS Selection Manager variable</em></li>
+</ul>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set SOLIDWORKS Selection Manager variable</span>
 <span class="k">Set</span> <span class="n">swSelMgr</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SelectionManager</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line, we set SOLIDWORKS Selection Manager<code
-                        class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s
-                      Selection Manager.</p>
+<p>In above line, we set SOLIDWORKS Selection Manager<code class="language-plaintext highlighter-rouge">swSelMgr</code> variable to current document’s Selection Manager.</p>
 
-                    <h3 id="ask-user-to-select-an-edge">Ask user to select an edge</h3>
+<h3 id="ask-user-to-select-an-edge">Ask user to select an edge</h3>
 
-                    <p>Now we will ask use to <em>select an edge</em> for <strong>Fillet</strong>.</p>
+<p>Now we will ask use to <em>select an edge</em> for <strong>Fillet</strong>.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Inform user to select an edge for Fillet feature.</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inform user to select an edge for Fillet feature.</span>
 <span class="n">MsgBox</span> <span class="s">"Please select an Edge for Fillet feature."</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Image of above message is shown in below image.</p>
+<p>Image of above message is shown in below image.</p>
 
-                    <p><a href="/assets/Solidworks_Images/feature-fillet/select-edge-message.png"><img
-                          src="/assets/Solidworks_Images/feature-fillet/select-edge-message.png"
-                          alt="message to use for edge selection" /></a></p>
+<p><a href="/assets/Solidworks_Images/feature-fillet/select-edge-message.png"><img src="/assets/Solidworks_Images/feature-fillet/select-edge-message.png" alt="message to use for edge selection" /></a></p>
 
-                    <p>In about line of code we show a <code class="language-plaintext highlighter-rouge">Msgbox</code>
-                      to use displaying message to select an Edge of extrude.</p>
+<p>In about line of code we show a <code class="language-plaintext highlighter-rouge">Msgbox</code> to use displaying message to select an Edge of extrude.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Loop until Solidworks Entity variable is equal to selected edge</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until Solidworks Entity variable is equal to selected edge</span>
 <span class="k">While</span> <span class="n">swObject</span> <span class="ow">Is</span> <span class="k">Nothing</span>
 
 <span class="k">Wend</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we create a <code
-                        class="language-plaintext highlighter-rouge">While</code> loop.</p>
+<p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">While</code> loop.</p>
 
-                    <p>This loops until we select the our <strong>Edge</strong> for <strong>Fillet feature</strong>.</p>
+<p>This loops until we select the our <strong>Edge</strong> for <strong>Fillet feature</strong>.</p>
 
-                    <p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop,
-                      please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.
-                    </p>
+<p>For more details about <code class="language-plaintext highlighter-rouge">While</code> loop, please see 👉 <strong><a href="/vba/looping/">VBA Looping</a></strong> article from this website.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Local integer for loop</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Local integer for loop</span>
 <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Integer</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we create a local integer name <code
-                        class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
+<p>In above line of code, we create a local integer name <code class="language-plaintext highlighter-rouge">i</code> as a counter.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Loop until we select an edge</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Loop until we select an edge</span>
 <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectCount2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">Next</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code>
-                      loop.</p>
+<p>In above line of code, we create a <code class="language-plaintext highlighter-rouge">For</code> loop.</p>
 
-                    <p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of
-                      <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
+<p>This code loops from <code class="language-plaintext highlighter-rouge">i = 1</code> to number of <code class="language-plaintext highlighter-rouge">objects</code> we select.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' If the selection type edge</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' If the selection type edge</span>
 <span class="k">If</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObjectType3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">swSelectType_e</span><span class="p">.</span><span class="n">swSelEDGES</span> <span class="k">Then</span>
 
   <span class="c1">' Set the Solidworks Entity object to selected edge</span>
   <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">If</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we use 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
-                          statement</a></strong> with a condition.</p>
+<p>In above line of code, we use  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  with a condition.</p>
 
-                    <p>The 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is <code
-                        class="language-plaintext highlighter-rouge">True</code> when selected <code
-                        class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Edge</em>.
-                    </p>
+<p>The  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong>  is <code class="language-plaintext highlighter-rouge">True</code> when selected <code class="language-plaintext highlighter-rouge">object</code> is type of <em>SOLIDWORKS Edge</em>.</p>
 
-                    <p>When 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True
-                      we execute code given below.</p>
+<p>When  👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> is True we execute code given below.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to selected edge</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set the Solidworks Entity object to selected edge</span>
 <span class="k">Set</span> <span class="n">swObject</span> <span class="o">=</span> <span class="n">swSelMgr</span><span class="p">.</span><span class="n">GetSelectedObject6</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line, we set the <em>SOLIDWORKS Entity</em> object to <strong>selected edge</strong>.
-                    </p>
+<p>In above line, we set the <em>SOLIDWORKS Entity</em> object to <strong>selected edge</strong>.</p>
 
-                    <p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for
-                      <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
+<p>After <code class="language-plaintext highlighter-rouge">For</code> loop, we have a call for <strong><code class="language-plaintext highlighter-rouge">DoEvents</code></strong> function.</p>
 
-                    <h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
+<h3 id="get-unit-conversion-factors">Get unit Conversion factors</h3>
 
-                    <p>Now we need to get unit Conversion factors as shown in below code.</p>
+<p>Now we need to get unit Conversion factors as shown in below code.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">'-----------------------Unit Conversion Factors----------------------------------------</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">'-----------------------Unit Conversion Factors----------------------------------------</span>
   
 <span class="c1">' Local variables used as Conversion Factors</span>
 <span class="k">Dim</span> <span class="nv">LengthConversionFactor</span> <span class="ow">As</span> <span class="kt">Double</span>
@@ -1612,287 +1412,206 @@
 <span class="k">End</span> <span class="k">Select</span>
 
 <span class="c1">'----------------------------------------------------------------</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>I have already explained about this in previous 👉 <strong><a
-                          href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong>
-                      article in this website.</p>
+<p>I have already explained about this in previous 👉 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article in this website.</p>
 
-                    <p>Please visit 👉 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit
-                          Issue</a></strong> article for more details.</p>
+<p>Please visit 👉 <strong><a href="/solidworks-macros/unit-correction/">Solidworks Macro - Fix Unit Issue</a></strong> article for more details.</p>
 
-                    <h3 id="user-input-for-fillet-radius">User input for Fillet radius</h3>
+<h3 id="user-input-for-fillet-radius">User input for Fillet radius</h3>
 
-                    <p>Now we ask user to <strong>input</strong> Fillet Radius as shown in below code.</p>
+<p>Now we ask user to <strong>input</strong> Fillet Radius as shown in below code.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Variable to store fillet radius</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Variable to store fillet radius</span>
 <span class="k">Dim</span> <span class="nv">filletRadius</span> <span class="ow">As</span> <span class="kt">Double</span>
 <span class="n">filletRadius</span> <span class="o">=</span> <span class="n">InputBox</span><span class="p">(</span><span class="s">"Please enter radius of Fillet."</span><span class="p">)</span> <span class="o">*</span> <span class="n">LengthConversionFactor</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we first create a variable.</p>
+<p>In above code sample, we first create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">filletRadius</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">filletRadius</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <p>After that we show a input box to get the Fillet radius from user.</p>
+<p>After that we show a input box to get the Fillet radius from user.</p>
 
-                    <p>Image of input box is shown below.</p>
+<p>Image of input box is shown below.</p>
 
-                    <p><a href="/assets/Solidworks_Images/feature-fillet/fillet-radius-input-box.png"><img
-                          src="/assets/Solidworks_Images/feature-fillet/fillet-radius-input-box.png"
-                          alt="message to use for fillet radius input" /></a></p>
+<p><a href="/assets/Solidworks_Images/feature-fillet/fillet-radius-input-box.png"><img src="/assets/Solidworks_Images/feature-fillet/fillet-radius-input-box.png" alt="message to use for fillet radius input" /></a></p>
 
-                    <p>After getting input value from <code
-                        class="language-plaintext highlighter-rouge">InputBox</code>, we first multiply it with <code
-                        class="language-plaintext highlighter-rouge">LengthConversionFactor</code>.</p>
+<p>After getting input value from <code class="language-plaintext highlighter-rouge">InputBox</code>, we first multiply it with <code class="language-plaintext highlighter-rouge">LengthConversionFactor</code>.</p>
 
-                    <blockquote>
-                      <p>By doing this we set the input value to at fix with same unit system of part.</p>
-                    </blockquote>
+<blockquote>
+  <p>By doing this we set the input value to at fix with same unit system of part.</p>
+</blockquote>
 
-                    <p>After conversion we assign the final value to <code
-                        class="language-plaintext highlighter-rouge">filletRadius</code> variable.</p>
+<p>After conversion we assign the final value to <code class="language-plaintext highlighter-rouge">filletRadius</code> variable.</p>
 
-                    <p>This <code class="language-plaintext highlighter-rouge">filletRadius</code> variable is our 1st
-                      parameter value.</p>
+<p>This <code class="language-plaintext highlighter-rouge">filletRadius</code> variable is our 1st parameter value.</p>
 
-                    <h3 id="preparing-parameters">Preparing parameters</h3>
+<h3 id="preparing-parameters">Preparing parameters</h3>
 
-                    <p>Now we need to prepare parameters for <strong><code
-                          class="language-plaintext highlighter-rouge">FeatureFillet3</code></strong> method.</p>
+<p>Now we need to prepare parameters for <strong><code class="language-plaintext highlighter-rouge">FeatureFillet3</code></strong> method.</p>
 
-                    <p class="notice--warning">Please note that I found these parameter to use the way it shown
-                      here.<br />
-                      If you have another way to for <strong><code
-                          class="language-plaintext highlighter-rouge">FeatureFillet3</code></strong> method please let
-                      me know.<br /></p>
+<p class="notice--warning">Please note that I found these parameter to use the way it shown here.<br />
+If you have another way to for <strong><code class="language-plaintext highlighter-rouge">FeatureFillet3</code></strong> method please let me know.<br /></p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Radius array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Radius array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">radiiArray0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">radiiArray0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">radiiArray0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Radius variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Radius variable</span>
 <span class="k">Dim</span> <span class="nv">radiis0</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">radiis0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">radiis0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Distance array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Distance array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">dist2Array0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">dist2Array0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">dist2Array0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Distance variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Distance variable</span>
 <span class="k">Dim</span> <span class="nv">dists20</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">dists20</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">dists20</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Conic Rhombus array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Conic Rhombus array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">conicRhosArray0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">conicRhosArray0</code>
-                      </li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">conicRhosArray0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Conic Rhombus variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Conic Rhombus variable</span>
 <span class="k">Dim</span> <span class="nv">coniRhos0</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">coniRhos0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">coniRhos0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set back array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set back array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">setBackArray0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">setBackArray0</code>
-                      </li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">setBackArray0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set back variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set back variable</span>
 <span class="k">Dim</span> <span class="nv">setBacks0</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">setBacks0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">setBacks0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">pointArray0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointArray0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointArray0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point variable</span>
 <span class="k">Dim</span> <span class="nv">points0</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">points0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">points0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point Distance array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point Distance array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">pointDist2Array0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointDist2Array0</code>
-                      </li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointDist2Array0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point distance variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point distance variable</span>
 <span class="k">Dim</span> <span class="nv">pointsDist20</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointsDist20</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointsDist20</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point Rhombus array for Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point Rhombus array for Fillet feature</span>
 <span class="k">Dim</span> <span class="nv">pointRhoArray0</span> <span class="ow">As</span> <span class="kt">Variant</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointRhoArray0</code>
-                      </li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointRhoArray0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Variant</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Point Rhombus variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Point Rhombus variable</span>
 <span class="k">Dim</span> <span class="nv">pointsRhos0</span> <span class="ow">As</span> <span class="kt">Double</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code sample, we create a variable.</p>
+<p>In above code sample, we create a variable.</p>
 
-                    <ol>
-                      <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointsRhos0</code></li>
-                      <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
-                    </ol>
+<ol>
+  <li>Name of variable = <code class="language-plaintext highlighter-rouge">pointsRhos0</code></li>
+  <li>Type of variable = <code class="language-plaintext highlighter-rouge">Double</code></li>
+</ol>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Set 1st instance to respective variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set 1st instance to respective variable</span>
 <span class="n">radiiArray0</span> <span class="o">=</span> <span class="n">radiis0</span>
 <span class="n">dist2Array0</span> <span class="o">=</span> <span class="n">dists20</span>
 <span class="n">conicRhosArray0</span> <span class="o">=</span> <span class="n">coniRhos0</span>
@@ -1900,493 +1619,378 @@
 <span class="n">pointArray0</span> <span class="o">=</span> <span class="n">points0</span>
 <span class="n">pointDist2Array0</span> <span class="o">=</span> <span class="n">pointsDist20</span>
 <span class="n">pointRhoArray0</span> <span class="o">=</span> <span class="n">pointsRhos0</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we set <em>1st instance</em> to respective variable.</p>
+<p>In above line of code, we set <em>1st instance</em> to respective variable.</p>
 
-                    <h3 id="create-fillet-feature-using-parameters">Create Fillet feature using parameters</h3>
+<h3 id="create-fillet-feature-using-parameters">Create Fillet feature using parameters</h3>
 
-                    <p>Now we create Fillet feature using parameters we define previously.</p>
+<p>Now we create Fillet feature using parameters we define previously.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Create Fillet feature</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Fillet feature</span>
 <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">FeatureFillet3</span><span class="p">(</span><span class="mi">195</span><span class="p">,</span> <span class="n">filletRadius</span><span class="p">,</span> <span class="n">filletRadius</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">radiiArray0</span><span class="p">),</span> <span class="p">(</span><span class="n">dist2Array0</span><span class="p">),</span> <span class="p">(</span><span class="n">conicRhosArray0</span><span class="p">),</span> <span class="p">(</span><span class="n">setBackArray0</span><span class="p">),</span> <span class="p">(</span><span class="n">pointArray0</span><span class="p">),</span> <span class="p">(</span><span class="n">pointDist2Array0</span><span class="p">),</span> <span class="p">(</span><span class="n">pointRhoArray0</span><span class="p">))</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code we set the value of variable <code
-                        class="language-plaintext highlighter-rouge">swFeature</code> by <code
-                        class="language-plaintext highlighter-rouge">FeatureFillet3</code> method.</p>
+<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method.</p>
 
-                    <p>This <code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method takes
-                      following parameters as explained:</p>
+<p>This <code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method takes following parameters as explained:</p>
 
-                    <ul>
-                      <li>
-                        <p><strong>Options</strong> - <em>Feature fillet options as defined in <code
-                              class="language-plaintext highlighter-rouge">swFeatureFilletOptions_e</code> and are as
-                            follows.</em></p>
+<ul>
+  <li>
+    <p><strong>Options</strong> - <em>Feature fillet options as defined in <code class="language-plaintext highlighter-rouge">swFeatureFilletOptions_e</code> and are as follows.</em></p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Member</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletAsymmetric</code></strong>
-                              </td>
-                              <td>16384 or 0x4000</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletAttachEdges</code></strong>
-                              </td>
-                              <td>64 or 0x40</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletConstantWidth</code></strong>
-                              </td>
-                              <td>512 or 0x200</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletCornerType</code></strong>
-                              </td>
-                              <td>32 or 0x20</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletCurvatureContinuous</code></strong>
-                              </td>
-                              <td>256 or 0x100; applies to face fillets only</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletKeepFeatures</code></strong>
-                              </td>
-                              <td>128 or 0x80</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletNoTrimNoAttached</code></strong>
-                              </td>
-                              <td>1024 or 0x400; set to trim and attach fillet; do not set otherwise</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletPropagate</code></strong>
-                              </td>
-                              <td>1 or 0x1</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletPropagateFeatToParts</code></strong>
-                              </td>
-                              <td>8192 or 0x2000</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletReverseFace1Dir</code></strong>
-                              </td>
-                              <td>2048 or 0x800</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletReverseFace2Dir</code></strong>
-                              </td>
-                              <td>4096 or 0x1000</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletUniformRadius</code></strong>
-                              </td>
-                              <td>2 or 0x2; set for a uniform radius; do not set for multiple radii</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletUseHelpPoint</code></strong>
-                              </td>
-                              <td>8 or 0x8</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletUseTangentHoldLine</code></strong>
-                              </td>
-                              <td>16 or 0x10</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletVarRadiusType</code></strong>
-                              </td>
-                              <td>4 or 0x4; set for a straight transition; do not set for a smooth transition</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                      <li>
-                        <p><strong>R1</strong> - <em>Uniform radius of the symmetric fillet.</em></p>
-                      </li>
-                      <li>
-                        <p><strong>R2</strong> - <em>Distance 2 radius of the asymmetric fillet.</em></p>
-                      </li>
-                      <li>
-                        <p><strong>Rho</strong> - <em>Value that determines the conic shape of the fillet.</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletAsymmetric</code></strong></td>
+          <td>16384 or 0x4000</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletAttachEdges</code></strong></td>
+          <td>64 or 0x40</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletConstantWidth</code></strong></td>
+          <td>512 or 0x200</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletCornerType</code></strong></td>
+          <td>32 or 0x20</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletCurvatureContinuous</code></strong></td>
+          <td>256 or 0x100; applies to face fillets only</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletKeepFeatures</code></strong></td>
+          <td>128 or 0x80</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletNoTrimNoAttached</code></strong></td>
+          <td>1024 or 0x400; set to trim and attach fillet; do not  set otherwise</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletPropagate</code></strong></td>
+          <td>1 or 0x1</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletPropagateFeatToParts</code></strong></td>
+          <td>8192 or 0x2000</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletReverseFace1Dir</code></strong></td>
+          <td>2048 or 0x800</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletReverseFace2Dir</code></strong></td>
+          <td>4096 or 0x1000</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletUniformRadius</code></strong></td>
+          <td>2 or 0x2; set for a uniform radius; do not set for  multiple radii</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletUseHelpPoint</code></strong></td>
+          <td>8 or 0x8</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletUseTangentHoldLine</code></strong></td>
+          <td>16 or 0x10</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletVarRadiusType</code></strong></td>
+          <td>4 or 0x4; set for a straight transition; do not set  for a smooth transition</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>R1</strong> - <em>Uniform radius of the symmetric fillet.</em></p>
+  </li>
+  <li>
+    <p><strong>R2</strong> - <em>Distance 2 radius of the asymmetric fillet.</em></p>
+  </li>
+  <li>
+    <p><strong>Rho</strong> - <em>Value that determines the conic shape of the fillet.</em></p>
 
-                        <ul>
-                          <li>Conic rho value [0.05, 0.95], if <code
-                              class="language-plaintext highlighter-rouge">ConicRhoType</code> = <code
-                              class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e.swFeatureFilletConicRho</code>
-                          </li>
-                          <li>Conic radius value, if <code
-                              class="language-plaintext highlighter-rouge">ConicRhoType</code> = <code
-                              class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e.swFeatureFilletConicRadius</code>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p><strong>Ftyp</strong> - <em>Type of fillet as defined in <code
-                              class="language-plaintext highlighter-rouge">swFeatureFilletType_e</code> as follows:</em>
-                        </p>
+    <ul>
+      <li>Conic rho value [0.05, 0.95], if <code class="language-plaintext highlighter-rouge">ConicRhoType</code> = <code class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e.swFeatureFilletConicRho</code></li>
+      <li>Conic radius value, if <code class="language-plaintext highlighter-rouge">ConicRhoType</code> = <code class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e.swFeatureFilletConicRadius</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Ftyp</strong> - <em>Type of fillet as defined in <code class="language-plaintext highlighter-rouge">swFeatureFilletType_e</code> as follows:</em></p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Member</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletType_Face</code></strong>
-                              </td>
-                              <td>2</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletType_FullRound</code></strong>
-                              </td>
-                              <td>3</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletType_Simple</code></strong>
-                              </td>
-                              <td>0</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletType_VariableRadius</code></strong>
-                              </td>
-                              <td>1</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                      <li>
-                        <p><strong>OverflowType</strong> - <em>Control of fillet overflowing onto adjacent surfaces as
-                            defined in <code class="language-plaintext highlighter-rouge">swFilletOverFlowType_e</code>
-                            as follows:</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletType_Face</code></strong></td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletType_FullRound</code></strong></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletType_Simple</code></strong></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletType_VariableRadius</code></strong></td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>OverflowType</strong> - <em>Control of fillet overflowing onto adjacent surfaces as defined in <code class="language-plaintext highlighter-rouge">swFilletOverFlowType_e</code> as follows:</em></p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Member</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFilletOverFlowType_Default</code></strong>
-                              </td>
-                              <td>0 = Default;</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFilletOverFlowType_KeepEdge</code></strong>
-                              </td>
-                              <td>1 = Edges that are overflowed by the fillet are not modified; the fillet surface is
-                                trimmed by all the adjacent edges; as a result, an additional transition fillet surface
-                                might be needed to complete the fillet</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFilletOverFlowType_KeepSurface</code></strong>
-                              </td>
-                              <td>2 = Fillet surface is either merged with the adjacent surfaces smoothly or trimmed by
-                                the adjacent surfaces; as a result, it is unlikely that an additional transition fillet
-                                surface is created</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                      <li>
-                        <p><strong>ConicRhoType</strong> - <em>Fillet profile type as defined in <code
-                              class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e</code> as
-                            follows:</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFilletOverFlowType_Default</code></strong></td>
+          <td>0 = Default;</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFilletOverFlowType_KeepEdge</code></strong></td>
+          <td>1 =  Edges that are overflowed by the fillet are not modified; the fillet surface is  trimmed by all the adjacent edges; as a result, an additional transition fillet  surface might be needed to complete the fillet</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFilletOverFlowType_KeepSurface</code></strong></td>
+          <td>2 =  Fillet surface is either merged with the adjacent surfaces smoothly or trimmed  by the adjacent surfaces; as a result, it is unlikely that an additional  transition fillet surface is created</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>ConicRhoType</strong> - <em>Fillet profile type as defined in <code class="language-plaintext highlighter-rouge">swFeatureFilletProfileType_e</code> as follows:</em></p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Member</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletCircular</code></strong>
-                              </td>
-                              <td>0 = Circular for symmetric fillets; elliptical for asymmetric fillets</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletConicRadius</code></strong>
-                              </td>
-                              <td>2</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletConicRho</code></strong>
-                              </td>
-                              <td>1</td>
-                            </tr>
-                            <tr>
-                              <td><strong><code
-                                    class="language-plaintext highlighter-rouge">swFeatureFilletConicRhoZeroChamfer</code></strong>
-                              </td>
-                              <td>3 = Chamfer cross section</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                      <li><strong>Radii</strong> - <em>Array containing the radii for the symmetric fillet.</em></li>
-                      <li><strong>Dist2Arr</strong> - <em>Array containing the Distance 2 radii for the asymmetric
-                          fillet.</em></li>
-                      <li><strong>RhoArr</strong> - <em>Array of Rho values for the specified <code
-                            class="language-plaintext highlighter-rouge">ConicRhoType</code> for the variable radius
-                          fillet.</em></li>
-                      <li><strong>SetBackDistances</strong> - <em>Array containing setback distances along the fillet
-                          edge.</em></li>
-                      <li><strong>PointRadiusArray</strong> - <em>Array containing radius control points along the
-                          length of the edge for symmetric fillets.</em></li>
-                      <li><strong>PointDist2Array</strong> - <em>Array containing Distance 2 radius control points along
-                          the length of the edge for asymmetric fillets.</em></li>
-                      <li><strong>PointRhoArray</strong> - <em>Array of Rho values for the specified <code
-                            class="language-plaintext highlighter-rouge">ConicRhoType</code> at various control points
-                          along the length of the edge.</em></li>
-                    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletCircular</code></strong></td>
+          <td>0 = Circular for symmetric fillets; elliptical for  asymmetric fillets</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletConicRadius</code></strong></td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletConicRho</code></strong></td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><strong><code class="language-plaintext highlighter-rouge">swFeatureFilletConicRhoZeroChamfer</code></strong></td>
+          <td>3 = Chamfer cross section</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Radii</strong> - <em>Array containing the radii for the symmetric fillet.</em></li>
+  <li><strong>Dist2Arr</strong> - <em>Array containing the Distance 2 radii for the asymmetric fillet.</em></li>
+  <li><strong>RhoArr</strong> - <em>Array of Rho values for the specified <code class="language-plaintext highlighter-rouge">ConicRhoType</code> for the variable radius fillet.</em></li>
+  <li><strong>SetBackDistances</strong> - <em>Array containing setback distances along the fillet edge.</em></li>
+  <li><strong>PointRadiusArray</strong> - <em>Array containing radius control points along the length of the edge for symmetric fillets.</em></li>
+  <li><strong>PointDist2Array</strong> - <em>Array containing Distance 2 radius control points along the length of the edge for asymmetric fillets.</em></li>
+  <li><strong>PointRhoArray</strong> - <em>Array of Rho values for the specified <code class="language-plaintext highlighter-rouge">ConicRhoType</code> at various control points along the length of the edge.</em></li>
+</ul>
 
-                    <p><strong>Return Value</strong> : This <code
-                        class="language-plaintext highlighter-rouge">FeatureFillet3</code> method return
-                      <strong>feature</strong> data object.</p>
+<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method return <strong>feature</strong> data object.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <p>In our code, I have used following values:</p>
+<p>In our code, I have used following values:</p>
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Parameter Name</th>
-                          <th>Value Used</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><strong>Options</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">195</code> (now this what I get from
-                            recording and this works for me.)</td>
-                        </tr>
-                        <tr>
-                          <td><strong>R1</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">filletRadius</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>R2</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">filletRadius</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>Rho</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>Ftyp</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>OverflowType</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>ConicRhoType</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>Radii</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(radiiArray0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>Dist2Arr</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(dist2Array0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>RhoArr</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(conicRhosArray0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>SetBackDistances</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(setBackArray0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>PointRadiusArray</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(pointArray0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>PointDist2Array</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(pointDist2Array0)</code></td>
-                        </tr>
-                        <tr>
-                          <td><strong>PointRhoArray</strong></td>
-                          <td><code class="language-plaintext highlighter-rouge">(pointRhoArray0)</code></td>
-                        </tr>
-                      </tbody>
-                    </table>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Name</th>
+      <th>Value Used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Options</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">195</code> (now this what I get from recording and this works for me.)</td>
+    </tr>
+    <tr>
+      <td><strong>R1</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">filletRadius</code></td>
+    </tr>
+    <tr>
+      <td><strong>R2</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">filletRadius</code></td>
+    </tr>
+    <tr>
+      <td><strong>Rho</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>Ftyp</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>OverflowType</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>ConicRhoType</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
+    </tr>
+    <tr>
+      <td><strong>Radii</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(radiiArray0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>Dist2Arr</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(dist2Array0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>RhoArr</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(conicRhosArray0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>SetBackDistances</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(setBackArray0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>PointRadiusArray</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(pointArray0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>PointDist2Array</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(pointDist2Array0)</code></td>
+    </tr>
+    <tr>
+      <td><strong>PointRhoArray</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">(pointRhoArray0)</code></td>
+    </tr>
+  </tbody>
+</table>
 
-                    <p><code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method is part of <code
-                        class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+<p><code class="language-plaintext highlighter-rouge">FeatureFillet3</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
 
-                    <p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of
-                      <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code
-                        class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
 
-                    <p>To see methods and properties related to <code
-                        class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉
-                      <strong><a
-                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this
-                          page of SOLIDWORKS API Help</a></strong>.</p>
+<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit 👉 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of SOLIDWORKS API Help</a></strong>.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Check if Fillet Feature created or not</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Fillet Feature created or not</span>
 <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
   <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Fillet Feature."</span><span class="p">)</span>
   <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF
-                          statement</a></strong> to check if we able to create **Fillet Feature ** or not.</p>
+<p>In above line of code, we use an 👉 <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create **Fillet Feature ** or not.</p>
 
-                    <p>If we failed to select then inform the user by a 👉 <strong><a
-                          href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+<p>If we failed to select then inform the user by a 👉 <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
 
-                    <p>After showing error message our program <strong>exit</strong> from here itself.</p>
+<p>After showing error message our program <strong>exit</strong> from here itself.</p>
 
-                    <p>Now we run the macro and after running macro we get <strong>Fillet</strong> as shown in below
-                      image.</p>
+<p>Now we run the macro and after running macro we get <strong>Fillet</strong> as shown in below image.</p>
 
-                    <p><a href="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"><img
-                          src="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"
-                          alt="fillet-final-result" /></a></p>
+<p><a href="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png"><img src="/assets/Solidworks_Images/feature-fillet/fillet-final-result.png" alt="fillet-final-result" /></a></p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Clear all selection</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Clear all selection</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above line, we clear all previous selection.</p>
+<p>In above line, we clear all previous selection.</p>
 
-                    <p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method
-                      which is part of <em>SOLIDWORKS Document</em> variable i.e <code
-                        class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
+<p>For this we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method which is part of <em>SOLIDWORKS Document</em> variable i.e <code class="language-plaintext highlighter-rouge">swDoc</code> variable.</p>
 
-                    <p><strong>This is it !!!</strong></p>
+<p><strong>This is it !!!</strong></p>
 
-                    <p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
 
-                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
-                      <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-                    <p>Hope this post helps you to <strong>create Fillet Feature</strong> with SOLIDWORKS VBA Macros.
-                    </p>
+<p>Hope this post helps you to <strong>create Fillet Feature</strong> with SOLIDWORKS VBA Macros.</p>
 
-                    <p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after
-                      sometime.</p>
+<p>For more such tutorials on <strong>SOLIDWORKS VBA Macro</strong>, do come to this blog after sometime.</p>
 
-                    <p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
 
-                    <p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
 
-                    <p><em>Till then, Happy learning!!!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
 
-                  </div>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
+      </section>
 
-                </section>
-
-                <footer class="page__meta">
-
+      <footer class="page__meta">
+        
+        
 
 
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-09-03T05:13:48-04:00">September 3, 2023</time></p>
 
 
+      </footer>
 
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2023-08-27T21:34:10-04:00">August 27, 2023</time></p>
-
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-threads/" title="SOLIDWORKS Macro - Create Threads
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/create-threads/" title="SOLIDWORKS Macro - Create Threads
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-chamfer/" title="SOLIDWORKS Macro - Create Chamfer
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-macros/create-chamfer/" title="SOLIDWORKS Macro - Create Chamfer
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
-
-          </div>
+</div>
         </div>
       </div>
     </div>
@@ -2396,74 +2000,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -2488,15 +2092,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
