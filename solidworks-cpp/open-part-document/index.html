@@ -5,19 +5,22 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Open Solidworks Part Document - The CAD Coder</title>
-<meta name="description" content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
+  <!-- begin _includes/seo.html -->
+  <title>Open Solidworks Part Document - The CAD Coder</title>
+  <meta name="description"
+    content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Open Solidworks Part Document">
-<meta property="og:url" content="http://localhost:4000/solidworks-cpp/open-part-document/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Open Solidworks Part Document">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-cpp/open-part-document/">
 
 
-  <meta property="og:description" content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
+  <meta property="og:description"
+    content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
 
 
 
@@ -32,18 +35,18 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/solidworks-cpp/open-part-document/">
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-cpp/open-part-document/">
 
 
 
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,325 +57,354 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/Solidworks-cpp-api-tutorials/">Introduction</a></li>
-          
-            <li><a href="/solidworks-cpp/Prerequisite/">Prerequisite</a></li>
-          
-            <li><a href="/solidworks-cpp/open-solidworks/">Open Solidworks & Hello World</a></li>
-          
-            <li><a href="/solidworks-cpp/open-part-document/" class="active">Open Solidworks Part Document</a></li>
-          
-            <li><a href="/solidworks-cpp/browse-and-open-solidworks-document-managed-version/">Browse and Open Solidworks Document</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
 
-    
-  
-  </div>
 
-</div>
+
+
+
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/Solidworks-cpp-api-tutorials/">Introduction</a></li>
+
+                  <li><a href="/solidworks-cpp/Prerequisite/">Prerequisite</a></li>
+
+                  <li><a href="/solidworks-cpp/open-solidworks/">Open Solidworks & Hello World</a></li>
+
+                  <li><a href="/solidworks-cpp/open-part-document/" class="active">Open Solidworks Part Document</a>
+                  </li>
+
+                  <li><a href="/solidworks-cpp/browse-and-open-solidworks-document-managed-version/">Browse and Open
+                      Solidworks Document</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Open Solidworks Part Document">
-    
-    <meta itemprop="description" content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
-    
-    
-    <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Open Solidworks Part Document
-</h1>
-        
+              <meta itemprop="headline" content="Open Solidworks Part Document">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description"
+                content="In this post, I tell you about how to Open Solidworks Part Document using Solidworks C++ API from Visual Studio.">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#create-a-new-project">Create a New project</a></li><li><a href="#add-source-file">Add Source file</a></li><li><a href="#add-references-to-solidworks-type-library-files">Add References to Solidworks Type Library files</a></li><li><a href="#add-code-to-source-file">Add Code to Source file</a></li><li><a href="#final-result">Final Result</a></li><li><a href="#issues-and-solutions">Issues and Solutions</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <p>In this post, I tell you about <strong>how to Open Solidworks Part Document using Solidworks C++ API</strong> from Visual Studio.</p>
+              <div class="page__inner-wrap">
 
-<p>I hope you have setup Visual Studio community version.</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">Open Solidworks Part Document
+                  </h1>
 
-<p>If not then please go to <strong><a href="/solidworks-cpp/Prerequisite/">Solidworks C++ API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
 
-<hr />
+                  <p class="page__meta">
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<p>Please see below video on <strong>how to Open Solidworks Part Document using Solidworks C++ API</strong> from Visual Studio.</p>
 
-<iframe src="https://www.youtube.com/embed/DBESb0ZGnGc" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
 
-<p>Please note that there are <strong>no explaination</strong> in the video.</p>
 
-<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
 
-<hr />
 
-<h2 id="create-a-new-project">Create a New project</h2>
 
-<p>Fist, we will create a new project in Visual Studio.</p>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<p>As shown in below image I have created a new project named <code class="language-plaintext highlighter-rouge">OpenPartDocument</code> in Visual Studio.</p>
+                      4 minute read
 
-<p><img src="/assets/solidworks-cpp-images/open-part-document/new-project-window.png" alt="new-project-window" /></p>
+                    </span>
 
-<p>If you want to know more detail for Creating a New Project in Visual Studio, please visit <strong><a href="/solidworks-cpp/open-solidworks#create-a-new-project">Create a New project</a></strong> section of <strong><a href="/solidworks-cpp/open-solidworks">Solidworks C++ API - Open Solidworks &amp; Hello World</a></strong> post.</p>
+                  </p>
 
-<hr />
 
-<h2 id="add-source-file">Add Source file</h2>
+                </header>
 
-<p>After creating a new project, we need to Add Source file to our project.</p>
 
-<p>I have already explain each steps taken to create/add a “<strong>Source.cpp</strong>” into our project in <strong><a href="/solidworks-cpp/open-solidworks#add-source-file">Add Source file</a></strong> section of <strong><a href="/solidworks-cpp/open-solidworks">Solidworks C++ API - Open Solidworks &amp; Hello World</a></strong> post.</p>
+                <section class="page__content" itemprop="text">
 
-<p>This will add “<strong>Source.cpp</strong>” file into our project.</p>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+                        <li><a href="#create-a-new-project">Create a New project</a></li>
+                        <li><a href="#add-source-file">Add Source file</a></li>
+                        <li><a href="#add-references-to-solidworks-type-library-files">Add References to Solidworks Type
+                            Library files</a></li>
+                        <li><a href="#add-code-to-source-file">Add Code to Source file</a></li>
+                        <li><a href="#final-result">Final Result</a></li>
+                        <li><a href="#issues-and-solutions">Issues and Solutions</a></li>
+                      </ul>
 
-<hr />
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
 
-<h2 id="add-references-to-solidworks-type-library-files">Add References to Solidworks Type Library files</h2>
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <p>In this post, I tell you about <strong>how to Open Solidworks Part Document using Solidworks C++
+                        API</strong> from Visual Studio.</p>
 
-<blockquote>
-  <p>This section is copy/paste from <strong><a href="/solidworks-cpp/open-solidworks">Solidworks C++ API - Open Solidworks &amp; Hello World</a></strong> post.</p>
-</blockquote>
+                    <p>I hope you have setup Visual Studio community version.</p>
 
-<p>Now we need to <em>add References to Solidworks Type Library files.</em></p>
+                    <p>If not then please go to <strong><a href="/solidworks-cpp/Prerequisite/">Solidworks C++ API -
+                          Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
 
-<p>For this please follow below steps.</p>
+                    <hr />
 
-<ol>
-  <li>
-    <p>Select the <strong>OpenSolidworkTest</strong> project and and <em>Click Right Mouse Button (RMB)</em>.</p>
-  </li>
-  <li>
-    <p>By doing this <em>a context menu</em> is appear as shown in below image.</p>
-  </li>
-  <li>
-    <p>From this <em>context menu</em>, select <strong>“Properties”</strong> option, which is the last one, as shown in below image.</p>
-  </li>
-</ol>
+                    <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<p><img src="/assets/solidworks-cpp-images/open-solidworks/open-property-window.png" alt="open-property-window" /></p>
+                    <p>Please see below video on <strong>how to Open Solidworks Part Document using Solidworks C++
+                        API</strong> from Visual Studio.</p>
 
-<p>This will open a new window as shown in below image.</p>
+                    <iframe src="https://www.youtube.com/embed/DBESb0ZGnGc" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
 
-<p><img src="/assets/solidworks-cpp-images/open-solidworks/project-property-window.png" alt="project-property-window" /></p>
+                    <p>Please note that there are <strong>no explaination</strong> in the video.</p>
 
-<p>Now following below steps:</p>
+                    <p><strong>Explaination</strong> of each line and why we write code this way is given in this post.
+                    </p>
 
-<ol>
-  <li>
-    <p>Select C/C++ option</p>
-  </li>
-  <li>
-    <p>Add SOLIDWORKS folders path to 2nd Red colored box as shown in below image. Usually this path is “<code class="language-plaintext highlighter-rouge">C:\Program Files\ Solidworks Corp\SOLIDWORKS</code>” if installed in default location.</p>
-  </li>
-</ol>
+                    <hr />
 
-<p><img src="/assets/solidworks-cpp-images/open-solidworks/add-solidowrks-reference.png" alt="add-solidowrks-reference" /></p>
+                    <h2 id="create-a-new-project">Create a New project</h2>
 
-<p>After adding the folder path, select “<strong>Apply</strong>” button.</p>
+                    <p>Fist, we will create a new project in Visual Studio.</p>
 
-<p>This complete the process of <em>adding References to Solidworks Type Library files.</em></p>
+                    <p>As shown in below image I have created a new project named <code
+                        class="language-plaintext highlighter-rouge">OpenPartDocument</code> in Visual Studio.</p>
 
-<hr />
+                    <p><img src="/assets/solidworks-cpp-images/open-part-document/new-project-window.png"
+                        alt="new-project-window" /></p>
 
-<h2 id="add-code-to-source-file">Add Code to Source file</h2>
+                    <p>If you want to know more detail for Creating a New Project in Visual Studio, please visit
+                      <strong><a href="/solidworks-cpp/open-solidworks#create-a-new-project">Create a New
+                          project</a></strong> section of <strong><a href="/solidworks-cpp/open-solidworks">Solidworks
+                          C++ API - Open Solidworks &amp; Hello World</a></strong> post.</p>
 
-<p>Now we need to add to <em>Source.cpp</em> file.</p>
+                    <hr />
 
-<p>Please copy the below code sample to your <em>Source.cpp</em> file.</p>
+                    <h2 id="add-source-file">Add Source file</h2>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;atlbase.h&gt;</span><span class="cp">
+                    <p>After creating a new project, we need to Add Source file to our project.</p>
+
+                    <p>I have already explain each steps taken to create/add a “<strong>Source.cpp</strong>” into our
+                      project in <strong><a href="/solidworks-cpp/open-solidworks#add-source-file">Add Source
+                          file</a></strong> section of <strong><a href="/solidworks-cpp/open-solidworks">Solidworks C++
+                          API - Open Solidworks &amp; Hello World</a></strong> post.</p>
+
+                    <p>This will add “<strong>Source.cpp</strong>” file into our project.</p>
+
+                    <hr />
+
+                    <h2 id="add-references-to-solidworks-type-library-files">Add References to Solidworks Type Library
+                      files</h2>
+
+                    <blockquote>
+                      <p>This section is copy/paste from <strong><a href="/solidworks-cpp/open-solidworks">Solidworks
+                            C++ API - Open Solidworks &amp; Hello World</a></strong> post.</p>
+                    </blockquote>
+
+                    <p>Now we need to <em>add References to Solidworks Type Library files.</em></p>
+
+                    <p>For this please follow below steps.</p>
+
+                    <ol>
+                      <li>
+                        <p>Select the <strong>OpenSolidworkTest</strong> project and and <em>Click Right Mouse Button
+                            (RMB)</em>.</p>
+                      </li>
+                      <li>
+                        <p>By doing this <em>a context menu</em> is appear as shown in below image.</p>
+                      </li>
+                      <li>
+                        <p>From this <em>context menu</em>, select <strong>“Properties”</strong> option, which is the
+                          last one, as shown in below image.</p>
+                      </li>
+                    </ol>
+
+                    <p><img src="/assets/solidworks-cpp-images/open-solidworks/open-property-window.png"
+                        alt="open-property-window" /></p>
+
+                    <p>This will open a new window as shown in below image.</p>
+
+                    <p><img src="/assets/solidworks-cpp-images/open-solidworks/project-property-window.png"
+                        alt="project-property-window" /></p>
+
+                    <p>Now following below steps:</p>
+
+                    <ol>
+                      <li>
+                        <p>Select C/C++ option</p>
+                      </li>
+                      <li>
+                        <p>Add SOLIDWORKS folders path to 2nd Red colored box as shown in below image. Usually this path
+                          is “<code
+                            class="language-plaintext highlighter-rouge">C:\Program Files\ Solidworks Corp\SOLIDWORKS</code>”
+                          if installed in default location.</p>
+                      </li>
+                    </ol>
+
+                    <p><img src="/assets/solidworks-cpp-images/open-solidworks/add-solidowrks-reference.png"
+                        alt="add-solidowrks-reference" /></p>
+
+                    <p>After adding the folder path, select “<strong>Apply</strong>” button.</p>
+
+                    <p>This complete the process of <em>adding References to Solidworks Type Library files.</em></p>
+
+                    <hr />
+
+                    <h2 id="add-code-to-source-file">Add Code to Source file</h2>
+
+                    <p>Now we need to add to <em>Source.cpp</em> file.</p>
+
+                    <p>Please copy the below code sample to your <em>Source.cpp</em> file.</p>
+
+                    <div class="language-c++ highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;atlbase.h&gt;</span><span class="cp">
 </span>
 <span class="cp">#import "sldworks.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids  // SOLIDWORKS type library
 </span>
@@ -444,126 +476,133 @@
 	<span class="c1">// Stop COM </span>
 	<span class="n">CoUninitialize</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Now Build the Solution as shown in below image.</p>
+                    <p>Now Build the Solution as shown in below image.</p>
 
-<p><img src="/assets/solidworks-cpp-images/open-solidworks/build-solution.png" alt="build-solution" /></p>
+                    <p><img src="/assets/solidworks-cpp-images/open-solidworks/build-solution.png"
+                        alt="build-solution" /></p>
 
-<p>After Building Solution run the program by pressing <strong>F5</strong>.</p>
+                    <p>After Building Solution run the program by pressing <strong>F5</strong>.</p>
 
-<hr />
+                    <hr />
 
-<h2 id="final-result">Final Result</h2>
+                    <h2 id="final-result">Final Result</h2>
 
-<p>After running the program wait for few minute.</p>
+                    <p>After running the program wait for few minute.</p>
 
-<p>You will get result as shown in below image!!!</p>
+                    <p>You will get result as shown in below image!!!</p>
 
-<p><img src="/assets/solidworks-cpp-images/open-part-document/open-part-window.png" alt="open-part-window" /></p>
+                    <p><img src="/assets/solidworks-cpp-images/open-part-document/open-part-window.png"
+                        alt="open-part-window" /></p>
 
-<hr />
+                    <hr />
 
-<h2 id="issues-and-solutions">Issues and Solutions</h2>
+                    <h2 id="issues-and-solutions">Issues and Solutions</h2>
 
-<p>There are some issues I can think of which might be come to some people.</p>
+                    <p>There are some issues I can think of which might be come to some people.</p>
 
-<p>Those are as follows:</p>
+                    <p>Those are as follows:</p>
 
-<p><strong>Issue 1:</strong></p>
+                    <p><strong>Issue 1:</strong></p>
 
-<p>Program closed without open Solidworks!</p>
+                    <p>Program closed without open Solidworks!</p>
 
-<p><strong>Solution:</strong></p>
+                    <p><strong>Solution:</strong></p>
 
-<p>I you face this issue, then open Solidworks Manually one time, close it and then run the program.</p>
+                    <p>I you face this issue, then open Solidworks Manually one time, close it and then run the program.
+                    </p>
 
-<p>It will solve this issue.</p>
+                    <p>It will solve this issue.</p>
 
-<hr />
+                    <hr />
 
-<p><strong>Issue 2:</strong></p>
+                    <p><strong>Issue 2:</strong></p>
 
-<p>Program unable to create Part Document.</p>
+                    <p>Program unable to create Part Document.</p>
 
-<p><strong>Solution:</strong></p>
+                    <p><strong>Solution:</strong></p>
 
-<p>This is a tricky one!!!</p>
+                    <p>This is a tricky one!!!</p>
 
-<p>If you face this issue, then you need to confirm in Solidworks that you have assigned the “default Part template”.</p>
+                    <p>If you face this issue, then you need to confirm in Solidworks that you have assigned the
+                      “default Part template”.</p>
 
-<p>Please refer to below image for proper setting to fix this issue.</p>
+                    <p>Please refer to below image for proper setting to fix this issue.</p>
 
-<p><img src="/assets/solidworks-cpp-images/open-part-document/default-template-locations.png" alt="default-template-locations" /></p>
+                    <p><img src="/assets/solidworks-cpp-images/open-part-document/default-template-locations.png"
+                        alt="default-template-locations" /></p>
 
-<p><strong><em>I hope this will helpful!!!</em></strong></p>
+                    <p><strong><em>I hope this will helpful!!!</em></strong></p>
 
-<hr />
+                    <hr />
 
-<p><strong><em>This is it !!!</em></strong></p>
+                    <p><strong><em>This is it !!!</em></strong></p>
 
-<p>We have completed our <em>Open Part Document</em> program in <em>Solidworks</em> using <strong>Solidworks C++ APIs</strong>.</p>
+                    <p>We have completed our <em>Open Part Document</em> program in <em>Solidworks</em> using
+                      <strong>Solidworks C++ APIs</strong>.</p>
 
-<p>Hope this post helps you to start with <em>Solidworks C++ API</em>.</p>
+                    <p>Hope this post helps you to start with <em>Solidworks C++ API</em>.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not! I will continue creating Solidworks C++ posts.</em></p>
+                    <p><em>Do let me know by you like this post or not! I will continue creating Solidworks C++
+                        posts.</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+                    <p><em>Till then, Happy learning!!!</em></p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
 
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-cpp/open-solidworks/" title="Open Solidworks &amp; Hello World
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-cpp/open-solidworks/" title="Open Solidworks &amp; Hello World
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-cpp/browse-and-open-solidworks-document-managed-version/" title="Browse and Open Solidworks Document
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light"
+                        href="/solidworks-cpp/browse-and-open-solidworks-document-managed-version/" title="Browse and Open Solidworks Document
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -573,74 +612,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -665,15 +704,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

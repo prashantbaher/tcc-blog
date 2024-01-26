@@ -5,19 +5,22 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name - The CAD Coder</title>
-<meta name="description" content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
+  <!-- begin _includes/seo.html -->
+  <title>VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name - The CAD Coder</title>
+  <meta name="description"
+    content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name">
-<meta property="og:url" content="http://localhost:4000/vba/other-dialogs/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name">
+  <meta property="og:url" content="https://thecadcoder.com/vba/other-dialogs/">
 
 
-  <meta property="og:description" content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
+  <meta property="og:description"
+    content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
 
 
 
@@ -32,18 +35,18 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/vba/other-dialogs/">
+  <link rel="canonical" href="https://thecadcoder.com/vba/other-dialogs/">
 
 
 
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,343 +57,358 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
-          
-            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
-          
-            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
-          
-            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
-          
-            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Programming Concepts</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
-          
-            <li><a href="/vba/variables/">VBA Variables</a></li>
-          
-            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
-          
-            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
-          
-            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
-          
-            <li><a href="/vba/constant/">VBA Constants</a></li>
-          
-            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
-          
-            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
-          
-            <li><a href="/vba/arrays/">VBA Arrays</a></li>
-          
-            <li><a href="/vba/functions/">VBA Functions</a></li>
-          
-            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
-          
-            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
-          
-            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
-          
-            <li><a href="/vba/looping/">VBA Looping</a></li>
-          
-            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
-          
-            <li><a href="/vba/debugger/">VBA Debugger</a></li>
-          
-            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Dialog Boxes</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
-          
-            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
-          
-            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
-          
-            <li><a href="/vba/other-dialogs/" class="active">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">UserForms</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/userform/">VBA UserForms</a></li>
-          
-            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
-          
-            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
-          
-            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
-          
-            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
 
-    
-  
-  </div>
 
-</div>
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+
+                  <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+
+                  <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+
+                  <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+
+                  <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Programming Concepts</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+
+                  <li><a href="/vba/variables/">VBA Variables</a></li>
+
+                  <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+
+                  <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+
+                  <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+
+                  <li><a href="/vba/constant/">VBA Constants</a></li>
+
+                  <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+
+                  <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+
+                  <li><a href="/vba/arrays/">VBA Arrays</a></li>
+
+                  <li><a href="/vba/functions/">VBA Functions</a></li>
+
+                  <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+
+                  <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making
+                      Decisions</a></li>
+
+                  <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+
+                  <li><a href="/vba/looping/">VBA Looping</a></li>
+
+                  <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+
+                  <li><a href="/vba/debugger/">VBA Debugger</a></li>
+
+                  <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Dialog Boxes</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+
+                  <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+
+                  <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+
+                  <li><a href="/vba/other-dialogs/" class="active">VBA GetOpenFilename, GetSaveAsFilename and Getting a
+                      Folder Name</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">UserForms</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/userform/">VBA UserForms</a></li>
+
+                  <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+
+                  <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and
+                      Drawing document</a></li>
+
+                  <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new
+                      Assembly and Drawing document</a></li>
+
+                  <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name">
-    
-    <meta itemprop="description" content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
-    
-    
-    <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name
-</h1>
-        
+              <meta itemprop="headline" content="VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description"
+                content="If your VBA procedure needs to ask the user for a filename, you could use the InputBox function.">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#syntax-for-the-getopenfilename-method">Syntax for the GetOpenFilename method</a></li><li><a href="#a-getopenfilename-example">A GetOpenFilename example</a></li><li><a href="#getsaveasfilename-method">GetSaveAsFilename Method</a></li><li><a href="#getting-a-folder-name">Getting a Folder Name</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <p>If your VBA procedure needs to ask the user for a filename, you could use the <em>InputBox</em> function.</p>
+              <div class="page__inner-wrap">
 
-<p>An input box usually isn’t the best tool for this job, however, because most users find it difficult to remember paths, backslashes, filenames, and file extensions.</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">VBA GetOpenFilename, GetSaveAsFilename and
+                    Getting a Folder Name
+                  </h1>
 
-<p>In other words, it’s far too easy to make a <strong>typographical error</strong> when typing a filename.</p>
 
-<p>For a better solution to this problem, use the <strong>GetOpenFilename</strong> method of the Application object, which ensures that your code gets its hands on a valid filename, including its complete path.</p>
+                  <p class="page__meta">
 
-<p>The <em>GetOpenFilename</em> method displays the familiar Open dialog box.</p>
 
-<p>The <em>GetOpenFilename</em> method doesn’t actually open the specified file.</p>
 
-<p>This method simply returns the user-selected filename as a <code class="language-plaintext highlighter-rouge">string</code>.</p>
 
-<p>Then you can write code to do whatever you want with the filename.</p>
 
-<h2 id="syntax-for-the-getopenfilename-method">Syntax for the GetOpenFilename method</h2>
 
-<p>The official syntax for the <strong>GetOpenFilename</strong> method is as follows:</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' The GetOpenFilename method syntax</span>
+
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
+
+                      4 minute read
+
+                    </span>
+
+                  </p>
+
+
+                </header>
+
+
+                <section class="page__content" itemprop="text">
+
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#syntax-for-the-getopenfilename-method">Syntax for the GetOpenFilename method</a>
+                        </li>
+                        <li><a href="#a-getopenfilename-example">A GetOpenFilename example</a></li>
+                        <li><a href="#getsaveasfilename-method">GetSaveAsFilename Method</a></li>
+                        <li><a href="#getting-a-folder-name">Getting a Folder Name</a></li>
+                      </ul>
+
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <p>If your VBA procedure needs to ask the user for a filename, you could use the <em>InputBox</em>
+                      function.</p>
+
+                    <p>An input box usually isn’t the best tool for this job, however, because most users find it
+                      difficult to remember paths, backslashes, filenames, and file extensions.</p>
+
+                    <p>In other words, it’s far too easy to make a <strong>typographical error</strong> when typing a
+                      filename.</p>
+
+                    <p>For a better solution to this problem, use the <strong>GetOpenFilename</strong> method of the
+                      Application object, which ensures that your code gets its hands on a valid filename, including its
+                      complete path.</p>
+
+                    <p>The <em>GetOpenFilename</em> method displays the familiar Open dialog box.</p>
+
+                    <p>The <em>GetOpenFilename</em> method doesn’t actually open the specified file.</p>
+
+                    <p>This method simply returns the user-selected filename as a <code
+                        class="language-plaintext highlighter-rouge">string</code>.</p>
+
+                    <p>Then you can write code to do whatever you want with the filename.</p>
+
+                    <h2 id="syntax-for-the-getopenfilename-method">Syntax for the GetOpenFilename method</h2>
+
+                    <p>The official syntax for the <strong>GetOpenFilename</strong> method is as follows:</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' The GetOpenFilename method syntax</span>
 <span class="n">object</span><span class="p">.</span><span class="n">GetOpenFilename</span> <span class="p">(</span><span class="err">[</span><span class="n">fileFilter</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">filterIndex</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">title</span><span class="err">]</span><span class="p">,</span><span class="err">[</span><span class="n">buttonText</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">multiSelect</span><span class="err">]</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>The GetOpenFilename method takes the optional arguments shown in below Table.</p>
+                    <p>The GetOpenFilename method takes the optional arguments shown in below Table.</p>
 
-<!--
+                    <!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetOpenFilename method Arguments</th>
@@ -431,74 +449,92 @@
 </table>
 -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Arguments</th>
-      <th>What it does</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>FileFilter</td>
-      <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
-    </tr>
-    <tr>
-      <td>You can specify several different filters from which the user can choose.</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>FilterIndex</td>
-      <td>Determines which of the file filters the dialog box displays by default.</td>
-    </tr>
-    <tr>
-      <td>Title</td>
-      <td>Specifies the caption for the dialog box’s title bar.</td>
-    </tr>
-    <tr>
-      <td>ButtonText</td>
-      <td>Ignored</td>
-    </tr>
-    <tr>
-      <td>MultiSelect</td>
-      <td>If True, the user can select multiple files.</td>
-    </tr>
-  </tbody>
-</table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Arguments</th>
+                          <th>What it does</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>FileFilter</td>
+                          <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
+                        </tr>
+                        <tr>
+                          <td>You can specify several different filters from which the user can choose.</td>
+                          <td> </td>
+                        </tr>
+                        <tr>
+                          <td>FilterIndex</td>
+                          <td>Determines which of the file filters the dialog box displays by default.</td>
+                        </tr>
+                        <tr>
+                          <td>Title</td>
+                          <td>Specifies the caption for the dialog box’s title bar.</td>
+                        </tr>
+                        <tr>
+                          <td>ButtonText</td>
+                          <td>Ignored</td>
+                        </tr>
+                        <tr>
+                          <td>MultiSelect</td>
+                          <td>If True, the user can select multiple files.</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-<h2 id="a-getopenfilename-example">A GetOpenFilename example</h2>
+                    <h2 id="a-getopenfilename-example">A GetOpenFilename example</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">fileFilter</code> argument determines what appears in the dialog box’s Files of Type drop-down list.</p>
+                    <p>The <code class="language-plaintext highlighter-rouge">fileFilter</code> argument determines what
+                      appears in the dialog box’s Files of Type drop-down list.</p>
 
-<p>This argument consists of pairs of file filter strings followed by the wild card file filter specification, with commas separating each part and pair.</p>
+                    <p>This argument consists of pairs of file filter strings followed by the wild card file filter
+                      specification, with commas separating each part and pair.</p>
 
-<p>If omitted, this argument defaults to the following:</p>
+                    <p>If omitted, this argument defaults to the following:</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
 <span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="err">*),</span> <span class="err">*.*</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Notice that this string consists of two parts:</p>
+                    <p>Notice that this string consists of two parts:</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="err">*)</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">All</span> <span class="n">Files</span> <span class="p">(</span><span class="o">*</span><span class="p">.</span><span class="err">*)</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>and</p>
+                    <p>and</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="p">.</span><span class="err">*</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="o">*</span><span class="p">.</span><span class="err">*</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>The first part of this string is the text displayed in the Files of Type dropdown list.</p>
+                    <p>The first part of this string is the text displayed in the Files of Type dropdown list.</p>
 
-<p>The second part determines which files the dialog box displays. For example, <em>.</em> means all files.</p>
+                    <p>The second part determines which files the dialog box displays. For example, <em>.</em> means all
+                      files.</p>
 
-<p>The code in the following example brings up a dialog box that asks the user for a filename.</p>
+                    <p>The code in the following example brings up a dialog box that asks the user for a filename.</p>
 
-<p>The procedure defines five file filters.</p>
+                    <p>The procedure defines five file filters.</p>
 
-<p>Notice that I use the VBA line continuation sequence to set up the Filter variable; doing so helps simplify this rather complicated argument.</p>
+                    <p>Notice that I use the VBA line continuation sequence to set up the Filter variable; doing so
+                      helps simplify this rather complicated argument.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' A GetOpenFilename example</span>
 <span class="k">Sub</span> <span class="nf">GetImportFileName</span><span class="p">()</span>
   <span class="k">Dim</span> <span class="nv">Finfo</span> <span class="ow">As</span> <span class="kt">String</span>
   <span class="k">Dim</span> <span class="nv">FilterIndex</span> <span class="ow">As</span> <span class="kt">Integer</span>
@@ -529,31 +565,42 @@
     <span class="n">MsgBox</span> <span class="s">"You selected "</span> <span class="o">&amp;</span> <span class="n">FileName</span>
   <span class="k">End</span> <span class="k">If</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Notice that the <code class="language-plaintext highlighter-rouge">FileName</code> variable is declared as a Variant data type.</p>
+                    <p>Notice that the <code class="language-plaintext highlighter-rouge">FileName</code> variable is
+                      declared as a Variant data type.</p>
 
-<p>If the user clicks <code class="language-plaintext highlighter-rouge">Cancel</code>, that variable contains a Boolean value (False).</p>
+                    <p>If the user clicks <code class="language-plaintext highlighter-rouge">Cancel</code>, that
+                      variable contains a Boolean value (False).</p>
 
-<p>Otherwise, FileName is a <code class="language-plaintext highlighter-rouge">string</code>. Therefore, using a Variant data type handles both possibilities.</p>
+                    <p>Otherwise, FileName is a <code class="language-plaintext highlighter-rouge">string</code>.
+                      Therefore, using a Variant data type handles both possibilities.</p>
 
-<h2 id="getsaveasfilename-method">GetSaveAsFilename Method</h2>
+                    <h2 id="getsaveasfilename-method">GetSaveAsFilename Method</h2>
 
-<p>The <em>GetSaveAsFilename</em> method works just like the <em>GetOpenFilename</em> method, but it displays the Save As dialog box rather than its Open dialog box.</p>
+                    <p>The <em>GetSaveAsFilename</em> method works just like the <em>GetOpenFilename</em> method, but it
+                      displays the Save As dialog box rather than its Open dialog box.</p>
 
-<p>The <em>GetSaveAsFilename</em> method gets a path and filename from the user but doesn’t do anything with it.</p>
+                    <p>The <em>GetSaveAsFilename</em> method gets a path and filename from the user but doesn’t do
+                      anything with it.</p>
 
-<p>It’s up to you to write code that actually saves the file.</p>
+                    <p>It’s up to you to write code that actually saves the file.</p>
 
-<p>The syntax for this method follows:</p>
+                    <p>The syntax for this method follows:</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' The GetSaveAsFilename method syntax</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' The GetSaveAsFilename method syntax</span>
 <span class="n">object</span><span class="p">.</span><span class="n">GetSaveAsFilename</span> <span class="p">(</span><span class="err">[</span><span class="n">InitialFilename</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">FileFilter</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">FilterIndex</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">Title</span><span class="err">]</span><span class="p">,</span> <span class="err">[</span><span class="n">ButtonText</span><span class="err">]</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>The <em>GetSaveAsFilename</em> method takes below arguments, all of which are optional.</p>
+                    <p>The <em>GetSaveAsFilename</em> method takes below arguments, all of which are optional.</p>
 
-<!--
+                    <!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">The GetSaveAsFilename method Arguments</th>
@@ -588,48 +635,51 @@
 </table>
 -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Arguments</th>
-      <th>What it does</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>InitialFileName</td>
-      <td>Specifies a default filename that appears in the File Name box.</td>
-    </tr>
-    <tr>
-      <td>FileFilter</td>
-      <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
-    </tr>
-    <tr>
-      <td>You can specify several different filters from which the user can choose.</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>FilterIndex</td>
-      <td>Determines which of the file filters the dialog box displays by default.</td>
-    </tr>
-    <tr>
-      <td>Title</td>
-      <td>Specifies the caption for the dialog box’s title bar.</td>
-    </tr>
-  </tbody>
-</table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Arguments</th>
+                          <th>What it does</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>InitialFileName</td>
+                          <td>Specifies a default filename that appears in the File Name box.</td>
+                        </tr>
+                        <tr>
+                          <td>FileFilter</td>
+                          <td>Determines the types of files that appear in the dialog box (for example, *.TXT).</td>
+                        </tr>
+                        <tr>
+                          <td>You can specify several different filters from which the user can choose.</td>
+                          <td> </td>
+                        </tr>
+                        <tr>
+                          <td>FilterIndex</td>
+                          <td>Determines which of the file filters the dialog box displays by default.</td>
+                        </tr>
+                        <tr>
+                          <td>Title</td>
+                          <td>Specifies the caption for the dialog box’s title bar.</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-<h2 id="getting-a-folder-name">Getting a Folder Name</h2>
+                    <h2 id="getting-a-folder-name">Getting a Folder Name</h2>
 
-<p>Sometimes, you don’t need to get a filename; you just need to get a folder name.</p>
+                    <p>Sometimes, you don’t need to get a filename; you just need to get a folder name.</p>
 
-<p>If that’s the case, the <em>FileDialog</em> object is just what the doctor ordered.</p>
+                    <p>If that’s the case, the <em>FileDialog</em> object is just what the doctor ordered.</p>
 
-<p>The following procedure displays a dialog box that allows the user to select a directory.</p>
+                    <p>The following procedure displays a dialog box that allows the user to select a directory.</p>
 
-<p>The selected directory name (or “Canceled”) is then displayed by using the <code class="language-plaintext highlighter-rouge">MsgBox</code> function.</p>
+                    <p>The selected directory name (or “Canceled”) is then displayed by using the <code
+                        class="language-plaintext highlighter-rouge">MsgBox</code> function.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' FileDialog example</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' FileDialog example</span>
 <span class="k">Sub</span> <span class="nf">GetAFolder</span><span class="p">()</span>
   <span class="k">With</span> <span class="n">Application</span><span class="p">.</span><span class="n">FileDialog</span><span class="p">(</span><span class="n">msoFileDialogFolderPicker</span><span class="p">)</span>
     <span class="p">.</span><span class="n">InitialFileName</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">DefaultFilePath</span> <span class="o">&amp;</span> <span class="s">"\"</span>
@@ -642,66 +692,66 @@
     <span class="k">End</span> <span class="k">If</span>
   <span class="k">End</span> <span class="k">With</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>The <em>FileDialog</em> object lets you specify the starting directory by specifying a value for the InitialFileName property.</p>
+                    <p>The <em>FileDialog</em> object lets you specify the starting directory by specifying a value for
+                      the InitialFileName property.</p>
 
-<p>In this case, the code uses default file path as the starting directory.</p>
+                    <p>In this case, the code uses default file path as the starting directory.</p>
 
-<p>Next post will be about <strong><em>VBA UserForms</em></strong>.</p>
+                    <p>Next post will be about <strong><em>VBA UserForms</em></strong>.</p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
+
+                <footer class="page__meta">
 
 
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/vba/inputbox-function/" title="VBA InputBox Function
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/vba/inputbox-function/" title="VBA InputBox Function
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/vba/userform/" title="VBA UserForms
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/vba/userform/" title="VBA UserForms
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -711,74 +761,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -803,15 +853,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

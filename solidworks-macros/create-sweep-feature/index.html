@@ -5,16 +5,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks Macro - Create Sweep Base - The CAD Coder</title>
-<meta name="description" content="Objective">
+  <!-- begin _includes/seo.html -->
+  <title>Solidworks Macro - Create Sweep Base - The CAD Coder</title>
+  <meta name="description" content="Objective">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Solidworks Macro - Create Sweep Base">
-<meta property="og:url" content="http://localhost:4000/solidworks-macros/create-sweep-feature/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Solidworks Macro - Create Sweep Base">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-sweep-feature/">
 
 
   <meta property="og:description" content="Objective">
@@ -32,18 +33,18 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/solidworks-macros/create-sweep-feature/">
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-sweep-feature/">
 
 
 
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,852 +55,879 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">General - Solidworks Functions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
-          
-            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
-          
-            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
-          
-            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
-          
-            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
-          
-            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Lines</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Rectangles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Circles</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
-          
-            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
-          
-            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Arcs</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
-          
-            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Slots</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Point and Spline</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
-          
-            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
-          
-            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Trim and Extend</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
+          <nav class="nav__list">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Patterns</span>
-        
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Move and Rotate</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Relations</span>
-        
+                <span class="nav__sub-title">General - Solidworks Functions</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
-          
-            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Dimensions</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Extrudes</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-feature/" class="active">Sweep Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Cuts</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Holes and Threads</span>
-        
+                  <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
-          
-            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
-        
+                  <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Mirror & Patterns</span>
-        
+                  <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a>
+                  </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Transformation</span>
-        
+                  <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Reference Geometry</span>
-        
+                  <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - General</span>
-        
+                  <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Standard Mates</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Advanced Mates</span>
-        
+              </li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Editing Mates</span>
-        
+              <li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Components</span>
-        
+                <span class="nav__sub-title">Sketch - Lines</span>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Misc</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Insert Views</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
-        
+                <ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Break Views</span>
-        
+                  <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Others</span>
-        
+                </ul>
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
-          
-            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
+              </li>
 
-    
-  
-  </div>
+              <li>
 
-</div>
+                <span class="nav__sub-title">Sketch - Rectangles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a>
+                  </li>
+
+                  <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Circles</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+
+                  <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+
+                  <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Arcs</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+
+                  <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Slots</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight
+                      Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+
+                  <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Point and Spline</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+
+                  <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+
+                  <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Trim and Extend</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+
+                  <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Move and Rotate</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+
+                  <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Relations</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch
+                      Relations</a></li>
+
+                  <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Dimensions</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Extrudes</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-feature/" class="active">Sweep Boss/Base Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Cuts</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Holes and Threads</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+
+                  <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Mirror & Patterns</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+
+                  <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Features - Transformation</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Reference Geometry</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - General</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Standard Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Advanced Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Editing Mates</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Components</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Assembly - Misc</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
+
+                  <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components
+                      Sequentially</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Insert Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current
+                      Sheet</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in
+                      Drawing</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in
+                      Drawing</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Drawing - Break Views</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a>
+                  </li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
+
+                  <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch - Others</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction
+                      Sketch</a></li>
+
+                  <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Solidworks Macro - Create Sweep Base">
-    
-    <meta itemprop="description" content="Objective">
-    
-    
-    <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Create Sweep Base
-</h1>
-        
+              <meta itemprop="headline" content="Solidworks Macro - Create Sweep Base">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          8 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description" content="Objective">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2024-01-26T08:56:03-05:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#understanding-the-code">Understanding the Code</a></li><li><a href="#feature-definition-method-createdefinition-parameters-details">Feature Definition Method CreateDefinition Parameters Details</a></li><li><a href="#feature-creation-method-createfeature-parameters-details">Feature Creation Method CreateFeature Parameters Details</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <h2 id="objective">Objective</h2>
+              <div class="page__inner-wrap">
 
-<p>In this post, I tell you about <em>how to create Sweep Base through Solidworks VBA Macros</em> in a sketch.</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Create Sweep Base
+                  </h1>
 
-<p>From <em>Solidworks 2018</em>, creating Sweep feature method is changed.</p>
 
-<p>It is now done through creating <em>Feature Definition</em> and create feature from this <em>Feature Definition</em>.</p>
+                  <p class="page__meta">
 
-<p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this method</em></strong> if you want to create a new <strong>Sweep Base</strong>.</p>
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<p>Please see below video on <strong>how to create Sweep Base</strong> from Solidworks VBA Macros.</p>
 
-<iframe src="https://www.youtube.com/embed/SQv1Mq1m6to" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
 
-<p>Please note that there are <strong>no explaination</strong> in the video.</p>
 
-<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
 
-<h2 id="code-sample">Code Sample</h2>
 
-<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>Sweep Base</em>.</p>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+                      8 minute read
+
+                    </span>
+
+                  </p>
+
+
+                </header>
+
+
+                <section class="page__content" itemprop="text">
+
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+                        <li><a href="#code-sample">Code Sample</a></li>
+                        <li><a href="#prerequisite">Prerequisite</a></li>
+                        <li><a href="#understanding-the-code">Understanding the Code</a></li>
+                        <li><a href="#feature-definition-method-createdefinition-parameters-details">Feature Definition
+                            Method CreateDefinition Parameters Details</a></li>
+                        <li><a href="#feature-creation-method-createfeature-parameters-details">Feature Creation Method
+                            CreateFeature Parameters Details</a></li>
+                      </ul>
+
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <h2 id="objective">Objective</h2>
+
+                    <p>In this post, I tell you about <em>how to create Sweep Base through Solidworks VBA Macros</em> in
+                      a sketch.</p>
+
+                    <p>From <em>Solidworks 2018</em>, creating Sweep feature method is changed.</p>
+
+                    <p>It is now done through creating <em>Feature Definition</em> and create feature from this
+                      <em>Feature Definition</em>.</p>
+
+                    <p>This method is <strong><em>most updated</em></strong> method, so <strong><em>use this
+                          method</em></strong> if you want to create a new <strong>Sweep Base</strong>.</p>
+
+                    <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+
+                    <p>Please see below video on <strong>how to create Sweep Base</strong> from Solidworks VBA Macros.
+                    </p>
+
+                    <iframe src="https://www.youtube.com/embed/SQv1Mq1m6to" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
+
+                    <p>Please note that there are <strong>no explaination</strong> in the video.</p>
+
+                    <p><strong>Explaination</strong> of each line and why we write code this way is given in this post.
+                    </p>
+
+                    <h2 id="code-sample">Code Sample</h2>
+
+                    <p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating
+                      <em>Sweep Base</em>.</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Create variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -953,346 +981,535 @@
   <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
     
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="prerequisite">Prerequisite</h2>
+                    <h2 id="prerequisite">Prerequisite</h2>
 
-<p>In this article there are some <em>prerequisite</em>.</p>
+                    <p>In this article there are some <em>prerequisite</em>.</p>
 
-<p>We are <strong>not</strong> creating sketches from code but we use <strong>existing sketch</strong> to <em>create Sweep Base</em> feature as shown in below picture.</p>
+                    <p>We are <strong>not</strong> creating sketches from code but we use <strong>existing
+                        sketch</strong> to <em>create Sweep Base</em> feature as shown in below picture.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png"><img src="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png" alt="sketches-to-use-for-sweep-feature" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png"><img
+                          src="/assets/Solidworks_Images/feature-sweep/sketches-to-use-for-sweep-feature.png"
+                          alt="sketches-to-use-for-sweep-feature" /></a></p>
 
-<p>As shown in above image, there are 2 sketch in our part.</p>
+                    <p>As shown in above image, there are 2 sketch in our part.</p>
 
-<ol>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">Sketch1</code> : This is our <strong>profile</strong> for Sweep feture.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">Sketch2</code> : This is our <strong>path</strong> for Sweep feture.</p>
-  </li>
-</ol>
+                    <ol>
+                      <li>
+                        <p><code class="language-plaintext highlighter-rouge">Sketch1</code> : This is our
+                          <strong>profile</strong> for Sweep feture.</p>
+                      </li>
+                      <li>
+                        <p><code class="language-plaintext highlighter-rouge">Sketch2</code> : This is our
+                          <strong>path</strong> for Sweep feture.</p>
+                      </li>
+                    </ol>
 
-<p>If you want to create these 2 sketch programatically then please refer to below articles.</p>
+                    <p>If you want to create these 2 sketch programatically then please refer to below articles.</p>
 
-<p>For Circle 👉 read <strong><a href="/solidworks-macros/create-circle">Solidworks Macros - Create Circle</a></strong> article.</p>
+                    <p>For Circle 👉 read <strong><a href="/solidworks-macros/create-circle">Solidworks Macros - Create
+                          Circle</a></strong> article.</p>
 
-<p>For Centerpoint Arc 👉 read <strong><a href="/solidworks-macros/create-centerpoint-arc">Solidworks Macros - Create Centerpoint Arc</a></strong> article.</p>
+                    <p>For Centerpoint Arc 👉 read <strong><a
+                          href="/solidworks-macros/create-centerpoint-arc">Solidworks Macros - Create Centerpoint
+                          Arc</a></strong> article.</p>
 
-<p>Also, we will apply checks in this article, so that code we write should be error free most of the time.</p>
+                    <p>Also, we will apply checks in this article, so that code we write should be error free most of
+                      the time.</p>
 
-<h2 id="understanding-the-code">Understanding the Code</h2>
+                    <h2 id="understanding-the-code">Understanding the Code</h2>
 
-<p>Now let us walk through <strong>each line</strong> in the above code, and <strong>understand</strong> the meaning and purpose of every line.</p>
+                    <p>Now let us walk through <strong>each line</strong> in the above code, and
+                      <strong>understand</strong> the meaning and purpose of every line.</p>
 
-<p>I also give some link so that you can go through them if there are anything I explained in previous posts.</p>
+                    <p>I also give some link so that you can go through them if there are anything I explained in
+                      previous posts.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
-</code></pre></div></div>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>This line forces us to define every variable we are going to use.</p>
+                    <p>This line forces us to define every variable we are going to use.</p>
 
-<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+                    <p>For more information please visit <strong><a
+                          href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part
+                          document</a></strong> post.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+                    <p>In this line, we create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swApp</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create variable for Solidworks document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+                    <p>In this line, we create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Feature</span>
 <span class="k">Dim</span> <span class="nv">swFeature</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">Feature</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code class="language-plaintext highlighter-rouge">swFeature</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
+                    <p>In this line, we Create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.Feature</code>.</p>
 
-<p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for <strong>Solidworks Feature</strong>.</p>
+                    <p>We create variable <code class="language-plaintext highlighter-rouge">swFeature</code> for
+                      <strong>Solidworks Feature</strong>.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">Feature</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this page of Solidworks API Help</a></strong></p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">Feature</code> object, please visit <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeature_members.html">this
+                          page of Solidworks API Help</a></strong></p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sweep Feature data</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sweep Feature data</span>
 <span class="k">Dim</span> <span class="nv">swSweep</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SweepFeatureData</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we Create a variable which we named as <code class="language-plaintext highlighter-rouge">swSweep</code> and the type of this <code class="language-plaintext highlighter-rouge">swSweep</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SweepFeatureData</code>.</p>
+                    <p>In this line, we Create a variable which we named as <code
+                        class="language-plaintext highlighter-rouge">swSweep</code> and the type of this <code
+                        class="language-plaintext highlighter-rouge">swSweep</code> variable is <code
+                        class="language-plaintext highlighter-rouge">SldWorks.SweepFeatureData</code>.</p>
 
-<p>We create <code class="language-plaintext highlighter-rouge">swSweep</code> variable for Solidworks Sweep feature data before we create Sweep feature using <code class="language-plaintext highlighter-rouge">CreateFeature</code> method from Solidworks Feature Manager.</p>
+                    <p>We create <code class="language-plaintext highlighter-rouge">swSweep</code> variable for
+                      Solidworks Sweep feature data before we create Sweep feature using <code
+                        class="language-plaintext highlighter-rouge">CreateFeature</code> method from Solidworks Feature
+                      Manager.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Boolean Variable</span>
 <span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object type.</p>
+                    <p>In this line, we create a variable named <code
+                        class="language-plaintext highlighter-rouge">BoolStatus</code> as <code
+                        class="language-plaintext highlighter-rouge">Boolean</code> object type.</p>
 
-<p>These all are our global variables.</p>
+                    <p>These all are our global variables.</p>
 
-<p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
+                    <p>As you can see in code sample, they are <strong>Solidworks API Objects</strong>.</p>
 
-<p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
+                    <p>So basically I group all the <strong>Solidworks API Objects</strong> in one place.</p>
 
-<p>I have also place <code class="language-plaintext highlighter-rouge">boolean</code> type object at top also, because after certain point we will <em>need</em> this variable frequently.</p>
+                    <p>I have also place <code class="language-plaintext highlighter-rouge">boolean</code> type object
+                      at top also, because after certain point we will <em>need</em> this variable frequently.</p>
 
-<p>Thus, I have started placing it here.</p>
+                    <p>Thus, I have started placing it here.</p>
 
-<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
+                    <p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure which has
+                      name of <code class="language-plaintext highlighter-rouge">main</code>.</p>
 
-<p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+                    <p>This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Set Solidworks variable to Solidworks application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In this line, we set the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to Solidworks application.</p>
+                    <p>In this line, we set the value of our Solidworks variable <code
+                        class="language-plaintext highlighter-rouge">swApp</code>; which we define earlier; to
+                      Solidworks application.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Solidworks is opened or not</span>
 <span class="k">If</span> <span class="n">swApp</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
     <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks is not opened"</span><span class="p">)</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks application variable is <em>successfully assigned</em> to current Solidworks application.</p>
+                    <p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if Solidworks application variable is <em>successfully
+                        assigned</em> to current Solidworks application.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document variable to opened part document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Setting Solidworks document variable to opened part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we set Solidwors document <code class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part document.</p>
+                    <p>In above line of code, we set Solidwors document <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> variable to currently open part
+                      document.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Solidworks document is opened or not</span>
 <span class="k">If</span> <span class="n">swDoc</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
     <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Solidworks document is not opened. Please open a document."</span><span class="p">)</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if Solidworks document <code class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
+                    <p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if Solidworks document <code
+                        class="language-plaintext highlighter-rouge">swDoc</code> is opened.</p>
 
-<p>If Solidworks document is not opened then code execute inside the code and inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+                    <p>If Solidworks document is not opened then code execute inside the code and inform the user by a
+                      <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
 
-<p>After showing message our program <strong>exit</strong> from here itself.</p>
+                    <p>After showing message our program <strong>exit</strong> from here itself.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Select Sketch 1 as profile and Sketch 2 as path in opened part document</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Select Sketch 1 as profile and Sketch 2 as path in opened part document</span>
 <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch1"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
 <span class="n">boolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Sketch2"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line, we select the <em>Sketch1</em> and <em>Sketch2</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+                    <p>In above line, we select the <em>Sketch1</em> and <em>Sketch2</em> by using <code
+                        class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code
+                        class="language-plaintext highlighter-rouge">Extension</code> object.</p>
 
-<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+                    <p>For more information about selection method please visit <strong><a
+                          href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection
+                          Methods</a></strong> post.</p>
 
-<p>❗ Please note that we need to define <em>profile</em> and <em>path</em> for <em>Sweep feature</em>, hence while selecting sketches we need to define which sketch is profile and path as describe below.</p>
+                    <p>❗ Please note that we need to define <em>profile</em> and <em>path</em> for <em>Sweep
+                        feature</em>, hence while selecting sketches we need to define which sketch is profile and path
+                      as describe below.</p>
 
-<ul>
-  <li>
-    <p><strong>Profile</strong></p>
+                    <ul>
+                      <li>
+                        <p><strong>Profile</strong></p>
 
-    <ul>
-      <li>
-        <p>If a <em>sketch profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select a <em>face, edge, or curve</em>. 
-For a <em>swept-boss</em> feature, the sketch profile must be <strong>closed</strong> ❗. For a <em>swept-surface</em> feature, the sketch profile is <strong>open or closed</strong> ❗.</p>
-      </li>
-      <li>
-        <p>If a <em>circular profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 4</code> to select a <em>sketch line, edge or curve</em>. The circular profile is <strong>open or closed</strong> ❗.</p>
-      </li>
-      <li>
-        <p>If a <em>solid profile</em>, use <code class="language-plaintext highlighter-rouge">Mark = 1</code> to select the <em>tool body</em> to use to make the cut and use <code class="language-plaintext highlighter-rouge">Mark = 2048</code> to select the <em>solid body</em> to <strong>cut</strong> ❗. Solid profiles are used only in <code class="language-plaintext highlighter-rouge">swept-cut</code> features.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Sweep path</strong> using <code class="language-plaintext highlighter-rouge">Mark = 4</code></p>
-  </li>
-</ul>
+                        <ul>
+                          <li>
+                            <p>If a <em>sketch profile</em>, use <code
+                                class="language-plaintext highlighter-rouge">Mark = 1</code> to select a <em>face, edge,
+                                or curve</em>.
+                              For a <em>swept-boss</em> feature, the sketch profile must be <strong>closed</strong> ❗.
+                              For a <em>swept-surface</em> feature, the sketch profile is <strong>open or
+                                closed</strong> ❗.</p>
+                          </li>
+                          <li>
+                            <p>If a <em>circular profile</em>, use <code
+                                class="language-plaintext highlighter-rouge">Mark = 4</code> to select a <em>sketch
+                                line, edge or curve</em>. The circular profile is <strong>open or closed</strong> ❗.</p>
+                          </li>
+                          <li>
+                            <p>If a <em>solid profile</em>, use <code
+                                class="language-plaintext highlighter-rouge">Mark = 1</code> to select the <em>tool
+                                body</em> to use to make the cut and use <code
+                                class="language-plaintext highlighter-rouge">Mark = 2048</code> to select the <em>solid
+                                body</em> to <strong>cut</strong> ❗. Solid profiles are used only in <code
+                                class="language-plaintext highlighter-rouge">swept-cut</code> features.</p>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <p><strong>Sweep path</strong> using <code
+                            class="language-plaintext highlighter-rouge">Mark = 4</code></p>
+                      </li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create Sweep feature definition</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create Sweep feature definition</span>
 <span class="k">Set</span> <span class="n">swSweep</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateDefinition</span><span class="p">(</span><span class="n">swFmSweep</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swSweep</code> by <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method.</p>
+                    <p>In above line of code we set the value of variable <code
+                        class="language-plaintext highlighter-rouge">swSweep</code> by <code
+                        class="language-plaintext highlighter-rouge">CreateDefinition</code> method.</p>
 
-<p><code class="language-plaintext highlighter-rouge">CreateDefinition</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+                    <p><code class="language-plaintext highlighter-rouge">CreateDefinition</code> method is part of
+                      <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of
+                      <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code
+                        class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
 
-<h2 id="feature-definition-method-createdefinition-parameters-details">Feature Definition Method CreateDefinition Parameters Details</h2>
+                    <h2 id="feature-definition-method-createdefinition-parameters-details">Feature Definition Method
+                      CreateDefinition Parameters Details</h2>
 
-<p>This <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method takes following parameters as explained:</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method takes
+                      following parameters as explained:</p>
 
-<ul>
-  <li>
-    <p><strong>Type</strong> - <em><code class="language-plaintext highlighter-rouge">Feature name ID</code> as defined in <code class="language-plaintext highlighter-rouge">swFeatureNameID_e</code></em>.</p>
+                    <ul>
+                      <li>
+                        <p><strong>Type</strong> - <em><code
+                              class="language-plaintext highlighter-rouge">Feature name ID</code> as defined in <code
+                              class="language-plaintext highlighter-rouge">swFeatureNameID_e</code></em>.</p>
 
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">swFmBoundingBox</code> <em>(bounding box)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmCirPattern</code> <em>(circular pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmCurvePattern</code> <em>(curve-driven pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmDerivedLPattern</code> <em>(derived-driven pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmDimPattern</code> <em>(variable/dimension pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmFillPattern</code> <em>(fill pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmGroundPlane</code> <em>(ground plane)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLibraryFeature</code> <em>(library)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLocalChainPattern</code> <em>(chain component pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLocalCirPattern</code> <em>(circular component pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLocalCurvePattern</code> <em>(curve-driven component pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLocalLPattern</code> <em>(linear component pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLocalSketchPattern</code> <em>(sketch-driven component pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmLPattern</code> <em>(linear pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmNormalCut</code> <em>(sheet metal normal cut)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmRefCurve</code> <em>(projection curve)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmRefSurface</code> <em>(surface sweep)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmSketchPattern</code> <em>(sketch-driven pattern)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmSweep</code> <em>(boss sweep)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmSweepCut</code> <em>(cut sweep)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmSweepThread</code> <em>(sweep thread)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmTabAndSlot</code> <em>(tab and slot)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">swFmTablePattern</code> <em>(table pattern)</em></li>
-    </ul>
-  </li>
-</ul>
+                        <ul>
+                          <li><code class="language-plaintext highlighter-rouge">swFmBoundingBox</code> <em>(bounding
+                              box)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmCirPattern</code> <em>(circular
+                              pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmCurvePattern</code>
+                            <em>(curve-driven pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmDerivedLPattern</code>
+                            <em>(derived-driven pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmDimPattern</code>
+                            <em>(variable/dimension pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmFillPattern</code> <em>(fill
+                              pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmGroundPlane</code> <em>(ground
+                              plane)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLibraryFeature</code>
+                            <em>(library)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLocalChainPattern</code> <em>(chain
+                              component pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLocalCirPattern</code>
+                            <em>(circular component pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLocalCurvePattern</code>
+                            <em>(curve-driven component pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLocalLPattern</code> <em>(linear
+                              component pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLocalSketchPattern</code>
+                            <em>(sketch-driven component pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmLPattern</code> <em>(linear
+                              pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmNormalCut</code> <em>(sheet metal
+                              normal cut)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmRefCurve</code> <em>(projection
+                              curve)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmRefSurface</code> <em>(surface
+                              sweep)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmSketchPattern</code>
+                            <em>(sketch-driven pattern)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmSweep</code> <em>(boss sweep)</em>
+                          </li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmSweepCut</code> <em>(cut
+                              sweep)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmSweepThread</code> <em>(sweep
+                              thread)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmTabAndSlot</code> <em>(tab and
+                              slot)</em></li>
+                          <li><code class="language-plaintext highlighter-rouge">swFmTablePattern</code> <em>(table
+                              pattern)</em></li>
+                        </ul>
+                      </li>
+                    </ul>
 
-<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateDefinition</code> method retun <strong>feature or pattern-specific</strong> feature data object.</p>
+                    <p><strong>Return Value</strong> : This <code
+                        class="language-plaintext highlighter-rouge">CreateDefinition</code> method retun
+                      <strong>feature or pattern-specific</strong> feature data object.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of Solidworks API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this
+                          page of Solidworks API Help</a></strong>.</p>
 
-<p>In our code, I have used following values:</p>
+                    <p>In our code, I have used following values:</p>
 
-<ul>
-  <li><strong>Type</strong> - <em>I use <code class="language-plaintext highlighter-rouge">swFmSweep</code> as <code class="language-plaintext highlighter-rouge">Feature name ID</code></em>.</li>
-</ul>
+                    <ul>
+                      <li><strong>Type</strong> - <em>I use <code
+                            class="language-plaintext highlighter-rouge">swFmSweep</code> as <code
+                            class="language-plaintext highlighter-rouge">Feature name ID</code></em>.</li>
+                    </ul>
 
-<p>If you want to know more information about Sweep Feature data then please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISweepFeatureData_members.html">this page of Solidworks API Help</a></strong>.</p>
+                    <p>If you want to know more information about Sweep Feature data then please visit <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISweepFeatureData_members.html">this
+                          page of Solidworks API Help</a></strong>.</p>
 
-<p>This page will give you information about various properties and methods of <code class="language-plaintext highlighter-rouge">ISweepFeatureData</code> Interface.</p>
+                    <p>This page will give you information about various properties and methods of <code
+                        class="language-plaintext highlighter-rouge">ISweepFeatureData</code> Interface.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Create sweep feature</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Create sweep feature</span>
 <span class="k">Set</span> <span class="n">swFeature</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">FeatureManager</span><span class="p">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">swSweep</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code we set the value of variable <code class="language-plaintext highlighter-rouge">swFeature</code> by <code class="language-plaintext highlighter-rouge">CreateFeature</code> method.</p>
+                    <p>In above line of code we set the value of variable <code
+                        class="language-plaintext highlighter-rouge">swFeature</code> by <code
+                        class="language-plaintext highlighter-rouge">CreateFeature</code> method.</p>
 
-<p><code class="language-plaintext highlighter-rouge">CreateFeature</code> method is part of <code class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
+                    <p><code class="language-plaintext highlighter-rouge">CreateFeature</code> method is part of <code
+                        class="language-plaintext highlighter-rouge">FeatureManager</code> object.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">FeatureManager</code> is again part of
+                      <code class="language-plaintext highlighter-rouge">swDoc</code> variable i.e. <code
+                        class="language-plaintext highlighter-rouge">ModelDoc2</code> object.</p>
 
-<h2 id="feature-creation-method-createfeature-parameters-details">Feature Creation Method CreateFeature Parameters Details</h2>
+                    <h2 id="feature-creation-method-createfeature-parameters-details">Feature Creation Method
+                      CreateFeature Parameters Details</h2>
 
-<p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes following parameters as explained:</p>
+                    <p>This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method takes
+                      following parameters as explained:</p>
 
-<ul>
-  <li><strong>FeatureData</strong> - <em><code class="language-plaintext highlighter-rouge">Feature or pattern-specific</code> feature data object</em>.</li>
-</ul>
+                    <ul>
+                      <li><strong>FeatureData</strong> - <em><code
+                            class="language-plaintext highlighter-rouge">Feature or pattern-specific</code> feature data
+                          object</em>.</li>
+                    </ul>
 
-<p><strong>Return Value</strong> : This <code class="language-plaintext highlighter-rouge">CreateFeature</code> method retun <strong>feature</strong> data object.</p>
+                    <p><strong>Return Value</strong> : This <code
+                        class="language-plaintext highlighter-rouge">CreateFeature</code> method retun
+                      <strong>feature</strong> data object.</p>
 
-<p>To see methods and properties related to <code class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this page of Solidworks API Help</a></strong>.</p>
+                    <p>To see methods and properties related to <code
+                        class="language-plaintext highlighter-rouge">FeatureManager</code> object, please visit
+                      <strong><a
+                          href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager_members.html">this
+                          page of Solidworks API Help</a></strong>.</p>
 
-<p>In our code, I have used following values:</p>
+                    <p>In our code, I have used following values:</p>
 
-<ul>
-  <li><strong>FeatureData</strong> - <em>I use <code class="language-plaintext highlighter-rouge">swFmSweep</code> as feature data object which we defined prevously</em>.</li>
-</ul>
+                    <ul>
+                      <li><strong>FeatureData</strong> - <em>I use <code
+                            class="language-plaintext highlighter-rouge">swFmSweep</code> as feature data object which
+                          we defined prevously</em>.</li>
+                    </ul>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Check if Sweep Feature creates or not</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Check if Sweep Feature creates or not</span>
 <span class="k">If</span> <span class="n">swFeature</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
     <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Failed to create Sweep Feature."</span><span class="p">)</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">If</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF statement</a></strong> to check if we able to create Revolve Feature or not.</p>
+                    <p>In above line of code, we use an <strong><a href="/vba/if-then-structure-select-case/">IF
+                          statement</a></strong> to check if we able to create Revolve Feature or not.</p>
 
-<p>If we failed to select then inform the user by a <strong><a href="/vba/msgBox-function/">Message Window</a></strong>.</p>
+                    <p>If we failed to select then inform the user by a <strong><a href="/vba/msgBox-function/">Message
+                          Window</a></strong>.</p>
 
-<p>After showing error message our program <strong>exit</strong> from here itself.</p>
+                    <p>After showing error message our program <strong>exit</strong> from here itself.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Zoom to fit</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit2</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above line of code, <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code> property to <em>Zoom to fit</em> current view.</p>
+                    <p>In above line of code, <code class="language-plaintext highlighter-rouge">ViewZoomtofit2</code>
+                      property to <em>Zoom to fit</em> current view.</p>
 
-<p>Now we run the macro and after running macro we get extrude as shown in below image.</p>
+                    <p>Now we run the macro and after running macro we get extrude as shown in below image.</p>
 
-<p><a href="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png"><img src="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png" alt="sweep-feature-final-result" /></a></p>
+                    <p><a href="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png"><img
+                          src="/assets/Solidworks_Images/feature-sweep/sweep-feature-final-result.png"
+                          alt="sweep-feature-final-result" /></a></p>
 
-<hr />
+                    <hr />
 
-<p><strong>This is it !!!</strong></p>
+                    <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>create Sweep Base</strong> with Solidworks VBA Macros.</p>
+                    <p>Hope this post helps you to <strong>create Sweep Base</strong> with Solidworks VBA Macros.</p>
 
-<p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after sometime.</p>
+                    <p>For more such tutorials on <strong>Solidworks VBA Macro</strong>, do come to this blog after
+                      sometime.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+                    <p><em>Do let me know by you like this post or not!</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+                    <p><em>Till then, Happy learning!!!</em></p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
 
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-revolved-feature/" title="Solidworks Macro - Create Revolved Boss/Base
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2024-01-26T08:56:03-05:00">January 26, 2024</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-revolved-feature/" title="Solidworks Macro - Create Revolved Boss/Base
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-lofted-boss-feature/" title="Solidworks Macro - Create Lofted Base/Boss
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-macros/create-lofted-boss-feature/" title="Solidworks Macro - Create Lofted Base/Boss
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -1302,74 +1519,74 @@ For a <em>swept-boss</em> feature, the sketch profile must be <strong>closed</st
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -1394,15 +1611,15 @@ For a <em>swept-boss</em> feature, the sketch profile must be <strong>closed</st
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
