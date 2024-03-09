@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Wix4 Visual Studio Extension - The CAD Coder</title>
-<meta name="description" content="In this article we">
+  <!-- begin _includes/seo.html --><title>Wix Add Desktop Icon - The CAD Coder</title>
+<meta name="description" content="In this article we create Desktop Icon when MSI install application.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Wix4 Visual Studio Extension">
-<meta property="og:url" content="https://thecadcoder.com/knowledge-base/wix-vs-extension/">
+<meta property="og:title" content="Wix Add Desktop Icon">
+<meta property="og:url" content="https://thecadcoder.com/knowledge-base/wix-add-desktop-icon/">
 
 
-  <meta property="og:description" content="In this article we">
+  <meta property="og:description" content="In this article we create Desktop Icon when MSI install application.">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/knowledge-base/wix-vs-extension/">
+<link rel="canonical" href="https://thecadcoder.com/knowledge-base/wix-add-desktop-icon/">
 
 
 
@@ -177,13 +177,13 @@
           
             <li><a href="/knowledge-base/wix4-introduction/">Wix4 Introduction</a></li>
           
-            <li><a href="/knowledge-base/wix-vs-extension/" class="active">Wix4 Visual Studio Extension</a></li>
+            <li><a href="/knowledge-base/wix-vs-extension/">Wix4 Visual Studio Extension</a></li>
           
             <li><a href="/knowledge-base/wix-understand-project/">Understand Wix V4 Project</a></li>
           
             <li><a href="/knowledge-base/wix-add-remove-program-details/">Wix Add Remove Program Details</a></li>
           
-            <li><a href="/knowledge-base/wix-add-desktop-icon/">Wix Add Desktop Icon</a></li>
+            <li><a href="/knowledge-base/wix-add-desktop-icon/" class="active">Wix Add Desktop Icon</a></li>
           
         </ul>
         
@@ -203,9 +203,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Wix4 Visual Studio Extension">
+    <meta itemprop="headline" content="Wix Add Desktop Icon">
     
-    <meta itemprop="description" content="In this article we">
+    <meta itemprop="description" content="In this article we create Desktop Icon when MSI install application.">
     
     
     <meta itemprop="datePublished" content="2024-03-09T07:40:43-05:00">
@@ -214,7 +214,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Wix4 Visual Studio Extension
+        <h1 id="page-title" class="page__title" itemprop="headline">Wix Add Desktop Icon
 </h1>
         
 
@@ -247,7 +247,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#demo-video">Demo Video</a></li><li><a href="#open-visual-studio">Open Visual Studio</a></li><li><a href="#install-extension">Install Extension</a></li><li><a href="#check-wix-project-template">Check Wix Project Template</a></li></ul>
+            <ul class="toc__menu"><li><a href="#update-examplecomponentswxs">Update [ExampleComponents.wxs]</a><ul><li><a href="#add-output-file">Add Output File</a></li><li><a href="#add-desktop-icon">Add Desktop Icon</a></li></ul></li><li><a href="#build-solution">[Build] Solution</a></li><li><a href="#final-result">Final Result</a></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -278,147 +278,179 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <p>In this article we</p>
+          <p>In this article we <strong>create Desktop Icon</strong> when MSI install application.</p>
 
-<ul>
-  <li><em>Install Wix4 Visual Studio Extension</em></li>
-</ul>
+<p>Please see below 👇🏻 image of <strong>Desktop Icon</strong> for reference.</p>
 
-<p class="notice--warning">This extension help us to create Wix4 project.</p>
+<p><a href="/assets/knowledge-base/wix-add-desktop-icon/installed-desktop-icon.png"><img src="/assets/knowledge-base/wix-add-desktop-icon/installed-desktop-icon.png" alt="installed-desktop-icon" /></a></p>
 
 <hr />
 
-<h2 id="demo-video">Demo Video</h2>
+<h2 id="update-examplecomponentswxs">Update [ExampleComponents.wxs]</h2>
 
-<p>Please see below video on how to “<strong>Install Wix4 Visual Studio Extension</strong>”.</p>
+<p>Below image show content of <strong><code class="language-plaintext highlighter-rouge">ExampleComponents.wxs</code></strong></p>
 
-<iframe src="https://www.youtube.com/embed/hMUPo5X67_k" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+<p><a href="/assets/knowledge-base/wix-add-desktop-icon/ExampleComponents.wxs-file.png"><img src="/assets/knowledge-base/wix-add-desktop-icon/ExampleComponents.wxs-file.png" alt="ExampleComponents.wxs-file" /></a></p>
 
-<p class="notice--info">Please note that there are <strong>no explanation</strong> in the video.<br />
-<strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
-
-<hr />
-
-<h2 id="open-visual-studio">Open Visual Studio</h2>
-
-<p><strong>IDE</strong>: <em><a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">Visual Studio 2022 Community</a></em></p>
-
-<p>Click above link to download 🚀 <strong><a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">Visual Studio 2022 Community</a></strong></p>
-
-<ul>
-  <li>
-    <p>Open <strong>Visual Studio 2022 Community</strong></p>
-  </li>
-  <li>
-    <p>In “<strong>Home</strong>” screen of Visual Studio, select “<strong>Continue without code</strong>” option as shown in below 👇🏻 image.</p>
-  </li>
-</ul>
-
-<p><a href="/assets/knowledge-base/wix4-introduction/conitnue-without-code.png"><img src="/assets/knowledge-base/wix4-introduction/conitnue-without-code.png" alt="conitnue-without-code" /></a></p>
-
-<ul>
-  <li>This open Visual Studio <strong>without any project/solution</strong> as shown in below 👇🏻 image.</li>
-</ul>
-
-<p><a href="/assets/knowledge-base/wix4-introduction/visual-studio-without-solution.png"><img src="/assets/knowledge-base/wix4-introduction/visual-studio-without-solution.png" alt="visual-studio-without-solution" /></a></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Wix</span> <span class="na">xmlns=</span><span class="s">"http://wixtoolset.org/schemas/v4/wxs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Fragment&gt;</span>
+    <span class="nt">&lt;ComponentGroup</span> <span class="na">Id=</span><span class="s">"ApplicationComponents"</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Component</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">"ApplicationFile"</span> <span class="na">Source=</span><span class="s">"WPF_Application.exe"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/Component&gt;</span>
+    <span class="nt">&lt;/ComponentGroup&gt;</span>
+  <span class="nt">&lt;/Fragment&gt;</span>
+<span class="nt">&lt;/Wix&gt;</span>
+</code></pre></div></div>
 
 <hr />
 
-<h2 id="install-extension">Install Extension</h2>
+<h3 id="add-output-file">Add Output File</h3>
 
-<p><strong>Extension Name</strong>: <em>HeatWave for VS2022</em></p>
+<p>First, we need to add file for which we want to share icon.</p>
 
-<ul>
-  <li>Open <strong>Extension window</strong> in <em>Visual Studio 2022</em> and search for <strong>HeatWave for VS2022</strong> as shown in below 👇🏻 image.</li>
-</ul>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Component</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">"ApplicationFile"</span> <span class="na">Source=</span><span class="s">"WPF_Application.exe"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Component&gt;</span>
+</code></pre></div></div>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/search-heatwave-extension.gif"><img src="/assets/knowledge-base/wix-vs-extension/search-heatwave-extension.gif" alt="search-heatwave-extension" /></a></p>
+<p>In above code we add output exe file.</p>
 
-<ul>
-  <li>Now select “<strong>Download</strong>” option as shown in below 👇🏻 image.</li>
-</ul>
+<p>This output file is <strong><code class="language-plaintext highlighter-rouge">WPF_Application.exe</code></strong>.</p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/download-heatwave-extension.gif"><img src="/assets/knowledge-base/wix-vs-extension/download-heatwave-extension.gif" alt="download-heatwave-extension" /></a></p>
-
-<ul>
-  <li>
-    <p>After download <strong>close</strong> Visual Studio.</p>
-  </li>
-  <li>
-    <p>When we close Visual Studio, <em>a pop-up of VSIX Installer will come</em> as shown in below 👇🏻 image.</p>
-  </li>
-</ul>
-
-<p><a href="/assets/knowledge-base/wix-vs-extension/vsix-installer.png"><img src="/assets/knowledge-base/wix-vs-extension/vsix-installer.png" alt="vsix-installer" /></a></p>
-
-<ul>
-  <li>Now select “<strong>Modify</strong>” button, <em>this will install extension</em> as shown in below 👇🏻 image.</li>
-</ul>
-
-<p><a href="/assets/knowledge-base/wix-vs-extension/install-vsix-extension.gif"><img src="/assets/knowledge-base/wix-vs-extension/install-vsix-extension.gif" alt="install-vsix-extension" /></a></p>
+<p>For this output file <strong><code class="language-plaintext highlighter-rouge">WPF_Application.exe</code></strong>, we want to show <strong>Desktop icon</strong>.</p>
 
 <hr />
 
-<h2 id="check-wix-project-template">Check Wix Project Template</h2>
+<h3 id="add-desktop-icon">Add Desktop Icon</h3>
 
-<ul>
-  <li>Now <strong>open Visual Studio</strong> and select <strong>Create New Solution</strong> option as shown in below 👇🏻 image.</li>
-</ul>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Wix</span> <span class="na">xmlns=</span><span class="s">"http://wixtoolset.org/schemas/v4/wxs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Fragment&gt;</span>
+    <span class="nt">&lt;ComponentGroup</span> <span class="na">Id=</span><span class="s">"ApplicationComponents"</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Component</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!--Add output file--&gt;</span>
+        <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">"ApplicationFile"</span> <span class="na">Source=</span><span class="s">"WPF_Application.exe"</span><span class="nt">&gt;</span>
+          <span class="c">&lt;!--Add Desktop Shortcut--&gt;</span>
+          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">"DesktopShortCut"</span>
+                    <span class="na">Directory=</span><span class="s">"DesktopFolder"</span>
+                    <span class="na">Advertise=</span><span class="s">"yes"</span> <span class="na">Icon=</span><span class="s">"icon.exe"</span>
+                    <span class="na">Name=</span><span class="s">"!(bind.Property.ProductName)"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/File&gt;</span>
+      <span class="nt">&lt;/Component&gt;</span>
+    <span class="nt">&lt;/ComponentGroup&gt;</span>
+  <span class="nt">&lt;/Fragment&gt;</span>
+<span class="nt">&lt;/Wix&gt;</span>
+</code></pre></div></div>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/create-new-solution.png"><img src="/assets/knowledge-base/wix-vs-extension/create-new-solution.png" alt="create-new-solution" /></a></p>
+<p>In above code sample, we “<strong>Add Desktop Shortcut</strong>”.</p>
 
-<ul>
-  <li>This will <em>open a new screen</em> which <strong>shows Wix options</strong> as shown in below 👇🏻 image.</li>
-</ul>
+<p>For this we use <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/screen-with-wix-options.png"><img src="/assets/knowledge-base/wix-vs-extension/screen-with-wix-options.png" alt="screen-with-wix-options" /></a></p>
+<p>Please see below 👇🏻 code for reference.</p>
 
-<ul>
-  <li>In this screen, we select <strong>MSI Package (Wix v4)</strong> option for creating <em>MSI package</em> as shown in below 👇🏻 image.</li>
-</ul>
+<p><a href="/assets/knowledge-base/wix-add-desktop-icon/add-desktop-shortcut-tag.png"><img src="/assets/knowledge-base/wix-add-desktop-icon/add-desktop-shortcut-tag.png" alt="add-desktop-shortcut-tag" /></a></p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/create-msi-package-option.png"><img src="/assets/knowledge-base/wix-vs-extension/create-msi-package-option.png" alt="create-msi-package-option" /></a></p>
+<p>After adding <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag, we define some properties of <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<ul>
-  <li>Now select “<strong>Next</strong>” option as shown in below 👇🏻 image.</li>
-</ul>
+<p>Please see below list of properties for <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/select-next-option.png"><img src="/assets/knowledge-base/wix-vs-extension/select-next-option.png" alt="select-next-option" /></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Property Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Id</code></strong></td>
+      <td><em>Identifier for this tag, by which we can refer to this tag.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Directory</code></strong></td>
+      <td><em>Special Id, which define Directory where we want to show our shortcut.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Advertise</code></strong></td>
+      <td><em>Boolean variable which decide we want to advertise this shortcut or not.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Icon</code></strong></td>
+      <td><em>Id of Icon image. Please note that this is Id “NOT source of icon image”.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Name</code></strong></td>
+      <td><em>Name of Icon which we want to show with Icon image.</em></td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>
-    <p>In <em>next screen</em> we define following screen.</p>
+<p>Values we used in our code.</p>
 
-    <ul>
-      <li><strong>Project Name</strong></li>
-      <li><strong>Location of Solution</strong></li>
-      <li><strong>Name of Solution</strong></li>
-    </ul>
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Value Used</th>
+      <th>Value Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Id</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">DesktopShortCut</code></em></td>
+      <td>Id which I give.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Directory</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">DesktopFolder</code></em></td>
+      <td>Special Id for Desktop Folder. Since we want to create Desktop Shortcut.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Advertise</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">yes</code></em></td>
+      <td>Always ‘Yes’ since this is the easy way.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Icon</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">icon.exe</code></em></td>
+      <td>Reference to Id of image in <strong><code class="language-plaintext highlighter-rouge">Package.wxs</code></strong> file.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Name</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">!(bind.Property.ProductName)</code></em></td>
+      <td>Bind of Shortcut name to Product Name.s</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="build-solution">[Build] Solution</h2>
+
+<p>Now we need to build solution as shown below.</p>
+
+<p><a href="/assets/knowledge-base/wix-add-remove-program-details/build-solution.gif"><img src="/assets/knowledge-base/wix-add-remove-program-details/build-solution.gif" alt="build-solution" /></a></p>
+
+<p>After building solution we need to go to folder where MSI is created.</p>
 
 <p>Please see below 👇🏻 image for reference.</p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/create-solution-and-other-details.png"><img src="/assets/knowledge-base/wix-vs-extension/create-solution-and-other-details.png" alt="create-solution-and-other-details" /></a></p>
+<p><a href="/assets/knowledge-base/wix-add-remove-program-details/open-msi-folder.gif"><img src="/assets/knowledge-base/wix-add-remove-program-details/open-msi-folder.gif" alt="open-msi-folder" /></a></p>
 
-<ul>
-  <li>Now select “<strong>Create</strong>” option as shown in below 👇🏻 image.</li>
-</ul>
+<hr />
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/select-create-option.png"><img src="/assets/knowledge-base/wix-vs-extension/select-create-option.png" alt="select-create-option" /></a></p>
+<h2 id="final-result">Final Result</h2>
 
-<ul>
-  <li>This will create <strong>new Solution with Wix V4 project</strong> as shown in below 👇🏻 image.</li>
-</ul>
+<p>Run the MSI to install application.</p>
 
-<p><a href="/assets/knowledge-base/wix-vs-extension/final-result.gif"><img src="/assets/knowledge-base/wix-vs-extension/final-result.gif" alt="final-result" /></a></p>
+<p>Below image show final result after running installation.</p>
+
+<p><a href="/assets/knowledge-base/wix-add-desktop-icon/installed-desktop-icon.png"><img src="/assets/knowledge-base/wix-add-desktop-icon/installed-desktop-icon.png" alt="installed-desktop-icon" /></a></p>
 
 <hr />
 
 <p>That’s it!!!</p>
-
-<p>In next article we will understand <strong>“File Structure of Wix V4 project”</strong>.</p>
 
 <p>Hope this post helps you.</p>
 
@@ -463,14 +495,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/knowledge-base/wix4-introduction/" title="Wix4 Introduction
+      <a class="btn btn-primary text-light" href="/knowledge-base/wix-add-remove-program-details/" title="Wix Add Remove Program Details
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/knowledge-base/wix-understand-project/" title="Understand Wix V4 Project
-">Next ❯</a>
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
     </li>
     
   </ul>
