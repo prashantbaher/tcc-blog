@@ -5,19 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Wix4 Introduction - The CAD Coder</title>
-<meta name="description" content="Hello all,">
+  <!-- begin _includes/seo.html --><title>Wix Add Menu Folder Icon - The CAD Coder</title>
+<meta name="description" content="In this article we create Menu Folder Icon when MSI install application.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Wix4 Introduction">
-<meta property="og:url" content="https://thecadcoder.com/knowledge-base/wix4-introduction/">
+<meta property="og:title" content="Wix Add Menu Folder Icon">
+<meta property="og:url" content="https://thecadcoder.com/knowledge-base/wix-add-menu-folder-icon/">
 
 
-  <meta property="og:description" content="Hello all,">
+  <meta property="og:description" content="In this article we create Menu Folder Icon when MSI install application.">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/knowledge-base/wix4-introduction/">
+<link rel="canonical" href="https://thecadcoder.com/knowledge-base/wix-add-menu-folder-icon/">
 
 
 
@@ -175,7 +175,7 @@
           
             <li><a href="/knowledge-base/introduction/">Introduction</a></li>
           
-            <li><a href="/knowledge-base/wix4-introduction/" class="active">Wix4 Introduction</a></li>
+            <li><a href="/knowledge-base/wix4-introduction/">Wix4 Introduction</a></li>
           
             <li><a href="/knowledge-base/wix-vs-extension/">Wix4 Visual Studio Extension</a></li>
           
@@ -185,7 +185,7 @@
           
             <li><a href="/knowledge-base/wix-add-desktop-icon/">Wix Add Desktop Icon</a></li>
           
-            <li><a href="/knowledge-base/wix-add-menu-folder-icon/">Wix Add Menu Folder Icon</a></li>
+            <li><a href="/knowledge-base/wix-add-menu-folder-icon/" class="active">Wix Add Menu Folder Icon</a></li>
           
         </ul>
         
@@ -205,9 +205,9 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Wix4 Introduction">
+    <meta itemprop="headline" content="Wix Add Menu Folder Icon">
     
-    <meta itemprop="description" content="Hello all,">
+    <meta itemprop="description" content="In this article we create Menu Folder Icon when MSI install application.">
     
     
     <meta itemprop="datePublished" content="2024-03-11T13:23:49-04:00">
@@ -216,7 +216,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Wix4 Introduction
+        <h1 id="page-title" class="page__title" itemprop="headline">Wix Add Menu Folder Icon
 </h1>
         
 
@@ -249,7 +249,7 @@
             <header>
               <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
             </header>
-            <ul class="toc__menu"><li><a href="#why-wix">Why Wix</a></li><li><a href="#what-is-wix">What is Wix</a></li><li><a href="#how-to-install-wix4">How To Install Wix4</a></li></ul>
+            <ul class="toc__menu"><li><a href="#update-examplecomponentswxs">Update [ExampleComponents.wxs]</a><ul><li><a href="#add-menu-folder-icon">Add Menu Folder Icon</a></li></ul></li><li><a href="#build-solution">[Build] Solution</a></li><li><a href="#final-result">Final Result</a></li></ul>
 
             <br/>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -280,114 +280,172 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-          <p>Hello all,</p>
+          <p>In this article we <strong>create Menu Folder Icon</strong> when MSI install application.</p>
 
-<p>As mentioned in previous article, I need to learn some topics for my work.</p>
+<p>Please see below 👇🏻 image of <strong>Menu Folder Icon</strong> for reference.</p>
 
-<p>One of those topics is Wix4 Toolset.</p>
-
-<p>In this article we understand</p>
-
-<ul>
-  <li>Why Wix?</li>
-  <li>What is Wix?</li>
-  <li>How to install Wix4 Toolset?</li>
-</ul>
-
-<h2 id="why-wix">Why Wix</h2>
-
-<p>Wix is used for creating MSI packages.</p>
-
-<p>As you know, MSI packages are reponsible for installing software into our Windows machine.</p>
-
-<p>We already had <strong>Visual Studio Installer package</strong>.</p>
-
-<p>But for some of our requirements I need to learn about it.</p>
-
-<p>If you browse internet for <em>Wix4 tutorials</em>, there are very few.</p>
-
-<p>So for my future purpose, I want to write what I have learnt from various place into my website.</p>
+<p><a href="/assets/knowledge-base/wix-add-menu-folder-icon/final-result.gif"><img src="/assets/knowledge-base/wix-add-menu-folder-icon/final-result.gif" alt="final-result" /></a></p>
 
 <hr />
 
-<h2 id="what-is-wix">What is Wix</h2>
+<h2 id="update-examplecomponentswxs">Update [ExampleComponents.wxs]</h2>
 
-<p>Please see below 👇🏻 information about <strong>Wix4 Toolset</strong>.</p>
+<p>Below image show content of <strong><code class="language-plaintext highlighter-rouge">ExampleComponents.wxs</code></strong></p>
 
-<p><strong>Official Website</strong>: <em><a href="https://wixtoolset.org/" target="_blank">Wix Toolset</a></em></p>
+<p><a href="/assets/knowledge-base/wix-add-menu-folder-icon/ExampleComponents.wxs-file.png"><img src="/assets/knowledge-base/wix-add-menu-folder-icon/ExampleComponents.wxs-file.png" alt="ExampleComponents.wxs-file" /></a></p>
 
-<p><strong>Description</strong>: <em>Wix Toolset is a set of tools, developers use to create Windows Installation Experience</em>.</p>
-
-<p><strong>Official Doc</strong>: <em><a href="https://wixtoolset.org/docs/intro/" target="_blank">Getting Started</a></em></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Wix</span> <span class="na">xmlns=</span><span class="s">"http://wixtoolset.org/schemas/v4/wxs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Fragment&gt;</span>
+    <span class="nt">&lt;ComponentGroup</span> <span class="na">Id=</span><span class="s">"ApplicationComponents"</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Component</span> <span class="na">Guid=</span><span class="s">"{68655BE8-9EF3-432E-B13B-9F7F08555AAE}"</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">"ApplicationFile"</span> <span class="na">Source=</span><span class="s">"WPF_Application.exe"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">"DesktopShortCut"</span>
+                            <span class="na">Directory=</span><span class="s">"DesktopFolder"</span>
+                            <span class="na">Advertise=</span><span class="s">"yes"</span> <span class="na">Icon=</span><span class="s">"icon.exe"</span>
+                            <span class="na">Name=</span><span class="s">"!(bind.Property.ProductName)"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/File&gt;</span>
+      <span class="nt">&lt;/Component&gt;</span>
+    <span class="nt">&lt;/ComponentGroup&gt;</span>
+  <span class="nt">&lt;/Fragment&gt;</span>
+<span class="nt">&lt;/Wix&gt;</span>
+</code></pre></div></div>
 
 <hr />
 
-<h2 id="how-to-install-wix4">How To Install Wix4</h2>
+<h3 id="add-menu-folder-icon">Add Menu Folder Icon</h3>
 
-<p><strong>IDE</strong>: <em><a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">Visual Studio 2022 Community</a></em></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Wix</span> <span class="na">xmlns=</span><span class="s">"http://wixtoolset.org/schemas/v4/wxs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Fragment&gt;</span>
+    <span class="nt">&lt;ComponentGroup</span> <span class="na">Id=</span><span class="s">"ApplicationComponents"</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Component</span> <span class="na">Directory=</span><span class="s">"INSTALLFOLDER"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!--Add output file--&gt;</span>
+        <span class="nt">&lt;File</span> <span class="na">Id=</span><span class="s">"ApplicationFile"</span> <span class="na">Source=</span><span class="s">"WPF_Application.exe"</span><span class="nt">&gt;</span>
+          <span class="c">&lt;!--Add Desktop Shortcut--&gt;</span>
+          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">"DesktopShortCut"</span>
+                    <span class="na">Directory=</span><span class="s">"DesktopFolder"</span>
+                    <span class="na">Advertise=</span><span class="s">"yes"</span> <span class="na">Icon=</span><span class="s">"icon.exe"</span>
+                    <span class="na">Name=</span><span class="s">"!(bind.Property.ProductName)"</span> <span class="nt">/&gt;</span>
+          <span class="c">&lt;!--Add Menu Folder Shortcut--&gt;</span>
+          <span class="nt">&lt;Shortcut</span> <span class="na">Id=</span><span class="s">"ProgramMenuIcon"</span> <span class="na">Advertise=</span><span class="s">"yes"</span>
+              <span class="na">Directory=</span><span class="s">"APPFOLDER"</span> <span class="na">Icon=</span><span class="s">"icon.exe"</span>
+              <span class="na">Name=</span><span class="s">"!(bind.Property.ProductName)"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/Shortcut&gt;</span>
+        <span class="nt">&lt;/File&gt;</span>
+      <span class="nt">&lt;/Component&gt;</span>
+    <span class="nt">&lt;/ComponentGroup&gt;</span>
+  <span class="nt">&lt;/Fragment&gt;</span>
+<span class="nt">&lt;/Wix&gt;</span>
+</code></pre></div></div>
 
-<p>Click above link to download 🚀 <strong><a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">Visual Studio 2022 Community</a></strong></p>
+<p>In above code sample, we “<strong>Add Menu Folder Shortcut</strong>”.</p>
 
-<ul>
-  <li>
-    <p>Open <strong>Visual Studio 2022 Community</strong></p>
-  </li>
-  <li>
-    <p>In “<strong>Home</strong>” screen of Visual Studio, select “<strong>Continue without code</strong>” option as shown in below 👇🏻 image.</p>
-  </li>
-</ul>
+<p>For this we use <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/conitnue-without-code.png"><img src="/assets/knowledge-base/wix4-introduction/conitnue-without-code.png" alt="conitnue-without-code" /></a></p>
+<p>Please see below 👇🏻 code for reference.</p>
 
-<ul>
-  <li>This open Visual Studio <strong>without any project/solution</strong> as shown in below 👇🏻 image.</li>
-</ul>
+<p><a href="/assets/knowledge-base/wix-add-menu-folder-icon/add-program-menu-shortcut-tag.png"><img src="/assets/knowledge-base/wix-add-menu-folder-icon/add-program-menu-shortcut-tag.png" alt="add-program-menu-shortcut-tag" /></a></p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/visual-studio-without-solution.png"><img src="/assets/knowledge-base/wix4-introduction/visual-studio-without-solution.png" alt="visual-studio-without-solution" /></a></p>
+<p>After adding <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag, we define some properties of <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<ul>
-  <li>Select “<strong>View</strong>” ➡️ “<strong>Terminal</strong>” for opening <em>Terminal</em> as shown in below 👇🏻 image.</li>
-</ul>
+<p>Please see below list of properties for <strong><code class="language-plaintext highlighter-rouge">&lt;Shortcut&gt;</code></strong> tag.</p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/open-terminal.png"><img src="/assets/knowledge-base/wix4-introduction/open-terminal.png" alt="open-terminal" /></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Property Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Id</code></strong></td>
+      <td><em>Identifier for this tag, by which we can refer to this tag.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Directory</code></strong></td>
+      <td><em>Special Id, which define Directory where we want to show our shortcut.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Advertise</code></strong></td>
+      <td><em>Boolean variable which decide we want to advertise this shortcut or not.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Icon</code></strong></td>
+      <td><em>Id of Icon image. Please note that this is Id “NOT source of icon image”.</em></td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Name</code></strong></td>
+      <td><em>Name of Icon which we want to show with Icon image.</em></td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>This will open “<strong>Terminal</strong>” window as shown in below 👇🏻 image.</li>
-</ul>
+<p>Values we used in our code.</p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/terminal-window.png"><img src="/assets/knowledge-base/wix4-introduction/terminal-window.png" alt="terminal-window" /></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Value Used</th>
+      <th>Value Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Id</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">ProgramMenuIcon</code></em></td>
+      <td>Id which I give.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Directory</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">APPFOLDER</code></em></td>
+      <td>Special Id for Application Folder. Since we want to create Program Menu Folder Shortcut.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Advertise</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">yes</code></em></td>
+      <td>Always ‘Yes’ since this is the easy way.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Icon</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">icon.exe</code></em></td>
+      <td>Reference to Id of image in <strong><code class="language-plaintext highlighter-rouge">Package.wxs</code></strong> file.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="language-plaintext highlighter-rouge">Name</code></strong></td>
+      <td><em><code class="language-plaintext highlighter-rouge">!(bind.Property.ProductName)</code></em></td>
+      <td>Bind of Shortcut name to Product Name.s</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>Run below command to install “<strong>Wix.exe</strong>” .Net tool.</li>
-</ul>
+<hr />
 
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet</span><span class="w"> </span><span class="nx">tool</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">--global</span><span class="w"> </span><span class="nx">wix</span><span class="w">
-</span></code></pre></div></div>
+<h2 id="build-solution">[Build] Solution</h2>
 
-<ul>
-  <li>Please see below image for installing “<strong>Wix.exe</strong>”.</li>
-</ul>
+<p>Now we need to build solution as shown below.</p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/install-wix-toolset.gif"><img src="/assets/knowledge-base/wix4-introduction/install-wix-toolset.gif" alt="install-wix-toolset" /></a></p>
+<p><a href="/assets/knowledge-base/wix-add-remove-program-details/build-solution.gif"><img src="/assets/knowledge-base/wix-add-remove-program-details/build-solution.gif" alt="build-solution" /></a></p>
 
-<ul>
-  <li>For checking if Wix is install or not, check Wix version by run following command.</li>
-</ul>
+<p>After building solution we need to go to folder where MSI is created.</p>
 
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wix</span><span class="w"> </span><span class="nt">--version</span><span class="w">
-</span></code></pre></div></div>
+<p>Please see below 👇🏻 image for reference.</p>
 
-<ul>
-  <li>Please see below image for checking version of “<strong>Wix.exe</strong>”.</li>
-</ul>
+<p><a href="/assets/knowledge-base/wix-add-remove-program-details/open-msi-folder.gif"><img src="/assets/knowledge-base/wix-add-remove-program-details/open-msi-folder.gif" alt="open-msi-folder" /></a></p>
 
-<p><a href="/assets/knowledge-base/wix4-introduction/check-wix-version.gif"><img src="/assets/knowledge-base/wix4-introduction/check-wix-version.gif" alt="check-wix-version" /></a></p>
+<hr />
+
+<h2 id="final-result">Final Result</h2>
+
+<p><strong>Run the MSI</strong> to install application.</p>
+
+<p>Below 👇🏻 image show final result after running installation.</p>
+
+<p><a href="/assets/knowledge-base/wix-add-menu-folder-icon/final-result.gif"><img src="/assets/knowledge-base/wix-add-menu-folder-icon/final-result.gif" alt="final-result" /></a></p>
 
 <hr />
 
 <p>That’s it!!!</p>
-
-<p>In next article we will install <strong>“Free Heatwave Wix4 Extension”</strong>.</p>
 
 <p>Hope this post helps you.</p>
 
@@ -432,14 +490,13 @@
   <ul class="pagination justify-content-center">
     
     <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/knowledge-base/introduction/" title="Knowledge Base Introduction
+      <a class="btn btn-primary text-light" href="/knowledge-base/wix-add-desktop-icon/" title="Wix Add Desktop Icon
 ">❮ Previous</a>
     </li>
     
     
     <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/knowledge-base/wix-vs-extension/" title="Wix4 Visual Studio Extension
-">Next ❯</a>
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
     </li>
     
   </ul>
