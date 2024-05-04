@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Insert Solidworks Sketch - The CAD Coder</title>
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Edit Solidworks Sketch - The CAD Coder</title>
 <meta name="description" content="Objective">
 
 
@@ -13,8 +13,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
-<meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/insert-sketch/">
+<meta property="og:title" content="SOLIDWORKS C# API - Edit Solidworks Sketch">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/edit-solidworks-sketch/">
 
 
   <meta property="og:description" content="Objective">
@@ -32,7 +32,7 @@
 
 
 
-<link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/insert-sketch/">
+<link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/edit-solidworks-sketch/">
 
 
 
@@ -106,7 +106,7 @@
             
             
             <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
             </li>
             
             
@@ -167,21 +167,23 @@
     
       <li>
         
-          <span class="nav__sub-title">Getting Started</span>
+          <span class="nav__sub-title">General - Solidworks Functions</span>
         
 
         
         <ul>
           
-            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
           
-            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
           
-            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
           
-            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
+            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
           
-            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
+            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
+          
+            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
           
         </ul>
         
@@ -189,15 +191,15 @@
     
       <li>
         
-          <span class="nav__sub-title">Sketch Segment</span>
+          <span class="nav__sub-title">Sketch - Lines</span>
         
 
         
         <ul>
           
-            <li><a href="/solidworks-csharp/insert-sketch/" class="active">Insert Solidworks Sketch</a></li>
+            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
           
-            <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
+            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
           
         </ul>
         
@@ -205,13 +207,579 @@
     
       <li>
         
-          <span class="nav__sub-title">Others</span>
+          <span class="nav__sub-title">Sketch - Rectangles</span>
         
 
         
         <ul>
           
-            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
+          
+            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Circles</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
+          
+            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
+          
+            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Arcs</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
+          
+            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Slots</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-straight-slot/">Create a Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
+          
+            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Point and Spline</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
+          
+            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
+          
+            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Trim and Extend</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
+          
+            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Move and Rotate</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
+          
+            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Relations</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
+          
+            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Dimensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Extrudes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Cuts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Holes and Threads</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
+          
+            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Mirror & Patterns</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
+          
+            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Features - Transformation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Reference Geometry</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - General</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Standard Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Advanced Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Editing Mates</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Components</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Assembly - Misc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
+          
+            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Insert Views</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Drawing - Break Views</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
+          
+            <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch - Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
+          
+            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
           
         </ul>
         
@@ -231,7 +799,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
+    <meta itemprop="headline" content="SOLIDWORKS C# API - Edit Solidworks Sketch">
     
     <meta itemprop="description" content="Objective">
     
@@ -242,7 +810,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Insert Solidworks Sketch
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Edit Solidworks Sketch
 </h1>
         
 
@@ -312,7 +880,7 @@
 
 <ul>
   <li>
-    <p><strong><em>Insert Sketch into Solidworks Part Document using Solidworks C# API</em></strong></p>
+    <p><strong><em>Invoke Sketch Editing of selected Sketch using Solidworks C# API</em></strong></p>
   </li>
   <li>
     <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></em></strong>.</p>
@@ -876,23 +1444,6 @@
       </footer>
 
       
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/browse-and-open-solidworks-file/" title="SOLIDWORKS C# API - Browse/Open SOLIDWORKS Document
-">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/edit-sketch/" title="SOLIDWORKS C# API - Edit Solidworks Sketch
-">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
-
     </div>
   </article>
 
