@@ -6,19 +6,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- begin _includes/seo.html -->
-  <title>Solidworks C# API - The CAD Coder</title>
-  <meta name="description" content="Hello,">
+  <title>SOLIDWORKS C# API - Edit Solidworks Feature Sketch - The CAD Coder</title>
+  <meta name="description" content="Objective">
 
 
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="Solidworks C# API">
-  <meta property="og:url" content="https://thecadcoder.com/Solidworks-csharp-api-tutorials/">
+  <meta property="og:title" content="SOLIDWORKS C# API - Edit Solidworks Feature Sketch">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/edit-solidworks-feature-sketch/">
 
 
-  <meta property="og:description" content="Hello,">
+  <meta property="og:description" content="Objective">
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/Solidworks-csharp-api-tutorials/">
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/edit-solidworks-feature-sketch/">
 
 
 
@@ -173,7 +173,7 @@
 
                 <ul>
 
-                  <li><a href="/Solidworks-csharp-api-tutorials/" class="active">Introduction</a></li>
+                  <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
 
                   <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
 
@@ -200,8 +200,8 @@
 
                   <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
 
-                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a>
-                  </li>
+                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/" class="active">Edit Solidworks
+                      Feature Sketch</a></li>
 
                 </ul>
 
@@ -235,9 +235,9 @@
 
             <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-              <meta itemprop="headline" content="Solidworks C# API">
+              <meta itemprop="headline" content="SOLIDWORKS C# API - Edit Solidworks Feature Sketch">
 
-              <meta itemprop="description" content="Hello,">
+              <meta itemprop="description" content="Objective">
 
 
               <meta itemprop="datePublished" content="2024-05-17T10:39:30-04:00">
@@ -246,7 +246,8 @@
               <div class="page__inner-wrap">
 
                 <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">Solidworks C# API
+                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Edit Solidworks
+                    Feature Sketch
                   </h1>
 
 
@@ -262,7 +263,7 @@
                     <span class="page__meta-readtime">
                       <i class="far fa-clock" aria-hidden="true"></i>
 
-                      less than 1 minute read
+                      1 minute read
 
                     </span>
 
@@ -274,6 +275,34 @@
 
                 <section class="page__content" itemprop="text">
 
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#demo-video">Demo Video</a>
+                          <ul>
+                            <li><a href="#update-method---selectsketch">Update Method - SelectSketch</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#final-result">FINAL RESULT</a></li>
+                      </ul>
+
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
                   <div>
                     <script async
                       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -284,43 +313,148 @@
                     <script>
                       (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                    <p>Hello,</p>
+                    <h2 id="objective">Objective</h2>
 
-                    <p>In this section, I will write articles for <strong>Solidworks C# API</strong> applications.</p>
-
-                    <p>I am not creating any <strong>Add-in</strong> in <strong>SOLIDWORKS</strong> instead I will
-                      create <strong>WPF Application</strong> using 🚀 <strong><a
-                          href="https://prismlibrary.com/index.html">PRISM</a> + MVVM Pattern</strong>.</p>
-
-                    <p>This seems a lot, but this is what is using in Software Industry.</p>
-
-                    <p>For whom this section might be interested?</p>
+                    <p>I want to:</p>
 
                     <ul>
                       <li>
-                        <p><em>Those who want to learn <strong>Solidworks C# API</strong></em></p>
+                        <p><strong><em>Edit Feature Sketch into Solidworks Part Document using Solidworks C#
+                              API</em></strong></p>
                       </li>
                       <li>
-                        <p><em>Student doing Masters in CAD/CAM</em></p>
+                        <p><strong><em>We will use same code from previous article 🚀 <a
+                                href="/solidworks-csharp/edit-sketch/" target="_blank">Edit Solidworks
+                                Sketch</a></em></strong>.</p>
                       </li>
                       <li>
-                        <p><em>Those who want to learn <strong>WPF Application</strong> with <strong>Solidworks</strong>
-                            using <strong>Prism Library</strong>.</em></p>
-                      </li>
-                      <li>
-                        <p><em>Programmers like myself who want to apply what is learnt!</em></p>
+                        <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
                       </li>
                     </ul>
 
-                    <p>That’s it!!!</p>
+                    <hr />
 
-                    <p>Hope this post helps you.</p>
+                    <h2 id="demo-video">Demo Video</h2>
+
+                    <p>Please see below video on how to “<strong>Edit Feature Sketch into Solidworks Part
+                        Document</strong>” using <strong>Solidworks C# API</strong> from <strong>WPF
+                        Application</strong>.</p>
+
+                    <iframe src="https://www.youtube.com/embed/UJVSWyHRLwA" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
+
+                    <p class="notice--info">Please note that there are <strong>no explanation</strong> in the
+                      video.<br />
+                      <strong>Explanation</strong> of each step and why we write code this way is given in this post.
+                    </p>
+
+                    <hr />
+
+                    <h3 id="update-method---selectsketch">Update Method - SelectSketch</h3>
+
+                    <p>In this section, we update <em>SelectSketch method</em> for <strong>selecting Feature
+                        Sketch</strong>.</p>
+
+                    <p>Please see below 👇🏻 image for sketch we want to edit.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/feature-sketch-we-want-to-edit.png"><img
+                          src="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/feature-sketch-we-want-to-edit.png"
+                          alt="feature-sketch-we-want-to-edit" /></a></p>
+
+                    <p>For editing we need to update below 👇🏻 line.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"Circle"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>In above code, we need to replace “<strong><code
+                          class="language-plaintext highlighter-rouge">Circle</code></strong>” with “<strong><code
+                          class="language-plaintext highlighter-rouge">Sketch2</code></strong>” value.</p>
+
+                    <p>Please see below 👇🏻 image for value we required.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/value-to-select.png"><img
+                          src="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/value-to-select.png"
+                          alt="value-to-select" /></a></p>
+
+                    <p>After updating <em>SelectSketch method</em> will look like below.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="nf">SelectSketch</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">swDoc</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+    <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"Sketch2"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">isSelect</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <hr />
+
+                    <h2 id="final-result">FINAL RESULT</h2>
+
+                    <p>For Demo, we already had feature whose sketch we want to edit with our program.</p>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/feature-sketch-we-want-to-edit.png"><img
+                          src="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/feature-sketch-we-want-to-edit.png"
+                          alt="feature-sketch-we-want-to-edit" /></a></p>
+
+                    <p>Now, we have done everything needed to <strong>Edit Solidwork Feature Sketch</strong> into
+                      <em>Solidworks Document</em> through our application.</p>
+
+                    <p>Please see below image for final result of our work.</p>
+
+                    <ul>
+                      <li>Edit Sketch with <strong><code
+                            class="language-plaintext highlighter-rouge">ExecuteEditSketchMethod()</code></strong>
+                        method</li>
+                    </ul>
+
+                    <p><a href="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/result-1.gif"><img
+                          src="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/result-1.gif"
+                          alt="result-1" /></a></p>
+
+                    <ul>
+                      <li>Edit Sketch with <strong><code
+                            class="language-plaintext highlighter-rouge">ExecuteEditSketchOrSingleSketchFeatureMethod()</code></strong>
+                        method</li>
+                    </ul>
+
+                    <p><a href="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/result-2.gif"><img
+                          src="/assets/solidworks-csharp-images/edit-solidworks-feature-sketch/result-2.gif"
+                          alt="result-2" /></a></p>
+
+                    <hr />
+
+                    <p><strong>This is it !!!</strong></p>
+
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
+
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
+
+                    <p>Hope this post helps you to <strong>Edit Solidworks Sketch</strong> from WPF PRISM Application.
+                    </p>
 
                     <p><em>If you like the post then please share it with your friends also.</em></p>
 
                     <p><em>Do let me know by you like this post or not!</em></p>
 
                     <p><em>Till then, Happy learning!!!</em></p>
+
 
                   </div>
 
@@ -354,12 +488,13 @@
                   <ul class="pagination justify-content-center">
 
                     <li class="page-item mr-5">
-                      <a class="btn btn-primary disabled text-light" href="#">❮ Previous</a>
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/edit-sketch/" title="SOLIDWORKS C# API - Edit Solidworks Sketch
+">❮ Previous</a>
                     </li>
 
 
                     <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-csharp/Prerequisite/" title="SOLIDWORKS C# API - Prerequisite
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/update-dimension-state/" title="SOLIDWORKS C# API - Update Dimension State
 ">Next ❯</a>
                     </li>
 
