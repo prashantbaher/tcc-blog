@@ -5,16 +5,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Add Syncfusion Busy Indicator - The CAD Coder</title>
-<meta name="description" content="Objective">
+  <!-- begin _includes/seo.html -->
+  <title>Add Syncfusion Busy Indicator - The CAD Coder</title>
+  <meta name="description" content="Objective">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="Add Syncfusion Busy Indicator">
-<meta property="og:url" content="http://localhost:4000/wpf-tutorials/add-syncfusion-busy-indicator/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="Add Syncfusion Busy Indicator">
+  <meta property="og:url" content="https://thecadcoder.com/wpf-tutorials/add-syncfusion-busy-indicator/">
 
 
   <meta property="og:description" content="Objective">
@@ -32,18 +33,18 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/wpf-tutorials/add-syncfusion-busy-indicator/">
+  <link rel="canonical" href="https://thecadcoder.com/wpf-tutorials/add-syncfusion-busy-indicator/">
 
 
 
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,402 +55,470 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a></li>
-          
-            <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
-          
-            <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a></li>
-          
-            <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/" class="active">Add Syncfusion Busy Indicator</a></li>
-          
-            <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Solidworks C# API UI</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
-          
-            <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
-          
-            <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Solidworks Sketch UI</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
-          
-            <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
-          
-            <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
 
-    
-  
-  </div>
 
-</div>
+
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community
+                      Version</a></li>
+
+                  <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
+
+                  <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a>
+                  </li>
+
+                  <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/" class="active">Add Syncfusion Busy
+                      Indicator</a></li>
+
+                  <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Solidworks C# API UI</span>
+
+
+
+                <ul>
+
+                  <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
+
+                  <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
+
+                  <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Solidworks Sketch UI</span>
+
+
+
+                <ul>
+
+                  <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
+
+                  <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
+
+                  <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Add Syncfusion Busy Indicator">
-    
-    <meta itemprop="description" content="Objective">
-    
-    
-    <meta itemprop="datePublished" content="2024-06-11T23:29:50-04:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Add Syncfusion Busy Indicator
-</h1>
-        
+              <meta itemprop="headline" content="Add Syncfusion Busy Indicator">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description" content="Objective">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2024-06-11T23:29:50-04:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#add-syncfusion-busy-indicator">Add Syncfusion Busy Indicator</a></li><li><a href="#add-binding-properties-and-command">Add Binding Properties And Command</a></li><li><a href="#click-command-statements">Click Command Statements</a></li><li><a href="#final-result">Final Result</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <h2 id="objective">Objective</h2>
+              <div class="page__inner-wrap">
 
-<p>I want to:</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">Add Syncfusion Busy Indicator
+                  </h1>
 
-<ol>
-  <li>
-    <p><strong><em>Add Syncfusion Busy Indicator</em></strong></p>
-  </li>
-  <li>
-    <p><strong><em>Use Syncfusion Busy Indicator, for Long operation</em></strong></p>
-  </li>
-</ol>
 
-<p>We will continue from previous article 🚀 <strong><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a></strong>.</p>
+                  <p class="page__meta">
 
-<p>Add new controls to previous code.</p>
 
-<h2 id="demo-video">Demo Video</h2>
 
-<p>Below 🎬 video shows how to <strong>Add Syncfusion Busy Indicator</strong> in <em>Visual Studio 2022</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/sXdzkT2aNmc" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
 
-<h2 id="add-syncfusion-busy-indicator">Add Syncfusion Busy Indicator</h2>
 
-<p>In this section we add <strong>Busy Indicator</strong> Window.</p>
-<ul>
-  <li>Build the project as shown in below 👇🏻 image.</li>
-</ul>
 
-<p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png"><img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png" alt="build-solution" /></a></p>
 
-<ul>
-  <li>Open “<strong>NuGet Package</strong>” window as shown in below 👇🏻 image.</li>
-</ul>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png"><img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png" alt="select-manage-nuget-package" /></a></p>
+                      3 minute read
 
-<ul>
-  <li>“<strong>NuGet Package</strong>” window will appear as shown in below 👇🏻 image.</li>
-</ul>
+                    </span>
 
-<p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png"><img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png" alt="nuget-window" /></a></p>
+                  </p>
 
-<ul>
-  <li>In “<strong>NuGet Package</strong>” window, go to “<strong>Browse</strong>” tab and search for <strong><code class="language-plaintext highlighter-rouge">Syncfusion.SfBusyIndicator.WPF</code></strong> then install it as shown in below 👇🏻 image.</li>
-</ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/install-syncfusion-SfBusyIndicator-package.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/install-syncfusion-SfBusyIndicator-package.gif" alt="install-syncfusion-SfBusyIndicator-package" /></a></p>
+                </header>
 
-<ul>
-  <li>Now open “<strong><code class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file as shown in below 👇🏻 image.</li>
-</ul>
 
-<p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif"><img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif" alt="open-mainwindow-file" /></a></p>
+                <section class="page__content" itemprop="text">
 
-<ul>
-  <li>Change “<strong><code class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file as shown in below 👇🏻 image.</li>
-</ul>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#demo-video">Demo Video</a></li>
+                        <li><a href="#add-syncfusion-busy-indicator">Add Syncfusion Busy Indicator</a></li>
+                        <li><a href="#add-binding-properties-and-command">Add Binding Properties And Command</a></li>
+                        <li><a href="#click-command-statements">Click Command Statements</a></li>
+                        <li><a href="#final-result">Final Result</a></li>
+                      </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-busy-indicator.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-busy-indicator.gif" alt="add-busy-indicator" /></a></p>
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
 
-<p>Please see below 👇🏻 code.</p>
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <h2 id="objective">Objective</h2>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy,Mode=TwoWay}"</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span><span class="nt">&gt;</span>
+                    <p>I want to:</p>
+
+                    <ol>
+                      <li>
+                        <p><strong><em>Add Syncfusion Busy Indicator</em></strong></p>
+                      </li>
+                      <li>
+                        <p><strong><em>Use Syncfusion Busy Indicator, for Long operation</em></strong></p>
+                      </li>
+                    </ol>
+
+                    <p>We will continue from previous article 🚀 <strong><a
+                          href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless
+                          Window</a></strong>.</p>
+
+                    <p>Add new controls to previous code.</p>
+
+                    <h2 id="demo-video">Demo Video</h2>
+
+                    <p>Below 🎬 video shows how to <strong>Add Syncfusion Busy Indicator</strong> in <em>Visual Studio
+                        2022</em>.</p>
+
+                    <iframe src="https://www.youtube.com/embed/sXdzkT2aNmc" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
+
+                    <h2 id="add-syncfusion-busy-indicator">Add Syncfusion Busy Indicator</h2>
+
+                    <p>In this section we add <strong>Busy Indicator</strong> Window.</p>
+                    <ul>
+                      <li>Build the project as shown in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png"><img
+                          src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png"
+                          alt="build-solution" /></a></p>
+
+                    <ul>
+                      <li>Open “<strong>NuGet Package</strong>” window as shown in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a
+                        href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png"><img
+                          src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png"
+                          alt="select-manage-nuget-package" /></a></p>
+
+                    <ul>
+                      <li>“<strong>NuGet Package</strong>” window will appear as shown in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png"><img
+                          src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png"
+                          alt="nuget-window" /></a></p>
+
+                    <ul>
+                      <li>In “<strong>NuGet Package</strong>” window, go to “<strong>Browse</strong>” tab and search for
+                        <strong><code
+                            class="language-plaintext highlighter-rouge">Syncfusion.SfBusyIndicator.WPF</code></strong>
+                        then install it as shown in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a
+                        href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/install-syncfusion-SfBusyIndicator-package.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/install-syncfusion-SfBusyIndicator-package.gif"
+                          alt="install-syncfusion-SfBusyIndicator-package" /></a></p>
+
+                    <ul>
+                      <li>Now open “<strong><code
+                            class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file as shown
+                        in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a href="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif"><img
+                          src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif"
+                          alt="open-mainwindow-file" /></a></p>
+
+                    <ul>
+                      <li>Change “<strong><code
+                            class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file as shown
+                        in below 👇🏻 image.</li>
+                    </ul>
+
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-busy-indicator.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-busy-indicator.gif"
+                          alt="add-busy-indicator" /></a></p>
+
+                    <p>Please see below 👇🏻 code.</p>
+
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy,Mode=TwoWay}"</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ContentControl</span> <span class="na">prism:RegionManager.RegionName=</span><span class="s">"ContentRegion"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>Add <strong><code class="language-plaintext highlighter-rouge">Button</code></strong> element with binding command and properties as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Add <strong><code class="language-plaintext highlighter-rouge">Button</code></strong> element
+                        with binding command and properties as shown in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-button.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-button.gif" alt="add-button" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-button.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-button.gif"
+                          alt="add-button" /></a></p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">"{Binding ButtonContent}"</span>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">"{Binding ButtonContent}"</span>
         <span class="na">Height=</span><span class="s">"50"</span> <span class="na">Width=</span><span class="s">"300"</span>
         <span class="na">Command=</span><span class="s">"{Binding ClickCommand}"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="add-binding-properties-and-command">Add Binding Properties And Command</h2>
+                    <h2 id="add-binding-properties-and-command">Add Binding Properties And Command</h2>
 
-<ul>
-  <li>Open “<strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel.cs</code></strong>” file as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Open “<strong><code
+                            class="language-plaintext highlighter-rouge">MainWindowViewModel.cs</code></strong>” file as
+                        shown in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/open-MainWindowViewModel.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/open-MainWindowViewModel.gif" alt="open-MainWindowViewModel" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/open-MainWindowViewModel.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/open-MainWindowViewModel.gif"
+                          alt="open-MainWindowViewModel" /></a></p>
 
-<ul>
-  <li>Add <strong><code class="language-plaintext highlighter-rouge">IsBusy</code></strong> Property as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Add <strong><code class="language-plaintext highlighter-rouge">IsBusy</code></strong> Property
+                        as shown in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-isbusy-property.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-isbusy-property.gif" alt="add-isbusy-property" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-isbusy-property.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-isbusy-property.gif"
+                          alt="add-isbusy-property" /></a></p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="n">_isBusy</span><span class="p">;</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="n">_isBusy</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsBusy</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_isBusy</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_isBusy</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>Add <strong><code class="language-plaintext highlighter-rouge">ButtonContent</code></strong> Property as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Add <strong><code class="language-plaintext highlighter-rouge">ButtonContent</code></strong>
+                        Property as shown in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-buttonContent-property.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-buttonContent-property.gif" alt="add-buttonContent-property" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-buttonContent-property.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-buttonContent-property.gif"
+                          alt="add-buttonContent-property" /></a></p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_buttonContent</span><span class="p">;</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_buttonContent</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">string</span> <span class="n">ButtonContent</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_buttonContent</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_buttonContent</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>Set value of <strong><code class="language-plaintext highlighter-rouge">_buttonContent</code></strong> field as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Set value of <strong><code
+                            class="language-plaintext highlighter-rouge">_buttonContent</code></strong> field as shown
+                        in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/set-buttonContent-value.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/set-buttonContent-value.gif" alt="set-buttonContent-value" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/set-buttonContent-value.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/set-buttonContent-value.gif"
+                          alt="set-buttonContent-value" /></a></p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_buttonContent</span> <span class="p">=</span> <span class="s">"Click me for long task!"</span><span class="p">;</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_buttonContent</span> <span class="p">=</span> <span class="s">"Click me for long task!"</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">string</span> <span class="n">ButtonContent</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_buttonContent</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_buttonContent</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>Add <strong><code class="language-plaintext highlighter-rouge">ClickCommand</code></strong> <em>Prism Command</em> as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Add <strong><code class="language-plaintext highlighter-rouge">ClickCommand</code></strong>
+                        <em>Prism Command</em> as shown in below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-click-command.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-click-command.gif" alt="add-click-command" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-click-command.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-click-command.gif"
+                          alt="add-click-command" /></a></p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_clickCommand</span><span class="p">;</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_clickCommand</span><span class="p">;</span>
 <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">ClickCommand</span> <span class="p">=&gt;</span>
     <span class="n">_clickCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_clickCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteClickCommand</span><span class="p">));</span>
 
@@ -457,50 +526,65 @@
 <span class="p">{</span>
 
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="click-command-statements">Click Command Statements</h2>
+                    <h2 id="click-command-statements">Click Command Statements</h2>
 
-<p>Now we add following statements to click command.</p>
+                    <p>Now we add following statements to click command.</p>
 
-<ul>
-  <li>
-    <p>First we set the value of <strong><code class="language-plaintext highlighter-rouge">IsBusy</code></strong> property to <strong><code class="language-plaintext highlighter-rouge">true</code></strong>.</p>
-  </li>
-  <li>
-    <p>This means we want to show <em>Busy Indicator</em>.</p>
-  </li>
-  <li>
-    <p>Please add below code as shown below 👇🏻.</p>
-  </li>
-</ul>
+                    <ul>
+                      <li>
+                        <p>First we set the value of <strong><code
+                              class="language-plaintext highlighter-rouge">IsBusy</code></strong> property to
+                          <strong><code class="language-plaintext highlighter-rouge">true</code></strong>.</p>
+                      </li>
+                      <li>
+                        <p>This means we want to show <em>Busy Indicator</em>.</p>
+                      </li>
+                      <li>
+                        <p>Please add below code as shown below 👇🏻.</p>
+                      </li>
+                    </ul>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Show busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>
-    <p>Next we run a new <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong>.</p>
-  </li>
-  <li>
-    <p>This <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong>, imitate a long task.</p>
-  </li>
-  <li>
-    <p>Add new <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong> as shown in below 👇🏻 image.</p>
-  </li>
-</ul>
+                    <ul>
+                      <li>
+                        <p>Next we run a new <strong><code
+                              class="language-plaintext highlighter-rouge">Thread</code></strong>.</p>
+                      </li>
+                      <li>
+                        <p>This <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong>,
+                          imitate a long task.</p>
+                      </li>
+                      <li>
+                        <p>Add new <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong> as
+                          shown in below 👇🏻 image.</p>
+                      </li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-new-thread.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-new-thread.gif" alt="add-new-thread" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-new-thread.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-new-thread.gif"
+                          alt="add-new-thread" /></a></p>
 
-<ul>
-  <li>Please add below code as shown below 👇🏻.</li>
-</ul>
+                    <ul>
+                      <li>Please add below code as shown below 👇🏻.</li>
+                    </ul>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Show busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
@@ -510,32 +594,47 @@
 
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>
-    <p>In above code, we use <strong><code class="language-plaintext highlighter-rouge">async</code></strong> and <strong><code class="language-plaintext highlighter-rouge">await</code></strong> keywords.</p>
-  </li>
-  <li>
-    <p>These keywords, help us to do <strong>asynchronous programming</strong>.</p>
-  </li>
-  <li>
-    <p>This <strong><code class="language-plaintext highlighter-rouge">Task.Run()</code></strong> method, run a new <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong> and free <strong>UI</strong> thread.</p>
-  </li>
-  <li>
-    <p>This <strong><code class="language-plaintext highlighter-rouge">await</code></strong> keyword, watch if this <strong><code class="language-plaintext highlighter-rouge">Task</code></strong> is completed or not.</p>
-  </li>
-  <li>
-    <p>Now we add statement to make new Thread sleep for 5 sec.</p>
-  </li>
-  <li>
-    <p>To sleep new <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong>, add code as shown in below 👇🏻 image.</p>
-  </li>
-</ul>
+                    <ul>
+                      <li>
+                        <p>In above code, we use <strong><code
+                              class="language-plaintext highlighter-rouge">async</code></strong> and <strong><code
+                              class="language-plaintext highlighter-rouge">await</code></strong> keywords.</p>
+                      </li>
+                      <li>
+                        <p>These keywords, help us to do <strong>asynchronous programming</strong>.</p>
+                      </li>
+                      <li>
+                        <p>This <strong><code class="language-plaintext highlighter-rouge">Task.Run()</code></strong>
+                          method, run a new <strong><code
+                              class="language-plaintext highlighter-rouge">Thread</code></strong> and free
+                          <strong>UI</strong> thread.</p>
+                      </li>
+                      <li>
+                        <p>This <strong><code class="language-plaintext highlighter-rouge">await</code></strong>
+                          keyword, watch if this <strong><code
+                              class="language-plaintext highlighter-rouge">Task</code></strong> is completed or not.</p>
+                      </li>
+                      <li>
+                        <p>Now we add statement to make new Thread sleep for 5 sec.</p>
+                      </li>
+                      <li>
+                        <p>To sleep new <strong><code
+                              class="language-plaintext highlighter-rouge">Thread</code></strong>, add code as shown in
+                          below 👇🏻 image.</p>
+                      </li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-thread-sleeping.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-thread-sleeping.gif" alt="add-thread-sleeping" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-thread-sleeping.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/add-thread-sleeping.gif"
+                          alt="add-thread-sleeping" /></a></p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Show busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
@@ -546,24 +645,33 @@
         <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<ul>
-  <li>Lastly, we set the value of <strong><code class="language-plaintext highlighter-rouge">IsBusy</code></strong> property to <strong><code class="language-plaintext highlighter-rouge">false</code></strong> as shown in below 👇🏻 image.</li>
-</ul>
+                    <ul>
+                      <li>Lastly, we set the value of <strong><code
+                            class="language-plaintext highlighter-rouge">IsBusy</code></strong> property to
+                        <strong><code class="language-plaintext highlighter-rouge">false</code></strong> as shown in
+                        below 👇🏻 image.</li>
+                    </ul>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/hide-busy-indicator.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/hide-busy-indicator.gif" alt="hide-busy-indicator" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/hide-busy-indicator.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/hide-busy-indicator.gif"
+                          alt="hide-busy-indicator" /></a></p>
 
-<ul>
-  <li>
-    <p>This means we want to hide <em>Busy Indicator</em>.</p>
-  </li>
-  <li>
-    <p>Please add below code as shown below 👇🏻.</p>
-  </li>
-</ul>
+                    <ul>
+                      <li>
+                        <p>This means we want to hide <em>Busy Indicator</em>.</p>
+                      </li>
+                      <li>
+                        <p>Please add below code as shown below 👇🏻.</p>
+                      </li>
+                    </ul>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteClickCommand</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Show busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
@@ -577,84 +685,89 @@
     <span class="c1">// Hide busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="final-result">Final Result</h2>
+                    <h2 id="final-result">Final Result</h2>
 
-<p>Now we run the application as shown in below 👇🏻 image.</p>
+                    <p>Now we run the application as shown in below 👇🏻 image.</p>
 
-<p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/run-application.gif"><img src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/run-application.gif" alt="run-application" /></a></p>
+                    <p><a href="/assets/wpf-tutorials/add-syncfusion-busy-indicator/run-application.gif"><img
+                          src="/assets/wpf-tutorials/add-syncfusion-busy-indicator/run-application.gif"
+                          alt="run-application" /></a></p>
 
-<p>Until the <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong> is <em>sleeping</em> we able to see <em>Busy indicator</em> to show user that some operation is running.</p>
+                    <p>Until the <strong><code class="language-plaintext highlighter-rouge">Thread</code></strong> is
+                      <em>sleeping</em> we able to see <em>Busy indicator</em> to show user that some operation is
+                      running.</p>
 
-<p>Until the operation complete, we see this <em>Busy indicator</em>.</p>
+                    <p>Until the operation complete, we see this <em>Busy indicator</em>.</p>
 
-<p><strong>This is it !!!</strong></p>
+                    <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>Add Syncfusion Busy Indicator</strong>.</p>
+                    <p>Hope this post helps you to <strong>Add Syncfusion Busy Indicator</strong>.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+                    <p><em>Do let me know by you like this post or not!</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+                    <p><em>Till then, Happy learning!!!</em></p>
 
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+                  </div>
 
-      </section>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
 
-      <footer class="page__meta">
-        
-        
+                </section>
 
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-11T23:29:50-04:00">June 11, 2024</time></p>
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/wpf-tutorials/open-syncfusion-chromeless-window/" title="Open Syncfusion Chromeless Window
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2024-06-11T23:29:50-04:00">June 11, 2024</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/wpf-tutorials/open-syncfusion-chromeless-window/"
+                        title="Open Syncfusion Chromeless Window
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/wpf-tutorials/add-syncfusion-license-key/" title="Add Syncfusion License Key
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/wpf-tutorials/add-syncfusion-license-key/" title="Add Syncfusion License Key
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -664,74 +777,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -756,15 +869,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
