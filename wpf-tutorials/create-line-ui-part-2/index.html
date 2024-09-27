@@ -5,17 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>Create Line UI - Part 2 - The CAD Coder</title>
-  <meta name="description" content="Objective">
+  <!-- begin _includes/seo.html --><title>Create Line UI - Part 2 - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="Create Line UI - Part 2">
-  <meta property="og:url" content="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-2/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Create Line UI - Part 2">
+<meta property="og:url" content="http://localhost:4000/wpf-tutorials/create-line-ui-part-2/">
 
 
   <meta property="og:description" content="Objective">
@@ -26,25 +25,25 @@
 
 
 
-  <meta property="article:published_time" content="2024-09-05T11:13:44-04:00">
+  <meta property="article:published_time" content="2024-09-27T09:16:58-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-2/">
+<link rel="canonical" href="http://localhost:4000/wpf-tutorials/create-line-ui-part-2/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "https://thecadcoder.com/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -55,303 +54,289 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
 
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a></li>
+          
+            <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
+          
+            <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a></li>
+          
+            <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a></li>
+          
+            <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks C# API UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
+          
+            <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
+          
+            <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks Sketch UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
+          
+            <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
+          
+            <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
+          
+            <li><a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks Line UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a></li>
+          
+            <li><a href="/wpf-tutorials/create-line-ui-part-2/" class="active">Create Line UI - Part 2</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
 
+    
+  
+  </div>
 
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community
-                      Version</a></li>
-
-                  <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
-
-                  <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a>
-                  </li>
-
-                  <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a></li>
-
-                  <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks C# API UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
-
-                  <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
-
-                  <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks Sketch UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
-
-                  <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
-
-                  <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
-
-                  <li><a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks Line UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a></li>
-
-                  <li><a href="/wpf-tutorials/create-line-ui-part-2/" class="active">Create Line UI - Part 2</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Create Line UI - Part 2">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2024-09-27T09:16:58-04:00">
+    
 
-              <meta itemprop="headline" content="Create Line UI - Part 2">
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Create Line UI - Part 2
+</h1>
+        
 
-              <meta itemprop="description" content="Objective">
+  <p class="page__meta">
+    
 
+    
 
-              <meta itemprop="datePublished" content="2024-09-05T11:13:44-04:00">
+    
+      
+      
 
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">Create Line UI - Part 2
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      3 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
 
 
-                <section class="page__content" itemprop="text">
+      </header>
+      
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#objective">Objective</a></li>
-                        <li><a href="#update-mainwindowviewmodel">Update [MainWindowViewModel]</a>
-                          <ul>
-                            <li><a href="#add-properties">Add [Properties]</a></li>
-                            <li><a href="#update-constructor">Update Constructor</a></li>
-                            <li><a href="#add-prism-command">Add [Prism Command]</a></li>
-                            <li><a href="#add-code-to-function">Add Code To Function</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#update-view-mainwindow">Update View [MainWindow]</a>
-                          <ul>
-                            <li><a href="#add-viewmodel-namespace">Add [ViewModel] Namespace</a></li>
-                            <li><a href="#add-start-point-view">Add [Start Point] View</a></li>
-                            <li><a href="#add-end-point-view">Add [End Point] View</a></li>
-                            <li><a href="#add-create-line-button">Add [Create Line] Button</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#final-result">Final Result</a></li>
-                      </ul>
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#update-mainwindowviewmodel">Update [MainWindowViewModel]</a><ul><li><a href="#add-properties">Add [Properties]</a></li><li><a href="#update-constructor">Update Constructor</a></li><li><a href="#add-prism-command">Add [Prism Command]</a></li><li><a href="#add-code-to-function">Add Code To Function</a></li></ul></li><li><a href="#update-view-mainwindow">Update View [MainWindow]</a><ul><li><a href="#add-viewmodel-namespace">Add [ViewModel] Namespace</a></li><li><a href="#add-start-point-view">Add [Start Point] View</a></li><li><a href="#add-end-point-view">Add [End Point] View</a></li><li><a href="#add-create-line-button">Add [Create Line] Button</a></li></ul></li><li><a href="#final-result">Final Result</a></li></ul>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <h2 id="objective">Objective</h2>
+<p>In this article we continued from 🚀 <strong><a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a></strong> article.</p>
 
-                    <p>In this article we continued from 🚀 <strong><a
-                          href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a></strong> article.</p>
+<p>We will create remaining UI controls and bindings with viewmodels.</p>
 
-                    <p>We will create remaining UI controls and bindings with viewmodels.</p>
-
-                    <!-- ---
+<!-- ---
 
 ## Demo Video
 
@@ -360,46 +345,38 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
 <iframe src="https://www.youtube.com/embed/48jqOP9kDhM" frameborder="0" allowfullscreen></iframe>
 <br> -->
 
-                    <hr />
+<hr />
 
-                    <h2 id="update-mainwindowviewmodel">Update [MainWindowViewModel]</h2>
+<h2 id="update-mainwindowviewmodel">Update [MainWindowViewModel]</h2>
 
-                    <ul>
-                      <li>
-                        <p>Now we need to <strong>“add Properties and Methods”</strong> for <strong>“Binding”</strong>
-                          with our view.</p>
+<ul>
+  <li>
+    <p>Now we need to <strong>“add Properties and Methods”</strong> for <strong>“Binding”</strong> with our view.</p>
 
-                        <ul>
-                          <li><em>View</em>: <strong><code
-                                class="language-plaintext highlighter-rouge">MainWindow</code></strong></li>
-                          <li><em>ViewModel</em>: <strong><code
-                                class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong></li>
-                        </ul>
-                      </li>
-                    </ul>
+    <ul>
+      <li><em>View</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindow</code></strong></li>
+      <li><em>ViewModel</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong></li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-properties">Add [Properties]</h3>
+<h3 id="add-properties">Add [Properties]</h3>
 
-                    <p>Now we need to add 2 properties for <strong>Start Point</strong> and <strong>End Point</strong>.
-                    </p>
+<p>Now we need to add 2 properties for <strong>Start Point</strong> and <strong>End Point</strong>.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-endpoints-properties.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-endpoints-properties.png"
-                          alt="add-endpoints-properties" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-endpoints-properties.png"><img src="/assets/wpf-tutorials/create-line-ui/add-endpoints-properties.png" alt="add-endpoints-properties" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="n">PointViewModel</span> <span class="n">_startPointViewModel</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">PointViewModel</span> <span class="n">_startPointViewModel</span><span class="p">;</span>
 <span class="k">public</span> <span class="n">PointViewModel</span> <span class="n">StartPointViewModel</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_startPointViewModel</span><span class="p">;</span> <span class="p">}</span>
@@ -412,39 +389,30 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_endpointViewModel</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_endpointViewModel</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="update-constructor">Update Constructor</h3>
+<h3 id="update-constructor">Update Constructor</h3>
 
-                    <p>Now we need to update Constructor, so that we can resolve <strong>[<code
-                          class="language-plaintext highlighter-rouge">StartPointViewModel</code>]</strong> and
-                      <strong>[<code class="language-plaintext highlighter-rouge">EndPointViewModel</code>]</strong>
-                      properties through <strong>DI Container</strong>.</p>
+<p>Now we need to update Constructor, so that we can resolve <strong>[<code class="language-plaintext highlighter-rouge">StartPointViewModel</code>]</strong> and <strong>[<code class="language-plaintext highlighter-rouge">EndPointViewModel</code>]</strong> properties through <strong>DI Container</strong>.</p>
 
-                    <ul>
-                      <li>
-                        <p>First, we need to add a parameter to constructor and then assign it to a private field.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>First, we need to add a parameter to constructor and then assign it to a private field.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/update-constructor.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/update-constructor.png"
-                          alt="update-constructor" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/update-constructor.png"><img src="/assets/wpf-tutorials/create-line-ui/update-constructor.png" alt="update-constructor" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">;</span>
 <span class="k">private</span> <span class="k">readonly</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
@@ -452,36 +420,27 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>Now, we need to set resolve value of <strong>[<code
-                              class="language-plaintext highlighter-rouge">StartPointViewModel</code>]</strong> and
-                          <strong>[<code class="language-plaintext highlighter-rouge">EndPointViewModel</code>]</strong>
-                          properties through <strong>DI Container</strong>.</p>
-                      </li>
-                      <li>
-                        <p>We resolve values in <strong>“Constructor”</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now, we need to set resolve value of <strong>[<code class="language-plaintext highlighter-rouge">StartPointViewModel</code>]</strong> and <strong>[<code class="language-plaintext highlighter-rouge">EndPointViewModel</code>]</strong> properties through <strong>DI Container</strong>.</p>
+  </li>
+  <li>
+    <p>We resolve values in <strong>“Constructor”</strong>.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/resolve-properties-through-di.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/resolve-properties-through-di.png"
-                          alt="resolve-properties-through-di" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/resolve-properties-through-di.png"><img src="/assets/wpf-tutorials/create-line-ui/resolve-properties-through-di.png" alt="resolve-properties-through-di" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">,</span> <span class="n">IContainerProvider</span> <span class="n">container</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="n">container</span> <span class="p">=</span> <span class="n">container</span><span class="p">;</span>
@@ -489,32 +448,25 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <span class="n">StartPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
     <span class="n">EndPointViewModel</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-prism-command">Add [Prism Command]</h3>
+<h3 id="add-prism-command">Add [Prism Command]</h3>
 
-                    <ul>
-                      <li>
-                        <p>We need 1 Prism Command for <strong>Create Line Sketch Button</strong>.</p>
-                      </li>
-                      <li>
-                        <p>This command will be <em>responsible</em> for <strong>Create Line Sketch</strong> in
-                          <em>Solidworks Part Document</em>.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 code sample for adding <strong>“Prism Command”</strong> in
-                          <strong><code
-                              class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>We need 1 Prism Command for <strong>Create Line Sketch Button</strong>.</p>
+  </li>
+  <li>
+    <p>This command will be <em>responsible</em> for <strong>Create Line Sketch</strong> in <em>Solidworks Part Document</em>.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 code sample for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
     <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
@@ -523,40 +475,31 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
 <span class="p">{</span>
     
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for adding <strong>“Prism Command”</strong> in <strong><code
-                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-command-in-viewmodel.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-command-in-viewmodel.png"
-                          alt="add-command-in-viewmodel" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-command-in-viewmodel.png"><img src="/assets/wpf-tutorials/create-line-ui/add-command-in-viewmodel.png" alt="add-command-in-viewmodel" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-code-to-function">Add Code To Function</h3>
+<h3 id="add-code-to-function">Add Code To Function</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we will add some code <strong><code
-                              class="language-plaintext highlighter-rouge">ExecuteCreateLineCommand</code></strong>
-                          function.</p>
-                      </li>
-                      <li>
-                        <p>We already used this code for in various articles.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 code sample for waiting code to add.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we will add some code <strong><code class="language-plaintext highlighter-rouge">ExecuteCreateLineCommand</code></strong> function.</p>
+  </li>
+  <li>
+    <p>We already used this code for in various articles.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 code sample for waiting code to add.</p>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_createCommand</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">CreateLineCommand</span> <span class="p">=&gt;</span>
     <span class="n">_createCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_createCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteCreateLineCommand</span><span class="p">));</span>
@@ -575,45 +518,35 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <span class="c1">// Hide busy indicator</span>
     <span class="n">IsBusy</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for waiting code to add.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for waiting code to add.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-code-to-command.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-code-to-command.png"
-                          alt="add-code-to-command" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-code-to-command.png"><img src="/assets/wpf-tutorials/create-line-ui/add-code-to-command.png" alt="add-code-to-command" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <h2 id="update-view-mainwindow">Update View [MainWindow]</h2>
+<h2 id="update-view-mainwindow">Update View [MainWindow]</h2>
 
-                    <p>Now we need to update a <strong>[MainWindow]</strong> window.</p>
+<p>Now we need to update a <strong>[MainWindow]</strong> window.</p>
 
-                    <h3 id="add-viewmodel-namespace">Add [ViewModel] Namespace</h3>
+<h3 id="add-viewmodel-namespace">Add [ViewModel] Namespace</h3>
 
-                    <p>Now we need to add [ViewModel] Namespace in <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;syncfusion:ChromelessWindow&gt;</code></strong>
-                      tag.</p>
+<p>Now we need to add [ViewModel] Namespace in <strong><code class="language-plaintext highlighter-rouge">&lt;syncfusion:ChromelessWindow&gt;</code></strong> tag.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-viewmodel-namespace.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-viewmodel-namespace.png"
-                          alt="add-viewmodel-namespace" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-viewmodel-namespace.png"><img src="/assets/wpf-tutorials/create-line-ui/add-viewmodel-namespace.png" alt="add-viewmodel-namespace" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -631,242 +564,190 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <span class="na">Background=</span><span class="s">"White"</span>
     <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span>
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-start-point-view">Add [Start Point] View</h3>
+<h3 id="add-start-point-view">Add [Start Point] View</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we need to add [<strong>Start Point View</strong>].</p>
-                      </li>
-                      <li>
-                        <p>Add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we need to add [<strong>Start Point View</strong>].</p>
+  </li>
+  <li>
+    <p>Add <strong><code class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;StackPanel&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;StackPanel&gt;</span>
 
 <span class="nt">&lt;/StackPanel&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Inside this <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add
-                      <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;view:PointView&gt;&lt;/view:PointView&gt;</code></strong>
-                      tag.</p>
+<p>Inside this <strong><code class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add <strong><code class="language-plaintext highlighter-rouge">&lt;view:PointView&gt;&lt;/view:PointView&gt;</code></strong> tag.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-startpoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-startpoint.png" alt="add-startpoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-startpoint.png"><img src="/assets/wpf-tutorials/create-line-ui/add-startpoint.png" alt="add-startpoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;view:PointView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;view:PointView</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">HorizontalContentAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalContentAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">DataContext=</span><span class="s">"{Binding StartPointViewModel}"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above view bind <strong>[<code
-                            class="language-plaintext highlighter-rouge">DataContext</code>]</strong> property of
-                        <strong>[<code class="language-plaintext highlighter-rouge">view:PointView</code>]</strong> with
-                        <strong><code class="language-plaintext highlighter-rouge">StartPointViewModel</code></strong>
-                        property of <strong>[<code
-                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
-                    </ul>
+<ul>
+  <li>Above view bind <strong>[<code class="language-plaintext highlighter-rouge">DataContext</code>]</strong> property of <strong>[<code class="language-plaintext highlighter-rouge">view:PointView</code>]</strong> with <strong><code class="language-plaintext highlighter-rouge">StartPointViewModel</code></strong> property of <strong>[<code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-end-point-view">Add [End Point] View</h3>
+<h3 id="add-end-point-view">Add [End Point] View</h3>
 
-                    <ul>
-                      <li>Now we need to add [<strong>End Point View</strong>].</li>
-                    </ul>
+<ul>
+  <li>Now we need to add [<strong>End Point View</strong>].</li>
+</ul>
 
-                    <p>Inside <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add
-                      <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;view:PointView&gt;&lt;/view:PointView&gt;</code></strong>
-                      tag.</p>
+<p>Inside <strong><code class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add <strong><code class="language-plaintext highlighter-rouge">&lt;view:PointView&gt;&lt;/view:PointView&gt;</code></strong> tag.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-endpoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-endpoint.png" alt="add-endpoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-endpoint.png"><img src="/assets/wpf-tutorials/create-line-ui/add-endpoint.png" alt="add-endpoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;view:PointView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;view:PointView</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">HorizontalContentAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalContentAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">DataContext=</span><span class="s">"{Binding EndPointViewModel}"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above view bind <strong>[<code
-                            class="language-plaintext highlighter-rouge">DataContext</code>]</strong> property of
-                        <strong>[<code class="language-plaintext highlighter-rouge">view:PointView</code>]</strong> with
-                        <strong><code class="language-plaintext highlighter-rouge">EndPointViewModel</code></strong>
-                        property of <strong>[<code
-                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
-                    </ul>
+<ul>
+  <li>Above view bind <strong>[<code class="language-plaintext highlighter-rouge">DataContext</code>]</strong> property of <strong>[<code class="language-plaintext highlighter-rouge">view:PointView</code>]</strong> with <strong><code class="language-plaintext highlighter-rouge">EndPointViewModel</code></strong> property of <strong>[<code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-create-line-button">Add [Create Line] Button</h3>
+<h3 id="add-create-line-button">Add [Create Line] Button</h3>
 
-                    <ul>
-                      <li>Now we need to add [<strong>Create Line</strong>] Button.</li>
-                    </ul>
+<ul>
+  <li>Now we need to add [<strong>Create Line</strong>] Button.</li>
+</ul>
 
-                    <p>Inside <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add
-                      <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;syncfusion:ButtonAdv&gt;&lt;/syncfusion:ButtonAdv&gt;</code></strong>
-                      tag.</p>
+<p>Inside <strong><code class="language-plaintext highlighter-rouge">&lt;StackPanel&gt;</code></strong> tag, we add <strong><code class="language-plaintext highlighter-rouge">&lt;syncfusion:ButtonAdv&gt;&lt;/syncfusion:ButtonAdv&gt;</code></strong> tag.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-create-line-button.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-create-line-button.png"
-                          alt="add-create-line-button" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-create-line-button.png"><img src="/assets/wpf-tutorials/create-line-ui/add-create-line-button.png" alt="add-create-line-button" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;syncfusion:ButtonAdv</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ButtonAdv</span>
     <span class="na">Width=</span><span class="s">"250"</span>
     <span class="na">Height=</span><span class="s">"50"</span>
     <span class="na">Command=</span><span class="s">"{Binding CreateLineCommand}"</span>
     <span class="na">IconHeight=</span><span class="s">"0"</span>
     <span class="na">IconWidth=</span><span class="s">"0"</span>
     <span class="na">Label=</span><span class="s">"Click Me"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above view bind <strong>[<code
-                            class="language-plaintext highlighter-rouge">Command</code>]</strong> property of
-                        <strong>[<code
-                            class="language-plaintext highlighter-rouge">syncfusion:ButtonAdv</code>]</strong> with
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineCommand</code></strong>
-                        property of <strong>[<code
-                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
-                    </ul>
+<ul>
+  <li>Above view bind <strong>[<code class="language-plaintext highlighter-rouge">Command</code>]</strong> property of <strong>[<code class="language-plaintext highlighter-rouge">syncfusion:ButtonAdv</code>]</strong> with <strong><code class="language-plaintext highlighter-rouge">CreateLineCommand</code></strong> property of <strong>[<code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</strong>.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h2 id="final-result">Final Result</h2>
+<h2 id="final-result">Final Result</h2>
 
-                    <p>Now we run the application as shown in below 👇🏻 image.</p>
+<p>Now we run the application as shown in below 👇🏻 image.</p>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/final-result.gif"><img
-                          src="/assets/wpf-tutorials/create-line-ui/final-result.gif" alt="final-result" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/final-result.gif"><img src="/assets/wpf-tutorials/create-line-ui/final-result.gif" alt="final-result" /></a></p>
 
-                    <p>Now we are able to <strong>Creale Line in Solidworks Sketch</strong> in MVVM pattern
-                      successfully.</p>
+<p>Now we are able to <strong>Creale Line in Solidworks Sketch</strong> in MVVM pattern successfully.</p>
 
-                    <p><strong>This is it !!!</strong></p>
+<p><strong>This is it !!!</strong></p>
 
-                    <p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
 
-                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
-                      <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-                    <p>Hope this post helps you to <strong>Creale Line in Solidworks Sketch in WPF application</strong>.
-                    </p>
+<p>Hope this post helps you to <strong>Creale Line in Solidworks Sketch in WPF application</strong>.</p>
 
-                    <p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
 
-                    <p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
 
-                    <p><em>Till then, Happy learning!!!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
 
-                  </div>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
+      </section>
 
-                </section>
-
-                <footer class="page__meta">
+      <footer class="page__meta">
+        
+        
 
 
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-09-27T09:16:58-04:00">September 27, 2024</time></p>
 
 
+      </footer>
 
-
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2024-09-05T11:13:44-04:00">September 5, 2024</time></p>
-
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/wpf-tutorials/create-line-ui-part-1/" title="Create Line UI - Part 1
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/wpf-tutorials/create-line-ui-part-1/" title="Create Line UI - Part 1
 ">❮ Previous</a>
-                    </li>
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
+    </li>
+    
+  </ul>
+</nav>
 
+    </div>
+  </article>
 
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
-                    </li>
-
-                  </ul>
-                </nav>
-
-              </div>
-            </article>
-
-          </div>
+</div>
         </div>
       </div>
     </div>
@@ -876,74 +757,74 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -968,15 +849,15 @@ Below 🎬 video shows how to **Create Line UI** in *Visual Studio 2022*.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
