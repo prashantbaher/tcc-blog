@@ -5,17 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>SOLIDWORKS C# API - Insert Solidworks Sketch - The CAD Coder</title>
-  <meta name="description" content="Objective">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Insert Solidworks Sketch - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
-  <meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/insert-sketch/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
+<meta property="og:url" content="http://localhost:4000/solidworks-csharp/insert-sketch/">
 
 
   <meta property="og:description" content="Objective">
@@ -26,25 +25,25 @@
 
 
 
-  <meta property="article:published_time" content="2024-07-24T13:13:45-04:00">
+  <meta property="article:published_time" content="2024-10-06T05:08:44-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/insert-sketch/">
+<link rel="canonical" href="http://localhost:4000/solidworks-csharp/insert-sketch/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "https://thecadcoder.com/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -55,1117 +54,855 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
-            href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
 
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+          
+            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
+          
+            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch Segment</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/insert-sketch/" class="active">Insert Solidworks Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
+          
+            <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Others</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
 
+    
+  
+  </div>
 
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
-
-                  <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
-
-                  <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
-
-                  <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
-
-                  <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a>
-                  </li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch Segment</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-csharp/insert-sketch/" class="active">Insert Solidworks Sketch</a></li>
-
-                  <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
-
-                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a>
-                  </li>
-
-                  <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
-
-                  <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Others</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2024-10-06T05:08:44-04:00">
+    
 
-              <meta itemprop="headline" content="SOLIDWORKS C# API - Insert Solidworks Sketch">
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Insert Solidworks Sketch
+</h1>
+        
 
-              <meta itemprop="description" content="Objective">
+  <p class="page__meta">
+    
 
+    
 
-              <meta itemprop="datePublished" content="2024-07-24T13:13:45-04:00">
+    
+      
+      
 
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Insert Solidworks
-                    Sketch
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      6 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
 
 
-                <section class="page__content" itemprop="text">
+      </header>
+      
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#objective">Objective</a></li>
-                        <li><a href="#demo-video">Demo Video</a></li>
-                        <li><a href="#add-solidworks-references">Add [Solidworks References]</a></li>
-                        <li><a href="#update-viewmodel">Update ViewModel</a>
-                          <ul>
-                            <li><a href="#check-plane-selected">Check Plane Selected</a></li>
-                            <li><a href="#add-new-function">Add New Function</a></li>
-                            <li><a href="#get-default-part-template">Get Default Part Template</a></li>
-                            <li><a href="#get-solidworks-document">Get Solidworks Document</a></li>
-                            <li><a href="#select-plane">Select Plane</a></li>
-                            <li><a href="#insert-sketch">Insert Sketch</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#final-result">FINAL RESULT</a></li>
-                      </ul>
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#add-solidworks-references">Add [Solidworks References]</a></li><li><a href="#update-viewmodel">Update ViewModel</a><ul><li><a href="#check-plane-selected">Check Plane Selected</a></li><li><a href="#add-new-function">Add New Function</a></li><li><a href="#get-default-part-template">Get Default Part Template</a></li><li><a href="#get-solidworks-document">Get Solidworks Document</a></li><li><a href="#select-plane">Select Plane</a></li><li><a href="#insert-sketch">Insert Sketch</a></li></ul></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <h2 id="objective">Objective</h2>
+<p>I want to:</p>
 
-                    <p>I want to:</p>
+<ul>
+  <li>
+    <p><strong><em>Insert Sketch into Solidworks Part Document using Solidworks C# API</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></em></strong>.</p>
+  </li>
+  <li>
+    <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
+  </li>
+</ul>
 
-                    <ul>
-                      <li>
-                        <p><strong><em>Insert Sketch into Solidworks Part Document using Solidworks C# API</em></strong>
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><em>We will continue from previous article 🚀 <a
-                                href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks
-                                Sketch UI</a></em></strong>.</p>
-                      </li>
-                      <li>
-                        <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
-                      </li>
-                    </ul>
+<hr />
 
-                    <hr />
+<h2 id="demo-video">Demo Video</h2>
 
-                    <h2 id="demo-video">Demo Video</h2>
+<p>Please see below video on how to “<strong>Insert Sketch into Solidworks Part Document</strong>” using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
 
-                    <p>Please see below video on how to “<strong>Insert Sketch into Solidworks Part Document</strong>”
-                      using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
+<iframe src="https://www.youtube.com/embed/zGNIUYRtc7M" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
 
-                    <iframe src="https://www.youtube.com/embed/zGNIUYRtc7M" frameborder="0" allowfullscreen=""></iframe>
-                    <p><br /></p>
+<p class="notice--info">Please note that there are <strong>no explanation</strong> in the video.<br />
+<strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
 
-                    <p class="notice--info">Please note that there are <strong>no explanation</strong> in the
-                      video.<br />
-                      <strong>Explanation</strong> of each step and why we write code this way is given in this post.
-                    </p>
+<hr />
 
-                    <hr />
+<h2 id="add-solidworks-references">Add [Solidworks References]</h2>
 
-                    <h2 id="add-solidworks-references">Add [Solidworks References]</h2>
+<ul>
+  <li>
+    <p>For opening <strong>Solidworks</strong> we need to add some <em>references</em> into our project.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for how to add <em>Solidworks</em> reference.</p>
+  </li>
+</ul>
 
-                    <ul>
-                      <li>
-                        <p>For opening <strong>Solidworks</strong> we need to add some <em>references</em> into our
-                          project.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for how to add <em>Solidworks</em> reference.</p>
-                      </li>
-                    </ul>
+<p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/solidworks-reference.png"><img src="/assets/solidworks-csharp-images/insert-solidworks-sketch/solidworks-reference.png" alt="add-solidworks-references" /></a></p>
 
-                    <p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/solidworks-reference.png"><img
-                          src="/assets/solidworks-csharp-images/insert-solidworks-sketch/solidworks-reference.png"
-                          alt="add-solidworks-references" /></a></p>
+<ul>
+  <li>Please see below 👇🏻 image from 🚀 <strong><a href="/solidworks-csharp/browse-and-open-solidworks-file/#add-solidworks-references/" target="_blank">Browse Solidworks Document</a></strong> article for <em>how to add reference files</em>.</li>
+</ul>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image from 🚀 <strong><a
-                            href="/solidworks-csharp/browse-and-open-solidworks-file/#add-solidworks-references/"
-                            target="_blank">Browse Solidworks Document</a></strong> article for <em>how to add reference
-                          files</em>.</li>
-                    </ul>
+<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
 
-                    <p><a
-                        href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif"><img
-                          src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif"
-                          alt="add-solidworks-references" /></a></p>
+<hr />
 
-                    <hr />
+<h2 id="update-viewmodel">Update ViewModel</h2>
 
-                    <h2 id="update-viewmodel">Update ViewModel</h2>
+<p>In this section, we update MainWindowViewModel for inserting Sketch.</p>
 
-                    <p>In this section, we update MainWindowViewModel for inserting Sketch.</p>
+<h3 id="check-plane-selected">Check Plane Selected</h3>
 
-                    <h3 id="check-plane-selected">Check Plane Selected</h3>
+<p>Before proceeding, we need to confirm, if any <strong>Plane is selected</strong>.</p>
 
-                    <p>Before proceeding, we need to confirm, if any <strong>Plane is selected</strong>.</p>
+<ul>
+  <li>
+    <p>Function needs to update: <strong><code class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand()</code></strong></p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <ul>
-                      <li>
-                        <p>Function needs to update: <strong><code
-                              class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand()</code></strong>
-                        </p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/check-plane-is-selected.png"><img src="/assets/solidworks-csharp-images/insert-solidworks-sketch/check-plane-is-selected.png" alt="check-plane-is-selected" /></a></p>
 
-                    <p><a
-                        href="/assets/solidworks-csharp-images/insert-solidworks-sketch/check-plane-is-selected.png"><img
-                          src="/assets/solidworks-csharp-images/insert-solidworks-sketch/check-plane-is-selected.png"
-                          alt="check-plane-is-selected" /></a></p>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
-
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">SelectedPlane</span><span class="p">))</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">SelectedPlane</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">"No Plane selected in application. Please select a Plane."</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking, if any <strong>Plane is selected</strong>.</li>
-                      <li><strong>Condition</strong>: <strong><code
-                            class="language-plaintext highlighter-rouge">string.IsNullOrEmpty(SelectedPlane)</code></strong>
-                        <ul>
-                          <li>We check if value of <strong><code
-                                class="language-plaintext highlighter-rouge">SelectedPlane</code></strong> variable is
-                            <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or
-                            <strong><code class="language-plaintext highlighter-rouge">empty</code></strong> by
-                            <strong><code class="language-plaintext highlighter-rouge">IsNullOrEmpty()</code></strong>
-                            method.</li>
-                          <li>When this condition is <strong><code
-                                class="language-plaintext highlighter-rouge">true</code></strong>, then we
-                            <em>Publish</em> <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.
-                          </li>
-                          <li>This <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then
-                            display message to user.</li>
-                          <li><strong>Message to show</strong>: “<em>No Plane selected in application. Please select a
-                              Plane.</em>”</li>
-                          <li>After showing message we exit the function.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking, if any <strong>Plane is selected</strong>.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">string.IsNullOrEmpty(SelectedPlane)</code></strong>
+    <ul>
+      <li>We check if value of <strong><code class="language-plaintext highlighter-rouge">SelectedPlane</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or <strong><code class="language-plaintext highlighter-rouge">empty</code></strong> by <strong><code class="language-plaintext highlighter-rouge">IsNullOrEmpty()</code></strong> method.</li>
+      <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, then we <em>Publish</em> <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.</li>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then display message to user.</li>
+      <li><strong>Message to show</strong>: “<em>No Plane selected in application. Please select a Plane.</em>”</li>
+      <li>After showing message we exit the function.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-new-function">Add New Function</h3>
+<h3 id="add-new-function">Add New Function</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add a new function which we use for <em>Inserting Sketch</em>.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add a new function which we use for <em>Inserting Sketch</em>.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a
-                        href="/assets/solidworks-csharp-images/insert-solidworks-sketch/add-new-insert-function.png"><img
-                          src="/assets/solidworks-csharp-images/insert-solidworks-sketch/add-new-insert-function.png"
-                          alt="add-new-insert-function" /></a></p>
+<p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/add-new-insert-function.png"><img src="/assets/solidworks-csharp-images/insert-solidworks-sketch/add-new-insert-function.png" alt="add-new-insert-function" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">bool</span> <span class="n">insertSketch</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="n">InsertSketch</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">insertSketch</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="n">InsertSketch</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above line, we are are doing following.</p>
+<ul>
+  <li>
+    <p>In above line, we are are doing following.</p>
 
-                        <ul>
-                          <li>Creating a new variable.</li>
-                          <li>Type of new variable: <strong><code
-                                class="language-plaintext highlighter-rouge">bool</code></strong></li>
-                          <li>Name of variable: <strong><code
-                                class="language-plaintext highlighter-rouge">insertSketch</code></strong></li>
-                          <li>Value of this variable is get by <strong><code
-                                class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
-                          <li>We are also <strong>waiting</strong> for this <strong><code
-                                class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method to
-                            complete in <strong>different backgroud Thread</strong>.</li>
-                        </ul>
-                      </li>
-                    </ul>
+    <ul>
+      <li>Creating a new variable.</li>
+      <li>Type of new variable: <strong><code class="language-plaintext highlighter-rouge">bool</code></strong></li>
+      <li>Name of variable: <strong><code class="language-plaintext highlighter-rouge">insertSketch</code></strong></li>
+      <li>Value of this variable is get by <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
+      <li>We are also <strong>waiting</strong> for this <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method to complete in <strong>different backgroud Thread</strong>.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="nf">InsertSketch</span><span class="p">()</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="nf">InsertSketch</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line of code, we create a new <strong><code
-                            class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
-                      <li>This method currently throw <strong><code
-                            class="language-plaintext highlighter-rouge">NotImplementedException()</code></strong>
-                        exception.</li>
-                    </ul>
+<ul>
+  <li>In above line of code, we create a new <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
+  <li>This method currently throw <strong><code class="language-plaintext highlighter-rouge">NotImplementedException()</code></strong> exception.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="get-default-part-template">Get Default Part Template</h3>
+<h3 id="get-default-part-template">Get Default Part Template</h3>
 
-                    <ul>
-                      <li>In <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong>
-                        method, we get <em>Default Part Template</em>.</li>
-                    </ul>
+<ul>
+  <li>In <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method, we get <em>Default Part Template</em>.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li><strong>Purpose</strong>: In above line, we create variable for Solidworks application.</li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">swApp</code></li>
-                      <li><strong>Type</strong>: <code
-                          class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
-                    </ul>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create variable for Solidworks application.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swApp</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">string</span> <span class="n">defaultTemplate</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">defaultTemplate</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li><strong>Purpose</strong>: In above line, we create variable for <em>default part
-                          template</em>.</li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">defaultTemplate</code></li>
-                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">string</code></li>
-                      <li><strong>Value</strong>: We get this value by <strong><code
-                            class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>
-                        method.
-                        <ul>
-                          <li>This method is part of <strong><code
-                                class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>
-                            method take <strong><code
-                                class="language-plaintext highlighter-rouge">Integer</code></strong> as parameter.</li>
-                          <li>We pass <strong><code
-                                class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong>
-                            enumerable as parameter.</li>
-                          <li>Since <strong><code
-                                class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>
-                            method, takes <strong><code
-                                class="language-plaintext highlighter-rouge">Integer</code></strong> as parameter, we
-                            cast <strong><code
-                                class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong>
-                            to <strong><code class="language-plaintext highlighter-rouge">(int)</code></strong>.</li>
-                          <li>Final Parameter: <strong><code
-                                class="language-plaintext highlighter-rouge">(int)swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create variable for <em>default part template</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">defaultTemplate</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">string</code></li>
+  <li><strong>Value</strong>: We get this value by <strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong> method.
+    <ul>
+      <li>This method is part of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong> method take <strong><code class="language-plaintext highlighter-rouge">Integer</code></strong> as parameter.</li>
+      <li>We pass <strong><code class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong> enumerable as parameter.</li>
+      <li>Since <strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong> method, takes <strong><code class="language-plaintext highlighter-rouge">Integer</code></strong> as parameter, we cast <strong><code class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong> to <strong><code class="language-plaintext highlighter-rouge">(int)</code></strong>.</li>
+      <li>Final Parameter: <strong><code class="language-plaintext highlighter-rouge">(int)swUserPreferenceStringValue_e.swDefaultTemplatePart</code></strong></li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">))</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">"Default part template is empty."</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above code, we check if “<strong>Default Part template</strong>” is null or empty.</p>
-                      </li>
-                      <li>
-                        <p><strong>Condition</strong>: <strong><code
-                              class="language-plaintext highlighter-rouge">string.IsNullOrEmpty(defaultTemplate)</code></strong>
-                        </p>
-                        <ul>
-                          <li>We check if value of <strong><code
-                                class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is
-                            <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or
-                            <strong><code class="language-plaintext highlighter-rouge">empty</code></strong> by
-                            <strong><code class="language-plaintext highlighter-rouge">IsNullOrEmpty()</code></strong>
-                            method.</li>
-                          <li>When this condition is <strong><code
-                                class="language-plaintext highlighter-rouge">true</code></strong>, then we
-                            <em>Publish</em> <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.
-                          </li>
-                          <li>This <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then
-                            display message to user.</li>
-                          <li><strong>Message to show</strong>: “<em>Default part template is empty.</em>”</li>
-                          <li>After showing message we exit the function and return <strong><code
-                                class="language-plaintext highlighter-rouge">false</code></strong>.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>In above code, we check if “<strong>Default Part template</strong>” is null or empty.</p>
+  </li>
+  <li>
+    <p><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">string.IsNullOrEmpty(defaultTemplate)</code></strong></p>
+    <ul>
+      <li>We check if value of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or <strong><code class="language-plaintext highlighter-rouge">empty</code></strong> by <strong><code class="language-plaintext highlighter-rouge">IsNullOrEmpty()</code></strong> method.</li>
+      <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, then we <em>Publish</em> <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.</li>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then display message to user.</li>
+      <li><strong>Message to show</strong>: “<em>Default part template is empty.</em>”</li>
+      <li>After showing message we exit the function and return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="get-solidworks-document">Get Solidworks Document</h3>
+<h3 id="get-solidworks-document">Get Solidworks Document</h3>
 
-                    <ul>
-                      <li>Now we create Solidworks Document object.</li>
-                    </ul>
+<ul>
+  <li>Now we create Solidworks Document object.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li><strong>Purpose</strong>: In above line, we create variable for <em>Solidworks Document
-                          object</em>.</li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">swDoc</code></li>
-                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">ModelDoc2</code>
-                      </li>
-                    </ul>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create variable for <em>Solidworks Document object</em>.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">swDoc</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">ModelDoc2</code></li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swDoc</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swDoc</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">"Failed to create new Part document."</span><span class="p">);</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above code, we check if “<strong>Solidworks Document object</strong>” is null.</p>
-                      </li>
-                      <li>
-                        <p><strong>Condition</strong>: <strong><code
-                              class="language-plaintext highlighter-rouge">swDoc == null</code></strong></p>
-                        <ul>
-                          <li>We check if value of <strong><code
-                                class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is
-                            <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</li>
-                          <li>When this condition is <strong><code
-                                class="language-plaintext highlighter-rouge">true</code></strong>, then we
-                            <em>Publish</em> <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.
-                          </li>
-                          <li>This <strong><code
-                                class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then
-                            display message to user.</li>
-                          <li><strong>Message to show</strong>: “<em>Failed to create new Part document.</em>”</li>
-                          <li>After showing message we exit the function and return <strong><code
-                                class="language-plaintext highlighter-rouge">false</code></strong>.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>In above code, we check if “<strong>Solidworks Document object</strong>” is null.</p>
+  </li>
+  <li>
+    <p><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc == null</code></strong></p>
+    <ul>
+      <li>We check if value of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</li>
+      <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, then we <em>Publish</em> <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.</li>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then display message to user.</li>
+      <li><strong>Message to show</strong>: “<em>Failed to create new Part document.</em>”</li>
+      <li>After showing message we exit the function and return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="select-plane">Select Plane</h3>
+<h3 id="select-plane">Select Plane</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we select Plane in Solidworks document.</p>
-                      </li>
-                      <li>
-                        <p>We get selected plane name from drop down.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we select Plane in Solidworks document.</p>
+  </li>
+  <li>
+    <p>We get selected plane name from drop down.</p>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">bool</span> <span class="n">boolStatus</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="n">SelectedPlane</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">boolStatus</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="n">SelectedPlane</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li><strong>Purpose</strong>: In above line, we create variable for checking plane is selected or
-                        not.</li>
-                      <li><strong>Variable Name</strong>: <code
-                          class="language-plaintext highlighter-rouge">boolStatus</code></li>
-                      <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">bool</code></li>
-                      <li><strong>Value</strong>: We get this value by <strong><code
-                            class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method.
-                        <ul>
-                          <li>This method is part of <strong><code
-                                class="language-plaintext highlighter-rouge">swDoc.Extension</code></strong> variable.
-                          </li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong>
-                            method takes following as parameter.
-                            <ul>
-                              <li><strong>Name</strong>: <em>Name of object to select or an empty string.</em></li>
-                              <li><strong>Type</strong>: <em>Type of object (uppercase) as defined in <strong><code
-                                      class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> or an
-                                  empty string.</em>
-                                <blockquote>
-                                  <p>For full list of <strong><code
-                                        class="language-plaintext highlighter-rouge">swSelectType_e</code></strong>
-                                    object types, please visit 🚀 <a
-                                      href="https://help.solidworks.com/2021/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html"
-                                      target="_blank">Solidworks SelectByID2 API Help</a></p>
-                                </blockquote>
-                              </li>
-                              <li><strong>X</strong>: <em>X selection location or 0.</em></li>
-                              <li><strong>Y</strong>: <em>Y selection location or 0.</em></li>
-                              <li><strong>Z</strong>: <em>Z selection location or 0.</em></li>
-                              <li><strong>Append</strong>: <em>please visit 🚀 <a
-                                    href="https://help.solidworks.com/2021/English/api/sldworksapi/SolidWorks.interop.sldworks~SolidWorks.interop.sldworks.IModelDocExtension~SelectByID2.html"
-                                    target="_blank">Solidworks SelectByID2 API Help</a></em></li>
-                              <li><strong>Mark</strong>: <em>Value that you want to use as a mark.</em></li>
-                              <li><strong>Callout</strong>: <em>Pointer to the associated <code
-                                    class="language-plaintext highlighter-rouge">callout</code>.</em></li>
-                              <li><strong>SelectOption</strong>: <em>Selection option as defined in <strong><code
-                                      class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong> in
-                                  below table.</em></li>
-                            </ul>
+<ul>
+  <li><strong>Purpose</strong>: In above line, we create variable for checking plane is selected or not.</li>
+  <li><strong>Variable Name</strong>: <code class="language-plaintext highlighter-rouge">boolStatus</code></li>
+  <li><strong>Type</strong>: <code class="language-plaintext highlighter-rouge">bool</code></li>
+  <li><strong>Value</strong>: We get this value by <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method.
+    <ul>
+      <li>This method is part of <strong><code class="language-plaintext highlighter-rouge">swDoc.Extension</code></strong> variable.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method takes following as parameter.
+        <ul>
+          <li><strong>Name</strong>: <em>Name of object to select or an empty string.</em></li>
+          <li><strong>Type</strong>: <em>Type of object (uppercase) as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> or an empty string.</em>
+            <blockquote>
+              <p>For full list of <strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> object types, please visit 🚀 <a href="https://help.solidworks.com/2021/English/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html" target="_blank">Solidworks SelectByID2 API Help</a></p>
+            </blockquote>
+          </li>
+          <li><strong>X</strong>: <em>X selection location or 0.</em></li>
+          <li><strong>Y</strong>: <em>Y selection location or 0.</em></li>
+          <li><strong>Z</strong>: <em>Z selection location or 0.</em></li>
+          <li><strong>Append</strong>: <em>please visit 🚀 <a href="https://help.solidworks.com/2021/English/api/sldworksapi/SolidWorks.interop.sldworks~SolidWorks.interop.sldworks.IModelDocExtension~SelectByID2.html" target="_blank">Solidworks SelectByID2 API Help</a></em></li>
+          <li><strong>Mark</strong>: <em>Value that you want to use as a mark.</em></li>
+          <li><strong>Callout</strong>: <em>Pointer to the associated <code class="language-plaintext highlighter-rouge">callout</code>.</em></li>
+          <li><strong>SelectOption</strong>: <em>Selection option as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong> in below table.</em></li>
+        </ul>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Member</th>
-                                  <th>Description</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong><code
-                                        class="language-plaintext highlighter-rouge">swSelectOptionDefault</code></strong>
-                                  </td>
-                                  <td><em>0</em></td>
-                                </tr>
-                                <tr>
-                                  <td><strong><code
-                                        class="language-plaintext highlighter-rouge">swSelectOptionExtensive</code></strong>
-                                  </td>
-                                  <td><em>1</em></td>
-                                </tr>
-                              </tbody>
-                            </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swSelectOptionDefault</code></strong></td>
+              <td><em>0</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">swSelectOptionExtensive</code></strong></td>
+              <td><em>1</em></td>
+            </tr>
+          </tbody>
+        </table>
 
-                            <ul>
-                              <li>
-                                <p><strong>Return Value</strong>: <em><code
-                                      class="language-plaintext highlighter-rouge">True</code> if item was successfully
-                                    selected, <code class="language-plaintext highlighter-rouge">False</code> if
-                                    not.</em></p>
-                              </li>
-                              <li>
-                                <p>In our code, I have used following values:</p>
-                              </li>
-                            </ul>
+        <ul>
+          <li>
+            <p><strong>Return Value</strong>: <em><code class="language-plaintext highlighter-rouge">True</code> if item was successfully selected, <code class="language-plaintext highlighter-rouge">False</code> if not.</em></p>
+          </li>
+          <li>
+            <p>In our code, I have used following values:</p>
+          </li>
+        </ul>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Parameter Name</th>
-                                  <th>Value Used</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong>Name</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">SelectedPlane</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Type</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">PLANE</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>X</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Y</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Z</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Append</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">false</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Mark</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>Callout</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">null</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>SelectOption</strong></td>
-                                  <td><code
-                                      class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter Name</th>
+              <th>Value Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">SelectedPlane</code></td>
+            </tr>
+            <tr>
+              <td><strong>Type</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">PLANE</code></td>
+            </tr>
+            <tr>
+              <td><strong>X</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+            </tr>
+            <tr>
+              <td><strong>Y</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+            </tr>
+            <tr>
+              <td><strong>Z</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+            </tr>
+            <tr>
+              <td><strong>Append</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">false</code></td>
+            </tr>
+            <tr>
+              <td><strong>Mark</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+            </tr>
+            <tr>
+              <td><strong>Callout</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">null</code></td>
+            </tr>
+            <tr>
+              <td><strong>SelectOption</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">boolStatus</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">boolStatus</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">$"Failed to select [</span><span class="p">{</span><span class="n">SelectedPlane</span><span class="p">}</span><span class="s">]."</span><span class="p">);</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we check if plane is selected or not.</li>
-                      <li><strong>Condition</strong>: <strong><code
-                            class="language-plaintext highlighter-rouge">boolStatus == false</code></strong>
-                        <ul>
-                          <li>We check if value of <strong><code
-                                class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is
-                            <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>In above code, we check if plane is selected or not.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">boolStatus == false</code></strong>
+    <ul>
+      <li>We check if value of <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">$"Failed to select [</span><span class="p">{</span><span class="n">SelectedPlane</span><span class="p">}</span><span class="s">]."</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
-                    <ul>
-                      <li>When this condition is <strong><code
-                            class="language-plaintext highlighter-rouge">true</code></strong>, then we <em>Publish</em>
-                        <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>
-                        event.</li>
-                      <li>This <strong><code
-                            class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then
-                        display message to user.</li>
-                      <li><strong>Message to show</strong>: “<em>Failed to select [{SelectedPlane}].</em>”</li>
-                    </ul>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">$"Failed to select [</span><span class="p">{</span><span class="n">SelectedPlane</span><span class="p">}</span><span class="s">]."</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>When this condition is <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, then we <em>Publish</em> <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> event.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong>, then display message to user.</li>
+  <li><strong>Message to show</strong>: “<em>Failed to select [{SelectedPlane}].</em>”</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>After showing message, we close all open document in Solidworks.</li>
-                      <li>We close all documents including all dirty documents.</li>
-                      <li>We close all documents by <strong><code
-                            class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.
-                      </li>
-                      <li>This method is part of <strong><code
-                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable.
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method
-                            takes following as parameter.
-                            <ul>
-                              <li><strong>IncludeUnsaved</strong>: <em>As define in below table.</em></li>
-                            </ul>
+<ul>
+  <li>After showing message, we close all open document in Solidworks.</li>
+  <li>We close all documents including all dirty documents.</li>
+  <li>We close all documents by <strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.</li>
+  <li>This method is part of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method takes following as parameter.
+        <ul>
+          <li><strong>IncludeUnsaved</strong>: <em>As define in below table.</em></li>
+        </ul>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Member</th>
-                                  <th>Description</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong><code class="language-plaintext highlighter-rouge">True</code></strong>
-                                  </td>
-                                  <td><em>Close all documents, including dirty documents.</em></td>
-                                </tr>
-                                <tr>
-                                  <td><strong><code class="language-plaintext highlighter-rouge">False</code></strong>
-                                  </td>
-                                  <td><em>Close all documents, excluding dirty documents.</em></td>
-                                </tr>
-                              </tbody>
-                            </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">True</code></strong></td>
+              <td><em>Close all documents, including dirty documents.</em></td>
+            </tr>
+            <tr>
+              <td><strong><code class="language-plaintext highlighter-rouge">False</code></strong></td>
+              <td><em>Close all documents, excluding dirty documents.</em></td>
+            </tr>
+          </tbody>
+        </table>
 
-                            <ul>
-                              <li><strong>Return Value</strong>: <em><code
-                                    class="language-plaintext highlighter-rouge">True</code> if item was successfully
-                                  execute, <code class="language-plaintext highlighter-rouge">False</code> if not.</em>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><strong>Reference</strong>: 🚀 <a
-                          href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isldworks~closealldocuments.html">Solidworks
-                          CloseAllDocuments Method API Help</a></li>
-                    </ul>
+        <ul>
+          <li><strong>Return Value</strong>: <em><code class="language-plaintext highlighter-rouge">True</code> if item was successfully execute, <code class="language-plaintext highlighter-rouge">False</code> if not.</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Reference</strong>: 🚀 <a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isldworks~closealldocuments.html">Solidworks CloseAllDocuments Method API Help</a></li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>After closing all document in Solidworks application, we exit Solidworks application.</li>
-                      <li>We do this by calling <strong><code
-                            class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                        method is part <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>
-                        variable.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                        method <strong>did not</strong> take any parameter.</li>
-                    </ul>
+<ul>
+  <li>After closing all document in Solidworks application, we exit Solidworks application.</li>
+  <li>We do this by calling <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method is part <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method <strong>did not</strong> take any parameter.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>After closing Solidworks application, we exit the function and return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong>.</li>
-                    </ul>
+<ul>
+  <li>After closing Solidworks application, we exit the function and return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="insert-sketch">Insert Sketch</h3>
+<h3 id="insert-sketch">Insert Sketch</h3>
 
-                    <ul>
-                      <li>Now, we add Solidworks Sketch segment into selected plane.</li>
-                    </ul>
+<ul>
+  <li>Now, we add Solidworks Sketch segment into selected plane.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we make Solidworks visible.</li>
-                      <li>We make Solidworks visible by setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">Visible</code></strong> property.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">Visible</code></strong>
-                        property is part of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li>We set the value of <strong><code
-                            class="language-plaintext highlighter-rouge">Visible</code></strong> property to
-                        <strong><code class="language-plaintext highlighter-rouge">true</code></strong>.</li>
-                    </ul>
+<ul>
+  <li>In above code, we make Solidworks visible.</li>
+  <li>We make Solidworks visible by setting value of <strong><code class="language-plaintext highlighter-rouge">Visible</code></strong> property.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">Visible</code></strong> property is part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">Visible</code></strong> property to <strong><code class="language-plaintext highlighter-rouge">true</code></strong>.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">InsertSketch</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">InsertSketch</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we insert Solidwork Sketch into selected plane.</li>
-                      <li>We insert plane by <strong><code
-                            class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong>
-                        method is part of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc.SketchManager</code></strong> object.
-                      </li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong>
-                        method takes following parameter:
-                        <ul>
-                          <li><strong>UpdateEditRebuild</strong>: <em><strong>True</strong> to rebuild the part with any
-                              changes made to the sketch and <strong>exit</strong> sketch mode, <strong>False</strong>
-                              to not.</em></li>
-                        </ul>
-                      </li>
-                      <li><strong>Return Value</strong>: This <strong><code
-                            class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method
-                        <strong>did not</strong> return any value.</li>
-                      <li><strong>Reference</strong>: 🚀 <strong><a
-                            href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~insertsketch.html">Solidworks
-                            InsertSketch Method API Help</a></strong></li>
-                    </ul>
+<ul>
+  <li>In above code, we insert Solidwork Sketch into selected plane.</li>
+  <li>We insert plane by <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swDoc.SketchManager</code></strong> object.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method takes following parameter:
+    <ul>
+      <li><strong>UpdateEditRebuild</strong>: <em><strong>True</strong> to rebuild the part with any changes made to the sketch and <strong>exit</strong> sketch mode, <strong>False</strong> to not.</em></li>
+    </ul>
+  </li>
+  <li><strong>Return Value</strong>: This <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> method <strong>did not</strong> return any value.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~insertsketch.html">Solidworks InsertSketch Method API Help</a></strong></li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>After inserting sketch we return <strong><code
-                              class="language-plaintext highlighter-rouge">true</code></strong> and exit <strong><code
-                              class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> function in
-                          our application.</p>
-                      </li>
-                      <li>
-                        <p>In <strong><code
-                              class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand()</code></strong>
-                          method we add below lines.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>After inserting sketch we return <strong><code class="language-plaintext highlighter-rouge">true</code></strong> and exit <strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code></strong> function in our application.</p>
+  </li>
+  <li>
+    <p>In <strong><code class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand()</code></strong> method we add below lines.</p>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">insertSketch</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">insertSketch</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
     <span class="k">return</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we check if Sketch is inserted successfully.</li>
-                      <li><strong>Condition</strong>: <strong><code
-                            class="language-plaintext highlighter-rouge">insertSketch == false</code></strong>
-                        <ul>
-                          <li>We check if value of <strong><code
-                                class="language-plaintext highlighter-rouge">insertSketch</code></strong> variable is
-                            <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
-                          <li>In above condition is true, then we exit function from here.</li>
-                          <li>This also means we got some <strong>error</strong> while <em>inserting Solidworks
-                              Sketch</em> into document.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>In above code, we check if Sketch is inserted successfully.</li>
+  <li><strong>Condition</strong>: <strong><code class="language-plaintext highlighter-rouge">insertSketch == false</code></strong>
+    <ul>
+      <li>We check if value of <strong><code class="language-plaintext highlighter-rouge">insertSketch</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+      <li>In above condition is true, then we exit function from here.</li>
+      <li>This also means we got some <strong>error</strong> while <em>inserting Solidworks Sketch</em> into document.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">"Sketch inserted successfully."</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
-                    <ul>
-                      <li>After this we <em>Publish</em> <strong><code
-                            class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong>
-                        event.</li>
-                      <li>This <strong><code
-                            class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong>,
-                        then display message to user.</li>
-                      <li><strong>Message to show</strong>: “<em>Sketch inserted successfully.</em>”</li>
-                    </ul>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="s">"Sketch inserted successfully."</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>After this we <em>Publish</em> <strong><code class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong> event.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong>, then display message to user.</li>
+  <li><strong>Message to show</strong>: “<em>Sketch inserted successfully.</em>”</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h2 id="final-result">FINAL RESULT</h2>
+<h2 id="final-result">FINAL RESULT</h2>
 
-                    <p>Now, we have done everything needed to <strong>Insert Solidwork Sketch</strong> into
-                      <em>Solidworks Document</em> through our application.</p>
+<p>Now, we have done everything needed to <strong>Insert Solidwork Sketch</strong> into <em>Solidworks Document</em> through our application.</p>
 
-                    <p>Please see below image for final result of our work.</p>
+<p>Please see below image for final result of our work.</p>
 
-                    <p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/final-result.gif"><img
-                          src="/assets/solidworks-csharp-images/insert-solidworks-sketch/final-result.gif"
-                          alt="final-result" /></a></p>
+<p><a href="/assets/solidworks-csharp-images/insert-solidworks-sketch/final-result.gif"><img src="/assets/solidworks-csharp-images/insert-solidworks-sketch/final-result.gif" alt="final-result" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <p><strong>This is it !!!</strong></p>
+<p><strong>This is it !!!</strong></p>
 
-                    <p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
 
-                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
-                      <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-                    <p>Hope this post helps you to <strong>Insert Solidworks Sketch</strong> from WPF PRISM Application.
-                    </p>
+<p>Hope this post helps you to <strong>Insert Solidworks Sketch</strong> from WPF PRISM Application.</p>
 
-                    <p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
 
-                    <p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
 
-                    <p><em>Till then, Happy learning!!!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
 
 
-                  </div>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
+      </section>
 
-                </section>
-
-                <footer class="page__meta">
-
-
-
-
-
-
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2024-07-24T13:13:45-04:00">July 24, 2024</time></p>
+      <footer class="page__meta">
+        
+        
 
 
-                </footer>
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-10-06T05:08:44-04:00">October 6, 2024</time></p>
 
 
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
+      </footer>
 
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-csharp/browse-and-open-solidworks-file/"
-                        title="SOLIDWORKS C# API - Browse/Open SOLIDWORKS Document
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/browse-and-open-solidworks-file/" title="SOLIDWORKS C# API - Browse/Open SOLIDWORKS Document
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-csharp/edit-sketch/" title="SOLIDWORKS C# API - Edit Solidworks Sketch
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/edit-sketch/" title="SOLIDWORKS C# API - Edit Solidworks Sketch
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
-
-          </div>
+</div>
         </div>
       </div>
     </div>
@@ -1175,74 +912,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+              
+            
+              
+              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+              
+            
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -1267,15 +1004,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
