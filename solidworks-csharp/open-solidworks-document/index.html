@@ -5,16 +5,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Open SOLIDWORKS Document - The CAD Coder</title>
-<meta name="description" content="OBJECTIVE">
+  <!-- begin _includes/seo.html -->
+  <title>SOLIDWORKS C# API - Open SOLIDWORKS Document - The CAD Coder</title>
+  <meta name="description" content="OBJECTIVE">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
-<meta property="og:url" content="http://localhost:4000/solidworks-csharp/open-solidworks-document/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/open-solidworks-document/">
 
 
   <meta property="og:description" content="OBJECTIVE">
@@ -25,25 +26,25 @@
 
 
 
-  <meta property="article:published_time" content="2024-12-16T21:59:06-05:00">
+  <meta property="article:published_time" content="2025-01-04T09:08:35-05:00">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/solidworks-csharp/open-solidworks-document/">
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/open-solidworks-document/">
 
 
 
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,439 +55,556 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
-          
-            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks-document/" class="active">Open Solidworks Document</a></li>
-          
-            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
-          
-            <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Segment</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
-          
-            <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Lines</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
-          
-            <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Others</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
 
-    
-  
-  </div>
 
-</div>
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+
+                  <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+
+                  <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+
+                  <li><a href="/solidworks-csharp/open-solidworks-document/" class="active">Open Solidworks Document</a>
+                  </li>
+
+                  <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a>
+                  </li>
+
+                  <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch Segment</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
+
+                  <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
+
+                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a>
+                  </li>
+
+                  <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
+
+                  <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch Lines</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/create-line/">Create Line</a></li>
+
+                  <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
+
+                  <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
+
+                  <li><a href="/solidworks-csharp/test-createLine-method/">Test Create Line Method</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Others</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
-    
-    <meta itemprop="description" content="OBJECTIVE">
-    
-    
-    <meta itemprop="datePublished" content="2024-12-16T21:59:06-05:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Open SOLIDWORKS Document
-</h1>
-        
+              <meta itemprop="headline" content="SOLIDWORKS C# API - Open SOLIDWORKS Document">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description" content="OBJECTIVE">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2025-01-04T09:08:35-05:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">OBJECTIVE</a></li><li><a href="#demo-video">DEMO VIDEO</a></li><li><a href="#create-a-new-prism-project">CREATE A NEW PRISM PROJECT</a></li><li><a href="#build-solution">BUILD SOLUTION</a><ul><li><a href="#why-we-build-solution-">WHY WE BUILD SOLUTION ?</a></li></ul></li><li><a href="#add-user-interface-controls">ADD USER INTERFACE CONTROLS</a><ul><li><a href="#update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</a></li><li><a href="#remove-content-control">REMOVE CONTENT CONTROL</a></li><li><a href="#add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</a></li><li><a href="#add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</a></li><li><a href="#add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</a></li></ul></li><li><a href="#update-viewmodel">UPDATE VIEWMODEL</a><ul><li><a href="#add-documents-list">ADD DOCUMENTS LIST</a></li><li><a href="#binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</a></li><li><a href="#add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</a></li><li><a href="#add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</a></li></ul></li><li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li><li><a href="#open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</a></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <h2 id="objective">OBJECTIVE</h2>
+              <div class="page__inner-wrap">
 
-<p>How to Open SOLIDWORKS Document using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Open SOLIDWORKS
+                    Document
+                  </h1>
 
-<p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p>
 
-<p>If not then please go to 🚀 <strong><a href="/solidworks-csharp/Prerequisite">SOLIDWORKS C# API - Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
+                  <p class="page__meta">
 
-<hr />
 
-<h2 id="demo-video">DEMO VIDEO</h2>
 
-<p>Please see below video on how to “Open SOLIDWORKS Document” using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
 
-<iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
 
-<p>Please note that there are <strong>no explanation</strong> in the video.</p>
 
-<p><strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
 
-<hr />
 
-<h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<p>In the below image I have shown you how to create a new Prism project.</p>
+                      4 minute read
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif" alt="create-open-solidworks-document-project" /></a></p>
+                    </span>
 
-<p>All the steps has been already explained in <strong><a href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open SOLIDWORKS</a></strong> article.</p>
+                  </p>
 
-<p>This will open a new window as shown in below image.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg" alt="create-new-project" /></a></p>
+                </header>
 
-<h2 id="build-solution">BUILD SOLUTION</h2>
 
-<p>After we create our “<em>OpenSolidworksDocument</em>” project, we need to select “Build Solution” option as shown in below image.</p>
+                <section class="page__content" itemprop="text">
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg" alt="build-solution" /></a></p>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">OBJECTIVE</a></li>
+                        <li><a href="#demo-video">DEMO VIDEO</a></li>
+                        <li><a href="#create-a-new-prism-project">CREATE A NEW PRISM PROJECT</a></li>
+                        <li><a href="#build-solution">BUILD SOLUTION</a>
+                          <ul>
+                            <li><a href="#why-we-build-solution-">WHY WE BUILD SOLUTION ?</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#add-user-interface-controls">ADD USER INTERFACE CONTROLS</a>
+                          <ul>
+                            <li><a href="#update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP
+                                LOCATION AND HEIGHT/WIDTH</a></li>
+                            <li><a href="#remove-content-control">REMOVE CONTENT CONTROL</a></li>
+                            <li><a href="#add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</a>
+                            </li>
+                            <li><a href="#add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</a></li>
+                            <li><a href="#add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#update-viewmodel">UPDATE VIEWMODEL</a>
+                          <ul>
+                            <li><a href="#add-documents-list">ADD DOCUMENTS LIST</a></li>
+                            <li><a href="#binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</a></li>
+                            <li><a href="#add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</a></li>
+                            <li><a href="#add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#add-solidworks-references">ADD SOLIDWORKS REFERENCES</a></li>
+                        <li><a href="#open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</a></li>
+                        <li><a href="#final-result">FINAL RESULT</a></li>
+                      </ul>
 
-<h3 id="why-we-build-solution-">WHY WE BUILD SOLUTION ?</h3>
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
 
-<p>We build our solution because we want to make sure everything is working and there are no broken references.</p>
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <h2 id="objective">OBJECTIVE</h2>
 
-<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file before <em>building solution</em>.</p>
+                    <p>How to Open SOLIDWORKS Document using <strong>SOLIDWORKS C# API</strong> from <strong>WPF Prism
+                        Desktop Application</strong>.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg" alt="before-build-solution" /></a></p>
+                    <p>I hope you have installed <em>Visual Studio Community Edition</em> on your machine.</p>
 
-<p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file after <em>building solution</em>.</p>
+                    <p>If not then please go to 🚀 <strong><a href="/solidworks-csharp/Prerequisite">SOLIDWORKS C# API -
+                          Prerequisite</a></strong> post and watch the suggested videos before proceeding further.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg" alt="after-build-solution" /></a></p>
+                    <hr />
 
-<h2 id="add-user-interface-controls">ADD USER INTERFACE CONTROLS</h2>
+                    <h2 id="demo-video">DEMO VIDEO</h2>
 
-<p>Below we add some UI control for user interaction.</p>
+                    <p>Please see below video on how to “Open SOLIDWORKS Document” using <strong>SOLIDWORKS C#
+                        API</strong> from <strong>WPF Prism Desktop Application</strong>.</p>
 
-<h3 id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND HEIGHT/WIDTH</h3>
+                    <iframe src="https://www.youtube.com/embed/eSgcmdkB4-8" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
 
-<p>In below image, we update ‘<em>Start-up location</em>’ and ‘<em>Width &amp; Height</em>’ of our window.</p>
+                    <p>Please note that there are <strong>no explanation</strong> in the video.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif" alt="update-window-startup-location-width-height" /></a></p>
+                    <p><strong>Explanation</strong> of each step and why we write code this way is given in this post.
+                    </p>
 
-<p>First we update <em>Start-up location of window</em> by adding following line.</p>
+                    <hr />
 
-<p><strong><code class="language-plaintext highlighter-rouge">WindowStartupLocation="CenterScreen"</code></strong></p>
+                    <h2 id="create-a-new-prism-project">CREATE A NEW PRISM PROJECT</h2>
 
-<p>After this, we update window’s <em>Height and Width</em> to following values.</p>
+                    <p>In the below image I have shown you how to create a new Prism project.</p>
 
-<p><strong><code class="language-plaintext highlighter-rouge">Height="250" Width="500"</code></strong></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-open-solidworks-document-project.gif"
+                          alt="create-open-solidworks-document-project" /></a></p>
 
-<h3 id="remove-content-control">REMOVE CONTENT CONTROL</h3>
+                    <p>All the steps has been already explained in <strong><a
+                          href="/solidworks-csharp/open-solidworks/#create-a-new-prism-project">SOLIDWORKS C# API - Open
+                          SOLIDWORKS</a></strong> article.</p>
 
-<p>In below image we remove ContentControl Tag in Grid.</p>
+                    <p>This will open a new window as shown in below image.</p>
 
-<p>Also, we change <code class="language-plaintext highlighter-rouge">Grid</code> to <code class="language-plaintext highlighter-rouge">StackPanel</code> for helding our UI Controls.</p>
+                    <p><a href="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/1.create-new-project.svg"
+                          alt="create-new-project" /></a></p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif" alt="remove-content-control" /></a></p>
+                    <h2 id="build-solution">BUILD SOLUTION</h2>
 
-<h3 id="add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</h3>
+                    <p>After we create our “<em>OpenSolidworksDocument</em>” project, we need to select “Build Solution”
+                      option as shown in below image.</p>
 
-<p>In below image we add <code class="language-plaintext highlighter-rouge">TextBlock</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for indicating user to select a document.</p>
+                    <p><a href="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/2.build-solution.svg"
+                          alt="build-solution" /></a></p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif" alt="add-textblock" /></a></p>
+                    <h3 id="why-we-build-solution-">WHY WE BUILD SOLUTION ?</h3>
 
-<p><code class="language-plaintext highlighter-rouge">TextBlock</code> with <code class="language-plaintext highlighter-rouge">Text</code> and <em>other properties</em> are given below.</p>
+                    <p>We build our solution because we want to make sure everything is working and there are no broken
+                      references.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Select Document"</span>
+                    <p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file
+                      before <em>building solution</em>.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/3.before-build-solution.svg"
+                          alt="before-build-solution" /></a></p>
+
+                    <p>Below image show <code class="language-plaintext highlighter-rouge">MainWindow.xaml</code> file
+                      after <em>building solution</em>.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/4.after-build-solution.svg"
+                          alt="after-build-solution" /></a></p>
+
+                    <h2 id="add-user-interface-controls">ADD USER INTERFACE CONTROLS</h2>
+
+                    <p>Below we add some UI control for user interaction.</p>
+
+                    <h3 id="update-window-start-up-location-and-heightwidth">UPDATE WINDOW START-UP LOCATION AND
+                      HEIGHT/WIDTH</h3>
+
+                    <p>In below image, we update ‘<em>Start-up location</em>’ and ‘<em>Width &amp; Height</em>’ of our
+                      window.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/2.update-window-startup-location-width-height.gif"
+                          alt="update-window-startup-location-width-height" /></a></p>
+
+                    <p>First we update <em>Start-up location of window</em> by adding following line.</p>
+
+                    <p><strong><code
+                          class="language-plaintext highlighter-rouge">WindowStartupLocation="CenterScreen"</code></strong>
+                    </p>
+
+                    <p>After this, we update window’s <em>Height and Width</em> to following values.</p>
+
+                    <p><strong><code
+                          class="language-plaintext highlighter-rouge">Height="250" Width="500"</code></strong></p>
+
+                    <h3 id="remove-content-control">REMOVE CONTENT CONTROL</h3>
+
+                    <p>In below image we remove ContentControl Tag in Grid.</p>
+
+                    <p>Also, we change <code class="language-plaintext highlighter-rouge">Grid</code> to <code
+                        class="language-plaintext highlighter-rouge">StackPanel</code> for helding our UI Controls.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/3.remove-content-control.gif"
+                          alt="remove-content-control" /></a></p>
+
+                    <h3 id="add-textblock-for-selecting-document">ADD TEXTBLOCK FOR SELECTING DOCUMENT</h3>
+
+                    <p>In below image we add <code class="language-plaintext highlighter-rouge">TextBlock</code> inside
+                      <code class="language-plaintext highlighter-rouge">StackPanel</code> for indicating user to select
+                      a document.</p>
+
+                    <p><a href="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/4.add-textblock.gif"
+                          alt="add-textblock" /></a></p>
+
+                    <p><code class="language-plaintext highlighter-rouge">TextBlock</code> with <code
+                        class="language-plaintext highlighter-rouge">Text</code> and <em>other properties</em> are given
+                      below.</p>
+
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">"Select Document"</span>
            <span class="na">Width=</span><span class="s">"350"</span>
            <span class="na">Height=</span><span class="s">"30"</span>
            <span class="na">Margin=</span><span class="s">"25 10"</span>
            <span class="na">FontSize=</span><span class="s">"25"</span>
            <span class="na">FontWeight=</span><span class="s">"Medium"</span>
            <span class="na">VerticalAlignment=</span><span class="s">"Center"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h3 id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</h3>
+                    <h3 id="add-combobox-for-documents-list">ADD COMBOBOX FOR DOCUMENTS LIST</h3>
 
-<p>In below image we add <code class="language-plaintext highlighter-rouge">ComboBox</code> inside <code class="language-plaintext highlighter-rouge">StackPanel</code> for holding our list of <strong>SOLIDWORKS documents</strong>.</p>
+                    <p>In below image we add <code class="language-plaintext highlighter-rouge">ComboBox</code> inside
+                      <code class="language-plaintext highlighter-rouge">StackPanel</code> for holding our list of
+                      <strong>SOLIDWORKS documents</strong>.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif" alt="add-documents-combobox" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/5.add-documents-combobox.gif"
+                          alt="add-documents-combobox" /></a></p>
 
-<p><code class="language-plaintext highlighter-rouge">ComboBox</code> with set <em>properties</em> are given below.</p>
+                    <p><code class="language-plaintext highlighter-rouge">ComboBox</code> with set <em>properties</em>
+                      are given below.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
           <span class="na">Height=</span><span class="s">"30"</span>
           <span class="na">Margin=</span><span class="s">"10"</span>
           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
           <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h3 id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</h3>
+                    <h3 id="add-button-for-selected-document">ADD BUTTON FOR SELECTED DOCUMENT</h3>
 
-<p>In below image we add <code class="language-plaintext highlighter-rouge">Button</code> to open selected <em>SOLIDWORKS document</em>.</p>
+                    <p>In below image we add <code class="language-plaintext highlighter-rouge">Button</code> to open
+                      selected <em>SOLIDWORKS document</em>.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif" alt="add-button-for-solidworks-document" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/6.add-button-for-solidworks-document.gif"
+                          alt="add-button-for-solidworks-document" /></a></p>
 
-<p><code class="language-plaintext highlighter-rouge">Button</code> with <code class="language-plaintext highlighter-rouge">Content</code> and <em>other properties</em> are given below.</p>
+                    <p><code class="language-plaintext highlighter-rouge">Button</code> with <code
+                        class="language-plaintext highlighter-rouge">Content</code> and <em>other properties</em> are
+                      given below.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Width=</span><span class="s">"350"</span>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;Button</span> <span class="na">Width=</span><span class="s">"350"</span>
         <span class="na">Height=</span><span class="s">"50"</span>
         <span class="na">FontSize=</span><span class="s">"18"</span>
         <span class="na">FontWeight=</span><span class="s">"Medium"</span>
         <span class="na">Content=</span><span class="s">"Open Solidworks"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<h2 id="update-viewmodel">UPDATE VIEWMODEL</h2>
+                    <h2 id="update-viewmodel">UPDATE VIEWMODEL</h2>
 
-<p>Now, we update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> viewmodel, for showing data and adding functionalities.</p>
+                    <p>Now, we update our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>
+                      viewmodel, for showing data and adding functionalities.</p>
 
-<h3 id="add-documents-list">ADD DOCUMENTS LIST</h3>
+                    <h3 id="add-documents-list">ADD DOCUMENTS LIST</h3>
 
-<p>In below image we a list of SOLIDWORKS document in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code>.</p>
+                    <p>In below image we a list of SOLIDWORKS document in <code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code>.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif" alt="add-document-list-to-viewmodel" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/7.add-document-list-to-viewmodel.gif"
+                          alt="add-document-list-to-viewmodel" /></a></p>
 
-<p>For this we use below code.</p>
+                    <p>For this we use below code.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_DocumentsList</span><span class="p">;</span>
+                    <div class="language-c# highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_DocumentsList</span><span class="p">;</span>
 <span class="k">public</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">DocumentsList</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_DocumentsList</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_DocumentsList</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above code, <code class="language-plaintext highlighter-rouge">_DocumentsList</code> is private member of our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class, whose value we set in the <code class="language-plaintext highlighter-rouge">Constructor</code> of <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class.</p>
+                    <p>In above code, <code class="language-plaintext highlighter-rouge">_DocumentsList</code> is
+                      private member of our <code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class, whose value we
+                      set in the <code class="language-plaintext highlighter-rouge">Constructor</code> of <code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code> class.</p>
 
-<p><code class="language-plaintext highlighter-rouge">DocumentsList</code> will use for <code class="language-plaintext highlighter-rouge">Binding</code> document list to our <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+                    <p><code class="language-plaintext highlighter-rouge">DocumentsList</code> will use for <code
+                        class="language-plaintext highlighter-rouge">Binding</code> document list to our <code
+                        class="language-plaintext highlighter-rouge">ComboBox</code> as <code
+                        class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
 
-<p>Here we use <code class="language-plaintext highlighter-rouge">ObservableCollection&lt;T&gt;</code> because of <strong>MVVM</strong>.</p>
+                    <p>Here we use <code
+                        class="language-plaintext highlighter-rouge">ObservableCollection&lt;T&gt;</code> because of
+                      <strong>MVVM</strong>.</p>
 
-<p>For more details please visit <strong><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0">this link</a></strong>.</p>
+                    <p>For more details please visit <strong><a
+                          href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0">this
+                          link</a></strong>.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
+                    <div class="language-c# highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">_DocumentsList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
     <span class="p">{</span>
@@ -495,96 +613,150 @@
         <span class="s">"Drawing Document"</span>
     <span class="p">};</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>In above code, we add SOLIDWORKS documents into our <code class="language-plaintext highlighter-rouge">_DocumentsList</code> list.</p>
+                    <p>In above code, we add SOLIDWORKS documents into our <code
+                        class="language-plaintext highlighter-rouge">_DocumentsList</code> list.</p>
 
-<h3 id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</h3>
+                    <h3 id="binding-document-list-to-combobox">BINDING DOCUMENT LIST TO COMBOBOX</h3>
 
-<p>In below image we <em>Bind</em> our document list i.e. <code class="language-plaintext highlighter-rouge">DocumentsList</code> to <code class="language-plaintext highlighter-rouge">ComboBox</code> as <code class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
+                    <p>In below image we <em>Bind</em> our document list i.e. <code
+                        class="language-plaintext highlighter-rouge">DocumentsList</code> to <code
+                        class="language-plaintext highlighter-rouge">ComboBox</code> as <code
+                        class="language-plaintext highlighter-rouge">ItemSource</code>.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif" alt="binding-document-list" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/8.binding-document-list.gif"
+                          alt="binding-document-list" /></a></p>
 
-<p>For Binding <code class="language-plaintext highlighter-rouge">DocumentsList</code> we add following line.</p>
+                    <p>For Binding <code class="language-plaintext highlighter-rouge">DocumentsList</code> we add
+                      following line.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemsSource="{Binding DocumentsList}"
-</code></pre></div></div>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code>ItemsSource="{Binding DocumentsList}"
+</code></pre>
+                      </div>
+                    </div>
 
-<p>After this update our ComboBox looks like as:</p>
+                    <p>After this update our ComboBox looks like as:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
           <span class="na">Height=</span><span class="s">"30"</span>
           <span class="na">Margin=</span><span class="s">"10"</span>
           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
           <span class="na">FontSize=</span><span class="s">"16"</span> 
           <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+                    <p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code,
+                      we get following window.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg" alt="comboBox-list-window" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/5.comboBox-list-window.svg"
+                          alt="comboBox-list-window" /></a></p>
 
-<p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get <strong>error</strong> when we click “<em>Open Solidworks</em>” button.</p>
+                    <p>As I have mentioned in above image, if there are <strong>no item selected</strong>, we will get
+                      <strong>error</strong> when we click “<em>Open Solidworks</em>” button.</p>
 
-<p>To avoid this error we define <code class="language-plaintext highlighter-rouge">SelectedIndex</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code> to <strong>0</strong>.</p>
+                    <p>To avoid this error we define <code
+                        class="language-plaintext highlighter-rouge">SelectedIndex</code> property of <code
+                        class="language-plaintext highlighter-rouge">ComboBox</code> to <strong>0</strong>.</p>
 
-<p>After this update our ComboBox looks like as:</p>
+                    <p>After this update our ComboBox looks like as:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
+                    <div class="language-xml highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="nt">&lt;ComboBox</span> <span class="na">Width=</span><span class="s">"350"</span>
           <span class="na">Height=</span><span class="s">"30"</span>
           <span class="na">Margin=</span><span class="s">"10"</span>
           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
           <span class="na">FontSize=</span><span class="s">"16"</span> 
           <span class="na">SelectedIndex=</span><span class="s">"0"</span>
           <span class="na">ItemsSource=</span><span class="s">"{Binding DocumentsList}"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code, we get following window.</p>
+                    <p>When we <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> our code,
+                      we get following window.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"><img src="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg" alt="part-document-selected-in-list" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/6.part-document-selected-in-list.svg"
+                          alt="part-document-selected-in-list" /></a></p>
 
-<h3 id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</h3>
+                    <h3 id="add-selected-value-in-combobox">ADD SELECTED VALUE IN COMBOBOX</h3>
 
-<p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p>
+                    <p>In our program, we want to open selected <em>SOLIDWORKS Document</em>.</p>
 
-<p>To get the selected value, we need a property i.e. <code class="language-plaintext highlighter-rouge">SelectedDocument</code> in our <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel and bind this property to <code class="language-plaintext highlighter-rouge">SelectValue</code> property of <code class="language-plaintext highlighter-rouge">ComboBox</code>.</p>
+                    <p>To get the selected value, we need a property i.e. <code
+                        class="language-plaintext highlighter-rouge">SelectedDocument</code> in our <code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel and bind this
+                      property to <code class="language-plaintext highlighter-rouge">SelectValue</code> property of
+                      <code class="language-plaintext highlighter-rouge">ComboBox</code>.</p>
 
-<p>For more details please see below image.</p>
+                    <p>For more details please see below image.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif" alt="selectedvalue-binding" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/9.selectedvalue-binding.gif"
+                          alt="selectedvalue-binding" /></a></p>
 
-<h3 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h3>
+                    <h3 id="add-command-to-viewmodel">ADD COMMAND TO VIEWMODEL</h3>
 
-<p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our button.</p>
+                    <p>In our application to open selected SOLIDWORKS document, we need add a <em>Command</em> to our
+                      button.</p>
 
-<p>For this we need to do following:</p>
+                    <p>For this we need to do following:</p>
 
-<ul>
-  <li>
-    <p>We need to create a <em>Prism Command</em> i.e. <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> in <code class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel.</p>
-  </li>
-  <li>
-    <p>Bind this <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> to our button.</p>
-  </li>
-</ul>
+                    <ul>
+                      <li>
+                        <p>We need to create a <em>Prism Command</em> i.e. <code
+                            class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> in <code
+                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code> ViewModel.</p>
+                      </li>
+                      <li>
+                        <p>Bind this <code class="language-plaintext highlighter-rouge">OpenSolidworksCommand</code> to
+                          our button.</p>
+                      </li>
+                    </ul>
 
-<p>In below we see how to do this, also we checked the selected value.</p>
+                    <p>In below we see how to do this, also we checked the selected value.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif" alt="add-command-to-button" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/10-add-command-to-button.gif"
+                          alt="add-command-to-button" /></a></p>
 
-<h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
+                    <h2 id="add-solidworks-references">ADD SOLIDWORKS REFERENCES</h2>
 
-<p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.</p>
+                    <p>For opening <strong>SOLIDWORKS</strong> we need to add some <em>references</em> into our project.
+                    </p>
 
-<p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
+                    <p>Please see below image for how to add <em>SOLIDWORKS</em> reference.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/11.add-solidworks-references.gif"
+                          alt="add-solidworks-references" /></a></p>
 
-<h2 id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</h2>
+                    <h2 id="open-solidworks-document">OPEN SOLIDWORKS DOCUMENT</h2>
 
-<p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below image.</p>
+                    <p>Now for opening <em>SOLIDWORKS Document</em> we need to add following code as shown in below
+                      image.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
+                    <div class="language-c# highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">void</span> <span class="nf">ExecuteOpenSolidworksCommand</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// Create a new Instance of Solidworks Application</span>
     <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
@@ -615,87 +787,95 @@
     <span class="c1">// Create a new Document as ModelDoc2 object</span>
     <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">templatePath</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif" alt="add-open-solidworks-document-code" /></a></p>
+                    <p><a
+                        href="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/12.add-open-solidworks-document-code.gif"
+                          alt="add-open-solidworks-document-code" /></a></p>
 
-<h2 id="final-result">FINAL RESULT</h2>
+                    <h2 id="final-result">FINAL RESULT</h2>
 
-<p>Now, we have done everything needed to <strong>Open</strong> <em>SOLIDWORKS Document</em> through our application.</p>
+                    <p>Now, we have done everything needed to <strong>Open</strong> <em>SOLIDWORKS Document</em> through
+                      our application.</p>
 
-<p>Please see below image for final result of our work.</p>
+                    <p>Please see below image for final result of our work.</p>
 
-<p><a href="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"><img src="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif" alt="final-result" /></a></p>
+                    <p><a href="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"><img
+                          src="/assets/solidworks-csharp-images/open-solidworks-document/final-result.gif"
+                          alt="final-result" /></a></p>
 
-<hr />
+                    <hr />
 
-<p><strong>This is it !!!</strong></p>
+                    <p><strong>This is it !!!</strong></p>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
 
-<p>Hope this post helps you to <strong>Open SOLIDWORKS Documents</strong> from WPF PRISM Application.</p>
+                    <p>Hope this post helps you to <strong>Open SOLIDWORKS Documents</strong> from WPF PRISM
+                      Application.</p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+                    <p><em>Do let me know by you like this post or not!</em></p>
 
-<p><em>Till then, Happy learning!!!</em></p>
-
-
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-      </section>
-
-      <footer class="page__meta">
-        
-        
+                    <p><em>Till then, Happy learning!!!</em></p>
 
 
-        
+                  </div>
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-12-16T21:59:06-05:00">December 16, 2024</time></p>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
+
+                </section>
+
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/open-solidworks/" title="SOLIDWORKS C# API - Open SOLIDWORKS
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2025-01-04T09:08:35-05:00">January 4, 2025</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/open-solidworks/" title="SOLIDWORKS C# API - Open SOLIDWORKS
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/browse-and-open-solidworks-file/" title="SOLIDWORKS C# API - Browse/Open SOLIDWORKS Document
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/browse-and-open-solidworks-file/"
+                        title="SOLIDWORKS C# API - Browse/Open SOLIDWORKS Document
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
+
+          </div>
         </div>
       </div>
     </div>
@@ -705,74 +885,74 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-              
-            
-              
-              <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-              
-            
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -797,15 +977,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

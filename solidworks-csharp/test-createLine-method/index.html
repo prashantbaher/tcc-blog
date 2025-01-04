@@ -1,0 +1,1534 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- begin _includes/seo.html -->
+  <title>SOLIDWORKS C# API - Test Create Line Method - The CAD Coder</title>
+  <meta name="description" content="Objective">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="SOLIDWORKS C# API - Test Create Line Method">
+  <meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/test-createLine-method/">
+
+
+  <meta property="og:description" content="Objective">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-04T09:08:35-05:00">
+
+
+
+
+
+
+  <link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/test-createLine-method/">
+
+
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://thecadcoder.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
+
+  <!-- end _includes/seo.html -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>My Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li> -->
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+            <i class="fas fa-search"></i>
+        </a> -->
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 col-sm-4">
+        <div class="sidebar sticky" style="width: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+
+                  <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+
+                  <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+
+                  <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
+
+                  <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a>
+                  </li>
+
+                  <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch Segment</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
+
+                  <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
+
+                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a>
+                  </li>
+
+                  <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
+
+                  <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Sketch Lines</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/create-line/">Create Line</a></li>
+
+                  <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
+
+                  <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
+
+                  <li><a href="/solidworks-csharp/test-createLine-method/" class="active">Test Create Line Method</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Others</span>
+
+
+
+                <ul>
+
+                  <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
+      <div class="col-md-9 col-lg-10 col-sm-8">
+        <div>
+          <div id="main" role="main">
+
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
+              <meta itemprop="headline" content="SOLIDWORKS C# API - Test Create Line Method">
+
+              <meta itemprop="description" content="Objective">
+
+
+              <meta itemprop="datePublished" content="2025-01-04T09:08:35-05:00">
+
+
+              <div class="page__inner-wrap">
+
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Test Create Line
+                    Method
+                  </h1>
+
+
+                  <p class="page__meta">
+
+
+
+
+
+
+
+
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
+
+                      11 minute read
+
+                    </span>
+
+                  </p>
+
+
+                </header>
+
+
+                <section class="page__content" itemprop="text">
+
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#objective">Objective</a></li>
+                        <li><a href="#demo-video">Demo Video</a></li>
+                        <li><a href="#modify-mainwindowviewmodel">Modify [MainWindowViewModel]</a></li>
+                        <li><a href="#add-private-fields">Add [Private Fields]</a>
+                          <ul>
+                            <li><a href="#understand-mock-object">Understand Mock Object</a></li>
+                            <li><a href="#understand-mainwindowviewmodel-field">Understand [MainWindowViewModel]
+                                Field</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#add-constructor">Add [Constructor]</a>
+                          <ul>
+                            <li><a href="#set-up-mock-fields">Set up Mock Fields</a></li>
+                            <li><a href="#set-up-mainwindowviewmodel-field">Set up [MainWindowViewModel] Field</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#add-test-cases">Add Test Cases</a>
+                          <ul>
+                            <li><a href="#add-testcase-1">Add [TestCase 1]</a></li>
+                            <li><a href="#add-testcase-2">Add [TestCase 2]</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
+
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <h2 id="objective">Objective</h2>
+
+                    <p>I want to:</p>
+
+                    <ul>
+                      <li><em>Setup Test Model class for testing.</em></li>
+                      <li><em>Test Create Line Method.</em></li>
+                      <li><em>I will not explain each line, since they are already explained in previous articles.</em>
+                      </li>
+                      <li><em>We will continue from previous article 🚀 <strong><a
+                              href="/solidworks-csharp/setup-test-project/" target="_blank">Setup Test
+                              Project</a></strong></em>.</li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="demo-video">Demo Video</h2>
+
+                    <p>Watch the video below to learn how to <strong>Test Create Line Method</strong>.</p>
+
+                    <iframe src="https://www.youtube.com/embed/rgwOKC4Avno" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
+
+                    <p class="notice--info">Please note that there are <strong>no explanation</strong> in the
+                      video.<br />
+                      <strong>Explanation</strong> of each step and why we write code this way is given in this post.
+                    </p>
+
+                    <hr />
+
+                    <h2 id="modify-mainwindowviewmodel">Modify [<code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code>]</h2>
+
+                    <p>First, we need to make <strong>method we want to test and members</strong> we going to use in our
+                      test class make as <strong><code
+                          class="language-plaintext highlighter-rouge">public</code></strong>.</p>
+
+                    <ul>
+                      <li><strong>Public Member</strong>:
+                        <ul>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">public string messageToShow;</code></strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><strong>Public Method</strong>:
+                        <ul>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">public bool CreateLine(SketchSegment sketchSegment, double x1, double y1, double z1, SldWorks.SldWorks swApp, SketchManager sketchManager, double x2, double y2, double z2)</code></strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><strong>Modify Constructor</strong>:
+                        <ul>
+                          <li><em>Remove Below lines.</em></li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">StartPointViewModel</span><span class="p">.</span><span class="n">Header</span> <span class="p">=</span> <span class="s">"Start Point Co-ordinates"</span><span class="p">;</span>
+<span class="n">EndPointViewModel</span><span class="p">.</span><span class="n">Header</span> <span class="p">=</span> <span class="s">"End Point Co-ordinates"</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>All these changes we need to do in our <strong><code
+                          class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong> class.</p>
+
+                    <hr />
+
+                    <h2 id="add-private-fields">Add [Private Fields]</h2>
+
+                    <p>Then, we need to add some Private Fields.</p>
+
+                    <p>These fields are shown below.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="cp">#region Private Fields
+</span><span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IUnitConversionHelper</span><span class="p">&gt;</span> <span class="n">_mockConversionHelper</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IEventAggregator</span><span class="p">&gt;</span> <span class="n">_mockEventAggregator</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IContainerProvider</span><span class="p">&gt;</span> <span class="n">_mockContainer</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;</span> <span class="n">_mockStartPoint</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;</span> <span class="n">_mockEndPoint</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span><span class="p">&gt;</span> <span class="n">_mockSwApp</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDoc2</span><span class="p">&gt;</span> <span class="n">_mockSwDoc</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchManager</span><span class="p">&gt;</span> <span class="n">_mockSketchManager</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDocExtension</span><span class="p">&gt;</span> <span class="n">_mockModelDocExtension</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchSegment</span><span class="p">&gt;</span> <span class="n">_mockSketchSegment</span><span class="p">;</span>
+
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">MainWindowViewModel</span> <span class="n">_viewModel</span><span class="p">;</span>
+<span class="cp">#endregion
+</span></code></pre>
+                      </div>
+                    </div>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a href="/assets/solidworks-csharp-images/test-createLine-method/1-add-private-fields.png"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/1-add-private-fields.png"
+                          alt="1-add-private-fields" /></a></p>
+
+                    <p>In above code sample, we create a “<strong>Private Fields</strong>” region.</p>
+
+                    <p>Inside this region we <em>create</em> some <strong>Mock properties</strong> and a field for
+                      <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>
+                      class.</p>
+
+                    <p>This <em>viewmodel field</em> will allow us to <em>test different methods</em>.</p>
+
+                    <p>These <strong><code class="language-plaintext highlighter-rouge">Mock object</code></strong> will
+                      help us to <strong>mock</strong> the dependencies.</p>
+
+                    <h3 id="understand-mock-object">Understand Mock Object</h3>
+
+                    <p>In this section, I will explain a Mock object/field.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span><span class="p">&gt;</span> <span class="n">_mockSwApp</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong>private</strong>: This means that <strong><em>only</em></strong> <strong><code
+                            class="language-plaintext highlighter-rouge">MainWindowViewModelTests</code></strong> class
+                        can use it; no one else is allowed.</li>
+                      <li><strong>readonly</strong>: This means that <strong>once we set this field, we cannot change or
+                          replace it</strong>. We can only use it as it is.</li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Mock&lt;SldWorks.SldWorks&gt;</code></strong> :
+                        “<strong><code class="language-plaintext highlighter-rouge">Mock</code></strong>” refers to a
+                        simulated version of <strong><code
+                            class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></strong>,
+                        <strong>designed to mimic</strong> its behavior <em>without being the actual software</em>.</li>
+                      <li><strong>_mockSwApp</strong>: This is the name we gave our variable.</li>
+                    </ul>
+
+                    <blockquote>
+                      <p>Similarly, we can understand other Mock fields through same analogy.</p>
+                    </blockquote>
+
+                    <hr />
+
+                    <h3 id="understand-mainwindowviewmodel-field">Understand [<code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code>] Field</h3>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="n">MainWindowViewModel</span> <span class="n">_viewModel</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong>private</strong>:
+                        <ul>
+                          <li>This means that the <strong><code
+                                class="language-plaintext highlighter-rouge">_viewModel</code></strong> can only be
+                            accessed and used within the <strong><code
+                                class="language-plaintext highlighter-rouge">MainWindowViewModelTests</code></strong>
+                            class.</li>
+                          <li><strong>No other part of the program</strong> can see or change it.</li>
+                        </ul>
+                      </li>
+                      <li><strong>readonly</strong>:
+                        <ul>
+                          <li>This indicates that <em>once <strong><code
+                                  class="language-plaintext highlighter-rouge">_viewModel</code></strong> is set</em>,
+                            it <em>cannot be changed or reassigned to something else</em>.</li>
+                          <li><em>You can still use it, but you can’t replace it with a different <strong><code
+                                  class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong> later
+                              on.</em></li>
+                        </ul>
+                      </li>
+                      <li><strong>MainWindowViewModel</strong>:
+                        <ul>
+                          <li><em>This is the type of the variable</em>.</li>
+                          <li><em>It suggests that <strong><code
+                                  class="language-plaintext highlighter-rouge">_viewModel</code></strong> is a specific
+                              kind of object that contains the logic and data for the main window of an
+                              application.</em></li>
+                        </ul>
+                      </li>
+                      <li><strong>_viewModel</strong>:
+                        <ul>
+                          <li><em>This is the name of the variable.</em></li>
+                          <li><em>The underscore at the beginning is a common convention in programming to indicate that
+                              this is a private variable.</em></li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="add-constructor">Add [Constructor]</h2>
+
+                    <p>Now we need to add a <strong>Default Constructor</strong> and <strong>set up</strong> the
+                      <em>Mock object fields</em>.</p>
+
+                    <p>In this section, we will:</p>
+
+                    <ul>
+                      <li><em>Create a region</em></li>
+                      <li><em>Make a Default Constructor</em></li>
+                    </ul>
+
+                    <p>In this constructor, we will:</p>
+
+                    <ul>
+                      <li><em>Set up the mock object fields</em></li>
+                    </ul>
+
+                    <p>We also use the <em>Mock objects</em> to <em>set up</em> our <code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code> field.</p>
+
+                    <p>This will <strong>show us</strong> <em>how we can use Mock objects to handle dependencies</em>.
+                    </p>
+
+                    <p>Please see below 👇🏻 code sample of Constructor.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="cp">#region Constructor
+</span>
+<span class="k">public</span> <span class="nf">MainWindowViewModelTests</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_mockConversionHelper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IUnitConversionHelper</span><span class="p">&gt;();</span>
+    <span class="n">_mockEventAggregator</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IEventAggregator</span><span class="p">&gt;();</span>
+    <span class="n">_mockContainer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IContainerProvider</span><span class="p">&gt;();</span>
+    <span class="n">_mockStartPoint</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;();</span>
+    <span class="n">_mockEndPoint</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;();</span>
+    <span class="n">_mockSwApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span><span class="p">&gt;();</span>
+    <span class="n">_mockSwDoc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDoc2</span><span class="p">&gt;();</span>
+    <span class="n">_mockSketchManager</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchManager</span><span class="p">&gt;();</span>
+    <span class="n">_mockModelDocExtension</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDocExtension</span><span class="p">&gt;();</span>
+    <span class="n">_mockSketchSegment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchSegment</span><span class="p">&gt;();</span>
+
+    <span class="n">_viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">_mockEventAggregator</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> 
+        <span class="n">_mockContainer</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockConversionHelper</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+
+    <span class="n">_viewModel</span><span class="p">.</span><span class="n">StartPointViewModel</span> <span class="p">=</span> <span class="n">_mockStartPoint</span><span class="p">.</span><span class="n">Object</span><span class="p">;</span>
+    <span class="n">_viewModel</span><span class="p">.</span><span class="n">EndPointViewModel</span> <span class="p">=</span> <span class="n">_mockEndPoint</span><span class="p">.</span><span class="n">Object</span><span class="p">;</span>
+<span class="p">}</span> 
+<span class="cp">#endregion
+</span></code></pre>
+                      </div>
+                    </div>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/test-createLine-method/2-add-default-constructor.png"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/2-add-default-constructor.png"
+                          alt="2-add-default-constructor" /></a></p>
+
+                    <hr />
+
+                    <h3 id="set-up-mock-fields">Set up Mock Fields</h3>
+
+                    <p>In the code below, we set up Mock type fields.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">_mockConversionHelper</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IUnitConversionHelper</span><span class="p">&gt;();</span>
+<span class="n">_mockEventAggregator</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IEventAggregator</span><span class="p">&gt;();</span>
+<span class="n">_mockContainer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IContainerProvider</span><span class="p">&gt;();</span>
+<span class="n">_mockStartPoint</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;();</span>
+<span class="n">_mockEndPoint</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IPointViewModel</span><span class="p">&gt;();</span>
+<span class="n">_mockSwApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span><span class="p">&gt;();</span>
+<span class="n">_mockSwDoc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDoc2</span><span class="p">&gt;();</span>
+<span class="n">_mockSketchManager</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchManager</span><span class="p">&gt;();</span>
+<span class="n">_mockModelDocExtension</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">ModelDocExtension</span><span class="p">&gt;();</span>
+<span class="n">_mockSketchSegment</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">SketchSegment</span><span class="p">&gt;();</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <hr />
+
+                    <h3 id="set-up-mainwindowviewmodel-field">Set up [<code
+                        class="language-plaintext highlighter-rouge">MainWindowViewModel</code>] Field</h3>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">_viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">_mockEventAggregator</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> 
+    <span class="n">_mockContainer</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockConversionHelper</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p><strong>ViewModel Initialization</strong> : In above code,</p>
+                    <ul>
+                      <li>A new instance of <strong><code
+                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong> is created.
+                      </li>
+                      <li>Dependencies injected into the constructor:
+                        <ul>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockEventAggregator.Object</code></strong>
+                          </li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockContainer.Object</code></strong></li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockConversionHelper.Object</code></strong>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <blockquote>
+                      <p><strong><code
+                            class="language-plaintext highlighter-rouge">_mockEventAggregator.Object</code></strong>
+                        refers to an instance of a mock object created using a mocking framework. This resolve the
+                        dependency for creating instance.<br />
+                        <strong><code class="language-plaintext highlighter-rouge">_mockContainer.Object</code></strong>
+                        is similar object, we use to resolve another dependency.<br />
+                        <strong><code
+                            class="language-plaintext highlighter-rouge">_mockConversionHelper.Object</code></strong> is
+                        similar object, we use to resolve last dependency.<br />
+                        We need to resolve these dependencies otherwise we can not create the instance of <strong><code
+                            class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.
+                      </p>
+                    </blockquote>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">_viewModel</span><span class="p">.</span><span class="n">StartPointViewModel</span> <span class="p">=</span> <span class="n">_mockStartPoint</span><span class="p">.</span><span class="n">Object</span><span class="p">;</span>
+<span class="n">_viewModel</span><span class="p">.</span><span class="n">EndPointViewModel</span> <span class="p">=</span> <span class="n">_mockEndPoint</span><span class="p">.</span><span class="n">Object</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p><strong>ViewModel Property Assignments</strong> : In above code we set,</p>
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">StartPointViewModel</code></strong>
+                        property of <strong><code
+                            class="language-plaintext highlighter-rouge">_viewModel</code></strong> variable is assigned
+                        to <strong><code
+                            class="language-plaintext highlighter-rouge">_mockStartPoint.Object</code></strong> mock
+                        object created using a mocking framework.</li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">EndPointViewModel</code></strong>
+                        property of <strong><code
+                            class="language-plaintext highlighter-rouge">_viewModel</code></strong> variable is set to
+                        <strong><code class="language-plaintext highlighter-rouge">_mockEndPoint.Object</code></strong>
+                        mock object created using a mocking framework.</li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="add-test-cases">Add Test Cases</h2>
+
+                    <p>Now we <strong>set up Test cases</strong> for below 👇🏻 <strong><code
+                          class="language-plaintext highlighter-rouge">CreateLine</code></strong> method of
+                      <strong><code class="language-plaintext highlighter-rouge">_viewModel</code></strong> variable.
+                    </p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">public</span> <span class="kt">bool</span> <span class="nf">CreateLine</span><span class="p">(</span><span class="n">SketchSegment</span> <span class="n">sketchSegment</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">z1</span><span class="p">,</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span><span class="p">,</span> <span class="n">SketchManager</span> <span class="n">swSketchManager</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">z2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">sketchSegment</span> <span class="p">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">sketchSegment</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to Create Sketch line."</span><span class="p">;</span>
+        <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+        <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>To test <strong><code class="language-plaintext highlighter-rouge">CreateLine</code></strong>
+                      method, we need 2 test cases.</p>
+
+                    <ol>
+                      <li><strong>TestCase 1</strong> : <em>When Line Creation <strong>Fails</strong> Returns
+                          <strong>False</strong></em></li>
+                      <li><strong>TestCase 2</strong> : <em>When Line Creation <strong>Succeeds</strong> Returns
+                          <strong>False</strong></em></li>
+                    </ol>
+
+                    <p>Before we add test cases, we will create a region called “<strong>Test Method [<code
+                          class="language-plaintext highlighter-rouge">CreateLine</code>]</strong>”.</p>
+
+                    <p>This will help organize our code properly.</p>
+
+                    <hr />
+
+                    <h3 id="add-testcase-1">Add [TestCase 1]</h3>
+
+                    <p>In this section, we set up <strong>TestCase 1</strong>.</p>
+
+                    <p>Please see below 👇🏻 code sample for set up.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">CreateLine_ReturnsFalse_WhenLineCreationFails</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Arrange</span>
+  <span class="n">SketchSegment</span> <span class="n">sketchSegment</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+  <span class="n">_mockSketchManager</span><span class="p">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">sm</span> <span class="p">=&gt;</span> <span class="n">sm</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;()))</span>
+                    <span class="p">.</span><span class="nf">Returns</span><span class="p">((</span><span class="n">SketchSegment</span><span class="p">)</span><span class="k">null</span><span class="p">);</span>
+
+  <span class="c1">// Act</span>
+  <span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="n">_viewModel</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">sketchSegment</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_mockSwApp</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockSketchManager</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+
+  <span class="c1">// Assert</span>
+  <span class="n">Assert</span><span class="p">.</span><span class="nf">False</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+  <span class="n">Assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="s">"Failed to Create Sketch line."</span><span class="p">,</span> <span class="n">_viewModel</span><span class="p">.</span><span class="n">messageToShow</span><span class="p">);</span>
+  <span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span>
+  <span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">(),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/test-createLine-method/3-add-test-1-to-test-class.png"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/3-add-test-1-to-test-class.png"
+                          alt="3-add-test-1-to-test-class" /></a></p>
+
+                    <p>Explanation of above <strong><code
+                          class="language-plaintext highlighter-rouge">CreateLine_ReturnsFalse_WhenLineCreationFails</code></strong>
+                      is give below.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">CreateLine_ReturnsFalse_WhenLineCreationFails</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">[Fact]</code></strong> :
+                        <ul>
+                          <li>This is a <strong>test attribute</strong>.</li>
+                          <li>This attribute shows that <strong>this method is a test case</strong> that the
+                            <strong><code class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test
+                              runner</em> recognizes.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">public</code></strong> :
+                        <ul>
+                          <li>This means that the <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsFalse_WhenLineCreationFails</code></strong>
+                            method <strong>can be accessed from anywhere</strong>.</li>
+                          <li><strong>This is important</strong>, because <strong><code
+                                class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test runner</em>
+                            is <strong>external agent</strong>.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test
+                              runner</em> <strong>need to have accessed</strong> to this <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsFalse_WhenLineCreationFails</code></strong>
+                            method.</li>
+                          <li>Because of this requirment we need to give <strong><code
+                                class="language-plaintext highlighter-rouge">public</code></strong> accessor.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">void</code></strong> :
+                        <ul>
+                          <li>This is the <strong>return type</strong> of <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsFalse_WhenLineCreationFails</code></strong>
+                            method.</li>
+                          <li>Generally we <strong>don’t return anything</strong> from <em>test method</em>.</li>
+                          <li>Because of this we return <strong><code
+                                class="language-plaintext highlighter-rouge">void</code></strong> means <em>we are not
+                              returning anything</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">CreateLine_ReturnsFalse_WhenLineCreationFails</code></strong>
+                        <ul>
+                          <li>This is the <strong>name of method</strong>.</li>
+                          <li>This name is <em>created</em> in <strong>3 different parts</strong> and <strong>combined
+                              with underscore “_“</strong>.</li>
+                          <li>Different parts are explained below 👇🏻:
+                            <ul>
+                              <li><strong>Part 1</strong>: <em>Name of method we are testing</em>.</li>
+                              <li><strong>Part 2</strong>: <em>Return value we are expecting</em>.</li>
+                              <li><strong>Part 3</strong>: <em>Condition for which we are testing the method</em>.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">SketchSegment</span> <span class="n">sketchSegment</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">SketchSegment</code></strong>:
+                        <ul>
+                          <li>This is type of object we want to create.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">sketchSegment</code></strong>:
+                        <ul>
+                          <li>This is name of object we want to create.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">null</code></strong>:
+                        <ul>
+                          <li>This is the value we are assigning to <strong><code
+                                class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="n">_mockSketchManager</span><span class="p">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">sm</span> <span class="p">=&gt;</span> <span class="n">sm</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;()))</span>
+                  <span class="p">.</span><span class="nf">Returns</span><span class="p">((</span><span class="n">SketchSegment</span><span class="p">)</span><span class="k">null</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong>:
+                        <ul>
+                          <li>This is mocking object for <strong><code
+                                class="language-plaintext highlighter-rouge">SketchManager</code></strong> object.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSketchManager.Setup()</code></strong>:
+                        <ul>
+                          <li>We are using the <strong><code
+                                class="language-plaintext highlighter-rouge">Setup()</code></strong> method from
+                            <strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong> object.
+                          </li>
+                          <li>This is important and most basic one you should learn.</li>
+                          <li>This <strong><code class="language-plaintext highlighter-rouge">Setup()</code></strong>
+                            method allow us to setup the behavior of object it is mocking and its members/methods.
+                            <ul>
+                              <li>Please follow me and you will be able to understand how we setup the child
+                                members/methods.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Setup(sm =&gt; sm.CreateLine(It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;()))</code></strong>
+                        <ul>
+                          <li><strong><code class="language-plaintext highlighter-rouge">sm</code></strong> is object we
+                            are mocking.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">sm</code></strong> represent
+                            <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong>.
+                          </li>
+                          <li>From this <strong><code class="language-plaintext highlighter-rouge">sm</code></strong>
+                            object we will setup <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method.</li>
+                          <li>This method takes <strong>6 double parameters</strong>.</li>
+                          <li>We are <em>defining</em> that all 6 parameters <em>will take any double value</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Returns((SketchSegment)null)</code></strong>
+                        <ul>
+                          <li>Here are setting up return value of <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method.</li>
+                          <li>Above we are saying, whenever <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method called,
+                            return <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</li>
+                          <li>Since <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method return
+                            <strong><code class="language-plaintext highlighter-rouge">SketchSegment</code></strong>
+                            type hence we need to <strong>cast</strong> this also while setting up return value.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Act</span>
+<span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="n">_viewModel</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">sketchSegment</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_mockSwApp</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockSketchManager</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>In above code, we are calling CreateLine method of _viewModel variable and store the return value
+                      into <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable.
+                    </p>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">_viewModel</code></strong>:
+                        <ul>
+                          <li><em>ViewModel variable</em> whose method we want to test.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">CreateLine</code></strong>:
+                        <ul>
+                          <li>Method we want to test.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">CreateLine(sketchSegment, 0, 0, 0, _mockSwApp.Object, _mockSketchManager.Object, 10, 10, 0)</code></strong>
+                        <ul>
+                          <li>Calling <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method and
+                            <em>passing parameters to method</em>.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">sketchSegment</code></strong>:
+                            Previously created variable.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">0, 0, 0</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">X1, Y1, Z1</code></strong>
+                            <em>co-ordinate of start point</em>.</li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockSwApp.Object</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">SldWorks</code></strong> object
+                            from <strong><code class="language-plaintext highlighter-rouge">_mockSwApp</code></strong>
+                            variable.</li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager.Object</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong>
+                            object from <strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong>
+                            variable.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">10, 10, 0</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">X2, Y2, Z2</code></strong>
+                            <em>co-ordinate of end point</em>.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Assert</span>
+<span class="n">Assert</span><span class="p">.</span><span class="nf">False</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="n">Assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="s">"Failed to Create Sketch line."</span><span class="p">,</span> <span class="n">_viewModel</span><span class="p">.</span><span class="n">messageToShow</span><span class="p">);</span>
+<span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span>
+<span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">(),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Once</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Assert.False(result);</code></strong>:
+                        <ul>
+                          <li>We are <strong>checking</strong> value of <strong><code
+                                class="language-plaintext highlighter-rouge">result</code></strong> variable is
+                            <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</li>
+                          <li>If <em>return value</em> is <strong><code
+                                class="language-plaintext highlighter-rouge">false</code></strong> then our
+                            <em>asseertion is true</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Assert.Equal("Failed to Create Sketch line.", _viewModel.messageToShow);</code></strong>
+                        <ul>
+                          <li>Similar to previous line, here we are <strong>checking</strong> value of <strong><code
+                                class="language-plaintext highlighter-rouge">_viewModel.messageToShow</code></strong> is
+                            equal to <strong>Failed to Create Sketch line.</strong></li>
+                          <li>If <strong>both value are same</strong> then our <em>asseertion is true</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSwApp.Verify(app =&gt; app.CloseAllDocuments(true), Times.Once);</code></strong>:
+                        <ul>
+                          <li>Here we are verifying <strong><code
+                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method
+                            is called <strong>1 time</strong> only.</li>
+                          <li>We need to do this to make sure our code did not run too much.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSwApp.Verify(app =&gt; app.ExitApp(), Times.Once);</code></strong>:
+                        <ul>
+                          <li>Here we are verifying <strong><code
+                                class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method is called
+                            <strong>1 time</strong> only.</li>
+                          <li>We need to do this to make sure our code did not run too much.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <hr />
+
+                    <h3 id="add-testcase-2">Add [TestCase 2]</h3>
+
+                    <p>In this section, we set up <strong>TestCase 2</strong>.</p>
+
+                    <p>Please see below 👇🏻 code sample for set up.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Arrange</span>
+  <span class="n">_mockSketchManager</span><span class="p">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">sm</span> <span class="p">=&gt;</span> <span class="n">sm</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;()))</span>
+                    <span class="p">.</span><span class="nf">Returns</span><span class="p">(</span><span class="n">_mockSketchSegment</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+
+  <span class="c1">// Act</span>
+  <span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="n">_viewModel</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_mockSwApp</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockSketchManager</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+
+  <span class="c1">// Assert</span>
+  <span class="n">Assert</span><span class="p">.</span><span class="nf">True</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+  <span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;()),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Never</span><span class="p">);</span>
+  <span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">(),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Never</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/test-createLine-method/4-add-test-2-to-test-class.png"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/4-add-test-2-to-test-class.png"
+                          alt="4-add-test-2-to-test-class" /></a></p>
+
+                    <p>Explanation of above <strong><code
+                          class="language-plaintext highlighter-rouge">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</code></strong>
+                      is give below.</p>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">[Fact]</code></strong> :
+                        <ul>
+                          <li>This is a <strong>test attribute</strong>.</li>
+                          <li>This attribute shows that <strong>this method is a test case</strong> that the
+                            <strong><code class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test
+                              runner</em> recognizes.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">public</code></strong> :
+                        <ul>
+                          <li>This means that the <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</code></strong>
+                            method <strong>can be accessed from anywhere</strong>.</li>
+                          <li><strong>This is important</strong>, because <strong><code
+                                class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test runner</em>
+                            is <strong>external agent</strong>.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">xUnit</code></strong> <em>test
+                              runner</em> <strong>need to have accessed</strong> to this <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</code></strong>
+                            method.</li>
+                          <li>Because of this requirment we need to give <strong><code
+                                class="language-plaintext highlighter-rouge">public</code></strong> accessor.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">void</code></strong> :
+                        <ul>
+                          <li>This is the <strong>return type</strong> of <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</code></strong>
+                            method.</li>
+                          <li>Generally we <strong>don’t return anything</strong> from <em>test method</em>.</li>
+                          <li>Because of this we return <strong><code
+                                class="language-plaintext highlighter-rouge">void</code></strong> means <em>we are not
+                              returning anything</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">CreateLine_ReturnsTrue_WhenLineCreationSucceeds</code></strong>
+                        <ul>
+                          <li>This is the <strong>name of method</strong>.</li>
+                          <li>This name is <em>created</em> in <strong>3 different parts</strong> and <strong>combined
+                              with underscore “_“</strong>.</li>
+                          <li>Different parts are explained below 👇🏻:
+                            <ul>
+                              <li><strong>Part 1</strong>: <em>Name of method we are testing</em>.</li>
+                              <li><strong>Part 2</strong>: <em>Return value we are expecting</em>.</li>
+                              <li><strong>Part 3</strong>: <em>Condition for which we are testing the method</em>.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Arrange</span>
+<span class="n">_mockSketchManager</span><span class="p">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">sm</span> <span class="p">=&gt;</span> <span class="n">sm</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;(),</span> <span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">double</span><span class="p">&gt;()))</span>
+                  <span class="p">.</span><span class="nf">Returns</span><span class="p">(</span><span class="n">_mockSketchSegment</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong>:
+                        <ul>
+                          <li>This is mocking object for <strong><code
+                                class="language-plaintext highlighter-rouge">SketchManager</code></strong> object.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSketchManager.Setup()</code></strong>:
+                        <ul>
+                          <li>We are using the <strong><code
+                                class="language-plaintext highlighter-rouge">Setup()</code></strong> method from
+                            <strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong> object.
+                          </li>
+                          <li>This is important and most basic one you should learn.</li>
+                          <li>This <strong><code class="language-plaintext highlighter-rouge">Setup()</code></strong>
+                            method allow us to setup the behavior of object it is mocking and its members/methods.
+                            <ul>
+                              <li>Please follow me and you will be able to understand how we setup the child
+                                members/methods.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Setup(sm =&gt; sm.CreateLine(It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;(), It.IsAny&lt;double&gt;()))</code></strong>
+                        <ul>
+                          <li><strong><code class="language-plaintext highlighter-rouge">sm</code></strong> is object we
+                            are mocking.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">sm</code></strong> represent
+                            <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong>.
+                          </li>
+                          <li>From this <strong><code class="language-plaintext highlighter-rouge">sm</code></strong>
+                            object we will setup <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method.</li>
+                          <li>This method takes <strong>6 double parameters</strong>.</li>
+                          <li>We are <em>defining</em> that all 6 parameters <em>will take any double value</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Returns(_mockSketchSegment.Object)</code></strong>
+                        <ul>
+                          <li>Here are setting up return value of <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method.</li>
+                          <li>Above we are saying, whenever <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method called,
+                            return <strong><code
+                                class="language-plaintext highlighter-rouge">SketchSegment</code></strong> object from
+                            <strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchSegment.Object</code></strong>
+                            variable.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Act</span>
+<span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="n">_viewModel</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_mockSwApp</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">_mockSketchManager</span><span class="p">.</span><span class="n">Object</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <p>In above code, we are calling CreateLine method of _viewModel variable and store the return value
+                      into <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable.
+                    </p>
+
+                    <ul>
+                      <li><strong><code class="language-plaintext highlighter-rouge">_viewModel</code></strong>:
+                        <ul>
+                          <li><em>ViewModel variable</em> whose method we want to test.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code class="language-plaintext highlighter-rouge">CreateLine</code></strong>:
+                        <ul>
+                          <li>Method we want to test.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">CreateLine(null, 0, 0, 0, _mockSwApp.Object, _mockSketchManager.Object, 10, 10, 0)</code></strong>
+                        <ul>
+                          <li>Calling <strong><code
+                                class="language-plaintext highlighter-rouge">CreateLine</code></strong> method and
+                            <em>passing parameters to method</em>.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">null</code></strong>: We are
+                            passing <strong><code class="language-plaintext highlighter-rouge">null</code></strong>
+                            value for <strong><code
+                                class="language-plaintext highlighter-rouge">SketchSegment</code></strong>
+                            <em>parameter</em>.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">0, 0, 0</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">X1, Y1, Z1</code></strong>
+                            <em>co-ordinate of start point</em>.</li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockSwApp.Object</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">SldWorks</code></strong> object
+                            from <strong><code class="language-plaintext highlighter-rouge">_mockSwApp</code></strong>
+                            variable.</li>
+                          <li><strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager.Object</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong>
+                            object from <strong><code
+                                class="language-plaintext highlighter-rouge">_mockSketchManager</code></strong>
+                            variable.</li>
+                          <li><strong><code class="language-plaintext highlighter-rouge">10, 10, 0</code></strong>:
+                            <strong><code class="language-plaintext highlighter-rouge">X2, Y2, Z2</code></strong>
+                            <em>co-ordinate of end point</em>.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <div class="language-cs highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Assert</span>
+<span class="n">Assert</span><span class="p">.</span><span class="nf">True</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;()),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Never</span><span class="p">);</span>
+<span class="n">_mockSwApp</span><span class="p">.</span><span class="nf">Verify</span><span class="p">(</span><span class="n">app</span> <span class="p">=&gt;</span> <span class="n">app</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">(),</span> <span class="n">Times</span><span class="p">.</span><span class="n">Never</span><span class="p">);</span>
+</code></pre>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">Assert.True(result);</code></strong>:
+                        <ul>
+                          <li>We are <strong>checking</strong> value of <strong><code
+                                class="language-plaintext highlighter-rouge">result</code></strong> variable is
+                            <strong><code class="language-plaintext highlighter-rouge">True</code></strong>.</li>
+                          <li>If <em>return value</em> is <strong><code
+                                class="language-plaintext highlighter-rouge">True</code></strong> then our
+                            <em>asseertion is true</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSwApp.Verify(app =&gt; app.CloseAllDocuments(true), Times.Never);</code></strong>:
+                        <ul>
+                          <li>Here we are verifying <strong><code
+                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method
+                            <strong>Never</strong> called.</li>
+                          <li>In our test method, we define that if we successully create <strong><code
+                                class="language-plaintext highlighter-rouge">SketchSegment</code></strong> object, then
+                            this <strong><code
+                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> will
+                            <em>not be called</em>.</li>
+                        </ul>
+                      </li>
+                      <li><strong><code
+                            class="language-plaintext highlighter-rouge">_mockSwApp.Verify(app =&gt; app.ExitApp(), Times.Never);</code></strong>:
+                        <ul>
+                          <li>Here we are verifying <strong><code
+                                class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method
+                            <strong>Never</strong> called.</li>
+                          <li>In our test method, we define that if we successully create <strong><code
+                                class="language-plaintext highlighter-rouge">SketchSegment</code></strong> object, then
+                            this <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
+                            will <em>not be called</em>.</li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <hr />
+
+                    <p>##</p>
+
+                    <p>Before running test cases, we need to <em>rebuild the Test project</em>.</p>
+
+                    <p><em>After rebuild</em>, we see <em>test cases in Test Explorer</em> as shown in below 👇🏻 image.
+                    </p>
+
+                    <p><a
+                        href="/assets/solidworks-csharp-images/test-createLine-method/5-test-cases-in-test-explorer.png"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/5-test-cases-in-test-explorer.png"
+                          alt="5-test-cases-in-test-explorer" /></a></p>
+
+                    <p>Now we run all test cases.</p>
+
+                    <p>Please see below 👇🏻 image for reference.</p>
+
+                    <p><a href="/assets/solidworks-csharp-images/test-createLine-method/final-result.gif"><img
+                          src="/assets/solidworks-csharp-images/test-createLine-method/final-result.gif"
+                          alt="final-result" /></a></p>
+
+                    <hr />
+
+                    <p><strong>This is it !!!</strong></p>
+
+                    <p><em>I hope my efforts will helpful to someone!</em></p>
+
+                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
+                      <em>e-mail</em>.</p>
+
+                    <p>Hope this post helps you to <strong>Test Create Line Method</strong>.</p>
+
+                    <p><em>If you like the post then please share it with your friends also.</em></p>
+
+                    <p><em>Do let me know by you like this post or not!</em></p>
+
+                    <p><em>Till then, Happy learning!!!</em></p>
+
+
+                  </div>
+
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
+
+                </section>
+
+                <footer class="page__meta">
+
+
+
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2025-01-04T09:08:35-05:00">January 4, 2025</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/setup-test-project/" title="SOLIDWORKS C# API - Setup Test Project
+">❮ Previous</a>
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/solidworks-csharp/update-dimension-state/" title="SOLIDWORKS C# API - Update Dimension State
+">Next ❯</a>
+                    </li>
+
+                  </ul>
+                </nav>
+
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+      <!-- end custom footer snippets -->
+      <footer class="bd-footer py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+  </div>
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
