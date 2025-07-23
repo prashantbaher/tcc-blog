@@ -5,17 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>Create Line UI - Part 1 - The CAD Coder</title>
-  <meta name="description" content="Objective">
+  <!-- begin _includes/seo.html --><title>Create Line UI - Part 1 - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="Create Line UI - Part 1">
-  <meta property="og:url" content="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-1/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="Create Line UI - Part 1">
+<meta property="og:url" content="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-1/">
 
 
   <meta property="og:description" content="Objective">
@@ -26,19 +25,19 @@
 
 
 
-  <meta property="article:published_time" content="2025-07-05T15:10:26-04:00">
+  <meta property="article:published_time" content="2025-07-22T00:18:05-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-1/">
+<link rel="canonical" href="https://thecadcoder.com/wpf-tutorials/create-line-ui-part-1/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
@@ -55,582 +54,508 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
+  
 
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] = w[f] || function () {
+        (w[f].q = w[f].q || [])
+          .push(arguments);
+      }, l = d.createElement(e), l.async = 1, l.src = u,
+        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+    })
+      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+    ml('account', '1644816');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
 
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a></li>
+          
+            <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
+          
+            <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a></li>
+          
+            <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a></li>
+          
+            <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks C# API UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
+          
+            <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
+          
+            <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks Sketch UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
+          
+            <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
+          
+            <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
+          
+            <li><a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Solidworks Line UI</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/wpf-tutorials/create-line-ui-part-1/" class="active">Create Line UI - Part 1</a></li>
+          
+            <li><a href="/wpf-tutorials/create-line-ui-part-2/">Create Line UI - Part 2</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
 
+    
+  
+  </div>
 
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community
-                      Version</a></li>
-
-                  <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
-
-                  <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a>
-                  </li>
-
-                  <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a></li>
-
-                  <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks C# API UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
-
-                  <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
-
-                  <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks Sketch UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/">Insert Solidworks Sketch UI</a></li>
-
-                  <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
-
-                  <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
-
-                  <li><a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Solidworks Line UI</span>
-
-
-
-                <ul>
-
-                  <li><a href="/wpf-tutorials/create-line-ui-part-1/" class="active">Create Line UI - Part 1</a></li>
-
-                  <li><a href="/wpf-tutorials/create-line-ui-part-2/">Create Line UI - Part 2</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-
-              <meta itemprop="headline" content="Create Line UI - Part 1">
-
-              <meta itemprop="description" content="Objective">
-
-
-              <meta itemprop="datePublished" content="2025-07-05T15:10:26-04:00">
-
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">Create Line UI - Part 1
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      9 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
-
-
-                <section class="page__content" itemprop="text">
-
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#objective">Objective</a></li>
-                        <li><a href="#demo-video">Demo Video</a></li>
-                        <li><a href="#setting-project">Setting Project</a>
-                          <ul>
-                            <li><a href="#add-prism-project">Add [Prism Project]</a></li>
-                            <li><a href="#add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</a></li>
-                            <li><a href="#add-design-time-datacontext">Add [Design Time DataContext]</a></li>
-                            <li><a href="#add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</a></li>
-                            <li><a href="#add-message-services">Add Message Services</a></li>
-                            <li><a href="#register-message-services">Register Message Services</a></li>
-                            <li><a href="#understand-message-services">Understand Message Services</a></li>
-                            <li><a href="#add-solidworks-references">Add [Solidworks References]</a></li>
-                            <li><a href="#add-constructor">Add Constructor</a></li>
-                            <li><a href="#add-private-fields">Add Private Fields</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#add-view-pointviewmodel">Add View [PointViewModel]</a>
-                          <ul>
-                            <li><a href="#add-properties">Add Properties</a></li>
-                            <li><a href="#add-constructor-1">Add Constructor</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#add-view-pointview">Add View [PointView]</a>
-                          <ul>
-                            <li><a href="#add-design-time-datacontext-1">Add [Design Time DataContext]</a></li>
-                            <li><a href="#add-groupbox">Add [GroupBox]</a></li>
-                            <li><a href="#add-grid">Add [Grid]</a></li>
-                            <li><a href="#add-xpoint-label">Add [XPoint] Label</a></li>
-                            <li><a href="#add-xpoint-textbox">Add [XPoint] TextBox</a></li>
-                            <li><a href="#add-ypoint-label">Add [YPoint] Label</a></li>
-                            <li><a href="#add-ypoint-textbox">Add [YPoint] TextBox</a></li>
-                            <li><a href="#add-inputtextbox_previewtextinput-method">Add [InputTextBox_PreviewTextInput]
-                                Method</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#register-pointviewmodel">Register [PointViewModel]</a></li>
-                      </ul>
-
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
-
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <h2 id="objective">Objective</h2>
-
-                    <p>I want to</p>
-
-                    <ul>
-                      <li><em>Create a UI for “<strong>Create Line UI</strong>” article.</em></li>
-                    </ul>
-
-                    <p>Since I want to make the UI in <strong>modular way</strong>, hence I will create the UI in parts.
-                    </p>
-
-                    <p><em>This is part 1 of Create Line UI.</em></p>
-
-                    <hr />
-
-                    <h2 id="demo-video">Demo Video</h2>
-
-                    <p>Below 🎬 video shows how to <strong>Create Line UI - Part 1</strong> in <em>Visual Studio
-                        2022</em>.</p>
-
-                    <iframe src="https://www.youtube.com/embed/XtFQy6Bc8zI" frameborder="0" allowfullscreen=""></iframe>
-                    <p><br /></p>
-
-                    <hr />
-
-                    <h2 id="setting-project">Setting Project</h2>
-
-                    <p>We need to <strong>add some required UI changes</strong> as part of <strong>Project
-                        Setup</strong>.</p>
-
-                    <p>Please follow below sections for this.</p>
-
-                    <h3 id="add-prism-project">Add [Prism Project]</h3>
-
-                    <ul>
-                      <li>
-                        <p>First, we <strong>add Prism Project</strong> for our requirement.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>add Prism Project</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a
-                                href="/wpf-tutorials/open-syncfusion-chromeless-window/#create-project"
-                                target="_blank">Create Project</a></em></strong> section of 🚀 <strong><em><a
-                                href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open Syncfusion
-                                Chromeless Window</a></em></strong> article for creating <strong>New Prism
-                            project</strong>.</p>
-                      </li>
-                      <li>
-                        <p><em>Name of our Project</em>: <strong><code
-                              class="language-plaintext highlighter-rouge">SolidworksTest</code></strong></p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Chromeless
-                            Window”</strong> into our View.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a
-                                href="/wpf-tutorials/open-syncfusion-chromeless-window/#add-syncfusion-chromeless-window"
-                                target="_blank">Add Syncfusion Chromeless Window</a></em></strong> section of 🚀
-                          <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open
-                                Syncfusion Chromeless Window</a></em></strong> article for creating <strong>New Prism
-                            project</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-design-time-datacontext">Add [Design Time DataContext]</h3>
-
-                    <ul>
-                      <li>
-                        <p>In previous 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext"
-                              target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks
-                              Sketch UI</a></strong> article, this section is already explained.</p>
-                      </li>
-                      <li>
-                        <p>Please visit 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext"
-                              target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks
-                              Sketch UI</a></strong> article for more detail on this section.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Busy
-                            Indicator”</strong> into our View.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-syncfusion-busy-indicator/"
-                                target="_blank">Add Syncfusion Busy Indicator</a></em></strong> article for adding
-                          <strong>“Syncfusion Busy Indicator”</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-message-services">Add Message Services</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to <strong>“Add Message Services”</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>“Add Message Services”</strong>
-                          into our application.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a
-                                href="/wpf-tutorials/add-messages-service/#add-service-for-messaging-in-application"
-                                target="_blank">Add Service for Messaging in application</a></em></strong> section of 🚀
-                          <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message
-                                Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="register-message-services">Register Message Services</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to <strong>“Register Message Services”</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>“Register Message
-                            Services”</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/#register-services"
-                                target="_blank">Register Services</a></em></strong> section of 🚀 <strong><em><a
-                                href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message
-                                Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="understand-message-services">Understand Message Services</h3>
-
-                    <ul>
-                      <li>
-                        <p>If you want to <strong>“understand Message Services”</strong>, then please visit below
-                          article.</p>
-                      </li>
-                      <li>
-                        <p>Reference Article: 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/"
-                                target="_blank">Add Message Service</a></em></strong></p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-solidworks-references">Add [Solidworks References]</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to <strong>“Add [Solidworks References]”</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>“Add [Solidworks
-                            References]”</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/edit-sketch/#add-solidworks-references"
-                                target="_blank">Add [Solidworks References]</a></em></strong> section of 🚀
-                          <strong><em><a href="/solidworks-csharp/edit-sketch/" target="_blank">SOLIDWORKS C# API - Edit
-                                Solidworks Sketch</a></em></strong> article for <strong>Adding [Solidworks
-                            References]</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-constructor">Add Constructor</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to <strong>Add Constructor</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>Add Constructor</strong> into
-                          our application.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/#add-constructor"
-                                target="_blank">Add Constructor</a></em></strong> section of 🚀 <strong><em><a
-                                href="/solidworks-csharp/change-sketch-name/" target="_blank">SOLIDWORKS C# API - Change
-                                Sketch Name</a></em></strong> article for <strong>Adding Constructor</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h3 id="add-private-fields">Add Private Fields</h3>
-
-                    <ul>
-                      <li>
-                        <p>Now, we need to <strong>Add Private Fields</strong> into our application.</p>
-                      </li>
-                      <li>
-                        <p>We already <strong>have an article</strong> where we <strong>Add Private Fields</strong> into
-                          our application.</p>
-                      </li>
-                      <li>
-                        <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/#add-private-fields"
-                                target="_blank">Add Private Fields</a></em></strong> section of 🚀 <strong><em><a
-                                href="/solidworks-csharp/change-sketch-name/" target="_blank">SOLIDWORKS C# API - Change
-                                Sketch Name</a></em></strong> article for <strong>Adding Constructor</strong>.</p>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="add-view-pointviewmodel">Add View [PointViewModel]</h2>
-
-                    <p>Now we need to add a <strong>[ViewModel]</strong> for <strong>[PointView]</strong> control.</p>
-
-                    <p><strong>ViewModel Name</strong> - <strong><code
-                          class="language-plaintext highlighter-rouge">PointViewModel</code></strong></p>
-
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
-
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/new-point-viewmodel.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/new-point-viewmodel.png"
-                          alt="new-point-viewmodel" /></a></p>
-
-                    <hr />
-
-                    <h3 id="add-properties">Add Properties</h3>
-
-                    <p>Now in <strong>[<code
-                          class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong>, we need to add
-                      <em>properties</em>.</p>
-
-                    <p>We need below properties.</p>
-
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_header</span><span class="p">;</span>
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Create Line UI - Part 1">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2025-07-22T00:18:05-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">Create Line UI - Part 1
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#setting-project">Setting Project</a><ul><li><a href="#add-prism-project">Add [Prism Project]</a></li><li><a href="#add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</a></li><li><a href="#add-design-time-datacontext">Add [Design Time DataContext]</a></li><li><a href="#add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</a></li><li><a href="#add-message-services">Add Message Services</a></li><li><a href="#register-message-services">Register Message Services</a></li><li><a href="#understand-message-services">Understand Message Services</a></li><li><a href="#add-solidworks-references">Add [Solidworks References]</a></li><li><a href="#add-constructor">Add Constructor</a></li><li><a href="#add-private-fields">Add Private Fields</a></li></ul></li><li><a href="#add-view-pointviewmodel">Add View [PointViewModel]</a><ul><li><a href="#add-properties">Add Properties</a></li><li><a href="#add-constructor-1">Add Constructor</a></li></ul></li><li><a href="#add-view-pointview">Add View [PointView]</a><ul><li><a href="#add-design-time-datacontext-1">Add [Design Time DataContext]</a></li><li><a href="#add-groupbox">Add [GroupBox]</a></li><li><a href="#add-grid">Add [Grid]</a></li><li><a href="#add-xpoint-label">Add [XPoint] Label</a></li><li><a href="#add-xpoint-textbox">Add [XPoint] TextBox</a></li><li><a href="#add-ypoint-label">Add [YPoint] Label</a></li><li><a href="#add-ypoint-textbox">Add [YPoint] TextBox</a></li><li><a href="#add-inputtextbox_previewtextinput-method">Add [InputTextBox_PreviewTextInput] Method</a></li></ul></li><li><a href="#register-pointviewmodel">Register [PointViewModel]</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
+
+<p>I want to</p>
+
+<ul>
+  <li><em>Create a UI for “<strong>Create Line UI</strong>” article.</em></li>
+</ul>
+
+<p>Since I want to make the UI in <strong>modular way</strong>, hence I will create the UI in parts.</p>
+
+<p><em>This is part 1 of Create Line UI.</em></p>
+
+<hr />
+
+<h2 id="demo-video">Demo Video</h2>
+
+<p>Below 🎬 video shows how to <strong>Create Line UI - Part 1</strong> in <em>Visual Studio 2022</em>.</p>
+
+<iframe src="https://www.youtube.com/embed/XtFQy6Bc8zI" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<hr />
+
+<h2 id="setting-project">Setting Project</h2>
+
+<p>We need to <strong>add some required UI changes</strong> as part of <strong>Project Setup</strong>.</p>
+
+<p>Please follow below sections for this.</p>
+
+<h3 id="add-prism-project">Add [Prism Project]</h3>
+
+<ul>
+  <li>
+    <p>First, we <strong>add Prism Project</strong> for our requirement.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>add Prism Project</strong>.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/#create-project" target="_blank">Create Project</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open Syncfusion Chromeless Window</a></em></strong> article for creating <strong>New Prism project</strong>.</p>
+  </li>
+  <li>
+    <p><em>Name of our Project</em>: <strong><code class="language-plaintext highlighter-rouge">SolidworksTest</code></strong></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/#add-syncfusion-chromeless-window" target="_blank">Add Syncfusion Chromeless Window</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open Syncfusion Chromeless Window</a></em></strong> article for creating <strong>New Prism project</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-design-time-datacontext">Add [Design Time DataContext]</h3>
+
+<ul>
+  <li>
+    <p>In previous 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext" target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></strong> article, this section is already explained.</p>
+  </li>
+  <li>
+    <p>Please visit 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext" target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></strong> article for more detail on this section.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-syncfusion-busy-indicator/" target="_blank">Add Syncfusion Busy Indicator</a></em></strong> article for adding <strong>“Syncfusion Busy Indicator”</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-message-services">Add Message Services</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to <strong>“Add Message Services”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>“Add Message Services”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/#add-service-for-messaging-in-application" target="_blank">Add Service for Messaging in application</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="register-message-services">Register Message Services</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to <strong>“Register Message Services”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>“Register Message Services”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/#register-services" target="_blank">Register Services</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="understand-message-services">Understand Message Services</h3>
+
+<ul>
+  <li>
+    <p>If you want to <strong>“understand Message Services”</strong>, then please visit below article.</p>
+  </li>
+  <li>
+    <p>Reference Article: 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-solidworks-references">Add [Solidworks References]</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to <strong>“Add [Solidworks References]”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>“Add [Solidworks References]”</strong> into our application.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/edit-sketch/#add-solidworks-references" target="_blank">Add [Solidworks References]</a></em></strong> section of 🚀 <strong><em><a href="/solidworks-csharp/edit-sketch/" target="_blank">SOLIDWORKS C# API - Edit Solidworks Sketch</a></em></strong> article for <strong>Adding [Solidworks References]</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-constructor">Add Constructor</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to <strong>Add Constructor</strong> into our application.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>Add Constructor</strong> into our application.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/#add-constructor" target="_blank">Add Constructor</a></em></strong> section of 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/" target="_blank">SOLIDWORKS C# API - Change Sketch Name</a></em></strong> article for <strong>Adding Constructor</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="add-private-fields">Add Private Fields</h3>
+
+<ul>
+  <li>
+    <p>Now, we need to <strong>Add Private Fields</strong> into our application.</p>
+  </li>
+  <li>
+    <p>We already <strong>have an article</strong> where we <strong>Add Private Fields</strong> into our application.</p>
+  </li>
+  <li>
+    <p>Please see 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/#add-private-fields" target="_blank">Add Private Fields</a></em></strong> section of 🚀 <strong><em><a href="/solidworks-csharp/change-sketch-name/" target="_blank">SOLIDWORKS C# API - Change Sketch Name</a></em></strong> article for <strong>Adding Constructor</strong>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="add-view-pointviewmodel">Add View [PointViewModel]</h2>
+
+<p>Now we need to add a <strong>[ViewModel]</strong> for <strong>[PointView]</strong> control.</p>
+
+<p><strong>ViewModel Name</strong> - <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong></p>
+
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
+
+<p><a href="/assets/wpf-tutorials/create-line-ui/new-point-viewmodel.png"><img src="/assets/wpf-tutorials/create-line-ui/new-point-viewmodel.png" alt="new-point-viewmodel" /></a></p>
+
+<hr />
+
+<h3 id="add-properties">Add Properties</h3>
+
+<p>Now in <strong>[<code class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong>, we need to add <em>properties</em>.</p>
+
+<p>We need below properties.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_header</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">string</span> <span class="n">Header</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_header</span><span class="p">;</span> <span class="p">}</span>
@@ -657,30 +582,21 @@
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_zpoint</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_zpoint</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Below property we use for showing header of group box which we create in <strong><code
-                          class="language-plaintext highlighter-rouge">GroupBox</code></strong>.</p>
+<p>Below property we use for showing header of group box which we create in <strong><code class="language-plaintext highlighter-rouge">GroupBox</code></strong>.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_header</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">string</span> <span class="n">_header</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">string</span> <span class="n">Header</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_header</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_header</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Below properties we use for point co-ordinates.</p>
+<p>Below properties we use for point co-ordinates.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="kt">double</span> <span class="n">_xpoint</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">double</span> <span class="n">_xpoint</span><span class="p">;</span>
 <span class="k">public</span> <span class="kt">double</span> <span class="n">XPoint</span>
 <span class="p">{</span>
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_xpoint</span><span class="p">;</span> <span class="p">}</span>
@@ -700,21 +616,15 @@
     <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_zpoint</span><span class="p">;</span> <span class="p">}</span>
     <span class="k">set</span> <span class="p">{</span> <span class="nf">SetProperty</span><span class="p">(</span><span class="k">ref</span> <span class="n">_zpoint</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-constructor-1">Add Constructor</h3>
+<h3 id="add-constructor-1">Add Constructor</h3>
 
-                    <p>Now in <strong>[<code
-                          class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong>, we need to add
-                      <em>constructor</em>.</p>
+<p>Now in <strong>[<code class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong>, we need to add <em>constructor</em>.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="cp">#region Constructor
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Constructor
 </span>
 <span class="k">public</span> <span class="nf">PointViewModel</span><span class="p">()</span>
 <span class="p">{</span>
@@ -722,26 +632,18 @@
 <span class="p">}</span>
 
 <span class="cp">#endregion
-</span></code></pre>
-                      </div>
-                    </div>
+</span></code></pre></div></div>
 
-                    <p>In above code, first we create a region.</p>
+<p>In above code, first we create a region.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="cp">#region Constructor
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Constructor
 </span>
 <span class="cp">#endregion
-</span></code></pre>
-                      </div>
-                    </div>
+</span></code></pre></div></div>
 
-                    <p>Then we add constuctor as shown below.</p>
+<p>Then we add constuctor as shown below.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="cp">#region Constructor
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Constructor
 </span>
 <span class="k">public</span> <span class="nf">PointViewModel</span><span class="p">()</span>
 <span class="p">{</span>
@@ -749,88 +651,66 @@
 <span class="p">}</span>
 
 <span class="cp">#endregion
-</span></code></pre>
-                      </div>
-                    </div>
+</span></code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h2 id="add-view-pointview">Add View [PointView]</h2>
+<h2 id="add-view-pointview">Add View [PointView]</h2>
 
-                    <p>Now we need to add a <strong>[WPF UserControl]</strong>.</p>
+<p>Now we need to add a <strong>[WPF UserControl]</strong>.</p>
 
-                    <p><strong>UserControl Name</strong> - <strong><code
-                          class="language-plaintext highlighter-rouge">PointView</code></strong></p>
+<p><strong>UserControl Name</strong> - <strong><code class="language-plaintext highlighter-rouge">PointView</code></strong></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/new-point-view.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/new-point-view.png" alt="new-point-view" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/new-point-view.png"><img src="/assets/wpf-tutorials/create-line-ui/new-point-view.png" alt="new-point-view" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-design-time-datacontext-1">Add [Design Time DataContext]</h3>
+<h3 id="add-design-time-datacontext-1">Add [Design Time DataContext]</h3>
 
-                    <ul>
-                      <li>
-                        <p>In previous 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext"
-                              target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks
-                              Sketch UI</a></strong> article, this section is already explained.</p>
-                      </li>
-                      <li>
-                        <p>Please visit 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext"
-                              target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a
-                              href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks
-                              Sketch UI</a></strong> article for more detail on this section.</p>
-                      </li>
-                      <li>
-                        <p>Design time Data context = <strong><code
-                              class="language-plaintext highlighter-rouge">PointViewModel</code></strong></p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>In previous 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext" target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></strong> article, this section is already explained.</p>
+  </li>
+  <li>
+    <p>Please visit 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/#add-design-time-datacontext" target="_blank">Add [Design Time DataContext]</a></strong> section of 🚀<strong><a href="/wpf-tutorials/insert-solidworks-sketch-ui/" target="_blank">Insert Solidworks Sketch UI</a></strong> article for more detail on this section.</p>
+  </li>
+  <li>
+    <p>Design time Data context = <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong></p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/update-point-view.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/update-point-view.png"
-                          alt="update-point-view" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/update-point-view.png"><img src="/assets/wpf-tutorials/create-line-ui/update-point-view.png" alt="update-point-view" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-groupbox">Add [GroupBox]</h3>
+<h3 id="add-groupbox">Add [GroupBox]</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;UserControl&gt;</code></strong>
-                          tag.</p>
-                      </li>
-                      <li>
-                        <p>This GroupBox will hold controls for Points Co-ordinates.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;UserControl&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p>This GroupBox will hold controls for Points Co-ordinates.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-group-box.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-group-box.png"
-                          alt="point-view-group-box" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-group-box.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-group-box.png" alt="point-view-group-box" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -851,99 +731,65 @@
         <span class="na">Foreground=</span><span class="s">"Black"</span>
         <span class="na">Header=</span><span class="s">"{Binding Header}"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above code, we set values of following properties.</p>
+<ul>
+  <li>
+    <p>In above code, we set values of following properties.</p>
 
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Margin</code></strong>=”<strong>10</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Padding</code></strong>=”<strong>10</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">BorderBrush</code></strong>=”<strong>Black</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">FontSize</code></strong>=”<strong>18</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Foreground</code></strong>=”<strong>Black</strong>”
-                          </li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">Header</code></strong> property
-                            of <strong><code
-                                class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong>, we bind
-                            it with <strong><code class="language-plaintext highlighter-rouge">Header</code></strong>
-                            property in our <strong><code
-                                class="language-plaintext highlighter-rouge">PointViewModel</code></strong> class.</li>
-                        </ul>
-                      </li>
-                    </ul>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">Margin</code></strong>=”<strong>10</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Padding</code></strong>=”<strong>10</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">BorderBrush</code></strong>=”<strong>Black</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">FontSize</code></strong>=”<strong>18</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Foreground</code></strong>=”<strong>Black</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Header</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong>, we bind it with <strong><code class="language-plaintext highlighter-rouge">Header</code></strong> property in our <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong> class.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-grid">Add [Grid]</h3>
+<h3 id="add-grid">Add [Grid]</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong>
-                          tag.</p>
-                      </li>
-                      <li>
-                        <p>Below are the definition for <strong><code
-                              class="language-plaintext highlighter-rouge">Grid Columns</code></strong>.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;GroupBox&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p>Below are the definition for <strong><code class="language-plaintext highlighter-rouge">Grid Columns</code></strong>.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Grid.ColumnDefinitions&gt;</span>
     <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"125"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Below are the definition for <strong><code
-                            class="language-plaintext highlighter-rouge">Grid Rows</code></strong>.</li>
-                    </ul>
+<ul>
+  <li>Below are the definition for <strong><code class="language-plaintext highlighter-rouge">Grid Rows</code></strong>.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;Grid.RowDefinitions&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Grid.RowDefinitions&gt;</span>
     <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"15"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/Grid.RowDefinitions&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-grid-control.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-grid-control.png"
-                          alt="point-view-grid-control" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-grid-control.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-grid-control.png" alt="point-view-grid-control" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -979,107 +825,68 @@
         <span class="nt">&lt;/Grid&gt;</span>
     <span class="nt">&lt;/GroupBox&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-xpoint-label">Add [XPoint] Label</h3>
+<h3 id="add-xpoint-label">Add [XPoint] Label</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong>
-                          tag shows label for <strong>XPoint</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Below 👇🏻 is code for <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag shows label for <strong>XPoint</strong>.</p>
+  </li>
+  <li>
+    <p>Below 👇🏻 is code for <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;TextBlock</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span>
     <span class="na">Grid.Row=</span><span class="s">"0"</span>
     <span class="na">Grid.Column=</span><span class="s">"0"</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Right"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
     <span class="na">Text=</span><span class="s">"X Co-ordinate:"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above code, we set values of following properties.</p>
+<ul>
+  <li>
+    <p>In above code, we set values of following properties.</p>
 
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Grid.Row</code></strong>=”<strong>0</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Grid.Column</code></strong>=”<strong>0</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong>=”<strong>Right</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong>=”<strong>Center</strong>”
-                          </li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong>=”<strong>X
-                              Co-ordinate:</strong>”</li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p>In above code, <strong><code
-                              class="language-plaintext highlighter-rouge">Grid.Row</code></strong> and <strong><code
-                              class="language-plaintext highlighter-rouge">Grid.Column</code></strong> are attached
-                          properties and they define the position of <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong>
-                          control.</p>
-                      </li>
-                      <li>
-                        <p>In above code, <strong><code
-                              class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong> and
-                          <strong><code class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong>
-                          define <em>[<strong>Alignment</strong>]</em> of control.</p>
-                      </li>
-                      <li>
-                        <p>In above code, <strong><code
-                              class="language-plaintext highlighter-rouge">Text</code></strong> property define label of
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong>
-                          control.</p>
-                      </li>
-                      <li>
-                        <p>Lable of <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> control:
-                          <strong>[<code class="language-plaintext highlighter-rouge">X Co-ordinate:</code>]</strong>
-                        </p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">Grid.Row</code></strong>=”<strong>0</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Grid.Column</code></strong>=”<strong>0</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong>=”<strong>Right</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong>=”<strong>Center</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong>=”<strong>X Co-ordinate:</strong>”</li>
+    </ul>
+  </li>
+  <li>
+    <p>In above code, <strong><code class="language-plaintext highlighter-rouge">Grid.Row</code></strong> and <strong><code class="language-plaintext highlighter-rouge">Grid.Column</code></strong> are attached properties and they define the position of <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> inside <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> control.</p>
+  </li>
+  <li>
+    <p>In above code, <strong><code class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong> and <strong><code class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong> define <em>[<strong>Alignment</strong>]</em> of control.</p>
+  </li>
+  <li>
+    <p>In above code, <strong><code class="language-plaintext highlighter-rouge">Text</code></strong> property define label of <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> control.</p>
+  </li>
+  <li>
+    <p>Lable of <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> control: <strong>[<code class="language-plaintext highlighter-rouge">X Co-ordinate:</code>]</strong></p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-label-xpoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-add-label-xpoint.png"
-                          alt="point-view-add-label-xpoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-label-xpoint.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-add-label-xpoint.png" alt="point-view-add-label-xpoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -1122,105 +929,68 @@
         <span class="nt">&lt;/Grid&gt;</span>
     <span class="nt">&lt;/GroupBox&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-xpoint-textbox">Add [XPoint] TextBox</h3>
+<h3 id="add-xpoint-textbox">Add [XPoint] TextBox</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>
-                          tag shows label for <strong>XPoint</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Below 👇🏻 is code for <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag shows label for <strong>XPoint</strong>.</p>
+  </li>
+  <li>
+    <p>Below 👇🏻 is code for <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;TextBox</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBox</span>
     <span class="na">Grid.Row=</span><span class="s">"0"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
     <span class="na">PreviewTextInput=</span><span class="s">"InputTextBox_PreviewTextInput"</span>
     <span class="na">Text=</span><span class="s">"{Binding XPoint}"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>
-                        <p>In above code, we set values of following properties.</p>
+<ul>
+  <li>
+    <p>In above code, we set values of following properties.</p>
 
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Grid.Row</code></strong>=”<strong>0</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">Grid.Column</code></strong>=”<strong>2</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong>=”<strong>Stretch</strong>”
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong>=”<strong>Center</strong>”
-                          </li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong>=”<strong>X
-                              Co-ordinate:</strong>”</li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong> property
-                            of <strong><code
-                                class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>, we bind it
-                            with <strong><code class="language-plaintext highlighter-rouge">XPoint</code></strong>
-                            property in our <strong><code
-                                class="language-plaintext highlighter-rouge">PointViewModel</code></strong> class.</li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p>Event method we define.</p>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">Grid.Row</code></strong>=”<strong>0</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Grid.Column</code></strong>=”<strong>2</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">HorizontalAlignment</code></strong>=”<strong>Stretch</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">VerticalAlignment</code></strong>=”<strong>Center</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong>=”<strong>X Co-ordinate:</strong>”</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">Text</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>, we bind it with <strong><code class="language-plaintext highlighter-rouge">XPoint</code></strong> property in our <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong> class.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Event method we define.</p>
 
-                        <ul>
-                          <li>In above code we define a method for <strong><code
-                                class="language-plaintext highlighter-rouge">PreviewTextInput</code></strong> event.
-                          </li>
-                          <li><strong>Name of method</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong>
-                          </li>
-                          <li>This <strong><code
-                                class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong>
-                            method will enforce the user to input only Numbers. So that we avoid errors.</li>
-                          <li>Implementation of <strong><code
-                                class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong>
-                            method will discuss later.</li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+    <ul>
+      <li>In above code we define a method for <strong><code class="language-plaintext highlighter-rouge">PreviewTextInput</code></strong> event.</li>
+      <li><strong>Name of method</strong>: <strong><code class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong></li>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong> method will enforce the user to input only Numbers. So that we avoid errors.</li>
+      <li>Implementation of <strong><code class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong> method will discuss later.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-xpoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-xpoint.png"
-                          alt="point-view-add-textbox-xpoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-xpoint.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-xpoint.png" alt="point-view-add-textbox-xpoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -1271,62 +1041,45 @@
         <span class="nt">&lt;/Grid&gt;</span>
     <span class="nt">&lt;/GroupBox&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-ypoint-label">Add [YPoint] Label</h3>
+<h3 id="add-ypoint-label">Add [YPoint] Label</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong>
-                          tag shows label for <strong>YPoint</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Below 👇🏻 is code for <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag shows label for <strong>YPoint</strong>.</p>
+  </li>
+  <li>
+    <p>Below 👇🏻 is code for <strong><code class="language-plaintext highlighter-rouge">&lt;TextBlock&gt;</code></strong> tag.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;TextBlock</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span>
     <span class="na">Grid.Row=</span><span class="s">"2"</span>
     <span class="na">Grid.Column=</span><span class="s">"0"</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Right"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
     <span class="na">Text=</span><span class="s">"Y Co-ordinate:"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>To understand above code, please visit 🚀 <strong><a
-                          href="/wpf-tutorials/create-line-ui/#add-xpoint-label">Add [XPoint] Label</a></strong> section
-                      of this article.</p>
+<p>To understand above code, please visit 🚀 <strong><a href="/wpf-tutorials/create-line-ui/#add-xpoint-label">Add [XPoint] Label</a></strong> section of this article.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-label-ypoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-add-label-ypoint.png"
-                          alt="point-view-add-label-xpoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-label-ypoint.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-add-label-ypoint.png" alt="point-view-add-label-xpoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -1384,63 +1137,46 @@
         <span class="nt">&lt;/Grid&gt;</span>
     <span class="nt">&lt;/GroupBox&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-ypoint-textbox">Add [YPoint] TextBox</h3>
+<h3 id="add-ypoint-textbox">Add [YPoint] TextBox</h3>
 
-                    <ul>
-                      <li>
-                        <p>Now we add another <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag inside
-                          <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>
-                          tag shows label for <strong>YPoint</strong>.</p>
-                      </li>
-                      <li>
-                        <p>Below 👇🏻 is code for <strong><code
-                              class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Now we add another <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag shows label for <strong>YPoint</strong>.</p>
+  </li>
+  <li>
+    <p>Below 👇🏻 is code for <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong> tag.</p>
+  </li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;TextBox</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBox</span>
     <span class="na">Grid.Row=</span><span class="s">"2"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
     <span class="na">HorizontalAlignment=</span><span class="s">"Stretch"</span>
     <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
     <span class="na">PreviewTextInput=</span><span class="s">"InputTextBox_PreviewTextInput"</span>
     <span class="na">Text=</span><span class="s">"{Binding YPoint}"</span> <span class="nt">/&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>To understand above code, please visit 🚀 <strong><a
-                          href="/wpf-tutorials/create-line-ui/#add-xpoint-textbox">Add [XPoint] TextBox</a></strong>
-                      section of this article.</p>
+<p>To understand above code, please visit 🚀 <strong><a href="/wpf-tutorials/create-line-ui/#add-xpoint-textbox">Add [XPoint] TextBox</a></strong> section of this article.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-ypoint.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-ypoint.png"
-                          alt="point-view-add-textbox-ypoint" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-ypoint.png"><img src="/assets/wpf-tutorials/create-line-ui/point-view-add-textbox-ypoint.png" alt="point-view-add-textbox-ypoint" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-xml highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="nt">&lt;UserControl</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;UserControl</span>
     <span class="na">x:Class=</span><span class="s">"SolidworksTest.Views.PointView"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
     <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
@@ -1506,185 +1242,154 @@
         <span class="nt">&lt;/Grid&gt;</span>
     <span class="nt">&lt;/GroupBox&gt;</span>
 <span class="nt">&lt;/UserControl&gt;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <hr />
+<hr />
 
-                    <h3 id="add-inputtextbox_previewtextinput-method">Add [InputTextBox_PreviewTextInput] Method</h3>
+<h3 id="add-inputtextbox_previewtextinput-method">Add [InputTextBox_PreviewTextInput] Method</h3>
 
-                    <p>Now we need to add <strong><code
-                          class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong>
-                      method.</p>
+<p>Now we need to add <strong><code class="language-plaintext highlighter-rouge">InputTextBox_PreviewTextInput</code></strong> method.</p>
 
-                    <p>This method will allow <strong>only Numbers</strong> to <em>add</em> into <strong><code
-                          class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>.</p>
+<p>This method will allow <strong>only Numbers</strong> to <em>add</em> into <strong><code class="language-plaintext highlighter-rouge">&lt;TextBox&gt;</code></strong>.</p>
 
-                    <p>For adding this method, first open <strong>[<code
-                          class="language-plaintext highlighter-rouge">PointView.cs</code>]</strong> file.</p>
+<p>For adding this method, first open <strong>[<code class="language-plaintext highlighter-rouge">PointView.cs</code>]</strong> file.</p>
 
-                    <p>Add below code into <strong>[<code
-                          class="language-plaintext highlighter-rouge">PointView.cs</code>]</strong> file.</p>
+<p>Add below code into <strong>[<code class="language-plaintext highlighter-rouge">PointView.cs</code>]</strong> file.</p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 image for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 image for reference.</li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/add-InputTextBox_PreviewTextInput-method.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/add-InputTextBox_PreviewTextInput-method.png"
-                          alt="add-InputTextBox_PreviewTextInput-method" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/add-InputTextBox_PreviewTextInput-method.png"><img src="/assets/wpf-tutorials/create-line-ui/add-InputTextBox_PreviewTextInput-method.png" alt="add-InputTextBox_PreviewTextInput-method" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">InputTextBox_PreviewTextInput</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">TextCompositionEventArgs</span> <span class="n">e</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">InputTextBox_PreviewTextInput</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">TextCompositionEventArgs</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Regex</span> <span class="n">_regex</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Regex</span><span class="p">(</span><span class="s">"[^0-9.-]+"</span><span class="p">);</span>
     <span class="n">e</span><span class="p">.</span><span class="n">Handled</span> <span class="p">=</span> <span class="n">_regex</span><span class="p">.</span><span class="nf">IsMatch</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>In above code we create a <strong><code
-                          class="language-plaintext highlighter-rouge">Regex</code></strong> type variable.</p>
+<p>In above code we create a <strong><code class="language-plaintext highlighter-rouge">Regex</code></strong> type variable.</p>
 
-                    <p>Name of variable: <strong><code
-                          class="language-plaintext highlighter-rouge">_regex</code></strong>.</p>
+<p>Name of variable: <strong><code class="language-plaintext highlighter-rouge">_regex</code></strong>.</p>
 
-                    <p>Sequence we want to match: <strong><code
-                          class="language-plaintext highlighter-rouge">[^0-9.-]+</code></strong></p>
+<p>Sequence we want to match: <strong><code class="language-plaintext highlighter-rouge">[^0-9.-]+</code></strong></p>
 
-                    <p><strong><code class="language-plaintext highlighter-rouge">e.Handled</code></strong> allow to
-                      enter the value.</p>
+<p><strong><code class="language-plaintext highlighter-rouge">e.Handled</code></strong> allow to enter the value.</p>
 
-                    <p><strong><code class="language-plaintext highlighter-rouge">_regex.IsMatch(e.Text)</code></strong>
-                      means, if input text match the sequence then only it will allow otherwise it won’t.</p>
+<p><strong><code class="language-plaintext highlighter-rouge">_regex.IsMatch(e.Text)</code></strong> means, if input text match the sequence then only it will allow otherwise it won’t.</p>
 
-                    <p>If sequence match in <strong><code
-                          class="language-plaintext highlighter-rouge">_regex.IsMatch(e.Text)</code></strong> , then
-                      return <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, otherwise
-                      return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</p>
+<p>If sequence match in <strong><code class="language-plaintext highlighter-rouge">_regex.IsMatch(e.Text)</code></strong> , then return <strong><code class="language-plaintext highlighter-rouge">true</code></strong>, otherwise return <strong><code class="language-plaintext highlighter-rouge">false</code></strong>.</p>
 
-                    <hr />
+<hr />
 
-                    <h2 id="register-pointviewmodel">Register [PointViewModel]</h2>
+<h2 id="register-pointviewmodel">Register [PointViewModel]</h2>
 
-                    <p>Now we need to register our <strong>[<code
-                          class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong> class into our DI
-                      container.</p>
+<p>Now we need to register our <strong>[<code class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong> class into our DI container.</p>
 
-                    <ul>
-                      <li>
-                        <p>Open <strong>[<code class="language-plaintext highlighter-rouge">App.xaml.cs</code>]</strong>
-                          class.</p>
-                      </li>
-                      <li>
-                        <p>In this class there is a function <strong>[<code
-                              class="language-plaintext highlighter-rouge">RegisterTypes</code>]</strong>.</p>
-                      </li>
-                      <li>
-                        <p>We will register our class in this function.</p>
-                      </li>
-                      <li>
-                        <p>Please see below 👇🏻 image for reference.</p>
-                      </li>
-                    </ul>
+<ul>
+  <li>
+    <p>Open <strong>[<code class="language-plaintext highlighter-rouge">App.xaml.cs</code>]</strong> class.</p>
+  </li>
+  <li>
+    <p>In this class there is a function <strong>[<code class="language-plaintext highlighter-rouge">RegisterTypes</code>]</strong>.</p>
+  </li>
+  <li>
+    <p>We will register our class in this function.</p>
+  </li>
+  <li>
+    <p>Please see below 👇🏻 image for reference.</p>
+  </li>
+</ul>
 
-                    <p><a href="/assets/wpf-tutorials/create-line-ui/register-pointviewmodel.png"><img
-                          src="/assets/wpf-tutorials/create-line-ui/register-pointviewmodel.png"
-                          alt="register-pointviewmodel" /></a></p>
+<p><a href="/assets/wpf-tutorials/create-line-ui/register-pointviewmodel.png"><img src="/assets/wpf-tutorials/create-line-ui/register-pointviewmodel.png" alt="register-pointviewmodel" /></a></p>
 
-                    <ul>
-                      <li>Please see below 👇🏻 code sample for reference.</li>
-                    </ul>
+<ul>
+  <li>Please see below 👇🏻 code sample for reference.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">RegisterTypes</span><span class="p">(</span><span class="n">IContainerRegistry</span> <span class="n">containerRegistry</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">RegisterTypes</span><span class="p">(</span><span class="n">IContainerRegistry</span> <span class="n">containerRegistry</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">containerRegistry</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">PointViewModel</span><span class="p">&gt;();</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we register <strong>[<code
-                            class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong> class in
-                        <strong><code class="language-plaintext highlighter-rouge">containerRegistry</code></strong>
-                        through <strong><code class="language-plaintext highlighter-rouge">Register()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>In above code, we register <strong>[<code class="language-plaintext highlighter-rouge">PointViewModel</code>]</strong> class in <strong><code class="language-plaintext highlighter-rouge">containerRegistry</code></strong> through <strong><code class="language-plaintext highlighter-rouge">Register()</code></strong> method.</li>
+</ul>
 
-                    <p><strong>This is it for now!!!</strong></p>
+<p><strong>This is it for now!!!</strong></p>
 
-                    <p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
 
-                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
-                      <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-                    <p>Hope this post helps you to <strong>Create Line UI in WPF application</strong>.</p>
+<p>Hope this post helps you to <strong>Create Line UI in WPF application</strong>.</p>
 
-                    <p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
 
-                    <p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
 
-                    <p><em>Till then, Happy learning!!!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
 
-                  </div>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
+      </section>
 
-                </section>
-
-                <footer class="page__meta">
-
+      <footer class="page__meta">
+        
+        
 
 
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-22T00:18:05-04:00">July 22, 2025</time></p>
 
 
+      </footer>
 
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2025-07-05T15:10:26-04:00">July 5, 2025</time></p>
-
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/wpf-tutorials/delete-selected-sketch-ui/" title="Delete Selected Sketch UI
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/wpf-tutorials/delete-selected-sketch-ui/" title="Delete Selected Sketch UI
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/wpf-tutorials/create-line-ui-part-2/" title="Create Line UI - Part 2
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/wpf-tutorials/create-line-ui-part-2/" title="Create Line UI - Part 2
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
+</div>
 
-          </div>
+          <div class="ml-embedded" data-form="s7QtnY"></div>
         </div>
       </div>
     </div>
@@ -1694,75 +1399,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+          
+          
+          
+          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+          
+          
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -1787,15 +1492,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

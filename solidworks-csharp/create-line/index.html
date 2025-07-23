@@ -5,17 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>SOLIDWORKS C# API - Create Line - The CAD Coder</title>
-  <meta name="description" content="Objective">
+  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Create Line - The CAD Coder</title>
+<meta name="description" content="Objective">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="SOLIDWORKS C# API - Create Line">
-  <meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/create-line/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="SOLIDWORKS C# API - Create Line">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/create-line/">
 
 
   <meta property="og:description" content="Objective">
@@ -26,19 +25,19 @@
 
 
 
-  <meta property="article:published_time" content="2025-07-05T15:10:26-04:00">
+  <meta property="article:published_time" content="2025-07-22T00:18:05-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/create-line/">
+<link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/create-line/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
@@ -55,1477 +54,1102 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
+  
 
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] = w[f] || function () {
+        (w[f].q = w[f].q || [])
+          .push(arguments);
+      }, l = d.createElement(e), l.async = 1, l.src = u,
+        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+    })
+      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+    ml('account', '1644816');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
-            href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
-
-
-
-
-
-
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
-
-                  <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
-
-                  <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
-
-                  <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
-
-                  <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a>
-                  </li>
-
-                  <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch Segment</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
-
-                  <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
-
-                  <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a>
-                  </li>
-
-                  <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
-
-                  <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Sketch Lines</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-csharp/create-line/" class="active">Create Line</a></li>
-
-                  <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
-
-                  <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
-
-                  <li><a href="/solidworks-csharp/test-createLine-method/">Test Create Line Method</a></li>
-
-                  <li><a href="/solidworks-csharp/test-applyunitconversion-method/">Test ApplyUnitConversion Method</a>
-                  </li>
-
-                  <li><a href="/solidworks-csharp/test-SelectSketchPlane-method/">Test SelectSketchPlane Method</a></li>
-
-                  <li><a href="/solidworks-csharp/test-CreatePartDocument-method/">Test CreatePartDocument Method</a>
-                  </li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Others</span>
-
-
-
-                <ul>
-
-                  <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
+          
+            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
+          
+            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
+          
+            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
+          
+            <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch Segment</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a></li>
+          
+            <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
+          
+            <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Sketch Lines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/create-line/" class="active">Create Line</a></li>
+          
+            <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
+          
+            <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
+          
+            <li><a href="/solidworks-csharp/test-createLine-method/">Test Create Line Method</a></li>
+          
+            <li><a href="/solidworks-csharp/test-applyunitconversion-method/">Test ApplyUnitConversion Method</a></li>
+          
+            <li><a href="/solidworks-csharp/test-SelectSketchPlane-method/">Test SelectSketchPlane Method</a></li>
+          
+            <li><a href="/solidworks-csharp/test-CreatePartDocument-method/">Test CreatePartDocument Method</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Others</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="SOLIDWORKS C# API - Create Line">
+    
+    <meta itemprop="description" content="Objective">
+    
+    
+    <meta itemprop="datePublished" content="2025-07-22T00:18:05-04:00">
+    
 
-              <meta itemprop="headline" content="SOLIDWORKS C# API - Create Line">
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Create Line
+</h1>
+        
 
-              <meta itemprop="description" content="Objective">
+  <p class="page__meta">
+    
 
+    
 
-              <meta itemprop="datePublished" content="2025-07-05T15:10:26-04:00">
+    
+      
+      
 
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Create Line
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      11 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
 
 
-                <section class="page__content" itemprop="text">
+      </header>
+      
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#objective">Objective</a></li>
-                        <li><a href="#demo-video">Demo Video</a></li>
-                        <li><a href="#update-method---executecreatelinecommand">Update Method -
-                            ExecuteCreateLineCommand</a></li>
-                        <li><a href="#update-method---createlinemethod">Update Method - CreateLineMethod</a></li>
-                        <li><a href="#add-method---applyunitconversion">Add Method - ApplyUnitConversion</a></li>
-                        <li><a href="#final-result">Final Result</a></li>
-                      </ul>
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#update-method---executecreatelinecommand">Update Method - ExecuteCreateLineCommand</a></li><li><a href="#update-method---createlinemethod">Update Method - CreateLineMethod</a></li><li><a href="#add-method---applyunitconversion">Add Method - ApplyUnitConversion</a></li><li><a href="#final-result">Final Result</a></li></ul>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <h2 id="objective">Objective</h2>
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <h2 id="objective">Objective</h2>
+<p>I want to:</p>
 
-                    <p>I want to:</p>
+<ul>
+  <li>
+    <p><strong><em>Create Line into Solidworks Part Document using Solidworks C# API</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/create-line-ui-part-2/" target="_blank">Create Line UI - Part 2</a></em></strong>.</p>
+  </li>
+</ul>
 
-                    <ul>
-                      <li>
-                        <p><strong><em>Create Line into Solidworks Part Document using Solidworks C# API</em></strong>
-                        </p>
-                      </li>
-                      <li>
-                        <p><strong><em>We will continue from previous article 🚀 <a
-                                href="/wpf-tutorials/create-line-ui-part-2/" target="_blank">Create Line UI - Part
-                                2</a></em></strong>.</p>
-                      </li>
-                    </ul>
+<hr />
 
-                    <hr />
+<h2 id="demo-video">Demo Video</h2>
 
-                    <h2 id="demo-video">Demo Video</h2>
+<p>Please see below video on how to “<strong>Create Line into Solidworks Part Document</strong>” using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
 
-                    <p>Please see below video on how to “<strong>Create Line into Solidworks Part Document</strong>”
-                      using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
+<iframe src="https://www.youtube.com/embed/kb8tFRAxP08" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
 
-                    <iframe src="https://www.youtube.com/embed/kb8tFRAxP08" frameborder="0" allowfullscreen=""></iframe>
-                    <p><br /></p>
+<p class="notice--info">Please note that there are <strong>no explanation</strong> in the video.<br />
+<strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
 
-                    <p class="notice--info">Please note that there are <strong>no explanation</strong> in the
-                      video.<br />
-                      <strong>Explanation</strong> of each step and why we write code this way is given in this post.
-                    </p>
+<hr />
 
-                    <hr />
+<h2 id="update-method---executecreatelinecommand">Update Method - ExecuteCreateLineCommand</h2>
 
-                    <h2 id="update-method---executecreatelinecommand">Update Method - ExecuteCreateLineCommand</h2>
+<p>In this section, we update <em>ExecuteCreateLineCommand method</em>.</p>
 
-                    <p>In this section, we update <em>ExecuteCreateLineCommand method</em>.</p>
+<ul>
+  <li>First we replace below 👇🏻 code from <em>ExecuteCreateLineCommand method</em>.</li>
+</ul>
 
-                    <ul>
-                      <li>First we replace below 👇🏻 code from <em>ExecuteCreateLineCommand method</em>.</li>
-                    </ul>
-
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
 <span class="p">{</span>
     <span class="c1">// Sleeping with 2 sec</span>
     <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">2000</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Then we use below code.</li>
-                    </ul>
+<ul>
+  <li>Then we use below code.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="n">CreateLineMethod</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="n">CreateLineMethod</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <p>In above code, we are doing following.</p>
+<p>In above code, we are doing following.</p>
 
-                    <ol>
-                      <li>Create a <strong><code class="language-plaintext highlighter-rouge">bool</code></strong> type
-                        variable.</li>
-                      <li>Name of this variable = <strong><code
-                            class="language-plaintext highlighter-rouge">result</code></strong></li>
-                      <li>Value of this <strong><code
-                            class="language-plaintext highlighter-rouge">result</code></strong> variable is set by
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong>
-                        method.</li>
-                      <li>In above code, we use <strong><code
-                            class="language-plaintext highlighter-rouge">await</code></strong> keyword. This will wait
-                        for completion of <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong> method.</li>
-                    </ol>
+<ol>
+  <li>Create a <strong><code class="language-plaintext highlighter-rouge">bool</code></strong> type variable.</li>
+  <li>Name of this variable = <strong><code class="language-plaintext highlighter-rouge">result</code></strong></li>
+  <li>Value of this <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable is set by <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong> method.</li>
+  <li>In above code, we use <strong><code class="language-plaintext highlighter-rouge">await</code></strong> keyword. This will wait for completion of <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong> method.</li>
+</ol>
 
-                    <p>Since <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong>
-                      method did not exist hence we need to create a new method as shown below 👇🏻.</p>
+<p>Since <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod</code></strong> method did not exist hence we need to create a new method as shown below 👇🏻.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">bool</span> <span class="nf">CreateLineMethod</span><span class="p">()</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">CreateLineMethod</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method
-                        return true as default value.</li>
-                      <li>In <strong><code
-                            class="language-plaintext highlighter-rouge">ExecuteCreateLineCommand()</code></strong>
-                        method, we will add following code.</li>
-                    </ul>
+<ul>
+  <li>In above code <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method return true as default value.</li>
+  <li>In <strong><code class="language-plaintext highlighter-rouge">ExecuteCreateLineCommand()</code></strong> method, we will add following code.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">);</span>
 <span class="k">else</span>
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Publish</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">result</code></strong> variable.</li>
-                      <li>If value of <strong><code class="language-plaintext highlighter-rouge">result</code></strong>
-                        variable = <strong><code class="language-plaintext highlighter-rouge">true</code></strong></li>
-                      <li>Then we will show an <em>Information message</em>.</li>
-                      <li>For showing message we use <strong><code
-                            class="language-plaintext highlighter-rouge">this.eventAggregator</code></strong> field.
-                      </li>
-                      <li>This field get <strong><code
-                            class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong>
-                        class and publish a message.</li>
-                      <li>If value of <strong><code class="language-plaintext highlighter-rouge">result</code></strong>
-                        variable = <strong><code class="language-plaintext highlighter-rouge">false</code></strong></li>
-                      <li>Then we will show an <em>Error message</em>.</li>
-                      <li>For showing message we use <strong><code
-                            class="language-plaintext highlighter-rouge">this.eventAggregator</code></strong> field.
-                      </li>
-                      <li>This field get <strong><code
-                            class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> class and
-                        publish a message.</li>
-                      <li>In both cases message depend upon <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable.</li>
-                      <li>Value of this <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable comes
-                        from <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable.</li>
+  <li>If value of <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable = <strong><code class="language-plaintext highlighter-rouge">true</code></strong></li>
+  <li>Then we will show an <em>Information message</em>.</li>
+  <li>For showing message we use <strong><code class="language-plaintext highlighter-rouge">this.eventAggregator</code></strong> field.</li>
+  <li>This field get <strong><code class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong> class and publish a message.</li>
+  <li>If value of <strong><code class="language-plaintext highlighter-rouge">result</code></strong> variable = <strong><code class="language-plaintext highlighter-rouge">false</code></strong></li>
+  <li>Then we will show an <em>Error message</em>.</li>
+  <li>For showing message we use <strong><code class="language-plaintext highlighter-rouge">this.eventAggregator</code></strong> field.</li>
+  <li>This field get <strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong> class and publish a message.</li>
+  <li>In both cases message depend upon <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable.</li>
+  <li>Value of this <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable comes from <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h2 id="update-method---createlinemethod">Update Method - CreateLineMethod</h2>
+<h2 id="update-method---createlinemethod">Update Method - CreateLineMethod</h2>
 
-                    <ul>
-                      <li>Now we need to update <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method for
-                        <em>Creating Line</em>.</li>
-                    </ul>
+<ul>
+  <li>Now we need to update <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method for <em>Creating Line</em>.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swApp</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SldWorks</span><span class="p">.</span><span class="nf">SldWorks</span><span class="p">();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable to new
-                        <strong><code class="language-plaintext highlighter-rouge">SldWorks.SldWorks()</code></strong>
-                        type.</li>
-                      <li><strong>Reference</strong>: Please visit 🚀 <strong><a
-                            href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html"
-                            target="_blank">online SOLIDWORKS API Help</a></strong>.</li>
-                    </ul>
+<ul>
+  <li>In above code we are setting value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable to new <strong><code class="language-plaintext highlighter-rouge">SldWorks.SldWorks()</code></strong> type.</li>
+  <li><strong>Reference</strong>: Please visit 🚀 <strong><a href="https://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks_members.html" target="_blank">online SOLIDWORKS API Help</a></strong>.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swApp</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swApp</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to find Solidworks application."</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-                      <li>We are checking if <strong><code
-                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable is <strong><code
-                            class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
-                      <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>,
-                        then we will <em>execute code inside</em> this <strong><code
-                            class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+  <li>We are checking if <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
+  <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, then we will <em>execute code inside</em> this <strong><code class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to find Solidworks application."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to find Solidworks application."</span><span class="p">;</span>
 <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above code execute when value of <strong><code
-                            class="language-plaintext highlighter-rouge">swApp</code></strong> variable is <strong><code
-                            class="language-plaintext highlighter-rouge">null</code></strong> .</li>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Failed to find Solidworks application."</code></strong>.
-                      </li>
-                      <li>This variable will be use to show messages to user.</li>
-                      <li>After this we return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong> and exit the
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>Above code execute when value of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Failed to find Solidworks application."</code></strong>.</li>
+  <li>This variable will be use to show messages to user.</li>
+  <li>After this we return <strong><code class="language-plaintext highlighter-rouge">false</code></strong> and exit the <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swApp</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div></div>
 
-                    <p>In above line we are doing following:</p>
+<p>In above line we are doing following:</p>
 
-                    <ul>
-                      <li><strong>Purpose</strong>: This line makes sure the <strong>SOLIDWORKS</strong> is open and
-                        visible.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to
-                        variable/object of an instance of <strong>SOLIDWORKS</strong> application.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">Visible</code></strong>: A property
-                        of the <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> object
-                        that controls whether the <em>SOLIDWORKS’s</em> user interface (UI) is visible or hidden.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong>: A Boolean
-                        value indicating that the application should be visible.
-                        Setting it to <strong><code class="language-plaintext highlighter-rouge">true</code></strong>
-                        means the application window will be displayed.</li>
-                    </ul>
+<ul>
+  <li><strong>Purpose</strong>: This line makes sure the <strong>SOLIDWORKS</strong> is open and visible.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to variable/object of an instance of <strong>SOLIDWORKS</strong> application.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Visible</code></strong>: A property of the <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> object that controls whether the <em>SOLIDWORKS’s</em> user interface (UI) is visible or hidden.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong>: A Boolean value indicating that the application should be visible. 
+  Setting it to <strong><code class="language-plaintext highlighter-rouge">true</code></strong> means the application window will be displayed.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">string</span> <span class="n">defaultTemplate</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">defaultTemplate</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">GetUserPreferenceStringValue</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code we are creating a new variable.
-                        <ul>
-                          <li><strong>Name of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">defaultTemplate</code></strong>.</li>
-                          <li><strong>Type of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">string</code></strong></li>
-                        </ul>
-                      </li>
-                      <li>Sets the value of <strong><code
-                            class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to
-                        variable/object of an instance of SOLIDWORKS application.</li>
-                      <li><strong><code
-                            class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>:
-                        A method that retrieves Gets system default user preference values.</li>
-                      <li>This method <strong><code
-                            class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>
-                        takes following parameters.
-                        <ul>
-                          <li><em>UserPreference</em>: <strong>User preference as defined in <code
-                                class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e</code></strong>
-                          </li>
-                          <li>Click here for more details of 🚀 <strong><a
-                                href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html"
-                                target="_blank">swUserPreferenceStringValue_e</a></strong></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p>In our code, I have used following values:</p>
+<ul>
+  <li>In above code we are creating a new variable.
+    <ul>
+      <li><strong>Name of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong>.</li>
+      <li><strong>Type of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">string</code></strong></li>
+    </ul>
+  </li>
+  <li>Sets the value of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to variable/object of an instance of SOLIDWORKS application.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong>: A method that retrieves Gets system default user preference values.</li>
+  <li>This method <strong><code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code></strong> takes following parameters.
+    <ul>
+      <li><em>UserPreference</em>: <strong>User preference as defined in <code class="language-plaintext highlighter-rouge">swUserPreferenceStringValue_e</code></strong></li>
+      <li>Click here for more details of 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swUserPreferenceStringValue_e.html" target="_blank">swUserPreferenceStringValue_e</a></strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Parameter Name</th>
-                              <th>Value Used</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong>UserPreference</strong></td>
-                              <td><code
-                                  class="language-plaintext highlighter-rouge">(int)swUserPreferenceStringValue_e.swDefaultTemplatePart</code>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>UserPreference</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">(int)swUserPreferenceStringValue_e.swDefaultTemplatePart</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">))</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Default part template is empty."</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
-                      <li>We are checking if <strong><code
-                            class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
-                      <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>,
-                        then we will <em>execute code inside</em> this <strong><code
-                            class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable.</li>
+  <li>We are checking if <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
+  <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, then we will <em>execute code inside</em> this <strong><code class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Default part template is empty."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Default part template is empty."</span><span class="p">;</span>
 <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above code execute when value of <strong><code
-                            class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Default part template is empty."</code></strong>.
-                      </li>
-                      <li>This variable will be use to show messages to user.</li>
-                      <li>After this we return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong> and exit the
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>Above code execute when value of <strong><code class="language-plaintext highlighter-rouge">defaultTemplate</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Default part template is empty."</code></strong>.</li>
+  <li>This variable will be use to show messages to user.</li>
+  <li>After this we return <strong><code class="language-plaintext highlighter-rouge">false</code></strong> and exit the <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="nf">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code we are creating a new variable.
-                        <ul>
-                          <li><strong>Name of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">swDoc</code></strong>.</li>
-                          <li><strong>Type of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">ModelDoc2</code></strong></li>
-                        </ul>
-                      </li>
-                      <li>Sets the value of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to
-                        variable/object of an instance of SOLIDWORKS application.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">NewDocument()</code></strong>: A
-                        method that creates a new document based on the specified template.</li>
-                      <li>This method <strong><code
-                            class="language-plaintext highlighter-rouge">NewDocument()</code></strong> takes following
-                        parameters.
-                        <ul>
-                          <li><em>TemplateName</em>: <strong>Fully qualified path and name of the template to use for
-                              creating the new document</strong></li>
-                          <li>
-                            <p><em>PaperSize</em>: <strong>Size of paper as defined in <code
-                                  class="language-plaintext highlighter-rouge">swDwgPaperSizes_e</code></strong></p>
+<ul>
+  <li>In above code we are creating a new variable.
+    <ul>
+      <li><strong>Name of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong>.</li>
+      <li><strong>Type of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong></li>
+    </ul>
+  </li>
+  <li>Sets the value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">swApp</code></strong>: Refers to variable/object of an instance of SOLIDWORKS application.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">NewDocument()</code></strong>: A method that creates a new document based on the specified template.</li>
+  <li>This method <strong><code class="language-plaintext highlighter-rouge">NewDocument()</code></strong> takes following parameters.
+    <ul>
+      <li><em>TemplateName</em>: <strong>Fully qualified path and name of the template to use for creating the new document</strong></li>
+      <li>
+        <p><em>PaperSize</em>: <strong>Size of paper as defined in <code class="language-plaintext highlighter-rouge">swDwgPaperSizes_e</code></strong></p>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Member</th>
-                                  <th>Description</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong>swDwgPaperA0size</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">11</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperA1size</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">10</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperA2size</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">9</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperA3size</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">8</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperA4size</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">6</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperA4sizeVertical</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">7</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperAsize</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperAsizeVertical</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">1</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperBsize</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">2</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperCsize</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">3</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperDsize</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">4</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPaperEsize</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">5</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swDwgPapersUserDefined</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">12</code></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                          <li><em>Width</em>: <strong>Width of paper; used only when PaperSize is <code
-                                class="language-plaintext highlighter-rouge">swDwgPapersUserDefined</code></strong></li>
-                          <li><em>Height</em>: <strong>Height of paper; used only when PaperSize is <code
-                                class="language-plaintext highlighter-rouge">swDwgPapersUserDefined</code></strong></li>
-                          <li>Click here for more details of 🚀 <strong><a
-                                href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isldworks~newdocument.html"
-                                target="_blank">NewDocument Method</a></strong></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p>In our code, I have used following values:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>swDwgPaperA0size</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">11</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperA1size</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">10</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperA2size</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">9</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperA3size</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">8</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperA4size</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">6</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperA4sizeVertical</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">7</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperAsize</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperAsizeVertical</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">1</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperBsize</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">2</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperCsize</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">3</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperDsize</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">4</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPaperEsize</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">5</code></td>
+            </tr>
+            <tr>
+              <td><strong>swDwgPapersUserDefined</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">12</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><em>Width</em>: <strong>Width of paper; used only when PaperSize is <code class="language-plaintext highlighter-rouge">swDwgPapersUserDefined</code></strong></li>
+      <li><em>Height</em>: <strong>Height of paper; used only when PaperSize is <code class="language-plaintext highlighter-rouge">swDwgPapersUserDefined</code></strong></li>
+      <li>Click here for more details of 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isldworks~newdocument.html" target="_blank">NewDocument Method</a></strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Parameter Name</th>
-                              <th>Value Used</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong>TemplateName</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">defaultTemplate</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>PaperSize</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Width</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Height</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TemplateName</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">defaultTemplate</code></td>
+        </tr>
+        <tr>
+          <td><strong>PaperSize</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Width</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Height</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swDoc</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">swDoc</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to get Solidworks document."</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li>We are checking if <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code
-                            class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
-                      <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>,
-                        then we will <em>execute code inside</em> this <strong><code
-                            class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>We are checking if <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
+  <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, then we will <em>execute code inside</em> this <strong><code class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to get Solidworks document."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to get Solidworks document."</span><span class="p">;</span>
 <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above code execute when value of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code
-                            class="language-plaintext highlighter-rouge">null</code></strong> .</li>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Failed to get Solidworks document."</code></strong>.
-                      </li>
-                      <li>This variable will be use to show messages to user.</li>
-                      <li>After this we return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong> and exit the
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>Above code execute when value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Failed to get Solidworks document."</code></strong>.</li>
+  <li>This variable will be use to show messages to user.</li>
+  <li>After this we return <strong><code class="language-plaintext highlighter-rouge">false</code></strong> and exit the <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">bool</span> <span class="n">boolStatus</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"Right Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">boolStatus</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"Right Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code we are creating a new variable.
-                        <ul>
-                          <li><strong>Name of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">boolStatus</code></strong>.</li>
-                          <li><strong>Type of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">bool</code></strong></li>
-                        </ul>
-                      </li>
-                      <li>Sets the value of <strong><code
-                            class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">swDoc.Extension</code></strong>:
-                        Refers to object allows access to the model.</li>
-                      <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong>: A
-                        method that Selects the specified entity.</li>
-                      <li>This method <strong><code
-                            class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> takes following
-                        parameters.
-                        <ul>
-                          <li><em>Name</em>: <strong>Name of object to select or an empty string</strong></li>
-                          <li><em>Type</em>: <strong>Type of object (uppercase) as defined in <code
-                                class="language-plaintext highlighter-rouge">swSelectType_e</code> or an empty
-                              string</strong>
-                            <ul>
-                              <li>Click here for more details of 🚀 <strong><a
-                                    href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html"
-                                    target="_blank">swSelectType_e</a></strong></li>
-                            </ul>
-                          </li>
-                          <li><em>X</em>: <strong>X selection location or 0</strong></li>
-                          <li><em>Y</em>: <strong>Y selection location or 0</strong></li>
-                          <li><em>Z</em>: <strong>Z selection location or 0</strong></li>
-                          <li>
-                            <p><em>Append</em>: <strong>Please see below table for details:</strong></p>
+<ul>
+  <li>In above code we are creating a new variable.
+    <ul>
+      <li><strong>Name of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong>.</li>
+      <li><strong>Type of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">bool</code></strong></li>
+    </ul>
+  </li>
+  <li>Sets the value of <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">swDoc.Extension</code></strong>: Refers to object allows access to the model.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong>: A method that Selects the specified entity.</li>
+  <li>This method <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> takes following parameters.
+    <ul>
+      <li><em>Name</em>: <strong>Name of object to select or an empty string</strong></li>
+      <li><em>Type</em>: <strong>Type of object (uppercase) as defined in <code class="language-plaintext highlighter-rouge">swSelectType_e</code> or an empty string</strong>
+        <ul>
+          <li>Click here for more details of 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html" target="_blank">swSelectType_e</a></strong></li>
+        </ul>
+      </li>
+      <li><em>X</em>: <strong>X selection location or 0</strong></li>
+      <li><em>Y</em>: <strong>Y selection location or 0</strong></li>
+      <li><em>Z</em>: <strong>Z selection location or 0</strong></li>
+      <li>
+        <p><em>Append</em>: <strong>Please see below table for details:</strong></p>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>If</th>
-                                  <th>An, if entity is</th>
-                                  <th>Then</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong>True</strong></td>
-                                  <td>Not already selected</td>
-                                  <td>Entity is appended to the current selection list</td>
-                                </tr>
-                                <tr>
-                                  <td> </td>
-                                  <td>Already selected</td>
-                                  <td>Entity is removed from the current selection list</td>
-                                </tr>
-                                <tr>
-                                  <td><strong>False</strong></td>
-                                  <td>Not already selected</td>
-                                  <td>Current selection is cleared and then the entity is put on the list</td>
-                                </tr>
-                                <tr>
-                                  <td> </td>
-                                  <td>Already selected</td>
-                                  <td>Current selection list remains the same</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                          <li><em>Mark</em>: <strong>Value that you want to use as a mark; this value is used by other
-                              functions that require ordered selection.</strong></li>
-                          <li><em>Callout</em>: <strong>Pointer to the associated callout</strong></li>
-                          <li>
-                            <p><em>SelectOption</em>: <strong>Selection option as defined in <code
-                                  class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>If</th>
+              <th>An, if entity is</th>
+              <th>Then</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>True</strong></td>
+              <td>Not already selected</td>
+              <td>Entity is appended to the current selection list</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>Already selected</td>
+              <td>Entity is removed from the current selection list</td>
+            </tr>
+            <tr>
+              <td><strong>False</strong></td>
+              <td>Not already selected</td>
+              <td>Current selection is cleared and then the entity is put on the list</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>Already selected</td>
+              <td>Current selection list remains the same</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><em>Mark</em>: <strong>Value that you want to use as a mark; this value is used by other functions that require ordered selection.</strong></li>
+      <li><em>Callout</em>: <strong>Pointer to the associated callout</strong></li>
+      <li>
+        <p><em>SelectOption</em>: <strong>Selection option as defined in <code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong></p>
 
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Member</th>
-                                  <th>Description</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong>swSelectOptionDefault</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">0 or 0x0</code></td>
-                                </tr>
-                                <tr>
-                                  <td><strong>swSelectOptionExtensive</strong></td>
-                                  <td><code class="language-plaintext highlighter-rouge">1 or 0x1</code></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p><strong>Return Value</strong> : <strong><code
-                              class="language-plaintext highlighter-rouge">true</code></strong> if selected item is
-                          successfully selected, <strong><code
-                              class="language-plaintext highlighter-rouge">false</code></strong> if not.</p>
-                      </li>
-                      <li>
-                        <p>In our code, I have used following values:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>swSelectOptionDefault</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">0 or 0x0</code></td>
+            </tr>
+            <tr>
+              <td><strong>swSelectOptionExtensive</strong></td>
+              <td><code class="language-plaintext highlighter-rouge">1 or 0x1</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : <strong><code class="language-plaintext highlighter-rouge">true</code></strong> if selected item is successfully selected, <strong><code class="language-plaintext highlighter-rouge">false</code></strong> if not.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Parameter Name</th>
-                              <th>Value Used</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong>Name</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">Right Plane</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Type</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">PLANE</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>X</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Y</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Z</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Append</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">false</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Mark</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">0</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Callout</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">null</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>SelectOption</strong></td>
-                              <td><code
-                                  class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">Right Plane</code></td>
+        </tr>
+        <tr>
+          <td><strong>Type</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">PLANE</code></td>
+        </tr>
+        <tr>
+          <td><strong>X</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Y</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Z</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Append</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">false</code></td>
+        </tr>
+        <tr>
+          <td><strong>Mark</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">0</code></td>
+        </tr>
+        <tr>
+          <td><strong>Callout</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">null</code></td>
+        </tr>
+        <tr>
+          <td><strong>SelectOption</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">boolStatus</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">boolStatus</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to select Front Plane"</span><span class="p">;</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable.</li>
-                      <li>We are checking if <strong><code
-                            class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">false</code></strong> or not?</li>
-                      <li>If value is <strong><code class="language-plaintext highlighter-rouge">false</code></strong>,
-                        then we will <em>execute code inside</em> this <strong><code
-                            class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable.</li>
+  <li>We are checking if <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">false</code></strong> or not?</li>
+  <li>If value is <strong><code class="language-plaintext highlighter-rouge">false</code></strong>, then we will <em>execute code inside</em> this <strong><code class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to select Right Plane."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to select Right Plane."</span><span class="p">;</span>
 <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
 <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above code execute when value of <strong><code
-                            class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">false</code></strong> .</li>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Failed to select Right Plane."</code></strong>.
-                      </li>
-                      <li>This variable will be use to show messages to user.</li>
-                      <li>After this, we close all documents in Solidworks application.
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong>: For
-                            closing all documents, we use <strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method
-                            takes following parameters:
-                            <ul>
-                              <li><strong><code
-                                    class="language-plaintext highlighter-rouge">IncludeUnsaved</code></strong>:
-                                <ul>
-                                  <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong> =
-                                    Close all documents, including dirty documents</li>
-                                  <li><strong><code class="language-plaintext highlighter-rouge">false</code></strong> =
-                                    Close all documents, excluding dirty documents</li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>In our code, we use <strong><code
-                                class="language-plaintext highlighter-rouge">true</code></strong> as parameter.</li>
-                        </ul>
-                      </li>
-                      <li>After closing all documents, we close Solidworks Application.</li>
-                      <li>For this we use <strong><code
-                            class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.
-                        <ul>
-                          <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                            method is part of <em><code class="language-plaintext highlighter-rouge">swApp</code></em>
-                            object.</li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                            method did not take any parameter.</li>
-                        </ul>
-                      </li>
-                      <li>After this we return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong> and exit the
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>Above code execute when value of <strong><code class="language-plaintext highlighter-rouge">boolStatus</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">false</code></strong> .</li>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Failed to select Right Plane."</code></strong>.</li>
+  <li>This variable will be use to show messages to user.</li>
+  <li>After this, we close all documents in Solidworks application.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong>: For closing all documents, we use <strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method takes following parameters:
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">IncludeUnsaved</code></strong>:
+            <ul>
+              <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong> = Close all documents, including dirty documents</li>
+              <li><strong><code class="language-plaintext highlighter-rouge">false</code></strong> = Close all documents, excluding dirty documents</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>In our code, we use <strong><code class="language-plaintext highlighter-rouge">true</code></strong> as parameter.</li>
+    </ul>
+  </li>
+  <li>After closing all documents, we close Solidworks Application.</li>
+  <li>For this we use <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.
+    <ul>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method is part of <em><code class="language-plaintext highlighter-rouge">swApp</code></em> object.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method did not take any parameter.</li>
+    </ul>
+  </li>
+  <li>After this we return <strong><code class="language-plaintext highlighter-rouge">false</code></strong> and exit the <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">InsertSketch</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">InsertSketch</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Now after selecting plane, <em>we insert sketch into selected plane.</em></li>
-                      <li>For inserting sketch, we use:
-                        <ul>
-                          <li><strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code>
-                              method</strong>: <em>To Inserts a new sketch in the current part or assembly
-                              document.</em></li>
-                          <li><strong>Parameters</strong>:
-                            <ul>
-                              <li><strong><code
-                                    class="language-plaintext highlighter-rouge">UpdateEditRebuild</code></strong>:
-                                <em><strong><code class="language-plaintext highlighter-rouge">true</code></strong> to
-                                  rebuild the part with any changes made to the sketch and exit sketch mode,
-                                  <strong><code class="language-plaintext highlighter-rouge">false</code></strong> to
-                                  not</em></li>
-                            </ul>
-                          </li>
-                          <li><strong>Return Value</strong>:
-                            <ul>
-                              <li><em><code class="language-plaintext highlighter-rouge">None</code></em></li>
-                            </ul>
-                          </li>
-                          <li><strong>Reference</strong>: 🚀 <strong><a
-                                href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~insertsketch.html"
-                                target="_blank">InsertSketch method Solidworks API Help</a></strong></li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>Now after selecting plane, <em>we insert sketch into selected plane.</em></li>
+  <li>For inserting sketch, we use:
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">InsertSketch()</code> method</strong>: <em>To Inserts a new sketch in the current part or assembly document.</em></li>
+      <li><strong>Parameters</strong>:
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">UpdateEditRebuild</code></strong>: <em><strong><code class="language-plaintext highlighter-rouge">true</code></strong> to rebuild the part with any changes made to the sketch and exit sketch mode, <strong><code class="language-plaintext highlighter-rouge">false</code></strong> to not</em></li>
+        </ul>
+      </li>
+      <li><strong>Return Value</strong>:
+        <ul>
+          <li><em><code class="language-plaintext highlighter-rouge">None</code></em></li>
+        </ul>
+      </li>
+      <li><strong>Reference</strong>: 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~insertsketch.html" target="_blank">InsertSketch method Solidworks API Help</a></strong></li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">UnitConversionHelper</span> <span class="n">conversionHelper</span> <span class="p">=</span> <span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">UnitConversionHelper</span><span class="p">&gt;();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UnitConversionHelper</span> <span class="n">conversionHelper</span> <span class="p">=</span> <span class="n">container</span><span class="p">.</span><span class="n">Resolve</span><span class="p">&lt;</span><span class="n">UnitConversionHelper</span><span class="p">&gt;();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, we create a variable for <strong><code
-                            class="language-plaintext highlighter-rouge">UnitConversionHelper</code></strong> class.
-                        <ul>
-                          <li><strong>Name of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">conversionHelper</code></strong>.</li>
-                          <li><strong>Type of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">UnitConversionHelper</code></strong></li>
-                        </ul>
-                      </li>
-                      <li>We set the value of <strong><code
-                            class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable with
-                        help of <em>DI container</em>.</li>
-                      <li>We ask <em>DI container</em> to resolve the <em>initializing</em> of <strong><code
-                            class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable.</li>
-                    </ul>
+<ul>
+  <li>In above line, we create a variable for <strong><code class="language-plaintext highlighter-rouge">UnitConversionHelper</code></strong> class.
+    <ul>
+      <li><strong>Name of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">conversionHelper</code></strong>.</li>
+      <li><strong>Type of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">UnitConversionHelper</code></strong></li>
+    </ul>
+  </li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable with help of <em>DI container</em>.</li>
+  <li>We ask <em>DI container</em> to resolve the <em>initializing</em> of <strong><code class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable.</li>
+</ul>
 
-                    <div class="language-csharp highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">var</span> <span class="n">units</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="nf">GetUnits</span><span class="p">();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">units</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="nf">GetUnits</span><span class="p">();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, we create a <em>variable</em> for storing <strong>Solidworks document
-                          units</strong>.
-                        <ul>
-                          <li><strong>Name of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">conversionHelunitser</code></strong>.</li>
-                          <li><strong>Type of variable</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">var</code></strong>
-                            <ul>
-                              <li>Type will resolve while application is running.</li>
-                              <li>This is called Runtime resolution.</li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>We set the value of <strong><code
-                            class="language-plaintext highlighter-rouge">conversionHelunitser</code></strong> variable
-                        through <strong><code class="language-plaintext highlighter-rouge">GetUnits()</code></strong>
-                        method.</li>
-                      <li>This method is part of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li><strong>Reference</strong>: 🚀 <strong><a
-                            href="https://help.solidworks.com/2021/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IModelDoc2~GetUnits.html"
-                            target="_blank">GetUnits method Solidworks API Help</a></strong></li>
-                    </ul>
+<ul>
+  <li>In above line, we create a <em>variable</em> for storing <strong>Solidworks document units</strong>.
+    <ul>
+      <li><strong>Name of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">conversionHelunitser</code></strong>.</li>
+      <li><strong>Type of variable</strong>: <strong><code class="language-plaintext highlighter-rouge">var</code></strong>
+        <ul>
+          <li>Type will resolve while application is running.</li>
+          <li>This is called Runtime resolution.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>We set the value of <strong><code class="language-plaintext highlighter-rouge">conversionHelunitser</code></strong> variable through <strong><code class="language-plaintext highlighter-rouge">GetUnits()</code></strong> method.</li>
+  <li>This method is part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li><strong>Reference</strong>: 🚀 <strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/SOLIDWORKS.Interop.sldworks~SOLIDWORKS.Interop.sldworks.IModelDoc2~GetUnits.html" target="_blank">GetUnits method Solidworks API Help</a></strong></li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">conversionHelper</span><span class="p">.</span><span class="nf">UnitConversion</span><span class="p">((</span><span class="n">swLengthUnit_e</span><span class="p">)</span><span class="n">units</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conversionHelper</span><span class="p">.</span><span class="nf">UnitConversion</span><span class="p">((</span><span class="n">swLengthUnit_e</span><span class="p">)</span><span class="n">units</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, we are calling <strong><code
-                            class="language-plaintext highlighter-rouge">UnitConversion()</code></strong> method.</li>
-                      <li>This method is part of <strong><code
-                            class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable.</li>
-                      <li>For more details on <strong><code
-                            class="language-plaintext highlighter-rouge">UnitConversion()</code></strong> method, please
-                        visit 🚀 <strong><a href="/solidworks-csharp/unit-correction/" target="_blank">SOLIDWORKS C# API
-                            - Fix Unit Issue</a></strong> article from this website.</li>
-                    </ul>
+<ul>
+  <li>In above line, we are calling <strong><code class="language-plaintext highlighter-rouge">UnitConversion()</code></strong> method.</li>
+  <li>This method is part of <strong><code class="language-plaintext highlighter-rouge">conversionHelper</code></strong> variable.</li>
+  <li>For more details on <strong><code class="language-plaintext highlighter-rouge">UnitConversion()</code></strong> method, please visit 🚀 <strong><a href="/solidworks-csharp/unit-correction/" target="_blank">SOLIDWORKS C# API - Fix Unit Issue</a></strong> article from this website.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">;</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, we create some variables.
-                        <ul>
-                          <li><strong>Type of variables</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">double</code></strong></li>
-                          <li><strong>Name of variables</strong>: <strong><code
-                                class="language-plaintext highlighter-rouge">x1, y1, z1, x2, y2, z2</code></strong></li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>In above line, we create some variables.
+    <ul>
+      <li><strong>Type of variables</strong>: <strong><code class="language-plaintext highlighter-rouge">double</code></strong></li>
+      <li><strong>Name of variables</strong>: <strong><code class="language-plaintext highlighter-rouge">x1, y1, z1, x2, y2, z2</code></strong></li>
+    </ul>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">)</span> <span class="p">=</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">StartPointViewModel</span><span class="p">,</span> <span class="n">conversionHelper</span><span class="p">.</span><span class="n">LengthConversionFactor</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">)</span> <span class="p">=</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">StartPointViewModel</span><span class="p">,</span> <span class="n">conversionHelper</span><span class="p">.</span><span class="n">LengthConversionFactor</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are setting values of <strong><code
-                            class="language-plaintext highlighter-rouge">x1, y1, z1</code></strong> variables using
-                        <em><code class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></em> method.
-                      </li>
-                      <li>We pass <strong>2 parameters</strong> to <strong><code
-                            class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></strong> method.
-                        <ul>
-                          <li><strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong>
-                            - <em>For which point we want to apply unit conversions</em>.</li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong> -
-                            <em>Factor we want to apply to values of passing point.</em></li>
-                        </ul>
-                      </li>
-                      <li>I will explain more about <strong><code
-                            class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></strong> method
-                        later.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are setting values of <strong><code class="language-plaintext highlighter-rouge">x1, y1, z1</code></strong> variables using <em><code class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></em> method.</li>
+  <li>We pass <strong>2 parameters</strong> to <strong><code class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></strong> method.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong> - <em>For which point we want to apply unit conversions</em>.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">LengthConversionFactor</code></strong> - <em>Factor we want to apply to values of passing point.</em></li>
+    </ul>
+  </li>
+  <li>I will explain more about <strong><code class="language-plaintext highlighter-rouge">ApplyUnitConversion()</code></strong> method later.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span> <span class="p">=</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">EndPointViewModel</span><span class="p">,</span> <span class="n">conversionHelper</span><span class="p">.</span><span class="n">LengthConversionFactor</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span> <span class="p">=</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">EndPointViewModel</span><span class="p">,</span> <span class="n">conversionHelper</span><span class="p">.</span><span class="n">LengthConversionFactor</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Same as previous line of code.</li>
-                    </ul>
+<ul>
+  <li>Same as previous line of code.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">sketchSegment</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sketchSegment</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span><span class="p">.</span><span class="nf">CreateLine</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line of code, <em>we are creating Sketch line.</em></li>
-                      <li>For this we are using <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLine()</code></strong> method.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong>
-                        method, creates a sketch line in the currently active 2D or 3D sketch.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong>
-                        method is part of <strong><code
-                            class="language-plaintext highlighter-rouge">SketchManager</code></strong> property.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong>
-                        property is part of <strong><code
-                            class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-                      <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong>
-                        method takes following parameters.
-                        <ul>
-                          <li><strong>X1</strong> - <em>X coordinate of the line start point</em></li>
-                          <li><strong>Y1</strong> - <em>Y coordinate of the line start point</em></li>
-                          <li><strong>Z1</strong> - <em>Z coordinate of the line start point</em></li>
-                          <li><strong>X2</strong> - <em>X coordinate of the line end point</em></li>
-                          <li><strong>Y2</strong> - <em>Y coordinate of the line end point</em></li>
-                          <li><strong>Z2</strong> - <em>Z coordinate of the line end point</em></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <p><strong>Return Value</strong> : <strong><code
-                              class="language-plaintext highlighter-rouge">SketchSegment</code></strong> Object if line
-                          created successfully.</p>
-                      </li>
-                      <li>
-                        <p>In our code, I have used following values:</p>
+<ul>
+  <li>In above line of code, <em>we are creating Sketch line.</em></li>
+  <li>For this we are using <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong> method, creates a sketch line in the currently active 2D or 3D sketch.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong> property.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">SketchManager</code></strong> property is part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">CreateLine()</code></strong> method takes following parameters.
+    <ul>
+      <li><strong>X1</strong> - <em>X coordinate of the line start point</em></li>
+      <li><strong>Y1</strong> - <em>Y coordinate of the line start point</em></li>
+      <li><strong>Z1</strong> - <em>Z coordinate of the line start point</em></li>
+      <li><strong>X2</strong> - <em>X coordinate of the line end point</em></li>
+      <li><strong>Y2</strong> - <em>Y coordinate of the line end point</em></li>
+      <li><strong>Z2</strong> - <em>Z coordinate of the line end point</em></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Return Value</strong> : <strong><code class="language-plaintext highlighter-rouge">SketchSegment</code></strong> Object if line created successfully.</p>
+  </li>
+  <li>
+    <p>In our code, I have used following values:</p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Parameter Name</th>
-                              <th>Value Used</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><strong>X1</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">x1</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Y1</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">y1</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Z1</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">z1</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>X2</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">x2</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Y2</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">y2</code></td>
-                            </tr>
-                            <tr>
-                              <td><strong>Z2</strong></td>
-                              <td><code class="language-plaintext highlighter-rouge">z2</code></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </li>
-                    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter Name</th>
+          <th>Value Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>X1</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">x1</code></td>
+        </tr>
+        <tr>
+          <td><strong>Y1</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">y1</code></td>
+        </tr>
+        <tr>
+          <td><strong>Z1</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">z1</code></td>
+        </tr>
+        <tr>
+          <td><strong>X2</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">x2</code></td>
+        </tr>
+        <tr>
+          <td><strong>Y2</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">y2</code></td>
+        </tr>
+        <tr>
+          <td><strong>Z2</strong></td>
+          <td><code class="language-plaintext highlighter-rouge">z2</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">sketchSegment</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">sketchSegment</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to Create Sketch line."</span><span class="p">;</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
     <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
     <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are checking value of <strong><code
-                            class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable.</li>
-                      <li>We are checking if <strong><code
-                            class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
-                      <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>,
-                        then we will <em>execute code inside</em> this <strong><code
-                            class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are checking value of <strong><code class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable.</li>
+  <li>We are checking if <strong><code class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not?</li>
+  <li>If value is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, then we will <em>execute code inside</em> this <strong><code class="language-plaintext highlighter-rouge">if</code></strong> condition.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to Create Sketch line."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Failed to Create Sketch line."</span><span class="p">;</span>
 <span class="n">swApp</span><span class="p">.</span><span class="nf">CloseAllDocuments</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 <span class="n">swApp</span><span class="p">.</span><span class="nf">ExitApp</span><span class="p">();</span>
 <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>Above code execute when value of <strong><code
-                            class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable is
-                        <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Failed to Create Sketch line."</code></strong>.
-                      </li>
-                      <li>This variable will be use to show messages to user.</li>
-                      <li>After this, we close all documents in Solidworks application.
-                        <ul>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong>: For
-                            closing all documents, we use <strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.
-                          </li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method
-                            takes following parameters:
-                            <ul>
-                              <li><strong><code
-                                    class="language-plaintext highlighter-rouge">IncludeUnsaved</code></strong>:
-                                <ul>
-                                  <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong> =
-                                    Close all documents, including dirty documents</li>
-                                  <li><strong><code class="language-plaintext highlighter-rouge">false</code></strong> =
-                                    Close all documents, excluding dirty documents</li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>In our code, we use <strong><code
-                                class="language-plaintext highlighter-rouge">true</code></strong> as parameter.</li>
-                        </ul>
-                      </li>
-                      <li>After closing all documents, we close Solidworks Application.</li>
-                      <li>For this we use <strong><code
-                            class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.
-                        <ul>
-                          <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                            method is part of <em><code class="language-plaintext highlighter-rouge">swApp</code></em>
-                            object.</li>
-                          <li><strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong>
-                            method did not take any parameter.</li>
-                        </ul>
-                      </li>
-                      <li>After this we return <strong><code
-                            class="language-plaintext highlighter-rouge">false</code></strong> and exit the
-                        <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong>
-                        method.</li>
-                    </ul>
+<ul>
+  <li>Above code execute when value of <strong><code class="language-plaintext highlighter-rouge">sketchSegment</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> .</li>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Failed to Create Sketch line."</code></strong>.</li>
+  <li>This variable will be use to show messages to user.</li>
+  <li>After this, we close all documents in Solidworks application.
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong>: For closing all documents, we use <strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">CloseAllDocuments()</code></strong> method takes following parameters:
+        <ul>
+          <li><strong><code class="language-plaintext highlighter-rouge">IncludeUnsaved</code></strong>:
+            <ul>
+              <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong> = Close all documents, including dirty documents</li>
+              <li><strong><code class="language-plaintext highlighter-rouge">false</code></strong> = Close all documents, excluding dirty documents</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>In our code, we use <strong><code class="language-plaintext highlighter-rouge">true</code></strong> as parameter.</li>
+    </ul>
+  </li>
+  <li>After closing all documents, we close Solidworks Application.</li>
+  <li>For this we use <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method.
+    <ul>
+      <li>This <strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method is part of <em><code class="language-plaintext highlighter-rouge">swApp</code></em> object.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">ExitApp()</code></strong> method did not take any parameter.</li>
+    </ul>
+  </li>
+  <li>After this we return <strong><code class="language-plaintext highlighter-rouge">false</code></strong> and exit the <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="nf">ClearSelection2</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="nf">ClearSelection2</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, we clear all selection in Solidwork Sketch.</li>
-                      <li>We clear selection by <strong><code
-                            class="language-plaintext highlighter-rouge">ClearSelection2()</code></strong> method.</li>
-                      <li>This method <strong><code
-                            class="language-plaintext highlighter-rouge">ClearSelection2()</code></strong> takes
-                        following parameter:
-                        <ul>
-                          <li><strong>All</strong> - <em><strong><code
-                                  class="language-plaintext highlighter-rouge">true</code></strong> clears the entire
-                              existing selection list, <strong><code
-                                  class="language-plaintext highlighter-rouge">false</code></strong> clears only the
-                              items in the active selection list.</em></li>
-                        </ul>
-                      </li>
-                      <li>We used <strong><code class="language-plaintext highlighter-rouge">true</code></strong> as
-                        parameter.</li>
-                    </ul>
+<ul>
+  <li>In above line, we clear all selection in Solidwork Sketch.</li>
+  <li>We clear selection by <strong><code class="language-plaintext highlighter-rouge">ClearSelection2()</code></strong> method.</li>
+  <li>This method <strong><code class="language-plaintext highlighter-rouge">ClearSelection2()</code></strong> takes following parameter:
+    <ul>
+      <li><strong>All</strong> - <em><strong><code class="language-plaintext highlighter-rouge">true</code></strong> clears the entire existing selection list, <strong><code class="language-plaintext highlighter-rouge">false</code></strong> clears only the items in the active selection list.</em></li>
+    </ul>
+  </li>
+  <li>We used <strong><code class="language-plaintext highlighter-rouge">true</code></strong> as parameter.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="nf">ViewZoomtofit2</span><span class="p">();</span>
-</code></pre>
-                      </div>
-                    </div>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">.</span><span class="nf">ViewZoomtofit2</span><span class="p">();</span>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above line, <em>we zoom current view</em>.</li>
-                      <li>We do this by <strong><code
-                            class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method.</li>
-                      <li>This <strong><code
-                            class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method is part
-                        of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.
-                      </li>
-                      <li>This <strong><code
-                            class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method, did
-                        not take any parameter and did not return any object.</li>
-                    </ul>
+<ul>
+  <li>In above line, <em>we zoom current view</em>.</li>
+  <li>We do this by <strong><code class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method is part of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  <li>This <strong><code class="language-plaintext highlighter-rouge">ViewZoomtofit2()</code></strong> method, did not take any parameter and did not return any object.</li>
+</ul>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Sketch line successfully created."</span><span class="p">;</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageToShow</span> <span class="p">=</span> <span class="s">"Sketch line successfully created."</span><span class="p">;</span>
 <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>In above code, we are setting value of <strong><code
-                            class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">"Sketch line successfully created."</code></strong>.
-                      </li>
-                      <li>Then we return <strong><code
-                            class="language-plaintext highlighter-rouge">true</code></strong>; indicating we have
-                        completed our <strong><code
-                            class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method
-                        successfully.</li>
-                    </ul>
+<ul>
+  <li>In above code, we are setting value of <strong><code class="language-plaintext highlighter-rouge">messageToShow</code></strong> variable to <strong><code class="language-plaintext highlighter-rouge">"Sketch line successfully created."</code></strong>.</li>
+  <li>Then we return <strong><code class="language-plaintext highlighter-rouge">true</code></strong>; indicating we have completed our <strong><code class="language-plaintext highlighter-rouge">CreateLineMethod()</code></strong> method successfully.</li>
+</ul>
 
-                    <h2 id="add-method---applyunitconversion">Add Method - ApplyUnitConversion</h2>
+<h2 id="add-method---applyunitconversion">Add Method - ApplyUnitConversion</h2>
 
-                    <p>Now we add <strong><code
-                          class="language-plaintext highlighter-rouge">ApplyUnitConversion</code></strong> method.</p>
+<p>Now we add <strong><code class="language-plaintext highlighter-rouge">ApplyUnitConversion</code></strong> method.</p>
 
-                    <div class="language-cs highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="k">public</span> <span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">)</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">PointViewModel</span> <span class="n">inputPoint</span><span class="p">,</span> <span class="kt">double</span> <span class="n">lengthConversionFactor</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">)</span> <span class="nf">ApplyUnitConversion</span><span class="p">(</span><span class="n">PointViewModel</span> <span class="n">inputPoint</span><span class="p">,</span> <span class="kt">double</span> <span class="n">lengthConversionFactor</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">;</span>
 
@@ -1535,117 +1159,100 @@
 
     <span class="k">return</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <ul>
-                      <li>This method takes a <strong><code
-                            class="language-plaintext highlighter-rouge">PointViewModel</code></strong> object
-                        (<strong><code class="language-plaintext highlighter-rouge">inputPoint</code></strong>) and a
-                        <strong><code
-                            class="language-plaintext highlighter-rouge">lengthConversionFactor</code></strong>, and it
-                        converts the <strong><code
-                            class="language-plaintext highlighter-rouge">inputPoint</code></strong> coordinates by
-                        multiplying each with the conversion factor.</li>
-                      <li><strong>Return Type</strong>: The method returns a tuple <strong><code
-                            class="language-plaintext highlighter-rouge">(double, double, double)</code></strong>
-                        representing the converted <em>X, Y, and Z</em> coordinates.</li>
-                      <li>Parameters:
-                        <ul>
-                          <li><strong><code class="language-plaintext highlighter-rouge">inputPoint</code></strong>: An
-                            object of type <strong><code
-                                class="language-plaintext highlighter-rouge">PointViewModel</code></strong> that has
-                            properties <strong><code
-                                class="language-plaintext highlighter-rouge">XPoint, YPoint, and ZPoint</code></strong>,
-                            representing the X, Y, and Z coordinates of a point.</li>
-                          <li><strong><code
-                                class="language-plaintext highlighter-rouge">lengthConversionFactor</code></strong>: A
-                            double value used to convert the unit of measurement for each coordinate.</li>
-                        </ul>
-                      </li>
-                    </ul>
+<ul>
+  <li>This method takes a <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong> object (<strong><code class="language-plaintext highlighter-rouge">inputPoint</code></strong>) and a <strong><code class="language-plaintext highlighter-rouge">lengthConversionFactor</code></strong>, and it converts the <strong><code class="language-plaintext highlighter-rouge">inputPoint</code></strong> coordinates by multiplying each with the conversion factor.</li>
+  <li><strong>Return Type</strong>: The method returns a tuple <strong><code class="language-plaintext highlighter-rouge">(double, double, double)</code></strong> representing the converted <em>X, Y, and Z</em> coordinates.</li>
+  <li>Parameters:
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">inputPoint</code></strong>: An object of type <strong><code class="language-plaintext highlighter-rouge">PointViewModel</code></strong> that has properties <strong><code class="language-plaintext highlighter-rouge">XPoint, YPoint, and ZPoint</code></strong>, representing the X, Y, and Z coordinates of a point.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">lengthConversionFactor</code></strong>: A double value used to convert the unit of measurement for each coordinate.</li>
+    </ul>
+  </li>
+</ul>
 
-                    <hr />
+<hr />
 
-                    <h2 id="final-result">Final Result</h2>
+<h2 id="final-result">Final Result</h2>
 
-                    <p>Now, we have done everything needed to <strong>Create Line in Solidworks Sketch</strong> into
-                      <em>Solidworks Document</em> through our application.</p>
+<p>Now, we have done everything needed to <strong>Create Line in Solidworks Sketch</strong> into <em>Solidworks Document</em> through our application.</p>
 
-                    <p>Please see below image for final result of our work.</p>
+<p>Please see below image for final result of our work.</p>
 
-                    <p><a href="/assets/solidworks-csharp-images/create-line/result.gif"><img
-                          src="/assets/solidworks-csharp-images/create-line/result.gif" alt="result" /></a></p>
+<p><a href="/assets/solidworks-csharp-images/create-line/result.gif"><img src="/assets/solidworks-csharp-images/create-line/result.gif" alt="result" /></a></p>
 
-                    <hr />
+<hr />
 
-                    <p><strong>This is it !!!</strong></p>
+<p><strong>This is it !!!</strong></p>
 
-                    <p><em>I hope my efforts will helpful to someone!</em></p>
+<p><em>I hope my efforts will helpful to someone!</em></p>
 
-                    <p>If you found anything to <strong>add or update</strong>, please let me know on my
-                      <em>e-mail</em>.</p>
+<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-                    <p>Hope this post helps you to <strong>Create Line in Solidworks SketchSketch</strong> from WPF
-                      PRISM Application.</p>
+<p>Hope this post helps you to <strong>Create Line in Solidworks SketchSketch</strong> from WPF PRISM Application.</p>
 
-                    <p><em>If you like the post then please share it with your friends also.</em></p>
+<p><em>If you like the post then please share it with your friends also.</em></p>
 
-                    <p><em>Do let me know by you like this post or not!</em></p>
+<p><em>Do let me know by you like this post or not!</em></p>
 
-                    <p><em>Till then, Happy learning!!!</em></p>
+<p><em>Till then, Happy learning!!!</em></p>
 
 
-                  </div>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
+      </section>
 
-                </section>
-
-                <footer class="page__meta">
-
-
-
-
-
-
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2025-07-05T15:10:26-04:00">July 5, 2025</time></p>
+      <footer class="page__meta">
+        
+        
 
 
-                </footer>
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-22T00:18:05-04:00">July 22, 2025</time></p>
 
 
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
+      </footer>
 
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-csharp/delete-selected-sketch/" title="SOLIDWORKS C# API - Delete Selected Sketch
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/delete-selected-sketch/" title="SOLIDWORKS C# API - Delete Selected Sketch
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/solidworks-csharp/create-line-code-refactor/" title="SOLIDWORKS C# API - Create Line Code Refactor
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/solidworks-csharp/create-line-code-refactor/" title="SOLIDWORKS C# API - Create Line Code Refactor
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
+</div>
 
-          </div>
+          <div class="ml-embedded" data-form="s7QtnY"></div>
         </div>
       </div>
     </div>
@@ -1655,75 +1262,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+          
+          
+          
+          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+          
+          
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -1748,15 +1355,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
