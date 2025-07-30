@@ -5,45 +5,48 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>VBA Userforms - Open new Part document - The CAD Coder</title>
-<meta name="description" content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
+  <!-- begin _includes/seo.html -->
+  <title>VBA Userforms - Open new Part document - The CAD Coder</title>
+  <meta name="description"
+    content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
-<meta property="og:title" content="VBA Userforms - Open new Part document">
-<meta property="og:url" content="http://localhost:4000/vba/open-part-from-userform/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The CAD Coder">
+  <meta property="og:title" content="VBA Userforms - Open new Part document">
+  <meta property="og:url" content="https://thecadcoder.com/vba/open-part-from-userform/">
 
 
-  <meta property="og:description" content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2025-07-29T07:06:23-04:00">
+  <meta property="og:description"
+    content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/vba/open-part-from-userform/">
+
+  <meta property="article:published_time" content="2025-07-30T02:11:02-04:00">
 
 
 
 
-<script type="application/ld+json">
+
+
+  <link rel="canonical" href="https://thecadcoder.com/vba/open-part-from-userform/">
+
+
+
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "http://localhost:4000/"
+      "url": "https://thecadcoder.com/"
     
   }
 </script>
@@ -54,31 +57,29 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
-</script>
+    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
+  </script>
 
-<!-- end _includes/seo.html -->
+  <!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-  
+
 
   <!-- MailerLite Universal -->
   <script>
@@ -99,423 +100,478 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+      <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
+            href="/vba/vba-Introduction/"><span>VBA</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/resources/"><span>Resources</span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
+        </li>
+
+        <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+      </ul>
+      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-</nav>
+  </nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
+        <div class="sidebar sticky" style="width: 100%;">
 
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
-          
-            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
-          
-            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
-          
-            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
-          
-            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Programming Concepts</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
-          
-            <li><a href="/vba/variables/">VBA Variables</a></li>
-          
-            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
-          
-            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
-          
-            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
-          
-            <li><a href="/vba/constant/">VBA Constants</a></li>
-          
-            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
-          
-            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
-          
-            <li><a href="/vba/arrays/">VBA Arrays</a></li>
-          
-            <li><a href="/vba/functions/">VBA Functions</a></li>
-          
-            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
-          
-            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
-          
-            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
-          
-            <li><a href="/vba/looping/">VBA Looping</a></li>
-          
-            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
-          
-            <li><a href="/vba/debugger/">VBA Debugger</a></li>
-          
-            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Dialog Boxes</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
-          
-            <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
-          
-            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
-          
-            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">UserForms</span>
-        
 
-        
-        <ul>
-          
-            <li><a href="/vba/userform/">VBA UserForms</a></li>
-          
-            <li><a href="/vba/open-part-from-userform/" class="active">VBA Userforms - Open new Part document</a></li>
-          
-            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
-          
-            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
-          
-            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
 
-    
-  
-  </div>
 
-</div>
+
+
+
+
+          <nav class="nav__list">
+
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+
+              <li>
+
+                <span class="nav__sub-title">Getting Started</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+
+                  <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+
+                  <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+
+                  <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+
+                  <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Programming Concepts</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+
+                  <li><a href="/vba/variables/">VBA Variables</a></li>
+
+                  <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+
+                  <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+
+                  <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+
+                  <li><a href="/vba/constant/">VBA Constants</a></li>
+
+                  <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+
+                  <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+
+                  <li><a href="/vba/arrays/">VBA Arrays</a></li>
+
+                  <li><a href="/vba/functions/">VBA Functions</a></li>
+
+                  <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+
+                  <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making
+                      Decisions</a></li>
+
+                  <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+
+                  <li><a href="/vba/looping/">VBA Looping</a></li>
+
+                  <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+
+                  <li><a href="/vba/debugger/">VBA Debugger</a></li>
+
+                  <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">Dialog Boxes</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+
+                  <li><a href="/vba/msgBox-function/">VBA MsgBox Function</a></li>
+
+                  <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+
+                  <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li>
+
+                <span class="nav__sub-title">UserForms</span>
+
+
+
+                <ul>
+
+                  <li><a href="/vba/userform/">VBA UserForms</a></li>
+
+                  <li><a href="/vba/open-part-from-userform/" class="active">VBA Userforms - Open new Part document</a>
+                  </li>
+
+                  <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and
+                      Drawing document</a></li>
+
+                  <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new
+                      Assembly and Drawing document</a></li>
+
+                  <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+
+      </div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="VBA Userforms - Open new Part document">
-    
-    <meta itemprop="description" content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
-    
-    
-    <meta itemprop="datePublished" content="2025-07-29T07:06:23-04:00">
-    
+            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">VBA Userforms - Open new Part document
-</h1>
-        
+              <meta itemprop="headline" content="VBA Userforms - Open new Part document">
 
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
-    
-  </p>
+              <meta itemprop="description"
+                content="In this post, we learn how can we open a part document from a Visual Basic for Application’s Userform.">
 
 
-      </header>
-      
+              <meta itemprop="datePublished" content="2025-07-30T02:11:02-04:00">
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#create-a-new-macro">Create a new macro</a></li><li><a href="#insert-userform-in-the-macro">Insert userform in the macro</a></li><li><a href="#adding-a-button">Adding a Button</a></li><li><a href="#updating-properties-of-command-button-and-userform-windows">Updating Properties of Command Button and Userform Windows</a></li><li><a href="#add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button</a></li></ul>
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <p>In this post, we learn how can we <em>open a part document</em> from a Visual Basic for Application’s <em>Userform</em>.</p>
+              <div class="page__inner-wrap">
 
-<p>For this please we need to do following steps as described below.</p>
+                <header>
+                  <h1 id="page-title" class="page__title" itemprop="headline">VBA Userforms - Open new Part document
+                  </h1>
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<p>Please see below video on <strong>Solidworks VBA Macro - Open new Part document</strong> in Solidwoks VBA Userforms.</p>
+                  <p class="page__meta">
 
-<iframe src="https://www.youtube.com/embed/pXMMSDeXEwo" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
 
-<p>Please note that there are <strong>no explaination</strong> in the video.</p>
 
-<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
 
-<h2 id="create-a-new-macro">Create a new macro</h2>
 
-<p>1st we need to create a <strong>new macro</strong> in <em>Solidworks 3D CAD Software</em>.</p>
 
-<p>If you don’t know how to create a new macro in Solidworks, please go to <a href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a> post for this.</p>
 
-<p>This will open a new macro in Visual Basic Editor with some code as shown in below image.</p>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/1.new_macro_window.PNG" alt="new_macro_window" /></p>
+                    <span class="page__meta-readtime">
+                      <i class="far fa-clock" aria-hidden="true"></i>
 
-<h2 id="insert-userform-in-the-macro">Insert userform in the macro</h2>
+                      4 minute read
 
-<p>After this we need to insert a userform in our macro.</p>
+                    </span>
 
-<p>For this, select the button shown in below image.</p>
+                  </p>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/2.insert-userform-button.png" alt="insert-userform-button" /></p>
 
-<p>This button is called <strong><em>insert userform</em></strong>.</p>
+                </header>
 
-<p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
 
-<blockquote>
-  <p>Please note that in a macro we can insert any number of userform as we like. But for this example we insert only 1 userform.</p>
-</blockquote>
+                <section class="page__content" itemprop="text">
 
-<p>After clicking the <strong><em>insert userform</em></strong> button we get the userform window as shown in below image.</p>
+                  <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                      <header>
+                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+                      </header>
+                      <ul class="toc__menu">
+                        <li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li>
+                        <li><a href="#create-a-new-macro">Create a new macro</a></li>
+                        <li><a href="#insert-userform-in-the-macro">Insert userform in the macro</a></li>
+                        <li><a href="#adding-a-button">Adding a Button</a></li>
+                        <li><a href="#updating-properties-of-command-button-and-userform-windows">Updating Properties of
+                            Command Button and Userform Windows</a></li>
+                        <li><a href="#add-functionality-to-open-newpart-button">Add Functionality to Open NewPart
+                            Button</a></li>
+                      </ul>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/3.userform-window.PNG" alt="userform-window" /></p>
+                      <br />
+                      <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                        crossorigin="anonymous"></script>
+                      <!-- Vertical Ads -->
+                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </nav>
+                  </aside>
 
-<h2 id="adding-a-button">Adding a Button</h2>
+                  <div>
+                    <script async
+                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+                      crossorigin="anonymous"></script>
+                    <!-- Horizontal Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <p>In this post, we learn how can we <em>open a part document</em> from a Visual Basic for
+                      Application’s <em>Userform</em>.</p>
 
-<p>Now in our userform window, we add a <code class="language-plaintext highlighter-rouge">Command Button</code> at center of window.</p>
+                    <p>For this please we need to do following steps as described below.</p>
 
-<p>You can find <code class="language-plaintext highlighter-rouge">Command Button</code> highlighted in red in below image.</p>
+                    <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/4.add-command-button.png" alt="add-command-buton" /></p>
+                    <p>Please see below video on <strong>Solidworks VBA Macro - Open new Part document</strong> in
+                      Solidwoks VBA Userforms.</p>
 
-<p>You can place command button at your desire. I placed it at center of the userform window as shown in below image.</p>
+                    <iframe src="https://www.youtube.com/embed/pXMMSDeXEwo" frameborder="0" allowfullscreen=""></iframe>
+                    <p><br /></p>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/5.userform-window-after-adding-command-button.PNG" alt="userform-window-after-adding-command-button" /></p>
+                    <p>Please note that there are <strong>no explaination</strong> in the video.</p>
 
-<h2 id="updating-properties-of-command-button-and-userform-windows">Updating Properties of Command Button and Userform Windows</h2>
+                    <p><strong>Explaination</strong> of each line and why we write code this way is given in this post.
+                    </p>
 
-<p>Now we update some properties of Command Button and Userform Windows for our use.</p>
+                    <h2 id="create-a-new-macro">Create a new macro</h2>
 
-<blockquote>
-  <p>It is not necessary to update properties but it is a good habit to update them for our purpose.</p>
-</blockquote>
+                    <p>1st we need to create a <strong>new macro</strong> in <em>Solidworks 3D CAD Software</em>.</p>
 
-<p>1st we update the properties of Userform.</p>
+                    <p>If you don’t know how to create a new macro in Solidworks, please go to <a
+                        href="/solidworks-macros/vba-in-solidworks">VBA in Solidworks</a> post for this.</p>
 
-<p>In below image, I have shown the properties of <code class="language-plaintext highlighter-rouge">Userform1</code> and update following properties:</p>
+                    <p>This will open a new macro in Visual Basic Editor with some code as shown in below image.</p>
 
-<ol>
-  <li>
-    <p>Name of Userform</p>
-  </li>
-  <li>
-    <p>Caption of Userform</p>
-  </li>
-</ol>
+                    <p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/1.new_macro_window.PNG"
+                        alt="new_macro_window" /></p>
 
-<p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/6.properties-to-change-in-userform.png" alt="properties-to-change-in-userform" /></p>
+                    <h2 id="insert-userform-in-the-macro">Insert userform in the macro</h2>
 
-<p>Update the value of <em>Name</em> property from <code class="language-plaintext highlighter-rouge">UserForm1</code> to <code class="language-plaintext highlighter-rouge">OurWindow</code>.</p>
+                    <p>After this we need to insert a userform in our macro.</p>
 
-<blockquote>
-  <p>From <em>Name</em> property, we access the Userform.</p>
-</blockquote>
+                    <p>For this, select the button shown in below image.</p>
 
-<p>Update the value of <em>Caption</em> property from <code class="language-plaintext highlighter-rouge">UserForm1</code> to <code class="language-plaintext highlighter-rouge">Our Window</code>.</p>
+                    <p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/2.insert-userform-button.png"
+                        alt="insert-userform-button" /></p>
 
-<blockquote>
-  <p>From <em>Caption</em> property, we update the text appears in the window of our Userform.</p>
-</blockquote>
+                    <p>This button is called <strong><em>insert userform</em></strong>.</p>
 
-<p>Now, we repeat the same process for Command Button.</p>
+                    <p>As the name suggest, function of this button is <em>inserting a userform</em>.</p>
 
-<p>1st we need to select the Command Button in the user form after that we update same properties of Command Button.</p>
+                    <blockquote>
+                      <p>Please note that in a macro we can insert any number of userform as we like. But for this
+                        example we insert only 1 userform.</p>
+                    </blockquote>
 
-<ol>
-  <li>
-    <p>Name of Command Button</p>
-  </li>
-  <li>
-    <p>Caption of Command Button</p>
-  </li>
-</ol>
+                    <p>After clicking the <strong><em>insert userform</em></strong> button we get the userform window as
+                      shown in below image.</p>
 
-<p>Update the value of <em>Name</em> property from <code class="language-plaintext highlighter-rouge">CommandButton1</code> to <code class="language-plaintext highlighter-rouge">OpenNewPartButton</code>.</p>
+                    <p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/3.userform-window.PNG"
+                        alt="userform-window" /></p>
 
-<blockquote>
-  <p>From <em>Name</em> property, we access the Command Button.</p>
-</blockquote>
+                    <h2 id="adding-a-button">Adding a Button</h2>
 
-<p>Update the value of <em>Caption</em> property from <code class="language-plaintext highlighter-rouge">CommandButton1</code> to <code class="language-plaintext highlighter-rouge">Open NewPart Button</code>.</p>
+                    <p>Now in our userform window, we add a <code
+                        class="language-plaintext highlighter-rouge">Command Button</code> at center of window.</p>
 
-<blockquote>
-  <p>From <em>Caption</em> property, we update the text appears in the Command Button of our Userform.</p>
-</blockquote>
+                    <p>You can find <code class="language-plaintext highlighter-rouge">Command Button</code> highlighted
+                      in red in below image.</p>
 
-<h2 id="add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button</h2>
+                    <p><img src="/assets/Solidworks_Images/Open_new_part_from_userform/4.add-command-button.png"
+                        alt="add-command-buton" /></p>
 
-<p>To add functionality in our <code class="language-plaintext highlighter-rouge">Open NewPart Button</code>, just double click the <code class="language-plaintext highlighter-rouge">Open NewPart Button</code>.</p>
+                    <p>You can place command button at your desire. I placed it at center of the userform window as
+                      shown in below image.</p>
 
-<p>This will add give some code behind the designer and opens the <strong>code window</strong> of Userform designer.</p>
+                    <p><img
+                        src="/assets/Solidworks_Images/Open_new_part_from_userform/5.userform-window-after-adding-command-button.PNG"
+                        alt="userform-window-after-adding-command-button" /></p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
+                    <h2 id="updating-properties-of-command-button-and-userform-windows">Updating Properties of Command
+                      Button and Userform Windows</h2>
+
+                    <p>Now we update some properties of Command Button and Userform Windows for our use.</p>
+
+                    <blockquote>
+                      <p>It is not necessary to update properties but it is a good habit to update them for our purpose.
+                      </p>
+                    </blockquote>
+
+                    <p>1st we update the properties of Userform.</p>
+
+                    <p>In below image, I have shown the properties of <code
+                        class="language-plaintext highlighter-rouge">Userform1</code> and update following properties:
+                    </p>
+
+                    <ol>
+                      <li>
+                        <p>Name of Userform</p>
+                      </li>
+                      <li>
+                        <p>Caption of Userform</p>
+                      </li>
+                    </ol>
+
+                    <p><img
+                        src="/assets/Solidworks_Images/Open_new_part_from_userform/6.properties-to-change-in-userform.png"
+                        alt="properties-to-change-in-userform" /></p>
+
+                    <p>Update the value of <em>Name</em> property from <code
+                        class="language-plaintext highlighter-rouge">UserForm1</code> to <code
+                        class="language-plaintext highlighter-rouge">OurWindow</code>.</p>
+
+                    <blockquote>
+                      <p>From <em>Name</em> property, we access the Userform.</p>
+                    </blockquote>
+
+                    <p>Update the value of <em>Caption</em> property from <code
+                        class="language-plaintext highlighter-rouge">UserForm1</code> to <code
+                        class="language-plaintext highlighter-rouge">Our Window</code>.</p>
+
+                    <blockquote>
+                      <p>From <em>Caption</em> property, we update the text appears in the window of our Userform.</p>
+                    </blockquote>
+
+                    <p>Now, we repeat the same process for Command Button.</p>
+
+                    <p>1st we need to select the Command Button in the user form after that we update same properties of
+                      Command Button.</p>
+
+                    <ol>
+                      <li>
+                        <p>Name of Command Button</p>
+                      </li>
+                      <li>
+                        <p>Caption of Command Button</p>
+                      </li>
+                    </ol>
+
+                    <p>Update the value of <em>Name</em> property from <code
+                        class="language-plaintext highlighter-rouge">CommandButton1</code> to <code
+                        class="language-plaintext highlighter-rouge">OpenNewPartButton</code>.</p>
+
+                    <blockquote>
+                      <p>From <em>Name</em> property, we access the Command Button.</p>
+                    </blockquote>
+
+                    <p>Update the value of <em>Caption</em> property from <code
+                        class="language-plaintext highlighter-rouge">CommandButton1</code> to <code
+                        class="language-plaintext highlighter-rouge">Open NewPart Button</code>.</p>
+
+                    <blockquote>
+                      <p>From <em>Caption</em> property, we update the text appears in the Command Button of our
+                        Userform.</p>
+                    </blockquote>
+
+                    <h2 id="add-functionality-to-open-newpart-button">Add Functionality to Open NewPart Button</h2>
+
+                    <p>To add functionality in our <code
+                        class="language-plaintext highlighter-rouge">Open NewPart Button</code>, just double click the
+                      <code class="language-plaintext highlighter-rouge">Open NewPart Button</code>.</p>
+
+                    <p>This will add give some code behind the designer and opens the <strong>code window</strong> of
+                      Userform designer.</p>
+
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">OpenNewPartButton_Click</span><span class="p">()</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>We need to update this code for opening new part after clicking the button.</p>
+                    <p>We need to update this code for opening new part after clicking the button.</p>
 
-<p>For this replace all above code with below code.</p>
+                    <p>For this replace all above code with below code.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Creating variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
@@ -537,105 +593,115 @@
     <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>The above code will <em>open New part document</em> when we click the button.</p>
+                    <p>The above code will <em>open New part document</em> when we click the button.</p>
 
-<p>But first, we need to call the our <em>Userform</em> inside main <strong><em>module</em></strong>.</p>
+                    <p>But first, we need to call the our <em>Userform</em> inside main
+                      <strong><em>module</em></strong>.</p>
 
-<p>For this goto main <code class="language-plaintext highlighter-rouge">Sub procedure</code> inside the <strong>main Module</strong>.</p>
+                    <p>For this goto main <code class="language-plaintext highlighter-rouge">Sub procedure</code> inside
+                      the <strong>main Module</strong>.</p>
 
-<p>Code inside the main Module is as given below.</p>
+                    <p>Code inside the main Module is as given below.</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="kt">Object</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="kt">Object</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
 
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>To call our Userform, replace above code with below code:</p>
+                    <p>To call our Userform, replace above code with below code:</p>
 
-<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Main function of our VBA program</span>
+                    <div class="language-vb highlighter-rouge">
+                      <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">' Main function of our VBA program</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
     <span class="c1">' Calling our window to show</span>
     <span class="n">OurWindow</span><span class="p">.</span><span class="n">Show</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre></div></div>
+</code></pre>
+                      </div>
+                    </div>
 
-<p>Above function call our window to appears on screen.</p>
+                    <p>Above function call our window to appears on screen.</p>
 
-<p>When the window appears on screen, we hit the button.</p>
+                    <p>When the window appears on screen, we hit the button.</p>
 
-<p>After hitting the button, the code behind the userform run, which opens a new Part document.</p>
+                    <p>After hitting the button, the code behind the userform run, which opens a new Part document.</p>
 
-<p>If you want to know more about how we open new part with macro please see <a href="/solidworks-macros/open-new-document/">Open new Part document</a>.</p>
+                    <p>If you want to know more about how we open new part with macro please see <a
+                        href="/solidworks-macros/open-new-document/">Open new Part document</a>.</p>
 
-<p>That’s it for now.</p>
+                    <p>That’s it for now.</p>
 
-<p>Hope you learn some use of Userforms and by this post you can get the idea how they works.</p>
+                    <p>Hope you learn some use of Userforms and by this post you can get the idea how they works.</p>
 
-<p>I will provide more tutorials on using of Userform time to time.</p>
+                    <p>I will provide more tutorials on using of Userform time to time.</p>
 
-<p>Till then do come to visit this blog.</p>
+                    <p>Till then do come to visit this blog.</p>
 
-<p>Till then, Happy learning!!!</p>
-
-
-        </div>
-        
-        <div>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- Top and Bottom placed Ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8158659264340002"
-       data-ad-slot="6644001766"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-      </section>
-
-      <footer class="page__meta">
-        
-        
+                    <p>Till then, Happy learning!!!</p>
 
 
-        
+                  </div>
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-29T07:06:23-04:00">July 29, 2025</time></p>
+                  <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Top and Bottom placed Ad -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
+                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
+
+                </section>
+
+                <footer class="page__meta">
 
 
-      </footer>
 
-      
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/vba/userform/" title="VBA UserForms
+
+
+
+                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                      Updated:</strong> <time datetime="2025-07-30T02:11:02-04:00">July 30, 2025</time></p>
+
+
+                </footer>
+
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item mr-5">
+                      <a class="btn btn-primary text-light" href="/vba/userform/" title="VBA UserForms
 ">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/vba/open-assembly-and-drawing-from-userform/" title="VBA Userforms - Open new Assembly and Drawing document
+                    </li>
+
+
+                    <li class="page-item ml-5">
+                      <a class="btn btn-primary text-light" href="/vba/open-assembly-and-drawing-from-userform/" title="VBA Userforms - Open new Assembly and Drawing document
 ">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
+                    </li>
 
-    </div>
-  </article>
+                  </ul>
+                </nav>
 
-</div>
+              </div>
+            </article>
 
-          
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -645,75 +711,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-<!-- end custom footer snippets -->
+      <!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
-        </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+                <span> The CAD Coder</span>
+              </a>
+              <ul class="list-unstyled small text-muted">
+                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-          
-          
-          
-          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-          
-          
-          
-        </ul>
-      </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
+                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
+
+
+
+
+
+
+
+
+
+
+
+                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
+                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
+
+
+
+                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                      class="fa fa-envelope fa-2x"></i></a></li>
+
+
+
+              </ul>
+            </div>
+            <div class="col-6">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+                <li class="mb-2"><a href="/aboutMe/">About</a></li>
+                <li class="mb-2"><a href="/resources/">Resources</a></li>
+                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
   </div>
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -738,15 +804,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+  <script src="/assets/js/lunr/lunr.min.js"></script>
+  <script src="/assets/js/lunr/lunr-store.js"></script>
+  <script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
