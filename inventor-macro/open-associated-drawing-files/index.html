@@ -6,19 +6,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- begin _includes/seo.html -->
-  <title>📄 Export All Open Inventor Drawings to PDF – Instantly! - The CAD Coder</title>
-  <meta name="description" content="🛑 Problem: Wasting Time Exporting PDFs Manually">
+  <title>📄 Auto Open Drawing from Inventor Part/Assembly - The CAD Coder</title>
+  <meta name="description"
+    content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
 
 
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="📄 Export All Open Inventor Drawings to PDF – Instantly!">
-  <meta property="og:url" content="https://thecadcoder.com/inventor-macro/export-to-pdf/">
+  <meta property="og:title" content="📄 Auto Open Drawing from Inventor Part/Assembly">
+  <meta property="og:url" content="https://thecadcoder.com/inventor-macro/open-associated-drawing-files/">
 
 
-  <meta property="og:description" content="🛑 Problem: Wasting Time Exporting PDFs Manually">
+  <meta property="og:description"
+    content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
 
 
 
@@ -33,7 +35,7 @@
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/inventor-macro/export-to-pdf/">
+  <link rel="canonical" href="https://thecadcoder.com/inventor-macro/open-associated-drawing-files/">
 
 
 
@@ -196,10 +198,10 @@
 
                 <ul>
 
-                  <li><a href="/inventor-macro/export-to-pdf/" class="active">Export Inventor Drawings to PDF</a></li>
+                  <li><a href="/inventor-macro/export-to-pdf/">Export Inventor Drawings to PDF</a></li>
 
-                  <li><a href="/inventor-macro/open-associated-drawing-files/">Auto Open Drawing from Inventor
-                      Part/Assembly</a></li>
+                  <li><a href="/inventor-macro/open-associated-drawing-files/" class="active">Auto Open Drawing from
+                      Inventor Part/Assembly</a></li>
 
                 </ul>
 
@@ -219,9 +221,10 @@
 
             <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
 
-              <meta itemprop="headline" content="📄 Export All Open Inventor Drawings to PDF – Instantly!">
+              <meta itemprop="headline" content="📄 Auto Open Drawing from Inventor Part/Assembly">
 
-              <meta itemprop="description" content="🛑 Problem: Wasting Time Exporting PDFs Manually">
+              <meta itemprop="description"
+                content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
 
 
               <meta itemprop="datePublished" content="2025-07-30T13:25:34-04:00">
@@ -230,8 +233,8 @@
               <div class="page__inner-wrap">
 
                 <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">📄 Export All Open Inventor Drawings to
-                    PDF – Instantly!
+                  <h1 id="page-title" class="page__title" itemprop="headline">📄 Auto Open Drawing from Inventor
+                    Part/Assembly
                   </h1>
 
 
@@ -247,7 +250,7 @@
                     <span class="page__meta-readtime">
                       <i class="far fa-clock" aria-hidden="true"></i>
 
-                      3 minute read
+                      2 minute read
 
                     </span>
 
@@ -265,35 +268,30 @@
                         <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
                       </header>
                       <ul class="toc__menu">
-                        <li><a href="#-problem-wasting-time-exporting-pdfs-manually">🛑 Problem: Wasting Time Exporting
-                            PDFs Manually</a></li>
+                        <li><a href="#-what-it-does">🔍 What It Does</a>
+                          <ul>
+                            <li><a href="#-where-it-searches">📁 Where It Searches</a></li>
+                          </ul>
+                        </li>
                         <li><a href="#-demo-see-it-in-action">🎥 Demo: See It in Action</a></li>
-                        <li><a href="#-code-download-get-the-bas-file">📦 Code Download: Get the .bas File</a></li>
-                        <li><a href="#️-how-it-works">⚙️ How It Works</a>
+                        <li><a href="#-requirements">✅ Requirements</a></li>
+                        <li><a href="#-included-files">🧩 Included Files</a></li>
+                        <li><a href="#-how-to-use">🚀 How to Use</a>
                           <ul>
-                            <li><a href="#-step-by-step-explanation">🔍 Step-by-step Explanation</a></li>
-                            <li><a href="#-compatibility">✅ Compatibility</a></li>
-                            <li><a href="#-technical-notes">🧠 Technical Notes</a></li>
+                            <li><a href="#1-open-inventor">1. Open Inventor</a></li>
+                            <li><a href="#2-launch-the-vba-editor">2. Launch the VBA Editor</a></li>
+                            <li><a href="#3-import-the-macro">3. Import the Macro</a></li>
+                            <li><a href="#4-run-the-macro">4. Run the Macro</a></li>
                           </ul>
                         </li>
-                        <li><a href="#-how-to-use-the-macro">🚀 How to Use the Macro</a>
-                          <ul>
-                            <li><a href="#step-1-import-the-bas-file">Step 1: Import the .bas File</a></li>
-                            <li><a href="#step-2-run-the-macro">Step 2: Run the Macro</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#-sample-output-folder-structure">📁 Sample Output Folder Structure</a></li>
-                        <li><a href="#-faqs">🤔 FAQs</a>
-                          <ul>
-                            <li><a href="#-what-happens-if-a-drawing-is-not-saved">❓ What happens if a drawing is not
-                                saved?</a></li>
-                            <li><a href="#-will-this-export-all-sheets-in-a-multi-sheet-drawing">❓ Will this export all
-                                sheets in a multi-sheet drawing?</a></li>
-                            <li><a href="#-can-i-change-the-pdf-resolution">❓ Can I change the PDF resolution?</a></li>
-                            <li><a href="#-can-i-bundle-this-with-my-team">❓ Can I bundle this with my team?</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#-final-thoughts">📌 Final Thoughts</a></li>
+                        <li><a href="#-what-the-macro-does-internally">💡 What the Macro Does Internally</a></li>
+                        <li><a href="#️-possible-error-messages">⚠️ Possible Error Messages</a></li>
+                        <li><a href="#-performance">📈 Performance</a></li>
+                        <li><a href="#-use-it-like-a-pro">💼 Use It Like a Pro</a></li>
+                        <li><a href="#-download-the-macro">📦 Download the Macro</a></li>
+                        <li><a href="#-multilingual-support">🌍 Multilingual Support</a></li>
+                        <li><a href="#-need-help">📬 Need Help?</a></li>
+                        <li><a href="#-license">🔒 License</a></li>
                       </ul>
 
                       <br />
@@ -319,33 +317,27 @@
                     <script>
                       (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                    <h2 id="-problem-wasting-time-exporting-pdfs-manually">🛑 Problem: Wasting Time Exporting PDFs
-                      Manually</h2>
+                    <p>Want to instantly open the drawing file related to the part or assembly you’re working on in
+                      Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your
+                      workflow.</p>
 
-                    <p>If you’re an Inventor user, you’ve probably faced this problem:</p>
+                    <hr />
 
-                    <p class="notice--warning">You have multiple drawings open and you need to share or archive them
-                      quickly—but exporting them to PDF one by one is a slow, repetitive nightmare.</p>
+                    <h2 id="-what-it-does">🔍 What It Does</h2>
 
+                    <p>This macro automatically looks for and opens the <strong>associated drawing file</strong> (<code
+                        class="language-plaintext highlighter-rouge">.idw</code> or <code
+                        class="language-plaintext highlighter-rouge">.dwg</code>) for the currently active <strong>Part
+                        (<code class="language-plaintext highlighter-rouge">.ipt</code>)</strong> or <strong>Assembly
+                        (<code class="language-plaintext highlighter-rouge">.iam</code>)</strong> file.</p>
+
+                    <h3 id="-where-it-searches">📁 Where It Searches</h3>
                     <ul>
-                      <li>Open drawing</li>
-                      <li>Go to Export</li>
-                      <li>Choose PDF</li>
-                      <li>Confirm settings</li>
-                      <li>Repeat… 10… 20… 30 times?</li>
+                      <li>The <strong>same folder</strong> as the open file</li>
+                      <li>All <strong>subfolders</strong>, up to <strong>5 levels deep</strong></li>
                     </ul>
 
-                    <p>⚠️ Multiply this by the number of projects you handle each week, and you’re looking at
-                      <strong>hours of lost productivity</strong> just on mindless clicking.</p>
-
-                    <p>Manual PDF export is:</p>
-                    <ul>
-                      <li>💢 Error-prone</li>
-                      <li>🐌 Time-consuming</li>
-                      <li>😩 Painful when dealing with 10+ sheets</li>
-                    </ul>
-
-                    <p>That’s why I have created a simple solution using Inventor’s built-in VBA capabilities.</p>
+                    <p>If it finds a match (by file name), the drawing opens instantly in Inventor.</p>
 
                     <hr />
 
@@ -353,190 +345,197 @@
 
                     <p>👇 Here’s what the macro does with just <strong>one click</strong>:</p>
 
-                    <iframe src="https://www.youtube.com/embed/9q4BhjBUgYE" frameborder="0" allowfullscreen=""></iframe>
+                    <iframe src="https://www.youtube.com/embed/8HaSEqq1QLU" frameborder="0" allowfullscreen=""></iframe>
                     <p><br /></p>
 
-                    <p>It scans <strong>all open drawing documents</strong>, skips the ones that are not saved, and
-                      automatically:</p>
+                    <hr />
+
+                    <h2 id="-requirements">✅ Requirements</h2>
+
                     <ul>
-                      <li>Creates a <code class="language-plaintext highlighter-rouge">PDFs</code> folder next to the
-                        source drawing</li>
-                      <li>Exports each drawing to high-quality PDF</li>
-                      <li>Retains your drawing name</li>
-                      <li>Handles multiple sheets per drawing</li>
+                      <li>Autodesk Inventor <strong>2015 or later</strong></li>
+                      <li>Windows with <strong>VBA support</strong></li>
+                      <li>The drawing file must have the <strong>same name</strong> as the part or assembly<br />
+                        <em>(e.g., <code class="language-plaintext highlighter-rouge">Bracket.ipt</code> → <code
+                            class="language-plaintext highlighter-rouge">Bracket.idw</code> or <code
+                            class="language-plaintext highlighter-rouge">Bracket.dwg</code>)</em>
+                      </li>
                     </ul>
 
                     <hr />
 
-                    <h2 id="-code-download-get-the-bas-file">📦 Code Download: Get the <code
-                        class="language-plaintext highlighter-rouge">.bas</code> File</h2>
+                    <h2 id="-included-files">🧩 Included Files</h2>
 
-                    <p>We’ve packaged the code into a <code class="language-plaintext highlighter-rouge">.bas</code>
-                      file that you can directly import into Inventor’s VBA editor.</p>
-
-                    <p>🔽 <a href="/download-inventor-macros">Download ExportAllDrawingsToPDF.bas</a>/</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>File Name</th>
+                          <th>Purpose</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code></td>
+                          <td>The macro module to import</td>
+                        </tr>
+                        <tr>
+                          <td><code class="language-plaintext highlighter-rouge">README.md</code></td>
+                          <td>User guide in Markdown format</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
                     <hr />
 
-                    <h2 id="️-how-it-works">⚙️ How It Works</h2>
+                    <h2 id="-how-to-use">🚀 How to Use</h2>
 
-                    <h3 id="-step-by-step-explanation">🔍 Step-by-step Explanation</h3>
+                    <h3 id="1-open-inventor">1. Open Inventor</h3>
+                    <p>Start Inventor and open any <code class="language-plaintext highlighter-rouge">.ipt</code> or
+                      <code class="language-plaintext highlighter-rouge">.iam</code> file.</p>
 
-                    <p>This macro does the following:</p>
+                    <h3 id="2-launch-the-vba-editor">2. Launch the VBA Editor</h3>
+                    <p>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to open the <strong>VBA
+                        Editor</strong>.</p>
 
-                    <ol>
-                      <li>
-                        <p><strong>Gets the PDF Translator Add-In</strong><br />
-                          The macro checks if the Translator exists and exits with a warning if not.</p>
+                    <h3 id="3-import-the-macro">3. Import the Macro</h3>
+                    <ul>
+                      <li>Go to <code class="language-plaintext highlighter-rouge">File → Import File…</code></li>
+                      <li>Select <code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code>
                       </li>
-                      <li>
-                        <p><strong>Loops through all open Inventor documents</strong><br />
-                          It filters for only <code class="language-plaintext highlighter-rouge">DrawingDocument</code>
-                          types.</p>
+                    </ul>
+
+                    <h3 id="4-run-the-macro">4. Run the Macro</h3>
+                    <ul>
+                      <li>Close the VBA editor</li>
+                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F8</code>, choose <code
+                          class="language-plaintext highlighter-rouge">OpenAssociatedDrawing</code>, then click
+                        <strong>Run</strong></li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="-what-the-macro-does-internally">💡 What the Macro Does Internally</h2>
+
+                    <ul>
+                      <li>Checks for an active <code class="language-plaintext highlighter-rouge">.ipt</code> or <code
+                          class="language-plaintext highlighter-rouge">.iam</code> file</li>
+                      <li>Verifies the file is <strong>saved</strong></li>
+                      <li>Scans for <code class="language-plaintext highlighter-rouge">.idw</code> or <code
+                          class="language-plaintext highlighter-rouge">.dwg</code> with the <strong>same name</strong>
                       </li>
-                      <li>
-                        <p><strong>Skips unsaved drawings</strong><br />
-                          Because you can’t export unsaved documents (they don’t have file paths).</p>
-                      </li>
-                      <li>
-                        <p><strong>Creates a <code class="language-plaintext highlighter-rouge">PDFs</code>
-                            subfolder</strong><br />
-                          Right next to the original <code class="language-plaintext highlighter-rouge">.idw</code> or
-                          <code class="language-plaintext highlighter-rouge">.dwg</code> file.</p>
-                      </li>
-                      <li><strong>Generates a PDF for each drawing</strong><br />
-                        With settings:
+                      <li>Searches <strong>subfolders</strong>, using breadth-first strategy</li>
+                      <li>Opens the drawing if found, or shows an error message if not</li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="️-possible-error-messages">⚠️ Possible Error Messages</h2>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Message</th>
+                          <th>Cause</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code class="language-plaintext highlighter-rouge">No document is open.</code></td>
+                          <td>Inventor has no file open</td>
+                        </tr>
+                        <tr>
+                          <td><code
+                              class="language-plaintext highlighter-rouge">Open a Part (.ipt) or Assembly (.iam) file first.</code>
+                          </td>
+                          <td>Macro works only with <code class="language-plaintext highlighter-rouge">.ipt</code> and
+                            <code class="language-plaintext highlighter-rouge">.iam</code></td>
+                        </tr>
+                        <tr>
+                          <td><code
+                              class="language-plaintext highlighter-rouge">Save the file before running the macro.</code>
+                          </td>
+                          <td>Unsaved files can’t be located</td>
+                        </tr>
+                        <tr>
+                          <td><code
+                              class="language-plaintext highlighter-rouge">No drawing file found in folder or subfolders.</code>
+                          </td>
+                          <td>Matching drawing file not found</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <hr />
+
+                    <h2 id="-performance">📈 Performance</h2>
+
+                    <ul>
+                      <li>Uses <strong>breadth-first search</strong> to avoid excessive memory use</li>
+                      <li>Limited to 5 folder levels for speed and reliability</li>
+                    </ul>
+
+                    <hr />
+
+                    <h2 id="-use-it-like-a-pro">💼 Use It Like a Pro</h2>
+
+                    <ul>
+                      <li>Keep drawings in the same folder as models, or inside logical subfolders</li>
+                      <li>Ensure filenames match exactly — including case and extension</li>
+                      <li>Extend this macro to include:
                         <ul>
-                          <li>All sheets included</li>
-                          <li>High resolution (400 DPI)</li>
-                          <li>Preserves line weights and colors</li>
+                          <li>Autodesk Vault search</li>
+                          <li>Logging</li>
+                          <li>Automatic drawing creation (if not found)</li>
                         </ul>
                       </li>
-                      <li>
-                        <p><strong>Saves the PDF using the TranslatorAddIn</strong></p>
-                      </li>
-                      <li><strong>Shows a final message box</strong><br />
-                        Tells you if any drawings were skipped or confirms full success.</li>
-                    </ol>
-
-                    <h3 id="-compatibility">✅ Compatibility</h3>
-
-                    <p>This macro is built to be <strong>backward-compatible</strong> with:</p>
-
-                    <ul>
-                      <li><strong>Autodesk Inventor 2014 to 2024</strong></li>
-                    </ul>
-
-                    <p>Tested on:</p>
-                    <ul>
-                      <li>Inventor 2022</li>
-                      <li>Inventor 2024</li>
-                    </ul>
-
-                    <h3 id="-technical-notes">🧠 Technical Notes</h3>
-
-                    <ul>
-                      <li>Written in <strong>VBA</strong> and stored as a <code
-                          class="language-plaintext highlighter-rouge">.bas</code> file</li>
-                      <li>Works with all <strong>local</strong> drawing documents</li>
-                      <li>Skips drawings that are <strong>not saved</strong></li>
-                      <li>Requires no third-party libraries—just native Inventor functionality</li>
                     </ul>
 
                     <hr />
 
-                    <h2 id="-how-to-use-the-macro">🚀 How to Use the Macro</h2>
+                    <h2 id="-download-the-macro">📦 Download the Macro</h2>
 
-                    <h3 id="step-1-import-the-bas-file">Step 1: Import the <code
-                        class="language-plaintext highlighter-rouge">.bas</code> File</h3>
+                    <p>👉 <a href="/download-inventor-macros/">Click here to download the macro
+                        (OpenAssociatedDrawing.bas)</a></p>
 
-                    <ol>
-                      <li>Open <strong>Inventor</strong></li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to open the
-                        <strong>VBA Editor</strong></li>
-                      <li>Go to <code class="language-plaintext highlighter-rouge">File &gt; Import File</code></li>
-                      <li>Select the <code
-                          class="language-plaintext highlighter-rouge">Inventor_ExportAllDrawingsToPDF_by_TheCadCoder.bas</code>
-                        file</li>
-                      <li>You’ll now see a new module named <code
-                          class="language-plaintext highlighter-rouge">ExportAllDrawingsToPDF</code></li>
-                    </ol>
-
-                    <h3 id="step-2-run-the-macro">Step 2: Run the Macro</h3>
-
-                    <ol>
-                      <li>In Inventor, make sure you have your drawings open</li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code></li>
-                      <li>Click anywhere inside the <code
-                          class="language-plaintext highlighter-rouge">ExportAllDrawingsToPDF</code> subroutine</li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">F5</code> to run it</li>
-                    </ol>
-
-                    <p>Your PDFs will be generated and saved!</p>
+                    <p><em>(Make sure to subscribe if download is gated)</em></p>
 
                     <hr />
 
-                    <h2 id="-sample-output-folder-structure">📁 Sample Output Folder Structure</h2>
+                    <h2 id="-multilingual-support">🌍 Multilingual Support</h2>
 
-                    <p>If your file is located at:</p>
+                    <p>This macro package includes <strong>README guides</strong> in multiple languages:</p>
 
-                    <p>“D:\Projects\AssemblyA\Drawing1.idw”</p>
+                    <ul>
+                      <li>🇬🇧 English</li>
+                      <li>🇩🇪 German</li>
+                      <li>🇨🇳 Chinese</li>
+                      <li>🇯🇵 Japanese</li>
+                    </ul>
 
-                    <p>After running the macro, you’ll get:</p>
-
-                    <p>“D:\Projects\AssemblyA\PDFs\Drawing1.pdf”</p>
-
-                    <p>Each drawing gets its own PDF in its respective folder.</p>
+                    <p>🗂 You’ll find the <strong>README guides</strong> inside the download folder to help users across
+                      different regions easily understand and use the macro.</p>
 
                     <hr />
 
-                    <h2 id="-faqs">🤔 FAQs</h2>
+                    <h2 id="-need-help">📬 Need Help?</h2>
 
-                    <h3 id="-what-happens-if-a-drawing-is-not-saved">❓ What happens if a drawing is not saved?</h3>
+                    <p>If you have questions or want to suggest improvements:</p>
 
-                    <p>The macro skips it and tells you how many were skipped.</p>
+                    <ul>
+                      <li>💌 Leave a comment below</li>
+                      <li>📧 Reach out via the <a href="mailto:thecadcoder@gmail.com">Contact</a> page</li>
+                    </ul>
 
-                    <h3 id="-will-this-export-all-sheets-in-a-multi-sheet-drawing">❓ Will this export all sheets in a
-                      multi-sheet drawing?</h3>
+                    <hr />
 
-                    <p>Yes! It uses the <code class="language-plaintext highlighter-rouge">kPrintAllSheets</code> option
-                      to export all drawing sheets into one PDF file.</p>
+                    <h2 id="-license">🔒 License</h2>
 
-                    <h3 id="-can-i-change-the-pdf-resolution">❓ Can I change the PDF resolution?</h3>
+                    <p>This macro is provided <strong>as-is</strong>, without any warranty. You may freely modify and
+                      redistribute it for internal or client use.</p>
 
-                    <p>Yes. Find this line:</p>
+                    <hr />
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="n">oOptions</span><span class="p">.</span><span class="n">Value</span><span class="p">(</span><span class="s">"Vector_Resolution"</span><span class="p">)</span> <span class="o">=</span> <span class="mi">400</span>
-</code></pre>
-                      </div>
-                    </div>
-
-                    <p>You can change 400 to any other DPI value (e.g., 300, 600).</p>
-
-                    <h3 id="-can-i-bundle-this-with-my-team">❓ Can I bundle this with my team?</h3>
-
-                    <p>Absolutely! You can export and distribute the .bas file or include it in your company’s
-                      automation pack.</p>
-
-                    <h2 id="-final-thoughts">📌 Final Thoughts</h2>
-
-                    <p>This macro is a lifesaver if you regularly work with Inventor drawings and need clean PDF
-                      exports.</p>
-
-                    <p>It helps you:</p>
-
-                    <p>Reduce errors</p>
-
-                    <p>Speed up documentation</p>
-
-                    <p>Impress clients with consistency</p>
-
-                    <p>Focus on actual design—not admin work</p>
-
-                    <p>🧠 Remember: even though this is “just a macro,” it can save hours every week.</p>
-
+                    <p>✨ Happy Automating!</p>
 
                   </div>
 
@@ -570,13 +569,13 @@
                   <ul class="pagination justify-content-center">
 
                     <li class="page-item mr-5">
-                      <a class="btn btn-primary disabled text-light" href="#">❮ Previous</a>
+                      <a class="btn btn-primary text-light" href="/inventor-macro/export-to-pdf/" title="📄 Export All Open Inventor Drawings to PDF – Instantly!
+">❮ Previous</a>
                     </li>
 
 
                     <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/inventor-macro/open-associated-drawing-files/" title="📄 Auto Open Drawing from Inventor Part/Assembly
-">Next ❯</a>
+                      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
                     </li>
 
                   </ul>
