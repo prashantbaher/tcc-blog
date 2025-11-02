@@ -5,22 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>VBA MsgBox Function - The CAD Coder</title>
-  <meta name="description"
-    content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
+  <!-- begin _includes/seo.html --><title>VBA MsgBox Function - The CAD Coder</title>
+<meta name="description" content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="VBA MsgBox Function">
-  <meta property="og:url" content="https://thecadcoder.com/vba/msgBox-function/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="VBA MsgBox Function">
+<meta property="og:url" content="http://localhost:4000/vba/msgBox-function/">
 
 
-  <meta property="og:description"
-    content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
+  <meta property="og:description" content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
 
 
 
@@ -28,25 +25,25 @@
 
 
 
-  <meta property="article:published_time" content="2025-07-30T02:11:02-04:00">
+  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/vba/msgBox-function/">
+<link rel="canonical" href="http://localhost:4000/vba/msgBox-function/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "https://thecadcoder.com/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -57,29 +54,31 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 
   <!-- MailerLite Universal -->
   <script>
@@ -100,326 +99,313 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="active nav-link" style="border-bottom: 1px solid #fff;"
-            href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
-
-
-
-
-
-
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
-
-                  <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
-
-                  <li><a href="/vba/vba-windows/">VBE Windows</a></li>
-
-                  <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
-
-                  <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Programming Concepts</span>
-
-
-
-                <ul>
-
-                  <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
-
-                  <li><a href="/vba/variables/">VBA Variables</a></li>
-
-                  <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
-
-                  <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
-
-                  <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
-
-                  <li><a href="/vba/constant/">VBA Constants</a></li>
-
-                  <li><a href="/vba/string-basic/">VBA String Basics</a></li>
-
-                  <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
-
-                  <li><a href="/vba/arrays/">VBA Arrays</a></li>
-
-                  <li><a href="/vba/functions/">VBA Functions</a></li>
-
-                  <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
-
-                  <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making
-                      Decisions</a></li>
-
-                  <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
-
-                  <li><a href="/vba/looping/">VBA Looping</a></li>
-
-                  <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
-
-                  <li><a href="/vba/debugger/">VBA Debugger</a></li>
-
-                  <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">Dialog Boxes</span>
-
-
-
-                <ul>
-
-                  <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
-
-                  <li><a href="/vba/msgBox-function/" class="active">VBA MsgBox Function</a></li>
-
-                  <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
-
-                  <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a>
-                  </li>
-
-                </ul>
-
-              </li>
-
-              <li>
-
-                <span class="nav__sub-title">UserForms</span>
-
-
-
-                <ul>
-
-                  <li><a href="/vba/userform/">VBA UserForms</a></li>
-
-                  <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
-
-                  <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and
-                      Drawing document</a></li>
-
-                  <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new
-                      Assembly and Drawing document</a></li>
-
-                  <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/vba-Introduction/">VBA Introduction</a></li>
+          
+            <li><a href="/vba/vba-vbe-editor/">VBA Visual Basic Editor</a></li>
+          
+            <li><a href="/vba/vba-windows/">VBE Windows</a></li>
+          
+            <li><a href="/vba/sub-and-function-procedure/">VBA Sub and Function Procedures</a></li>
+          
+            <li><a href="/vba/executing-procedures/">VBA Executing Sub and Function Procedures</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Programming Concepts</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/programming-concepts/">VBA Programming Concepts, Comments and Data-types</a></li>
+          
+            <li><a href="/vba/variables/">VBA Variables</a></li>
+          
+            <li><a href="/vba/declaring-and-scoping-of-variables/">VBA Declaring and Scoping of Variables</a></li>
+          
+            <li><a href="/vba/variable-scope/">VBA Variable Scope</a></li>
+          
+            <li><a href="/vba/publc-static-variable-life/">VBA Public, Static and Variable's Life</a></li>
+          
+            <li><a href="/vba/constant/">VBA Constants</a></li>
+          
+            <li><a href="/vba/string-basic/">VBA String Basics</a></li>
+          
+            <li><a href="/vba/assignment-statement-and-operator/">VBA Assignment Statements And Operators</a></li>
+          
+            <li><a href="/vba/arrays/">VBA Arrays</a></li>
+          
+            <li><a href="/vba/functions/">VBA Functions</a></li>
+          
+            <li><a href="/vba/more-functions/">VBA Functions that do more</a></li>
+          
+            <li><a href="/vba/controlling-flow-making-desicions/">VBA Controlling Program Flow and Making Decisions</a></li>
+          
+            <li><a href="/vba/if-then-structure-select-case/">VBA If-Then-Else and Select Case structure</a></li>
+          
+            <li><a href="/vba/looping/">VBA Looping</a></li>
+          
+            <li><a href="/vba/bug-finding/">VBA Bug Finding</a></li>
+          
+            <li><a href="/vba/debugger/">VBA Debugger</a></li>
+          
+            <li><a href="/vba/bug-reduction-tips/">VBA Bug Reduction Tips</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Dialog Boxes</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/dialog-boxes/">VBA Dialog Boxes</a></li>
+          
+            <li><a href="/vba/msgBox-function/" class="active">VBA MsgBox Function</a></li>
+          
+            <li><a href="/vba/inputbox-function/">VBA InputBox Function</a></li>
+          
+            <li><a href="/vba/other-dialogs/">VBA GetOpenFilename, GetSaveAsFilename and Getting a Folder Name</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">UserForms</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/vba/userform/">VBA UserForms</a></li>
+          
+            <li><a href="/vba/open-part-from-userform/">VBA Userforms - Open new Part document</a></li>
+          
+            <li><a href="/vba/open-assembly-and-drawing-from-userform/">VBA Userforms - Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/testing-open-assembly-and-drawing-document-macro/">VBA Userforms - Testing Open new Assembly and Drawing document</a></li>
+          
+            <li><a href="/vba/browse-solidworks-file/">VBA Userforms - Browse SOLIDWORKS file(s)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="VBA MsgBox Function">
+    
+    <meta itemprop="description" content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
+    
+    
+    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
+    
 
-              <meta itemprop="headline" content="VBA MsgBox Function">
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">VBA MsgBox Function
+</h1>
+        
 
-              <meta itemprop="description"
-                content="You’re probably already familiar with the VBA MsgBox function — I use it quite a bit in the examples.">
+  <p class="page__meta">
+    
 
+    
 
-              <meta itemprop="datePublished" content="2025-07-30T02:11:02-04:00">
+    
+      
+      
 
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">VBA MsgBox Function
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      4 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
 
 
-                <section class="page__content" itemprop="text">
+      </header>
+      
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#getting-a-response-from-a-message-box">Getting a response from a message box</a>
-                        </li>
-                        <li><a href="#customizing-message-boxes">Customizing message boxes</a></li>
-                      </ul>
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#getting-a-response-from-a-message-box">Getting a response from a message box</a></li><li><a href="#customizing-message-boxes">Customizing message boxes</a></li></ul>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>You’re probably already familiar with the VBA <code class="language-plaintext highlighter-rouge">MsgBox</code> function — I use it quite a bit in the examples.</p>
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <p>You’re probably already familiar with the VBA <code
-                        class="language-plaintext highlighter-rouge">MsgBox</code> function — I use it quite a bit in
-                      the examples.</p>
+<p>The <code class="language-plaintext highlighter-rouge">MsgBox</code> function, which accepts the arguments shown in below table, is handy for displaying information and getting simple user input.</p>
 
-                    <p>The <code class="language-plaintext highlighter-rouge">MsgBox</code> function, which accepts the
-                      arguments shown in below table, is handy for displaying information and getting simple user input.
-                    </p>
+<p>It’s able to get user input because it’s a function.</p>
 
-                    <p>It’s able to get user input because it’s a function.</p>
+<p>A <em>function</em>, as you recall, returns a value.</p>
 
-                    <p>A <em>function</em>, as you recall, returns a value.</p>
+<p>In the case of the <code class="language-plaintext highlighter-rouge">Msgbox</code> function, it uses a dialog box to get the value that it returns.</p>
 
-                    <p>In the case of the <code class="language-plaintext highlighter-rouge">Msgbox</code> function, it
-                      uses a dialog box to get the value that it returns.</p>
+<p>Keep reading to see exactly how it works.</p>
 
-                    <p>Keep reading to see exactly how it works.</p>
+<p>Here’s a simplified version of the syntax for the MsgBox function:</p>
 
-                    <p>Here’s a simplified version of the syntax for the MsgBox function:</p>
-
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' MsgBox Structure</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' MsgBox Structure</span>
 <span class="n">MsgBox</span><span class="p">(</span><span class="n">prompt</span><span class="err">[</span><span class="p">,</span> <span class="n">buttons</span><span class="err">][</span><span class="p">,</span> <span class="n">title</span><span class="err">]</span><span class="p">)</span>
-</code></pre>
-                      </div>
-                    </div>
-                    <!--
+</code></pre></div></div>
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="2">MsgBox Function Arguments</th>
@@ -449,78 +435,63 @@
 </table>
 -->
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Arguments</th>
-                          <th>What it does</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>prompt</td>
-                          <td>The text your application displays in the message box</td>
-                        </tr>
-                        <tr>
-                          <td>buttons</td>
-                          <td>A number that specifies which buttons (along with what icon) appear in the message box
-                            (optional)</td>
-                        </tr>
-                        <tr>
-                          <td>title</td>
-                          <td>The text that appears in the message box’s title bar (optional) displaying a simple
-                            message box</td>
-                        </tr>
-                      </tbody>
-                    </table>
+<table>
+  <thead>
+    <tr>
+      <th>Arguments</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>prompt</td>
+      <td>The text your application displays in the message box</td>
+    </tr>
+    <tr>
+      <td>buttons</td>
+      <td>A number that specifies which buttons (along with what icon) appear in the message box (optional)</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>The text that appears in the message box’s title bar (optional) displaying a simple message box</td>
+    </tr>
+  </tbody>
+</table>
 
-                    <p>You can use the <em>MsgBox</em> function in two ways:</p>
+<p>You can use the <em>MsgBox</em> function in two ways:</p>
 
-                    <ul>
-                      <li>To simply show a message to the user. In this case, you don’t care about the result returned
-                        by the function.</li>
-                      <li>To get a response from the user. In this case, you do care about the result returned by the
-                        function. The result depends on the button that the user clicks.</li>
-                    </ul>
+<ul>
+  <li>To simply show a message to the user. In this case, you don’t care about the result returned by the function.</li>
+  <li>To get a response from the user. In this case, you do care about the result returned by the function. The result depends on the button that the user clicks.</li>
+</ul>
 
-                    <p>If you use the <em>MsgBox</em> function by itself, don’t include parentheses around the
-                      arguments.</p>
+<p>If you use the <em>MsgBox</em> function by itself, don’t include parentheses around the arguments.</p>
 
-                    <p>The following example simply displays a message and does not return a result.</p>
+<p>The following example simply displays a message and does not return a result.</p>
 
-                    <p>When the message is displayed, the code stops until the user clicks <code
-                        class="language-plaintext highlighter-rouge">OK</code>.</p>
+<p>When the message is displayed, the code stops until the user clicks <code class="language-plaintext highlighter-rouge">OK</code>.</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' MsgBox function Example</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' MsgBox function Example</span>
 <span class="k">Sub</span> <span class="nf">main</span><span class="p">()</span>
   <span class="n">MsgBox</span> <span class="s">"Hello, world!"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Below figure shows how this message box looks:</p>
+<p>Below figure shows how this message box looks:</p>
 
-                    <p><img src="/assets/vba-images/Dialog_Boxes/ASimpleMessageBox.PNG" alt="A-Simple-Message-Box" />
-                    </p>
+<p><img src="/assets/vba-images/Dialog_Boxes/ASimpleMessageBox.PNG" alt="A-Simple-Message-Box" /></p>
 
-                    <h2 id="getting-a-response-from-a-message-box">Getting a response from a message box</h2>
+<h2 id="getting-a-response-from-a-message-box">Getting a response from a message box</h2>
 
-                    <p>If you display a message box that has more than just an <strong>OK</strong> button, you’ll
-                      probably want to know which button the user clicks.</p>
+<p>If you display a message box that has more than just an <strong>OK</strong> button, you’ll probably want to know which button the user clicks.</p>
 
-                    <p>The <em>MsgBox function</em> can return a value that represents which button is clicked.</p>
+<p>The <em>MsgBox function</em> can return a value that represents which button is clicked.</p>
 
-                    <p>You can assign the result of the MsgBox function to a variable.</p>
+<p>You can assign the result of the MsgBox function to a variable.</p>
 
-                    <p>In the following code, I use some built-in constants that make it easy to work with the values
-                      returned by <code class="language-plaintext highlighter-rouge">MsgBox</code>:</p>
+<p>In the following code, I use some built-in constants that make it easy to work with the values returned by <code class="language-plaintext highlighter-rouge">MsgBox</code>:</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' MsgBox built-in constants Example</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' MsgBox built-in constants Example</span>
 <span class="k">Sub</span> <span class="nf">GetAnswer</span><span class="p">()</span>
   <span class="k">Dim</span> <span class="nv">Ans</span> <span class="n">as</span> <span class="kt">Integer</span>
   <span class="n">Ans</span> <span class="o">=</span> <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Did you eat lunch?"</span><span class="p">,</span> <span class="n">vbYesNo</span><span class="p">)</span>
@@ -531,31 +502,19 @@
     <span class="c1">'......[Some code here]....</span>
   <span class="k">End</span> <span class="k">Select</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Below figure shows how it looks.</p>
+<p>Below figure shows how it looks.</p>
 
-                    <p>When you execute this procedure, the <code
-                        class="language-plaintext highlighter-rouge">Ans</code> variable is assigned a value of either
-                      <code class="language-plaintext highlighter-rouge">vbYes</code> or <code
-                        class="language-plaintext highlighter-rouge">vbNo</code>, depending on which button the user
-                      clicks.</p>
+<p>When you execute this procedure, the <code class="language-plaintext highlighter-rouge">Ans</code> variable is assigned a value of either <code class="language-plaintext highlighter-rouge">vbYes</code> or <code class="language-plaintext highlighter-rouge">vbNo</code>, depending on which button the user clicks.</p>
 
-                    <p>The <code class="language-plaintext highlighter-rouge">Select</code> Case statement uses the
-                      <code class="language-plaintext highlighter-rouge">Ans</code> value to determine which action the
-                      code should perform.</p>
+<p>The <code class="language-plaintext highlighter-rouge">Select</code> Case statement uses the <code class="language-plaintext highlighter-rouge">Ans</code> value to determine which action the code should perform.</p>
 
-                    <p><img src="/assets/vba-images/Dialog_Boxes/ASimpleMessageBoxWithTwoButtons.PNG"
-                        alt="A-Simple-Message-Box-with-two-buttons" /></p>
+<p><img src="/assets/vba-images/Dialog_Boxes/ASimpleMessageBoxWithTwoButtons.PNG" alt="A-Simple-Message-Box-with-two-buttons" /></p>
 
-                    <p>You can also use the <code class="language-plaintext highlighter-rouge">MsgBox</code> function
-                      result without using a variable, as the following example demonstrates:</p>
+<p>You can also use the <code class="language-plaintext highlighter-rouge">MsgBox</code> function result without using a variable, as the following example demonstrates:</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' MsgBox without variable</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' MsgBox without variable</span>
 <span class="k">Sub</span> <span class="nf">GetAnswer2</span><span class="p">()</span>
   <span class="k">If</span> <span class="n">MsgBox</span> <span class="p">(</span><span class="s">"Continue?"</span><span class="p">,</span> <span class="n">vbYesNo</span><span class="p">)</span> <span class="o">=</span> <span class="n">vbYes</span> <span class="k">Then</span>
   <span class="c1">'......[Some code here]....</span>
@@ -563,24 +522,19 @@
   <span class="c1">'......[Some code here]....</span>
   <span class="k">End</span> <span class="k">If</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <h2 id="customizing-message-boxes">Customizing message boxes</h2>
+<h2 id="customizing-message-boxes">Customizing message boxes</h2>
 
-                    <p>The flexibility of the buttons argument makes it easy to customize your message boxes.</p>
+<p>The flexibility of the buttons argument makes it easy to customize your message boxes.</p>
 
-                    <p>You can specify which buttons to display, determine whether an icon appears, and decide which
-                      button is the default (the default button is “clicked” if the user presses <code
-                        class="language-plaintext highlighter-rouge">Enter</code>).</p>
+<p>You can specify which buttons to display, determine whether an icon appears, and decide which button is the default (the default button is “clicked” if the user presses <code class="language-plaintext highlighter-rouge">Enter</code>).</p>
 
-                    <p>Below table lists some of the built-in constants you can use for the buttons argument.</p>
+<p>Below table lists some of the built-in constants you can use for the buttons argument.</p>
 
-                    <p>If you prefer, you can use the value rather than a constant (but I think using the built-in
-                      constants is a lot easier).</p>
+<p>If you prefer, you can use the value rather than a constant (but I think using the built-in constants is a lot easier).</p>
 
-                    <!--
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used in the MsgBox Function</th>
@@ -663,126 +617,105 @@
 </table>
 -->
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Constant</th>
-                          <th>Value</th>
-                          <th>What it does</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>vbOKOnly</td>
-                          <td>0</td>
-                          <td>Display OK button only.</td>
-                        </tr>
-                        <tr>
-                          <td>vbOKCancel</td>
-                          <td>1</td>
-                          <td>Display OK and Cancel buttons</td>
-                        </tr>
-                        <tr>
-                          <td>vbAbortRetryIgnore</td>
-                          <td>2</td>
-                          <td>Displays Abort, Retry, and Ignore buttons.</td>
-                        </tr>
-                        <tr>
-                          <td>vbYesNoCancel</td>
-                          <td>3</td>
-                          <td>Displays Yes, No, and Cancel buttons.</td>
-                        </tr>
-                        <tr>
-                          <td>vbYesNo</td>
-                          <td>4</td>
-                          <td>Displays Yes and No buttons.</td>
-                        </tr>
-                        <tr>
-                          <td>vbRetryCancel</td>
-                          <td>5</td>
-                          <td>Displays Retry and Cancel buttons.</td>
-                        </tr>
-                        <tr>
-                          <td>vbCritical</td>
-                          <td>16</td>
-                          <td>Displays Critical Message icon.</td>
-                        </tr>
-                        <tr>
-                          <td>vbQuestion</td>
-                          <td>32</td>
-                          <td>Displays Warning Query icon.</td>
-                        </tr>
-                        <tr>
-                          <td>vbExclamation</td>
-                          <td>48</td>
-                          <td>Displays Warning Message icon.</td>
-                        </tr>
-                        <tr>
-                          <td>vbInformation</td>
-                          <td>64</td>
-                          <td>Displays Information Message icon.</td>
-                        </tr>
-                        <tr>
-                          <td>vbDefaultButton1</td>
-                          <td>0</td>
-                          <td>First button is default.</td>
-                        </tr>
-                        <tr>
-                          <td>vbDefaultButton2</td>
-                          <td>256</td>
-                          <td>Second button is default.</td>
-                        </tr>
-                        <tr>
-                          <td>vbDefaultButton3</td>
-                          <td>512</td>
-                          <td>Third button is default.</td>
-                        </tr>
-                        <tr>
-                          <td>vbDefaultButton4</td>
-                          <td>768</td>
-                          <td>Fourth button is default.</td>
-                        </tr>
-                      </tbody>
-                    </table>
+<table>
+  <thead>
+    <tr>
+      <th>Constant</th>
+      <th>Value</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vbOKOnly</td>
+      <td>0</td>
+      <td>Display OK button only.</td>
+    </tr>
+    <tr>
+      <td>vbOKCancel</td>
+      <td>1</td>
+      <td>Display OK and Cancel buttons</td>
+    </tr>
+    <tr>
+      <td>vbAbortRetryIgnore</td>
+      <td>2</td>
+      <td>Displays Abort, Retry, and Ignore buttons.</td>
+    </tr>
+    <tr>
+      <td>vbYesNoCancel</td>
+      <td>3</td>
+      <td>Displays Yes, No, and Cancel buttons.</td>
+    </tr>
+    <tr>
+      <td>vbYesNo</td>
+      <td>4</td>
+      <td>Displays Yes and No buttons.</td>
+    </tr>
+    <tr>
+      <td>vbRetryCancel</td>
+      <td>5</td>
+      <td>Displays Retry and Cancel buttons.</td>
+    </tr>
+    <tr>
+      <td>vbCritical</td>
+      <td>16</td>
+      <td>Displays Critical Message icon.</td>
+    </tr>
+    <tr>
+      <td>vbQuestion</td>
+      <td>32</td>
+      <td>Displays Warning Query icon.</td>
+    </tr>
+    <tr>
+      <td>vbExclamation</td>
+      <td>48</td>
+      <td>Displays Warning Message icon.</td>
+    </tr>
+    <tr>
+      <td>vbInformation</td>
+      <td>64</td>
+      <td>Displays Information Message icon.</td>
+    </tr>
+    <tr>
+      <td>vbDefaultButton1</td>
+      <td>0</td>
+      <td>First button is default.</td>
+    </tr>
+    <tr>
+      <td>vbDefaultButton2</td>
+      <td>256</td>
+      <td>Second button is default.</td>
+    </tr>
+    <tr>
+      <td>vbDefaultButton3</td>
+      <td>512</td>
+      <td>Third button is default.</td>
+    </tr>
+    <tr>
+      <td>vbDefaultButton4</td>
+      <td>768</td>
+      <td>Fourth button is default.</td>
+    </tr>
+  </tbody>
+</table>
 
-                    <p>For using more than one of these constants as an argument, just connect them with a <code
-                        class="language-plaintext highlighter-rouge">+</code> operator.</p>
+<p>For using more than one of these constants as an argument, just connect them with a <code class="language-plaintext highlighter-rouge">+</code> operator.</p>
 
-                    <p>For example, to display a message box with <code
-                        class="language-plaintext highlighter-rouge">Yes</code> and <code
-                        class="language-plaintext highlighter-rouge">No</code> buttons and an exclamation icon, use the
-                      following expression as the second <em>MsgBox</em> argument:</p>
+<p>For example, to display a message box with <code class="language-plaintext highlighter-rouge">Yes</code> and <code class="language-plaintext highlighter-rouge">No</code> buttons and an exclamation icon, use the following expression as the second <em>MsgBox</em> argument:</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Using multiple MsgBox built-in constants</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Using multiple MsgBox built-in constants</span>
 <span class="n">vbYesNo</span> <span class="o">+</span> <span class="n">vbExclamation</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Or, if you prefer to make your code less understandable, use a value of <em>52 (that is, 4 +
-                        48)</em>.</p>
+<p>Or, if you prefer to make your code less understandable, use a value of <em>52 (that is, 4 + 48)</em>.</p>
 
-                    <p>The following example uses a combination of constants to display a message box with a <code
-                        class="language-plaintext highlighter-rouge">Yes button</code> and a <code
-                        class="language-plaintext highlighter-rouge">No button</code> (<code
-                        class="language-plaintext highlighter-rouge">vbYesNo</code>) as well as a question mark icon
-                      (<code class="language-plaintext highlighter-rouge">vbQuestion</code>).</p>
+<p>The following example uses a combination of constants to display a message box with a <code class="language-plaintext highlighter-rouge">Yes button</code> and a <code class="language-plaintext highlighter-rouge">No button</code> (<code class="language-plaintext highlighter-rouge">vbYesNo</code>) as well as a question mark icon (<code class="language-plaintext highlighter-rouge">vbQuestion</code>).</p>
 
-                    <p>The constant <code class="language-plaintext highlighter-rouge">vbDefaultButton2</code>
-                      designates the second button (<code class="language-plaintext highlighter-rouge">No</code>) as the
-                      default button — that is, the button that is clicked if the user presses <code
-                        class="language-plaintext highlighter-rouge">Enter</code>.</p>
+<p>The constant <code class="language-plaintext highlighter-rouge">vbDefaultButton2</code> designates the second button (<code class="language-plaintext highlighter-rouge">No</code>) as the default button — that is, the button that is clicked if the user presses <code class="language-plaintext highlighter-rouge">Enter</code>.</p>
 
-                    <p>For simplicity, we assign these constants to the <code
-                        class="language-plaintext highlighter-rouge">Config</code> variable and then use <code
-                        class="language-plaintext highlighter-rouge">Config</code> as the second argument in the
-                      <em>MsgBox</em> function:</p>
+<p>For simplicity, we assign these constants to the <code class="language-plaintext highlighter-rouge">Config</code> variable and then use <code class="language-plaintext highlighter-rouge">Config</code> as the second argument in the <em>MsgBox</em> function:</p>
 
-                    <div class="language-vb highlighter-rouge">
-                      <div class="highlight">
-                        <pre class="highlight"><code><span class="c1">' Using multiple MsgBox built-in constants</span>
+<div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Using multiple MsgBox built-in constants</span>
 <span class="k">Sub</span> <span class="nf">GetAnswer3</span><span class="p">()</span>
   <span class="k">Dim</span> <span class="nv">Config</span> <span class="ow">As</span> <span class="kt">Integer</span>
   <span class="k">Dim</span> <span class="nv">Ans</span> <span class="n">as</span> <span class="kt">Integer</span>
@@ -790,33 +723,23 @@
   <span class="n">Ans</span> <span class="o">=</span> <span class="n">MsgBox</span><span class="p">(</span><span class="s">"Is part opened?"</span><span class="p">,</span> <span class="n">Config</span><span class="p">)</span>
   <span class="k">If</span> <span class="n">Ans</span> <span class="o">=</span> <span class="n">vbYes</span> <span class="k">Then</span> <span class="n">OpenPart</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-                      </div>
-                    </div>
+</code></pre></div></div>
 
-                    <p>Below figure shows the message box application displays when you execute the <code
-                        class="language-plaintext highlighter-rouge">GetAnswer3</code> procedure.</p>
+<p>Below figure shows the message box application displays when you execute the <code class="language-plaintext highlighter-rouge">GetAnswer3</code> procedure.</p>
 
-                    <p>If the user clicks the <em>Yes button</em>, the routine executes the procedure named <code
-                        class="language-plaintext highlighter-rouge">OpenPart</code> (which is not shown).</p>
+<p>If the user clicks the <em>Yes button</em>, the routine executes the procedure named <code class="language-plaintext highlighter-rouge">OpenPart</code> (which is not shown).</p>
 
-                    <p>If the user clicks the <em>No button</em> (or presses <code
-                        class="language-plaintext highlighter-rouge">Enter</code>), the routine ends with no action.</p>
+<p>If the user clicks the <em>No button</em> (or presses <code class="language-plaintext highlighter-rouge">Enter</code>), the routine ends with no action.</p>
 
-                    <p>Because I omitted the title argument in the <em>MsgBox</em> function, our application uses the
-                      default title, in my case it is <em>Solidworks</em>.</p>
+<p>Because I omitted the title argument in the <em>MsgBox</em> function, our application uses the default title, in my case it is <em>Solidworks</em>.</p>
 
-                    <p><img src="/assets/vba-images/Dialog_Boxes/MsgBoxfunctionsbutton.PNG"
-                        alt="MsgBox-function-button" /></p>
+<p><img src="/assets/vba-images/Dialog_Boxes/MsgBoxfunctionsbutton.PNG" alt="MsgBox-function-button" /></p>
 
-                    <p>Previous examples have used constants (such as <code
-                        class="language-plaintext highlighter-rouge">vbYes</code> and <code
-                        class="language-plaintext highlighter-rouge">vbNo</code>) for the return value of a
-                      <em>MsgBox</em> function.</p>
+<p>Previous examples have used constants (such as <code class="language-plaintext highlighter-rouge">vbYes</code> and <code class="language-plaintext highlighter-rouge">vbNo</code>) for the return value of a <em>MsgBox</em> function.</p>
 
-                    <p>Besides these two constants, below table lists a few others.</p>
+<p>Besides these two constants, below table lists a few others.</p>
 
-                    <!--
+<!--
 <table class="w3-table-all w3-mobile w3-card-4">
     <tr>
         <th class="w3-center" colspan="3">Constants Used as Return Values for the MsgBox Function</th>
@@ -864,107 +787,110 @@
 </table>
 -->
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Constant</th>
-                          <th>Value</th>
-                          <th>What it does</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>vbOK</td>
-                          <td>1</td>
-                          <td>User clicked OK.</td>
-                        </tr>
-                        <tr>
-                          <td>vbCancel</td>
-                          <td>2</td>
-                          <td>User clicked Cancel.</td>
-                        </tr>
-                        <tr>
-                          <td>vbAbort</td>
-                          <td>3</td>
-                          <td>User clicked Abort.</td>
-                        </tr>
-                        <tr>
-                          <td>vbRetry</td>
-                          <td>4</td>
-                          <td>User clicked Retry.</td>
-                        </tr>
-                        <tr>
-                          <td>vbIgnore</td>
-                          <td>5</td>
-                          <td>User clicked Ignore.</td>
-                        </tr>
-                        <tr>
-                          <td>vbYes</td>
-                          <td>6</td>
-                          <td>User clicked Yes.</td>
-                        </tr>
-                        <tr>
-                          <td>vbNo</td>
-                          <td>7</td>
-                          <td>User clicked No.</td>
-                        </tr>
-                      </tbody>
-                    </table>
+<table>
+  <thead>
+    <tr>
+      <th>Constant</th>
+      <th>Value</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vbOK</td>
+      <td>1</td>
+      <td>User clicked OK.</td>
+    </tr>
+    <tr>
+      <td>vbCancel</td>
+      <td>2</td>
+      <td>User clicked Cancel.</td>
+    </tr>
+    <tr>
+      <td>vbAbort</td>
+      <td>3</td>
+      <td>User clicked Abort.</td>
+    </tr>
+    <tr>
+      <td>vbRetry</td>
+      <td>4</td>
+      <td>User clicked Retry.</td>
+    </tr>
+    <tr>
+      <td>vbIgnore</td>
+      <td>5</td>
+      <td>User clicked Ignore.</td>
+    </tr>
+    <tr>
+      <td>vbYes</td>
+      <td>6</td>
+      <td>User clicked Yes.</td>
+    </tr>
+    <tr>
+      <td>vbNo</td>
+      <td>7</td>
+      <td>User clicked No.</td>
+    </tr>
+  </tbody>
+</table>
 
-                    <p>Next post will be about <strong><em>VBA InputBox Function</em></strong>.</p>
-
-
-                  </div>
-
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
-
-                </section>
-
-                <footer class="page__meta">
+<p>Next post will be about <strong><em>VBA InputBox Function</em></strong>.</p>
 
 
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
 
 
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
 
 
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2025-07-30T02:11:02-04:00">July 30, 2025</time></p>
+      </footer>
 
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/vba/dialog-boxes/" title="VBA Dialog Boxes
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/vba/dialog-boxes/" title="VBA Dialog Boxes
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/vba/inputbox-function/" title="VBA InputBox Function
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/vba/inputbox-function/" title="VBA InputBox Function
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
+</div>
 
-          </div>
-
-
+          
         </div>
       </div>
     </div>
@@ -974,75 +900,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+          
+          
+          
+          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+          
+          
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -1067,15 +993,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

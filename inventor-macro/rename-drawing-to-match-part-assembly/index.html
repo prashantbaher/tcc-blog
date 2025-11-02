@@ -5,22 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized! - The CAD Coder</title>
-  <meta name="description"
-    content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
+  <!-- begin _includes/seo.html --><title>✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized! - The CAD Coder</title>
+<meta name="description" content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!">
-  <meta property="og:url" content="https://thecadcoder.com/inventor-macro/rename-drawing-to-match-part-assembly/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!">
+<meta property="og:url" content="http://localhost:4000/inventor-macro/rename-drawing-to-match-part-assembly/">
 
 
-  <meta property="og:description"
-    content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
+  <meta property="og:description" content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
 
 
 
@@ -28,25 +25,25 @@
 
 
 
-  <meta property="article:published_time" content="2025-08-10T14:09:47-04:00">
+  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/inventor-macro/rename-drawing-to-match-part-assembly/">
+<link rel="canonical" href="http://localhost:4000/inventor-macro/rename-drawing-to-match-part-assembly/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "https://thecadcoder.com/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -57,29 +54,31 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 
   <!-- MailerLite Universal -->
   <script>
@@ -100,437 +99,410 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
 
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/inventor-macro/export-to-pdf/">Export Inventor Drawings to PDF</a></li>
+          
+            <li><a href="/inventor-macro/open-associated-drawing-files/">Auto Open Drawing from Inventor Part/Assembly</a></li>
+          
+            <li><a href="/inventor-macro/rename-drawing-to-match-part-assembly/" class="active">Rename Drawing to Match Inventor Model</a></li>
+          
+            <li><a href="/inventor-macro/save-all-open-drawings-as-pdf/">Export Autodesk Inventor Drawings to PDF</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
 
+    
+  
+  </div>
 
-
-
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/inventor-macro/export-to-pdf/">Export Inventor Drawings to PDF</a></li>
-
-                  <li><a href="/inventor-macro/open-associated-drawing-files/">Auto Open Drawing from Inventor
-                      Part/Assembly</a></li>
-
-                  <li><a href="/inventor-macro/rename-drawing-to-match-part-assembly/" class="active">Rename Drawing to
-                      Match Inventor Model</a></li>
-
-                  <li><a href="/inventor-macro/save-all-open-drawings-as-pdf/">Export Autodesk Inventor Drawings to
-                      PDF</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!">
+    
+    <meta itemprop="description" content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
+    
+    
+    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-what-this-macro-does">🚀 What This Macro Does</a></li><li><a href="#-why-this-is-useful">📂 Why This Is Useful</a></li><li><a href="#-real-example">📸 Real Example</a></li><li><a href="#️-how-to-use-the-macro">⚙️ How to Use the Macro</a></li><li><a href="#-requirements">🧩 Requirements</a></li><li><a href="#-common-errors--how-to-fix-them">💬 Common Errors &amp; How to Fix Them</a></li><li><a href="#-download-the-macro">📦 Download the Macro</a></li><li><a href="#-available-in-multiple-languages">🌍 Available in Multiple Languages</a></li><li><a href="#-final-thoughts">🙌 Final Thoughts</a></li><li><a href="#️-need-help-or-want-custom-macros">✉️ Need Help or Want Custom Macros?</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering <em>“Which part or assembly is this drawing for?”</em>, you’re not alone.</p>
+
+<p>🔄 Keeping drawing file names in sync with their model names is <strong>one of the simplest ways to stay organized</strong> — yet it’s something that gets missed far too often.</p>
+
+<p>That’s exactly why I built this free macro:<br />
+🎯 <strong>RenameDrawingToMatchModel</strong> — a tiny but powerful Inventor VBA macro that automatically renames your drawing to match the name of the first model it references.</p>
+
+<hr />
+
+<h2 id="-what-this-macro-does">🚀 What This Macro Does</h2>
+
+<ul>
+  <li>✅ Detects the first referenced <code class="language-plaintext highlighter-rouge">.ipt</code> or <code class="language-plaintext highlighter-rouge">.iam</code> file in your open drawing</li>
+  <li>✏️ Renames the drawing (<code class="language-plaintext highlighter-rouge">.idw</code> or <code class="language-plaintext highlighter-rouge">.dwg</code>) to match the model’s file name</li>
+  <li>💾 Creates a safe <strong>backup copy</strong> before renaming</li>
+  <li>🔄 Reopens the renamed drawing in Inventor</li>
+  <li>⚠️ Prompts you if a file with the new name already exists</li>
+</ul>
+
+<hr />
+
+<h2 id="-why-this-is-useful">📂 Why This Is Useful</h2>
+
+<ul>
+  <li>Keeps file names consistent between drawings and models</li>
+  <li>Makes file navigation and version control easier</li>
+  <li>Reduces chances of mistakes during file sharing or release</li>
+  <li>Great for <strong>teams</strong> who need to enforce naming conventions</li>
+  <li>Helps new users understand what’s inside a drawing — instantly</li>
+</ul>
+
+<hr />
+
+<h2 id="-real-example">📸 Real Example</h2>
+
+<p>Let’s say you’re working with these files:</p>
+
+<ul>
+  <li>
+    <p>Model: <strong>C:\Projects\Brackets\Bracket01.ipt</strong></p>
+  </li>
+  <li>
+    <p>Drawing: <strong>C:\Projects\Brackets\SidePlate.idw</strong></p>
+  </li>
+</ul>
 
-              <meta itemprop="headline"
-                content="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!">
+<p>After running the macro, the drawing will be renamed to:</p>
 
-              <meta itemprop="description"
-                content="If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering “Which part or assembly is this drawing for?”, you’re not alone.">
+<p>And the original <code class="language-plaintext highlighter-rouge">SidePlate.idw</code> will be backed up safely in:</p>
 
+<ul>
+  <li><strong>C:\Projects\Brackets\Backup\SidePlate.idw</strong></li>
+</ul>
 
-              <meta itemprop="datePublished" content="2025-08-10T14:09:47-04:00">
+<p>✨ Clean, safe, and fast.</p>
 
+<hr />
 
-              <div class="page__inner-wrap">
+<h2 id="️-how-to-use-the-macro">⚙️ How to Use the Macro</h2>
 
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">✨ Rename Drawing to Match Model in
-                    Inventor — Save Time &amp; Stay Organized!
-                  </h1>
+<ol>
+  <li>Open your drawing in Autodesk Inventor</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to launch the VBA editor</li>
+  <li>Import the macro file: <code class="language-plaintext highlighter-rouge">RenameDrawingToMatchModel.bas</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Alt + F8</code>, select <code class="language-plaintext highlighter-rouge">RenameDrawingToMatchModel</code>, and hit <strong>Run</strong></li>
+</ol>
 
+<blockquote>
+  <p>🔄 The drawing is renamed and reopened automatically!</p>
+</blockquote>
 
-                  <p class="page__meta">
+<hr />
 
+<h2 id="-requirements">🧩 Requirements</h2>
 
+<ul>
+  <li>Autodesk Inventor 2015 or newer</li>
+  <li>Windows with VBA support</li>
+  <li>The drawing must be saved and reference at least one model</li>
+</ul>
 
+<hr />
 
+<h2 id="-common-errors--how-to-fix-them">💬 Common Errors &amp; How to Fix Them</h2>
 
+<table>
+  <thead>
+    <tr>
+      <th>Error Message</th>
+      <th>Solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Open a drawing document first.</code></td>
+      <td>Make sure a drawing is open</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Save the drawing before renaming.</code></td>
+      <td>Save the drawing file first</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">No model referenced in the drawing.</code></td>
+      <td>Insert a reference to a part or assembly</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Rename failed: ...</code></td>
+      <td>Check if the new file is already open or locked</td>
+    </tr>
+  </tbody>
+</table>
 
+<hr />
 
+<h2 id="-download-the-macro">📦 Download the Macro</h2>
 
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
+<p>You can grab the <code class="language-plaintext highlighter-rouge">.bas</code> file and detailed instructions in our <a href="/download-inventor-macros/">Macro Library</a>.</p>
 
-                      2 minute read
+<hr />
 
-                    </span>
+<h2 id="-available-in-multiple-languages">🌍 Available in Multiple Languages</h2>
 
-                  </p>
+<ul>
+  <li>🇬🇧 English</li>
+  <li>🇩🇪 Deutsch</li>
+  <li>🇨🇳 中文</li>
+  <li>🇯🇵 日本語</li>
+</ul>
 
+<p>Perfect for international teams!</p>
 
-                </header>
+<hr />
 
+<h2 id="-final-thoughts">🙌 Final Thoughts</h2>
 
-                <section class="page__content" itemprop="text">
+<p>This macro is small — but mighty. If your Inventor folders are filled with mismatched filenames, this tool can bring instant order to the chaos.</p>
 
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#-what-this-macro-does">🚀 What This Macro Does</a></li>
-                        <li><a href="#-why-this-is-useful">📂 Why This Is Useful</a></li>
-                        <li><a href="#-real-example">📸 Real Example</a></li>
-                        <li><a href="#️-how-to-use-the-macro">⚙️ How to Use the Macro</a></li>
-                        <li><a href="#-requirements">🧩 Requirements</a></li>
-                        <li><a href="#-common-errors--how-to-fix-them">💬 Common Errors &amp; How to Fix Them</a></li>
-                        <li><a href="#-download-the-macro">📦 Download the Macro</a></li>
-                        <li><a href="#-available-in-multiple-languages">🌍 Available in Multiple Languages</a></li>
-                        <li><a href="#-final-thoughts">🙌 Final Thoughts</a></li>
-                        <li><a href="#️-need-help-or-want-custom-macros">✉️ Need Help or Want Custom Macros?</a></li>
-                      </ul>
+<p>🔐 As always, the macro is provided <strong>as-is</strong>, but you’re welcome to modify and use it in your projects or client work.</p>
 
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
+<hr />
 
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <p>If you’ve ever found yourself opening a drawing in Autodesk Inventor and wondering <em>“Which
-                        part or assembly is this drawing for?”</em>, you’re not alone.</p>
+<h2 id="️-need-help-or-want-custom-macros">✉️ Need Help or Want Custom Macros?</h2>
 
-                    <p>🔄 Keeping drawing file names in sync with their model names is <strong>one of the simplest ways
-                        to stay organized</strong> — yet it’s something that gets missed far too often.</p>
+<p>I love building practical, real-world Inventor tools for engineers and designers.<br />
+💬 Reach out via <a href="mailto:prashantbaher@thecadcoder.com">prashantbaher@thecadcoder.com</a> or visit:</p>
 
-                    <p>That’s exactly why I built this free macro:<br />
-                      🎯 <strong>RenameDrawingToMatchModel</strong> — a tiny but powerful Inventor VBA macro that
-                      automatically renames your drawing to match the name of the first model it references.</p>
+<p>🌐 <a href="https://thecadcoder.com">https://thecadcoder.com</a></p>
 
-                    <hr />
+<p>Happy automating! 🛠️</p>
 
-                    <h2 id="-what-this-macro-does">🚀 What This Macro Does</h2>
 
-                    <ul>
-                      <li>✅ Detects the first referenced <code class="language-plaintext highlighter-rouge">.ipt</code>
-                        or <code class="language-plaintext highlighter-rouge">.iam</code> file in your open drawing</li>
-                      <li>✏️ Renames the drawing (<code class="language-plaintext highlighter-rouge">.idw</code> or
-                        <code class="language-plaintext highlighter-rouge">.dwg</code>) to match the model’s file name
-                      </li>
-                      <li>💾 Creates a safe <strong>backup copy</strong> before renaming</li>
-                      <li>🔄 Reopens the renamed drawing in Inventor</li>
-                      <li>⚠️ Prompts you if a file with the new name already exists</li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-why-this-is-useful">📂 Why This Is Useful</h2>
-
-                    <ul>
-                      <li>Keeps file names consistent between drawings and models</li>
-                      <li>Makes file navigation and version control easier</li>
-                      <li>Reduces chances of mistakes during file sharing or release</li>
-                      <li>Great for <strong>teams</strong> who need to enforce naming conventions</li>
-                      <li>Helps new users understand what’s inside a drawing — instantly</li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-real-example">📸 Real Example</h2>
-
-                    <p>Let’s say you’re working with these files:</p>
-
-                    <ul>
-                      <li>
-                        <p>Model: <strong>C:\Projects\Brackets\Bracket01.ipt</strong></p>
-                      </li>
-                      <li>
-                        <p>Drawing: <strong>C:\Projects\Brackets\SidePlate.idw</strong></p>
-                      </li>
-                    </ul>
-
-                    <p>After running the macro, the drawing will be renamed to:</p>
-
-                    <p>And the original <code class="language-plaintext highlighter-rouge">SidePlate.idw</code> will be
-                      backed up safely in:</p>
-
-                    <ul>
-                      <li><strong>C:\Projects\Brackets\Backup\SidePlate.idw</strong></li>
-                    </ul>
-
-                    <p>✨ Clean, safe, and fast.</p>
-
-                    <hr />
-
-                    <h2 id="️-how-to-use-the-macro">⚙️ How to Use the Macro</h2>
-
-                    <ol>
-                      <li>Open your drawing in Autodesk Inventor</li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to launch the VBA
-                        editor</li>
-                      <li>Import the macro file: <code
-                          class="language-plaintext highlighter-rouge">RenameDrawingToMatchModel.bas</code></li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F8</code>, select <code
-                          class="language-plaintext highlighter-rouge">RenameDrawingToMatchModel</code>, and hit
-                        <strong>Run</strong></li>
-                    </ol>
-
-                    <blockquote>
-                      <p>🔄 The drawing is renamed and reopened automatically!</p>
-                    </blockquote>
-
-                    <hr />
-
-                    <h2 id="-requirements">🧩 Requirements</h2>
-
-                    <ul>
-                      <li>Autodesk Inventor 2015 or newer</li>
-                      <li>Windows with VBA support</li>
-                      <li>The drawing must be saved and reference at least one model</li>
-                    </ul>
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
-                    <hr />
+      </section>
 
-                    <h2 id="-common-errors--how-to-fix-them">💬 Common Errors &amp; How to Fix Them</h2>
+      <footer class="page__meta">
+        
+        
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Error Message</th>
-                          <th>Solution</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><code class="language-plaintext highlighter-rouge">Open a drawing document first.</code>
-                          </td>
-                          <td>Make sure a drawing is open</td>
-                        </tr>
-                        <tr>
-                          <td><code
-                              class="language-plaintext highlighter-rouge">Save the drawing before renaming.</code></td>
-                          <td>Save the drawing file first</td>
-                        </tr>
-                        <tr>
-                          <td><code
-                              class="language-plaintext highlighter-rouge">No model referenced in the drawing.</code>
-                          </td>
-                          <td>Insert a reference to a part or assembly</td>
-                        </tr>
-                        <tr>
-                          <td><code class="language-plaintext highlighter-rouge">Rename failed: ...</code></td>
-                          <td>Check if the new file is already open or locked</td>
-                        </tr>
-                      </tbody>
-                    </table>
 
-                    <hr />
+        
 
-                    <h2 id="-download-the-macro">📦 Download the Macro</h2>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
 
-                    <p>You can grab the <code class="language-plaintext highlighter-rouge">.bas</code> file and detailed
-                      instructions in our <a href="/download-inventor-macros/">Macro Library</a>.</p>
 
-                    <hr />
+      </footer>
 
-                    <h2 id="-available-in-multiple-languages">🌍 Available in Multiple Languages</h2>
-
-                    <ul>
-                      <li>🇬🇧 English</li>
-                      <li>🇩🇪 Deutsch</li>
-                      <li>🇨🇳 中文</li>
-                      <li>🇯🇵 日本語</li>
-                    </ul>
-
-                    <p>Perfect for international teams!</p>
-
-                    <hr />
-
-                    <h2 id="-final-thoughts">🙌 Final Thoughts</h2>
-
-                    <p>This macro is small — but mighty. If your Inventor folders are filled with mismatched filenames,
-                      this tool can bring instant order to the chaos.</p>
-
-                    <p>🔐 As always, the macro is provided <strong>as-is</strong>, but you’re welcome to modify and use
-                      it in your projects or client work.</p>
-
-                    <hr />
-
-                    <h2 id="️-need-help-or-want-custom-macros">✉️ Need Help or Want Custom Macros?</h2>
-
-                    <p>I love building practical, real-world Inventor tools for engineers and designers.<br />
-                      💬 Reach out via <a href="mailto:prashantbaher@thecadcoder.com">prashantbaher@thecadcoder.com</a>
-                      or visit:</p>
-
-                    <p>🌐 <a href="https://thecadcoder.com">https://thecadcoder.com</a></p>
-
-                    <p>Happy automating! 🛠️</p>
-
-
-                  </div>
-
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
-
-                </section>
-
-                <footer class="page__meta">
-
-
-
-
-
-
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2025-08-10T14:09:47-04:00">August 10, 2025</time></p>
-
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/inventor-macro/open-associated-drawing-files/" title="📄 Auto Open Drawing from Inventor Part/Assembly
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/inventor-macro/open-associated-drawing-files/" title="📄 Auto Open Drawing from Inventor Part/Assembly
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light" href="/inventor-macro/save-all-open-drawings-as-pdf/" title="🚀 Export 20+ Autodesk Inventor Drawings to PDF in 10 Seconds — Free Macro Inside!
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/inventor-macro/save-all-open-drawings-as-pdf/" title="🚀 Export 20+ Autodesk Inventor Drawings to PDF in 10 Seconds — Free Macro Inside!
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
+</div>
 
-          </div>
-
-
+          
         </div>
       </div>
     </div>
@@ -540,75 +512,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+          
+          
+          
+          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+          
+          
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -633,15 +605,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

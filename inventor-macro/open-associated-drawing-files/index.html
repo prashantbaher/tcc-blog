@@ -5,22 +5,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html -->
-  <title>📄 Auto Open Drawing from Inventor Part/Assembly - The CAD Coder</title>
-  <meta name="description"
-    content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
+  <!-- begin _includes/seo.html --><title>📄 Auto Open Drawing from Inventor Part/Assembly - The CAD Coder</title>
+<meta name="description" content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="The CAD Coder">
-  <meta property="og:title" content="📄 Auto Open Drawing from Inventor Part/Assembly">
-  <meta property="og:url" content="https://thecadcoder.com/inventor-macro/open-associated-drawing-files/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="The CAD Coder">
+<meta property="og:title" content="📄 Auto Open Drawing from Inventor Part/Assembly">
+<meta property="og:url" content="http://localhost:4000/inventor-macro/open-associated-drawing-files/">
 
 
-  <meta property="og:description"
-    content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
+  <meta property="og:description" content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
 
 
 
@@ -28,25 +25,25 @@
 
 
 
-  <meta property="article:published_time" content="2025-08-10T14:09:47-04:00">
+  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
 
 
 
 
 
 
-  <link rel="canonical" href="https://thecadcoder.com/inventor-macro/open-associated-drawing-files/">
+<link rel="canonical" href="http://localhost:4000/inventor-macro/open-associated-drawing-files/">
 
 
 
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     
       "@type": "Person",
       "name": null,
-      "url": "https://thecadcoder.com/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -57,29 +54,31 @@
 
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-117501871-2', { 'anonymize_ip': true });
-  </script>
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
 
-  <!-- end _includes/seo.html -->
+<!-- end _includes/seo.html -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
+  <link
+    href="/feed.xml"
+    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
 
-
+  
 
   <!-- MailerLite Universal -->
   <script>
@@ -100,501 +99,452 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-      <span>The CAD Coder</span>
+        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
+        <span>The CAD Coder</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/vba/vba-Introduction/"><span>VBA</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/resources/"><span>Resources</span></a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutMe/"><span>About</span></a>
-        </li>
-
-        <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
+            </li>
+            
+            
+            <li class="nav-item">
+                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
+            </li>
+            
+            <!-- <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li> -->
-      </ul>
-      <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
+        </ul>
+        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
             <i class="fas fa-search"></i>
         </a> -->
     </div>
-  </nav>
+</nav>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-2 col-sm-4">
-        <div class="sidebar sticky" style="width: 100%;">
+  <div class="sidebar sticky" style="width: 100%;">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
 
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
 
+        
+        <ul>
+          
+            <li><a href="/inventor-macro/export-to-pdf/">Export Inventor Drawings to PDF</a></li>
+          
+            <li><a href="/inventor-macro/open-associated-drawing-files/" class="active">Auto Open Drawing from Inventor Part/Assembly</a></li>
+          
+            <li><a href="/inventor-macro/rename-drawing-to-match-part-assembly/">Rename Drawing to Match Inventor Model</a></li>
+          
+            <li><a href="/inventor-macro/save-all-open-drawings-as-pdf/">Export Autodesk Inventor Drawings to PDF</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
 
+    
+  
+  </div>
 
-
-
-
-
-
-
-
-          <nav class="nav__list">
-
-            <input id="ac-toc" name="accordion-toc" type="checkbox" />
-            <label for="ac-toc">Toggle Menu</label>
-            <ul class="nav__items">
-
-              <li>
-
-                <span class="nav__sub-title">Getting Started</span>
-
-
-
-                <ul>
-
-                  <li><a href="/inventor-macro/export-to-pdf/">Export Inventor Drawings to PDF</a></li>
-
-                  <li><a href="/inventor-macro/open-associated-drawing-files/" class="active">Auto Open Drawing from
-                      Inventor Part/Assembly</a></li>
-
-                  <li><a href="/inventor-macro/rename-drawing-to-match-part-assembly/">Rename Drawing to Match Inventor
-                      Model</a></li>
-
-                  <li><a href="/inventor-macro/save-all-open-drawings-as-pdf/">Export Autodesk Inventor Drawings to
-                      PDF</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-          </nav>
-
-
-
-        </div>
-
-      </div>
+</div>
       <div class="col-md-9 col-lg-10 col-sm-8">
         <div>
           <div id="main" role="main">
 
-            <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="📄 Auto Open Drawing from Inventor Part/Assembly">
+    
+    <meta itemprop="description" content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
+    
+    
+    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 id="page-title" class="page__title" itemprop="headline">📄 Auto Open Drawing from Inventor Part/Assembly
+</h1>
+        
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#-what-it-does">🔍 What It Does</a><ul><li><a href="#-where-it-searches">📁 Where It Searches</a></li></ul></li><li><a href="#-demo-see-it-in-action">🎥 Demo: See It in Action</a></li><li><a href="#-requirements">✅ Requirements</a></li><li><a href="#-included-files">🧩 Included Files</a></li><li><a href="#-how-to-use">🚀 How to Use</a><ul><li><a href="#1-open-inventor">1. Open Inventor</a></li><li><a href="#2-launch-the-vba-editor">2. Launch the VBA Editor</a></li><li><a href="#3-import-the-macro">3. Import the Macro</a></li><li><a href="#4-run-the-macro">4. Run the Macro</a></li></ul></li><li><a href="#-what-the-macro-does-internally">💡 What the Macro Does Internally</a></li><li><a href="#️-possible-error-messages">⚠️ Possible Error Messages</a></li><li><a href="#-performance">📈 Performance</a></li><li><a href="#-use-it-like-a-pro">💼 Use It Like a Pro</a></li><li><a href="#-download-the-macro">📦 Download the Macro</a></li><li><a href="#-multilingual-support">🌍 Multilingual Support</a></li><li><a href="#-need-help">📬 Need Help?</a></li><li><a href="#-license">🔒 License</a></li></ul>
+
+            <br/>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          </nav>
+        </aside>
+        
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <p>Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.</p>
+
+<hr />
+
+<h2 id="-what-it-does">🔍 What It Does</h2>
+
+<p>This macro automatically looks for and opens the <strong>associated drawing file</strong> (<code class="language-plaintext highlighter-rouge">.idw</code> or <code class="language-plaintext highlighter-rouge">.dwg</code>) for the currently active <strong>Part (<code class="language-plaintext highlighter-rouge">.ipt</code>)</strong> or <strong>Assembly (<code class="language-plaintext highlighter-rouge">.iam</code>)</strong> file.</p>
+
+<h3 id="-where-it-searches">📁 Where It Searches</h3>
+<ul>
+  <li>The <strong>same folder</strong> as the open file</li>
+  <li>All <strong>subfolders</strong>, up to <strong>5 levels deep</strong></li>
+</ul>
+
+<p>If it finds a match (by file name), the drawing opens instantly in Inventor.</p>
+
+<hr />
+
+<h2 id="-demo-see-it-in-action">🎥 Demo: See It in Action</h2>
+
+<p>👇 Here’s what the macro does with just <strong>one click</strong>:</p>
+
+<iframe src="https://www.youtube.com/embed/8HaSEqq1QLU" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<hr />
+
+<h2 id="-requirements">✅ Requirements</h2>
+
+<ul>
+  <li>Autodesk Inventor <strong>2015 or later</strong></li>
+  <li>Windows with <strong>VBA support</strong></li>
+  <li>The drawing file must have the <strong>same name</strong> as the part or assembly<br />
+<em>(e.g., <code class="language-plaintext highlighter-rouge">Bracket.ipt</code> → <code class="language-plaintext highlighter-rouge">Bracket.idw</code> or <code class="language-plaintext highlighter-rouge">Bracket.dwg</code>)</em></li>
+</ul>
+
+<hr />
+
+<h2 id="-included-files">🧩 Included Files</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code></td>
+      <td>The macro module to import</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">README.md</code></td>
+      <td>User guide in Markdown format</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-how-to-use">🚀 How to Use</h2>
+
+<h3 id="1-open-inventor">1. Open Inventor</h3>
+<p>Start Inventor and open any <code class="language-plaintext highlighter-rouge">.ipt</code> or <code class="language-plaintext highlighter-rouge">.iam</code> file.</p>
+
+<h3 id="2-launch-the-vba-editor">2. Launch the VBA Editor</h3>
+<p>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to open the <strong>VBA Editor</strong>.</p>
+
+<h3 id="3-import-the-macro">3. Import the Macro</h3>
+<ul>
+  <li>Go to <code class="language-plaintext highlighter-rouge">File → Import File…</code></li>
+  <li>Select <code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code></li>
+</ul>
+
+<h3 id="4-run-the-macro">4. Run the Macro</h3>
+<ul>
+  <li>Close the VBA editor</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Alt + F8</code>, choose <code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing</code>, then click <strong>Run</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="-what-the-macro-does-internally">💡 What the Macro Does Internally</h2>
+
+<ul>
+  <li>Checks for an active <code class="language-plaintext highlighter-rouge">.ipt</code> or <code class="language-plaintext highlighter-rouge">.iam</code> file</li>
+  <li>Verifies the file is <strong>saved</strong></li>
+  <li>Scans for <code class="language-plaintext highlighter-rouge">.idw</code> or <code class="language-plaintext highlighter-rouge">.dwg</code> with the <strong>same name</strong></li>
+  <li>Searches <strong>subfolders</strong>, using breadth-first strategy</li>
+  <li>Opens the drawing if found, or shows an error message if not</li>
+</ul>
+
+<hr />
 
-              <meta itemprop="headline" content="📄 Auto Open Drawing from Inventor Part/Assembly">
+<h2 id="️-possible-error-messages">⚠️ Possible Error Messages</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">No document is open.</code></td>
+      <td>Inventor has no file open</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Open a Part (.ipt) or Assembly (.iam) file first.</code></td>
+      <td>Macro works only with <code class="language-plaintext highlighter-rouge">.ipt</code> and <code class="language-plaintext highlighter-rouge">.iam</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Save the file before running the macro.</code></td>
+      <td>Unsaved files can’t be located</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">No drawing file found in folder or subfolders.</code></td>
+      <td>Matching drawing file not found</td>
+    </tr>
+  </tbody>
+</table>
 
-              <meta itemprop="description"
-                content="Want to instantly open the drawing file related to the part or assembly you’re working on in Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your workflow.">
+<hr />
 
+<h2 id="-performance">📈 Performance</h2>
 
-              <meta itemprop="datePublished" content="2025-08-10T14:09:47-04:00">
-
-
-              <div class="page__inner-wrap">
-
-                <header>
-                  <h1 id="page-title" class="page__title" itemprop="headline">📄 Auto Open Drawing from Inventor
-                    Part/Assembly
-                  </h1>
-
-
-                  <p class="page__meta">
-
-
-
-
-
-
-
-
-                    <span class="page__meta-readtime">
-                      <i class="far fa-clock" aria-hidden="true"></i>
-
-                      2 minute read
-
-                    </span>
-
-                  </p>
-
-
-                </header>
-
-
-                <section class="page__content" itemprop="text">
-
-                  <aside class="sidebar__right sticky">
-                    <nav class="toc">
-                      <header>
-                        <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-                      </header>
-                      <ul class="toc__menu">
-                        <li><a href="#-what-it-does">🔍 What It Does</a>
-                          <ul>
-                            <li><a href="#-where-it-searches">📁 Where It Searches</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#-demo-see-it-in-action">🎥 Demo: See It in Action</a></li>
-                        <li><a href="#-requirements">✅ Requirements</a></li>
-                        <li><a href="#-included-files">🧩 Included Files</a></li>
-                        <li><a href="#-how-to-use">🚀 How to Use</a>
-                          <ul>
-                            <li><a href="#1-open-inventor">1. Open Inventor</a></li>
-                            <li><a href="#2-launch-the-vba-editor">2. Launch the VBA Editor</a></li>
-                            <li><a href="#3-import-the-macro">3. Import the Macro</a></li>
-                            <li><a href="#4-run-the-macro">4. Run the Macro</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#-what-the-macro-does-internally">💡 What the Macro Does Internally</a></li>
-                        <li><a href="#️-possible-error-messages">⚠️ Possible Error Messages</a></li>
-                        <li><a href="#-performance">📈 Performance</a></li>
-                        <li><a href="#-use-it-like-a-pro">💼 Use It Like a Pro</a></li>
-                        <li><a href="#-download-the-macro">📦 Download the Macro</a></li>
-                        <li><a href="#-multilingual-support">🌍 Multilingual Support</a></li>
-                        <li><a href="#-need-help">📬 Need Help?</a></li>
-                        <li><a href="#-license">🔒 License</a></li>
-                      </ul>
-
-                      <br />
-                      <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                        crossorigin="anonymous"></script>
-                      <!-- Vertical Ads -->
-                      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                        data-ad-slot="4311368222" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                      <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-                    </nav>
-                  </aside>
-
-                  <div>
-                    <script async
-                      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-                      crossorigin="anonymous"></script>
-                    <!-- Horizontal Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <p>Want to instantly open the drawing file related to the part or assembly you’re working on in
-                      Autodesk Inventor? This free VBA macro does exactly that — saving time and streamlining your
-                      workflow.</p>
-
-                    <hr />
-
-                    <h2 id="-what-it-does">🔍 What It Does</h2>
-
-                    <p>This macro automatically looks for and opens the <strong>associated drawing file</strong> (<code
-                        class="language-plaintext highlighter-rouge">.idw</code> or <code
-                        class="language-plaintext highlighter-rouge">.dwg</code>) for the currently active <strong>Part
-                        (<code class="language-plaintext highlighter-rouge">.ipt</code>)</strong> or <strong>Assembly
-                        (<code class="language-plaintext highlighter-rouge">.iam</code>)</strong> file.</p>
-
-                    <h3 id="-where-it-searches">📁 Where It Searches</h3>
-                    <ul>
-                      <li>The <strong>same folder</strong> as the open file</li>
-                      <li>All <strong>subfolders</strong>, up to <strong>5 levels deep</strong></li>
-                    </ul>
-
-                    <p>If it finds a match (by file name), the drawing opens instantly in Inventor.</p>
-
-                    <hr />
-
-                    <h2 id="-demo-see-it-in-action">🎥 Demo: See It in Action</h2>
-
-                    <p>👇 Here’s what the macro does with just <strong>one click</strong>:</p>
-
-                    <iframe src="https://www.youtube.com/embed/8HaSEqq1QLU" frameborder="0" allowfullscreen=""></iframe>
-                    <p><br /></p>
-
-                    <hr />
-
-                    <h2 id="-requirements">✅ Requirements</h2>
-
-                    <ul>
-                      <li>Autodesk Inventor <strong>2015 or later</strong></li>
-                      <li>Windows with <strong>VBA support</strong></li>
-                      <li>The drawing file must have the <strong>same name</strong> as the part or assembly<br />
-                        <em>(e.g., <code class="language-plaintext highlighter-rouge">Bracket.ipt</code> → <code
-                            class="language-plaintext highlighter-rouge">Bracket.idw</code> or <code
-                            class="language-plaintext highlighter-rouge">Bracket.dwg</code>)</em>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-included-files">🧩 Included Files</h2>
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>File Name</th>
-                          <th>Purpose</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code></td>
-                          <td>The macro module to import</td>
-                        </tr>
-                        <tr>
-                          <td><code class="language-plaintext highlighter-rouge">README.md</code></td>
-                          <td>User guide in Markdown format</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <hr />
-
-                    <h2 id="-how-to-use">🚀 How to Use</h2>
-
-                    <h3 id="1-open-inventor">1. Open Inventor</h3>
-                    <p>Start Inventor and open any <code class="language-plaintext highlighter-rouge">.ipt</code> or
-                      <code class="language-plaintext highlighter-rouge">.iam</code> file.</p>
-
-                    <h3 id="2-launch-the-vba-editor">2. Launch the VBA Editor</h3>
-                    <p>Press <code class="language-plaintext highlighter-rouge">Alt + F11</code> to open the <strong>VBA
-                        Editor</strong>.</p>
-
-                    <h3 id="3-import-the-macro">3. Import the Macro</h3>
-                    <ul>
-                      <li>Go to <code class="language-plaintext highlighter-rouge">File → Import File…</code></li>
-                      <li>Select <code class="language-plaintext highlighter-rouge">OpenAssociatedDrawing.bas</code>
-                      </li>
-                    </ul>
-
-                    <h3 id="4-run-the-macro">4. Run the Macro</h3>
-                    <ul>
-                      <li>Close the VBA editor</li>
-                      <li>Press <code class="language-plaintext highlighter-rouge">Alt + F8</code>, choose <code
-                          class="language-plaintext highlighter-rouge">OpenAssociatedDrawing</code>, then click
-                        <strong>Run</strong></li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-what-the-macro-does-internally">💡 What the Macro Does Internally</h2>
-
-                    <ul>
-                      <li>Checks for an active <code class="language-plaintext highlighter-rouge">.ipt</code> or <code
-                          class="language-plaintext highlighter-rouge">.iam</code> file</li>
-                      <li>Verifies the file is <strong>saved</strong></li>
-                      <li>Scans for <code class="language-plaintext highlighter-rouge">.idw</code> or <code
-                          class="language-plaintext highlighter-rouge">.dwg</code> with the <strong>same name</strong>
-                      </li>
-                      <li>Searches <strong>subfolders</strong>, using breadth-first strategy</li>
-                      <li>Opens the drawing if found, or shows an error message if not</li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="️-possible-error-messages">⚠️ Possible Error Messages</h2>
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Message</th>
-                          <th>Cause</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><code class="language-plaintext highlighter-rouge">No document is open.</code></td>
-                          <td>Inventor has no file open</td>
-                        </tr>
-                        <tr>
-                          <td><code
-                              class="language-plaintext highlighter-rouge">Open a Part (.ipt) or Assembly (.iam) file first.</code>
-                          </td>
-                          <td>Macro works only with <code class="language-plaintext highlighter-rouge">.ipt</code> and
-                            <code class="language-plaintext highlighter-rouge">.iam</code></td>
-                        </tr>
-                        <tr>
-                          <td><code
-                              class="language-plaintext highlighter-rouge">Save the file before running the macro.</code>
-                          </td>
-                          <td>Unsaved files can’t be located</td>
-                        </tr>
-                        <tr>
-                          <td><code
-                              class="language-plaintext highlighter-rouge">No drawing file found in folder or subfolders.</code>
-                          </td>
-                          <td>Matching drawing file not found</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <hr />
-
-                    <h2 id="-performance">📈 Performance</h2>
-
-                    <ul>
-                      <li>Uses <strong>breadth-first search</strong> to avoid excessive memory use</li>
-                      <li>Limited to 5 folder levels for speed and reliability</li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-use-it-like-a-pro">💼 Use It Like a Pro</h2>
-
-                    <ul>
-                      <li>Keep drawings in the same folder as models, or inside logical subfolders</li>
-                      <li>Ensure filenames match exactly — including case and extension</li>
-                      <li>Extend this macro to include:
-                        <ul>
-                          <li>Autodesk Vault search</li>
-                          <li>Logging</li>
-                          <li>Automatic drawing creation (if not found)</li>
-                        </ul>
-                      </li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-download-the-macro">📦 Download the Macro</h2>
-
-                    <p>👉 <a href="/download-inventor-macros/">Click here to download the macro
-                        (OpenAssociatedDrawing.bas)</a></p>
-
-                    <p><em>(Make sure to subscribe if download is gated)</em></p>
-
-                    <hr />
-
-                    <h2 id="-multilingual-support">🌍 Multilingual Support</h2>
-
-                    <p>This macro package includes <strong>README guides</strong> in multiple languages:</p>
-
-                    <ul>
-                      <li>🇬🇧 English</li>
-                      <li>🇩🇪 German</li>
-                      <li>🇨🇳 Chinese</li>
-                      <li>🇯🇵 Japanese</li>
-                    </ul>
-
-                    <p>🗂 You’ll find the <strong>README guides</strong> inside the download folder to help users across
-                      different regions easily understand and use the macro.</p>
-
-                    <hr />
-
-                    <h2 id="-need-help">📬 Need Help?</h2>
-
-                    <p>If you have questions or want to suggest improvements:</p>
-
-                    <ul>
-                      <li>💌 Leave a comment below</li>
-                      <li>📧 Reach out via the <a href="mailto:thecadcoder@gmail.com">Contact</a> page</li>
-                    </ul>
-
-                    <hr />
-
-                    <h2 id="-license">🔒 License</h2>
-
-                    <p>This macro is provided <strong>as-is</strong>, without any warranty. You may freely modify and
-                      redistribute it for internal or client use.</p>
-
-                    <hr />
-
-                    <p>✨ Happy Automating!</p>
-
-                  </div>
-
-                  <div>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top and Bottom placed Ad -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002"
-                      data-ad-slot="6644001766" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                  </div>
-
-                </section>
-
-                <footer class="page__meta">
-
-
-
-
-
-
-                  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                      Updated:</strong> <time datetime="2025-08-10T14:09:47-04:00">August 10, 2025</time></p>
-
-
-                </footer>
-
-
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-
-                    <li class="page-item mr-5">
-                      <a class="btn btn-primary text-light" href="/inventor-macro/export-to-pdf/" title="📄 Export All Open Inventor Drawings to PDF – Instantly!
+<ul>
+  <li>Uses <strong>breadth-first search</strong> to avoid excessive memory use</li>
+  <li>Limited to 5 folder levels for speed and reliability</li>
+</ul>
+
+<hr />
+
+<h2 id="-use-it-like-a-pro">💼 Use It Like a Pro</h2>
+
+<ul>
+  <li>Keep drawings in the same folder as models, or inside logical subfolders</li>
+  <li>Ensure filenames match exactly — including case and extension</li>
+  <li>Extend this macro to include:
+    <ul>
+      <li>Autodesk Vault search</li>
+      <li>Logging</li>
+      <li>Automatic drawing creation (if not found)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-download-the-macro">📦 Download the Macro</h2>
+
+<p>👉 <a href="/download-inventor-macros/">Click here to download the macro (OpenAssociatedDrawing.bas)</a></p>
+
+<p><em>(Make sure to subscribe if download is gated)</em></p>
+
+<hr />
+
+<h2 id="-multilingual-support">🌍 Multilingual Support</h2>
+
+<p>This macro package includes <strong>README guides</strong> in multiple languages:</p>
+
+<ul>
+  <li>🇬🇧 English</li>
+  <li>🇩🇪 German</li>
+  <li>🇨🇳 Chinese</li>
+  <li>🇯🇵 Japanese</li>
+</ul>
+
+<p>🗂 You’ll find the <strong>README guides</strong> inside the download folder to help users across different regions easily understand and use the macro.</p>
+
+<hr />
+
+<h2 id="-need-help">📬 Need Help?</h2>
+
+<p>If you have questions or want to suggest improvements:</p>
+
+<ul>
+  <li>💌 Leave a comment below</li>
+  <li>📧 Reach out via the <a href="mailto:thecadcoder@gmail.com">Contact</a> page</li>
+</ul>
+
+<hr />
+
+<h2 id="-license">🔒 License</h2>
+
+<p>This macro is provided <strong>as-is</strong>, without any warranty. You may freely modify and redistribute it for internal or client use.</p>
+
+<hr />
+
+<p>✨ Happy Automating!</p>
+
+        </div>
+        
+        <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top and Bottom placed Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8158659264340002"
+       data-ad-slot="6644001766"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
+
+
+      </footer>
+
+      
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+    <li class="page-item mr-5">
+      <a class="btn btn-primary text-light" href="/inventor-macro/export-to-pdf/" title="📄 Export All Open Inventor Drawings to PDF – Instantly!
 ">❮ Previous</a>
-                    </li>
-
-
-                    <li class="page-item ml-5">
-                      <a class="btn btn-primary text-light"
-                        href="/inventor-macro/rename-drawing-to-match-part-assembly/" title="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!
+    </li>
+    
+    
+    <li class="page-item ml-5">
+      <a class="btn btn-primary text-light" href="/inventor-macro/rename-drawing-to-match-part-assembly/" title="✨ Rename Drawing to Match Model in Inventor — Save Time &amp; Stay Organized!
 ">Next ❯</a>
-                    </li>
+    </li>
+    
+  </ul>
+</nav>
 
-                  </ul>
-                </nav>
+    </div>
+  </article>
 
-              </div>
-            </article>
+</div>
 
-          </div>
-
-
+          
         </div>
       </div>
     </div>
@@ -604,75 +554,75 @@
     <footer>
       <!-- start custom footer snippets -->
 
-      <!-- end custom footer snippets -->
+<!-- end custom footer snippets -->
       <footer class="bd-footer py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-                <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-                <span> The CAD Coder</span>
-              </a>
-              <ul class="list-unstyled small text-muted">
-                <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-                <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-                <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
+          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
+          <span> The CAD Coder</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
+          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
+          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
 
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank"
-                    title="Facebook"><i class="fab fa-2x fa-facebook-f"></i></a></li>
-
-
-
-
-
-
-
-
-
-
-
-                <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg"
-                    target="_blank" title="YouTube"><i class="fab fa-2x fa-youtube"></i></a></li>
-
-
-
-                <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                      class="fa fa-envelope fa-2x"></i></a></li>
-
-
-
-              </ul>
-            </div>
-            <div class="col-6">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-                <li class="mb-2"><a href="/aboutMe/">About</a></li>
-                <li class="mb-2"><a href="/resources/">Resources</a></li>
-                <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
+                class="fab fa-2x fa-facebook-f"></i></a></li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
+                class="fab fa-2x fa-youtube"></i></a></li>
+          
+          
+          
+          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
+                class="fa fa-envelope fa-2x"></i></a></li>
+          
+          
+          
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
+          <li class="mb-2"><a href="/aboutMe/">About</a></li>
+          <li class="mb-2"><a href="/resources/">Resources</a></li>
+          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     </footer>
   </div>
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
@@ -697,15 +647,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
 
-
+  
   <script src="/assets/js/main.min.js"></script>
 
 
 
 
-  <script src="/assets/js/lunr/lunr.min.js"></script>
-  <script src="/assets/js/lunr/lunr-store.js"></script>
-  <script src="/assets/js/lunr/lunr-en.js"></script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
