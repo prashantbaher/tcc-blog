@@ -1,932 +1,1242 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Solidworks Macro - Create a Straight Slot - The CAD Coder</title>
-<meta name="description" content="In this post, I tell you about how to create a Straight Slot through Solidworks VBA Macros in a sketch.">
+<!-- Page Title -->
+<title>Solidworks Macro - Create a Straight Slot | The CAD Coder</title>
+
+<!-- Meta Description -->
+
+  <meta name="description" content="">
 
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://thecadcoder.com/solidworks-macros/create-straight-slot/">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/logo.png">
+
+<!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
 <meta property="og:title" content="Solidworks Macro - Create a Straight Slot">
-<meta property="og:url" content="http://localhost:4000/solidworks-macros/create-straight-slot/">
+<meta property="og:description" content="
+">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-macros/create-straight-slot/">
+<meta property="og:site_name" content="The CAD Coder">
+
+  <meta property="og:image" content="https://thecadcoder.com/assets/logo.png">
 
 
-  <meta property="og:description" content="In this post, I tell you about how to create a Straight Slot through Solidworks VBA Macros in a sketch.">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solidworks Macro - Create a Straight Slot">
+<meta name="twitter:description" content="
+">
 
 
+<!-- RSS Feed -->
+
+  <link rel="alternate" type="application/rss+xml" title="The CAD Coder" href="/feed.xml">
 
 
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Lunr.js for Search (CDN) -->
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" defer></script>
+
+<!-- Google Analytics (optional - uncomment and add your tracking ID) -->
 
 
+<!-- Preconnect for Performance (optional but recommended) -->
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
 
-  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
-
-
-
-
-
-
-<link rel="canonical" href="http://localhost:4000/solidworks-macros/create-straight-slot/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<!-- MailerLite Universal -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
 </script>
+<!-- End MailerLite Universal -->
 
-<!-- end _includes/seo.html -->
+<script src="/assets/js/tabs.js" defer></script>
+<script src="/assets/js/image-zoom.js" defer></script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/code-line-numbers.js" defer></script>
 
-  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
-
-  
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-          .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '1644816');
-  </script>
-  <!-- End MailerLite Universal -->
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt="The CAD Coder Logo" class="logo-icon">
+      <span class="logo-text">The CAD Coder</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span class="ms-icon" aria-hidden="true">&#xE700;</span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
-            <i class="fas fa-search"></i>
-        </a> -->
-    </div>
-</nav>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
-
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">General - Solidworks Functions</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/Solidworks-macro-guide/">Introduction</a></li>
-          
-            <li><a href="/solidworks-macros/open-new-document/">Open new Part document</a></li>
-          
-            <li><a href="/solidworks-macros/open-assembly-and-drawing/">Open Assembly and Drawing document</a></li>
-          
-            <li><a href="/solidworks-macros/select-plane-from-tree/">Selection Methods</a></li>
-          
-            <li><a href="/solidworks-macros/open-saved-document/">Open Saved Documents</a></li>
-          
-            <li><a href="/solidworks-macros/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Lines</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/sketch-create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-macros/sketch-create-centerline/">Create CenterLine</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Rectangles</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-corner-rectangle/">Create Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-center-rectangle/">Create Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-corner-rectangle/">Create 3-Point Corner Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-center-rectangle/">Create 3-Point Center Rectangle</a></li>
-          
-            <li><a href="/solidworks-macros/create-parallelogram/">Create A Parallelogram</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Circles</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-circle/">Create Circle</a></li>
-          
-            <li><a href="/solidworks-macros/create-circle-by-radius/">Create Circle By Radius</a></li>
-          
-            <li><a href="/solidworks-macros/create-perimeter-circle/">Create Perimeter Circle</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Arcs</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc/">Create Centerpoint Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-tangent-arc/">Create Tangent Arc</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc/">Create 3-Point Arc</a></li>
-          
-            <li><a href="/solidworks-macros/polygon/">Create Polygon</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Slots</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-straight-slot/" class="active">Create a Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-straight-slot/">Create a Centerpoint Straight Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-3point-arc-slot/">Create a 3-Point Arc Slot</a></li>
-          
-            <li><a href="/solidworks-macros/create-centerpoint-arc-slot/">Create a Centerpoint Arc Slot</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Point and Spline</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-point/">Create a Point</a></li>
-          
-            <li><a href="/solidworks-macros/create-spline/">Create a Spline</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Fillet and Chamfer</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-sketch-fillet/">Create a Fillet</a></li>
-          
-            <li><a href="/solidworks-macros/create-sketch-chamfer/">Create a Chamfer</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Trim and Extend</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/trim-entities/">Trim Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/extend-entities/">Extend Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Offset and Mirror</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/offset-entities/">Offset Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/mirror-entities/">Mirror Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Patterns</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/linear-skech-pattern/">Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-linear-skech-pattern/">Edit Linear Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/circular-skech-pattern/">Circular Sketch Pattern</a></li>
-          
-            <li><a href="/solidworks-macros/edit-circular-skech-pattern/">Edit Circular Sketch Pattern</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Move and Rotate</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/move-copy-sketch-entities/">Move/Copy Sketch Entities</a></li>
-          
-            <li><a href="/solidworks-macros/rotate-copy-sketch-entities/">Rotate/Copy Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Relations</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/toggle-display-sketch-relation/">Toggle (Hide/Show) Sketch Relations</a></li>
-          
-            <li><a href="/solidworks-macros/add-sketch-relations/">Add Sketch Relations (Constraints)</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Dimensions</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/add-dimension-methods/">Add dimension to Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Extrudes</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-feature/">Extrude Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolved-feature/">Revolved Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-feature/">Sweep Boss/Base Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-lofted-boss-feature/">Lofted Boss/Base Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Cuts</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-extrude-cut-feature/">Extrude Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-revolve-cut-feature/">Revolve Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-sweep-cut-feature/">Sweep Cut Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-loft-cut-feature/">Lofted Cut Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Holes and Threads</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-hole-from-hole-wizard/">Holes from Hole Wizard</a></li>
-          
-            <li><a href="/solidworks-macros/create-threads/">Threads</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Fillet & Chamfer</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-fillet/">Fillet Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-chamfer/">Chamfer Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Mirror & Patterns</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/create-mirror/">Mirror Feature</a></li>
-          
-            <li><a href="/solidworks-macros/create-linear-patterns/">Linear Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-circular-patterns/">Circular Pattern Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-sketch-driven-pattern/">Sketch Driven Pattern Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Features - Transformation</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-rib/">Rib Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-draft/">Draft Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-shell/">Shell Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-wrap/">Wrap Feature</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-scale/">Scale Feature</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Reference Geometry</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-plane/">Reference Plane</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-axis/">Reference Axis</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-coordinate/">Reference Co-Ordinate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/create-reference-point/">Reference Point</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - General</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-component/">Insert Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unfix-component/">Unfix Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Standard Mates</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-conicident-mate/">Add Coincident Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-parallel-mate/">Add Parallel Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-perpendicular-mate/">Add Perpendicular Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-tangent-mate/">Add Tangent Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-concentric-mate/">Add Concentric Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-distance-mate/">Add Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-angle-mate/">Add Angle Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Advanced Mates</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-width-mate/">Add Width Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-symmetric-mate/">Add Symmetric Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Editing Mates</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-rename-mate/">Rename Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-edit-distance-mate/">Edit Distance Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/">Toggle Mate Alignment</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-delete-mate/">Delete Mate</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Components</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-part/">Insert Virtual Part</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/">Insert Virtual Assembly</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-copy-with-mate/">Copy With Mate</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-hide-component/">Hide Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-show-component/">Show Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-suppress-component/">Suppress Selected Component</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-unsuppress-component/">Unsuppress Selected Component</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Assembly - Misc</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/assembly-insert-folder/">Insert Folder</a></li>
-          
-            <li><a href="/solidworks-vba-macros/assembly-traverse-sequentially/">Traverse Components Sequentially</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Insert Views</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-1stangle-standard3views/">Standard 3 View [1st Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/">Standard 3 View [3rd Angle]</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-modelview/">Insert Model View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-projectionview/">Insert Projection View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-auxilaryview/">Insert Auxilary View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-sectionview/">Insert Section View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-detailview/">Insert Detail View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-brokenout-view/">Insert Broken-out View</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-crop-view/">Insert Crop View</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - View Position and Boundary</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-position/">Get View Position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/">Get View Outer Boundary</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Get Views and Views Count</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/">First/Next View In Current Sheet</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/">Get Total View count in Drawing</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/">Loop All Sheets & Views in Drawing</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Drawing - Break Views</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-vba-macros/drawing-insert-break-view/">Insert Break view</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-position/">Update Break line position</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-gap/">Update Break Line Gap</a></li>
-          
-            <li><a href="/solidworks-vba-macros/drawing-update-breakline-type/">Update Break Line Type</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch - Others</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-macros/convert-to-construction-sketch-segment/">Convert to Construction Sketch</a></li>
-          
-            <li><a href="/solidworks-macros/split-sketch-segments/">Split Open/Closed Sketch Entities</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-    
-  
   </div>
 
+  <nav class="main-nav" id="main-nav">
+    
+      
+        <a href="/knowledge-base/introduction/" class="nav-link ">
+          Knowledge Base
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            General Programming
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/wpf-tutorials/syncfusion-account-signup/" >
+                WPF Tutorials
+              </a>
+            
+              <a href="/knowledge-base/wix4-introduction/" >
+                Wix4 Tutorials
+              </a>
+            
+              <a href="/vba/vba-Introduction/" >
+                VBA
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/inventor-macro/export-to-pdf/" class="nav-link ">
+          Inventor Macro
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            Solidworks
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/Solidworks-macro-guide/" >
+                Solidworks VBA Macro
+              </a>
+            
+              <a href="/Solidworks-csharp-api-tutorials/" >
+                Solidworks C# API
+              </a>
+            
+              <a href="/Solidworks-cpp-api-tutorials/" >
+                Solidworks C++ API
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/resources/" class="nav-link ">
+          Resources
+        </a>
+      
+    
+      
+        <a href="/aboutMe/" class="nav-link ">
+          About
+        </a>
+      
+    
+  </nav>
+
+  <div class="header-actions">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search docs..." aria-label="Search documentation">
+      <div id="search-results" aria-live="polite"></div>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="ms-icon" aria-hidden="true">&#xE706;</span>
+    </button>
+  </div>
 </div>
-      <div class="col-md-9 col-lg-10 col-sm-8">
-        <div>
-          <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Solidworks Macro - Create a Straight Slot">
-    
-    <meta itemprop="description" content="In this post, I tell you about how to create a Straight Slot through Solidworks VBA Macros in a sketch.">
-    
-    
-    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
-    
-
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Solidworks Macro - Create a Straight Slot
-</h1>
-        
-
-  <p class="page__meta">
-    
+    </header>
 
     
-
-    
-      
+    <!-- <div class="top-breadcrumbs">
       
 
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          7 minute read
-        
-      </span>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  
     
-  </p>
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-macros">Solidworks macros</a>
+    
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-macros/create-straight-slot">Create straight slot</a>
+    
+  
+</nav>
 
+    </div> -->
 
-      </header>
+    
+    
+    
+
+    <div class="container-toc-only">
+
       
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#video-of-code-on-youtube">Video of Code on YouTube</a></li><li><a href="#code-sample">Code Sample</a></li><li><a href="#understanding-the-code">Understanding the Code</a><ul><li><a href="#note">NOTE</a></li></ul></li></ul>
+      <main class="content-with-toc">
+        <div class="docs-page">
+  <div class="docs-inner container">
+    <!-- Left Sidebar Navigation -->
+    
+    
+      <aside class="docs-subnav">
+        <div class="docs-subnav-inner">
+          
+            <h3 class="docs-subnav-title">General - Solidworks Functions</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/Solidworks-macro-guide/"
+                     class="">
+                    Introduction
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/open-new-document/"
+                     class="">
+                    Open new Part document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/open-assembly-and-drawing/"
+                     class="">
+                    Open Assembly and Drawing document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/select-plane-from-tree/"
+                     class="">
+                    Selection Methods
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/open-saved-document/"
+                     class="">
+                    Open Saved Documents
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/unit-correction/"
+                     class="">
+                    Fix Unit Issue
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Lines</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/sketch-create-line/"
+                     class="">
+                    Create Line
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/sketch-create-centerline/"
+                     class="">
+                    Create CenterLine
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Rectangles</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-corner-rectangle/"
+                     class="">
+                    Create Corner Rectangle
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-center-rectangle/"
+                     class="">
+                    Create Center Rectangle
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-3point-corner-rectangle/"
+                     class="">
+                    Create 3-Point Corner Rectangle
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-3point-center-rectangle/"
+                     class="">
+                    Create 3-Point Center Rectangle
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-parallelogram/"
+                     class="">
+                    Create A Parallelogram
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Circles</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-circle/"
+                     class="">
+                    Create Circle
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-circle-by-radius/"
+                     class="">
+                    Create Circle By Radius
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-perimeter-circle/"
+                     class="">
+                    Create Perimeter Circle
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Arcs</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-centerpoint-arc/"
+                     class="">
+                    Create Centerpoint Arc
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-tangent-arc/"
+                     class="">
+                    Create Tangent Arc
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-3point-arc/"
+                     class="">
+                    Create 3-Point Arc
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/polygon/"
+                     class="">
+                    Create Polygon
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Slots</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-straight-slot/"
+                     class="active">
+                    Create a Straight Slot
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-centerpoint-straight-slot/"
+                     class="">
+                    Create a Centerpoint Straight Slot
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-3point-arc-slot/"
+                     class="">
+                    Create a 3-Point Arc Slot
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-centerpoint-arc-slot/"
+                     class="">
+                    Create a Centerpoint Arc Slot
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Point and Spline</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-point/"
+                     class="">
+                    Create a Point
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-spline/"
+                     class="">
+                    Create a Spline
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Fillet and Chamfer</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-sketch-fillet/"
+                     class="">
+                    Create a Fillet
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-sketch-chamfer/"
+                     class="">
+                    Create a Chamfer
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Trim and Extend</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/trim-entities/"
+                     class="">
+                    Trim Sketch Entities
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/extend-entities/"
+                     class="">
+                    Extend Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Offset and Mirror</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/offset-entities/"
+                     class="">
+                    Offset Sketch Entities
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/mirror-entities/"
+                     class="">
+                    Mirror Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Offset and Mirror</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/offset-entities/"
+                     class="">
+                    Offset Sketch Entities
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/mirror-entities/"
+                     class="">
+                    Mirror Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Patterns</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/linear-skech-pattern/"
+                     class="">
+                    Linear Sketch Pattern
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/edit-linear-skech-pattern/"
+                     class="">
+                    Edit Linear Sketch Pattern
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/circular-skech-pattern/"
+                     class="">
+                    Circular Sketch Pattern
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/edit-circular-skech-pattern/"
+                     class="">
+                    Edit Circular Sketch Pattern
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Move and Rotate</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/move-copy-sketch-entities/"
+                     class="">
+                    Move/Copy Sketch Entities
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/rotate-copy-sketch-entities/"
+                     class="">
+                    Rotate/Copy Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Relations</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/toggle-display-sketch-relation/"
+                     class="">
+                    Toggle (Hide/Show) Sketch Relations
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/add-sketch-relations/"
+                     class="">
+                    Add Sketch Relations (Constraints)
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Dimensions</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/add-dimension-methods/"
+                     class="">
+                    Add dimension to Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Extrudes</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-extrude-feature/"
+                     class="">
+                    Extrude Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-revolved-feature/"
+                     class="">
+                    Revolved Boss/Base Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-sweep-feature/"
+                     class="">
+                    Sweep Boss/Base Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-lofted-boss-feature/"
+                     class="">
+                    Lofted Boss/Base Feature
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Cuts</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-extrude-cut-feature/"
+                     class="">
+                    Extrude Cut Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-revolve-cut-feature/"
+                     class="">
+                    Revolve Cut Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-sweep-cut-feature/"
+                     class="">
+                    Sweep Cut Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-loft-cut-feature/"
+                     class="">
+                    Lofted Cut Feature
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Holes and Threads</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-hole-from-hole-wizard/"
+                     class="">
+                    Holes from Hole Wizard
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-threads/"
+                     class="">
+                    Threads
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Fillet & Chamfer</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-fillet/"
+                     class="">
+                    Fillet Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-chamfer/"
+                     class="">
+                    Chamfer Feature
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Mirror & Patterns</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/create-mirror/"
+                     class="">
+                    Mirror Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/create-linear-patterns/"
+                     class="">
+                    Linear Pattern Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-circular-patterns/"
+                     class="">
+                    Circular Pattern Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-sketch-driven-pattern/"
+                     class="">
+                    Sketch Driven Pattern Feature
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Features - Transformation</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-rib/"
+                     class="">
+                    Rib Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-draft/"
+                     class="">
+                    Draft Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-shell/"
+                     class="">
+                    Shell Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-wrap/"
+                     class="">
+                    Wrap Feature
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-scale/"
+                     class="">
+                    Scale Feature
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Reference Geometry</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-reference-plane/"
+                     class="">
+                    Reference Plane
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-reference-axis/"
+                     class="">
+                    Reference Axis
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-reference-coordinate/"
+                     class="">
+                    Reference Co-Ordinate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/create-reference-point/"
+                     class="">
+                    Reference Point
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - General</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-insert-component/"
+                     class="">
+                    Insert Component
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-unfix-component/"
+                     class="">
+                    Unfix Component
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - Standard Mates</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-conicident-mate/"
+                     class="">
+                    Add Coincident Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-parallel-mate/"
+                     class="">
+                    Add Parallel Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-perpendicular-mate/"
+                     class="">
+                    Add Perpendicular Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-tangent-mate/"
+                     class="">
+                    Add Tangent Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-concentric-mate/"
+                     class="">
+                    Add Concentric Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-distance-mate/"
+                     class="">
+                    Add Distance Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-angle-mate/"
+                     class="">
+                    Add Angle Mate
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - Advanced Mates</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-width-mate/"
+                     class="">
+                    Add Width Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-symmetric-mate/"
+                     class="">
+                    Add Symmetric Mate
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - Editing Mates</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-rename-mate/"
+                     class="">
+                    Rename Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-edit-distance-mate/"
+                     class="">
+                    Edit Distance Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-toggle-mate-alignment/"
+                     class="">
+                    Toggle Mate Alignment
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-delete-mate/"
+                     class="">
+                    Delete Mate
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - Components</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-insert-virtual-part/"
+                     class="">
+                    Insert Virtual Part
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-insert-virtual-assembly/"
+                     class="">
+                    Insert Virtual Assembly
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-copy-with-mate/"
+                     class="">
+                    Copy With Mate
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-hide-component/"
+                     class="">
+                    Hide Selected Component
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-show-component/"
+                     class="">
+                    Show Selected Component
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-suppress-component/"
+                     class="">
+                    Suppress Selected Component
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-unsuppress-component/"
+                     class="">
+                    Unsuppress Selected Component
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Assembly - Misc</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-insert-folder/"
+                     class="">
+                    Insert Folder
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/assembly-traverse-sequentially/"
+                     class="">
+                    Traverse Components Sequentially
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Drawing - Insert Views</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-1stangle-standard3views/"
+                     class="">
+                    Standard 3 View [1st Angle]
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-3rdangle-standard3views/"
+                     class="">
+                    Standard 3 View [3rd Angle]
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-modelview/"
+                     class="">
+                    Insert Model View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-projectionview/"
+                     class="">
+                    Insert Projection View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-auxilaryview/"
+                     class="">
+                    Insert Auxilary View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-sectionview/"
+                     class="">
+                    Insert Section View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-detailview/"
+                     class="">
+                    Insert Detail View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-brokenout-view/"
+                     class="">
+                    Insert Broken-out View
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-crop-view/"
+                     class="">
+                    Insert Crop View
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Drawing - View Position and Boundary</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-get-view-position/"
+                     class="">
+                    Get View Position
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-get-view-outer-boundary/"
+                     class="">
+                    Get View Outer Boundary
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Drawing - Get Views and Views Count</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-first-view-in-current-sheet/"
+                     class="">
+                    First/Next View In Current Sheet
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-get-total-view-count-in-drawing/"
+                     class="">
+                    Get Total View count in Drawing
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-loop-all-views-in-drawing/"
+                     class="">
+                    Loop All Sheets & Views in Drawing
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Drawing - Break Views</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-insert-break-view/"
+                     class="">
+                    Insert Break view
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-update-breakline-position/"
+                     class="">
+                    Update Break line position
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-update-breakline-gap/"
+                     class="">
+                    Update Break Line Gap
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-vba-macros/drawing-update-breakline-type/"
+                     class="">
+                    Update Break Line Type
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch - Others</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-macros/convert-to-construction-sketch-segment/"
+                     class="">
+                    Convert to Construction Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-macros/split-sketch-segments/"
+                     class="">
+                    Split Open/Closed Sketch Entities
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </div>
+      </aside>
+    
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <p>In this post, I tell you about <em>how to create a Straight Slot through Solidworks VBA Macros</em> in a sketch.</p>
+    <!-- Main Content Area -->
+    <article class="docs-article">
+      <h1 class="docs-title">Solidworks Macro - Create a Straight Slot</h1>
+      <div class="docs-content">
+        <div class="fluent-knowledge-base">
 
-<p>The process is almost identical with previous <strong><a href="/solidworks-macros/create-tangent-arc">Sketch - Create Tangent Arc</a></strong> post.</p>
+  <p>In this post, I tell you about <em>how to create a Straight Slot through Solidworks VBA Macros</em> in a sketch.</p>
 
-<p>In this post, I tell you about <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">SketchManager</code> object.</p>
+  <p>The process is almost identical with previous <a href="/solidworks-macros/create-tangent-arc/" target="_blank" rel="noopener" class="">
+  <strong>Sketch - Create Tangent Arc</strong>
+</a>
+ post.</p>
 
-<p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
+  <p>In this post, I tell you about <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method from <strong>Solidworks</strong> <code class="language-plaintext highlighter-rouge">SketchManager</code> object.</p>
 
-<p>So <strong><em>use this method</em></strong> if you want to create a new <strong>Straight Slot</strong>.</p>
+  <p>This method is <strong><em>most updated</em></strong> method, I found in <em>Solidworks API Help</em>.</p>
 
-<hr />
+  <p>So <strong><em>use this method</em></strong> if you want to create a new <strong>Straight Slot</strong>.</p>
 
-<h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
+  <hr />
 
-<p>Please see below video on <strong>how to create a Straight Slot</strong> from Solidworks VBA Macros.</p>
+  <h2 id="video-of-code-on-youtube">Video of Code on YouTube</h2>
 
-<iframe src="https://www.youtube.com/embed/6jniXQ-UT4U" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+  <p>Please see below video on <strong>how to create a Straight Slot</strong> from Solidworks VBA Macros.</p>
 
-<p>Please note that there are <strong>no explaination</strong> in the video.</p>
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/6jniXQ-UT4U" frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <p class="fluent-video-caption">
+      How to create Straight Slot
+    </p>
+  </div>
+</div>
 
-<p><strong>Explaination</strong> of each line and why we write code this way is given in this post.</p>
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">Important</div>
+  </div>
+  <div class="callout-body">
+    
+<p>Please note that there are <strong>no explanations</strong> in the video.<br />
+<strong>Explanation</strong> of each step and why we write the code this way is provided in this post.</p>
 
-<hr />
 
-<h2 id="code-sample">Code Sample</h2>
+  </div>
+</div>
 
-<p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>a Straight Slot</em>.</p>
+  <hr />
 
+  <h2 id="code-sample">Code Sample</h2>
+
+  <p>Below is the <code class="language-plaintext highlighter-rouge">code</code> sample for creating <em>a Straight Slot</em>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 
 <span class="c1">' Creating variable for Solidworks application</span>
@@ -976,65 +1286,158 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div></div>
 
-<hr />
 
-<h2 id="understanding-the-code">Understanding the Code</h2>
+  </div>
+</div>
 
-<p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
+  <script></script>
 
+  <hr />
+
+  <h2 id="understanding-the-code">Understanding the Code</h2>
+
+  <p>Now let us walk through <em>each line</em> in the above code, and <strong>understand</strong> the meaning of every line.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Option</span> <span class="n">Explicit</span>
 </code></pre></div></div>
 
-<p>This line forces us to define every variable we are going to use.</p>
 
-<p>For more information please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+  </div>
+</div>
 
+  <script></script>
+
+  <p>This line forces us to define every variable we are going to use.</p>
+
+  <p>For more information please visit <a href="/solidworks-macros/open-new-document/" target="_blank" rel="noopener" class="">
+  <strong>Solidworks Macros - Open new Part document</strong>
+</a>
+ post.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks application</span>
 <span class="k">Dim</span> <span class="nv">swApp</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
 
-<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
 
+  </div>
+</div>
+
+  <script></script>
+
+  <p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swApp</code> and the type of this <code class="language-plaintext highlighter-rouge">swApp</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks document</span>
 <span class="k">Dim</span> <span class="nv">swDoc</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span>
 </code></pre></div></div>
 
-<p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
 
-<p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure named as <code class="language-plaintext highlighter-rouge">main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+  </div>
+</div>
 
+  <script></script>
+
+  <p>In this line, we are creating a variable which we named as <code class="language-plaintext highlighter-rouge">swDoc</code> and the type of this <code class="language-plaintext highlighter-rouge">swDoc</code> variable is <code class="language-plaintext highlighter-rouge">SldWorks.ModelDoc2</code>.</p>
+
+  <p>Next is our <code class="language-plaintext highlighter-rouge">Sub</code> procedure named as <code class="language-plaintext highlighter-rouge">main</code>. This procedure hold all the <em>statements (instructions)</em> we give to computer.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks variable to Solidworks application</span>
 <span class="k">Set</span> <span class="n">swApp</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">SldWorks</span>
 </code></pre></div></div>
 
-<p>In this line, we are setting the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code> which we defined earlier to Solidworks application.</p>
 
+  </div>
+</div>
+
+  <script></script>
+
+  <p>In this line, we are setting the value of our Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code> which we defined earlier to Solidworks application.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating string type variable for storing default part location</span>
 <span class="k">Dim</span> <span class="nv">defaultTemplate</span> <span class="ow">As</span> <span class="kt">String</span>
 <span class="c1">' Setting value of this string type variable to "Default part template"</span>
 <span class="n">defaultTemplate</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">GetUserPreferenceStringValue</span><span class="p">(</span><span class="n">swUserPreferenceStringValue_e</span><span class="p">.</span><span class="n">swDefaultTemplatePart</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>In 1st statement of above example, we are defining a variable of <code class="language-plaintext highlighter-rouge">string</code> type and named it as <code class="language-plaintext highlighter-rouge">defaultTemplate</code>.</p>
 
-<p>This variable <code class="language-plaintext highlighter-rouge">defaultTemplate</code>, holds the location the location of <strong>Default Part Template</strong>.</p>
+  </div>
+</div>
 
-<p>In 2nd line of above example. we assign value to our newly define <code class="language-plaintext highlighter-rouge">defaultTemplate</code> variable.</p>
+  <script></script>
 
-<p>We assign the value by using a <em>Method</em> named <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code>.</p>
+  <p>In 1st statement of above example, we are defining a variable of <code class="language-plaintext highlighter-rouge">string</code> type and named it as <code class="language-plaintext highlighter-rouge">defaultTemplate</code>.</p>
 
-<p>This method is a part of our main Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>.</p>
+  <p>This variable <code class="language-plaintext highlighter-rouge">defaultTemplate</code>, holds the location the location of <strong>Default Part Template</strong>.</p>
 
+  <p>In 2nd line of above example. we assign value to our newly define <code class="language-plaintext highlighter-rouge">defaultTemplate</code> variable.</p>
+
+  <p>We assign the value by using a <em>Method</em> named <code class="language-plaintext highlighter-rouge">GetUserPreferenceStringValue()</code>.</p>
+
+  <p>This method is a part of our main Solidworks variable <code class="language-plaintext highlighter-rouge">swApp</code>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Solidworks document to new part document</span>
 <span class="k">Set</span> <span class="n">swDoc</span> <span class="o">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">defaultTemplate</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>In this line, we set the value of our <code class="language-plaintext highlighter-rouge">swDoc</code> variable to new document.</p>
 
-<p>For <strong>more detailed information</strong> about above lines please visit <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post.</p>
+  </div>
+</div>
 
-<p>I have discussed them <strong>thoroghly</strong> in <strong><a href="/solidworks-macros/open-new-document">Solidworks Macros - Open new Part document</a></strong> post, so do checkout this post if you don’t understand above code.</p>
+  <script></script>
 
+  <p>In this line, we set the value of our <code class="language-plaintext highlighter-rouge">swDoc</code> variable to new document.</p>
+
+  <p>For <strong>more detailed information</strong> about above lines please visit <a href="/solidworks-macros/open-new-document/" target="_blank" rel="noopener" class="">
+  <strong>Solidworks Macros - Open new Part document</strong>
+</a>
+ post.</p>
+
+  <p>I have discussed them <strong>thoroghly</strong> in <a href="/solidworks-macros/open-new-document/" target="_blank" rel="noopener" class="">
+  <strong>Solidworks Macros - Open new Part document</strong>
+</a>
+ post, so do checkout this post if you don’t understand above code.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Boolean Variable</span>
 <span class="k">Dim</span> <span class="nv">BoolStatus</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 
@@ -1042,38 +1445,94 @@
 <span class="n">BoolStatus</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">SelectByID2</span><span class="p">(</span><span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"PLANE"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">Nothing</span><span class="p">,</span> <span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>In 1st line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object.</p>
 
-<p>In next line, we select the <em>front plane</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+  </div>
+</div>
 
-<p>For more information about selection method please visit <strong><a href="/solidworks-macros/select-plane-from-tree">Solidworks Macros - Selection Methods</a></strong> post.</p>
+  <script></script>
 
-<p>I have discussed about different <em>Selection methods</em> in details in <strong><a href="/solidworks-macros/select-plane-from-tree">Soldworks Macros - Selection Methods</a></strong> post, so do visit this post for more <em>Selection methods</em>.</p>
+  <p>In 1st line, we create a variable named <code class="language-plaintext highlighter-rouge">BoolStatus</code> as <code class="language-plaintext highlighter-rouge">Boolean</code> object.</p>
 
+  <p>In next line, we select the <em>front plane</em> by using <code class="language-plaintext highlighter-rouge">SelectByID2</code> method from <code class="language-plaintext highlighter-rouge">Extension</code> object.</p>
+
+  <p>For more information about selection method please visit <a href="/solidworks-macros/select-plane-from-tree/" target="_blank" rel="noopener" class="">
+  <strong>Solidworks Macros - Selection Methods</strong>
+</a>
+ post.</p>
+
+  <p>I have discussed about different <em>Selection methods</em> in details in <a href="/solidworks-macros/select-plane-from-tree/" target="_blank" rel="noopener" class="">
+  <strong>Soldworks Macros - Selection Methods</strong>
+</a>
+ post, so do visit this post for more <em>Selection methods</em>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating variable for Solidworks Sketch Manager</span>
 <span class="k">Dim</span> <span class="nv">swSketchManager</span> <span class="ow">As</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SketchManager</span>
 </code></pre></div></div>
 
-<p>In above line, we create variable <code class="language-plaintext highlighter-rouge">swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
 
-<p>As the name suggested, a <strong>Sketch Manager</strong> holds variours methods and properties to manage <em>Sketches</em>.</p>
+  </div>
+</div>
 
-<p>To see methods and properties related to SketchManager object, please visit <strong><a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html">this page of Solidworks API Help</a></strong></p>
+  <script></script>
 
+  <p>In above line, we create variable <code class="language-plaintext highlighter-rouge">swSketchManager</code> for <strong>Solidworks Sketch Manager</strong>.</p>
+
+  <p>As the name suggested, a <strong>Sketch Manager</strong> holds variours methods and properties to manage <em>Sketches</em>.</p>
+
+  <p>To see methods and properties related to SketchManager object, please visit <a href="https://help.solidworks.com/2017/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchManager_members.html" target="_blank" rel="noopener" class="">
+  <strong>this page of Solidworks API Help</strong>
+</a></p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Setting Sketch manager for our sketch</span>
 <span class="k">Set</span> <span class="n">swSketchManager</span> <span class="o">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">SketchManager</span>
 </code></pre></div></div>
 
-<p>In above line, we set the <strong>Sketch manager</strong> variable to current document’s sketch manager.</p>
 
+  </div>
+</div>
+
+  <script></script>
+
+  <p>In above line, we set the <strong>Sketch manager</strong> variable to current document’s sketch manager.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Inserting a sketch into selected plane</span>
 <span class="n">swSketchManager</span><span class="p">.</span><span class="n">InsertSketch</span> <span class="k">True</span>
 </code></pre></div></div>
 
-<p>In above line, we use <code class="language-plaintext highlighter-rouge">InsertSketch</code> method of <em>SketchManager</em> and give <code class="language-plaintext highlighter-rouge">True</code> value.</p>
 
-<p>This method allows us to insert a sketch in selected plane.</p>
+  </div>
+</div>
 
+  <script></script>
+
+  <p>In above line, we use <code class="language-plaintext highlighter-rouge">InsertSketch</code> method of <em>SketchManager</em> and give <code class="language-plaintext highlighter-rouge">True</code> value.</p>
+
+  <p>This method allows us to insert a sketch in selected plane.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Creating Variable for Solidworks Slot</span>
 <span class="k">Dim</span> <span class="nv">mySketchSlot</span> <span class="ow">As</span> <span class="n">SketchSlot</span>
       
@@ -1081,142 +1540,161 @@
 <span class="k">Set</span> <span class="n">mySketchSlot</span> <span class="o">=</span> <span class="n">swSketchManager</span><span class="p">.</span><span class="n">CreateSketchSlot</span><span class="p">(</span><span class="n">swSketchSlotCreationType_e</span><span class="p">.</span><span class="n">swSketchSlotCreationType_line</span><span class="p">,</span> <span class="n">swSketchSlotLengthType_e</span><span class="p">.</span><span class="n">swSketchSlotLengthType_CenterCenter</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>In above sample code, we 1st create a variable named <code class="language-plaintext highlighter-rouge">mySketchSlot</code> of type <code class="language-plaintext highlighter-rouge">SketchSlot</code>.</p>
 
-<p>In 2nd line, we <strong>set</strong> the value of <em>SketchSlot</em> variable <code class="language-plaintext highlighter-rouge">mySketchSlot</code>.</p>
+  </div>
+</div>
 
-<p>We get this value from <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method which is inside the <code class="language-plaintext highlighter-rouge">swSketchManager</code> variable.</p>
+  <script></script>
 
-<p><code class="language-plaintext highlighter-rouge">swSketchManager</code> variable is a type of <strong>SketchManager</strong>, hence we used <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method from <strong>SketchManager</strong>.</p>
+  <p>In above sample code, we 1st create a variable named <code class="language-plaintext highlighter-rouge">mySketchSlot</code> of type <code class="language-plaintext highlighter-rouge">SketchSlot</code>.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method takes following parameters as explained:</p>
+  <p>In 2nd line, we <strong>set</strong> the value of <em>SketchSlot</em> variable <code class="language-plaintext highlighter-rouge">mySketchSlot</code>.</p>
 
-<p><em>SlotCreationType</em> : <em>Type of sketch slot</em> as defined in <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e</code>.</p>
+  <p>We get this value from <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method which is inside the <code class="language-plaintext highlighter-rouge">swSketchManager</code> variable.</p>
 
-<p>There are 4 Different types of Slots we can create.</p>
+  <p><code class="language-plaintext highlighter-rouge">swSketchManager</code> variable is a type of <strong>SketchManager</strong>, hence we used <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method from <strong>SketchManager</strong>.</p>
 
-<ul>
-  <li>
-    <p><strong><em>Straight Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_line</code> or <strong>0</strong></p>
-  </li>
-  <li>
-    <p><strong><em>Centerpoint straight Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_center_line</code> or <strong>1</strong></p>
-  </li>
-  <li>
-    <p><strong><em>Centerpoint arc Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_arc</code> or <strong>2</strong></p>
-  </li>
-  <li>
-    <p><strong><em>3-point arc Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_3pointarc</code> or <strong>4</strong></p>
-  </li>
-</ul>
+  <p>This <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method takes following parameters as explained:</p>
 
-<p><em>SlotLengthType</em> : <em>Type of length of sketch slot</em> as defined in <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e</code>.</p>
+  <p><em>SlotCreationType</em> : <em>Type of sketch slot</em> as defined in <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e</code>.</p>
 
-<p>There are 2 different types of Sketch slot length we can create.</p>
+  <p>There are 4 Different types of Slots we can create.</p>
 
-<ul>
-  <li>
-    <p><strong><em>Center to Center</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter</code> or <strong>0</strong></p>
-  </li>
-  <li>
-    <p><strong><em>Full Length</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_FullLength</code> or <strong>1</strong></p>
-  </li>
-</ul>
+  <ul>
+    <li>
+      <p><strong><em>Straight Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_line</code> or <strong>0</strong></p>
+    </li>
+    <li>
+      <p><strong><em>Centerpoint straight Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_center_line</code> or <strong>1</strong></p>
+    </li>
+    <li>
+      <p><strong><em>Centerpoint arc Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_arc</code> or <strong>2</strong></p>
+    </li>
+    <li>
+      <p><strong><em>3-point arc Slot</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_3pointarc</code> or <strong>4</strong></p>
+    </li>
+  </ul>
 
-<p><em>Width</em> : Width of Slot</p>
+  <p><em>SlotLengthType</em> : <em>Type of length of sketch slot</em> as defined in <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e</code>.</p>
 
-<p><em>X1</em> : X coordinate of the point 1, of the Slot</p>
+  <p>There are 2 different types of Sketch slot length we can create.</p>
 
-<p><em>Y1</em> : Y coordinate of the point 1, of the Slot</p>
+  <ul>
+    <li>
+      <p><strong><em>Center to Center</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter</code> or <strong>0</strong></p>
+    </li>
+    <li>
+      <p><strong><em>Full Length</em></strong> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_FullLength</code> or <strong>1</strong></p>
+    </li>
+  </ul>
 
-<p><em>Z1</em> : Z coordinate of the point 1, of the Slot</p>
+  <p><em>Width</em> : Width of Slot</p>
 
-<p><em>X2</em> : X coordinate of the point 2, of the Slot</p>
+  <p><em>X1</em> : X coordinate of the point 1, of the Slot</p>
 
-<p><em>Y2</em> : Y coordinate of the point 2, of the Slot</p>
+  <p><em>Y1</em> : Y coordinate of the point 1, of the Slot</p>
 
-<p><em>Z2</em> : Z coordinate of the point 2, of the Slot</p>
+  <p><em>Z1</em> : Z coordinate of the point 1, of the Slot</p>
 
-<p><em>X3</em> : X coordinate of the point 3, of the Slot</p>
+  <p><em>X2</em> : X coordinate of the point 2, of the Slot</p>
 
-<p><em>Y3</em> : Y coordinate of the point 3, of the Slot</p>
+  <p><em>Y2</em> : Y coordinate of the point 2, of the Slot</p>
 
-<p><em>Z3</em> : Z coordinate of the point 3, of the Slot</p>
+  <p><em>Z2</em> : Z coordinate of the point 2, of the Slot</p>
 
-<p><em>CenterArcDirection</em> : We need to set the direction eiter Clockwise or Anti-Clockwise/Counterclockwise as follows:</p>
+  <p><em>X3</em> : X coordinate of the point 3, of the Slot</p>
 
-<ul>
-  <li>
-    <p><strong><em>Clockwise (CW)</em></strong> : -1</p>
-  </li>
-  <li>
-    <p><strong><em>Anti-Clockwise/Counterclockwise (CCW)</em></strong> : 1</p>
-  </li>
-</ul>
+  <p><em>Y3</em> : Y coordinate of the point 3, of the Slot</p>
 
-<p><em>AddDimension</em> : <code class="language-plaintext highlighter-rouge">True</code> to automatically add dimensions, <code class="language-plaintext highlighter-rouge">False</code> to not.</p>
+  <p><em>Z3</em> : Z coordinate of the point 3, of the Slot</p>
 
-<p>For <strong>more details</strong> about <em>Slot Parameter</em> you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html">this page of Solidworks API Help</a></strong></p>
+  <p><em>CenterArcDirection</em> : We need to set the direction eiter Clockwise or Anti-Clockwise/Counterclockwise as follows:</p>
 
-<p>For creating a <em>Straight Slot</em>, I used following parameter Values:</p>
+  <ul>
+    <li>
+      <p><strong><em>Clockwise (CW)</em></strong> : -1</p>
+    </li>
+    <li>
+      <p><strong><em>Anti-Clockwise/Counterclockwise (CCW)</em></strong> : 1</p>
+    </li>
+  </ul>
 
-<ul>
-  <li><em>SlotCreationType</em> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_line</code></li>
-</ul>
+  <p><em>AddDimension</em> : <code class="language-plaintext highlighter-rouge">True</code> to automatically add dimensions, <code class="language-plaintext highlighter-rouge">False</code> to not.</p>
 
-<p>Since we want to create a <em>Straight Slot</em> hence I select above value.</p>
+  <p>For <strong>more details</strong> about <em>Slot Parameter</em> you can visit <a href="http://help.solidworks.com/2019/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.isketchmanager~createsketchslot.html" target="_blank" rel="noopener" class="">
+  <strong>this page of Solidworks API Help</strong>
+</a></p>
 
-<ul>
-  <li><em>SlotLengthType</em> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter</code></li>
-</ul>
+  <p>For creating a <em>Straight Slot</em>, I used following parameter Values:</p>
 
-<p>I want length of this Slot from <em>Center to Center</em> hence I select above value.</p>
+  <ul>
+    <li><em>SlotCreationType</em> : <code class="language-plaintext highlighter-rouge">swSketchSlotCreationType_e.swSketchSlotCreationType_line</code></li>
+  </ul>
 
-<ul>
-  <li>
-    <p><em>Width</em> : <strong>1</strong></p>
-  </li>
-  <li>
-    <p><em>X1, Y1, Z1</em> : <code class="language-plaintext highlighter-rouge">0, 0, 0</code></p>
-  </li>
-</ul>
+  <p>Since we want to create a <em>Straight Slot</em> hence I select above value.</p>
 
-<p>For Point 1, I use (0, 0, 0) values, which is <em>origin</em> of Sketch.</p>
+  <ul>
+    <li><em>SlotLengthType</em> : <code class="language-plaintext highlighter-rouge">swSketchSlotLengthType_e.swSketchSlotLengthType_CenterCenter</code></li>
+  </ul>
 
-<ul>
-  <li><em>X2, Y2, Z2</em> : <code class="language-plaintext highlighter-rouge">1, 0, 0</code></li>
-</ul>
+  <p>I want length of this Slot from <em>Center to Center</em> hence I select above value.</p>
 
-<p>For Point 2, I use (1, 0, 0) values, which is which is 1 point distance in X-direction.</p>
+  <ul>
+    <li>
+      <p><em>Width</em> : <strong>1</strong></p>
+    </li>
+    <li>
+      <p><em>X1, Y1, Z1</em> : <code class="language-plaintext highlighter-rouge">0, 0, 0</code></p>
+    </li>
+  </ul>
 
-<ul>
-  <li><em>X3, Y3, Z3</em> : <code class="language-plaintext highlighter-rouge">1, 1, 0</code></li>
-</ul>
+  <p>For Point 1, I use (0, 0, 0) values, which is <em>origin</em> of Sketch.</p>
 
-<p>For Point 2, I use (1, 1, 0) values, which is which is 1 point distance in X-direction and 1 point distance in Y-direction.</p>
+  <ul>
+    <li><em>X2, Y2, Z2</em> : <code class="language-plaintext highlighter-rouge">1, 0, 0</code></li>
+  </ul>
 
-<ul>
-  <li><em>CenterArcDirection</em> : <strong>1</strong></li>
-</ul>
+  <p>For Point 2, I use (1, 0, 0) values, which is which is 1 point distance in X-direction.</p>
 
-<p>I want to create Anti-Clockwise/Counterclockwise Slot.</p>
+  <ul>
+    <li><em>X3, Y3, Z3</em> : <code class="language-plaintext highlighter-rouge">1, 1, 0</code></li>
+  </ul>
 
-<ul>
-  <li><em>AddDimension</em> : <code class="language-plaintext highlighter-rouge">False</code></li>
-</ul>
+  <p>For Point 2, I use (1, 1, 0) values, which is which is 1 point distance in X-direction and 1 point distance in Y-direction.</p>
 
-<p>Below Image described <strong>the Parameters for Straight Slot</strong> in more detail.</p>
+  <ul>
+    <li><em>CenterArcDirection</em> : <strong>1</strong></li>
+  </ul>
 
-<p><img src="/assets/Solidworks_Images/slots/straight-slot-parameters.png" alt="straight-slot-parameters" /></p>
+  <p>I want to create Anti-Clockwise/Counterclockwise Slot.</p>
 
-<p>This <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method returns <em>Sketch Slot</em> interface i.e. <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface.</p>
+  <ul>
+    <li><em>AddDimension</em> : <code class="language-plaintext highlighter-rouge">False</code></li>
+  </ul>
 
-<p>This <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface has various <strong>methods and properties</strong> for <em>a Slot</em>.</p>
+  <p>Below Image described <strong>the Parameters for Straight Slot</strong> in more detail.</p>
 
-<p>For more detail about <strong>methods and properties</strong> of <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface you can visit <strong><a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html">this page of Solidworks API Help</a></strong></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/Solidworks_Images/slots/straight-slot-parameters.png" alt="straight-slot-parameters" class="image-zoomable" loading="lazy" data-zoom-src="/assets/Solidworks_Images/slots/straight-slot-parameters.png" /><figcaption class="image-caption">Figure: Parameters for Straight Slot</figcaption></figure>
 
-<h3 id="note">NOTE</h3>
+  <p>This <code class="language-plaintext highlighter-rouge">CreateSketchSlot</code> method returns <em>Sketch Slot</em> interface i.e. <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface.</p>
 
+  <p>This <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface has various <strong>methods and properties</strong> for <em>a Slot</em>.</p>
+
+  <p>For more detail about <strong>methods and properties</strong> of <code class="language-plaintext highlighter-rouge">ISketchSlot</code> interface you can visit <a href="http://help.solidworks.com/2019/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISketchSlot_members.html" target="_blank" rel="noopener" class="">
+  <strong>this page of Solidworks API Help</strong>
+</a></p>
+
+  <div class="callout callout-note">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE946;</div>
+    <div class="callout-title">
+      NOTE
+    </div>
+  </div>
+
+  <div class="callout-body">
+    
 <p>It is <strong><em>very important</em></strong> to remember that, when you give distance or any other numeric value in <strong>Solidworks API</strong>, Solidworks takes that numeric value in <strong><em>Meter only</em></strong>.</p>
 
 <p><em>Solidworks API</em> does not care about your application’s Unit systems.</p>
@@ -1227,35 +1705,65 @@
 
 <p>Because Solidworks API output the distance in <strong>Meter</strong> only; which is not my requirement.</p>
 
+  </div>
+</div>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' De-select the Slot after creation</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ClearSelection2</span> <span class="k">True</span>
 </code></pre></div></div>
 
-<p>In the this line of code, we de-select the created Straight Slot.</p>
 
-<p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+  </div>
+</div>
 
+  <script></script>
+
+  <p>In the this line of code, we de-select the created Straight Slot.</p>
+
+  <p>For de-selecting, we use <code class="language-plaintext highlighter-rouge">ClearSelection2</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-vb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">' Zoom to fit screen in Solidworks Window</span>
 <span class="n">swDoc</span><span class="p">.</span><span class="n">ViewZoomtofit</span>
 </code></pre></div></div>
 
-<p>In this last line we use <em>zoom to fit</em> command.</p>
 
-<p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
+  </div>
+</div>
 
-<p>Hope this post helps you to <em>create a Straight Slot</em> in Sketches with Solidworks VB Macros.</p>
+  <script></script>
 
-<p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+  <p>In this last line we use <em>zoom to fit</em> command.</p>
 
-<p>Till then, Happy learning!!!</p>
+  <p>For Zoom to fit, we use <code class="language-plaintext highlighter-rouge">ViewZoomtofit</code> method from our Solidworks document variable <code class="language-plaintext highlighter-rouge">swDoc</code>.</p>
 
-<ul>
-  <li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+  <p>Hope this post helps you to <em>create a Straight Slot</em> in Sketches with Solidworks VB Macros.</p>
 
-        </div>
-        
-        <div>
+  <p>For more such tutorials on <strong>Solidworks VBA Macros</strong>, do come to this blog after sometime.</p>
+
+  <p>Till then, Happy learning!!!</p>
+
+  <ul>
+    <li><a href="/download-solidworks-macros/" target="_blank" rel="noopener" class="">
+🎁 Download 5 Free SolidWorks Macros →
+</a></li>
+  </ul>
+
+</div>
+
+      </div>
+      <div>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Top and Bottom placed Ad -->
   <ins class="adsbygoogle"
@@ -1269,161 +1777,174 @@
   </script>
 </div>
 
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
-
-
-      </footer>
-
       
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/polygon/" title="Solidworks Macro - Create Polygon
-">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-macros/create-centerpoint-straight-slot/" title="Solidworks Macro - Create a Centerpoint Straight Slot
-">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
 
-    </div>
-  </article>
 
+
+<div class="docs-navigation">
+  <div class="docs-nav-container">
+    
+    <a href="/solidworks-macros/polygon/" class="docs-nav-prev btn-nav-secondary" title="Previous: Solidworks Macro - Create Polygon">
+      <span class="nav-icon" aria-hidden="true">&larr;</span>
+      <span class="nav-text">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">Solidworks Macro - Create Polygon</span>
+      </span>
+    </a>
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    
+    <a href="/solidworks-macros/create-centerpoint-straight-slot/" class="docs-nav-next btn-nav-primary" title="Next: Solidworks Macro - Create a Centerpoint Straight Slot">
+      <span class="nav-text">
+        <span class="nav-label">Next</span>
+        <span class="nav-title">Solidworks Macro - Create a Centerpoint Strai...</span>
+      </span>
+      <span class="nav-icon" aria-hidden="true">&rarr;</span>
+    </a>
+    
+  </div>
 </div>
 
-          
+
+    </article>
+  </div>
+</div>
+
+      </main>
+
+      
+        <aside class="toc">
+          <div class="toc-inner">
+  <h3>On this page</h3>
+  <ul id="toc-list"></ul>
+</div>
+
+        </aside>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-wave">
+  <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<div class="footer-content">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a href="/" class="footer-brand">
+        <img src="/assets/logo.png" alt="Logo" class="brand-icon">
+        <div class="brand-text">
+          <div class="brand-name">The CAD Coder</div>
+          <div class="brand-tagline">Learn. Code. Automate.</div>
         </div>
-      </div>
-    </div>
-  </div>
+      </a>
 
-  <div id="footer" class="page__footer">
-    <footer>
-      <!-- start custom footer snippets -->
+      <p class="footer-desc">
+        Free SOLIDWORKS API tutorials for mechanical engineers. Master VBA, C#, and C++ automation with practical, beginner-friendly guides.
+      </p>
 
-<!-- end custom footer snippets -->
-      <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
+      <div class="footer-social">
+        <a href="https://facebook.com/thecadcoder" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
-
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-          
-          
-          
-          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-          
-          
-          
-        </ul>
+        <a href="https://linkedin.com/in/prashantbaher" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
       </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-        </ul>
+    </div>
+
+    <div class="footer-col footer-links-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links-list">
+        <li><a href="/knowledge-base/introduction/"><span class="ms-icon" aria-hidden="true">&#xE82D;</span>Knowledge Base</a></li>
+        <li><a href="/Solidworks-macro-guide/"><span class="ms-icon" aria-hidden="true">&#xE713;</span>VBA Macros</a></li>
+        <li><a href="/Solidworks-csharp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE943;</span>C# API</a></li>
+        <li><a href="/Solidworks-cpp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE90F;</span>C++ API</a></li>
+      </ul>
+
+      <h3 class="footer-subheading">Resources</h3>
+      <ul class="footer-links-list">
+        <li><a href="/wpf-tutorials/syncfusion-account-signup/"><span class="ms-icon" aria-hidden="true">&#xE790;</span>WPF Tutorials</a></li>
+        <li><a href="/knowledge-base/wix4-introduction/"><span class="ms-icon" aria-hidden="true">&#xE7B8;</span>WiX Installer</a></li>
+        <li><a href="/resources/"><span class="ms-icon" aria-hidden="true">&#xE80D;</span>Resources</a></li>
+        <li><a href="/aboutMe/"><span class="ms-icon" aria-hidden="true">&#xE77B;</span>About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-newsletter-col">
+      <h3 class="footer-heading">Stay Updated</h3>
+      <p class="newsletter-text">
+        Get notified when new tutorials are published. No spam, unsubscribe anytime.
+      </p>
+
+      <form class="newsletter-form" action="#" method="post">
+        <div class="newsletter-input-wrapper">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+            <span class="ms-icon" aria-hidden="true">&#xE72A;</span>
+          </button>
+        </div>
+      </form>
+
+      <p class="newsletter-privacy">
+        <small><span class="ms-icon" aria-hidden="true">&#xE72E;</span> We respect your privacy. No spam ever.</small>
+      </p>
+
+      <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        Back to Top
+      </button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">
+        &copy; 2026 The CAD Coder. All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
-</footer>
+</div>
+
     </footer>
-  </div>
 
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
-
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-</body>
-
+    
+    <script src="/assets/js/theme.js" defer></script>
+    <script src="/assets/js/toc.js" defer></script>
+    <script src="/assets/js/search.js" defer></script>
+  </body>
 </html>

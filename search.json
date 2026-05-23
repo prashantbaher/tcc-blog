@@ -1,0 +1,144 @@
+[
+  
+  
+    
+      {
+        "id": "0",
+        "title": "📘 Introduction to the Knowledge Base",
+        "url": "/knowledge-base/introduction/",
+        "content": "      📘 Welcome to the CAD Coder Knowledge Base    A curated collection of my technical learnings, experiments, and solutions.As a CAD Engineer turned Automation Developer, I’ve faced many struggles: lack of beginner-friendly material, poor documentation, and scattered knowledge across forums.    This section of the site aims to fix that.      🎯 Purpose of This Knowledge Base      This is not a...",
+        "excerpt": "A structured and evolving hub of tutorials for CAD engineers who want to learn SolidWorks automation and programming."
+      },
+    
+  
+    
+      {
+        "id": "1",
+        "title": "Resources",
+        "url": "/resources/",
+        "content": "      🚀 Tools &amp; Resources I Use (and Recommend)    This is a curated list of the resources that have helped me learn programming and SolidWorks API automation - including books, tutorials, tools, and frameworks.    If you’re just getting started or looking to go deeper, this page can guide your learning path.        👉 Want to know how I learn programming? Check out my About Me page.      📘 ...",
+        "excerpt": "Hand-picked tools, books, and tutorials I used to learn CAD automation, programming, and SolidWorks API."
+      },
+    
+  
+    
+      {
+        "id": "2",
+        "title": "About",
+        "url": "/aboutMe/",
+        "content": "      👋 Hi, I’m Prashant — The CAD Coder          Lead Software Developer | CAD Automation Specialist        I’m a Lead Software Developer in the IT department of a mechanical-engineering company.Before that, I spent 8 years as a SolidWorks design engineer, so I know exactly where real-world CAD workflows bog down.    Since 2019 I’ve been automating those bottlenecks with C#, VBA, WPF, and the ...",
+        "excerpt": "\n"
+      },
+    
+  
+    
+      {
+        "id": "3",
+        "title": "📄 Export All Open Inventor Drawings to PDF – Instantly!",
+        "url": "/inventor-macro/callout/",
+        "content": "      &#xE946;          Why this matters            Important: This supports Markdown and code blocks.Debug.Print \"Hello\"        &#xE7BA;    Before you proceed        Be careful when running this macro—it will modify all open drawings.        &#xEA39;    Data loss warning        Never run this on production files without a backup!’ This deletes all annotations swDoc.ClearSelection2 Truetext    ...",
+        "excerpt": "\n"
+      },
+    
+  
+    
+      {
+        "id": "4",
+        "title": "Disclaimer",
+        "url": "/Disclaimer/",
+        "content": "      📄 Disclaimer        This website — The CAD Coder — is intended for educational purposes only. All tutorials, code samples, and opinions shared here are based on my personal experience as a CAD automation developer.    While I strive to provide accurate and working examples, I do not guarantee that the information will work in every situation or for every user.You are responsible for testi...",
+        "excerpt": "\n"
+      },
+    
+  
+    
+      {
+        "id": "5",
+        "title": "📥 Download Inventor Macros",
+        "url": "/download-inventor-macros/",
+        "content": "      📥 Download Free Inventor Macros    Get instant access to our collection of free Autodesk Inventor VBA macros and automation tools.        What’s Included:          📄 Export All Open Inventor Drawings to PDF – Instantly!      📄 Auto Open Drawing from Inventor Part/Assembly      ✨ Rename Drawing to Match Model in Inventor      🚀 Export 20+ Autodesk Inventor Drawings to PDF in 10 Seconds    ...",
+        "excerpt": "Get free Autodesk Inventor VBA macros and automation tools."
+      },
+    
+  
+    
+      {
+        "id": "6",
+        "title": "📥 Download SolidWorks Macros",
+        "url": "/download-solidworks-macros/",
+        "content": "      📥 Download Free SolidWorks Macros    Get instant access to our collection of free SolidWorks VBA macros and automation tools.        What You’ll Get:          ✅ Ready-to-use VBA macros for SolidWorks automation      ✅ Step-by-step tutorials on how to use each macro      ✅ Regular updates with new macros and tools      ✅ Email support for troubleshooting              📧 No spam, ever. Just ...",
+        "excerpt": "Get free SolidWorks VBA macros and automation tools."
+      },
+    
+  
+    
+      {
+        "id": "7",
+        "title": "🔒 Privacy Policy",
+        "url": "/privacy-policy/",
+        "content": "      🔒 Privacy Policy    Last updated: July 2025        At The CAD Coder, your privacy is important. This policy explains what personal data we collect and how we use it.      👥 Personal Information      We do not collect personal information unless you voluntarily provide it.    This website:          ✅ Does not require registration      ✅ Does not request sensitive information      ℹ️ May lo...",
+        "excerpt": "How The CAD Coder collects, stores, and protects your data."
+      },
+    
+  
+    
+      {
+        "id": "8",
+        "title": "Search",
+        "url": "/seach-document/",
+        "content": "",
+        "excerpt": "\n"
+      },
+    
+  
+    
+      {
+        "id": "9",
+        "title": "📜 Terms of Service",
+        "url": "/terms-of-service/",
+        "content": "      📜 Terms of Service    Last Updated: December 1, 2025        These Terms of Service (“Terms”) constitute a legally binding agreement between you and The CAD Coder concerning your access to and use of the thecadcoder.com website.    By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, you must not use the Site.      1. Agreement to Terms      These Term...",
+        "excerpt": "Legal terms and conditions for using The CAD Coder website."
+      },
+    
+  
+    
+      {
+        "id": "10",
+        "title": "Page Not Found",
+        "url": "/404.html",
+        "content": "                404      🔍                  Page Not Found              The page you're looking for doesn't exist or has been moved.                                          🏠          Go to Home                                📚          Knowledge Base Introduction                                You might be looking for:                                    ⚙️            SolidWorks VBA           ...",
+        "excerpt": "\n  \n    \n    \n      404\n      🔍\n    \n\n    \n    \n      Page Not Found\n      \n        The page you're looking for doesn..."
+      },
+    
+  
+    
+      {
+        "id": "11",
+        "title": "The CAD Coder",
+        "url": "/",
+        "content": "",
+        "excerpt": "\n"
+      },
+    
+  
+    
+      {
+        "id": "12",
+        "title": null,
+        "url": "/search.json",
+        "content": "[  {% assign pages = site.docs | concat: site.pages %}  {% for page in pages %}    {% if page.search != false and page.url %}      {        \"id\": \"{{ forloop.index0 }}\",        \"title\": {{ page.title | jsonify }},        \"url\": \"{{ page.url | relative_url }}\",        \"content\": {{ page.content | strip_html | strip_newlines | truncate: 400 | jsonify }},        \"excerpt\": {{ page.excerpt | defaul...",
+        "excerpt": "[\n  {% assign pages = site.docs | concat: site.pages %}\n  {% for page in pages %}\n    {% if page.search != false and ..."
+      },
+    
+  
+    
+      {
+        "id": "13",
+        "title": null,
+        "url": "/assets/css/style.css",
+        "content": "/* The CAD Coder - Main Stylesheet */// Import all partials in order@import 'variables';@import 'base';@import 'header';@import 'navigation';@import 'breadcrumbs';@import 'layout';@import 'sidebar';@import 'toc';@import 'content';@import 'footer';@import 'buttons';@import 'home';@import '404';@import 'responsive';@import 'fluent-pages';@import 'side-nav';@import 'callouts';@import 'details';@im...",
+        "excerpt": "/* The CAD Coder - Main Stylesheet */\n\n// Import all partials in order\n@import 'variables';\n@import 'base';\n@import '..."
+      }
+    
+  
+]

@@ -1,0 +1,39 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme toggle
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  const stored = localStorage.getItem("jekyll-doks-theme");
+  if (stored) {
+    root.setAttribute("data-theme", stored);
+    if (toggle) toggle.textContent = stored === "dark" ? "☀️" : "🌙";
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") || "light";
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("jekyll-doks-theme", next);
+      toggle.textContent = next === "dark" ? "☀️" : "🌙";
+    });
+  }
+
+  // Collapsible sidebar sections
+  document.querySelectorAll(".sidebar-section").forEach(section => {
+    const button = section.querySelector(".section-toggle");
+    const list = section.querySelector(".section-links");
+    if (!button || !list) return;
+
+    // Start expanded if active link inside
+    if (list.querySelector("a.active")) {
+      list.style.display = "block";
+    } else {
+      list.style.display = "none";
+    }
+
+    button.addEventListener("click", () => {
+      const visible = list.style.display !== "none";
+      list.style.display = visible ? "none" : "block";
+    });
+  });
+});

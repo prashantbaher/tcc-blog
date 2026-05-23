@@ -1,0 +1,21 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const headings = document.querySelectorAll(".docs-article h2, .docs-article h3");
+  const toc = document.getElementById("toc-list");
+  if (!toc) return;
+
+  headings.forEach(h => {
+    const level = h.tagName === "H2" ? 2 : 3;
+    const id = h.id || h.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+    h.id = id;
+
+    const li = document.createElement("li");
+    li.style.marginLeft = level === 3 ? "0.8rem" : "0";
+
+    const a = document.createElement("a");
+    a.href = `#${id}`;
+    a.textContent = h.textContent;
+
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+});

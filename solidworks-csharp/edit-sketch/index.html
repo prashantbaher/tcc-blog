@@ -1,429 +1,477 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Edit Solidworks Sketch - The CAD Coder</title>
-<meta name="description" content="Objective">
+<!-- Page Title -->
+<title>SOLIDWORKS C# API - Edit Solidworks Sketch | The CAD Coder</title>
+
+<!-- Meta Description -->
+
+  <meta name="description" content="">
 
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/edit-sketch/">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/logo.png">
+
+<!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
 <meta property="og:title" content="SOLIDWORKS C# API - Edit Solidworks Sketch">
-<meta property="og:url" content="http://localhost:4000/solidworks-csharp/edit-sketch/">
+<meta property="og:description" content="
+">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/edit-sketch/">
+<meta property="og:site_name" content="The CAD Coder">
+
+  <meta property="og:image" content="https://thecadcoder.com/assets/logo.png">
 
 
-  <meta property="og:description" content="Objective">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOLIDWORKS C# API - Edit Solidworks Sketch">
+<meta name="twitter:description" content="
+">
 
 
+<!-- RSS Feed -->
+
+  <link rel="alternate" type="application/rss+xml" title="The CAD Coder" href="/feed.xml">
 
 
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Lunr.js for Search (CDN) -->
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" defer></script>
+
+<!-- Google Analytics (optional - uncomment and add your tracking ID) -->
 
 
+<!-- Preconnect for Performance (optional but recommended) -->
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
 
-  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
-
-
-
-
-
-
-<link rel="canonical" href="http://localhost:4000/solidworks-csharp/edit-sketch/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<!-- MailerLite Universal -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
 </script>
+<!-- End MailerLite Universal -->
 
-<!-- end _includes/seo.html -->
+<script src="/assets/js/tabs.js" defer></script>
+<script src="/assets/js/image-zoom.js" defer></script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/code-line-numbers.js" defer></script>
 
-  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
-
-  
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-          .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '1644816');
-  </script>
-  <!-- End MailerLite Universal -->
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt="The CAD Coder Logo" class="logo-icon">
+      <span class="logo-text">The CAD Coder</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span class="ms-icon" aria-hidden="true">&#xE700;</span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
-            <i class="fas fa-search"></i>
-        </a> -->
-    </div>
-</nav>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
-
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
-          
-            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
-          
-            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
-          
-            <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Segment</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-sketch/" class="active">Edit Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
-          
-            <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Lines</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
-          
-            <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
-          
-            <li><a href="/solidworks-csharp/test-createLine-method/">Test Create Line Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-applyunitconversion-method/">Test ApplyUnitConversion Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-SelectSketchPlane-method/">Test SelectSketchPlane Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-CreatePartDocument-method/">Test CreatePartDocument Method</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Others</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/update-dimension-state/">Update Dimension State</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-    
-  
   </div>
 
+  <nav class="main-nav" id="main-nav">
+    
+      
+        <a href="/knowledge-base/introduction/" class="nav-link ">
+          Knowledge Base
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            General Programming
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/wpf-tutorials/syncfusion-account-signup/" >
+                WPF Tutorials
+              </a>
+            
+              <a href="/knowledge-base/wix4-introduction/" >
+                Wix4 Tutorials
+              </a>
+            
+              <a href="/vba/vba-Introduction/" >
+                VBA
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/inventor-macro/export-to-pdf/" class="nav-link ">
+          Inventor Macro
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            Solidworks
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/Solidworks-macro-guide/" >
+                Solidworks VBA Macro
+              </a>
+            
+              <a href="/Solidworks-csharp-api-tutorials/" >
+                Solidworks C# API
+              </a>
+            
+              <a href="/Solidworks-cpp-api-tutorials/" >
+                Solidworks C++ API
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/resources/" class="nav-link ">
+          Resources
+        </a>
+      
+    
+      
+        <a href="/aboutMe/" class="nav-link ">
+          About
+        </a>
+      
+    
+  </nav>
+
+  <div class="header-actions">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search docs..." aria-label="Search documentation">
+      <div id="search-results" aria-live="polite"></div>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="ms-icon" aria-hidden="true">&#xE706;</span>
+    </button>
+  </div>
 </div>
-      <div class="col-md-9 col-lg-10 col-sm-8">
-        <div>
-          <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="SOLIDWORKS C# API - Edit Solidworks Sketch">
-    
-    <meta itemprop="description" content="Objective">
-    
-    
-    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
-    
-
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Edit Solidworks Sketch
-</h1>
-        
-
-  <p class="page__meta">
-    
+    </header>
 
     
-
-    
-      
+    <!-- <div class="top-breadcrumbs">
       
 
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  
     
-  </p>
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-csharp">Solidworks csharp</a>
+    
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-csharp/edit-sketch">Edit sketch</a>
+    
+  
+</nav>
 
+    </div> -->
 
-      </header>
+    
+    
+    
+
+    <div class="container-toc-only">
+
       
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#add-solidworks-references">Add [Solidworks References]</a></li><li><a href="#update-viewmodel">Update ViewModel</a><ul><li><a href="#add-private-fields">Add Private Fields</a></li><li><a href="#initialize-constructor">Initialize Constructor</a></li><li><a href="#create-method---selectsketch">Create Method - SelectSketch</a><ul><li><a href="#undertstand-code">Undertstand Code</a></li></ul></li><li><a href="#update-command-methods">Update Command Methods</a></li></ul></li><li><a href="#final-result">FINAL RESULT</a></li></ul>
+      <main class="content-with-toc">
+        <div class="docs-page">
+  <div class="docs-inner container">
+    <!-- Left Sidebar Navigation -->
+    
+    
+      <aside class="docs-subnav">
+        <div class="docs-subnav-inner">
+          
+            <h3 class="docs-subnav-title">Getting Started</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/Solidworks-csharp-api-tutorials/"
+                     class="">
+                    Introduction
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/Prerequisite/"
+                     class="">
+                    Prerequisite
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/open-solidworks/"
+                     class="">
+                    Open Solidworks
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/open-solidworks-document/"
+                     class="">
+                    Open Solidworks Document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/browse-and-open-solidworks-file/"
+                     class="">
+                    Browse/Open SOLIDWORKS Document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/unit-correction/"
+                     class="">
+                    Fix Unit Issue
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch Segment</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/insert-sketch/"
+                     class="">
+                    Insert Solidworks Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/edit-sketch/"
+                     class="active">
+                    Edit Solidworks Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/edit-solidworks-feature-sketch/"
+                     class="">
+                    Edit Solidworks Feature Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/change-sketch-name/"
+                     class="">
+                    Change Sketch Name
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/delete-selected-sketch/"
+                     class="">
+                    Delete Selected Sketch
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch Lines</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/create-line/"
+                     class="">
+                    Create Line
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/create-line-code-refactor/"
+                     class="">
+                    Create Line Code Refactor
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/setup-test-project/"
+                     class="">
+                    Setup Test Project
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-createLine-method/"
+                     class="">
+                    Test Create Line Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-applyunitconversion-method/"
+                     class="">
+                    Test ApplyUnitConversion Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-SelectSketchPlane-method/"
+                     class="">
+                    Test SelectSketchPlane Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-CreatePartDocument-method/"
+                     class="">
+                    Test CreatePartDocument Method
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Others</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/update-dimension-state/"
+                     class="">
+                    Update Dimension State
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </div>
+      </aside>
+    
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <h2 id="objective">Objective</h2>
+    <!-- Main Content Area -->
+    <article class="docs-article">
+      <h1 class="docs-title">SOLIDWORKS C# API - Edit Solidworks Sketch</h1>
+      <div class="docs-content">
+        <div class="fluent-knowledge-base">
 
-<p>I want to:</p>
+  <div class="hero-section">
 
-<ul>
-  <li>
-    <p><strong><em>Edit Sketch into Solidworks Part Document using Solidworks C# API</em></strong></p>
-  </li>
-  <li>
-    <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/edit-solidworks-sketch-ui/" target="_blank">Edit Solidworks Sketch UI</a></em></strong>.</p>
-  </li>
-  <li>
-    <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
-  </li>
-</ul>
+    <p>I want to:</p>
 
-<hr />
+    <ul>
+      <li>
+        <p><strong><em>Edit Sketch into Solidworks Part Document using Solidworks C# API</em></strong></p>
+      </li>
+      <li>
+        <p><strong><em>We will continue from previous article 🚀 <a href="/wpf-tutorials/edit-solidworks-sketch-ui/" target="_blank">Edit Solidworks Sketch UI</a></em></strong>.</p>
+      </li>
+      <li>
+        <p><strong><em>Extend article by adding Solidworks C# API to previous code.</em></strong></p>
+      </li>
+    </ul>
 
-<h2 id="demo-video">Demo Video</h2>
+  </div>
 
-<p>Please see below video on how to “<strong>Edit Sketch into Solidworks Part Document</strong>” using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
+  <h2 id="demo-video">Demo Video</h2>
 
-<iframe src="https://www.youtube.com/embed/3k2eOcdhkhM" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+  <p>Please see below video on how to “<strong>Edit Sketch into Solidworks Part Document</strong>” using <strong>Solidworks C# API</strong> from <strong>WPF Application</strong>.</p>
 
-<p class="notice--info">Please note that there are <strong>no explanation</strong> in the video.<br />
-<strong>Explanation</strong> of each step and why we write code this way is given in this post.</p>
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/3k2eOcdhkhM" frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <p class="fluent-video-caption">
+      Edit Sketch into Solidworks Part Document
+    </p>
+  </div>
+</div>
 
-<hr />
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">Important</div>
+  </div>
+  <div class="callout-body">
+    
+<p>Please note that there are <strong>no explanations</strong> in the video.<br />
+<strong>Explanation</strong> of each step and why we write the code this way is provided in this post.</p>
 
-<h2 id="add-solidworks-references">Add [Solidworks References]</h2>
 
-<ul>
-  <li>
-    <p>For opening <strong>Solidworks</strong> we need to add some <em>references</em> into our project.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for how to add <em>Solidworks</em> reference.</p>
-  </li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/solidworks-reference.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/solidworks-reference.png" alt="add-solidworks-references" /></a></p>
+  <hr />
 
-<ul>
-  <li>Please see below 👇🏻 image from 🚀 <strong><a href="/solidworks-csharp/browse-and-open-solidworks-file/#add-solidworks-references/" target="_blank">Browse Solidworks Document</a></strong> article for <em>how to add reference files</em>.</li>
-</ul>
+  <h2 id="add-solidworks-references">Add [Solidworks References]</h2>
 
-<p><a href="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif"><img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif" alt="add-solidworks-references" /></a></p>
+  <ul>
+    <li>
+      <p>For opening <strong>Solidworks</strong> we need to add some <em>references</em> into our project.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for how to add <em>Solidworks</em> reference.</p>
+    </li>
+  </ul>
 
-<hr />
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/solidworks-reference.png" alt="Add SOLIDWORKS References" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/solidworks-reference.png" /><figcaption class="image-caption">Figure: Add SOLIDWORKS References</figcaption></figure>
 
-<h2 id="update-viewmodel">Update ViewModel</h2>
+  <ul>
+    <li>Please see below 👇🏻 image from 🚀 <strong><a href="/solidworks-csharp/browse-and-open-solidworks-file/#add-solidworks-references/" target="_blank">Browse Solidworks Document</a></strong> article for <em>how to add reference files</em>.</li>
+  </ul>
 
-<p>In this section, we update MainWindowViewModel for editing Sketch.</p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif" alt="Add SOLIDWORKS References" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/browse-and-open-solidworks-file/add-solidworks-references.gif" /><figcaption class="image-caption">Figure: Add SOLIDWORKS References</figcaption></figure>
 
-<h3 id="add-private-fields">Add Private Fields</h3>
+  <hr />
 
-<p>We need 2 Private Fields as shown in below code sample.</p>
+  <h2 id="update-viewmodel">Update ViewModel</h2>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Private Fields
+  <p>In this section, we update MainWindowViewModel for editing Sketch.</p>
+
+  <h3 id="add-private-fields">Add Private Fields</h3>
+
+  <p>We need 2 Private Fields as shown in below code sample.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Private Fields
 </span>
 <span class="k">private</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span><span class="p">;</span>
 
@@ -432,37 +480,71 @@
 <span class="cp">#endregion
 </span></code></pre></div></div>
 
-<p>Please see below 👇🏻 image for reference.</p>
+  </div>
+</div>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/add-private-fields.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/add-private-fields.png" alt="add-private-fields" /></a></p>
+  <script></script>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span><span class="p">;</span>
+  <p>Please see below 👇🏻 image for reference.</p>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/add-private-fields.png" alt="Add Private Fields" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/add-private-fields.png" /><figcaption class="image-caption">Figure: Add Private Fields</figcaption></figure>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span><span class="p">;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Above code create a <em>private field (variable)</em> for [<em>Solidworks application</em>].</li>
-  <li>Type: <strong><code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></strong></li>
-  <li>Name: <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong></li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ModelDoc2</span> <span class="n">swDoc</span><span class="p">;</span>
+  <script></script>
+
+  <ul>
+    <li>Above code create a <em>private field (variable)</em> for [<em>Solidworks application</em>].</li>
+    <li>Type: <strong><code class="language-plaintext highlighter-rouge">SldWorks.SldWorks</code></strong></li>
+    <li>Name: <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong></li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ModelDoc2</span> <span class="n">swDoc</span><span class="p">;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Above code create a <em>private field (variable)</em> for [<em>Solidworks document</em>].</li>
-  <li>Type: <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong></li>
-  <li>Name: <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong></li>
-</ul>
+  </div>
+</div>
 
-<h3 id="initialize-constructor">Initialize Constructor</h3>
+  <script></script>
 
-<p>Now we <em>initialize contructor</em> for creating Solidworks application variable.</p>
+  <ul>
+    <li>Above code create a <em>private field (variable)</em> for [<em>Solidworks document</em>].</li>
+    <li>Type: <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong></li>
+    <li>Name: <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong></li>
+  </ul>
 
-<p>This open a <strong>new Solidworks application</strong> when constructor getting called.</p>
+  <h3 id="initialize-constructor">Initialize Constructor</h3>
 
-<p>Please see below 👇🏻 code example for reference.</p>
+  <p>Now we <em>initialize contructor</em> for creating Solidworks application variable.</p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Contructor
+  <p>This open a <strong>new Solidworks application</strong> when constructor getting called.</p>
+
+  <p>Please see below 👇🏻 code example for reference.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#region Contructor
 </span>
 <span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">()</span>
 <span class="p">{</span>
@@ -472,337 +554,533 @@
 <span class="cp">#endregion
 </span></code></pre></div></div>
 
-<p>Please see below 👇🏻 image for reference.</p>
+  </div>
+</div>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/initialize-constructor.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/initialize-constructor.png" alt="initialize-constructor" /></a></p>
+  <script></script>
 
-<h3 id="create-method---selectsketch">Create Method - SelectSketch</h3>
+  <p>Please see below 👇🏻 image for reference.</p>
 
-<p>In this section, we create a <em>method</em> for <strong>selecting Sketch method</strong>.</p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/initialize-constructor.png" alt="Initialize Constructor" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/initialize-constructor.png" /><figcaption class="image-caption">Figure: Initialize Constructor</figcaption></figure>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="nf">SelectSketch</span><span class="p">()</span>
+  <h3 id="create-method---selectsketch">Create Method - SelectSketch</h3>
+
+  <p>In this section, we create a <em>method</em> for <strong>selecting Sketch method</strong>.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="kt">bool</span> <span class="nf">SelectSketch</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">swDoc</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
     <span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span><span class="p">;</span>
 
-    <span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span>
+        <span class="s">""</span><span class="p">,</span>
+        <span class="s">"SKETCH"</span><span class="p">,</span>
+        <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span>
+        <span class="k">false</span><span class="p">,</span>
+        <span class="m">4</span><span class="p">,</span>
+        <span class="k">null</span><span class="p">,</span>
+        <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span>
+    <span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="n">isSelect</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>In above code, we create a method.</p>
+  </div>
+</div>
 
-<ul>
-  <li><em>Method Name</em>: “<strong><code class="language-plaintext highlighter-rouge">SelectSketch</code></strong>”</li>
-  <li><em>Return Type</em>: “<strong><code class="language-plaintext highlighter-rouge">bool</code></strong>”</li>
-</ul>
+  <script></script>
 
-<p>Please see below 👇🏻 image for reference.</p>
+  <p>In above code, we create a method.</p>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/create-select-sketch-method.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/create-select-sketch-method.png" alt="create-select-sketch-method" /></a></p>
+  <ul>
+    <li><em>Method Name</em>: “<strong><code class="language-plaintext highlighter-rouge">SelectSketch</code></strong>”</li>
+    <li><em>Return Type</em>: “<strong><code class="language-plaintext highlighter-rouge">bool</code></strong>”</li>
+  </ul>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+  <p>Please see below 👇🏻 image for reference.</p>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/create-select-sketch-method.png" alt="Create Select Sketch Method" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/create-select-sketch-method.png" /><figcaption class="image-caption">Figure: Create Select Sketch Method</figcaption></figure>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code, we set Solidworks Document variable to <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</li>
-  <li>This make sure, we did not use previous data in <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span><span class="p">;</span>
+  <script></script>
+
+  <ul>
+    <li>In above code, we set Solidworks Document variable to <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</li>
+    <li>This make sure, we did not use previous data in <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span> <span class="p">=</span> <span class="n">swApp</span><span class="p">.</span><span class="n">ActiveDoc</span><span class="p">;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above line, we set value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>For this we use <strong><code class="language-plaintext highlighter-rouge">ActiveDoc</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">ActiveDoc</code></strong> property, get currently open/active document in Solidworks.</li>
-  <li>After that we set the currently open/active document as value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li><em>Reference Doc</em>: 🚀<strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks~ActiveDoc.html" target="_blank">ActiveDoc Property</a></strong></li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"Circle"</span><span class="p">,</span> <span class="s">"SKETCH"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
+  <script></script>
+
+  <ul>
+    <li>In above line, we set value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+    <li>For this we use <strong><code class="language-plaintext highlighter-rouge">ActiveDoc</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swApp</code></strong> variable.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">ActiveDoc</code></strong> property, get currently open/active document in Solidworks.</li>
+    <li>After that we set the currently open/active document as value of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+    <li><em>Reference Doc</em>: 🚀<strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.ISldWorks~ActiveDoc.html" target="_blank">ActiveDoc Property</a></strong></li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isSelect</span> <span class="p">=</span>
+    <span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span>
+        <span class="s">"Circle"</span><span class="p">,</span>
+        <span class="s">"SKETCH"</span><span class="p">,</span>
+        <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span>
+        <span class="k">false</span><span class="p">,</span>
+        <span class="m">4</span><span class="p">,</span>
+        <span class="k">null</span><span class="p">,</span>
+        <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span>
+    <span class="p">)</span> <span class="p">??</span> <span class="k">false</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>In above line select a sketch.</p>
+  </div>
+</div>
 
-<p><em>Sketch Name</em>: “<strong>Circle</strong>”</p>
+  <script></script>
 
-<p>After selecting Sketch, we assign value of <strong><code class="language-plaintext highlighter-rouge">isSelect</code></strong> variable.</p>
+  <p>In above line select a sketch.</p>
 
-<h4 id="undertstand-code">Undertstand Code</h4>
+  <p><em>Sketch Name</em>: “<strong>Circle</strong>”</p>
 
-<p>In this section we understand above code.</p>
+  <p>After selecting Sketch, we assign value of <strong><code class="language-plaintext highlighter-rouge">isSelect</code></strong> variable.</p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isSelect</span>
+  <h4 id="undertstand-code">Undertstand Code</h4>
+
+  <p>In this section we understand above code.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isSelect</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code, we create a variable.</li>
-  <li><strong>Variable Type</strong>: <strong><code class="language-plaintext highlighter-rouge">bool</code></strong></li>
-  <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">isSelect</code></strong></li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?</span>
+  <script></script>
+
+  <ul>
+    <li>In above code, we create a variable.</li>
+    <li><strong>Variable Type</strong>: <strong><code class="language-plaintext highlighter-rouge">bool</code></strong></li>
+    <li><strong>Variable Name</strong>: <strong><code class="language-plaintext highlighter-rouge">isSelect</code></strong></li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Above code, checking if <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not.</li>
-  <li>If <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, it will return null value.</li>
-  <li>This is very helpful feature of C# programming language.</li>
-  <li>With this feature, we eliminate the additional code for null check.</li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span>
+  <script></script>
+
+  <ul>
+    <li>Above code, checking if <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> or not.</li>
+    <li>If <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> is <strong><code class="language-plaintext highlighter-rouge">null</code></strong>, it will return null value.</li>
+    <li>This is very helpful feature of C# programming language.</li>
+    <li>With this feature, we eliminate the additional code for null check.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code, we are using <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property is part of <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong> object.</li>
-  <li>
-    <ul>
-      <li><em>Reference Doc</em>: 🚀<strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.imodeldoc2~extension.html" target="_blank">Extension Property</a></strong></li>
-    </ul>
-  </li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">()</span>
+  <script></script>
+
+  <ul>
+    <li>In above code, we are using <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property is part of <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong> object.</li>
+    <li>
+      <ul>
+        <li><em>Reference Doc</em>: 🚀<strong><a href="https://help.solidworks.com/2021/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.imodeldoc2~extension.html" target="_blank">Extension Property</a></strong></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swDoc</span><span class="p">?.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">()</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code, we use <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method.</li>
-  <li>This <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method use for selecting elements in Solidworks application.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method is accessible from <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above code, we use <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method.</li>
+    <li>This <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method use for selecting elements in Solidworks application.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method is accessible from <strong><code class="language-plaintext highlighter-rouge">Extension</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.
 This <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</code></strong> method takes following parameters.</li>
-</ul>
+  </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong></td>
-      <td>Name of object to select or an empty string.</td>
-    </tr>
-    <tr>
-      <td><strong>Type</strong></td>
-      <td>Type of object (uppercase) as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> or an empty string.</td>
-    </tr>
-    <tr>
-      <td><strong>X</strong></td>
-      <td>X selection location or 0</td>
-    </tr>
-    <tr>
-      <td><strong>Y</strong></td>
-      <td>Y selection location or 0</td>
-    </tr>
-    <tr>
-      <td><strong>Z</strong></td>
-      <td>Z selection location or 0</td>
-    </tr>
-    <tr>
-      <td><strong>Append</strong></td>
-      <td><strong><code class="language-plaintext highlighter-rouge">True</code></strong> OR <strong><code class="language-plaintext highlighter-rouge">False</code></strong></td>
-    </tr>
-    <tr>
-      <td><strong>Mark</strong></td>
-      <td>Value that you want to use as a mark; this value is used by other functions that require ordered selection.</td>
-    </tr>
-    <tr>
-      <td><strong>Callout</strong></td>
-      <td>Pointer to the associated callout</td>
-    </tr>
-    <tr>
-      <td><strong>SelectOption</strong></td>
-      <td>Selection option as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong></td>
-    </tr>
-  </tbody>
-</table>
+  <div class="fluent-table-wrapper" role="region" aria-labelledby="tbl-selectbyid2-parameters-caption">
+  <table class="fluent-table"><caption id="tbl-selectbyid2-parameters-caption">SelectByID2 Parameters</caption><thead>
+      <tr><th scope="col">Parameter Name</th><th scope="col">Description</th></tr>
+    </thead>
 
-<p><strong>Reference Links</strong> 🚀</p>
+    <tbody><tr><td>
+                <strong>Name</strong>
 
-<ul>
-  <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> ➡️ <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html" target="_blank">swSelectType_e Enumeration</a></strong>.</p>
-  </li>
-  <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong> ➡️ <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectOption_e.html" target="_blank">swSelectOption_e Enumeration</a></strong>.</p>
-  </li>
-</ul>
+              </td><td>
+                Name of object to select or an empty string.
 
-<p><strong>Return Value:</strong></p>
+              </td></tr><tr><td>
+                <strong>Type</strong>
 
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">True</code></strong> if item was successfully selected, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</li>
-</ul>
+              </td><td>
+                Type of object (uppercase) as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> or an empty string.
 
-<p><strong>Parameter Value Used:</strong></p>
+              </td></tr><tr><td>
+                <strong>X</strong>
 
-<p>Please see below table for parameter value we used in our code.</p>
+              </td><td>
+                X selection location or 0.
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter Name</th>
-      <th>Parameter Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Name</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">Circle</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Type</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">SKETCH</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>X</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">0</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Y</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">0</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Z</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">0</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Append</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">false</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Mark</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">4</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>Callout</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">null</code></em></td>
-    </tr>
-    <tr>
-      <td><strong>SelectOption</strong></td>
-      <td><em><code class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code></em></td>
-    </tr>
-  </tbody>
-</table>
+              </td></tr><tr><td>
+                <strong>Y</strong>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">??</span> <span class="k">null</span><span class="p">;</span>
+              </td><td>
+                Y selection location or 0.
+
+              </td></tr><tr><td>
+                <strong>Z</strong>
+
+              </td><td>
+                Z selection location or 0.
+
+              </td></tr><tr><td>
+                <strong>Append</strong>
+
+              </td><td>
+                <strong><code class="language-plaintext highlighter-rouge">True</code></strong> OR <strong><code class="language-plaintext highlighter-rouge">False</code></strong>.
+
+              </td></tr><tr><td>
+                <strong>Mark</strong>
+
+              </td><td>
+                Value that you want to use as a mark; this value is used by other functions that require ordered selection.
+
+              </td></tr><tr><td>
+                <strong>Callout</strong>
+
+              </td><td>
+                Pointer to the associated callout.
+
+              </td></tr><tr><td>
+                <strong>SelectOption</strong>
+
+              </td><td>
+                Selection option as defined in <strong><code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong>.
+
+              </td></tr></tbody>
+  </table>
+</div>
+
+  <p><strong>Reference Links</strong> 🚀</p>
+
+  <ul>
+    <li>
+      <p><strong><code class="language-plaintext highlighter-rouge">swSelectType_e</code></strong> ➡️ <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectType_e.html" target="_blank">swSelectType_e Enumeration</a></strong>.</p>
+    </li>
+    <li>
+      <p><strong><code class="language-plaintext highlighter-rouge">swSelectOption_e</code></strong> ➡️ <strong><a href="https://help.solidworks.com/2021/english/api/swconst/SOLIDWORKS.Interop.swconst~SOLIDWORKS.Interop.swconst.swSelectOption_e.html" target="_blank">swSelectOption_e Enumeration</a></strong>.</p>
+    </li>
+  </ul>
+
+  <p><strong>Return Value:</strong></p>
+
+  <ul>
+    <li><strong><code class="language-plaintext highlighter-rouge">True</code></strong> if item was successfully selected, <strong><code class="language-plaintext highlighter-rouge">False</code></strong> if not.</li>
+  </ul>
+
+  <p><strong>Parameter Value Used:</strong></p>
+
+  <p>Please see below table for parameter value we used in our code.</p>
+
+  <div class="fluent-table-wrapper" role="region" aria-labelledby="tbl-selectbyid2-parameter-values-used-caption">
+  <table class="fluent-table"><caption id="tbl-selectbyid2-parameter-values-used-caption">SelectByID2 Parameter Values Used</caption><thead>
+      <tr><th scope="col">Parameter Name</th><th scope="col">Parameter Value</th></tr>
+    </thead>
+
+    <tbody><tr><td>
+                <strong>Name</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">Circle</code></em>
+
+              </td></tr><tr><td>
+                <strong>Type</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">SKETCH</code></em>
+
+              </td></tr><tr><td>
+                <strong>X</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">0</code></em>
+
+              </td></tr><tr><td>
+                <strong>Y</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">0</code></em>
+
+              </td></tr><tr><td>
+                <strong>Z</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">0</code></em>
+
+              </td></tr><tr><td>
+                <strong>Append</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">false</code></em>
+
+              </td></tr><tr><td>
+                <strong>Mark</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">4</code></em>
+
+              </td></tr><tr><td>
+                <strong>Callout</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">null</code></em>
+
+              </td></tr><tr><td>
+                <strong>SelectOption</strong>
+
+              </td><td>
+                <em><code class="language-plaintext highlighter-rouge">(int)swSelectOption_e.swSelectOptionDefault</code></em>
+
+              </td></tr></tbody>
+  </table>
+</div>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">??</span> <span class="k">null</span><span class="p">;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>
-    <p>After the we use <strong><code class="language-plaintext highlighter-rouge">??</code></strong> operator.</p>
-  </li>
-  <li>
-    <p>This is called <strong>null-coalescing operator</strong>.</p>
-  </li>
-  <li>
-    <p>It returns the value of its <em>left-hand</em> operand if it isn’t <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</p>
-  </li>
-  <li>
-    <p>otherwise, it evaluates the right-hand operand and returns its result.</p>
-  </li>
-  <li>
-    <p>In our case, if <em>left side</em> expression is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> then we return <strong><code class="language-plaintext highlighter-rouge">null</code></strong> value as we defined on <em>right side</em> of operator.</p>
-  </li>
-</ul>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">isSelect</span><span class="p">;</span>
+  <script></script>
+
+  <ul>
+    <li>
+      <p>After the we use <strong><code class="language-plaintext highlighter-rouge">??</code></strong> operator.</p>
+    </li>
+    <li>
+      <p>This is called <strong>null-coalescing operator</strong>.</p>
+    </li>
+    <li>
+      <p>It returns the value of its <em>left-hand</em> operand if it isn’t <strong><code class="language-plaintext highlighter-rouge">null</code></strong>.</p>
+    </li>
+    <li>
+      <p>otherwise, it evaluates the right-hand operand and returns its result.</p>
+    </li>
+    <li>
+      <p>In our case, if <em>left side</em> expression is <strong><code class="language-plaintext highlighter-rouge">null</code></strong> then we return <strong><code class="language-plaintext highlighter-rouge">null</code></strong> value as we defined on <em>right side</em> of operator.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">isSelect</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>In above code, we return the value of isSelect variable.</p>
+  </div>
+</div>
 
-<p>This statement marks as end of <strong><code class="language-plaintext highlighter-rouge">SelectSketch()</code></strong> method.</p>
+  <script></script>
 
-<hr />
+  <p>In above code, we return the value of isSelect variable.</p>
 
-<h3 id="update-command-methods">Update Command Methods</h3>
+  <p>This statement marks as end of <strong><code class="language-plaintext highlighter-rouge">SelectSketch()</code></strong> method.</p>
 
-<p>We have 2 command methods.</p>
+  <hr />
 
-<ol>
-  <li><strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchMethod()</code></strong></li>
-  <li><strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchOrSingleSketchFeatureMethod()</code></strong></li>
-</ol>
+  <h3 id="update-command-methods">Update Command Methods</h3>
 
-<p>In both functions we have below code.</p>
+  <p>We have 2 command methods.</p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+  <ol>
+    <li><strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchMethod()</code></strong></li>
+    <li><strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchOrSingleSketchFeatureMethod()</code></strong></li>
+  </ol>
+
+  <p>In both functions we have below code.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
 <span class="p">{</span>
     <span class="c1">// Sleeping with 5 sec</span>
     <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Now, we need to replace above code with below code.</p>
+  </div>
+</div>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
+  <script></script>
+
+  <p>Now, we need to replace above code with below code.</p>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nf">SelectSketch</span><span class="p">())</span>
         <span class="n">swDoc</span><span class="p">.</span><span class="nf">EditSketch</span><span class="p">();</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Please see below 👇🏻 images for reference.</p>
+  </div>
+</div>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchMethod.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchMethod.png" alt="ExecuteEditSketchMethod" /></a></p>
+  <script></script>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchOrSingleSketchFeatureMethod.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchOrSingleSketchFeatureMethod.png" alt="ExecuteEditSketchOrSingleSketchFeatureMethod" /></a></p>
+  <p>Please see below 👇🏻 images for reference.</p>
 
-<hr />
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchMethod.png" alt="Execute Edit Sketch Method" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchMethod.png" /><figcaption class="image-caption">Figure: Execute Edit Sketch Method</figcaption></figure>
 
-<h2 id="final-result">FINAL RESULT</h2>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchOrSingleSketchFeatureMethod.png" alt="Execute Edit Sketch Or Single Sketch Feature Method" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/ExecuteEditSketchOrSingleSketchFeatureMethod.png" /><figcaption class="image-caption">Figure: Execute Edit Sketch Or Single Sketch Feature Method</figcaption></figure>
 
-<p>For Demo, we already had sketch we want to edit with our program.</p>
+  <hr />
 
-<p>Please see below 👇🏻 image for reference.</p>
+  <h2 id="final-result">FINAL RESULT</h2>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/sketch-for-demo.png"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/sketch-for-demo.png" alt="sketch-for-demo" /></a></p>
+  <p>For Demo, we already had sketch we want to edit with our program.</p>
 
-<p>Now, we have done everything needed to <strong>Edit Solidwork Sketch</strong> into <em>Solidworks Document</em> through our application.</p>
+  <p>Please see below 👇🏻 image for reference.</p>
 
-<p>Please see below image for final result of our work.</p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/sketch-for-demo.png" alt="Sketch for Demo" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/sketch-for-demo.png" /><figcaption class="image-caption">Figure: Sketch for Demo</figcaption></figure>
 
-<ul>
-  <li>Edit Sketch with <strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchMethod()</code></strong> method</li>
-</ul>
+  <p>Now, we have done everything needed to <strong>Edit Solidwork Sketch</strong> into <em>Solidworks Document</em> through our application.</p>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-1.gif"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-1.gif" alt="result-1" /></a></p>
+  <p>Please see below image for final result of our work.</p>
 
-<ul>
-  <li>Edit Sketch with <strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchOrSingleSketchFeatureMethod()</code></strong> method</li>
-</ul>
+  <ul>
+    <li>Edit Sketch with <strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchMethod()</code></strong> method</li>
+  </ul>
 
-<p><a href="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-2.gif"><img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-2.gif" alt="result-2" /></a></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-1.gif" alt="Result Demo" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-1.gif" /><figcaption class="image-caption">Figure: Result Demo</figcaption></figure>
 
-<hr />
+  <ul>
+    <li>Edit Sketch with <strong><code class="language-plaintext highlighter-rouge">ExecuteEditSketchOrSingleSketchFeatureMethod()</code></strong> method</li>
+  </ul>
 
-<p><strong>This is it !!!</strong></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-2.gif" alt="Result Demo 2" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/edit-solidworks-sketch/result-2.gif" /><figcaption class="image-caption">Figure: Result Demo 2</figcaption></figure>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+  <hr />
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+  <p><strong>This is it !!!</strong></p>
 
-<p>Hope this post helps you to <strong>Edit Solidworks Sketch</strong> from WPF PRISM Application.</p>
+  <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+  <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+  <p>Hope this post helps you to <strong>Edit Solidworks Sketch</strong> from WPF PRISM Application.</p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+  <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<ul>
-  <li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+  <p><em>Do let me know by you like this post or not!</em></p>
 
-        </div>
-        
-        <div>
+  <p><em>Till then, Happy learning!!!</em></p>
+
+  <ul>
+    <li><a href="/download-solidworks-macros/" target="_blank" rel="noopener" class="">
+🎁 Download 5 Free SolidWorks Macros →
+</a></li>
+  </ul>
+
+</div>
+
+      </div>
+      <div>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Top and Bottom placed Ad -->
   <ins class="adsbygoogle"
@@ -816,161 +1094,174 @@ This <strong><code class="language-plaintext highlighter-rouge">SelectByID2()</c
   </script>
 </div>
 
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
-
-
-      </footer>
-
       
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/insert-sketch/" title="SOLIDWORKS C# API - Insert Solidworks Sketch
-">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/edit-solidworks-feature-sketch/" title="SOLIDWORKS C# API - Edit Solidworks Feature Sketch
-">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
 
-    </div>
-  </article>
 
+
+<div class="docs-navigation">
+  <div class="docs-nav-container">
+    
+    <a href="/solidworks-csharp/insert-sketch/" class="docs-nav-prev btn-nav-secondary" title="Previous: SOLIDWORKS C# API - Insert Solidworks Sketch">
+      <span class="nav-icon" aria-hidden="true">&larr;</span>
+      <span class="nav-text">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">SOLIDWORKS C# API - Insert Solidworks Sketch</span>
+      </span>
+    </a>
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    
+    <a href="/solidworks-csharp/edit-solidworks-feature-sketch/" class="docs-nav-next btn-nav-primary" title="Next: SOLIDWORKS C# API - Edit Solidworks Feature Sketch">
+      <span class="nav-text">
+        <span class="nav-label">Next</span>
+        <span class="nav-title">SOLIDWORKS C# API - Edit Solidworks Feature S...</span>
+      </span>
+      <span class="nav-icon" aria-hidden="true">&rarr;</span>
+    </a>
+    
+  </div>
 </div>
 
-          
+
+    </article>
+  </div>
+</div>
+
+      </main>
+
+      
+        <aside class="toc">
+          <div class="toc-inner">
+  <h3>On this page</h3>
+  <ul id="toc-list"></ul>
+</div>
+
+        </aside>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-wave">
+  <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<div class="footer-content">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a href="/" class="footer-brand">
+        <img src="/assets/logo.png" alt="Logo" class="brand-icon">
+        <div class="brand-text">
+          <div class="brand-name">The CAD Coder</div>
+          <div class="brand-tagline">Learn. Code. Automate.</div>
         </div>
-      </div>
-    </div>
-  </div>
+      </a>
 
-  <div id="footer" class="page__footer">
-    <footer>
-      <!-- start custom footer snippets -->
+      <p class="footer-desc">
+        Free SOLIDWORKS API tutorials for mechanical engineers. Master VBA, C#, and C++ automation with practical, beginner-friendly guides.
+      </p>
 
-<!-- end custom footer snippets -->
-      <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
+      <div class="footer-social">
+        <a href="https://facebook.com/thecadcoder" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
-
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-          
-          
-          
-          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-          
-          
-          
-        </ul>
+        <a href="https://linkedin.com/in/prashantbaher" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
       </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-        </ul>
+    </div>
+
+    <div class="footer-col footer-links-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links-list">
+        <li><a href="/knowledge-base/introduction/"><span class="ms-icon" aria-hidden="true">&#xE82D;</span>Knowledge Base</a></li>
+        <li><a href="/Solidworks-macro-guide/"><span class="ms-icon" aria-hidden="true">&#xE713;</span>VBA Macros</a></li>
+        <li><a href="/Solidworks-csharp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE943;</span>C# API</a></li>
+        <li><a href="/Solidworks-cpp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE90F;</span>C++ API</a></li>
+      </ul>
+
+      <h3 class="footer-subheading">Resources</h3>
+      <ul class="footer-links-list">
+        <li><a href="/wpf-tutorials/syncfusion-account-signup/"><span class="ms-icon" aria-hidden="true">&#xE790;</span>WPF Tutorials</a></li>
+        <li><a href="/knowledge-base/wix4-introduction/"><span class="ms-icon" aria-hidden="true">&#xE7B8;</span>WiX Installer</a></li>
+        <li><a href="/resources/"><span class="ms-icon" aria-hidden="true">&#xE80D;</span>Resources</a></li>
+        <li><a href="/aboutMe/"><span class="ms-icon" aria-hidden="true">&#xE77B;</span>About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-newsletter-col">
+      <h3 class="footer-heading">Stay Updated</h3>
+      <p class="newsletter-text">
+        Get notified when new tutorials are published. No spam, unsubscribe anytime.
+      </p>
+
+      <form class="newsletter-form" action="#" method="post">
+        <div class="newsletter-input-wrapper">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+            <span class="ms-icon" aria-hidden="true">&#xE72A;</span>
+          </button>
+        </div>
+      </form>
+
+      <p class="newsletter-privacy">
+        <small><span class="ms-icon" aria-hidden="true">&#xE72E;</span> We respect your privacy. No spam ever.</small>
+      </p>
+
+      <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        Back to Top
+      </button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">
+        &copy; 2026 The CAD Coder. All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
-</footer>
+</div>
+
     </footer>
-  </div>
 
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
-
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-</body>
-
+    
+    <script src="/assets/js/theme.js" defer></script>
+    <script src="/assets/js/toc.js" defer></script>
+    <script src="/assets/js/search.js" defer></script>
+  </body>
 </html>

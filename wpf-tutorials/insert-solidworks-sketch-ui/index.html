@@ -1,510 +1,580 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>Insert Solidworks Sketch UI - The CAD Coder</title>
-<meta name="description" content="Objective">
+<!-- Page Title -->
+<title>Insert Solidworks Sketch UI | The CAD Coder</title>
+
+<!-- Meta Description -->
+
+  <meta name="description" content="">
 
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://thecadcoder.com/wpf-tutorials/insert-solidworks-sketch-ui/">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/logo.png">
+
+<!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
 <meta property="og:title" content="Insert Solidworks Sketch UI">
-<meta property="og:url" content="http://localhost:4000/wpf-tutorials/insert-solidworks-sketch-ui/">
+<meta property="og:description" content="
+">
+<meta property="og:url" content="https://thecadcoder.com/wpf-tutorials/insert-solidworks-sketch-ui/">
+<meta property="og:site_name" content="The CAD Coder">
+
+  <meta property="og:image" content="https://thecadcoder.com/assets/logo.png">
 
 
-  <meta property="og:description" content="Objective">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insert Solidworks Sketch UI">
+<meta name="twitter:description" content="
+">
 
 
+<!-- RSS Feed -->
+
+  <link rel="alternate" type="application/rss+xml" title="The CAD Coder" href="/feed.xml">
 
 
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Lunr.js for Search (CDN) -->
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" defer></script>
+
+<!-- Google Analytics (optional - uncomment and add your tracking ID) -->
 
 
+<!-- Preconnect for Performance (optional but recommended) -->
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
 
-  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
-
-
-
-
-
-
-<link rel="canonical" href="http://localhost:4000/wpf-tutorials/insert-solidworks-sketch-ui/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<!-- MailerLite Universal -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
 </script>
+<!-- End MailerLite Universal -->
 
-<!-- end _includes/seo.html -->
+<script src="/assets/js/tabs.js" defer></script>
+<script src="/assets/js/image-zoom.js" defer></script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/code-line-numbers.js" defer></script>
 
-  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
-
-  
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-          .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '1644816');
-  </script>
-  <!-- End MailerLite Universal -->
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt="The CAD Coder Logo" class="logo-icon">
+      <span class="logo-text">The CAD Coder</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span class="ms-icon" aria-hidden="true">&#xE700;</span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
-            <i class="fas fa-search"></i>
-        </a> -->
-    </div>
-</nav>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
-
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/syncfusion-account-signup/">Syncfusion Account Sign Up and Community Version</a></li>
-          
-            <li><a href="/wpf-tutorials/install-prism-project-template/">Install Prism Project Template</a></li>
-          
-            <li><a href="/wpf-tutorials/open-syncfusion-chromeless-window/">Open Syncfusion Chromeless Window</a></li>
-          
-            <li><a href="/wpf-tutorials/add-syncfusion-busy-indicator/">Add Syncfusion Busy Indicator</a></li>
-          
-            <li><a href="/wpf-tutorials/add-syncfusion-license-key/">Add Syncfusion License Key</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Solidworks C# API UI</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/browse-solidworks-document-ui/">Browse Solidworks Document UI</a></li>
-          
-            <li><a href="/wpf-tutorials/delete-browse-file/">Delete Browse Solidworks Document File</a></li>
-          
-            <li><a href="/wpf-tutorials/add-messages-service/">Add Message Service</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Solidworks Sketch UI</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/insert-solidworks-sketch-ui/" class="active">Insert Solidworks Sketch UI</a></li>
-          
-            <li><a href="/wpf-tutorials/edit-solidworks-sketch-ui/">Edit Solidworks Sketch UI</a></li>
-          
-            <li><a href="/wpf-tutorials/change-sketch-name-ui/">Change Sketch Name UI</a></li>
-          
-            <li><a href="/wpf-tutorials/delete-selected-sketch-ui/">Delete Selected Sketch UI</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Solidworks Line UI</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/wpf-tutorials/create-line-ui-part-1/">Create Line UI - Part 1</a></li>
-          
-            <li><a href="/wpf-tutorials/create-line-ui-part-2/">Create Line UI - Part 2</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-    
-  
   </div>
 
+  <nav class="main-nav" id="main-nav">
+    
+      
+        <a href="/knowledge-base/introduction/" class="nav-link ">
+          Knowledge Base
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            General Programming
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/wpf-tutorials/syncfusion-account-signup/" >
+                WPF Tutorials
+              </a>
+            
+              <a href="/knowledge-base/wix4-introduction/" >
+                Wix4 Tutorials
+              </a>
+            
+              <a href="/vba/vba-Introduction/" >
+                VBA
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/inventor-macro/export-to-pdf/" class="nav-link ">
+          Inventor Macro
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            Solidworks
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/Solidworks-macro-guide/" >
+                Solidworks VBA Macro
+              </a>
+            
+              <a href="/Solidworks-csharp-api-tutorials/" >
+                Solidworks C# API
+              </a>
+            
+              <a href="/Solidworks-cpp-api-tutorials/" >
+                Solidworks C++ API
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/resources/" class="nav-link ">
+          Resources
+        </a>
+      
+    
+      
+        <a href="/aboutMe/" class="nav-link ">
+          About
+        </a>
+      
+    
+  </nav>
+
+  <div class="header-actions">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search docs..." aria-label="Search documentation">
+      <div id="search-results" aria-live="polite"></div>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="ms-icon" aria-hidden="true">&#xE706;</span>
+    </button>
+  </div>
 </div>
-      <div class="col-md-9 col-lg-10 col-sm-8">
-        <div>
-          <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="Insert Solidworks Sketch UI">
-    
-    <meta itemprop="description" content="Objective">
-    
-    
-    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
-    
-
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">Insert Solidworks Sketch UI
-</h1>
-        
-
-  <p class="page__meta">
-    
+    </header>
 
     
-
-    
-      
+    <!-- <div class="top-breadcrumbs">
       
 
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          9 minute read
-        
-      </span>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  
     
-  </p>
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/wpf-tutorials">Wpf tutorials</a>
+    
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/wpf-tutorials/insert-solidworks-sketch-ui">Insert solidworks sketch ui</a>
+    
+  
+</nav>
 
+    </div> -->
 
-      </header>
+    
+    
+    
+
+    <div class="container-toc-only">
+
       
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#demo-video">Demo Video</a></li><li><a href="#setting-project">Setting Project</a><ul><li><a href="#add-prism-project">Add [Prism Project]</a></li><li><a href="#add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</a></li><li><a href="#add-design-time-datacontext">Add [Design Time DataContext]</a></li><li><a href="#add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</a></li></ul></li><li><a href="#add-controls-for-ui">Add Controls For UI</a><ul><li><a href="#add-grid">Add [Grid]</a></li><li><a href="#add-textblock">Add [TextBlock]</a></li><li><a href="#add-syncfusioncomboboxadv">Add [syncfusion:ComboBoxAdv]</a></li><li><a href="#add-syncfusionbuttonadv">Add [syncfusion:ButtonAdv]</a></li></ul></li><li><a href="#set-message-services">Set Message Services</a><ul><li><a href="#add-message-services">Add Message Services</a></li><li><a href="#register-message-services">Register Message Services</a></li><li><a href="#understand-message-services">Understand Message Services</a></li></ul></li><li><a href="#update-viewmodel">Update ViewModel</a><ul><li><a href="#add-properties">Add [Properties]</a></li><li><a href="#add-prism-command">Add [Prism Command]</a></li><li><a href="#add-code-to-function">Add Code To Function</a></li></ul></li><li><a href="#add-bindings">Add [Bindings]</a><ul><li><a href="#add-property-binding">Add [Property Binding]</a></li><li><a href="#add-command-binding">Add [Command Binding]</a></li></ul></li><li><a href="#update-syncfusion-combobox">Update [Syncfusion ComboBox]</a><ul><li><a href="#add-default-value">Add Default Value</a></li><li><a href="#update-font-size">Update Font Size</a></li></ul></li><li><a href="#final-result">Final Result</a></li></ul>
+      <main class="content-with-toc">
+        <div class="docs-page">
+  <div class="docs-inner container">
+    <!-- Left Sidebar Navigation -->
+    
+    
+      <aside class="docs-subnav">
+        <div class="docs-subnav-inner">
+          
+            <h3 class="docs-subnav-title">Getting Started</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/wpf-tutorials/syncfusion-account-signup/"
+                     class="">
+                    Syncfusion Account Sign Up and Community Version
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/install-prism-project-template/"
+                     class="">
+                    Install Prism Project Template
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/open-syncfusion-chromeless-window/"
+                     class="">
+                    Open Syncfusion Chromeless Window
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/add-syncfusion-busy-indicator/"
+                     class="">
+                    Add Syncfusion Busy Indicator
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/add-syncfusion-license-key/"
+                     class="">
+                    Add Syncfusion License Key
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Solidworks C# API UI</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/wpf-tutorials/browse-solidworks-document-ui/"
+                     class="">
+                    Browse Solidworks Document UI
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/delete-browse-file/"
+                     class="">
+                    Delete Browse Solidworks Document File
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/add-messages-service/"
+                     class="">
+                    Add Message Service
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Solidworks Sketch UI</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/wpf-tutorials/insert-solidworks-sketch-ui/"
+                     class="active">
+                    Insert Solidworks Sketch UI
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/edit-solidworks-sketch-ui/"
+                     class="">
+                    Edit Solidworks Sketch UI
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/change-sketch-name-ui/"
+                     class="">
+                    Change Sketch Name UI
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/delete-selected-sketch-ui/"
+                     class="">
+                    Delete Selected Sketch UI
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Solidworks Line UI</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/wpf-tutorials/create-line-ui-part-1/"
+                     class="">
+                    Create Line UI - Part 1
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/wpf-tutorials/create-line-ui-part-2/"
+                     class="">
+                    Create Line UI - Part 2
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </div>
+      </aside>
+    
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <h2 id="objective">Objective</h2>
+    <!-- Main Content Area -->
+    <article class="docs-article">
+      <h1 class="docs-title">Insert Solidworks Sketch UI</h1>
+      <div class="docs-content">
+        <div class="fluent-knowledge-base">
 
-<p>I want to:</p>
+  <div class="hero-section">
 
+    <p>I want to:</p>
+
+    <ul>
+      <li>
+        <p><strong><em>Create User Interface for Inserting Solidworks Sketch into Sketch Document.</em></strong></p>
+      </li>
+      <li>
+        <p><strong><em>Share method which allowed us to use ‘Properties and methods’ of ‘ViewModel’ as ‘IntelliSense’ in ‘XAML UI’.</em></strong></p>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">Note</div>
+  </div>
+  <div class="callout-body">
+    
 <ul>
   <li>
-    <p><strong><em>Create User Interface for Inserting Solidworks Sketch into Sketch Document.</em></strong></p>
+    <p>We will reference previous articles for adding controls and services.</p>
   </li>
   <li>
-    <p><strong><em>Share method which allowed us to use ‘Properties and methods’ of ‘ViewModel’ as ‘IntelliSense’ in ‘XAML UI’.</em></strong></p>
+    <p>Hence reading previous WPF articles is highly suggested.</p>
   </li>
 </ul>
 
-<p>Important Note:</p>
 
-<ul>
-  <li>
-    <p><strong><em>We will reference previous articles for adding controls and services.</em></strong></p>
-  </li>
-  <li>
-    <p><strong><em>Hence reading previous WPF artices is highly suggested.</em></strong></p>
-  </li>
-</ul>
+  </div>
+</div>
 
-<hr />
+  <hr />
 
-<h2 id="demo-video">Demo Video</h2>
+  <h2 id="demo-video">Demo Video</h2>
 
-<p>Below 🎬 video shows how to <strong>Insert Solidworks Sketch into Solidworks Document UI</strong> in <em>Visual Studio 2022</em>.</p>
+  <p>Below 🎬 video shows how to <strong>Insert Solidworks Sketch into Solidworks Document UI</strong> in <em>Visual Studio 2022</em>.</p>
 
-<iframe src="https://www.youtube.com/embed/UbszBve8A4c" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/UbszBve8A4c" frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <p class="fluent-video-caption">
+      Insert Solidworks Sketch into Solidworks Document UI
+    </p>
+  </div>
+</div>
 
-<hr />
+  <hr />
 
-<h2 id="setting-project">Setting Project</h2>
+  <h2 id="setting-project">Setting Project</h2>
 
-<p>We need to <strong>add some required UI changes</strong> as part of <strong>Project Setup</strong>.</p>
+  <p>We need to <strong>add some required UI changes</strong> as part of <strong>Project Setup</strong>.</p>
 
-<p>Please follow below sections for this.</p>
+  <p>Please follow below sections for this.</p>
 
-<h3 id="add-prism-project">Add [Prism Project]</h3>
+  <h3 id="add-prism-project">Add [Prism Project]</h3>
 
-<ul>
-  <li>
-    <p>First, we <strong>add Prism Project</strong> for our requirement.</p>
-  </li>
-  <li>
-    <p>We already <strong>have an article</strong> where we <strong>add Prism Project</strong>.</p>
-  </li>
-  <li>
-    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/#create-project" target="_blank">Create Project</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open Syncfusion Chromeless Window</a></em></strong> article for creating <strong>New Prism project</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below image for folder structure.</p>
-  </li>
-</ul>
+  <ul>
+    <li>
+      <p>First, we <strong>add Prism Project</strong> for our requirement.</p>
+    </li>
+    <li>
+      <p>We already <strong>have an article</strong> where we <strong>add Prism Project</strong>.</p>
+    </li>
+    <li>
+      <p>Please see 🚀 <a href="/wpf-tutorials/open-syncfusion-chromeless-window/#create-project" target="_blank" rel="noopener" class="">
+<strong><em>Create Project</em></strong>
+</a>
+ section of 🚀 <a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank" rel="noopener" class="">
+<strong><em>Open Syncfusion Chromeless Window</em></strong>
+</a>
+ article for creating <strong>New Prism project</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below image for folder structure.</p>
+    </li>
+  </ul>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/new-insert-sketch-project.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/new-insert-sketch-project.png" alt="new-insert-sketch-project" /></a></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/new-insert-sketch-project.png" alt="New Insert Sketch Project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/new-insert-sketch-project.png" /><figcaption class="image-caption">Figure: New Insert Sketch Project</figcaption></figure>
 
-<hr />
+  <hr />
 
-<h3 id="add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</h3>
+  <h3 id="add-syncfusion-chromeless-window">Add [Syncfusion Chromeless Window]</h3>
 
-<ul>
-  <li>
-    <p>Now, we need to add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
-  </li>
-  <li>
-    <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
-  </li>
-  <li>
-    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/#add-syncfusion-chromeless-window" target="_blank">Add Syncfusion Chromeless Window</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank">Open Syncfusion Chromeless Window</a></em></strong> article for creating <strong>New Prism project</strong>.</p>
-  </li>
-</ul>
+  <ul>
+    <li>
+      <p>Now, we need to add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
+    </li>
+    <li>
+      <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Chromeless Window”</strong> into our View.</p>
+    </li>
+    <li>
+      <p>Please see 🚀 <a href="/wpf-tutorials/open-syncfusion-chromeless-window/#add-syncfusion-chromeless-window" target="_blank" rel="noopener" class="">
+<strong><em>Add Syncfusion Chromeless Window</em></strong>
+</a>
+ section of 🚀 <a href="/wpf-tutorials/open-syncfusion-chromeless-window/" target="_blank" rel="noopener" class="">
+<strong><em>Open Syncfusion Chromeless Window</em></strong>
+</a>
+ article for creating <strong>New Prism project</strong>.</p>
+    </li>
+  </ul>
 
-<hr />
+  <hr />
 
-<h3 id="add-design-time-datacontext">Add [Design Time DataContext]</h3>
+  <h3 id="add-design-time-datacontext">Add [Design Time DataContext]</h3>
 
-<ul>
-  <li>
-    <p>Now, we need to enable <strong>“IntelliSense”</strong> for our <strong>ViewModel</strong>.</p>
-  </li>
-  <li>
-    <p>This will <strong>enable</strong> us to see <strong>Public Properties and Methods</strong> of <strong>ViewModel</strong> class into our <strong>xaml</strong> file.</p>
-  </li>
-  <li>
-    <p>For that, first open <strong>“MainWindow.xaml”</strong> file.</p>
-  </li>
-  <li>
-    <p>Now we need to <strong>add below namespace</strong> into <strong>“MainWindow.xaml”</strong> file.</p>
-  </li>
-</ul>
+  <ul>
+    <li>
+      <p>Now, we need to enable <strong>“IntelliSense”</strong> for our <strong>ViewModel</strong>.</p>
+    </li>
+    <li>
+      <p>This will <strong>enable</strong> us to see <strong>Public Properties and Methods</strong> of <strong>ViewModel</strong> class into our <strong>xaml</strong> file.</p>
+    </li>
+    <li>
+      <p>For that, first open <strong>“MainWindow.xaml”</strong> file.</p>
+    </li>
+    <li>
+      <p>Now we need to <strong>add below namespace</strong> into <strong>“MainWindow.xaml”</strong> file.</p>
+    </li>
+  </ul>
 
-<pre><code class="language-xaml">xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-</code></pre>
+</code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for reference.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-namespace-for-design-datacontext.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-namespace-for-design-datacontext.png" alt="add-namespace-for-design-datacontext" /></a></p>
+  <script></script>
 
-<ul>
-  <li>
-    <p>After <em>adding namespace</em>, we need <strong>define Design Time DataContext</strong>.</p>
-  </li>
-  <li>
-    <p>For our <strong>“MainWindow”</strong> view, <em>DataContext</em> is <strong>“MainWindowViewModel”</strong> class.</p>
-  </li>
-  <li>
-    <p>Hence, we also need to define <strong>“MainWindowViewModel”</strong> as Design Time DataContext.</p>
-  </li>
-  <li>
-    <p>For this we need to add below line.</p>
-  </li>
-</ul>
+  <ul>
+    <li>Please see below 👇🏻 image for reference.</li>
+  </ul>
 
-<pre><code class="language-xaml">d:DataContext="{d:DesignInstance viewModel:MainWindowViewModel}"
-</code></pre>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-namespace-for-design-datacontext.png" alt="Add Namespace for Design DataContext" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-namespace-for-design-datacontext.png" /><figcaption class="image-caption">Figure: Add Namespace for Design DataContext</figcaption></figure>
 
-<ul>
-  <li>Please see below 👇🏻 image for reference.</li>
-</ul>
+  <ul>
+    <li>
+      <p>After <em>adding namespace</em>, we need <strong>define Design Time DataContext</strong>.</p>
+    </li>
+    <li>
+      <p>For our <strong>“MainWindow”</strong> view, <em>DataContext</em> is <strong>“MainWindowViewModel”</strong> class.</p>
+    </li>
+    <li>
+      <p>Hence, we also need to define <strong>“MainWindowViewModel”</strong> as Design Time DataContext.</p>
+    </li>
+    <li>
+      <p>For this we need to add below line.</p>
+    </li>
+  </ul>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-design-time-viewmodel.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-design-time-viewmodel.png" alt="add-design-time-viewmodel" /></a></p>
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:DataContext="{d:DesignInstance viewModel:MainWindowViewModel}"
+</code></pre></div></div>
 
-<ul>
-  <li>
-    <p>After <em>setting Design Time DataContext</em>, we need to <strong>ignore Design time values while executing</strong>.</p>
-  </li>
-  <li>
-    <p>For this we need to add below line.</p>
-  </li>
-</ul>
+  </div>
+</div>
 
-<pre><code class="language-xaml">mc:Ignorable="d"
-</code></pre>
+  <script></script>
 
-<ul>
-  <li>Please see below 👇🏻 image for reference.</li>
-</ul>
+  <ul>
+    <li>Please see below 👇🏻 image for reference.</li>
+  </ul>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/ignore-designtime-while-execution.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/ignore-designtime-while-execution.png" alt="ignore-designtime-while-execution" /></a></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-design-time-viewmodel.png" alt="Add Design-Time ViewModel" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-design-time-viewmodel.png" /><figcaption class="image-caption">Figure: Add Design-Time ViewModel</figcaption></figure>
 
-<ul>
-  <li>Full code same is give below.</li>
-</ul>
+  <ul>
+    <li>
+      <p>After <em>setting Design Time DataContext</em>, we need to <strong>ignore Design time values while executing</strong>.</p>
+    </li>
+    <li>
+      <p>For this we need to add below line.</p>
+    </li>
+  </ul>
 
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mc:Ignorable="d"
+</code></pre></div></div>
+
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>Please see below 👇🏻 image for reference.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/ignore-designtime-while-execution.png" alt="Ignore Design-Time While Execution" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/ignore-designtime-while-execution.png" /><figcaption class="image-caption">Figure: Ignore Design-Time While Execution</figcaption></figure>
+
+  <ul>
+    <li>Full code same is give below.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"InsertSketch.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
@@ -524,64 +594,80 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>
-    <p>As <em>an example</em> to show, how IntelliSense work, just <strong>remove any existing Binding properties</strong>.</p>
-  </li>
-  <li>
-    <p>We remove <strong><code class="language-plaintext highlighter-rouge">Title</code></strong> property and re-add it.</p>
-  </li>
-  <li>
-    <p>While adding, you will notice <strong><code class="language-plaintext highlighter-rouge">Title</code></strong> property of <strong>“MainWindowViewModel”</strong> in <strong>Blue color</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for reference.</p>
-  </li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/show-viewmodel-property.gif"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/show-viewmodel-property.gif" alt="show-viewmodel-property" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>
+      <p>As <em>an example</em> to show, how IntelliSense work, just <strong>remove any existing Binding properties</strong>.</p>
+    </li>
+    <li>
+      <p>We remove <strong><code class="language-plaintext highlighter-rouge">Title</code></strong> property and re-add it.</p>
+    </li>
+    <li>
+      <p>While adding, you will notice <strong><code class="language-plaintext highlighter-rouge">Title</code></strong> property of <strong>“MainWindowViewModel”</strong> in <strong>Blue color</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for reference.</p>
+    </li>
+  </ul>
 
-<h3 id="add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/show-viewmodel-property.gif" alt="Show ViewModel Property" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/show-viewmodel-property.gif" /><figcaption class="image-caption">Figure: Show ViewModel Property</figcaption></figure>
 
-<ul>
-  <li>
-    <p>Now, we need to add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
-  </li>
-  <li>
-    <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
-  </li>
-  <li>
-    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-syncfusion-busy-indicator/" target="_blank">Add Syncfusion Busy Indicator</a></em></strong> article for adding <strong>“Syncfusion Busy Indicator”</strong>.</p>
-  </li>
-</ul>
+  <hr />
 
-<hr />
+  <h3 id="add-syncfusion-busy-indicator">Add [Syncfusion Busy Indicator]</h3>
 
-<h2 id="add-controls-for-ui">Add Controls For UI</h2>
+  <ul>
+    <li>
+      <p>Now, we need to add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
+    </li>
+    <li>
+      <p>We already <strong>have an article</strong> where we add <strong>“Syncfusion Busy Indicator”</strong> into our View.</p>
+    </li>
+    <li>
+      <p>Please see 🚀 <a href="/wpf-tutorials/add-syncfusion-busy-indicator/" target="_blank" rel="noopener" class="">
+<strong><em>Add Syncfusion Busy Indicator</em></strong>
+</a>
+ article for adding <strong>“Syncfusion Busy Indicator”</strong>.</p>
+    </li>
+  </ul>
 
-<p>We will some Controls to arrange and show them in UI.</p>
+  <hr />
 
-<p>Please follow below section to add them.</p>
+  <h2 id="add-controls-for-ui">Add Controls For UI</h2>
 
-<h3 id="add-grid">Add [Grid]</h3>
+  <p>We will some Controls to arrange and show them in UI.</p>
 
-<ul>
-  <li>
-    <p>First, we add <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;syncfusion:SfBusyIndicator&gt;</code></strong> tag.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for reference.</p>
-  </li>
-</ul>
+  <p>Please follow below section to add them.</p>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-grid-tag.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-grid-tag.png" alt="add-grid-tag" /></a></p>
+  <h3 id="add-grid">Add [Grid]</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code sample for reference.</li>
-</ul>
+  <ul>
+    <li>
+      <p>First, we add <strong><code class="language-plaintext highlighter-rouge">&lt;Grid&gt;</code></strong> tag inside <strong><code class="language-plaintext highlighter-rouge">&lt;syncfusion:SfBusyIndicator&gt;</code></strong> tag.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for reference.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-grid-tag.png" alt="Add Grid Tag" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-grid-tag.png" /><figcaption class="image-caption">Figure: Add Grid Tag</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code sample for reference.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"InsertSketch.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
@@ -599,7 +685,11 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">ResizeMode=</span><span class="s">"NoResize"</span>
     <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span>
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;syncfusion:SfBusyIndicator</span>
+        <span class="na">AnimationType=</span><span class="s">"Gear"</span>
+        <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
         <span class="nt">&lt;Grid&gt;</span>
             <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
                 <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
@@ -615,17 +705,31 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 <span class="nt">&lt;ColumnDefinition</span> <span class="na">Width=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;/Grid.ColumnDefinitions&gt;</span>
         <span class="nt">&lt;/Grid&gt;</span>
+
     <span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
+
 <span class="nt">&lt;/syncfusion:ChromelessWindow&gt;</span>
 </code></pre></div></div>
-<hr />
 
-<h3 id="add-textblock">Add [TextBlock]</h3>
+  </div>
+</div>
 
-<ul>
-  <li>Now add a Label for “<strong>Select Plane</strong>” as shown below.</li>
-</ul>
+  <script></script>
 
+  <hr />
+
+  <h3 id="add-textblock">Add [TextBlock]</h3>
+
+  <ul>
+    <li>Now add a Label for “<strong>Select Plane</strong>” as shown below.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TextBlock</span>
     <span class="na">Grid.Row=</span><span class="s">"1"</span>
     <span class="na">Grid.Column=</span><span class="s">"0"</span>
@@ -636,16 +740,28 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">Text=</span><span class="s">"Select Plane :"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for reference.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-label.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-label.png" alt="add-label" /></a></p>
+  <script></script>
 
-<ul>
-  <li>Please see below 👇🏻 full code sample for reference.</li>
-</ul>
+  <ul>
+    <li>Please see below 👇🏻 image for reference.</li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-label.png" alt="Add Label" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-label.png" /><figcaption class="image-caption">Figure: Add Label</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 full code sample for reference.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"InsertSketch.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
@@ -663,7 +779,11 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">ResizeMode=</span><span class="s">"NoResize"</span>
     <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span>
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;syncfusion:SfBusyIndicator</span>
+        <span class="na">AnimationType=</span><span class="s">"Gear"</span>
+        <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
         <span class="nt">&lt;Grid&gt;</span>
             <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
                 <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
@@ -689,35 +809,50 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 <span class="na">Text=</span><span class="s">"Select Plane :"</span> <span class="nt">/&gt;</span>
 
         <span class="nt">&lt;/Grid&gt;</span>
+
     <span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
+
 <span class="nt">&lt;/syncfusion:ChromelessWindow&gt;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image as <em>how does this label look</em> in application.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/label-in-application.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/label-in-application.png" alt="label-in-application" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>Please see below 👇🏻 image as <em>how does this label look</em> in application.</li>
+  </ul>
 
-<h3 id="add-syncfusioncomboboxadv">Add [syncfusion:ComboBoxAdv]</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/label-in-application.png" alt="Label in Application" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/label-in-application.png" /><figcaption class="image-caption">Figure: Label in Application</figcaption></figure>
 
-<ul>
-  <li>
-    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong> for <em>showing list of Planes</em>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for reference.</p>
-  </li>
-</ul>
+  <hr />
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-combox.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-combox.png" alt="add-syncfusion-combox" /></a></p>
+  <h3 id="add-syncfusioncomboboxadv">Add [syncfusion:ComboBoxAdv]</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code sample for reference.</li>
-</ul>
+  <ul>
+    <li>
+      <p>Now we add <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong> for <em>showing list of Planes</em>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for reference.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-combox.png" alt="Add Syncfusion ComboBox" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-combox.png" /><figcaption class="image-caption">Figure: Add Syncfusion ComboBox</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code sample for reference.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"InsertSketch.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
@@ -735,7 +870,11 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">ResizeMode=</span><span class="s">"NoResize"</span>
     <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span>
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;syncfusion:SfBusyIndicator</span>
+        <span class="na">AnimationType=</span><span class="s">"Gear"</span>
+        <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
         <span class="nt">&lt;Grid&gt;</span>
             <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
                 <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
@@ -768,38 +907,53 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 <span class="na">HorizontalAlignment=</span><span class="s">"Left"</span> <span class="nt">/&gt;</span>
 
         <span class="nt">&lt;/Grid&gt;</span>
+
     <span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
+
 <span class="nt">&lt;/syncfusion:ChromelessWindow&gt;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image as <em>how Plane list look</em> in application.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/planes-empty-list.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/planes-empty-list.png" alt="planes-empty-list" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>Please see below 👇🏻 image as <em>how Plane list look</em> in application.</li>
+  </ul>
 
-<h3 id="add-syncfusionbuttonadv">Add [syncfusion:ButtonAdv]</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/planes-empty-list.png" alt="Planes Empty List" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/planes-empty-list.png" /><figcaption class="image-caption">Figure: Planes Empty List</figcaption></figure>
 
-<ul>
-  <li>
-    <p>Now we add <strong><code class="language-plaintext highlighter-rouge">syncfusion:ButtonAdv</code></strong> button.</p>
-  </li>
-  <li>
-    <p>This button <strong>execute function</strong> for <strong>Inserting Sketch into Solidworks Part Document</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for reference.</p>
-  </li>
-</ul>
+  <hr />
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-button.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-button.png" alt="add-syncfusion-button" /></a></p>
+  <h3 id="add-syncfusionbuttonadv">Add [syncfusion:ButtonAdv]</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code sample for reference.</li>
-</ul>
+  <ul>
+    <li>
+      <p>Now we add <strong><code class="language-plaintext highlighter-rouge">syncfusion:ButtonAdv</code></strong> button.</p>
+    </li>
+    <li>
+      <p>This button <strong>execute function</strong> for <strong>Inserting Sketch into Solidworks Part Document</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for reference.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-button.png" alt="Add Syncfusion Button" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-syncfusion-button.png" /><figcaption class="image-caption">Figure: Add Syncfusion Button</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code sample for reference.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ChromelessWindow</span>
     <span class="na">x:Class=</span><span class="s">"InsertSketch.Views.MainWindow"</span>
     <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
@@ -817,7 +971,11 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">ResizeMode=</span><span class="s">"NoResize"</span>
     <span class="na">WindowStartupLocation=</span><span class="s">"CenterScreen"</span>
     <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;syncfusion:SfBusyIndicator</span> <span class="na">AnimationType=</span><span class="s">"Gear"</span> <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;syncfusion:SfBusyIndicator</span>
+        <span class="na">AnimationType=</span><span class="s">"Gear"</span>
+        <span class="na">IsBusy=</span><span class="s">"{Binding IsBusy, Mode=TwoWay}"</span><span class="nt">&gt;</span>
+
         <span class="nt">&lt;Grid&gt;</span>
             <span class="nt">&lt;Grid.RowDefinitions&gt;</span>
                 <span class="nt">&lt;RowDefinition</span> <span class="na">Height=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
@@ -862,50 +1020,70 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 <span class="na">Label=</span><span class="s">"Insert Sketch"</span> <span class="nt">/&gt;</span>
 
         <span class="nt">&lt;/Grid&gt;</span>
+
     <span class="nt">&lt;/syncfusion:SfBusyIndicator&gt;</span>
+
 <span class="nt">&lt;/syncfusion:ChromelessWindow&gt;</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image as <em>how Insert Sketch</em> looks in application.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/insert-sketch-button.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/insert-sketch-button.png" alt="insert-sketch-button" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>Please see below 👇🏻 image as <em>how Insert Sketch</em> looks in application.</li>
+  </ul>
 
-<h2 id="set-message-services">Set Message Services</h2>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/insert-sketch-button.png" alt="Insert Sketch Button" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/insert-sketch-button.png" /><figcaption class="image-caption">Figure: Insert Sketch Button</figcaption></figure>
 
-<p>In this section, we <strong>setup Message Services</strong> to <strong>communicate in our application</strong>.</p>
+  <hr />
 
-<p>For this please follow below 👇🏻 sections.</p>
+  <h2 id="set-message-services">Set Message Services</h2>
 
-<h3 id="add-message-services">Add Message Services</h3>
+  <p>In this section, we <strong>setup Message Services</strong> to <strong>communicate in our application</strong>.</p>
 
-<ul>
-  <li>
-    <p>Now, we need to <strong>“Add Message Services”</strong> into our application.</p>
-  </li>
-  <li>
-    <p>We already <strong>have an article</strong> where we <strong>“Add Message Services”</strong> into our application.</p>
-  </li>
-  <li>
-    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/#add-service-for-messaging-in-application" target="_blank">Add Service for Messaging in application</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
-  </li>
-  <li>
-    <p>Following Services added:</p>
+  <p>For this please follow below 👇🏻 sections.</p>
 
-    <ul>
-      <li><strong><code class="language-plaintext highlighter-rouge">ConfirmationMessagesService</code></strong></li>
-      <li><strong><code class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong></li>
-      <li><strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong></li>
-    </ul>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for reference.</p>
-  </li>
-</ul>
+  <h3 id="add-message-services">Add Message Services</h3>
 
+  <ul>
+    <li>
+      <p>Now, we need to <strong>“Add Message Services”</strong> into our application.</p>
+    </li>
+    <li>
+      <p>We already <strong>have an article</strong> where we <strong>“Add Message Services”</strong> into our application.</p>
+    </li>
+    <li>
+      <p>Please see 🚀 <a href="/wpf-tutorials/add-messages-service/#add-service-for-messaging-in-application" target="_blank" rel="noopener" class="">
+<strong><em>Add Service for Messaging in application</em></strong>
+</a>
+ section of 🚀 <a href="/wpf-tutorials/add-messages-service/" target="_blank" rel="noopener" class="">
+<strong><em>Add Message Service</em></strong>
+</a>
+ article for adding <strong>Message Services</strong>.</p>
+    </li>
+    <li>
+      <p>Following Services added:</p>
+
+      <ul>
+        <li><strong><code class="language-plaintext highlighter-rouge">ConfirmationMessagesService</code></strong></li>
+        <li><strong><code class="language-plaintext highlighter-rouge">InformationMessagesService</code></strong></li>
+        <li><strong><code class="language-plaintext highlighter-rouge">ErrorMessagesService</code></strong></li>
+      </ul>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for reference.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">InsertSketch.Services</span>
@@ -916,25 +1094,42 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 <span class="p">}</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h3 id="register-message-services">Register Message Services</h3>
+  <script></script>
 
-<ul>
-  <li>
-    <p>Now, we need to <strong>“Register Message Services”</strong> into our application.</p>
-  </li>
-  <li>
-    <p>We already <strong>have an article</strong> where we <strong>“Register Message Services”</strong> into our application.</p>
-  </li>
-  <li>
-    <p>Please see 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/#register-services" target="_blank">Register Services</a></em></strong> section of 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong> article for adding <strong>Message Services</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for reference.</p>
-  </li>
-</ul>
+  <hr />
 
+  <h3 id="register-message-services">Register Message Services</h3>
+
+  <ul>
+    <li>
+      <p>Now, we need to <strong>“Register Message Services”</strong> into our application.</p>
+    </li>
+    <li>
+      <p>We already <strong>have an article</strong> where we <strong>“Register Message Services”</strong> into our application.</p>
+    </li>
+    <li>
+      <p>Please see 🚀 <a href="/wpf-tutorials/add-messages-service/#register-services" target="_blank" rel="noopener" class="">
+<strong><em>Register Services</em></strong>
+</a>
+ section of 🚀 <a href="/wpf-tutorials/add-messages-service/" target="_blank" rel="noopener" class="">
+<strong><em>Add Message Service</em></strong>
+</a>
+ article for adding <strong>Message Services</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for reference.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">InsertSketch.Services</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">InsertSketch.ViewModels</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">Prism.Events</span><span class="p">;</span>
@@ -954,78 +1149,107 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         <span class="p">{</span>
             <span class="nf">InitializeComponent</span><span class="p">();</span>
             <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
-            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;().</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">ConfirmationMessages</span><span class="p">);</span>
-            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;().</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">InformationMessages</span><span class="p">);</span>
-            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;().</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">ErrorMessages</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ConfirmationMessagesService</span><span class="p">&gt;()</span>
+                                <span class="p">.</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">ConfirmationMessages</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">InformationMessagesService</span><span class="p">&gt;()</span>
+                                <span class="p">.</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">InformationMessages</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span><span class="p">.</span><span class="n">GetEvent</span><span class="p">&lt;</span><span class="n">ErrorMessagesService</span><span class="p">&gt;()</span>
+                                <span class="p">.</span><span class="nf">Subscribe</span><span class="p">(</span><span class="n">ErrorMessages</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="k">private</span> <span class="k">void</span> <span class="nf">ConfirmationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">"Confirmation"</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
+            <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span>
+                <span class="n">messageToShow</span><span class="p">,</span>
+                <span class="s">"Confirmation"</span><span class="p">,</span>
+                <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">YesNo</span><span class="p">,</span>
+                <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Question</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="k">private</span> <span class="k">void</span> <span class="nf">InformationMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">"Information"</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
+            <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span>
+                <span class="n">messageToShow</span><span class="p">,</span>
+                <span class="s">"Information"</span><span class="p">,</span>
+                <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span>
+                <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Information</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="k">private</span> <span class="k">void</span> <span class="nf">ErrorMessages</span><span class="p">(</span><span class="kt">string</span> <span class="n">messageToShow</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="n">messageToShow</span><span class="p">,</span> <span class="s">"Error"</span><span class="p">,</span> <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
+            <span class="n">MessageBox</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span>
+                <span class="n">messageToShow</span><span class="p">,</span>
+                <span class="s">"Error"</span><span class="p">,</span>
+                <span class="n">MessageBoxButton</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span>
+                <span class="n">MessageBoxImage</span><span class="p">.</span><span class="n">Error</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h3 id="understand-message-services">Understand Message Services</h3>
+  <script></script>
 
-<ul>
-  <li>
-    <p>If you want to <strong>“understand Message Services”</strong>, then please visit below article.</p>
-  </li>
-  <li>
-    <p>Reference Article: 🚀 <strong><em><a href="/wpf-tutorials/add-messages-service/" target="_blank">Add Message Service</a></em></strong></p>
-  </li>
-</ul>
+  <hr />
 
-<hr />
+  <h3 id="understand-message-services">Understand Message Services</h3>
 
-<h2 id="update-viewmodel">Update ViewModel</h2>
+  <ul>
+    <li>
+      <p>If you want to <strong>“understand Message Services”</strong>, then please visit below article.</p>
+    </li>
+    <li>
+      <p>Reference Article: 🚀 <a href="/wpf-tutorials/add-messages-service/" target="_blank" rel="noopener" class="">
+<strong><em>Add Message Service</em></strong>
+</a></p>
+    </li>
+  </ul>
 
-<ul>
-  <li>
-    <p>Now we need to <strong>“add Properties and Methods”</strong> for <strong>“Binding”</strong> with our view.</p>
+  <hr />
 
-    <ul>
-      <li><em>View</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindow</code></strong></li>
-      <li><em>ViewModel</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong></li>
-    </ul>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for <strong>“Properties and Methods”</strong> required.</p>
-  </li>
-</ul>
+  <h2 id="update-viewmodel">Update ViewModel</h2>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/properties-and-method-required.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/properties-and-method-required.png" alt="properties-and-method-required" /></a></p>
+  <ul>
+    <li>
+      <p>Now we need to <strong>“add Properties and Methods”</strong> for <strong>“Binding”</strong> with our view.</p>
 
-<h3 id="add-properties">Add [Properties]</h3>
+      <ul>
+        <li><em>View</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindow</code></strong></li>
+        <li><em>ViewModel</em>: <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong></li>
+      </ul>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for <strong>“Properties and Methods”</strong> required.</p>
+    </li>
+  </ul>
 
-<ul>
-  <li>
-    <p>We need to 2 <strong>“Properties”</strong> for <strong>“Syncfusion ComboBox”</strong>.</p>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/properties-and-method-required.png" alt="Properties and Methods Required" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/properties-and-method-required.png" /><figcaption class="image-caption">Figure: Properties and Methods Required</figcaption></figure>
 
-    <ol>
-      <li><em>For List of Planes to show in drop down.</em></li>
-      <li><em>For Selected Item in drop down.</em></li>
-    </ol>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for <strong>“Properties”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
-  </li>
-</ul>
+  <h3 id="add-properties">Add [Properties]</h3>
 
+  <ul>
+    <li>
+      <p>We need to 2 <strong>“Properties”</strong> for <strong>“Syncfusion ComboBox”</strong>.</p>
+
+      <ol>
+        <li><em>For List of Planes to show in drop down.</em></li>
+        <li><em>For Selected Item in drop down.</em></li>
+      </ol>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for <strong>“Properties”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_planeNames</span><span class="p">;</span>
 <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">PlaneNames</span>
 <span class="p">{</span>
@@ -1041,90 +1265,134 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for <strong>“Properties and Methods”</strong> required.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-properties.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-properties.png" alt="add-properties" /></a></p>
+  <script></script>
 
-<ul>
-  <li>
-    <p>Now we need to fill, “<strong>Plane Names</strong>” in <strong><code class="language-plaintext highlighter-rouge">SelectedPlane</code></strong> variable.</p>
-  </li>
-  <li>
-    <p>We add “<strong>Plane Names</strong>” in Constructor.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for adding “<strong>Plane Names</strong>” in Constructor.</p>
-  </li>
-</ul>
+  <ul>
+    <li>Please see below 👇🏻 image for <strong>“Properties and Methods”</strong> required.</li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-properties.png" alt="Add Properties" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-properties.png" /><figcaption class="image-caption">Figure: Add Properties</figcaption></figure>
+
+  <ul>
+    <li>
+      <p>Now we need to fill, “<strong>Plane Names</strong>” in <strong><code class="language-plaintext highlighter-rouge">SelectedPlane</code></strong> variable.</p>
+    </li>
+    <li>
+      <p>We add “<strong>Plane Names</strong>” in Constructor.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for adding “<strong>Plane Names</strong>” in Constructor.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">MainWindowViewModel</span><span class="p">(</span><span class="n">IEventAggregator</span> <span class="n">eventAggregator</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">PlaneNames</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">"Front Plane"</span><span class="p">,</span> <span class="s">"Right Plane"</span><span class="p">,</span> <span class="s">"Top Plane"</span> <span class="p">};</span>
+    <span class="n">PlaneNames</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="s">"Front Plane"</span><span class="p">,</span>
+        <span class="s">"Right Plane"</span><span class="p">,</span>
+        <span class="s">"Top Plane"</span>
+    <span class="p">};</span>
+
     <span class="k">this</span><span class="p">.</span><span class="n">eventAggregator</span> <span class="p">=</span> <span class="n">eventAggregator</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for adding “<strong>Plane Names</strong>” in Constructor.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-planes-in-constructor.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-planes-in-constructor.png" alt="add-planes-in-constructor" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>Please see below 👇🏻 image for adding “<strong>Plane Names</strong>” in Constructor.</li>
+  </ul>
 
-<h3 id="add-prism-command">Add [Prism Command]</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-planes-in-constructor.png" alt="Add Planes in Constructor" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-planes-in-constructor.png" /><figcaption class="image-caption">Figure: Add Planes in Constructor</figcaption></figure>
 
-<ul>
-  <li>
-    <p>We need 1 Prism Command for <strong>syncfusion Button</strong>.</p>
-  </li>
-  <li>
-    <p>This command will be <em>responsible</em> for <strong>Inserting Sketch</strong> in <em>Solidworks Part Document</em>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
-  </li>
-</ul>
+  <hr />
 
+  <h3 id="add-prism-command">Add [Prism Command]</h3>
+
+  <ul>
+    <li>
+      <p>We need 1 Prism Command for <strong>syncfusion Button</strong>.</p>
+    </li>
+    <li>
+      <p>This command will be <em>responsible</em> for <strong>Inserting Sketch</strong> in <em>Solidworks Part Document</em>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_insertSketchCommand</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">InsertSketchCommand</span> <span class="p">=&gt;</span>
-    <span class="n">_insertSketchCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_insertSketchCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteInsertSketchCommand</span><span class="p">));</span>
+    <span class="n">_insertSketchCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_insertSketchCommand</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteInsertSketchCommand</span><span class="p">));</span>
 
 <span class="k">void</span> <span class="nf">ExecuteInsertSketchCommand</span><span class="p">()</span>
 <span class="p">{</span>
-    
+    <span class="c1">// TODO: Insert sketch logic</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-in-viewmodel.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-in-viewmodel.png" alt="add-command-in-viewmodel" /></a></p>
+  <script></script>
 
-<hr />
+  <ul>
+    <li>Please see below 👇🏻 image for adding <strong>“Prism Command”</strong> in <strong><code class="language-plaintext highlighter-rouge">MainWindowViewModel</code></strong>.</li>
+  </ul>
 
-<h3 id="add-code-to-function">Add Code To Function</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-in-viewmodel.png" alt="Add Command in ViewModel" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-in-viewmodel.png" /><figcaption class="image-caption">Figure: Add Command in ViewModel</figcaption></figure>
 
-<ul>
-  <li>
-    <p>Now we will add some code <strong><code class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand</code></strong> function.</p>
-  </li>
-  <li>
-    <p>We already used this code for in various articles.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 code sample for waiting code to add.</p>
-  </li>
-</ul>
+  <hr />
 
+  <h3 id="add-code-to-function">Add Code To Function</h3>
+
+  <ul>
+    <li>
+      <p>Now we will add some code <strong><code class="language-plaintext highlighter-rouge">ExecuteInsertSketchCommand</code></strong> function.</p>
+    </li>
+    <li>
+      <p>We already used this code for in various articles.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 code sample for waiting code to add.</p>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">DelegateCommand</span> <span class="n">_insertSketchCommand</span><span class="p">;</span>
 
 <span class="k">public</span> <span class="n">DelegateCommand</span> <span class="n">InsertSketchCommand</span> <span class="p">=&gt;</span>
-    <span class="n">_insertSketchCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_insertSketchCommand</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteInsertSketchCommand</span><span class="p">));</span>
+    <span class="n">_insertSketchCommand</span> <span class="p">??</span> <span class="p">(</span><span class="n">_insertSketchCommand</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">DelegateCommand</span><span class="p">(</span><span class="n">ExecuteInsertSketchCommand</span><span class="p">));</span>
 
 <span class="k">async</span> <span class="k">void</span> <span class="nf">ExecuteInsertSketchCommand</span><span class="p">()</span>
 <span class="p">{</span>
@@ -1133,7 +1401,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 
     <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(()</span> <span class="p">=&gt;</span>
     <span class="p">{</span>
-        <span class="c1">// Sleeping with 5 sec</span>
+        <span class="c1">// Simulate long-running operation (5 seconds)</span>
         <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
     <span class="p">});</span>
 
@@ -1142,12 +1410,24 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Please see below 👇🏻 image for waiting code to add.</li>
-</ul>
+  </div>
+</div>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-code-to-command.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-code-to-command.png" alt="add-code-to-command" /></a></p>
+  <script></script>
 
+  <ul>
+    <li>Please see below 👇🏻 image for waiting code to add.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-code-to-command.png" alt="Add Code to Command" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-code-to-command.png" /><figcaption class="image-caption">Figure: Add Code to Command</figcaption></figure>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ComboBoxAdv</span>
     <span class="na">Grid.Row=</span><span class="s">"1"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
@@ -1156,29 +1436,41 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">HorizontalAlignment=</span><span class="s">"Left"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h2 id="add-bindings">Add [Bindings]</h2>
+  <script></script>
 
-<p>In this section we will add Bindings to Syncfusion Combo Box and Syncfusion Button.</p>
+  <hr />
 
-<h3 id="add-property-binding">Add [Property Binding]</h3>
+  <h2 id="add-bindings">Add [Bindings]</h2>
 
-<ul>
-  <li>
-    <p>We need to Bind previously created <strong>“Properties”</strong> with <strong>“Syncfusion ComboBox”</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for adding <strong>“Binding Properties”</strong>.</p>
-  </li>
-</ul>
+  <p>In this section we will add Bindings to Syncfusion Combo Box and Syncfusion Button.</p>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-property-bindings.gif"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-property-bindings.gif" alt="add-property-bindings" /></a></p>
+  <h3 id="add-property-binding">Add [Property Binding]</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code for adding <strong>“Binding Properties”</strong>.</li>
-</ul>
+  <ul>
+    <li>
+      <p>We need to Bind previously created <strong>“Properties”</strong> with <strong>“Syncfusion ComboBox”</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for adding <strong>“Binding Properties”</strong>.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-property-bindings.gif" alt="Add Property Bindings" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-property-bindings.gif" /><figcaption class="image-caption">Figure: Add Property Bindings</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code for adding <strong>“Binding Properties”</strong>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ComboBoxAdv</span>
     <span class="na">Grid.Row=</span><span class="s">"1"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
@@ -1189,25 +1481,37 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">SelectedItem=</span><span class="s">"{Binding SelectedPlane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h3 id="add-command-binding">Add [Command Binding]</h3>
+  <script></script>
 
-<ul>
-  <li>
-    <p>We need to Bind previously created <strong>“Command”</strong> with <strong>“Syncfusion Button”</strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for adding <strong>“Command”</strong>.</p>
-  </li>
-</ul>
+  <hr />
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-binding.gif"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-binding.gif" alt="add-command-binding" /></a></p>
+  <h3 id="add-command-binding">Add [Command Binding]</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code for adding <strong>“Command”</strong>.</li>
-</ul>
+  <ul>
+    <li>
+      <p>We need to Bind previously created <strong>“Command”</strong> with <strong>“Syncfusion Button”</strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for adding <strong>“Command”</strong>.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-binding.gif" alt="Add Command Binding" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-command-binding.gif" /><figcaption class="image-caption">Figure: Add Command Binding</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code for adding <strong>“Command”</strong>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ButtonAdv</span>
     <span class="na">Grid.Row=</span><span class="s">"3"</span>
     <span class="na">Grid.Column=</span><span class="s">"0"</span>
@@ -1222,48 +1526,61 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">Label=</span><span class="s">"Insert Sketch"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h2 id="update-syncfusion-combobox">Update [Syncfusion ComboBox]</h2>
+  <script></script>
 
-<ul>
-  <li>
-    <p>We need to <strong>update Syncfusion ComboBox</strong> for following reasons.</p>
+  <hr />
 
-    <ol>
-      <li>
-        <p><em>There is no Default value selected in Syncfusion ComboBox</em>.</p>
-      </li>
-      <li>
-        <p><em>Font Size of Text in Dropdown in very small</em>.</p>
-      </li>
-    </ol>
-  </li>
-</ul>
+  <h2 id="update-syncfusion-combobox">Update [Syncfusion ComboBox]</h2>
 
-<p>Please see below 👇🏻 image for reference.</p>
+  <ul>
+    <li>
+      <p>We need to <strong>update Syncfusion ComboBox</strong> for following reasons.</p>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/syncfusion-combobox-before-changes.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/syncfusion-combobox-before-changes.png" alt="syncfusion-combobox-before-changes" /></a></p>
+      <ol>
+        <li>
+          <p><em>There is no Default value selected in Syncfusion ComboBox</em>.</p>
+        </li>
+        <li>
+          <p><em>Font Size of Text in Dropdown in very small</em>.</p>
+        </li>
+      </ol>
+    </li>
+  </ul>
 
-<p>Let us handle them 1 by 1.</p>
+  <p>Please see below 👇🏻 image for reference.</p>
 
-<h3 id="add-default-value">Add Default Value</h3>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/syncfusion-combobox-before-changes.png" alt="Syncfusion ComboBox Before Changes" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/syncfusion-combobox-before-changes.png" /><figcaption class="image-caption">Figure: Syncfusion ComboBox Before Changes</figcaption></figure>
 
-<ul>
-  <li>
-    <p>For adding <em>Default Value</em>, we need to define <strong><code class="language-plaintext highlighter-rouge">SelectedIndex</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for adding <em>Default Value</em>.</p>
-  </li>
-</ul>
+  <p>Let us handle them 1 by 1.</p>
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-selected-index.gif"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-selected-index.gif" alt="add-selected-index" /></a></p>
+  <h3 id="add-default-value">Add Default Value</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code for adding <em>Default Value</em>.</li>
-</ul>
+  <ul>
+    <li>
+      <p>For adding <em>Default Value</em>, we need to define <strong><code class="language-plaintext highlighter-rouge">SelectedIndex</code></strong> property of <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for adding <em>Default Value</em>.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-selected-index.gif" alt="Add Selected Index" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-selected-index.gif" /><figcaption class="image-caption">Figure: Add Selected Index</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code for adding <em>Default Value</em>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ComboBoxAdv</span>
     <span class="na">Grid.Row=</span><span class="s">"1"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
@@ -1272,28 +1589,42 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">HorizontalAlignment=</span><span class="s">"Left"</span>
     <span class="na">ItemsSource=</span><span class="s">"{Binding PlaneNames}"</span>
     <span class="na">SelectedIndex=</span><span class="s">"0"</span>
-    <span class="na">SelectedItem=</span><span class="s">"{Binding SelectedPlane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+    <span class="na">SelectedItem=</span><span class="s">"{Binding SelectedPlane,
+                          Mode=TwoWay,
+                          UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h3 id="update-font-size">Update Font Size</h3>
+  <script></script>
 
-<ul>
-  <li>
-    <p>For update <em>Font Size</em> of Text in Dropdown, we need to define <strong><code class="language-plaintext highlighter-rouge">ItemTemplate</code></strong> of <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong>.</p>
-  </li>
-  <li>
-    <p>Please see below 👇🏻 image for adding <em>Default Value</em>.</p>
-  </li>
-</ul>
+  <hr />
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-item-template-to-syncfusion-button.png"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-item-template-to-syncfusion-button.png" alt="add-item-template-to-syncfusion-button" /></a></p>
+  <h3 id="update-font-size">Update Font Size</h3>
 
-<ul>
-  <li>Please see below 👇🏻 code for adding <em>Default Value</em>.</li>
-</ul>
+  <ul>
+    <li>
+      <p>For update <em>Font Size</em> of Text in Dropdown, we need to define <strong><code class="language-plaintext highlighter-rouge">ItemTemplate</code></strong> of <strong><code class="language-plaintext highlighter-rouge">syncfusion:ComboBoxAdv</code></strong>.</p>
+    </li>
+    <li>
+      <p>Please see below 👇🏻 image for adding <em>Default Value</em>.</p>
+    </li>
+  </ul>
 
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-item-template-to-syncfusion-button.png" alt="Add Item Template to Syncfusion Button" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/add-item-template-to-syncfusion-button.png" /><figcaption class="image-caption">Figure: Add Item Template to Syncfusion Button</figcaption></figure>
+
+  <ul>
+    <li>Please see below 👇🏻 code for adding <em>Default Value</em>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;syncfusion:ComboBoxAdv</span>
     <span class="na">Grid.Row=</span><span class="s">"1"</span>
     <span class="na">Grid.Column=</span><span class="s">"2"</span>
@@ -1302,40 +1633,51 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     <span class="na">HorizontalAlignment=</span><span class="s">"Left"</span>
     <span class="na">ItemsSource=</span><span class="s">"{Binding PlaneNames}"</span>
     <span class="na">SelectedIndex=</span><span class="s">"0"</span>
-    <span class="na">SelectedItem=</span><span class="s">"{Binding SelectedPlane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
+    <span class="na">SelectedItem=</span><span class="s">"{Binding SelectedPlane,
+                          Mode=TwoWay,
+                          UpdateSourceTrigger=PropertyChanged}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<hr />
+  </div>
+</div>
 
-<h2 id="final-result">Final Result</h2>
+  <script></script>
 
-<p>Now we run the application as shown in below 👇🏻 image.</p>
+  <hr />
 
-<p><a href="/assets/wpf-tutorials/insert-solidworks-sketch-ui/run-application.gif"><img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/run-application.gif" alt="run-application" /></a></p>
+  <h2 id="final-result">Final Result</h2>
 
-<p>Now <strong>UI part</strong> is completed for <em>Inserting Sketch in Solidworks Document</em> in <em>WPF Prism Application</em>.</p>
+  <p>Now we run the application as shown in below 👇🏻 image.</p>
 
-<p><strong>This is it !!!</strong></p>
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/run-application.gif" alt="Run Application" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/insert-solidworks-sketch-ui/run-application.gif" /><figcaption class="image-caption">Figure: Run Application</figcaption></figure>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+  <p>Now <strong>UI part</strong> is completed for <em>Inserting Sketch in Solidworks Document</em> in <em>WPF Prism Application</em>.</p>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+  <p><strong>This is it !!!</strong></p>
 
-<p>Hope this post helps you to <strong>Inserting Sketch in Solidworks Document UI</strong>.</p>
+  <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+  <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+  <p>Hope this post helps you to <strong>Inserting Sketch in Solidworks Document UI</strong>.</p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+  <p><em>If you like the post then please share it with your friends also.</em></p>
 
-<ul>
-  <li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+  <p><em>Do let me know by you like this post or not!</em></p>
 
-        </div>
-        
-        <div>
+  <p><em>Till then, Happy learning!!!</em></p>
+
+  <ul>
+    <li><a href="/download-solidworks-macros/" target="_blank" rel="noopener" class="">
+🎁 Download 5 Free SolidWorks Macros →
+</a></li>
+  </ul>
+
+</div>
+
+      </div>
+      <div>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Top and Bottom placed Ad -->
   <ins class="adsbygoogle"
@@ -1349,161 +1691,174 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   </script>
 </div>
 
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
-
-
-      </footer>
-
       
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/wpf-tutorials/add-messages-service/" title="Add Message Service
-">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary text-light" href="/wpf-tutorials/edit-solidworks-sketch-ui/" title="Edit Solidworks Sketch UI
-">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
 
-    </div>
-  </article>
 
+
+<div class="docs-navigation">
+  <div class="docs-nav-container">
+    
+    <a href="/wpf-tutorials/add-messages-service/" class="docs-nav-prev btn-nav-secondary" title="Previous: Add Message Service">
+      <span class="nav-icon" aria-hidden="true">&larr;</span>
+      <span class="nav-text">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">Add Message Service</span>
+      </span>
+    </a>
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    
+    <a href="/wpf-tutorials/edit-solidworks-sketch-ui/" class="docs-nav-next btn-nav-primary" title="Next: Edit Solidworks Sketch UI">
+      <span class="nav-text">
+        <span class="nav-label">Next</span>
+        <span class="nav-title">Edit Solidworks Sketch UI</span>
+      </span>
+      <span class="nav-icon" aria-hidden="true">&rarr;</span>
+    </a>
+    
+  </div>
 </div>
 
-          
+
+    </article>
+  </div>
+</div>
+
+      </main>
+
+      
+        <aside class="toc">
+          <div class="toc-inner">
+  <h3>On this page</h3>
+  <ul id="toc-list"></ul>
+</div>
+
+        </aside>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-wave">
+  <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<div class="footer-content">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a href="/" class="footer-brand">
+        <img src="/assets/logo.png" alt="Logo" class="brand-icon">
+        <div class="brand-text">
+          <div class="brand-name">The CAD Coder</div>
+          <div class="brand-tagline">Learn. Code. Automate.</div>
         </div>
-      </div>
-    </div>
-  </div>
+      </a>
 
-  <div id="footer" class="page__footer">
-    <footer>
-      <!-- start custom footer snippets -->
+      <p class="footer-desc">
+        Free SOLIDWORKS API tutorials for mechanical engineers. Master VBA, C#, and C++ automation with practical, beginner-friendly guides.
+      </p>
 
-<!-- end custom footer snippets -->
-      <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
+      <div class="footer-social">
+        <a href="https://facebook.com/thecadcoder" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
-
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-          
-          
-          
-          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-          
-          
-          
-        </ul>
+        <a href="https://linkedin.com/in/prashantbaher" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
       </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-        </ul>
+    </div>
+
+    <div class="footer-col footer-links-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links-list">
+        <li><a href="/knowledge-base/introduction/"><span class="ms-icon" aria-hidden="true">&#xE82D;</span>Knowledge Base</a></li>
+        <li><a href="/Solidworks-macro-guide/"><span class="ms-icon" aria-hidden="true">&#xE713;</span>VBA Macros</a></li>
+        <li><a href="/Solidworks-csharp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE943;</span>C# API</a></li>
+        <li><a href="/Solidworks-cpp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE90F;</span>C++ API</a></li>
+      </ul>
+
+      <h3 class="footer-subheading">Resources</h3>
+      <ul class="footer-links-list">
+        <li><a href="/wpf-tutorials/syncfusion-account-signup/"><span class="ms-icon" aria-hidden="true">&#xE790;</span>WPF Tutorials</a></li>
+        <li><a href="/knowledge-base/wix4-introduction/"><span class="ms-icon" aria-hidden="true">&#xE7B8;</span>WiX Installer</a></li>
+        <li><a href="/resources/"><span class="ms-icon" aria-hidden="true">&#xE80D;</span>Resources</a></li>
+        <li><a href="/aboutMe/"><span class="ms-icon" aria-hidden="true">&#xE77B;</span>About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-newsletter-col">
+      <h3 class="footer-heading">Stay Updated</h3>
+      <p class="newsletter-text">
+        Get notified when new tutorials are published. No spam, unsubscribe anytime.
+      </p>
+
+      <form class="newsletter-form" action="#" method="post">
+        <div class="newsletter-input-wrapper">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+            <span class="ms-icon" aria-hidden="true">&#xE72A;</span>
+          </button>
+        </div>
+      </form>
+
+      <p class="newsletter-privacy">
+        <small><span class="ms-icon" aria-hidden="true">&#xE72E;</span> We respect your privacy. No spam ever.</small>
+      </p>
+
+      <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        Back to Top
+      </button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">
+        &copy; 2026 The CAD Coder. All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
-</footer>
+</div>
+
     </footer>
-  </div>
 
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
-
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-</body>
-
+    
+    <script src="/assets/js/theme.js" defer></script>
+    <script src="/assets/js/toc.js" defer></script>
+    <script src="/assets/js/search.js" defer></script>
+  </body>
 </html>

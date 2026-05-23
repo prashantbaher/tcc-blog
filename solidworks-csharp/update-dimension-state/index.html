@@ -1,437 +1,501 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- begin _includes/seo.html --><title>SOLIDWORKS C# API - Update Dimension State - The CAD Coder</title>
-<meta name="description" content="This is a miscellaneous type article. I am writing this article for future reference and will write a proper article in future.">
+<!-- Page Title -->
+<title>SOLIDWORKS C# API - Update Dimension State | The CAD Coder</title>
+
+<!-- Meta Description -->
+
+  <meta name="description" content="">
 
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://thecadcoder.com/solidworks-csharp/update-dimension-state/">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/logo.png">
+
+<!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="The CAD Coder">
 <meta property="og:title" content="SOLIDWORKS C# API - Update Dimension State">
-<meta property="og:url" content="http://localhost:4000/solidworks-csharp/update-dimension-state/">
+<meta property="og:description" content="
+">
+<meta property="og:url" content="https://thecadcoder.com/solidworks-csharp/update-dimension-state/">
+<meta property="og:site_name" content="The CAD Coder">
+
+  <meta property="og:image" content="https://thecadcoder.com/assets/logo.png">
 
 
-  <meta property="og:description" content="This is a miscellaneous type article. I am writing this article for future reference and will write a proper article in future.">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOLIDWORKS C# API - Update Dimension State">
+<meta name="twitter:description" content="
+">
 
 
+<!-- RSS Feed -->
+
+  <link rel="alternate" type="application/rss+xml" title="The CAD Coder" href="/feed.xml">
 
 
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Lunr.js for Search (CDN) -->
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" defer></script>
+
+<!-- Google Analytics (optional - uncomment and add your tracking ID) -->
 
 
+<!-- Preconnect for Performance (optional but recommended) -->
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
 
-  <meta property="article:published_time" content="2025-09-28T12:25:50-04:00">
-
-
-
-
-
-
-<link rel="canonical" href="http://localhost:4000/solidworks-csharp/update-dimension-state/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<!-- MailerLite Universal -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+  (function (w, d, e, u, f, l, n) {
+    w[f] = w[f] || function () {
+      (w[f].q = w[f].q || [])
+        .push(arguments);
+    }, l = d.createElement(e), l.async = 1, l.src = u,
+      n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+  })
+    (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+  ml('account', '1644816');
 </script>
+<!-- End MailerLite Universal -->
 
-<!-- end _includes/seo.html -->
+<script src="/assets/js/tabs.js" defer></script>
+<script src="/assets/js/image-zoom.js" defer></script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
-  <link
-    href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="The CAD Coder Feed">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/code-line-numbers.js" defer></script>
 
-  <meta name="google-site-verification" content="OeSBbUv_kXDkDxaeoLixjE1BYxlbQRINt58H1UGbSMY" />
-
-  
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-          .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '1644816');
-  </script>
-  <!-- End MailerLite Universal -->
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" width="30" height="30" class="img-fluid" alt="">
-        <span>The CAD Coder</span>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt="The CAD Coder Logo" class="logo-icon">
+      <span class="logo-text">The CAD Coder</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span class="ms-icon" aria-hidden="true">&#xE700;</span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/introduction/"><span>Knowledge Base</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/vba/vba-Introduction/"><span>VBA</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/inventor-macro/export-to-pdf/"><span>Inventor Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-macro-guide/"><span>Solidworks VBA Macro</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="active nav-link" style="border-bottom: 1px solid #fff;"   href="/Solidworks-csharp-api-tutorials/"><span>Solidworks C# API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/Solidworks-cpp-api-tutorials/"><span>Solidworks C++ API</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/wpf-tutorials/syncfusion-account-signup/"><span>WPF Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/knowledge-base/wix4-introduction/"><span>Wix4 Tutorials</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/resources/"><span>Resources</span></a>
-            </li>
-            
-            
-            <li class="nav-item">
-                <a  class="nav-link"   href="/aboutMe/"><span>About</span></a>
-            </li>
-            
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li> -->
-        </ul>
-        <!-- <a class="btn btn-outline-success my-2 my-sm-0" href="/seach-document/" role="button">
-            <i class="fas fa-search"></i>
-        </a> -->
-    </div>
-</nav>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-lg-2 col-sm-4">
-  <div class="sidebar sticky" style="width: 100%;">
-  
-  
-    
-      
-      
-      
-      
-    
-    
-      
-
-<nav class="nav__list">
-  
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle Menu</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Getting Started</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/Solidworks-csharp-api-tutorials/">Introduction</a></li>
-          
-            <li><a href="/solidworks-csharp/Prerequisite/">Prerequisite</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks/">Open Solidworks</a></li>
-          
-            <li><a href="/solidworks-csharp/open-solidworks-document/">Open Solidworks Document</a></li>
-          
-            <li><a href="/solidworks-csharp/browse-and-open-solidworks-file/">Browse/Open SOLIDWORKS Document</a></li>
-          
-            <li><a href="/solidworks-csharp/unit-correction/">Fix Unit Issue</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Segment</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/insert-sketch/">Insert Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-sketch/">Edit Solidworks Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/edit-solidworks-feature-sketch/">Edit Solidworks Feature Sketch</a></li>
-          
-            <li><a href="/solidworks-csharp/change-sketch-name/">Change Sketch Name</a></li>
-          
-            <li><a href="/solidworks-csharp/delete-selected-sketch/">Delete Selected Sketch</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Sketch Lines</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/create-line/">Create Line</a></li>
-          
-            <li><a href="/solidworks-csharp/create-line-code-refactor/">Create Line Code Refactor</a></li>
-          
-            <li><a href="/solidworks-csharp/setup-test-project/">Setup Test Project</a></li>
-          
-            <li><a href="/solidworks-csharp/test-createLine-method/">Test Create Line Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-applyunitconversion-method/">Test ApplyUnitConversion Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-SelectSketchPlane-method/">Test SelectSketchPlane Method</a></li>
-          
-            <li><a href="/solidworks-csharp/test-CreatePartDocument-method/">Test CreatePartDocument Method</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Others</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/solidworks-csharp/update-dimension-state/" class="active">Update Dimension State</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-    
-  
   </div>
 
+  <nav class="main-nav" id="main-nav">
+    
+      
+        <a href="/knowledge-base/introduction/" class="nav-link ">
+          Knowledge Base
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            General Programming
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/wpf-tutorials/syncfusion-account-signup/" >
+                WPF Tutorials
+              </a>
+            
+              <a href="/knowledge-base/wix4-introduction/" >
+                Wix4 Tutorials
+              </a>
+            
+              <a href="/vba/vba-Introduction/" >
+                VBA
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/inventor-macro/export-to-pdf/" class="nav-link ">
+          Inventor Macro
+        </a>
+      
+    
+      
+        <div class="nav-item dropdown ">
+          <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('active')">
+            Solidworks
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            
+              <a href="/Solidworks-macro-guide/" >
+                Solidworks VBA Macro
+              </a>
+            
+              <a href="/Solidworks-csharp-api-tutorials/" >
+                Solidworks C# API
+              </a>
+            
+              <a href="/Solidworks-cpp-api-tutorials/" >
+                Solidworks C++ API
+              </a>
+            
+          </div>
+        </div>
+      
+    
+      
+        <a href="/resources/" class="nav-link ">
+          Resources
+        </a>
+      
+    
+      
+        <a href="/aboutMe/" class="nav-link ">
+          About
+        </a>
+      
+    
+  </nav>
+
+  <div class="header-actions">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search docs..." aria-label="Search documentation">
+      <div id="search-results" aria-live="polite"></div>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="ms-icon" aria-hidden="true">&#xE706;</span>
+    </button>
+  </div>
 </div>
-      <div class="col-md-9 col-lg-10 col-sm-8">
-        <div>
-          <div id="main" role="main">
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <meta itemprop="headline" content="SOLIDWORKS C# API - Update Dimension State">
-    
-    <meta itemprop="description" content="This is a miscellaneous type article.I am writing this article for future reference and will write a proper article in future.">
-    
-    
-    <meta itemprop="datePublished" content="2025-09-28T12:25:50-04:00">
-    
-
-    <div class="page__inner-wrap">
-      
-      <header>
-        <h1 id="page-title" class="page__title" itemprop="headline">SOLIDWORKS C# API - Update Dimension State
-</h1>
-        
-
-  <p class="page__meta">
-    
+    </header>
 
     
-
-    
-      
+    <!-- <div class="top-breadcrumbs">
       
 
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  
     
-  </p>
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-csharp">Solidworks csharp</a>
+    
+  
+    
+      
+      <span class="breadcrumb-separator">/</span>
+      <a href="/solidworks-csharp/update-dimension-state">Update dimension state</a>
+    
+  
+</nav>
 
+    </div> -->
 
-      </header>
+    
+    
+    
+
+    <div class="container-toc-only">
+
       
 
-      <section class="page__content" itemprop="text">
-        
-        <aside class="sidebar__right sticky">
-          <nav class="toc">
-            <header>
-              <h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4>
-            </header>
-            <ul class="toc__menu"><li><a href="#objective">Objective</a></li><li><a href="#macro-video">Macro Video</a></li><li><a href="#wpf-window">WPF Window</a></li><li><a href="#global-variables">Global Variables</a></li><li><a href="#open-part-function">Open Part Function</a></li><li><a href="#change-dimension-state-function">Change Dimension State Function</a></li></ul>
+      <main class="content-with-toc">
+        <div class="docs-page">
+  <div class="docs-inner container">
+    <!-- Left Sidebar Navigation -->
+    
+    
+      <aside class="docs-subnav">
+        <div class="docs-subnav-inner">
+          
+            <h3 class="docs-subnav-title">Getting Started</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/Solidworks-csharp-api-tutorials/"
+                     class="">
+                    Introduction
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/Prerequisite/"
+                     class="">
+                    Prerequisite
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/open-solidworks/"
+                     class="">
+                    Open Solidworks
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/open-solidworks-document/"
+                     class="">
+                    Open Solidworks Document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/browse-and-open-solidworks-file/"
+                     class="">
+                    Browse/Open SOLIDWORKS Document
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/unit-correction/"
+                     class="">
+                    Fix Unit Issue
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch Segment</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/insert-sketch/"
+                     class="">
+                    Insert Solidworks Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/edit-sketch/"
+                     class="">
+                    Edit Solidworks Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/edit-solidworks-feature-sketch/"
+                     class="">
+                    Edit Solidworks Feature Sketch
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/change-sketch-name/"
+                     class="">
+                    Change Sketch Name
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/delete-selected-sketch/"
+                     class="">
+                    Delete Selected Sketch
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Sketch Lines</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/create-line/"
+                     class="">
+                    Create Line
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/create-line-code-refactor/"
+                     class="">
+                    Create Line Code Refactor
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/setup-test-project/"
+                     class="">
+                    Setup Test Project
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-createLine-method/"
+                     class="">
+                    Test Create Line Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-applyunitconversion-method/"
+                     class="">
+                    Test ApplyUnitConversion Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-SelectSketchPlane-method/"
+                     class="">
+                    Test SelectSketchPlane Method
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="/solidworks-csharp/test-CreatePartDocument-method/"
+                     class="">
+                    Test CreatePartDocument Method
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h3 class="docs-subnav-title">Others</h3>
+            <ul class="docs-subnav-list">
+              
+                <li>
+                  <a href="/solidworks-csharp/update-dimension-state/"
+                     class="active">
+                    Update Dimension State
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </div>
+      </aside>
+    
 
-            <br/>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Vertical Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="4311368222"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          </nav>
-        </aside>
-        
-        <div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
-     crossorigin="anonymous"></script>
-<!-- Horizontal Ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8158659264340002"
-     data-ad-slot="6007593278"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-          <p class="notice--warning">This is a miscellaneous type article.
+    <!-- Main Content Area -->
+    <article class="docs-article">
+      <h1 class="docs-title">SOLIDWORKS C# API - Update Dimension State</h1>
+      <div class="docs-content">
+        <div class="fluent-knowledge-base">
+
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">NOTE</div>
+  </div>
+  <div class="callout-body">
+    
+<p>This is a miscellaneous type article.<br />
 I am writing this article for future reference and will write a proper article in future.</p>
 
-<h2 id="objective">Objective</h2>
 
-<p>I want to:</p>
+  </div>
+</div>
 
-<ul>
-  <li>Open Solidworks from WPF Application.</li>
-  <li>Select a particular dimension</li>
-  <li>Check Dimension state if it <strong>Driven dimension</strong>.</li>
-  <li>If it is <strong>Driven dimension</strong> then update the state of dimension.</li>
-</ul>
+  <div class="hero-section">
 
-<h2 id="macro-video">Macro Video</h2>
+    <p>I want to:</p>
 
-<p>Below 🎬 video shows demo of <strong>update Dimension State</strong> from WPF Application.</p>
-
-<iframe src="https://www.youtube.com/embed/dEp0d5cF4qo" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br /></p>
-
-<p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
-
-<p><strong><em>I have explained each and every line in this article.</em></strong></p>
-
-<p class="notice--warning">It is advisable to watch video, since it help you to better understand the process.</p>
-
-<h2 id="wpf-window">WPF Window</h2>
-
-<p>In this section we create a WPF Window for our C# code as shown below.</p>
-
-<ul>
-  <li>Create a new WPF Application in Visual Studio of your choice.
     <ul>
-      <li>We are not creating any Prism WPF application or MVVM based application.</li>
-      <li>You can name it what ever you like.</li>
+      <li>Open Solidworks from WPF Application.</li>
+      <li>Select a particular dimension</li>
+      <li>Check Dimension state if it <strong>Driven dimension</strong>.</li>
+      <li>If it is <strong>Driven dimension</strong> then update the state of dimension.</li>
     </ul>
-  </li>
-  <li>Add Solidworks References to the projects.
-    <ul>
-      <li><strong>Reference</strong> - Please see <strong><a href="/solidworks-csharp/open-solidworks-document/#add-solidworks-references">Open Solidworks Document</a></strong>.</li>
-    </ul>
-  </li>
-  <li>Add 2 buttons to WPF Windows, as shown in below image.</li>
-</ul>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/wpf-window.png"><img src="/assets/solidworks-csharp-images/dimension-state/wpf-window.png" alt="wpf-window" /></a></p>
+  </div>
 
-<ul>
-  <li>Below image shows “<strong>Open Part</strong>” button and its code.</li>
-</ul>
+  <h2 id="macro-video">Macro Video</h2>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/open-part-button-and-code.png"><img src="/assets/solidworks-csharp-images/dimension-state/open-part-button-and-code.png" alt="open-part-button-and-code" /></a></p>
+  <p>Below 🎬 video shows demo of <strong>update Dimension State</strong> from WPF Application.</p>
 
-<ul>
-  <li>Below image shows “<strong>Change Dimension State</strong>” button and its code.</li>
-</ul>
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/dEp0d5cF4qo" frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <p class="fluent-video-caption">
+      Update Dimension State
+    </p>
+  </div>
+</div>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-button.png"><img src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-button.png" alt="change-dimension-state-button" /></a></p>
+  <p><strong><em>Above video is just for visualization and there are no explanation.</em></strong></p>
 
-<h2 id="global-variables">Global Variables</h2>
+  <p><strong><em>I have explained each and every line in this article.</em></strong></p>
 
-<p>In this section we add 2 <em>global variables</em> before <strong><code class="language-plaintext highlighter-rouge">Constructor</code></strong>.</p>
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">Important</div>
+  </div>
+  <div class="callout-body">
+    
+<p>It is advisable to watch video, since it help you to better understand the process.</p>
 
-<p>These variables are given below.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+  </div>
+</div>
+
+  <h2 id="wpf-window">WPF Window</h2>
+
+  <p>In this section we create a WPF Window for our C# code as shown below.</p>
+
+  <ul>
+    <li>Create a new WPF Application in Visual Studio of your choice.
+      <ul>
+        <li>We are not creating any Prism WPF application or MVVM based application.</li>
+        <li>You can name it what ever you like.</li>
+      </ul>
+    </li>
+    <li>Add Solidworks References to the projects.
+      <ul>
+        <li><strong>Reference</strong> - Please see <a href="/solidworks-csharp/open-solidworks-document/#add-solidworks-references" target="_blank" rel="noopener" class="">
+<strong>Open Solidworks Document</strong>
+</a>
+.</li>
+      </ul>
+    </li>
+    <li>Add 2 buttons to WPF Windows, as shown in below image.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/wpf-window.png" alt="WPF Window" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/wpf-window.png" /><figcaption class="image-caption">Figure: WPF Window</figcaption></figure>
+
+  <ul>
+    <li>Below image shows “<strong>Open Part</strong>” button and its code.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/open-part-button-and-code.png" alt="Open Part Button and Code" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/open-part-button-and-code.png" /><figcaption class="image-caption">Figure: Open Part Button and Code</figcaption></figure>
+
+  <ul>
+    <li>Below image shows “<strong>Change Dimension State</strong>” button and its code.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-button.png" alt="Change Dimension State Button" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-button.png" /><figcaption class="image-caption">Figure: Change Dimension State Button</figcaption></figure>
+
+  <h2 id="global-variables">Global Variables</h2>
+
+  <p>In this section we add 2 <em>global variables</em> before <strong><code class="language-plaintext highlighter-rouge">Constructor</code></strong>.</p>
+
+  <p>These variables are given below.</p>
+
+  <div class="code-block-enhanced show-lines" id="code-solidworksfields-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
 <span class="c1">/// Solidworks Application field</span>
 <span class="c1">/// &lt;/summary&gt;</span>
 <span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span> <span class="n">swApp</span> <span class="p">=</span> <span class="k">default</span><span class="p">(</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">SldWorks</span><span class="p">);</span>
@@ -442,25 +506,39 @@ I am writing this article for future reference and will write a proper article i
 <span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span> <span class="n">swDoc</span> <span class="p">=</span> <span class="k">default</span><span class="p">(</span><span class="n">SldWorks</span><span class="p">.</span><span class="n">ModelDoc2</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>See below image for reference.</p>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/global-variables.png"><img src="/assets/solidworks-csharp-images/dimension-state/global-variables.png" alt="global-variables" /></a></p>
+  </div>
+</div>
 
-<h2 id="open-part-function">Open Part Function</h2>
+  <script></script>
 
-<p>In this section we write code for “Open a Part document”.</p>
+  <p>See below image for reference.</p>
 
-<ul>
-  <li>Press <strong><code class="language-plaintext highlighter-rouge">F12</code></strong> on <code class="language-plaintext highlighter-rouge">Click</code> event of “<strong>Open Part</strong>” button as shown below.</li>
-</ul>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/global-variables.png" alt="Global Variables" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/global-variables.png" /><figcaption class="image-caption">Figure: Global Variables</figcaption></figure>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/open-part-click-event.gif"><img src="/assets/solidworks-csharp-images/dimension-state/open-part-click-event.gif" alt="open-part-click-event" /></a></p>
+  <h2 id="open-part-function">Open Part Function</h2>
 
-<ul>
-  <li>Write below code into the Click event function.</li>
-</ul>
+  <p>In this section we write code for “Open a Part document”.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+  <ul>
+    <li>Press <strong><code class="language-plaintext highlighter-rouge">F12</code></strong> on <code class="language-plaintext highlighter-rouge">Click</code> event of “<strong>Open Part</strong>” button as shown below.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/open-part-click-event.gif" alt="Open Part Click Event" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/open-part-click-event.gif" /><figcaption class="image-caption">Figure: Open Part Click Event</figcaption></figure>
+
+  <ul>
+    <li>Write below code into the Click event function.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-openpartevent-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
 <span class="c1">/// Click event to open desired part document.</span>
 <span class="c1">/// &lt;/summary&gt;</span>
 <span class="c1">/// &lt;param name="sender"&gt;Open Part button&lt;/param&gt;</span>
@@ -478,35 +556,49 @@ I am writing this article for future reference and will write a proper article i
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>In above code sample, I have done following.</p>
 
-<ol>
-  <li><em>Create a new Instance of Solidworks Application</em></li>
-  <li><em>Make Solidworks visible</em></li>
-  <li><em>Open Desired Part document. I have open a fix part, but you can use an opened document.</em></li>
-</ol>
+  </div>
+</div>
 
-<p>Below image shows part with <strong>Driven dimension</strong>.</p>
+  <script></script>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/part-with-driven-dimension.png"><img src="/assets/solidworks-csharp-images/dimension-state/part-with-driven-dimension.png" alt="part-with-driven-dimension" /></a></p>
+  <p>In above code sample, I have done following.</p>
 
-<p>Above is straigh-forward and self-explained.</p>
+  <ol>
+    <li><em>Create a new Instance of Solidworks Application</em></li>
+    <li><em>Make Solidworks visible</em></li>
+    <li><em>Open Desired Part document. I have open a fix part, but you can use an opened document.</em></li>
+  </ol>
 
-<h2 id="change-dimension-state-function">Change Dimension State Function</h2>
+  <p>Below image shows part with <strong>Driven dimension</strong>.</p>
 
-<p>In this section we write code for “Change Dimension State”.</p>
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/part-with-driven-dimension.png" alt="Part with Driven Dimension" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/part-with-driven-dimension.png" /><figcaption class="image-caption">Figure: Part with Driven Dimension</figcaption></figure>
 
-<ul>
-  <li>Press <strong><code class="language-plaintext highlighter-rouge">F12</code></strong> on <code class="language-plaintext highlighter-rouge">Click</code> event of “<strong>Change Dimension State</strong>” button as shown below.</li>
-</ul>
+  <p>Above is straigh-forward and self-explained.</p>
 
-<p><a href="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-function.gif"><img src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-function.gif" alt="change-dimension-state-function" /></a></p>
+  <h2 id="change-dimension-state-function">Change Dimension State Function</h2>
 
-<ul>
-  <li>Write below code into the Click event function.</li>
-</ul>
+  <p>In this section we write code for “Change Dimension State”.</p>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+  <ul>
+    <li>Press <strong><code class="language-plaintext highlighter-rouge">F12</code></strong> on <code class="language-plaintext highlighter-rouge">Click</code> event of “<strong>Change Dimension State</strong>” button as shown below.</li>
+  </ul>
+
+  <figure class="image-zoom-container">
+  <img src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-function.gif" alt="Change Dimension State Function" class="image-zoomable" loading="lazy" data-zoom-src="/assets/solidworks-csharp-images/dimension-state/change-dimension-state-function.gif" /><figcaption class="image-caption">Figure: Change Dimension State Function</figcaption></figure>
+
+  <ul>
+    <li>Write below code into the Click event function.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-changedimensionstate-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
 <span class="c1">/// Change Dimension State event</span>
 <span class="c1">/// &lt;/summary&gt;</span>
 <span class="c1">/// &lt;param name="sender"&gt;Change Dimension State button&lt;/param&gt;</span>
@@ -537,116 +629,197 @@ I am writing this article for future reference and will write a proper article i
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>In above code sample, I have done following.</p>
 
-<ol>
-  <li><em>Select the Driven dimension of our part</em></li>
-  <li><em>Get the Display dimension of Driven dimension</em></li>
-  <li><em>Get Dimension from Display dimension.</em></li>
-  <li><em>Output dimension status at output window</em></li>
-  <li><em>Check if Driven status of selected dimension is Driven or not</em></li>
-  <li><em>Update Driven state</em></li>
-  <li><em>Output dimension status at output window</em></li>
-</ol>
+  </div>
+</div>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Select the Driven dimension</span>
+  <script></script>
+
+  <p>In above code sample, I have done following.</p>
+
+  <ol>
+    <li><em>Select the Driven dimension of our part</em></li>
+    <li><em>Get the Display dimension of Driven dimension</em></li>
+    <li><em>Get Dimension from Display dimension.</em></li>
+    <li><em>Output dimension status at output window</em></li>
+    <li><em>Check if Driven status of selected dimension is Driven or not</em></li>
+    <li><em>Update Driven state</em></li>
+    <li><em>Output dimension status at output window</em></li>
+  </ol>
+
+  <div class="code-block-enhanced show-lines" id="code-selectdimension-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Select the Driven dimension</span>
 <span class="kt">bool</span> <span class="n">boolStatus</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="nf">SelectByID2</span><span class="p">(</span><span class="s">"D2@Sketch1@Scale-feature-part.SLDPRT"</span><span class="p">,</span> <span class="s">"DIMENSION"</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swSelectOption_e</span><span class="p">.</span><span class="n">swSelectOptionDefault</span><span class="p">);</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above line of code, we are selecting driven dimension by <strong><code class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.
-    <ul>
-      <li>Although I have not explained this method, it is fairly simple method if you are following my <strong>VBA tutorials</strong>.</li>
-    </ul>
-  </li>
-  <li>If the selection is done then <strong><code class="language-plaintext highlighter-rouge">boolStatus = true</code></strong> otherwise <strong><code class="language-plaintext highlighter-rouge">boolStatus = false</code></strong>.</li>
-</ul>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the Display dimension of Driven dimension</span>
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above line of code, we are selecting driven dimension by <strong><code class="language-plaintext highlighter-rouge">SelectByID2</code></strong> method.
+      <ul>
+        <li>Although I have not explained this method, it is fairly simple method if you are following my <strong>VBA tutorials</strong>.</li>
+      </ul>
+    </li>
+    <li>If the selection is done then <strong><code class="language-plaintext highlighter-rouge">boolStatus = true</code></strong> otherwise <strong><code class="language-plaintext highlighter-rouge">boolStatus = false</code></strong>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-getdisplaydimension-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the Display dimension of Driven dimension</span>
 <span class="n">SldWorks</span><span class="p">.</span><span class="n">DisplayDimension</span> <span class="n">displayDimension</span> <span class="p">=</span> <span class="n">swDoc</span><span class="p">.</span><span class="n">ISelectionManager</span><span class="p">.</span><span class="nf">GetSelectedObject6</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">);</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code sample, we get the Display dimension of Driven dimension by <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> is part of <strong><code class="language-plaintext highlighter-rouge">ISelectionManager</code></strong> interface.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">ISelectionManager</code></strong> interface is part of <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong> i.e. <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
-  <li>From <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method we get Display dimension, which we store in a new Variable.
-    <ul>
-      <li><em>Variable Name</em>: <strong><code class="language-plaintext highlighter-rouge">displayDimension</code></strong></li>
-      <li><em>Type</em>: <strong><code class="language-plaintext highlighter-rouge">SldWorks.DisplayDimension</code></strong></li>
-    </ul>
-  </li>
-</ul>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Dimension from Display dimension</span>
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above code sample, we get the Display dimension of Driven dimension by <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> is part of <strong><code class="language-plaintext highlighter-rouge">ISelectionManager</code></strong> interface.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">ISelectionManager</code></strong> interface is part of <strong><code class="language-plaintext highlighter-rouge">ModelDoc2</code></strong> i.e. <strong><code class="language-plaintext highlighter-rouge">swDoc</code></strong> variable.</li>
+    <li>From <strong><code class="language-plaintext highlighter-rouge">GetSelectedObject6</code></strong> method we get Display dimension, which we store in a new Variable.
+      <ul>
+        <li><em>Variable Name</em>: <strong><code class="language-plaintext highlighter-rouge">displayDimension</code></strong></li>
+        <li><em>Type</em>: <strong><code class="language-plaintext highlighter-rouge">SldWorks.DisplayDimension</code></strong></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-getdimension-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Dimension from Display dimension</span>
 <span class="n">SldWorks</span><span class="p">.</span><span class="n">Dimension</span> <span class="n">dimension</span> <span class="p">=</span> <span class="n">displayDimension</span><span class="p">.</span><span class="nf">GetDimension</span><span class="p">();</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code sample, we get the dimension from <strong><code class="language-plaintext highlighter-rouge">displayDimension</code></strong> variable by <strong><code class="language-plaintext highlighter-rouge">GetDimension</code></strong> method.</li>
-  <li>From <strong><code class="language-plaintext highlighter-rouge">GetDimension</code></strong> method we get dimension, which we store in a new Variable.
-    <ul>
-      <li><em>Variable Name</em>: <strong><code class="language-plaintext highlighter-rouge">dimension</code></strong></li>
-      <li><em>Type</em>: <strong><code class="language-plaintext highlighter-rouge">SldWorks.Dimension</code></strong></li>
-    </ul>
-  </li>
-</ul>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Output dimension status at output window</span>
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above code sample, we get the dimension from <strong><code class="language-plaintext highlighter-rouge">displayDimension</code></strong> variable by <strong><code class="language-plaintext highlighter-rouge">GetDimension</code></strong> method.</li>
+    <li>From <strong><code class="language-plaintext highlighter-rouge">GetDimension</code></strong> method we get dimension, which we store in a new Variable.
+      <ul>
+        <li><em>Variable Name</em>: <strong><code class="language-plaintext highlighter-rouge">dimension</code></strong></li>
+        <li><em>Type</em>: <strong><code class="language-plaintext highlighter-rouge">SldWorks.Dimension</code></strong></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-printdimensionstate-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Output dimension status at output window</span>
 <span class="n">Debug</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="s">$"Dimension State : [</span><span class="p">{</span><span class="n">dimension</span><span class="p">.</span><span class="n">DrivenState</span><span class="p">}</span><span class="s">]"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above line of code, we print the current <strong><code class="language-plaintext highlighter-rouge">DrivenState</code></strong> to <em>output window</em>.</li>
-</ul>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if Driven status of selected dimension is Driven or not</span>
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above line of code, we print the current <strong><code class="language-plaintext highlighter-rouge">DrivenState</code></strong> to <em>output window</em>.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code-checkdrivenstate-cs">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if Driven status of selected dimension is Driven or not</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">dimension</span><span class="p">.</span><span class="n">DrivenState</span> <span class="p">==</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDimensionDrivenState_e</span><span class="p">.</span><span class="n">swDimensionDriven</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above code block, we check <strong>Driven State</strong> of dimension.</li>
-  <li>If dimension is <strong><code class="language-plaintext highlighter-rouge">Driven</code></strong>, then this condition fulfil and below code run.</li>
-</ul>
 
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Update Driven state</span>
+  </div>
+</div>
+
+  <script></script>
+
+  <ul>
+    <li>In above code block, we check <strong>Driven State</strong> of dimension.</li>
+    <li>If dimension is <strong><code class="language-plaintext highlighter-rouge">Driven</code></strong>, then this condition fulfil and below code run.</li>
+  </ul>
+
+  <div class="code-block-enhanced show-lines" id="code">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Update Driven state</span>
 <span class="n">dimension</span><span class="p">.</span><span class="n">DrivenState</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">swDimensionDrivenState_e</span><span class="p">.</span><span class="n">swDimensionDriving</span><span class="p">;</span>
 
 <span class="c1">// Output dimension status at output window</span>
 <span class="n">Debug</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="s">$"Dimension State : [</span><span class="p">{</span><span class="n">dimension</span><span class="p">.</span><span class="n">DrivenState</span><span class="p">}</span><span class="s">]"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<ul>
-  <li>In above line of code we update the <strong>Driven State</strong> of dimension.</li>
-  <li>From <strong>Driven</strong> ➡ to <strong>Driving</strong>.</li>
-  <li>After that we print the status to output window.</li>
-</ul>
 
-<p><strong>This is it !!!</strong></p>
+  </div>
+</div>
 
-<p><em>I hope my efforts will helpful to someone!</em></p>
+  <script></script>
 
-<p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+  <ul>
+    <li>In above line of code we update the <strong>Driven State</strong> of dimension.</li>
+    <li>From <strong>Driven</strong> ➡ to <strong>Driving</strong>.</li>
+    <li>After that we print the status to output window.</li>
+  </ul>
 
-<p>Hope this post helps you to <strong>update Dimension Driven State</strong> with <strong>SOLIDWORKS C# API</strong>.</p>
+  <p><strong>This is it !!!</strong></p>
 
-<p>For more such tutorials on <strong>SOLIDWORKS C# API</strong>, do come to this website after sometime.</p>
+  <p><em>I hope my efforts will helpful to someone!</em></p>
 
-<p><em>If you like the post then please share it with your friends also.</em></p>
+  <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
 
-<p><em>Do let me know by you like this post or not!</em></p>
+  <p>Hope this post helps you to <strong>update Dimension Driven State</strong> with <strong>SOLIDWORKS C# API</strong>.</p>
 
-<p><em>Till then, Happy learning!!!</em></p>
+  <p>For more such tutorials on <strong>SOLIDWORKS C# API</strong>, do come to this website after sometime.</p>
 
-<ul>
-  <li><a href="/download-solidworks-macros/">🎁 Download 5 Free SolidWorks Macros →</a></li>
-</ul>
+  <p><em>If you like the post then please share it with your friends also.</em></p>
 
-        </div>
-        
-        <div>
+  <p><em>Do let me know by you like this post or not!</em></p>
+
+  <p><em>Till then, Happy learning!!!</em></p>
+
+  <ul>
+    <li><a href="/download-solidworks-macros/" target="_blank" rel="noopener" class="">
+🎁 Download 5 Free SolidWorks Macros →
+</a></li>
+  </ul>
+
+</div>
+
+      </div>
+      <div>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Top and Bottom placed Ad -->
   <ins class="adsbygoogle"
@@ -660,160 +833,166 @@ I am writing this article for future reference and will write a proper article i
   </script>
 </div>
 
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-09-28T12:25:50-04:00">September 28, 2025</time></p>
-
-
-      </footer>
-
       
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item mr-5">
-      <a class="btn btn-primary text-light" href="/solidworks-csharp/test-CreatePartDocument-method/" title="SOLIDWORKS C# API - Test CreatePartDocument Method
-">❮ Previous</a>
-    </li>
-    
-    
-    <li class="page-item ml-5">
-      <a class="btn btn-primary disabled text-light" href="#">Next ❯</a>
-    </li>
-    
-  </ul>
-</nav>
 
-    </div>
-  </article>
 
+
+<div class="docs-navigation">
+  <div class="docs-nav-container docs-nav-container--only-prev">
+    
+    <a href="/solidworks-csharp/test-CreatePartDocument-method/" class="docs-nav-prev btn-nav-secondary" title="Previous: SOLIDWORKS C# API - Test CreatePartDocument Method">
+      <span class="nav-icon" aria-hidden="true">&larr;</span>
+      <span class="nav-text">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">SOLIDWORKS C# API - Test CreatePartDocument M...</span>
+      </span>
+    </a>
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Horizontal Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="6007593278"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    
+  </div>
 </div>
 
-          
+
+    </article>
+  </div>
+</div>
+
+      </main>
+
+      
+        <aside class="toc">
+          <div class="toc-inner">
+  <h3>On this page</h3>
+  <ul id="toc-list"></ul>
+</div>
+
+        </aside>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
+     crossorigin="anonymous"></script>
+<!-- Vertical Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8158659264340002"
+     data-ad-slot="4311368222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-wave">
+  <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<div class="footer-content">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-col">
+      <a href="/" class="footer-brand">
+        <img src="/assets/logo.png" alt="Logo" class="brand-icon">
+        <div class="brand-text">
+          <div class="brand-name">The CAD Coder</div>
+          <div class="brand-tagline">Learn. Code. Automate.</div>
         </div>
-      </div>
-    </div>
-  </div>
+      </a>
 
-  <div id="footer" class="page__footer">
-    <footer>
-      <!-- start custom footer snippets -->
+      <p class="footer-desc">
+        Free SOLIDWORKS API tutorials for mechanical engineers. Master VBA, C#, and C++ automation with practical, beginner-friendly guides.
+      </p>
 
-<!-- end custom footer snippets -->
-      <footer class="bd-footer py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <a class="d-inline-flex align-items-center mb-2 link-dark" href="/" aria-label="Bootstrap">
-          <img src="/assets/logo.png" width="30" height="30" class="img-fluid mr-2" alt="">
-          <span> The CAD Coder</span>
+      <div class="footer-social">
+        <a href="https://facebook.com/thecadcoder" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <ul class="list-unstyled small text-muted">
-          <li class="mb-2">Programming Tutorials for SOLIDWORKS 3D CAD Software.</li>
-          <li class="mb-2">Copyright © 2022 The CAD Coder</li>
-          <li class="mb-2">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</li>
-
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://facebook.com/thecadcoder" target="_blank" title="Facebook"><i
-                class="fab fa-2x fa-facebook-f"></i></a></li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" target="_blank" title="YouTube"><i
-                class="fab fa-2x fa-youtube"></i></a></li>
-          
-          
-          
-          <li class="list-inline-item"><a href="mailto:thecadcoder@gmail.com" target="_blank" title="Email"><i
-                class="fa fa-envelope fa-2x"></i></a></li>
-          
-          
-          
-        </ul>
+        <a href="https://linkedin.com/in/prashantbaher" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://youtube.com/channel/UCm_VglqA2S4WUXM55vyqAFg" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
       </div>
-      <div class="col-6">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <!-- <li class="mb-2"><a href="/">Home</a></li> -->
-          <li class="mb-2"><a href="/aboutMe/">About</a></li>
-          <li class="mb-2"><a href="/resources/">Resources</a></li>
-          <li class="mb-2"><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li class="mb-2"><a href="/Disclaimer/">Disclaimer</a></li>
-        </ul>
+    </div>
+
+    <div class="footer-col footer-links-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links-list">
+        <li><a href="/knowledge-base/introduction/"><span class="ms-icon" aria-hidden="true">&#xE82D;</span>Knowledge Base</a></li>
+        <li><a href="/Solidworks-macro-guide/"><span class="ms-icon" aria-hidden="true">&#xE713;</span>VBA Macros</a></li>
+        <li><a href="/Solidworks-csharp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE943;</span>C# API</a></li>
+        <li><a href="/Solidworks-cpp-api-tutorials/"><span class="ms-icon" aria-hidden="true">&#xE90F;</span>C++ API</a></li>
+      </ul>
+
+      <h3 class="footer-subheading">Resources</h3>
+      <ul class="footer-links-list">
+        <li><a href="/wpf-tutorials/syncfusion-account-signup/"><span class="ms-icon" aria-hidden="true">&#xE790;</span>WPF Tutorials</a></li>
+        <li><a href="/knowledge-base/wix4-introduction/"><span class="ms-icon" aria-hidden="true">&#xE7B8;</span>WiX Installer</a></li>
+        <li><a href="/resources/"><span class="ms-icon" aria-hidden="true">&#xE80D;</span>Resources</a></li>
+        <li><a href="/aboutMe/"><span class="ms-icon" aria-hidden="true">&#xE77B;</span>About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-newsletter-col">
+      <h3 class="footer-heading">Stay Updated</h3>
+      <p class="newsletter-text">
+        Get notified when new tutorials are published. No spam, unsubscribe anytime.
+      </p>
+
+      <form class="newsletter-form" action="#" method="post">
+        <div class="newsletter-input-wrapper">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter">
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+            <span class="ms-icon" aria-hidden="true">&#xE72A;</span>
+          </button>
+        </div>
+      </form>
+
+      <p class="newsletter-privacy">
+        <small><span class="ms-icon" aria-hidden="true">&#xE72E;</span> We respect your privacy. No spam ever.</small>
+      </p>
+
+      <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        Back to Top
+      </button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">
+        &copy; 2026 The CAD Coder. All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
-</footer>
+</div>
+
     </footer>
-  </div>
 
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
-
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-
-
-</body>
-
+    
+    <script src="/assets/js/theme.js" defer></script>
+    <script src="/assets/js/toc.js" defer></script>
+    <script src="/assets/js/search.js" defer></script>
+  </body>
 </html>
