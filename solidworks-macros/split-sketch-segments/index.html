@@ -48,7 +48,18 @@
 <!-- Lunr.js for Search (CDN) -->
 <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" defer></script>
 
-<!-- Google Analytics (optional - uncomment and add your tracking ID) -->
+<!-- Analytics -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117501871-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117501871-2', { 'anonymize_ip': true});
+</script>
+
 
 
 <!-- Preconnect for Performance (optional but recommended) -->
