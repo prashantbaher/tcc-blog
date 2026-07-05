@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Page Title -->
-<title>Open Syncfusion Chromeless Window | The CAD Coder</title>
+<title>TUI Project Setup | The CAD Coder</title>
 
 <!-- Meta Description -->
 
@@ -14,17 +14,17 @@
 
 
 <!-- Canonical URL -->
-<link rel="canonical" href="http://localhost:4000/wpf-tutorials/open-syncfusion-chromeless-window/">
+<link rel="canonical" href="http://localhost:4000/wpf-tutorials/tui-project-setup/">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/logo.png">
 
 <!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Open Syncfusion Chromeless Window">
+<meta property="og:title" content="TUI Project Setup">
 <meta property="og:description" content="
 ">
-<meta property="og:url" content="http://localhost:4000/wpf-tutorials/open-syncfusion-chromeless-window/">
+<meta property="og:url" content="http://localhost:4000/wpf-tutorials/tui-project-setup/">
 <meta property="og:site_name" content="The CAD Coder">
 
   <meta property="og:image" content="http://localhost:4000/assets/logo.png">
@@ -32,7 +32,7 @@
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Open Syncfusion Chromeless Window">
+<meta name="twitter:title" content="TUI Project Setup">
 <meta name="twitter:description" content="
 ">
 
@@ -208,7 +208,7 @@
     
       
       <span class="breadcrumb-separator">/</span>
-      <a href="/wpf-tutorials/open-syncfusion-chromeless-window">Open syncfusion chromeless window</a>
+      <a href="/wpf-tutorials/tui-project-setup">Tui project setup</a>
     
   
 </nav>
@@ -251,7 +251,7 @@
               
                 <li>
                   <a href="/wpf-tutorials/open-syncfusion-chromeless-window/"
-                     class="active">
+                     class="">
                     Open Syncfusion Chromeless Window
                   </a>
                 </li>
@@ -272,7 +272,7 @@
               
                 <li>
                   <a href="/wpf-tutorials/tui-project-setup/"
-                     class="">
+                     class="active">
                     TUI Project Setup
                   </a>
                 </li>
@@ -363,203 +363,300 @@
 
     <!-- Main Content Area -->
     <article class="docs-article">
-      <h1 class="docs-title">Open Syncfusion Chromeless Window</h1>
+      <h1 class="docs-title">TUI Project Setup</h1>
       <div class="docs-content">
         <div class="fluent-knowledge-base">
 
   <div class="hero-section">
 
-    <p>I want to:</p>
+    <p>This tutorial shows how to create a TUI (Terminal UI) for the “Edit Line UI” article.</p>
 
-    <ol>
-      <li>
-        <p><strong><em>Create WPF Prism Application Project</em></strong></p>
-      </li>
-      <li>
-        <p><strong><em>Add Synchfusion Chromeless window</em></strong></p>
-      </li>
-    </ol>
+    <p>The TUI provides a simple terminal-based interface for your application.</p>
+
+    <p>This approach lets you focus on Solidworks API development instead of building a graphical UI.</p>
 
   </div>
 
+  <hr />
+
   <h2 id="demo-video">Demo Video</h2>
 
-  <p>Below 🎬 video shows how to <strong>Open Syncfusion Chromeless Window</strong> in <em>Visual Studio 2022</em>.</p>
+  <p>The video below demonstrates how to build the <strong>Edit Line TUI</strong> in <em>Visual Studio 2022</em>.</p>
 
   <div class="fluent-video-card">
   <div class="fluent-video-inner">
     <div class="fluent-video-aspect">
-      <iframe src="https://www.youtube-nocookie.com/embed/qORgze2FncA" frameborder="0" allowfullscreen="">
+      <iframe src="https://www.youtube-nocookie.com/embed/XtFQy6Bc8zI" frameborder="0" allowfullscreen="">
       </iframe>
     </div>
     <p class="fluent-video-caption">
-      Open Syncfusion Chromeless Window
+      Edit Line TUI
     </p>
   </div>
 </div>
 
-  <h2 id="create-project">Create Project</h2>
+  <hr />
 
-  <ul>
+  <h2 id="project-setup">Project Setup</h2>
+
+  <p>Follow the steps below to create the project:</p>
+
+  <ol>
     <li>
-      <p>Open <strong>Visual Studio 2022</strong> in your machine.</p>
+      <p>Open Visual Studio 2026</p>
     </li>
     <li>
-      <p>You will see a window as shown in below 👇🏻 image.</p>
+      <p>Select the <strong>Create a new project</strong> option.</p>
     </li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/install-prism-project-template/visual-studio-home-page.png" alt="Visual Studio Home Page" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/install-prism-project-template/visual-studio-home-page.png" /><figcaption class="image-caption">Figure: Visual Studio Home Page</figcaption></figure>
-
-  <ul>
-    <li>Select “<strong>Create a new project</strong>” option as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/create-a-new-project.png" alt="Create a New Project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/create-a-new-project.png" /><figcaption class="image-caption">Figure: Create a New Project</figcaption></figure>
-
-  <ul>
-    <li>This will open a new screen as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/project-options.png" alt="Project Options" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/project-options.png" /><figcaption class="image-caption">Figure: Project Options</figcaption></figure>
-
-  <ul>
-    <li>In this screen, select “<strong>Prism Blank App (WPF)</strong>” project type then select “<strong>Next</strong>” button as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-prism-project.png" alt="Select Prism Project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-prism-project.png" /><figcaption class="image-caption">Figure: Select Prism Project</figcaption></figure>
-
-  <ul>
-    <li>Now you will have below screen, where we need to configure our project as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/project-configuration-screen.png" alt="Project Configuration Screen" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/project-configuration-screen.png" /><figcaption class="image-caption">Figure: Project Configuration Screen</figcaption></figure>
-
-  <ul>
     <li>
-      <p>In this screen I use following values shown in below 👇🏻 image.</p>
+      <p>Choose <strong>Console App</strong> and click <strong>Next</strong>.</p>
+    </li>
+  </ol>
+
+  <!-- Add an Image here -->
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/001.6-tui-project-setup/1.create-new-console-project.png" alt="Create a new project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/001.6-tui-project-setup/1.create-new-console-project.png" /><figcaption class="image-caption">Figure: Create a new project</figcaption></figure>
+
+  <ol>
+    <li>
+      <p>Enter the following values and click <strong>Next</strong>:</p>
 
       <ul>
-        <li><em>Project Name</em>: “<strong>BrowseSolidworksDocument</strong>”</li>
-        <li><em>Location</em>: “<strong><code class="language-plaintext highlighter-rouge">D:\Dev</code></strong>”</li>
-        <li><em>Solution Name</em>: “<strong>BrowseSolidworksDocument</strong>”</li>
+        <li>
+          <p>Project Name</p>
+        </li>
+        <li>
+          <p>Location</p>
+        </li>
+        <li>
+          <p>Solution Name</p>
+        </li>
       </ul>
     </li>
-  </ul>
+  </ol>
 
+  <p>The values used in this tutorial are shown in the table below:</p>
+
+  <div class="fluent-table-wrapper" role="region" aria-labelledby="tbl-project-configuration-values-caption">
+  <table class="fluent-table"><caption id="tbl-project-configuration-values-caption">Project Configuration Values</caption><thead>
+      <tr><th scope="col">Property</th><th scope="col">Value</th></tr>
+    </thead>
+
+    <tbody><tr><td>
+                Project Name
+
+              </td><td>
+                SolidworksDemos
+
+              </td></tr><tr><td>
+                Location
+
+              </td><td>
+                D:\Dev
+
+              </td></tr><tr><td>
+                Solution Name
+
+              </td><td>
+                SolidworksDemos
+
+              </td></tr></tbody>
+  </table>
+</div>
+
+  <!-- Add an Image here -->
   <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/configure-project.png" alt="Configure Project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/configure-project.png" /><figcaption class="image-caption">Figure: Configure Project</figcaption></figure>
+  <img src="/assets/wpf-tutorials/001.6-tui-project-setup/2.create-solution.png" alt="Create new solution" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/001.6-tui-project-setup/2.create-solution.png" /><figcaption class="image-caption">Figure: Create new solution</figcaption></figure>
 
-  <ul>
-    <li>
-      <p>When select “<strong>Next</strong>”, a new screen shows, selecting dependency injection container for project to use.</p>
+  <ol>
+    <li>In the <strong>Additional Information</strong> window, leave the defaults and click <strong>Next</strong>.</li>
+  </ol>
 
-      <ul>
-        <li><em>Selected Option</em>: “<strong>Unity</strong>”</li>
-      </ul>
-    </li>
-  </ul>
+  <p>Visual Studio creates a new Console Application project.</p>
 
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-container.png" alt="Select Container" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-container.png" /><figcaption class="image-caption">Figure: Select Container</figcaption></figure>
+  <div class="callout callout-note">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE946;</div>
+    <div class="callout-title">
+      What just happened?
+    </div>
+  </div>
 
-  <ul>
-    <li>A new project open in visual studio 2022 as shown in below 👇🏻 image.</li>
-  </ul>
+  <div class="callout-body">
+    
+<p>You now have a basic Console App template. The next section customizes it for our needs.</p>
 
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/new-project.png" alt="New Project" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/new-project.png" /><figcaption class="image-caption">Figure: New Project</figcaption></figure>
-
-  <h2 id="add-syncfusion-chromeless-window">Add Syncfusion Chromeless Window</h2>
-
-  <p>In this section we add <strong>Syncfusion Chromeless</strong> Window.</p>
-  <ul>
-    <li>Build the project as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png" alt="Build Solution" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/build-solution.png" /><figcaption class="image-caption">Figure: Build Solution</figcaption></figure>
-
-  <ul>
-    <li>Open “<strong>NuGet Package</strong>” window as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png" alt="Select Manage NuGet Package" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/select-manage-nuget-package.png" /><figcaption class="image-caption">Figure: Select Manage NuGet Package</figcaption></figure>
-
-  <ul>
-    <li>“<strong>NuGet Package</strong>” window will appear as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png" alt="NuGet Window" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/nuget-window.png" /><figcaption class="image-caption">Figure: NuGet Window</figcaption></figure>
-
-  <ul>
-    <li>In “<strong>NuGet Package</strong>” window, go to “<strong>Browse</strong>” tab and search for <strong><code class="language-plaintext highlighter-rouge">Syncfusion.Shared.WPF</code></strong> then install it as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/install-syncfusion-wpf-package.gif" alt="Install Syncfusion WPF Package" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/install-syncfusion-wpf-package.gif" /><figcaption class="image-caption">Figure: Install Syncfusion WPF Package</figcaption></figure>
-
-  <ul>
-    <li>Now open “<strong><code class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif" alt="Open MainWindow File" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/open-mainwindow-file.gif" /><figcaption class="image-caption">Figure: Open MainWindow File</figcaption></figure>
-
-  <ul>
-    <li>In “<strong><code class="language-plaintext highlighter-rouge">MainWindow.xaml</code></strong>” file add namespace as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/add-syncfusin-namespace.gif" alt="Add Syncfusion Namespace" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/add-syncfusin-namespace.gif" /><figcaption class="image-caption">Figure: Add Syncfusion Namespace</figcaption></figure>
-
-  <ul>
-    <li>Change “<strong>Window</strong>” with “<strong>ChromelessWindow</strong>” as shown in below 👇🏻 image.</li>
-  </ul>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/add-chromeless-window.gif" alt="Add Chromeless Window" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/open-syncfusion-chromeless-window/add-chromeless-window.gif" /><figcaption class="image-caption">Figure: Add Chromeless Window</figcaption></figure>
+  </div>
+</div>
 
   <hr />
 
-  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002" crossorigin="anonymous"></script>
+  <h2 id="modify-project-settings">Modify Project Settings</h2>
 
-  <!-- Horizontal Ads -->
-  <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8158659264340002" data-ad-slot="6007593278" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
+  <ol>
+    <li>
+      <p>In Solution Explorer, double-click the project file.</p>
+    </li>
+    <li>
+      <p>Locate the first <code class="language-plaintext highlighter-rouge">&lt;PropertyGroup&gt;</code> section and update it with the values below:</p>
+    </li>
+  </ol>
+
+  <div class="code-block-enhanced show-lines" id="code-solidworksdemos-csproj">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>net48<span class="nt">&lt;/TargetFramework&gt;</span>
+    <span class="nt">&lt;ImplicitUsings&gt;</span>disable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+    <span class="nt">&lt;Nullable&gt;</span>disable<span class="nt">&lt;/Nullable&gt;</span>
+    <span class="nt">&lt;LangVersion&gt;</span>latest<span class="nt">&lt;/LangVersion&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+</code></pre></div></div>
+
+  </div>
+</div>
+
+  <script></script>
+
+  <div class="callout callout-caution">
+  <div class="callout-header">
+    <div class="callout-icon ms-icon" aria-hidden="true">&#xE7BA;</div>
+    <div class="callout-title">Prerequisite</div>
+  </div>
+  <div class="callout-body">
+    
+<p>.NET Framework 4.8 requires the corresponding Developer Pack to be installed. If you get build errors, download it from Microsoft.</p>
+
+  </div>
+</div>
+
+  <!-- Add an Image here -->
+  <figure class="image-zoom-container">
+  <img src="/assets/wpf-tutorials/001.6-tui-project-setup/3.update-project-setting.png" alt="Update Project Settting" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/001.6-tui-project-setup/3.update-project-setting.png" /><figcaption class="image-caption">Figure: Update Project Settting</figcaption></figure>
+
+  <ol>
+    <li>The table below explains each property change:</li>
+  </ol>
+
+  <div class="fluent-table-wrapper" role="region" aria-labelledby="tbl-property-changes-explained-caption">
+  <table class="fluent-table fluent-table--compact"><caption id="tbl-property-changes-explained-caption">Property Changes Explained</caption><thead>
+      <tr><th scope="col">Property Name</th><th scope="col">Property Value</th><th scope="col">Remark</th></tr>
+    </thead>
+
+    <tbody><tr><td>
+                TargetFramework
+
+              </td><td>
+                net48
+
+              </td><td>
+                Use the .NET Framework features available in this project.
+
+              </td></tr><tr><td>
+                ImplicitUsings + Nullable
+
+              </td><td>
+                disable
+
+              </td><td>
+                I generally do not use these options.
+
+              </td></tr><tr><td>
+                LangVersion
+
+              </td><td>
+                latest
+
+              </td><td>
+                I like to use the latest C# language features.
+
+              </td></tr></tbody>
+  </table>
+</div>
 
   <hr />
 
-  <h2 id="final-result">Final Result</h2>
-  <p>Now we run the application as shown in below 👇🏻 image.</p>
+  <h2 id="nuget-setup">NuGet Setup</h2>
 
-  <p>We get a message related to Syncfusion License, just do as shown in below image.</p>
+  <p>Follow the steps below to add the required NuGet package:</p>
+
+  <ol>
+    <li>
+      <p>In Solution Explorer, double-click the project file.</p>
+    </li>
+    <li>
+      <p>Add the following package reference inside an <code class="language-plaintext highlighter-rouge">&lt;ItemGroup&gt;</code> element:</p>
+    </li>
+  </ol>
+
+  <div class="code-block-enhanced show-lines" id="code-solidworksdemos-csproj">
+  <div class="code-body">
+        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
+      Copy
+    </button>
+    
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">"Spectre.Console"</span> <span class="na">Version=</span><span class="s">"0.57.0"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroup&gt;</span>
+</code></pre></div></div>
+
+  </div>
+</div>
+
+  <script></script>
 
   <figure class="image-zoom-container">
-  <img src="/assets/wpf-tutorials/install-prism-project-template/run-application.gif" alt="Run Application" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/install-prism-project-template/run-application.gif" /><figcaption class="image-caption">Figure: Run Application</figcaption></figure>
+  <img src="/assets/wpf-tutorials/001.6-tui-project-setup/4.add-serilog-nuget-package.png" alt="Add Serilog Nuget Package" class="image-zoomable" loading="lazy" data-zoom-src="/assets/wpf-tutorials/001.6-tui-project-setup/4.add-serilog-nuget-package.png" /><figcaption class="image-caption">Figure: Add Serilog Nuget Package</figcaption></figure>
 
-  <p><strong>This is it !!!</strong></p>
+  <ol>
+    <li>Rebuild the project.</li>
+  </ol>
 
-  <p><em>I hope my efforts will helpful to someone!</em></p>
+  <div class="terminal-wrapper">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <span class="terminal-button terminal-close"></span>
+      <span class="terminal-button terminal-minimize"></span>
+      <span class="terminal-button terminal-maximize"></span>
+    </div>
+    <div class="terminal-title">Terminal</div>
+  </div>
+  <div class="terminal-content">
+    <pre><code>dotnet build
+MSBuild version 17.8.3+...
+  SolidworksDemos -&gt; D:\Dev\SolidworksDemos\bin\Debug\net48\SolidworksDemos.exe
 
-  <p>If you found anything to <strong>add or update</strong>, please let me know on my <em>e-mail</em>.</p>
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)</code></pre>
+  </div>
+</div>
 
-  <p>Hope this post helps you to <strong>Open Syncfusion Chromeless Window</strong>.</p>
+  <hr />
 
-  <p><em>If you like the post then please share it with your friends also.</em></p>
+  <h2 id="solidworks-references">Solidworks References</h2>
 
-  <p><em>Do let me know by you like this post or not!</em></p>
+  <p>To add Solidworks references to your project, click the link below and follow the steps on that page:</p>
 
-  <p><em>Till then, Happy learning!!!</em></p>
+  <p><a href="/solidworks-csharp/open-solidworks/#add-solidworks-references" target="_blank" rel="noopener" class="">
+  <strong>ADD SOLIDWORKS REFERENCES</strong>
+</a></p>
+
+  <hr />
+
+  <p><strong>That is all for now.</strong></p>
+
+  <p><em>I hope this guide is helpful to you.</em></p>
+
+  <p>If you find anything to <strong>add or update</strong>, please let me know by <em>email</em>.</p>
+
+  <p><em>If you found this post useful, please share it with others.</em></p>
+
+  <p><em>Happy coding!</em></p>
 
   <ul>
     <li><a href="/download-solidworks-macros/" target="_blank" rel="noopener" class="">
@@ -591,11 +688,11 @@
 <div class="docs-navigation">
   <div class="docs-nav-container">
     
-    <a href="/wpf-tutorials/install-prism-project-template/" class="docs-nav-prev btn-nav-secondary" title="Previous: Install Prism Project Template">
+    <a href="/wpf-tutorials/add-syncfusion-license-key/" class="docs-nav-prev btn-nav-secondary" title="Previous: Add Syncfusion License Key">
       <span class="nav-icon" aria-hidden="true">&larr;</span>
       <span class="nav-text">
         <span class="nav-label">Previous</span>
-        <span class="nav-title">Install Prism Project Template</span>
+        <span class="nav-title">Add Syncfusion License Key</span>
       </span>
     </a>
     
@@ -614,10 +711,10 @@
 </script>
 
     
-    <a href="/wpf-tutorials/add-syncfusion-busy-indicator/" class="docs-nav-next btn-nav-primary" title="Next: Add Syncfusion Busy Indicator">
+    <a href="/wpf-tutorials/browse-solidworks-document-ui/" class="docs-nav-next btn-nav-primary" title="Next: Browse Solidworks Document UI">
       <span class="nav-text">
         <span class="nav-label">Next</span>
-        <span class="nav-title">Add Syncfusion Busy Indicator</span>
+        <span class="nav-title">Browse Solidworks Document UI</span>
       </span>
       <span class="nav-icon" aria-hidden="true">&rarr;</span>
     </a>
