@@ -6,24 +6,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Page Title -->
-<title>Building CAD Copilot - Create a new document using natural language | The CAD Coder</title>
+<title>Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence | The CAD Coder</title>
 
 <!-- Meta Description -->
 
-  <meta name="description" content="My first experiment with using natural language to control SolidWorks.">
+  <meta name="description" content="Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
 
 
 <!-- Canonical URL -->
-<link rel="canonical" href="http://localhost:4000/cad-copilot/cad-copilot-part-1/">
+<link rel="canonical" href="http://localhost:4000/cad-copilot/cad-copilot-part-2/">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/logo.png">
 
 <!-- Open Graph / Facebook Meta Tags -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Building CAD Copilot - Create a new document using natural language">
-<meta property="og:description" content="My first experiment with using natural language to control SolidWorks.">
-<meta property="og:url" content="http://localhost:4000/cad-copilot/cad-copilot-part-1/">
+<meta property="og:title" content="Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
+<meta property="og:description" content="Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
+<meta property="og:url" content="http://localhost:4000/cad-copilot/cad-copilot-part-2/">
 <meta property="og:site_name" content="The CAD Coder">
 
   <meta property="og:image" content="http://localhost:4000/assets/logo.png">
@@ -31,8 +31,8 @@
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Building CAD Copilot - Create a new document using natural language">
-<meta name="twitter:description" content="My first experiment with using natural language to control SolidWorks.">
+<meta name="twitter:title" content="Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
+<meta name="twitter:description" content="Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
 
 
 <!-- RSS Feed -->
@@ -101,7 +101,7 @@
   <nav class="main-nav" id="main-nav">
     
       
-        <a href="/cad-copilot/cad-copilot-part-1/" class="nav-link active">
+        <a href="/cad-copilot/cad-copilot-part-1/" class="nav-link ">
           CAD Copilot
         </a>
       
@@ -212,7 +212,7 @@
     
       
       <span class="breadcrumb-separator">/</span>
-      <a href="/cad-copilot/cad-copilot-part-1">Cad copilot part 1</a>
+      <a href="/cad-copilot/cad-copilot-part-2">Cad copilot part 2</a>
     
   
 </nav>
@@ -241,14 +241,14 @@
               
                 <li>
                   <a href="/cad-copilot/cad-copilot-part-1/"
-                     class="active">
+                     class="">
                     Part 1: From Idea to First Working Prototype
                   </a>
                 </li>
               
                 <li>
                   <a href="/cad-copilot/cad-copilot-part-2/"
-                     class="">
+                     class="active">
                     Part 2: Making SolidWorks Understand Sequences
                   </a>
                 </li>
@@ -261,15 +261,15 @@
 
     <!-- Main Content Area -->
     <article class="docs-article">
-      <h1 class="docs-title">Building CAD Copilot - Create a new document using natural language</h1>
+      <h1 class="docs-title">Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence</h1>
       <div class="docs-content">
         <div class="fluent-knowledge-base">
 
   <div class="hero-section">
 
-    <p>This article introduces CAD Copilot, an experimental SolidWorks add-in that uses natural language to control CAD operations.</p>
+    <p>This article explains how I built a command system that turns a single sentence into multiple SolidWorks actions.</p>
 
-    <p>It covers the motivation behind the project, the core concept, and the goals for the first working prototype.</p>
+    <p>I cover why sequence matters, how the system understands dependencies, and what this means for engineers who want to work faster without writing macros.</p>
 
   </div>
 
@@ -277,231 +277,200 @@
 
   <h2 id="introduction">Introduction</h2>
 
-  <p>Over the past few years, Artificial Intelligence has changed the way we interact with software.</p>
+  <p>In the last article, I shared why I started building CAD Copilot.</p>
 
-  <p>Instead of learning commands, menus, and workflows, users can simply describe what they want in natural language and allow AI to translate those requests into actions.</p>
+  <p>The idea was simple.</p>
 
-  <p>While experimenting with AI tools, I started wondering:</p>
+  <p>Let users talk to SolidWorks in natural language.</p>
 
-  <div class="callout callout-note">
-  <div class="callout-header">
-    <div class="callout-icon ms-icon" aria-hidden="true">&#xE946;</div>
-    <div class="callout-title">
-      The question that started it all
+  <p>But I quickly ran into a problem.</p>
+
+  <p>What happens when a user says something that needs multiple steps?</p>
+
+  <hr />
+
+  <h2 id="the-problem">The Problem</h2>
+
+  <p>A user types: “Create a new part and select the right plane.”</p>
+
+  <p>That sounds like one request but it is actually two separate actions.</p>
+
+  <p>First, SolidWorks needs to create a new part document.</p>
+
+  <p>Then, it needs to select the right plane inside that document.</p>
+
+  <p>I wanted users to describe what they want and let the system figure out the steps.</p>
+
+  <p>I also wanted it to work in any language.</p>
+
+  <p>Not just English.</p>
+
+  <p>Below is the same command in five different languages.</p>
+
+  <div class="fluent-table-wrapper" role="region" aria-labelledby="tbl-same-command-different-languages-caption">
+  <table class="fluent-table"><caption id="tbl-same-command-different-languages-caption">Same Command, Different Languages</caption><thead>
+      <tr><th scope="col">Language</th><th scope="col">Command</th></tr>
+    </thead>
+
+    <tbody><tr><td>
+                English
+
+              </td><td>
+                Create new part and select right plane
+
+              </td></tr><tr><td>
+                German / Deutsch
+
+              </td><td>
+                Neues Bauteil erstellen und die rechte Ebene auswählen.
+
+              </td></tr><tr><td>
+                Chinese / 中文
+
+              </td><td>
+                创建新零件并选择右视基准面
+
+              </td></tr><tr><td>
+                Tamil / தமிழ்
+
+              </td><td>
+                புதிய பாகத்தை உருவாக்கி, வலது தளத்தைத் (right plane) தேர்ந்தெடுக்கவும்.
+
+              </td></tr><tr><td>
+                Mixed / Mix
+
+              </td><td>
+                Neues Bauteil erstellen und 选择顶面
+
+              </td></tr></tbody>
+  </table>
+</div>
+
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/fBJ3GAUkeus" frameborder="0" allowfullscreen="">
+      </iframe>
     </div>
-  </div>
-
-  <div class="callout-body">
-    
-<p>Could the same approach be applied to SolidWorks?</p>
-
+    <p class="fluent-video-caption">
+      Same command expressed in multiple languages — the system understands each one.
+    </p>
   </div>
 </div>
 
-  <p>This question eventually became the starting point for a small project called <strong>CAD Copilot</strong>.</p>
+  <p>The system does not care which language you use.</p>
+
+  <p>It finds the actions hidden inside your sentence.</p>
 
   <hr />
 
-  <h2 id="the-question">The Question</h2>
+  <h2 id="why-order-matters">Why Order Matters</h2>
 
-  <p>Traditionally, users interact with SolidWorks through menus, toolbars, command managers, keyboard shortcuts, and property managers.</p>
+  <p>You cannot select a plane before a document exists.</p>
 
-  <p>While these interfaces are powerful, they also require users to learn where commands are located and how they should be used.</p>
+  <p>You cannot change a sheet size before a drawing is open.</p>
 
-  <p>What if a user could simply type:</p>
+  <p>These are not random rules.</p>
 
-  <div class="code-block-enhanced" id="code-user-input">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Create a new part document
-</code></pre></div></div>
+  <p>These are logical dependencies.</p>
 
-  </div>
-</div>
+  <p>I needed my system to understand these dependencies automatically.</p>
 
-  <p>or</p>
+  <p>If a user says “select right plane”, the system should know a document must exist first.</p>
 
-  <div class="code-block-enhanced" id="code-user-input">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Create a new assembly document
-</code></pre></div></div>
-
-  </div>
-</div>
-
-  <p>and have SolidWorks perform the action automatically?</p>
-
-  <p>This was the question I wanted to explore.</p>
+  <p>It should never try step two before step one finishes.</p>
 
   <hr />
 
-  <h2 id="what-is-cad-copilot">What is CAD Copilot?</h2>
+  <h2 id="how-i-made-it-work">How I Made It Work</h2>
 
-  <p>CAD Copilot is an experimental SolidWorks add-in that combines Artificial Intelligence with the SolidWorks API.</p>
+  <p>I built a command system that does three things.</p>
 
-  <p>The idea is simple:</p>
+  <p><strong>Step 1: Find the actions.</strong></p>
 
-  <div class="code-block-enhanced" id="code-architecture-flow">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Natural Language
-        ↓
-       AI
-        ↓
-SolidWorks Command
-        ↓
-SolidWorks Action
-</code></pre></div></div>
+  <p>When a user types a sentence, the system breaks it into individual actions.</p>
 
-  </div>
-</div>
+  <p>“Create a new part and select the right plane” becomes two actions.</p>
 
-  <p>The add-in accepts natural language input, sends it to an AI model for interpretation, and then executes the corresponding SolidWorks command.</p>
+  <p>Action one: Create a new part.</p>
 
-  <p>At the time of writing, the prototype can create:</p>
+  <p>Action two: Select the right plane.</p>
 
-  <ul>
-    <li>Part documents</li>
-    <li>Assembly documents</li>
-    <li>Drawing documents</li>
-  </ul>
+  <p>Even if the user mixes languages, the system finds the same actions.</p>
 
-  <p>using natural language commands.</p>
+  <p>I tested this with English, German, Chinese, and Tamil.</p>
 
-  <h3 id="cad-copilot-task-pane">CAD Copilot Task Pane</h3>
-
-  <figure class="image-zoom-container">
-  <img src="/assets/cad-copilot/001.1-cad-copilot-part-1/cad-copilot-task-pane.png" alt="CAD Copilot Task Pane" class="image-zoomable" loading="lazy" data-zoom-src="/assets/cad-copilot/001.1-cad-copilot-part-1/cad-copilot-task-pane.png" /><figcaption class="image-caption">Figure 1: The first working version of CAD Copilot running inside SolidWorks.</figcaption></figure>
-
-  <hr />
-
-  <h2 id="why-build-it">Why Build It?</h2>
-
-  <p>There were several reasons behind this experiment.</p>
-
-  <p>First, I wanted to learn more about integrating AI into desktop applications.</p>
-
-  <p>Second, I was curious whether natural language could become another way of interacting with CAD software.</p>
-
-  <p>Finally, I enjoy building small prototypes that explore new ideas and technologies.</p>
-
-  <p>CAD Copilot provided an opportunity to combine:</p>
-
-  <ul>
-    <li>SolidWorks API</li>
-    <li>C#</li>
-    <li>WPF</li>
-    <li>Artificial Intelligence</li>
-  </ul>
-
-  <p>into a single project.</p>
-
-  <hr />
-
-  <h2 id="initial-goals">Initial Goals</h2>
-
-  <p>For the first prototype, I intentionally kept the scope small.</p>
-
-  <p>The add-in only supports three commands:</p>
-
-  <ul>
-    <li>Create Part Document</li>
-    <li>Create Assembly Document</li>
-    <li>Create Drawing Document</li>
-  </ul>
-
-  <p>The objective was not to build a complete AI assistant.</p>
-
-  <p>Instead, the objective was to validate the core workflow.</p>
-
-  <hr />
-
-  <h2 id="success-criteria">Success Criteria</h2>
-
-  <p>I considered the experiment successful if the following workflow worked reliably:</p>
-
-  <div class="code-block-enhanced" id="code-workflow">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User Request
-      ↓
-AI Interpretation
-      ↓
-Internal Command
-      ↓
-SolidWorks Action
-</code></pre></div></div>
-
-  </div>
-</div>
-
-  <p>For example:</p>
-
-  <div class="code-block-enhanced" id="code-user-request">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please create a new part document
-</code></pre></div></div>
-
-  </div>
-</div>
-
-  <p>would eventually become:</p>
-
-  <div class="code-block-enhanced" id="code-internal-command">
-  <div class="code-body">
-        <button type="button" class="code-copy-btn-float" aria-label="Copy code">
-      Copy
-    </button>
-    
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CreatePart
-</code></pre></div></div>
-
-  </div>
-</div>
-
-  <p>which would then create a new Part document inside SolidWorks.</p>
-
-  <hr />
-
-  <h2 id="conclusion">Conclusion</h2>
-
-  <p>CAD Copilot started as a simple question:</p>
-
-  <div class="callout callout-note">
-  <div class="callout-header">
-    <div class="callout-icon ms-icon" aria-hidden="true">&#xE946;</div>
-    <div class="callout-title">
-      The core question
+  <div class="fluent-video-card">
+  <div class="fluent-video-inner">
+    <div class="fluent-video-aspect">
+      <iframe src="https://www.youtube-nocookie.com/embed/BmFY9xIw_0k" frameborder="0" allowfullscreen="">
+      </iframe>
     </div>
-  </div>
-
-  <div class="callout-body">
-    
-<p>Could users control SolidWorks using natural language?</p>
-
+    <p class="fluent-video-caption">
+      Mixed-language input — the system extracts the intent regardless of language.
+    </p>
   </div>
 </div>
 
-  <p>The first prototype demonstrates that the idea is technically feasible and provides a foundation for future experiments.</p>
+  <p><strong>Step 2: Find the right order.</strong></p>
 
-  <p>In future articles, I’ll explore the individual building blocks used to create the prototype and share the lessons learned along the way.</p>
+  <p>Once the system knows the actions, it checks which one depends on another.</p>
+
+  <p>Selecting a plane needs a document to exist first.</p>
+
+  <p>So “create new part” must run before “select right plane”.</p>
+
+  <p><strong>Step 3: Execute one at a time.</strong></p>
+
+  <p>The system runs the first action and waits for it to finish.</p>
+
+  <p>Then it runs the next action.</p>
+
+  <p>The user sees the result on screen.</p>
+
+  <p>No clicking. No searching. Just the result.</p>
+
+  <hr />
+
+  <h2 id="why-this-matters">Why This Matters</h2>
+
+  <p>For engineers who do not write macros, this changes everything.</p>
+
+  <p>Instead of learning where commands live in menus, you describe what you want.</p>
+
+  <p>The system handles all the steps in between.</p>
+
+  <p>A task that takes five clicks becomes a single sentence.</p>
+
+  <p>For engineers who do write macros, this also changes things.</p>
+
+  <p>Instead of writing one macro per task, you combine existing commands.</p>
+
+  <p>The system manages the order for you.</p>
+
+  <p>You focus on what to do, not how to do it.</p>
+
+  <p>Either way, the result is the same.</p>
+
+  <p>Less clicking. Less searching. More time designing.</p>
+
+  <hr />
+
+  <h2 id="closing">Closing</h2>
+
+  <p>Multi-step execution is one piece of a larger idea.</p>
+
+  <p>I want CAD to respond to human language the way a colleague would.</p>
+
+  <p>For the engineer who does not write macros, this means describing the result instead of remembering the steps.</p>
+
+  <p>For the macro programmer, this means thinking in sequences instead of single commands.</p>
+
+  <p>The system does not care if you speak English, German, Chinese, Tamil, or a mix.</p>
+
+  <p>It finds the actions, orders them, and runs them.</p>
+
+  <p>One sentence. Multiple steps. Done.</p>
 
   <hr />
 
@@ -513,10 +482,10 @@ SolidWorks Action
   <div class="details-content">
     
 <ul>
-  <li>CAD Copilot started as an experiment.</li>
-  <li>The goal is to explore natural language interaction with SolidWorks.</li>
-  <li>The initial scope was intentionally limited.</li>
-  <li>A small prototype can be an effective way to validate a new idea.</li>
+  <li>A single sentence can trigger multiple CAD actions in sequence.</li>
+  <li>The system handles ordering — engineers do not need to script what comes first.</li>
+  <li>Language-agnostic: English, German, Chinese, Tamil, or mixed — same result.</li>
+  <li>Sequences bridge the gap between natural language and CAD execution.</li>
 </ul>
 
   </div>
@@ -562,7 +531,15 @@ SolidWorks Action
 
 
 <div class="docs-navigation">
-  <div class="docs-nav-container docs-nav-container--only-next">
+  <div class="docs-nav-container docs-nav-container--only-prev">
+    
+    <a href="/cad-copilot/cad-copilot-part-1/" class="docs-nav-prev btn-nav-secondary" title="Previous: Building CAD Copilot - Create a new document using natural language">
+      <span class="nav-icon" aria-hidden="true">&larr;</span>
+      <span class="nav-text">
+        <span class="nav-label">Previous</span>
+        <span class="nav-title">Building CAD Copilot - Create a new document ...</span>
+      </span>
+    </a>
     
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8158659264340002"
@@ -578,14 +555,6 @@ SolidWorks Action
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-    
-    <a href="/cad-copilot/cad-copilot-part-2/" class="docs-nav-next btn-nav-primary" title="Next: Making SolidWorks Understand Sequences: How AI Can Execute Multi-Step Tasks from a Single Sentence">
-      <span class="nav-text">
-        <span class="nav-label">Next</span>
-        <span class="nav-title">Making SolidWorks Understand Sequences: How A...</span>
-      </span>
-      <span class="nav-icon" aria-hidden="true">&rarr;</span>
-    </a>
     
   </div>
 </div>
